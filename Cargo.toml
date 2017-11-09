@@ -1,0 +1,48 @@
+[package]
+name = "rsx-primitives"
+version = "0.1.0"
+authors = ["Victor Porof <victor.porof@gmail.com>"]
+
+[lib]
+name = "rsx_primitives"
+
+[features]
+default = ["json-display-list", "hashmap-arena"]
+
+webrender-display-list = ["app_units", "euclid", "webrender", "link-freetype", "image-rgb-to-bgr", "rsx-shared/impl-external-webrender"]
+json-display-list = []
+
+display-list-optimize-mode = []
+display-list-debug-mode = []
+dummy-api-mode = ["rand"]
+no-json-glyphs-mode = []
+no-json-images-mode = []
+
+vec-arena = ["rsx-dom/vec-arena"]
+hashmap-arena = ["rsx-dom/hashmap-arena"]
+
+link-freetype = ["rsx-resources/link-freetype"]
+image-dummy-decode = ["rsx-resources/image-dummy-decode"]
+image-rgb-to-bgr = ["rsx-resources/image-rgb-to-bgr"]
+pretty-json-mode = ["rsx-resources/pretty-json-mode"]
+
+[dependencies]
+rsx-dom = { git = "https://github.com/victorporof/rsx-dom.git", default-features = false }
+rsx-event-manager = { git = "https://github.com/victorporof/rsx-event-manager.git", default-features = false }
+rsx-layout = { git = "https://github.com/victorporof/rsx-layout.git", default-features = false }
+rsx-resources = { git = "https://github.com/victorporof/rsx-resources.git", default-features = false }
+rsx-shared = { git = "https://github.com/victorporof/rsx-shared.git", default-features = false }
+rsx-stylesheet = { git = "https://github.com/victorporof/rsx-stylesheet.git", default-features = false }
+serde = "1.0.27"
+serde_derive = "1.0.27"
+serde_json = "1.0.9"
+smallvec = "0.6.0"
+
+# Optional
+app_units = { version = "0.6", optional = true }
+euclid = { version = "0.16", optional = true }
+rand = { version = "0.4.2", optional = true }
+webrender = { git = "https://github.com/victorporof/webrender.git", branch = "rsx-ready-latest", optional = true }
+
+[dev-dependencies]
+rsx = { git = "https://github.com/victorporof/rsx.git", default-features = false }
