@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `SupportsRule` struct in crate `style`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, SupportsRule">
+
+    <title>style::stylesheets::supports_rule::SupportsRule - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct SupportsRule</p><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.condition">condition</a><a href="#structfield.rules">rules</a><a href="#structfield.enabled">enabled</a><a href="#structfield.source_location">source_location</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Debug">Debug</a><a href="#impl-ToCssWithGuard">ToCssWithGuard</a><a href="#impl-DeepCloneWithLock">DeepCloneWithLock</a></div></div><p class='location'><a href='../../index.html'>style</a>::<wbr><a href='../index.html'>stylesheets</a>::<wbr><a href='index.html'>supports_rule</a></p><script>window.sidebarCurrent = {name: 'SupportsRule', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>style</a>::<wbr><a href='../index.html'>stylesheets</a>::<wbr><a href='index.html'>supports_rule</a>::<wbr><a class="struct" href=''>SupportsRule</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../src/style/stylesheets/supports_rule.rs.html#27-36' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct SupportsRule {
+    pub condition: <a class="enum" href="../../../style/stylesheets/supports_rule/enum.SupportsCondition.html" title="enum style::stylesheets::supports_rule::SupportsCondition">SupportsCondition</a>,
+    pub rules: <a class="struct" href="../../../style/properties/struct.BuilderArc.html" title="struct style::properties::BuilderArc">Arc</a>&lt;<a class="struct" href="../../../style/shared_lock/struct.Locked.html" title="struct style::shared_lock::Locked">Locked</a>&lt;<a class="struct" href="../../../style/stylesheets/struct.CssRules.html" title="struct style::stylesheets::CssRules">CssRules</a>&gt;&gt;,
+    pub enabled: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
+    pub source_location: <a class="struct" href="../../../style/values/struct.SourceLocation.html" title="struct style::values::SourceLocation">SourceLocation</a>,
+}</pre><div class='docblock'><p>An <a href="https://drafts.csswg.org/css-conditional-3/#at-supports"><code>@supports</code></a> rule.</p>
+</div><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.condition" class="structfield small-section-header">
+                           <a href="#structfield.condition" class="anchor field"></a>
+                           <span id="condition.v" class='invisible'>
+                           <code>condition: <a class="enum" href="../../../style/stylesheets/supports_rule/enum.SupportsCondition.html" title="enum style::stylesheets::supports_rule::SupportsCondition">SupportsCondition</a></code>
+                           </span></span><div class='docblock'><p>The parsed condition</p>
+</div><span id="structfield.rules" class="structfield small-section-header">
+                           <a href="#structfield.rules" class="anchor field"></a>
+                           <span id="rules.v" class='invisible'>
+                           <code>rules: <a class="struct" href="../../../style/properties/struct.BuilderArc.html" title="struct style::properties::BuilderArc">Arc</a>&lt;<a class="struct" href="../../../style/shared_lock/struct.Locked.html" title="struct style::shared_lock::Locked">Locked</a>&lt;<a class="struct" href="../../../style/stylesheets/struct.CssRules.html" title="struct style::stylesheets::CssRules">CssRules</a>&gt;&gt;</code>
+                           </span></span><div class='docblock'><p>Child rules</p>
+</div><span id="structfield.enabled" class="structfield small-section-header">
+                           <a href="#structfield.enabled" class="anchor field"></a>
+                           <span id="enabled.v" class='invisible'>
+                           <code>enabled: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code>
+                           </span></span><div class='docblock'><p>The result of evaluating the condition</p>
+</div><span id="structfield.source_location" class="structfield small-section-header">
+                           <a href="#structfield.source_location" class="anchor field"></a>
+                           <span id="source_location.v" class='invisible'>
+                           <code>source_location: <a class="struct" href="../../../style/values/struct.SourceLocation.html" title="struct style::values::SourceLocation">SourceLocation</a></code>
+                           </span></span><div class='docblock'><p>The line and column of the rule&#39;s source code.</p>
+</div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../../../style/stylesheets/supports_rule/struct.SupportsRule.html" title="struct style::stylesheets::supports_rule::SupportsRule">SupportsRule</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/stylesheets/supports_rule.rs.html#26' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/stylesheets/supports_rule.rs.html#26' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div><h3 id='impl-ToCssWithGuard' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../../style/shared_lock/trait.ToCssWithGuard.html" title="trait style::shared_lock::ToCssWithGuard">ToCssWithGuard</a> for <a class="struct" href="../../../style/stylesheets/supports_rule/struct.SupportsRule.html" title="struct style::stylesheets::supports_rule::SupportsRule">SupportsRule</a></code><a href='#impl-ToCssWithGuard' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/stylesheets/supports_rule.rs.html#48-55' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.to_css' class="method"><span id='to_css.v' class='invisible'><code>fn <a href='../../../style/shared_lock/trait.ToCssWithGuard.html#tymethod.to_css' class='fnname'>to_css</a>&lt;W&gt;(&amp;self, guard: &amp;<a class="struct" href="../../../style/shared_lock/struct.SharedRwLockReadGuard.html" title="struct style::shared_lock::SharedRwLockReadGuard">SharedRwLockReadGuard</a>, dest: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>W) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a> <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;W: <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Write.html" title="trait core::fmt::Write">Write</a>,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/stylesheets/supports_rule.rs.html#49-54' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Serialize <code>self</code> in CSS syntax, writing to <code>dest</code>, using the given lock guard.</p>
+</div><h4 id='method.to_css_string' class="method"><span id='to_css_string.v' class='invisible'><code>fn <a href='../../../style/shared_lock/trait.ToCssWithGuard.html#method.to_css_string' class='fnname'>to_css_string</a>(&amp;self, guard: &amp;<a class="struct" href="../../../style/shared_lock/struct.SharedRwLockReadGuard.html" title="struct style::shared_lock::SharedRwLockReadGuard">SharedRwLockReadGuard</a>) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/shared_lock.rs.html#232-236' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Serialize <code>self</code> in CSS syntax using the given lock guard and return a string. <a href="../../../style/shared_lock/trait.ToCssWithGuard.html#method.to_css_string">Read more</a></p>
+</div></div><h3 id='impl-DeepCloneWithLock' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../../style/shared_lock/trait.DeepCloneWithLock.html" title="trait style::shared_lock::DeepCloneWithLock">DeepCloneWithLock</a> for <a class="struct" href="../../../style/stylesheets/supports_rule/struct.SupportsRule.html" title="struct style::stylesheets::supports_rule::SupportsRule">SupportsRule</a></code><a href='#impl-DeepCloneWithLock' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/stylesheets/supports_rule.rs.html#57-72' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deep_clone_with_lock' class="method"><span id='deep_clone_with_lock.v' class='invisible'><code>fn <a href='../../../style/shared_lock/trait.DeepCloneWithLock.html#tymethod.deep_clone_with_lock' class='fnname'>deep_clone_with_lock</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;lock: &amp;<a class="struct" href="../../../style/shared_lock/struct.SharedRwLock.html" title="struct style::shared_lock::SharedRwLock">SharedRwLock</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;guard: &amp;<a class="struct" href="../../../style/shared_lock/struct.SharedRwLockReadGuard.html" title="struct style::shared_lock::SharedRwLockReadGuard">SharedRwLockReadGuard</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;params: &amp;<a class="struct" href="../../../style/shared_lock/struct.DeepCloneParams.html" title="struct style::shared_lock::DeepCloneParams">DeepCloneParams</a><br>) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/stylesheets/supports_rule.rs.html#58-71' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Deep clones this object.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "style";
+    </script>
+    <script src="../../../main.js"></script>
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

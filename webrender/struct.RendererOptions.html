@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `RendererOptions` struct in crate `webrender`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, RendererOptions">
+
+    <title>webrender::RendererOptions - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct RendererOptions</p><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.device_pixel_ratio">device_pixel_ratio</a><a href="#structfield.resource_override_path">resource_override_path</a><a href="#structfield.enable_aa">enable_aa</a><a href="#structfield.enable_dithering">enable_dithering</a><a href="#structfield.max_recorded_profiles">max_recorded_profiles</a><a href="#structfield.debug">debug</a><a href="#structfield.enable_scrollbars">enable_scrollbars</a><a href="#structfield.precache_shaders">precache_shaders</a><a href="#structfield.renderer_kind">renderer_kind</a><a href="#structfield.enable_subpixel_aa">enable_subpixel_aa</a><a href="#structfield.clear_color">clear_color</a><a href="#structfield.enable_clear_scissor">enable_clear_scissor</a><a href="#structfield.max_texture_size">max_texture_size</a><a href="#structfield.scatter_gpu_cache_updates">scatter_gpu_cache_updates</a><a href="#structfield.upload_method">upload_method</a><a href="#structfield.workers">workers</a><a href="#structfield.blob_image_renderer">blob_image_renderer</a><a href="#structfield.recorder">recorder</a><a href="#structfield.thread_listener">thread_listener</a><a href="#structfield.enable_render_on_scroll">enable_render_on_scroll</a><a href="#structfield.cached_programs">cached_programs</a><a href="#structfield.debug_flags">debug_flags</a><a href="#structfield.renderer_id">renderer_id</a><a href="#structfield.disable_dual_source_blending">disable_dual_source_blending</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Default">Default</a></div></div><p class='location'><a href='index.html'>webrender</a></p><script>window.sidebarCurrent = {name: 'RendererOptions', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>webrender</a>::<wbr><a class="struct" href=''>RendererOptions</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/webrender/renderer.rs.html#4631-4656' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct RendererOptions {
+    pub device_pixel_ratio: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>,
+    pub resource_override_path: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/std/path/struct.PathBuf.html" title="struct std::path::PathBuf">PathBuf</a>&gt;,
+    pub enable_aa: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
+    pub enable_dithering: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
+    pub max_recorded_profiles: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>,
+    pub debug: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
+    pub enable_scrollbars: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
+    pub precache_shaders: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
+    pub renderer_kind: <a class="enum" href="../webrender/enum.RendererKind.html" title="enum webrender::RendererKind">RendererKind</a>,
+    pub enable_subpixel_aa: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
+    pub clear_color: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../webrender/api/struct.ColorF.html" title="struct webrender::api::ColorF">ColorF</a>&gt;,
+    pub enable_clear_scissor: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
+    pub max_texture_size: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>&gt;,
+    pub scatter_gpu_cache_updates: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
+    pub upload_method: UploadMethod,
+    pub workers: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html" title="struct alloc::arc::Arc">Arc</a>&lt;<a class="struct" href="../rayon_core/thread_pool/struct.ThreadPool.html" title="struct rayon_core::thread_pool::ThreadPool">ThreadPool</a>&gt;&gt;,
+    pub blob_image_renderer: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html" title="struct alloc::boxed::Box">Box</a>&lt;<a class="trait" href="../webrender/api/trait.BlobImageRenderer.html" title="trait webrender::api::BlobImageRenderer">BlobImageRenderer</a>&gt;&gt;,
+    pub recorder: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html" title="struct alloc::boxed::Box">Box</a>&lt;<a class="trait" href="../webrender/trait.ApiRecordingReceiver.html" title="trait webrender::ApiRecordingReceiver">ApiRecordingReceiver</a>&gt;&gt;,
+    pub thread_listener: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html" title="struct alloc::boxed::Box">Box</a>&lt;<a class="trait" href="../webrender/trait.ThreadListener.html" title="trait webrender::ThreadListener">ThreadListener</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a>&gt;&gt;,
+    pub enable_render_on_scroll: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
+    pub cached_programs: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/rc/struct.Rc.html" title="struct alloc::rc::Rc">Rc</a>&lt;ProgramCache&gt;&gt;,
+    pub debug_flags: <a class="struct" href="../webrender/struct.DebugFlags.html" title="struct webrender::DebugFlags">DebugFlags</a>,
+    pub renderer_id: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>&gt;,
+    pub disable_dual_source_blending: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
+}</pre><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.device_pixel_ratio" class="structfield small-section-header">
+                           <a href="#structfield.device_pixel_ratio" class="anchor field"></a>
+                           <span id="device_pixel_ratio.v" class='invisible'>
+                           <code>device_pixel_ratio: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a></code>
+                           </span></span><span id="structfield.resource_override_path" class="structfield small-section-header">
+                           <a href="#structfield.resource_override_path" class="anchor field"></a>
+                           <span id="resource_override_path.v" class='invisible'>
+                           <code>resource_override_path: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/std/path/struct.PathBuf.html" title="struct std::path::PathBuf">PathBuf</a>&gt;</code>
+                           </span></span><span id="structfield.enable_aa" class="structfield small-section-header">
+                           <a href="#structfield.enable_aa" class="anchor field"></a>
+                           <span id="enable_aa.v" class='invisible'>
+                           <code>enable_aa: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code>
+                           </span></span><span id="structfield.enable_dithering" class="structfield small-section-header">
+                           <a href="#structfield.enable_dithering" class="anchor field"></a>
+                           <span id="enable_dithering.v" class='invisible'>
+                           <code>enable_dithering: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code>
+                           </span></span><span id="structfield.max_recorded_profiles" class="structfield small-section-header">
+                           <a href="#structfield.max_recorded_profiles" class="anchor field"></a>
+                           <span id="max_recorded_profiles.v" class='invisible'>
+                           <code>max_recorded_profiles: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a></code>
+                           </span></span><span id="structfield.debug" class="structfield small-section-header">
+                           <a href="#structfield.debug" class="anchor field"></a>
+                           <span id="debug.v" class='invisible'>
+                           <code>debug: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code>
+                           </span></span><span id="structfield.enable_scrollbars" class="structfield small-section-header">
+                           <a href="#structfield.enable_scrollbars" class="anchor field"></a>
+                           <span id="enable_scrollbars.v" class='invisible'>
+                           <code>enable_scrollbars: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code>
+                           </span></span><span id="structfield.precache_shaders" class="structfield small-section-header">
+                           <a href="#structfield.precache_shaders" class="anchor field"></a>
+                           <span id="precache_shaders.v" class='invisible'>
+                           <code>precache_shaders: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code>
+                           </span></span><span id="structfield.renderer_kind" class="structfield small-section-header">
+                           <a href="#structfield.renderer_kind" class="anchor field"></a>
+                           <span id="renderer_kind.v" class='invisible'>
+                           <code>renderer_kind: <a class="enum" href="../webrender/enum.RendererKind.html" title="enum webrender::RendererKind">RendererKind</a></code>
+                           </span></span><span id="structfield.enable_subpixel_aa" class="structfield small-section-header">
+                           <a href="#structfield.enable_subpixel_aa" class="anchor field"></a>
+                           <span id="enable_subpixel_aa.v" class='invisible'>
+                           <code>enable_subpixel_aa: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code>
+                           </span></span><span id="structfield.clear_color" class="structfield small-section-header">
+                           <a href="#structfield.clear_color" class="anchor field"></a>
+                           <span id="clear_color.v" class='invisible'>
+                           <code>clear_color: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../webrender/api/struct.ColorF.html" title="struct webrender::api::ColorF">ColorF</a>&gt;</code>
+                           </span></span><span id="structfield.enable_clear_scissor" class="structfield small-section-header">
+                           <a href="#structfield.enable_clear_scissor" class="anchor field"></a>
+                           <span id="enable_clear_scissor.v" class='invisible'>
+                           <code>enable_clear_scissor: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code>
+                           </span></span><span id="structfield.max_texture_size" class="structfield small-section-header">
+                           <a href="#structfield.max_texture_size" class="anchor field"></a>
+                           <span id="max_texture_size.v" class='invisible'>
+                           <code>max_texture_size: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>&gt;</code>
+                           </span></span><span id="structfield.scatter_gpu_cache_updates" class="structfield small-section-header">
+                           <a href="#structfield.scatter_gpu_cache_updates" class="anchor field"></a>
+                           <span id="scatter_gpu_cache_updates.v" class='invisible'>
+                           <code>scatter_gpu_cache_updates: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code>
+                           </span></span><span id="structfield.upload_method" class="structfield small-section-header">
+                           <a href="#structfield.upload_method" class="anchor field"></a>
+                           <span id="upload_method.v" class='invisible'>
+                           <code>upload_method: UploadMethod</code>
+                           </span></span><span id="structfield.workers" class="structfield small-section-header">
+                           <a href="#structfield.workers" class="anchor field"></a>
+                           <span id="workers.v" class='invisible'>
+                           <code>workers: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html" title="struct alloc::arc::Arc">Arc</a>&lt;<a class="struct" href="../rayon_core/thread_pool/struct.ThreadPool.html" title="struct rayon_core::thread_pool::ThreadPool">ThreadPool</a>&gt;&gt;</code>
+                           </span></span><span id="structfield.blob_image_renderer" class="structfield small-section-header">
+                           <a href="#structfield.blob_image_renderer" class="anchor field"></a>
+                           <span id="blob_image_renderer.v" class='invisible'>
+                           <code>blob_image_renderer: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html" title="struct alloc::boxed::Box">Box</a>&lt;<a class="trait" href="../webrender/api/trait.BlobImageRenderer.html" title="trait webrender::api::BlobImageRenderer">BlobImageRenderer</a>&gt;&gt;</code>
+                           </span></span><span id="structfield.recorder" class="structfield small-section-header">
+                           <a href="#structfield.recorder" class="anchor field"></a>
+                           <span id="recorder.v" class='invisible'>
+                           <code>recorder: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html" title="struct alloc::boxed::Box">Box</a>&lt;<a class="trait" href="../webrender/trait.ApiRecordingReceiver.html" title="trait webrender::ApiRecordingReceiver">ApiRecordingReceiver</a>&gt;&gt;</code>
+                           </span></span><span id="structfield.thread_listener" class="structfield small-section-header">
+                           <a href="#structfield.thread_listener" class="anchor field"></a>
+                           <span id="thread_listener.v" class='invisible'>
+                           <code>thread_listener: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html" title="struct alloc::boxed::Box">Box</a>&lt;<a class="trait" href="../webrender/trait.ThreadListener.html" title="trait webrender::ThreadListener">ThreadListener</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a>&gt;&gt;</code>
+                           </span></span><span id="structfield.enable_render_on_scroll" class="structfield small-section-header">
+                           <a href="#structfield.enable_render_on_scroll" class="anchor field"></a>
+                           <span id="enable_render_on_scroll.v" class='invisible'>
+                           <code>enable_render_on_scroll: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code>
+                           </span></span><span id="structfield.cached_programs" class="structfield small-section-header">
+                           <a href="#structfield.cached_programs" class="anchor field"></a>
+                           <span id="cached_programs.v" class='invisible'>
+                           <code>cached_programs: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/rc/struct.Rc.html" title="struct alloc::rc::Rc">Rc</a>&lt;ProgramCache&gt;&gt;</code>
+                           </span></span><span id="structfield.debug_flags" class="structfield small-section-header">
+                           <a href="#structfield.debug_flags" class="anchor field"></a>
+                           <span id="debug_flags.v" class='invisible'>
+                           <code>debug_flags: <a class="struct" href="../webrender/struct.DebugFlags.html" title="struct webrender::DebugFlags">DebugFlags</a></code>
+                           </span></span><span id="structfield.renderer_id" class="structfield small-section-header">
+                           <a href="#structfield.renderer_id" class="anchor field"></a>
+                           <span id="renderer_id.v" class='invisible'>
+                           <code>renderer_id: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>&gt;</code>
+                           </span></span><span id="structfield.disable_dual_source_blending" class="structfield small-section-header">
+                           <a href="#structfield.disable_dual_source_blending" class="anchor field"></a>
+                           <span id="disable_dual_source_blending.v" class='invisible'>
+                           <code>disable_dual_source_blending: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code>
+                           </span></span>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Default' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/default/trait.Default.html" title="trait core::default::Default">Default</a> for <a class="struct" href="../webrender/struct.RendererOptions.html" title="struct webrender::RendererOptions">RendererOptions</a></code><a href='#impl-Default' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/webrender/renderer.rs.html#4658-4690' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.default' class="method"><span id='default.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/default/trait.Default.html#tymethod.default' class='fnname'>default</a>() -&gt; <a class="struct" href="../webrender/struct.RendererOptions.html" title="struct webrender::RendererOptions">RendererOptions</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/webrender/renderer.rs.html#4659-4689' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the &quot;default value&quot; for a type. <a href="https://doc.rust-lang.org/nightly/core/default/trait.Default.html#tymethod.default">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "webrender";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

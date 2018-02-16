@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `properties` mod in crate `style`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, properties">
+
+    <title>style::properties - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc mod">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Module properties</p><div class="block items"><ul><li><a href="#reexports">Reexports</a></li><li><a href="#modules">Modules</a></li><li><a href="#structs">Structs</a></li><li><a href="#enums">Enums</a></li><li><a href="#traits">Traits</a></li><li><a href="#functions">Functions</a></li><li><a href="#types">Type Definitions</a></li></ul></div><p class='location'><a href='../index.html'>style</a></p><script>window.sidebarCurrent = {name: 'properties', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Module <a href='../index.html'>style</a>::<wbr><a class="mod" href=''>properties</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/style/lib.rs.html#156-158' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p>The CSS properties supported by the style system.
+Generated from the properties.mako.rs template by build.rs</p>
+</div><h2 id='reexports' class='section-header'><a href="#reexports">Reexports</a></h2>
+<table><tr><td><code>pub use self::<a class="mod" href="../../style/properties/declaration_block/index.html" title="mod style::properties::declaration_block">declaration_block</a>::*;</code></td></tr></table><h2 id='modules' class='section-header'><a href="#modules">Modules</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="animated_properties/index.html"
+                                  title='mod style::properties::animated_properties'>animated_properties</a></td>
+                           <td class='docblock-short'>
+                                <p>A module with all the code related to animated properties.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="computed_value_flags/index.html"
+                                  title='mod style::properties::computed_value_flags'>computed_value_flags</a></td>
+                           <td class='docblock-short'>
+                                <p>Misc information about a given computed style.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="declaration_block/index.html"
+                                  title='mod style::properties::declaration_block'>declaration_block</a></td>
+                           <td class='docblock-short'>
+                                <p>A property declaration block.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="longhands/index.html"
+                                  title='mod style::properties::longhands'>longhands</a></td>
+                           <td class='docblock-short'>
+                                <p>A module with all the code for longhand properties.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="shorthands/index.html"
+                                  title='mod style::properties::shorthands'>shorthands</a></td>
+                           <td class='docblock-short'>
+                                <p>A module with code for all the shorthand css properties, and a few
+serialization helpers.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="style_structs/index.html"
+                                  title='mod style::properties::style_structs'>style_structs</a></td>
+                           <td class='docblock-short'>
+                                <p>The module where all the style structs are defined.</p>
+                           </td>
+                       </tr></table><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.AnimationDelayIter.html"
+                                  title='struct style::properties::AnimationDelayIter'>AnimationDelayIter</a></td>
+                           <td class='docblock-short'>
+                                <p>An iterator over the values of the animation-delay properties.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.AnimationDirectionIter.html"
+                                  title='struct style::properties::AnimationDirectionIter'>AnimationDirectionIter</a></td>
+                           <td class='docblock-short'>
+                                <p>An iterator over the values of the animation-direction properties.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.AnimationDurationIter.html"
+                                  title='struct style::properties::AnimationDurationIter'>AnimationDurationIter</a></td>
+                           <td class='docblock-short'>
+                                <p>An iterator over the values of the animation-duration properties.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.AnimationFillModeIter.html"
+                                  title='struct style::properties::AnimationFillModeIter'>AnimationFillModeIter</a></td>
+                           <td class='docblock-short'>
+                                <p>An iterator over the values of the animation-fill-mode properties.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.AnimationIterationCountIter.html"
+                                  title='struct style::properties::AnimationIterationCountIter'>AnimationIterationCountIter</a></td>
+                           <td class='docblock-short'>
+                                <p>An iterator over the values of the animation-iteration-count properties.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.AnimationNameIter.html"
+                                  title='struct style::properties::AnimationNameIter'>AnimationNameIter</a></td>
+                           <td class='docblock-short'>
+                                <p>An iterator over the values of the animation-name properties.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.AnimationPlayStateIter.html"
+                                  title='struct style::properties::AnimationPlayStateIter'>AnimationPlayStateIter</a></td>
+                           <td class='docblock-short'>
+                                <p>An iterator over the values of the animation-play-state properties.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.AnimationTimingFunctionIter.html"
+                                  title='struct style::properties::AnimationTimingFunctionIter'>AnimationTimingFunctionIter</a></td>
+                           <td class='docblock-short'>
+                                <p>An iterator over the values of the animation-timing-function properties.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.BuilderArc.html"
+                                  title='struct style::properties::BuilderArc'>BuilderArc</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.CascadeFlags.html"
+                                  title='struct style::properties::CascadeFlags'>CascadeFlags</a></td>
+                           <td class='docblock-short'>
+                                <p>A set of flags to tweak the behavior of the <code>cascade</code> function.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ComputedValues.html"
+                                  title='struct style::properties::ComputedValues'>ComputedValues</a></td>
+                           <td class='docblock-short'>
+                                <p>The struct that Servo uses to represent computed values.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ComputedValuesInner.html"
+                                  title='struct style::properties::ComputedValuesInner'>ComputedValuesInner</a></td>
+                           <td class='docblock-short'>
+                                <p>Actual data of ComputedValues, to match up with Gecko</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.INITIAL_SERVO_VALUES.html"
+                                  title='struct style::properties::INITIAL_SERVO_VALUES'>INITIAL_SERVO_VALUES</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.LonghandIdSet.html"
+                                  title='struct style::properties::LonghandIdSet'>LonghandIdSet</a></td>
+                           <td class='docblock-short'>
+                                <p>A set of longhand properties</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.LonghandIdSetIterator.html"
+                                  title='struct style::properties::LonghandIdSetIterator'>LonghandIdSetIterator</a></td>
+                           <td class='docblock-short'>
+                                <p>An iterator over a set of longhand ids.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.NonCustomPropertyId.html"
+                                  title='struct style::properties::NonCustomPropertyId'>NonCustomPropertyId</a></td>
+                           <td class='docblock-short'>
+                                <p>A longhand or shorthand porperty</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.NonCustomPropertyIdSet.html"
+                                  title='struct style::properties::NonCustomPropertyIdSet'>NonCustomPropertyIdSet</a></td>
+                           <td class='docblock-short'>
+                                <p>A set of all properties</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.PropertyDeclarationIdSet.html"
+                                  title='struct style::properties::PropertyDeclarationIdSet'>PropertyDeclarationIdSet</a></td>
+                           <td class='docblock-short'>
+                                <p>A specialized set of PropertyDeclarationId</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.PropertyFlags.html"
+                                  title='struct style::properties::PropertyFlags'>PropertyFlags</a></td>
+                           <td class='docblock-short'>
+                                <p>A set of flags for properties.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.SourcePropertyDeclaration.html"
+                                  title='struct style::properties::SourcePropertyDeclaration'>SourcePropertyDeclaration</a></td>
+                           <td class='docblock-short'>
+                                <p>A stack-allocated vector of <code>PropertyDeclaration</code>
+large enough to parse one CSS <code>key: value</code> declaration.
+(Shorthands expand to multiple <code>PropertyDeclaration</code>s.)</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.SourcePropertyDeclarationDrain.html"
+                                  title='struct style::properties::SourcePropertyDeclarationDrain'>SourcePropertyDeclarationDrain</a></td>
+                           <td class='docblock-short'>
+                                <p>Return type of SourcePropertyDeclaration::drain</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.StyleBuilder.html"
+                                  title='struct style::properties::StyleBuilder'>StyleBuilder</a></td>
+                           <td class='docblock-short'>
+                                <p>A type used to compute a struct with minimal overhead.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.TransitionDelayIter.html"
+                                  title='struct style::properties::TransitionDelayIter'>TransitionDelayIter</a></td>
+                           <td class='docblock-short'>
+                                <p>An iterator over the values of the transition-delay properties.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.TransitionDurationIter.html"
+                                  title='struct style::properties::TransitionDurationIter'>TransitionDurationIter</a></td>
+                           <td class='docblock-short'>
+                                <p>An iterator over the values of the transition-duration properties.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.TransitionPropertyIter.html"
+                                  title='struct style::properties::TransitionPropertyIter'>TransitionPropertyIter</a></td>
+                           <td class='docblock-short'>
+                                <p>An iterator over the values of the transition-property properties.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.TransitionTimingFunctionIter.html"
+                                  title='struct style::properties::TransitionTimingFunctionIter'>TransitionTimingFunctionIter</a></td>
+                           <td class='docblock-short'>
+                                <p>An iterator over the values of the transition-timing-function properties.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.UnparsedValue.html"
+                                  title='struct style::properties::UnparsedValue'>UnparsedValue</a></td>
+                           <td class='docblock-short'>
+                                <p>An unparsed property value that contains <code>var()</code> functions.</p>
+                           </td>
+                       </tr></table><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.AliasId.html"
+                                  title='enum style::properties::AliasId'>AliasId</a></td>
+                           <td class='docblock-short'>
+                                <p>An identifier for a given alias property.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.CSSWideKeyword.html"
+                                  title='enum style::properties::CSSWideKeyword'>CSSWideKeyword</a></td>
+                           <td class='docblock-short'>
+                                <p>An enum to represent a CSS Wide keyword.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.DeclaredValue.html"
+                                  title='enum style::properties::DeclaredValue'>DeclaredValue</a></td>
+                           <td class='docblock-short'>
+                                <p>Servo&#39;s representation of a declared value for a given <code>T</code>, which is the
+declared value for that property.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.DeclaredValueOwned.html"
+                                  title='enum style::properties::DeclaredValueOwned'>DeclaredValueOwned</a></td>
+                           <td class='docblock-short'>
+                                <p>A variant of DeclaredValue that owns its data. This separation exists so
+that PropertyDeclaration can avoid embedding a DeclaredValue (and its
+extra discriminant word) and synthesize dependent DeclaredValues for
+PropertyDeclaration instances as needed.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.LonghandId.html"
+                                  title='enum style::properties::LonghandId'>LonghandId</a></td>
+                           <td class='docblock-short'>
+                                <p>An identifier for a given longhand property.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.PropertyDeclaration.html"
+                                  title='enum style::properties::PropertyDeclaration'>PropertyDeclaration</a></td>
+                           <td class='docblock-short'>
+                                <p>Servo&#39;s representation for a property declaration.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.PropertyDeclarationId.html"
+                                  title='enum style::properties::PropertyDeclarationId'>PropertyDeclarationId</a></td>
+                           <td class='docblock-short'>
+                                <p>An identifier for a given property declaration, which can be either a
+longhand or a custom property.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.PropertyId.html"
+                                  title='enum style::properties::PropertyId'>PropertyId</a></td>
+                           <td class='docblock-short'>
+                                <p>Servo&#39;s representation of a CSS property, that is, either a longhand, a
+shorthand, or a custom property.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.ShorthandId.html"
+                                  title='enum style::properties::ShorthandId'>ShorthandId</a></td>
+                           <td class='docblock-short'>
+                                <p>An identifier for a given shorthand property.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.StyleStructRef.html"
+                                  title='enum style::properties::StyleStructRef'>StyleStructRef</a></td>
+                           <td class='docblock-short'>
+                                <p>A reference to a style struct of the parent, or our own style struct.</p>
+                           </td>
+                       </tr></table><h2 id='traits' class='section-header'><a href="#traits">Traits</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.MaybeBoxed.html"
+                                  title='trait style::properties::MaybeBoxed'>MaybeBoxed</a></td>
+                           <td class='docblock-short'>
+                                <p>Conversion with fewer impls than From/Into</p>
+                           </td>
+                       </tr></table><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.adjust_border_width.html"
+                                  title='fn style::properties::adjust_border_width'>adjust_border_width</a></td>
+                           <td class='docblock-short'>
+                                <p>See StyleAdjuster::adjust_for_border_width.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.apply_declarations.html"
+                                  title='fn style::properties::apply_declarations'>apply_declarations</a></td>
+                           <td class='docblock-short'>
+                                <p>NOTE: This function expects the declaration with more priority to appear
+first.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.cascade.html"
+                                  title='fn style::properties::cascade'>cascade</a></td>
+                           <td class='docblock-short'>
+                                <p>Performs the CSS cascade, computing new styles for an element from its parent style.</p>
+                           </td>
+                       </tr></table><h2 id='types' class='section-header'><a href="#types">Type Definitions</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.CascadePropertyFn.html"
+                                  title='type style::properties::CascadePropertyFn'>CascadePropertyFn</a></td>
+                           <td class='docblock-short'>
+                                <p>A per-longhand function that performs the CSS cascade for that longhand.</p>
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "style";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

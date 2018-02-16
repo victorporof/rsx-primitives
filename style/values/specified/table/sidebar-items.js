@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["XSpan","span. for `<col span>` pres attr"]]});

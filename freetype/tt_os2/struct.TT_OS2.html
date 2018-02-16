@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `TT_OS2` struct in crate `freetype`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, TT_OS2">
+
+    <title>freetype::tt_os2::TT_OS2 - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct TT_OS2</p><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.version">version</a><a href="#structfield.xAvgCharWidth">xAvgCharWidth</a><a href="#structfield.usWeightClass">usWeightClass</a><a href="#structfield.usWidthClass">usWidthClass</a><a href="#structfield.fsType">fsType</a><a href="#structfield.ySubscriptXSize">ySubscriptXSize</a><a href="#structfield.ySubscriptYSize">ySubscriptYSize</a><a href="#structfield.ySubscriptXOffset">ySubscriptXOffset</a><a href="#structfield.ySubscriptYOffset">ySubscriptYOffset</a><a href="#structfield.ySuperscriptXSize">ySuperscriptXSize</a><a href="#structfield.ySuperscriptYSize">ySuperscriptYSize</a><a href="#structfield.ySuperscriptXOffset">ySuperscriptXOffset</a><a href="#structfield.ySuperscriptYOffset">ySuperscriptYOffset</a><a href="#structfield.yStrikeoutSize">yStrikeoutSize</a><a href="#structfield.yStrikeoutPosition">yStrikeoutPosition</a><a href="#structfield.sFamilyClass">sFamilyClass</a><a href="#structfield.panose">panose</a><a href="#structfield.ulUnicodeRange1">ulUnicodeRange1</a><a href="#structfield.ulUnicodeRange2">ulUnicodeRange2</a><a href="#structfield.ulUnicodeRange3">ulUnicodeRange3</a><a href="#structfield.ulUnicodeRange4">ulUnicodeRange4</a><a href="#structfield.ulCodePageRange1">ulCodePageRange1</a><a href="#structfield.ulCodePageRange2">ulCodePageRange2</a><a href="#structfield.sxHeight">sxHeight</a><a href="#structfield.sCapHeight">sCapHeight</a><a href="#structfield.usDefaultChar">usDefaultChar</a><a href="#structfield.usBreakChar">usBreakChar</a><a href="#structfield.usMaxContext">usMaxContext</a></div></div><p class='location'><a href='../index.html'>freetype</a>::<wbr><a href='index.html'>tt_os2</a></p><script>window.sidebarCurrent = {name: 'TT_OS2', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>freetype</a>::<wbr><a href='index.html'>tt_os2</a>::<wbr><a class="struct" href=''>TT_OS2</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/freetype/tt_os2.rs.html#13-50' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'><div class="docblock attributes">#[repr(C)]
+</div>pub struct TT_OS2 {
+    pub version: <a class="type" href="../../freetype/freetype/type.FT_UShort.html" title="type freetype::freetype::FT_UShort">FT_UShort</a>,
+    pub xAvgCharWidth: <a class="type" href="../../freetype/freetype/type.FT_Short.html" title="type freetype::freetype::FT_Short">FT_Short</a>,
+    pub usWeightClass: <a class="type" href="../../freetype/freetype/type.FT_UShort.html" title="type freetype::freetype::FT_UShort">FT_UShort</a>,
+    pub usWidthClass: <a class="type" href="../../freetype/freetype/type.FT_UShort.html" title="type freetype::freetype::FT_UShort">FT_UShort</a>,
+    pub fsType: <a class="type" href="../../freetype/freetype/type.FT_Short.html" title="type freetype::freetype::FT_Short">FT_Short</a>,
+    pub ySubscriptXSize: <a class="type" href="../../freetype/freetype/type.FT_Short.html" title="type freetype::freetype::FT_Short">FT_Short</a>,
+    pub ySubscriptYSize: <a class="type" href="../../freetype/freetype/type.FT_Short.html" title="type freetype::freetype::FT_Short">FT_Short</a>,
+    pub ySubscriptXOffset: <a class="type" href="../../freetype/freetype/type.FT_Short.html" title="type freetype::freetype::FT_Short">FT_Short</a>,
+    pub ySubscriptYOffset: <a class="type" href="../../freetype/freetype/type.FT_Short.html" title="type freetype::freetype::FT_Short">FT_Short</a>,
+    pub ySuperscriptXSize: <a class="type" href="../../freetype/freetype/type.FT_Short.html" title="type freetype::freetype::FT_Short">FT_Short</a>,
+    pub ySuperscriptYSize: <a class="type" href="../../freetype/freetype/type.FT_Short.html" title="type freetype::freetype::FT_Short">FT_Short</a>,
+    pub ySuperscriptXOffset: <a class="type" href="../../freetype/freetype/type.FT_Short.html" title="type freetype::freetype::FT_Short">FT_Short</a>,
+    pub ySuperscriptYOffset: <a class="type" href="../../freetype/freetype/type.FT_Short.html" title="type freetype::freetype::FT_Short">FT_Short</a>,
+    pub yStrikeoutSize: <a class="type" href="../../freetype/freetype/type.FT_Short.html" title="type freetype::freetype::FT_Short">FT_Short</a>,
+    pub yStrikeoutPosition: <a class="type" href="../../freetype/freetype/type.FT_Short.html" title="type freetype::freetype::FT_Short">FT_Short</a>,
+    pub sFamilyClass: <a class="type" href="../../freetype/freetype/type.FT_Short.html" title="type freetype::freetype::FT_Short">FT_Short</a>,
+    pub panose: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="type" href="../../freetype/freetype/type.FT_Byte.html" title="type freetype::freetype::FT_Byte">FT_Byte</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 10]</a>,
+    pub ulUnicodeRange1: <a class="type" href="../../freetype/freetype/type.FT_ULong.html" title="type freetype::freetype::FT_ULong">FT_ULong</a>,
+    pub ulUnicodeRange2: <a class="type" href="../../freetype/freetype/type.FT_ULong.html" title="type freetype::freetype::FT_ULong">FT_ULong</a>,
+    pub ulUnicodeRange3: <a class="type" href="../../freetype/freetype/type.FT_ULong.html" title="type freetype::freetype::FT_ULong">FT_ULong</a>,
+    pub ulUnicodeRange4: <a class="type" href="../../freetype/freetype/type.FT_ULong.html" title="type freetype::freetype::FT_ULong">FT_ULong</a>,
+    pub ulCodePageRange1: <a class="type" href="../../freetype/freetype/type.FT_ULong.html" title="type freetype::freetype::FT_ULong">FT_ULong</a>,
+    pub ulCodePageRange2: <a class="type" href="../../freetype/freetype/type.FT_ULong.html" title="type freetype::freetype::FT_ULong">FT_ULong</a>,
+    pub sxHeight: <a class="type" href="../../freetype/freetype/type.FT_Short.html" title="type freetype::freetype::FT_Short">FT_Short</a>,
+    pub sCapHeight: <a class="type" href="../../freetype/freetype/type.FT_Short.html" title="type freetype::freetype::FT_Short">FT_Short</a>,
+    pub usDefaultChar: <a class="type" href="../../freetype/freetype/type.FT_UShort.html" title="type freetype::freetype::FT_UShort">FT_UShort</a>,
+    pub usBreakChar: <a class="type" href="../../freetype/freetype/type.FT_UShort.html" title="type freetype::freetype::FT_UShort">FT_UShort</a>,
+    pub usMaxContext: <a class="type" href="../../freetype/freetype/type.FT_UShort.html" title="type freetype::freetype::FT_UShort">FT_UShort</a>,
+}</pre><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.version" class="structfield small-section-header">
+                           <a href="#structfield.version" class="anchor field"></a>
+                           <span id="version.v" class='invisible'>
+                           <code>version: <a class="type" href="../../freetype/freetype/type.FT_UShort.html" title="type freetype::freetype::FT_UShort">FT_UShort</a></code>
+                           </span></span><span id="structfield.xAvgCharWidth" class="structfield small-section-header">
+                           <a href="#structfield.xAvgCharWidth" class="anchor field"></a>
+                           <span id="xAvgCharWidth.v" class='invisible'>
+                           <code>xAvgCharWidth: <a class="type" href="../../freetype/freetype/type.FT_Short.html" title="type freetype::freetype::FT_Short">FT_Short</a></code>
+                           </span></span><span id="structfield.usWeightClass" class="structfield small-section-header">
+                           <a href="#structfield.usWeightClass" class="anchor field"></a>
+                           <span id="usWeightClass.v" class='invisible'>
+                           <code>usWeightClass: <a class="type" href="../../freetype/freetype/type.FT_UShort.html" title="type freetype::freetype::FT_UShort">FT_UShort</a></code>
+                           </span></span><span id="structfield.usWidthClass" class="structfield small-section-header">
+                           <a href="#structfield.usWidthClass" class="anchor field"></a>
+                           <span id="usWidthClass.v" class='invisible'>
+                           <code>usWidthClass: <a class="type" href="../../freetype/freetype/type.FT_UShort.html" title="type freetype::freetype::FT_UShort">FT_UShort</a></code>
+                           </span></span><span id="structfield.fsType" class="structfield small-section-header">
+                           <a href="#structfield.fsType" class="anchor field"></a>
+                           <span id="fsType.v" class='invisible'>
+                           <code>fsType: <a class="type" href="../../freetype/freetype/type.FT_Short.html" title="type freetype::freetype::FT_Short">FT_Short</a></code>
+                           </span></span><span id="structfield.ySubscriptXSize" class="structfield small-section-header">
+                           <a href="#structfield.ySubscriptXSize" class="anchor field"></a>
+                           <span id="ySubscriptXSize.v" class='invisible'>
+                           <code>ySubscriptXSize: <a class="type" href="../../freetype/freetype/type.FT_Short.html" title="type freetype::freetype::FT_Short">FT_Short</a></code>
+                           </span></span><span id="structfield.ySubscriptYSize" class="structfield small-section-header">
+                           <a href="#structfield.ySubscriptYSize" class="anchor field"></a>
+                           <span id="ySubscriptYSize.v" class='invisible'>
+                           <code>ySubscriptYSize: <a class="type" href="../../freetype/freetype/type.FT_Short.html" title="type freetype::freetype::FT_Short">FT_Short</a></code>
+                           </span></span><span id="structfield.ySubscriptXOffset" class="structfield small-section-header">
+                           <a href="#structfield.ySubscriptXOffset" class="anchor field"></a>
+                           <span id="ySubscriptXOffset.v" class='invisible'>
+                           <code>ySubscriptXOffset: <a class="type" href="../../freetype/freetype/type.FT_Short.html" title="type freetype::freetype::FT_Short">FT_Short</a></code>
+                           </span></span><span id="structfield.ySubscriptYOffset" class="structfield small-section-header">
+                           <a href="#structfield.ySubscriptYOffset" class="anchor field"></a>
+                           <span id="ySubscriptYOffset.v" class='invisible'>
+                           <code>ySubscriptYOffset: <a class="type" href="../../freetype/freetype/type.FT_Short.html" title="type freetype::freetype::FT_Short">FT_Short</a></code>
+                           </span></span><span id="structfield.ySuperscriptXSize" class="structfield small-section-header">
+                           <a href="#structfield.ySuperscriptXSize" class="anchor field"></a>
+                           <span id="ySuperscriptXSize.v" class='invisible'>
+                           <code>ySuperscriptXSize: <a class="type" href="../../freetype/freetype/type.FT_Short.html" title="type freetype::freetype::FT_Short">FT_Short</a></code>
+                           </span></span><span id="structfield.ySuperscriptYSize" class="structfield small-section-header">
+                           <a href="#structfield.ySuperscriptYSize" class="anchor field"></a>
+                           <span id="ySuperscriptYSize.v" class='invisible'>
+                           <code>ySuperscriptYSize: <a class="type" href="../../freetype/freetype/type.FT_Short.html" title="type freetype::freetype::FT_Short">FT_Short</a></code>
+                           </span></span><span id="structfield.ySuperscriptXOffset" class="structfield small-section-header">
+                           <a href="#structfield.ySuperscriptXOffset" class="anchor field"></a>
+                           <span id="ySuperscriptXOffset.v" class='invisible'>
+                           <code>ySuperscriptXOffset: <a class="type" href="../../freetype/freetype/type.FT_Short.html" title="type freetype::freetype::FT_Short">FT_Short</a></code>
+                           </span></span><span id="structfield.ySuperscriptYOffset" class="structfield small-section-header">
+                           <a href="#structfield.ySuperscriptYOffset" class="anchor field"></a>
+                           <span id="ySuperscriptYOffset.v" class='invisible'>
+                           <code>ySuperscriptYOffset: <a class="type" href="../../freetype/freetype/type.FT_Short.html" title="type freetype::freetype::FT_Short">FT_Short</a></code>
+                           </span></span><span id="structfield.yStrikeoutSize" class="structfield small-section-header">
+                           <a href="#structfield.yStrikeoutSize" class="anchor field"></a>
+                           <span id="yStrikeoutSize.v" class='invisible'>
+                           <code>yStrikeoutSize: <a class="type" href="../../freetype/freetype/type.FT_Short.html" title="type freetype::freetype::FT_Short">FT_Short</a></code>
+                           </span></span><span id="structfield.yStrikeoutPosition" class="structfield small-section-header">
+                           <a href="#structfield.yStrikeoutPosition" class="anchor field"></a>
+                           <span id="yStrikeoutPosition.v" class='invisible'>
+                           <code>yStrikeoutPosition: <a class="type" href="../../freetype/freetype/type.FT_Short.html" title="type freetype::freetype::FT_Short">FT_Short</a></code>
+                           </span></span><span id="structfield.sFamilyClass" class="structfield small-section-header">
+                           <a href="#structfield.sFamilyClass" class="anchor field"></a>
+                           <span id="sFamilyClass.v" class='invisible'>
+                           <code>sFamilyClass: <a class="type" href="../../freetype/freetype/type.FT_Short.html" title="type freetype::freetype::FT_Short">FT_Short</a></code>
+                           </span></span><span id="structfield.panose" class="structfield small-section-header">
+                           <a href="#structfield.panose" class="anchor field"></a>
+                           <span id="panose.v" class='invisible'>
+                           <code>panose: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="type" href="../../freetype/freetype/type.FT_Byte.html" title="type freetype::freetype::FT_Byte">FT_Byte</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 10]</a></code>
+                           </span></span><span id="structfield.ulUnicodeRange1" class="structfield small-section-header">
+                           <a href="#structfield.ulUnicodeRange1" class="anchor field"></a>
+                           <span id="ulUnicodeRange1.v" class='invisible'>
+                           <code>ulUnicodeRange1: <a class="type" href="../../freetype/freetype/type.FT_ULong.html" title="type freetype::freetype::FT_ULong">FT_ULong</a></code>
+                           </span></span><span id="structfield.ulUnicodeRange2" class="structfield small-section-header">
+                           <a href="#structfield.ulUnicodeRange2" class="anchor field"></a>
+                           <span id="ulUnicodeRange2.v" class='invisible'>
+                           <code>ulUnicodeRange2: <a class="type" href="../../freetype/freetype/type.FT_ULong.html" title="type freetype::freetype::FT_ULong">FT_ULong</a></code>
+                           </span></span><span id="structfield.ulUnicodeRange3" class="structfield small-section-header">
+                           <a href="#structfield.ulUnicodeRange3" class="anchor field"></a>
+                           <span id="ulUnicodeRange3.v" class='invisible'>
+                           <code>ulUnicodeRange3: <a class="type" href="../../freetype/freetype/type.FT_ULong.html" title="type freetype::freetype::FT_ULong">FT_ULong</a></code>
+                           </span></span><span id="structfield.ulUnicodeRange4" class="structfield small-section-header">
+                           <a href="#structfield.ulUnicodeRange4" class="anchor field"></a>
+                           <span id="ulUnicodeRange4.v" class='invisible'>
+                           <code>ulUnicodeRange4: <a class="type" href="../../freetype/freetype/type.FT_ULong.html" title="type freetype::freetype::FT_ULong">FT_ULong</a></code>
+                           </span></span><span id="structfield.ulCodePageRange1" class="structfield small-section-header">
+                           <a href="#structfield.ulCodePageRange1" class="anchor field"></a>
+                           <span id="ulCodePageRange1.v" class='invisible'>
+                           <code>ulCodePageRange1: <a class="type" href="../../freetype/freetype/type.FT_ULong.html" title="type freetype::freetype::FT_ULong">FT_ULong</a></code>
+                           </span></span><span id="structfield.ulCodePageRange2" class="structfield small-section-header">
+                           <a href="#structfield.ulCodePageRange2" class="anchor field"></a>
+                           <span id="ulCodePageRange2.v" class='invisible'>
+                           <code>ulCodePageRange2: <a class="type" href="../../freetype/freetype/type.FT_ULong.html" title="type freetype::freetype::FT_ULong">FT_ULong</a></code>
+                           </span></span><span id="structfield.sxHeight" class="structfield small-section-header">
+                           <a href="#structfield.sxHeight" class="anchor field"></a>
+                           <span id="sxHeight.v" class='invisible'>
+                           <code>sxHeight: <a class="type" href="../../freetype/freetype/type.FT_Short.html" title="type freetype::freetype::FT_Short">FT_Short</a></code>
+                           </span></span><span id="structfield.sCapHeight" class="structfield small-section-header">
+                           <a href="#structfield.sCapHeight" class="anchor field"></a>
+                           <span id="sCapHeight.v" class='invisible'>
+                           <code>sCapHeight: <a class="type" href="../../freetype/freetype/type.FT_Short.html" title="type freetype::freetype::FT_Short">FT_Short</a></code>
+                           </span></span><span id="structfield.usDefaultChar" class="structfield small-section-header">
+                           <a href="#structfield.usDefaultChar" class="anchor field"></a>
+                           <span id="usDefaultChar.v" class='invisible'>
+                           <code>usDefaultChar: <a class="type" href="../../freetype/freetype/type.FT_UShort.html" title="type freetype::freetype::FT_UShort">FT_UShort</a></code>
+                           </span></span><span id="structfield.usBreakChar" class="structfield small-section-header">
+                           <a href="#structfield.usBreakChar" class="anchor field"></a>
+                           <span id="usBreakChar.v" class='invisible'>
+                           <code>usBreakChar: <a class="type" href="../../freetype/freetype/type.FT_UShort.html" title="type freetype::freetype::FT_UShort">FT_UShort</a></code>
+                           </span></span><span id="structfield.usMaxContext" class="structfield small-section-header">
+                           <a href="#structfield.usMaxContext" class="anchor field"></a>
+                           <span id="usMaxContext.v" class='invisible'>
+                           <code>usMaxContext: <a class="type" href="../../freetype/freetype/type.FT_UShort.html" title="type freetype::freetype::FT_UShort">FT_UShort</a></code>
+                           </span></span></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "freetype";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

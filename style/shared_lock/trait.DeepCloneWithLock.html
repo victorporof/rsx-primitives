@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `DeepCloneWithLock` trait in crate `style`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, DeepCloneWithLock">
+
+    <title>style::shared_lock::DeepCloneWithLock - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc trait">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Trait DeepCloneWithLock</p><div class="block items"><a class="sidebar-title" href="#required-methods">Required Methods</a><div class="sidebar-links"><a href="#tymethod.deep_clone_with_lock">deep_clone_with_lock</a></div><a class="sidebar-title" href="#implementors">Implementors</a></div><p class='location'><a href='../index.html'>style</a>::<wbr><a href='index.html'>shared_lock</a></p><script>window.sidebarCurrent = {name: 'DeepCloneWithLock', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Trait <a href='../index.html'>style</a>::<wbr><a href='index.html'>shared_lock</a>::<wbr><a class="trait" href=''>DeepCloneWithLock</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/style/shared_lock.rs.html#253-261' title='goto source code'>[src]</a></span></h1>
+<pre class='rust trait'>pub trait DeepCloneWithLock: <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a> {
+    fn <a href='#tymethod.deep_clone_with_lock' class='fnname'>deep_clone_with_lock</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lock: &amp;<a class="struct" href="../../style/shared_lock/struct.SharedRwLock.html" title="struct style::shared_lock::SharedRwLock">SharedRwLock</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;guard: &amp;<a class="struct" href="../../style/shared_lock/struct.SharedRwLockReadGuard.html" title="struct style::shared_lock::SharedRwLockReadGuard">SharedRwLockReadGuard</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;params: &amp;<a class="struct" href="../../style/shared_lock/struct.DeepCloneParams.html" title="struct style::shared_lock::DeepCloneParams">DeepCloneParams</a><br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; Self;
+}</pre><div class='docblock'><p>A trait to do a deep clone of a given CSS type. Gets a lock and a read
+guard, in order to be able to read and clone nested structures.</p>
+</div>
+            <h2 id='required-methods' class='small-section-header'>
+              Required Methods<a href='#required-methods' class='anchor'></a>
+            </h2>
+            <div class='methods'>
+        <h3 id='tymethod.deep_clone_with_lock' class='method'><span id='deep_clone_with_lock.v' class='invisible'><code>fn <a href='#tymethod.deep_clone_with_lock' class='fnname'>deep_clone_with_lock</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;lock: &amp;<a class="struct" href="../../style/shared_lock/struct.SharedRwLock.html" title="struct style::shared_lock::SharedRwLock">SharedRwLock</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;guard: &amp;<a class="struct" href="../../style/shared_lock/struct.SharedRwLockReadGuard.html" title="struct style::shared_lock::SharedRwLockReadGuard">SharedRwLockReadGuard</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;params: &amp;<a class="struct" href="../../style/shared_lock/struct.DeepCloneParams.html" title="struct style::shared_lock::DeepCloneParams">DeepCloneParams</a><br>) -&gt; Self</code></span></h3><div class='docblock'><p>Deep clones this object.</p>
+</div></div>
+        <h2 id='implementors' class='small-section-header'>
+          Implementors<a href='#implementors' class='anchor'></a>
+        </h2>
+        <ul class='item-list' id='implementors-list'>
+    <li><div class='out-of-band'><a class='srclink' href='../../src/style/stylesheets/document_rule.rs.html#56-71' title='goto source code'>[src]</a></div><code>impl DeepCloneWithLock for <a class="struct" href="../../style/stylesheets/struct.DocumentRule.html" title="struct style::stylesheets::DocumentRule">DocumentRule</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/style/stylesheets/import_rule.rs.html#63-74' title='goto source code'>[src]</a></div><code>impl DeepCloneWithLock for <a class="struct" href="../../style/stylesheets/import_rule/struct.ImportSheet.html" title="struct style::stylesheets::import_rule::ImportSheet">ImportSheet</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/style/stylesheets/import_rule.rs.html#94-107' title='goto source code'>[src]</a></div><code>impl DeepCloneWithLock for <a class="struct" href="../../style/stylesheets/import_rule/struct.ImportRule.html" title="struct style::stylesheets::import_rule::ImportRule">ImportRule</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/style/stylesheets/keyframes_rule.rs.html#75-95' title='goto source code'>[src]</a></div><code>impl DeepCloneWithLock for <a class="struct" href="../../style/stylesheets/keyframes_rule/struct.KeyframesRule.html" title="struct style::stylesheets::keyframes_rule::KeyframesRule">KeyframesRule</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/style/stylesheets/keyframes_rule.rs.html#240-254' title='goto source code'>[src]</a></div><code>impl DeepCloneWithLock for <a class="struct" href="../../style/stylesheets/keyframes_rule/struct.Keyframe.html" title="struct style::stylesheets::keyframes_rule::Keyframe">Keyframe</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/style/stylesheets/media_rule.rs.html#53-68' title='goto source code'>[src]</a></div><code>impl DeepCloneWithLock for <a class="struct" href="../../style/stylesheets/struct.MediaRule.html" title="struct style::stylesheets::MediaRule">MediaRule</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/style/stylesheets/page_rule.rs.html#60-72' title='goto source code'>[src]</a></div><code>impl DeepCloneWithLock for <a class="struct" href="../../style/stylesheets/struct.PageRule.html" title="struct style::stylesheets::PageRule">PageRule</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/style/stylesheets/rule_list.rs.html#29-40' title='goto source code'>[src]</a></div><code>impl DeepCloneWithLock for <a class="struct" href="../../style/stylesheets/struct.CssRules.html" title="struct style::stylesheets::CssRules">CssRules</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/style/stylesheets/style_rule.rs.html#29-43' title='goto source code'>[src]</a></div><code>impl DeepCloneWithLock for <a class="struct" href="../../style/stylesheets/struct.StyleRule.html" title="struct style::stylesheets::StyleRule">StyleRule</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/style/stylesheets/stylesheet.rs.html#133-155' title='goto source code'>[src]</a></div><code>impl DeepCloneWithLock for <a class="struct" href="../../style/stylesheets/struct.StylesheetContents.html" title="struct style::stylesheets::StylesheetContents">StylesheetContents</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/style/stylesheets/supports_rule.rs.html#57-72' title='goto source code'>[src]</a></div><code>impl DeepCloneWithLock for <a class="struct" href="../../style/stylesheets/supports_rule/struct.SupportsRule.html" title="struct style::stylesheets::supports_rule::SupportsRule">SupportsRule</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/style/stylesheets/mod.rs.html#278-346' title='goto source code'>[src]</a></div><code>impl DeepCloneWithLock for <a class="enum" href="../../style/stylesheets/enum.CssRule.html" title="enum style::stylesheets::CssRule">CssRule</a></code></li>
+</ul><script type="text/javascript" async
+                         src="../../implementors/style/shared_lock/trait.DeepCloneWithLock.js">
+                 </script></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "style";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

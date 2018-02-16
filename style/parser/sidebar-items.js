@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["ParserContext","The data that the parser needs from outside in order to parse a stylesheet."],["ParserErrorContext","The context required to report a parse error."]],"trait":[["Parse","A trait to abstract parsing of a specified value given a `ParserContext` and CSS input."]]});

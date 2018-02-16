@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `StyleStructRef` enum in crate `style`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, StyleStructRef">
+
+    <title>style::properties::StyleStructRef - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc enum">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Enum StyleStructRef</p><div class="block items"><a class="sidebar-title" href="#variants">Variants</a><div class="sidebar-links"><a href="#variant.Borrowed">Borrowed</a><a href="#variant.Owned">Owned</a><a href="#variant.Vacated">Vacated</a></div><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.mutate">mutate</a><a href="#method.take">take</a><a href="#method.put">put</a><a href="#method.get_if_mutated">get_if_mutated</a><a href="#method.build">build</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Deref">Deref</a></div></div><p class='location'><a href='../index.html'>style</a>::<wbr><a href='index.html'>properties</a></p><script>window.sidebarCurrent = {name: 'StyleStructRef', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../index.html'>style</a>::<wbr><a href='index.html'>properties</a>::<wbr><a class="enum" href=''>StyleStructRef</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#67373-67380' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum StyleStructRef&lt;'a, T:&nbsp;'static&gt; {
+    Borrowed(&amp;'a <a class="struct" href="../../style/properties/struct.BuilderArc.html" title="struct style::properties::BuilderArc">BuilderArc</a>&lt;T&gt;),
+    Owned(<a class="struct" href="../../servo_arc/struct.UniqueArc.html" title="struct servo_arc::UniqueArc">UniqueArc</a>&lt;T&gt;),
+    Vacated,
+}</pre><div class='docblock'><p>A reference to a style struct of the parent, or our own style struct.</p>
+</div><h2 id='variants' class='variants small-section-header'>
+                   Variants<a href='#variants' class='anchor'></a></h2>
+<span id="variant.Borrowed" class="variant small-section-header"><a href="#variant.Borrowed" class="anchor field"></a><span id='Borrowed.v' class='invisible'><code>Borrowed(&amp;'a <a class="struct" href="../../style/properties/struct.BuilderArc.html" title="struct style::properties::BuilderArc">BuilderArc</a>&lt;T&gt;)</code></span></span><div class='docblock'><p>A borrowed struct from the parent, for example, for inheriting style.</p>
+</div><span id="variant.Owned" class="variant small-section-header"><a href="#variant.Owned" class="anchor field"></a><span id='Owned.v' class='invisible'><code>Owned(<a class="struct" href="../../servo_arc/struct.UniqueArc.html" title="struct servo_arc::UniqueArc">UniqueArc</a>&lt;T&gt;)</code></span></span><div class='docblock'><p>An owned struct, that we&#39;ve already mutated.</p>
+</div><span id="variant.Vacated" class="variant small-section-header"><a href="#variant.Vacated" class="anchor field"></a><span id='Vacated.v' class='invisible'><code>Vacated</code></span></span><div class='docblock'><p>Temporarily vacated, will panic if accessed</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl&lt;'a, T:&nbsp;'a&gt; <a class="enum" href="../../style/properties/enum.StyleStructRef.html" title="enum style::properties::StyleStructRef">StyleStructRef</a>&lt;'a, T&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a>,&nbsp;</span></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#67382-67440' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.mutate' class="method"><span id='mutate.v' class='invisible'><code>pub fn <a href='#method.mutate' class='fnname'>mutate</a>(&amp;mut self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>T</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#67387-67397' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Ensure a mutable reference of this value exists, either cloning the
+borrowed value, or returning the owned one.</p>
+</div><h4 id='method.take' class="method"><span id='take.v' class='invisible'><code>pub fn <a href='#method.take' class='fnname'>take</a>(&amp;mut self) -&gt; <a class="struct" href="../../servo_arc/struct.UniqueArc.html" title="struct servo_arc::UniqueArc">UniqueArc</a>&lt;T&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#67404-67413' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Extract a unique Arc from this struct, vacating it.</p>
+
+<p>The vacated state is a transient one, please put the Arc back
+when done via <code>put()</code>. This function is to be used to separate
+the struct being mutated from the computed context</p>
+</div><h4 id='method.put' class="method"><span id='put.v' class='invisible'><code>pub fn <a href='#method.put' class='fnname'>put</a>(&amp;mut self, arc: <a class="struct" href="../../servo_arc/struct.UniqueArc.html" title="struct servo_arc::UniqueArc">UniqueArc</a>&lt;T&gt;)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#67416-67419' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Replace vacated ref with an arc</p>
+</div><h4 id='method.get_if_mutated' class="method"><span id='get_if_mutated.v' class='invisible'><code>pub fn <a href='#method.get_if_mutated' class='fnname'>get_if_mutated</a>(&amp;mut self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>T&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#67423-67429' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Get a mutable reference to the owned struct, or <code>None</code> if the struct
+hasn&#39;t been mutated.</p>
+</div><h4 id='method.build' class="method"><span id='build.v' class='invisible'><code>pub fn <a href='#method.build' class='fnname'>build</a>(self) -&gt; <a class="struct" href="../../style/properties/struct.BuilderArc.html" title="struct style::properties::BuilderArc">Arc</a>&lt;T&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#67433-67439' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns an <code>Arc</code> to the internal struct, constructing one if
+appropriate.</p>
+</div></div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Deref' class='impl'><span class='in-band'><code>impl&lt;'a, T:&nbsp;'a&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/deref/trait.Deref.html" title="trait core::ops::deref::Deref">Deref</a> for <a class="enum" href="../../style/properties/enum.StyleStructRef.html" title="enum style::properties::StyleStructRef">StyleStructRef</a>&lt;'a, T&gt;</code><a href='#impl-Deref' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#67442-67452' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Target' class="type"><span id='Target.t' class='invisible'><code>type <a href='https://doc.rust-lang.org/nightly/core/ops/deref/trait.Deref.html#associatedtype.Target' class="type">Target</a> = T</code></span></h4>
+<div class='docblock'><p>The resulting type after dereferencing.</p>
+</div><h4 id='method.deref' class="method"><span id='deref.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/deref/trait.Deref.html#tymethod.deref' class='fnname'>deref</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>T</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#67445-67451' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Dereferences the value.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "style";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

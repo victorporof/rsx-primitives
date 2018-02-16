@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `ServoElementSnapshot` struct in crate `style`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, ServoElementSnapshot">
+
+    <title>style::servo::selector_parser::ServoElementSnapshot - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct ServoElementSnapshot</p><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.state">state</a><a href="#structfield.attrs">attrs</a><a href="#structfield.is_html_element_in_html_document">is_html_element_in_html_document</a><a href="#structfield.class_changed">class_changed</a><a href="#structfield.id_changed">id_changed</a><a href="#structfield.other_attributes_changed">other_attributes_changed</a></div><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.new">new</a><a href="#method.id_changed">id_changed</a><a href="#method.class_changed">class_changed</a><a href="#method.other_attr_changed">other_attr_changed</a><a href="#method.attr_matches">attr_matches</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Debug">Debug</a><a href="#impl-MallocSizeOf">MallocSizeOf</a><a href="#impl-ElementSnapshot">ElementSnapshot</a></div></div><p class='location'><a href='../../index.html'>style</a>::<wbr><a href='../index.html'>servo</a>::<wbr><a href='index.html'>selector_parser</a></p><script>window.sidebarCurrent = {name: 'ServoElementSnapshot', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>style</a>::<wbr><a href='../index.html'>servo</a>::<wbr><a href='index.html'>selector_parser</a>::<wbr><a class="struct" href=''>ServoElementSnapshot</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#595-608' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct ServoElementSnapshot {
+    pub state: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../../../style/element_state/struct.ElementState.html" title="struct style::element_state::ElementState">ElementState</a>&gt;,
+    pub attrs: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a><a class="struct" href="../../../style/attr/struct.AttrIdentifier.html" title="struct style::attr::AttrIdentifier">AttrIdentifier</a>, <a class="enum" href="../../../style/attr/enum.AttrValue.html" title="enum style::attr::AttrValue">AttrValue</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a>&gt;&gt;,
+    pub is_html_element_in_html_document: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
+    pub class_changed: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
+    pub id_changed: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
+    pub other_attributes_changed: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
+}</pre><div class='docblock'><p>Servo&#39;s version of an element snapshot.</p>
+</div><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.state" class="structfield small-section-header">
+                           <a href="#structfield.state" class="anchor field"></a>
+                           <span id="state.v" class='invisible'>
+                           <code>state: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../../../style/element_state/struct.ElementState.html" title="struct style::element_state::ElementState">ElementState</a>&gt;</code>
+                           </span></span><div class='docblock'><p>The stored state of the element.</p>
+</div><span id="structfield.attrs" class="structfield small-section-header">
+                           <a href="#structfield.attrs" class="anchor field"></a>
+                           <span id="attrs.v" class='invisible'>
+                           <code>attrs: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a><a class="struct" href="../../../style/attr/struct.AttrIdentifier.html" title="struct style::attr::AttrIdentifier">AttrIdentifier</a>, <a class="enum" href="../../../style/attr/enum.AttrValue.html" title="enum style::attr::AttrValue">AttrValue</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a>&gt;&gt;</code>
+                           </span></span><div class='docblock'><p>The set of stored attributes and its values.</p>
+</div><span id="structfield.is_html_element_in_html_document" class="structfield small-section-header">
+                           <a href="#structfield.is_html_element_in_html_document" class="anchor field"></a>
+                           <span id="is_html_element_in_html_document.v" class='invisible'>
+                           <code>is_html_element_in_html_document: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code>
+                           </span></span><div class='docblock'><p>Whether this element is an HTML element in an HTML document.</p>
+</div><span id="structfield.class_changed" class="structfield small-section-header">
+                           <a href="#structfield.class_changed" class="anchor field"></a>
+                           <span id="class_changed.v" class='invisible'>
+                           <code>class_changed: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code>
+                           </span></span><div class='docblock'><p>Whether the class attribute changed or not.</p>
+</div><span id="structfield.id_changed" class="structfield small-section-header">
+                           <a href="#structfield.id_changed" class="anchor field"></a>
+                           <span id="id_changed.v" class='invisible'>
+                           <code>id_changed: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code>
+                           </span></span><div class='docblock'><p>Whether the id attribute changed or not.</p>
+</div><span id="structfield.other_attributes_changed" class="structfield small-section-header">
+                           <a href="#structfield.other_attributes_changed" class="anchor field"></a>
+                           <span id="other_attributes_changed.v" class='invisible'>
+                           <code>other_attributes_changed: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code>
+                           </span></span><div class='docblock'><p>Whether other attributes other than id or class changed or not.</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="struct" href="../../../style/servo/selector_parser/struct.ServoElementSnapshot.html" title="struct style::servo::selector_parser::ServoElementSnapshot">ServoElementSnapshot</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#610-650' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class="method"><span id='new.v' class='invisible'><code>pub fn <a href='#method.new' class='fnname'>new</a>(is_html_element_in_html_document: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#612-621' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Create an empty element snapshot.</p>
+</div><h4 id='method.id_changed' class="method"><span id='id_changed.v-1' class='invisible'><code>pub fn <a href='#method.id_changed' class='fnname'>id_changed</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#624-626' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns whether the id attribute changed or not.</p>
+</div><h4 id='method.class_changed' class="method"><span id='class_changed.v-1' class='invisible'><code>pub fn <a href='#method.class_changed' class='fnname'>class_changed</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#629-631' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns whether the class attribute changed or not.</p>
+</div><h4 id='method.other_attr_changed' class="method"><span id='other_attr_changed.v' class='invisible'><code>pub fn <a href='#method.other_attr_changed' class='fnname'>other_attr_changed</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#634-636' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns whether other attributes other than id or class changed or not.</p>
+</div></div><h3 id='impl-1' class='impl'><span class='in-band'><code>impl <a class="struct" href="../../../style/servo/selector_parser/struct.ServoElementSnapshot.html" title="struct style::servo::selector_parser::ServoElementSnapshot">ServoElementSnapshot</a></code><a href='#impl-1' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#687-704' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.attr_matches' class="method"><span id='attr_matches.v' class='invisible'><code>pub fn <a href='#method.attr_matches' class='fnname'>attr_matches</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;ns: &amp;<a class="enum" href="../../../selectors/attr/enum.NamespaceConstraint.html" title="enum selectors::attr::NamespaceConstraint">NamespaceConstraint</a>&lt;&amp;<a class="type" href="../../../style/type.Namespace.html" title="type style::Namespace">Namespace</a>&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;local_name: &amp;<a class="type" href="../../../style/type.LocalName.html" title="type style::LocalName">LocalName</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;operation: &amp;<a class="enum" href="../../../selectors/attr/enum.AttrSelectorOperation.html" title="enum selectors::attr::AttrSelectorOperation">AttrSelectorOperation</a>&lt;&amp;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#689-703' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>selectors::Element::attr_matches</p>
+</div></div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../../../style/servo/selector_parser/struct.ServoElementSnapshot.html" title="struct style::servo::selector_parser::ServoElementSnapshot">ServoElementSnapshot</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#593' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#593' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div><h3 id='impl-MallocSizeOf' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../../malloc_size_of/trait.MallocSizeOf.html" title="trait malloc_size_of::MallocSizeOf">MallocSizeOf</a> for <a class="struct" href="../../../style/servo/selector_parser/struct.ServoElementSnapshot.html" title="struct style::servo::selector_parser::ServoElementSnapshot">ServoElementSnapshot</a></code><a href='#impl-MallocSizeOf' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#594-1' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.size_of' class="method"><span id='size_of.v' class='invisible'><code>fn <a href='../../../malloc_size_of/trait.MallocSizeOf.html#tymethod.size_of' class='fnname'>size_of</a>(&amp;self, ops: &amp;mut <a class="struct" href="../../../malloc_size_of/struct.MallocSizeOfOps.html" title="struct malloc_size_of::MallocSizeOfOps">MallocSizeOfOps</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#594' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Measure the heap usage of all descendant heap-allocated structures, but not the space taken up by the value itself. <a href="../../../malloc_size_of/trait.MallocSizeOf.html#tymethod.size_of">Read more</a></p>
+</div></div><h3 id='impl-ElementSnapshot' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../../style/invalidation/element/element_wrapper/trait.ElementSnapshot.html" title="trait style::invalidation::element::element_wrapper::ElementSnapshot">ElementSnapshot</a> for <a class="struct" href="../../../style/servo/selector_parser/struct.ServoElementSnapshot.html" title="struct style::servo::selector_parser::ServoElementSnapshot">ServoElementSnapshot</a></code><a href='#impl-ElementSnapshot' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#652-685' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.state' class="method"><span id='state.v-1' class='invisible'><code>fn <a href='../../../style/invalidation/element/element_wrapper/trait.ElementSnapshot.html#tymethod.state' class='fnname'>state</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../../../style/element_state/struct.ElementState.html" title="struct style::element_state::ElementState">ElementState</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#653-655' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>The state of the snapshot, if any.</p>
+</div><h4 id='method.has_attrs' class="method"><span id='has_attrs.v' class='invisible'><code>fn <a href='../../../style/invalidation/element/element_wrapper/trait.ElementSnapshot.html#tymethod.has_attrs' class='fnname'>has_attrs</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#657-659' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>If this snapshot contains attribute information.</p>
+</div><h4 id='method.id_attr' class="method"><span id='id_attr.v' class='invisible'><code>fn <a href='../../../style/invalidation/element/element_wrapper/trait.ElementSnapshot.html#tymethod.id_attr' class='fnname'>id_attr</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="type" href="../../../style/type.Atom.html" title="type style::Atom">Atom</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#661-663' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>The ID attribute per this snapshot. Should only be called if <code>has_attrs()</code> returns true. <a href="../../../style/invalidation/element/element_wrapper/trait.ElementSnapshot.html#tymethod.id_attr">Read more</a></p>
+</div><h4 id='method.has_class' class="method"><span id='has_class.v' class='invisible'><code>fn <a href='../../../style/invalidation/element/element_wrapper/trait.ElementSnapshot.html#tymethod.has_class' class='fnname'>has_class</a>(&amp;self, name: &amp;<a class="type" href="../../../style/type.Atom.html" title="type style::Atom">Atom</a>, case_sensitivity: <a class="enum" href="../../../selectors/attr/enum.CaseSensitivity.html" title="enum selectors::attr::CaseSensitivity">CaseSensitivity</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#665-668' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Whether this snapshot contains the class <code>name</code>. Should only be called if <code>has_attrs()</code> returns true. <a href="../../../style/invalidation/element/element_wrapper/trait.ElementSnapshot.html#tymethod.has_class">Read more</a></p>
+</div><h4 id='method.each_class' class="method"><span id='each_class.v' class='invisible'><code>fn <a href='../../../style/invalidation/element/element_wrapper/trait.ElementSnapshot.html#tymethod.each_class' class='fnname'>each_class</a>&lt;F&gt;(&amp;self, callback: F) <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&amp;<a class="type" href="../../../style/type.Atom.html" title="type style::Atom">Atom</a>),&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#670-678' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>A callback that should be called for each class of the snapshot. Should only be called if <code>has_attrs()</code> returns true. <a href="../../../style/invalidation/element/element_wrapper/trait.ElementSnapshot.html#tymethod.each_class">Read more</a></p>
+</div><h4 id='method.lang_attr' class="method"><span id='lang_attr.v' class='invisible'><code>fn <a href='../../../style/invalidation/element/element_wrapper/trait.ElementSnapshot.html#tymethod.lang_attr' class='fnname'>lang_attr</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="type" href="../../../style/selector_parser/type.AttrValue.html" title="type style::selector_parser::AttrValue">SelectorAttrValue</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#680-684' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>The <code>xml:lang=&quot;&quot;</code> or <code>lang=&quot;&quot;</code> attribute value per this snapshot.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "style";
+    </script>
+    <script src="../../../main.js"></script>
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

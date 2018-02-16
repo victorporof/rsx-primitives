@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `ContextualParseError` enum in crate `style`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, ContextualParseError">
+
+    <title>style::error_reporting::ContextualParseError - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc enum">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Enum ContextualParseError</p><div class="block items"><a class="sidebar-title" href="#variants">Variants</a><div class="sidebar-links"><a href="#variant.UnsupportedPropertyDeclaration">UnsupportedPropertyDeclaration</a><a href="#variant.UnsupportedFontFaceDescriptor">UnsupportedFontFaceDescriptor</a><a href="#variant.UnsupportedFontFeatureValuesDescriptor">UnsupportedFontFeatureValuesDescriptor</a><a href="#variant.InvalidKeyframeRule">InvalidKeyframeRule</a><a href="#variant.InvalidFontFeatureValuesRule">InvalidFontFeatureValuesRule</a><a href="#variant.UnsupportedKeyframePropertyDeclaration">UnsupportedKeyframePropertyDeclaration</a><a href="#variant.InvalidRule">InvalidRule</a><a href="#variant.UnsupportedRule">UnsupportedRule</a><a href="#variant.UnsupportedViewportDescriptorDeclaration">UnsupportedViewportDescriptorDeclaration</a><a href="#variant.UnsupportedCounterStyleDescriptorDeclaration">UnsupportedCounterStyleDescriptorDeclaration</a><a href="#variant.InvalidCounterStyleWithoutSymbols">InvalidCounterStyleWithoutSymbols</a><a href="#variant.InvalidCounterStyleNotEnoughSymbols">InvalidCounterStyleNotEnoughSymbols</a><a href="#variant.InvalidCounterStyleWithoutAdditiveSymbols">InvalidCounterStyleWithoutAdditiveSymbols</a><a href="#variant.InvalidCounterStyleExtendsWithSymbols">InvalidCounterStyleExtendsWithSymbols</a><a href="#variant.InvalidCounterStyleExtendsWithAdditiveSymbols">InvalidCounterStyleExtendsWithAdditiveSymbols</a><a href="#variant.InvalidMediaRule">InvalidMediaRule</a><a href="#variant.UnsupportedValue">UnsupportedValue</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Display">Display</a></div></div><p class='location'><a href='../index.html'>style</a>::<wbr><a href='index.html'>error_reporting</a></p><script>window.sidebarCurrent = {name: 'ContextualParseError', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../index.html'>style</a>::<wbr><a href='index.html'>error_reporting</a>::<wbr><a class="enum" href=''>ContextualParseError</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/style/error_reporting.rs.html#16-51' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum ContextualParseError&lt;'a&gt; {
+    UnsupportedPropertyDeclaration(&amp;'a <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>,&nbsp;<a class="type" href="../../style_traits/type.ParseError.html" title="type style_traits::ParseError">ParseError</a>&lt;'a&gt;),
+    UnsupportedFontFaceDescriptor(&amp;'a <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>,&nbsp;<a class="type" href="../../style_traits/type.ParseError.html" title="type style_traits::ParseError">ParseError</a>&lt;'a&gt;),
+    UnsupportedFontFeatureValuesDescriptor(&amp;'a <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>,&nbsp;<a class="type" href="../../style_traits/type.ParseError.html" title="type style_traits::ParseError">ParseError</a>&lt;'a&gt;),
+    InvalidKeyframeRule(&amp;'a <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>,&nbsp;<a class="type" href="../../style_traits/type.ParseError.html" title="type style_traits::ParseError">ParseError</a>&lt;'a&gt;),
+    InvalidFontFeatureValuesRule(&amp;'a <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>,&nbsp;<a class="type" href="../../style_traits/type.ParseError.html" title="type style_traits::ParseError">ParseError</a>&lt;'a&gt;),
+    UnsupportedKeyframePropertyDeclaration(&amp;'a <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>,&nbsp;<a class="type" href="../../style_traits/type.ParseError.html" title="type style_traits::ParseError">ParseError</a>&lt;'a&gt;),
+    InvalidRule(&amp;'a <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>,&nbsp;<a class="type" href="../../style_traits/type.ParseError.html" title="type style_traits::ParseError">ParseError</a>&lt;'a&gt;),
+    UnsupportedRule(&amp;'a <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>,&nbsp;<a class="type" href="../../style_traits/type.ParseError.html" title="type style_traits::ParseError">ParseError</a>&lt;'a&gt;),
+    UnsupportedViewportDescriptorDeclaration(&amp;'a <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>,&nbsp;<a class="type" href="../../style_traits/type.ParseError.html" title="type style_traits::ParseError">ParseError</a>&lt;'a&gt;),
+    UnsupportedCounterStyleDescriptorDeclaration(&amp;'a <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>,&nbsp;<a class="type" href="../../style_traits/type.ParseError.html" title="type style_traits::ParseError">ParseError</a>&lt;'a&gt;),
+    InvalidCounterStyleWithoutSymbols(<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>),
+    InvalidCounterStyleNotEnoughSymbols(<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>),
+    InvalidCounterStyleWithoutAdditiveSymbols,
+    InvalidCounterStyleExtendsWithSymbols,
+    InvalidCounterStyleExtendsWithAdditiveSymbols,
+    InvalidMediaRule(&amp;'a <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>,&nbsp;<a class="type" href="../../style_traits/type.ParseError.html" title="type style_traits::ParseError">ParseError</a>&lt;'a&gt;),
+    UnsupportedValue(&amp;'a <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>,&nbsp;<a class="type" href="../../style_traits/type.ParseError.html" title="type style_traits::ParseError">ParseError</a>&lt;'a&gt;),
+}</pre><div class='docblock'><p>Errors that can be encountered while parsing CSS.</p>
+</div><h2 id='variants' class='variants small-section-header'>
+                   Variants<a href='#variants' class='anchor'></a></h2>
+<span id="variant.UnsupportedPropertyDeclaration" class="variant small-section-header"><a href="#variant.UnsupportedPropertyDeclaration" class="anchor field"></a><span id='UnsupportedPropertyDeclaration.v' class='invisible'><code>UnsupportedPropertyDeclaration(&amp;'a <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>,&nbsp;<a class="type" href="../../style_traits/type.ParseError.html" title="type style_traits::ParseError">ParseError</a>&lt;'a&gt;)</code></span></span><div class='docblock'><p>A property declaration was not recognized.</p>
+</div><span id="variant.UnsupportedFontFaceDescriptor" class="variant small-section-header"><a href="#variant.UnsupportedFontFaceDescriptor" class="anchor field"></a><span id='UnsupportedFontFaceDescriptor.v' class='invisible'><code>UnsupportedFontFaceDescriptor(&amp;'a <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>,&nbsp;<a class="type" href="../../style_traits/type.ParseError.html" title="type style_traits::ParseError">ParseError</a>&lt;'a&gt;)</code></span></span><div class='docblock'><p>A font face descriptor was not recognized.</p>
+</div><span id="variant.UnsupportedFontFeatureValuesDescriptor" class="variant small-section-header"><a href="#variant.UnsupportedFontFeatureValuesDescriptor" class="anchor field"></a><span id='UnsupportedFontFeatureValuesDescriptor.v' class='invisible'><code>UnsupportedFontFeatureValuesDescriptor(&amp;'a <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>,&nbsp;<a class="type" href="../../style_traits/type.ParseError.html" title="type style_traits::ParseError">ParseError</a>&lt;'a&gt;)</code></span></span><div class='docblock'><p>A font feature values descriptor was not recognized.</p>
+</div><span id="variant.InvalidKeyframeRule" class="variant small-section-header"><a href="#variant.InvalidKeyframeRule" class="anchor field"></a><span id='InvalidKeyframeRule.v' class='invisible'><code>InvalidKeyframeRule(&amp;'a <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>,&nbsp;<a class="type" href="../../style_traits/type.ParseError.html" title="type style_traits::ParseError">ParseError</a>&lt;'a&gt;)</code></span></span><div class='docblock'><p>A keyframe rule was not valid.</p>
+</div><span id="variant.InvalidFontFeatureValuesRule" class="variant small-section-header"><a href="#variant.InvalidFontFeatureValuesRule" class="anchor field"></a><span id='InvalidFontFeatureValuesRule.v' class='invisible'><code>InvalidFontFeatureValuesRule(&amp;'a <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>,&nbsp;<a class="type" href="../../style_traits/type.ParseError.html" title="type style_traits::ParseError">ParseError</a>&lt;'a&gt;)</code></span></span><div class='docblock'><p>A font feature values rule was not valid.</p>
+</div><span id="variant.UnsupportedKeyframePropertyDeclaration" class="variant small-section-header"><a href="#variant.UnsupportedKeyframePropertyDeclaration" class="anchor field"></a><span id='UnsupportedKeyframePropertyDeclaration.v' class='invisible'><code>UnsupportedKeyframePropertyDeclaration(&amp;'a <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>,&nbsp;<a class="type" href="../../style_traits/type.ParseError.html" title="type style_traits::ParseError">ParseError</a>&lt;'a&gt;)</code></span></span><div class='docblock'><p>A keyframe property declaration was not recognized.</p>
+</div><span id="variant.InvalidRule" class="variant small-section-header"><a href="#variant.InvalidRule" class="anchor field"></a><span id='InvalidRule.v' class='invisible'><code>InvalidRule(&amp;'a <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>,&nbsp;<a class="type" href="../../style_traits/type.ParseError.html" title="type style_traits::ParseError">ParseError</a>&lt;'a&gt;)</code></span></span><div class='docblock'><p>A rule was invalid for some reason.</p>
+</div><span id="variant.UnsupportedRule" class="variant small-section-header"><a href="#variant.UnsupportedRule" class="anchor field"></a><span id='UnsupportedRule.v' class='invisible'><code>UnsupportedRule(&amp;'a <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>,&nbsp;<a class="type" href="../../style_traits/type.ParseError.html" title="type style_traits::ParseError">ParseError</a>&lt;'a&gt;)</code></span></span><div class='docblock'><p>A rule was not recognized.</p>
+</div><span id="variant.UnsupportedViewportDescriptorDeclaration" class="variant small-section-header"><a href="#variant.UnsupportedViewportDescriptorDeclaration" class="anchor field"></a><span id='UnsupportedViewportDescriptorDeclaration.v' class='invisible'><code>UnsupportedViewportDescriptorDeclaration(&amp;'a <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>,&nbsp;<a class="type" href="../../style_traits/type.ParseError.html" title="type style_traits::ParseError">ParseError</a>&lt;'a&gt;)</code></span></span><div class='docblock'><p>A viewport descriptor declaration was not recognized.</p>
+</div><span id="variant.UnsupportedCounterStyleDescriptorDeclaration" class="variant small-section-header"><a href="#variant.UnsupportedCounterStyleDescriptorDeclaration" class="anchor field"></a><span id='UnsupportedCounterStyleDescriptorDeclaration.v' class='invisible'><code>UnsupportedCounterStyleDescriptorDeclaration(&amp;'a <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>,&nbsp;<a class="type" href="../../style_traits/type.ParseError.html" title="type style_traits::ParseError">ParseError</a>&lt;'a&gt;)</code></span></span><div class='docblock'><p>A counter style descriptor declaration was not recognized.</p>
+</div><span id="variant.InvalidCounterStyleWithoutSymbols" class="variant small-section-header"><a href="#variant.InvalidCounterStyleWithoutSymbols" class="anchor field"></a><span id='InvalidCounterStyleWithoutSymbols.v' class='invisible'><code>InvalidCounterStyleWithoutSymbols(<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>)</code></span></span><div class='docblock'><p>A counter style rule had no symbols.</p>
+</div><span id="variant.InvalidCounterStyleNotEnoughSymbols" class="variant small-section-header"><a href="#variant.InvalidCounterStyleNotEnoughSymbols" class="anchor field"></a><span id='InvalidCounterStyleNotEnoughSymbols.v' class='invisible'><code>InvalidCounterStyleNotEnoughSymbols(<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>)</code></span></span><div class='docblock'><p>A counter style rule had less than two symbols.</p>
+</div><span id="variant.InvalidCounterStyleWithoutAdditiveSymbols" class="variant small-section-header"><a href="#variant.InvalidCounterStyleWithoutAdditiveSymbols" class="anchor field"></a><span id='InvalidCounterStyleWithoutAdditiveSymbols.v' class='invisible'><code>InvalidCounterStyleWithoutAdditiveSymbols</code></span></span><div class='docblock'><p>A counter style rule did not have additive-symbols.</p>
+</div><span id="variant.InvalidCounterStyleExtendsWithSymbols" class="variant small-section-header"><a href="#variant.InvalidCounterStyleExtendsWithSymbols" class="anchor field"></a><span id='InvalidCounterStyleExtendsWithSymbols.v' class='invisible'><code>InvalidCounterStyleExtendsWithSymbols</code></span></span><div class='docblock'><p>A counter style rule had extends with symbols.</p>
+</div><span id="variant.InvalidCounterStyleExtendsWithAdditiveSymbols" class="variant small-section-header"><a href="#variant.InvalidCounterStyleExtendsWithAdditiveSymbols" class="anchor field"></a><span id='InvalidCounterStyleExtendsWithAdditiveSymbols.v' class='invisible'><code>InvalidCounterStyleExtendsWithAdditiveSymbols</code></span></span><div class='docblock'><p>A counter style rule had extends with additive-symbols.</p>
+</div><span id="variant.InvalidMediaRule" class="variant small-section-header"><a href="#variant.InvalidMediaRule" class="anchor field"></a><span id='InvalidMediaRule.v' class='invisible'><code>InvalidMediaRule(&amp;'a <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>,&nbsp;<a class="type" href="../../style_traits/type.ParseError.html" title="type style_traits::ParseError">ParseError</a>&lt;'a&gt;)</code></span></span><div class='docblock'><p>A media rule was invalid for some reason.</p>
+</div><span id="variant.UnsupportedValue" class="variant small-section-header"><a href="#variant.UnsupportedValue" class="anchor field"></a><span id='UnsupportedValue.v' class='invisible'><code>UnsupportedValue(&amp;'a <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>,&nbsp;<a class="type" href="../../style_traits/type.ParseError.html" title="type style_traits::ParseError">ParseError</a>&lt;'a&gt;)</code></span></span><div class='docblock'><p>A value was not recognized.</p>
+</div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Display' class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html" title="trait core::fmt::Display">Display</a> for <a class="enum" href="../../style/error_reporting/enum.ContextualParseError.html" title="enum style::error_reporting::ContextualParseError">ContextualParseError</a>&lt;'a&gt;</code><a href='#impl-Display' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/error_reporting.rs.html#53-182' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, f: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/error_reporting.rs.html#54-181' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html#tymethod.fmt">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "style";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["DOMAttributeName",""],["DOMAttributeValue",""],["DOMData",""],["DOMTagName",""],["KnownAttributeName",""],["KnownElementName",""]],"struct":[["DOMAttribute",""],["DOMNode",""],["DOMText",""],["Prop",""]],"type":[["DOMAttributes",""],["DOMChildren",""],["DOMMemberExpression",""]]});

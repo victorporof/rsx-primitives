@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `CssRules` struct in crate `style`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, CssRules">
+
+    <title>style::stylesheets::CssRules - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct CssRules</p><div class="block items"><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.is_empty">is_empty</a><a href="#method.new">new</a><a href="#method.remove_rule">remove_rule</a><a href="#method.to_css_block">to_css_block</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Debug">Debug</a><a href="#impl-DeepCloneWithLock">DeepCloneWithLock</a></div></div><p class='location'><a href='../index.html'>style</a>::<wbr><a href='index.html'>stylesheets</a></p><script>window.sidebarCurrent = {name: 'CssRules', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>style</a>::<wbr><a href='index.html'>stylesheets</a>::<wbr><a class="struct" href=''>CssRules</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/style/stylesheets/rule_list.rs.html#20' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct CssRules(pub <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="enum" href="../../style/stylesheets/enum.CssRule.html" title="enum style::stylesheets::CssRule">CssRule</a>&gt;);</pre><div class='docblock'><p>A list of CSS rules.</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="struct" href="../../style/stylesheets/struct.CssRules.html" title="struct style::stylesheets::CssRules">CssRules</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylesheets/rule_list.rs.html#22-27' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.is_empty' class="method"><span id='is_empty.v' class='invisible'><code>pub fn <a href='#method.is_empty' class='fnname'>is_empty</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylesheets/rule_list.rs.html#24-26' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Whether this CSS rules is empty.</p>
+</div></div><h3 id='impl-1' class='impl'><span class='in-band'><code>impl <a class="struct" href="../../style/stylesheets/struct.CssRules.html" title="struct style::stylesheets::CssRules">CssRules</a></code><a href='#impl-1' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylesheets/rule_list.rs.html#42-108' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class="method"><span id='new.v' class='invisible'><code>pub fn <a href='#method.new' class='fnname'>new</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;rules: <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="enum" href="../../style/stylesheets/enum.CssRule.html" title="enum style::stylesheets::CssRule">CssRule</a>&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;shared_lock: &amp;<a class="struct" href="../../style/shared_lock/struct.SharedRwLock.html" title="struct style::shared_lock::SharedRwLock">SharedRwLock</a><br>) -&gt; <a class="struct" href="../../style/properties/struct.BuilderArc.html" title="struct style::properties::BuilderArc">Arc</a>&lt;<a class="struct" href="../../style/shared_lock/struct.Locked.html" title="struct style::shared_lock::Locked">Locked</a>&lt;<a class="struct" href="../../style/stylesheets/struct.CssRules.html" title="struct style::stylesheets::CssRules">CssRules</a>&gt;&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylesheets/rule_list.rs.html#54-56' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Trivially construct a new set of CSS rules.</p>
+</div><h4 id='method.remove_rule' class="method"><span id='remove_rule.v' class='invisible'><code>pub fn <a href='#method.remove_rule' class='fnname'>remove_rule</a>(&amp;mut self, index: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>, <a class="enum" href="../../style/stylesheets/enum.RulesMutateError.html" title="enum style::stylesheets::RulesMutateError">RulesMutateError</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylesheets/rule_list.rs.html#71-92' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p><a href="https://drafts.csswg.org/cssom/#remove-a-css-rule">https://drafts.csswg.org/cssom/#remove-a-css-rule</a></p>
+</div><h4 id='method.to_css_block' class="method"><span id='to_css_block.v' class='invisible'><code>pub fn <a href='#method.to_css_block' class='fnname'>to_css_block</a>&lt;W&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;guard: &amp;<a class="struct" href="../../style/shared_lock/struct.SharedRwLockReadGuard.html" title="struct style::shared_lock::SharedRwLockReadGuard">SharedRwLockReadGuard</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;dest: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>W<br>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a> <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;W: <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Write.html" title="trait core::fmt::Write">Write</a>,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylesheets/rule_list.rs.html#98-107' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Serializes this CSSRules to CSS text as a block of rules.</p>
+
+<p>This should be speced into CSSOM spec at some point. See
+<a href="https://github.com/w3c/csswg-drafts/issues/1985">https://github.com/w3c/csswg-drafts/issues/1985</a></p>
+</div></div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../../style/stylesheets/struct.CssRules.html" title="struct style::stylesheets::CssRules">CssRules</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylesheets/rule_list.rs.html#19' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylesheets/rule_list.rs.html#19' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div><h3 id='impl-DeepCloneWithLock' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../style/shared_lock/trait.DeepCloneWithLock.html" title="trait style::shared_lock::DeepCloneWithLock">DeepCloneWithLock</a> for <a class="struct" href="../../style/stylesheets/struct.CssRules.html" title="struct style::stylesheets::CssRules">CssRules</a></code><a href='#impl-DeepCloneWithLock' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylesheets/rule_list.rs.html#29-40' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deep_clone_with_lock' class="method"><span id='deep_clone_with_lock.v' class='invisible'><code>fn <a href='../../style/shared_lock/trait.DeepCloneWithLock.html#tymethod.deep_clone_with_lock' class='fnname'>deep_clone_with_lock</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;lock: &amp;<a class="struct" href="../../style/shared_lock/struct.SharedRwLock.html" title="struct style::shared_lock::SharedRwLock">SharedRwLock</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;guard: &amp;<a class="struct" href="../../style/shared_lock/struct.SharedRwLockReadGuard.html" title="struct style::shared_lock::SharedRwLockReadGuard">SharedRwLockReadGuard</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;params: &amp;<a class="struct" href="../../style/shared_lock/struct.DeepCloneParams.html" title="struct style::shared_lock::DeepCloneParams">DeepCloneParams</a><br>) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylesheets/rule_list.rs.html#30-39' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Deep clones this object.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "style";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Polygon` struct in crate `plane_split`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Polygon">
+
+    <title>plane_split::Polygon - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct Polygon</p><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.points">points</a><a href="#structfield.normal">normal</a><a href="#structfield.offset">offset</a><a href="#structfield.anchor">anchor</a></div><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.from_transformed_rect">from_transformed_rect</a><a href="#method.untransform_point">untransform_point</a><a href="#method.signed_distance_to">signed_distance_to</a><a href="#method.distance_to_line">distance_to_line</a><a href="#method.signed_distance_sum_to">signed_distance_sum_to</a><a href="#method.is_valid">is_valid</a><a href="#method.are_outside">are_outside</a><a href="#method.contains">contains</a><a href="#method.project_on">project_on</a><a href="#method.intersect">intersect</a><a href="#method.split">split</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Plane">Plane</a><a href="#impl-Debug">Debug</a><a href="#impl-PartialEq">PartialEq</a><a href="#impl-Clone">Clone</a></div></div><p class='location'><a href='index.html'>plane_split</a></p><script>window.sidebarCurrent = {name: 'Polygon', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>plane_split</a>::<wbr><a class="struct" href=''>Polygon</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/plane_split/lib.rs.html#72-83' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Polygon&lt;T, U&gt; {
+    pub points: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="struct" href="../euclid/point/struct.TypedPoint3D.html" title="struct euclid::point::TypedPoint3D">TypedPoint3D</a>&lt;T, U&gt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 4]</a>,
+    pub normal: <a class="struct" href="../euclid/vector/struct.TypedVector3D.html" title="struct euclid::vector::TypedVector3D">TypedVector3D</a>&lt;T, U&gt;,
+    pub offset: T,
+    pub anchor: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>,
+}</pre><div class='docblock'><p>A convex flat polygon with 4 points, defined by equation:
+dot(v, normal) + offset = 0</p>
+</div><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.points" class="structfield small-section-header">
+                           <a href="#structfield.points" class="anchor field"></a>
+                           <span id="points.v" class='invisible'>
+                           <code>points: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="struct" href="../euclid/point/struct.TypedPoint3D.html" title="struct euclid::point::TypedPoint3D">TypedPoint3D</a>&lt;T, U&gt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 4]</a></code>
+                           </span></span><div class='docblock'><p>Points making the polygon.</p>
+</div><span id="structfield.normal" class="structfield small-section-header">
+                           <a href="#structfield.normal" class="anchor field"></a>
+                           <span id="normal.v" class='invisible'>
+                           <code>normal: <a class="struct" href="../euclid/vector/struct.TypedVector3D.html" title="struct euclid::vector::TypedVector3D">TypedVector3D</a>&lt;T, U&gt;</code>
+                           </span></span><div class='docblock'><p>Normalized vector perpendicular to the polygon plane.</p>
+</div><span id="structfield.offset" class="structfield small-section-header">
+                           <a href="#structfield.offset" class="anchor field"></a>
+                           <span id="offset.v" class='invisible'>
+                           <code>offset: T</code>
+                           </span></span><div class='docblock'><p>Constant offset from the normal plane, specified in the
+direction opposite to the normal.</p>
+</div><span id="structfield.anchor" class="structfield small-section-header">
+                           <a href="#structfield.anchor" class="anchor field"></a>
+                           <span id="anchor.v" class='invisible'>
+                           <code>anchor: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a></code>
+                           </span></span><div class='docblock'><p>A simple anchoring index to allow association of the
+produced split polygons with the original one.</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl&lt;T, U&gt; <a class="struct" href="../plane_split/struct.Polygon.html" title="struct plane_split::Polygon">Polygon</a>&lt;T, U&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html" title="trait core::marker::Copy">Copy</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> + <a class="trait" href="../euclid/approxeq/trait.ApproxEq.html" title="trait euclid::approxeq::ApproxEq">ApproxEq</a>&lt;T&gt; + <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/arith/trait.Sub.html" title="trait core::ops::arith::Sub">Sub</a>&lt;T, Output = T&gt; + <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/arith/trait.Add.html" title="trait core::ops::arith::Add">Add</a>&lt;T, Output = T&gt; + <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/arith/trait.Mul.html" title="trait core::ops::arith::Mul">Mul</a>&lt;T, Output = T&gt; + <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/arith/trait.Div.html" title="trait core::ops::arith::Div">Div</a>&lt;T, Output = T&gt; + <a class="trait" href="../num_traits/identities/trait.Zero.html" title="trait num_traits::identities::Zero">Zero</a> + <a class="trait" href="../num_traits/identities/trait.One.html" title="trait num_traits::identities::One">One</a> + <a class="trait" href="../num_traits/float/trait.Float.html" title="trait num_traits::float::Float">Float</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;U: <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a>,&nbsp;</span></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/plane_split/lib.rs.html#173-433' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from_transformed_rect' class="method"><span id='from_transformed_rect.v' class='invisible'><code>pub fn <a href='#method.from_transformed_rect' class='fnname'>from_transformed_rect</a>&lt;V&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;rect: <a class="struct" href="../euclid/rect/struct.TypedRect.html" title="struct euclid::rect::TypedRect">TypedRect</a>&lt;T, V&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;transform: <a class="struct" href="../euclid/transform3d/struct.TypedTransform3D.html" title="struct euclid::transform3d::TypedTransform3D">TypedTransform3D</a>&lt;T, V, U&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;anchor: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a><br>) -&gt; <a class="struct" href="../plane_split/struct.Polygon.html" title="struct plane_split::Polygon">Polygon</a>&lt;T, U&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="../euclid/trig/trait.Trig.html" title="trait euclid::trig::Trig">Trig</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/arith/trait.Neg.html" title="trait core::ops::arith::Neg">Neg</a>&lt;Output = T&gt;,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/plane_split/lib.rs.html#181-207' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Construct a polygon from a transformed rectangle.</p>
+</div><h4 id='method.untransform_point' class="method"><span id='untransform_point.v' class='invisible'><code>pub fn <a href='#method.untransform_point' class='fnname'>untransform_point</a>(&amp;self, point: <a class="struct" href="../euclid/point/struct.TypedPoint3D.html" title="struct euclid::point::TypedPoint3D">TypedPoint3D</a>&lt;T, U&gt;) -&gt; <a class="type" href="../euclid/point/type.Point2D.html" title="type euclid::point::Point2D">Point2D</a>&lt;T&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/plane_split/lib.rs.html#211-228' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Bring a point into the local coordinate space, returning
+the 2D normalized coordinates.</p>
+</div><h4 id='method.signed_distance_to' class="method"><span id='signed_distance_to.v' class='invisible'><code>pub fn <a href='#method.signed_distance_to' class='fnname'>signed_distance_to</a>(&amp;self, point: &amp;<a class="struct" href="../euclid/point/struct.TypedPoint3D.html" title="struct euclid::point::TypedPoint3D">TypedPoint3D</a>&lt;T, U&gt;) -&gt; T</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/plane_split/lib.rs.html#233-235' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Return the signed distance from this polygon to a point.
+The distance is negative if the point is on the other side of the polygon
+from the direction of the normal.</p>
+</div><h4 id='method.distance_to_line' class="method"><span id='distance_to_line.v' class='invisible'><code>pub fn <a href='#method.distance_to_line' class='fnname'>distance_to_line</a>(&amp;self, line: &amp;<a class="struct" href="../plane_split/struct.Line.html" title="struct plane_split::Line">Line</a>&lt;T, U&gt;) -&gt; T <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/arith/trait.Neg.html" title="trait core::ops::arith::Neg">Neg</a>&lt;Output = T&gt;,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/plane_split/lib.rs.html#239-242' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Compute the distance across the line to the polygon plane,
+starting from the line origin.</p>
+</div><h4 id='method.signed_distance_sum_to' class="method"><span id='signed_distance_sum_to.v' class='invisible'><code>pub fn <a href='#method.signed_distance_sum_to' class='fnname'>signed_distance_sum_to</a>(&amp;self, other: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) -&gt; T</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/plane_split/lib.rs.html#247-251' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Compute the sum of signed distances to each of the points
+of another polygon. Useful to know the relation of a polygon that
+is a product of a split, and we know it doesn&#39;t intersect <code>self</code>.</p>
+</div><h4 id='method.is_valid' class="method"><span id='is_valid.v' class='invisible'><code>pub fn <a href='#method.is_valid' class='fnname'>is_valid</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/plane_split/lib.rs.html#255-267' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Check if all the points are indeed placed on the plane defined by
+the normal and offset, and the winding order is consistent.</p>
+</div><h4 id='method.are_outside' class="method"><span id='are_outside.v' class='invisible'><code>pub fn <a href='#method.are_outside' class='fnname'>are_outside</a>(&amp;self, points: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[</a><a class="struct" href="../euclid/point/struct.TypedPoint3D.html" title="struct euclid::point::TypedPoint3D">TypedPoint3D</a>&lt;T, U&gt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/plane_split/lib.rs.html#272-276' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Check if a convex shape defined by a set of points is completely
+outside of this polygon. Merely touching the surface is not
+considered an intersection.</p>
+</div><h4 id='method.contains' class="method"><span id='contains.v' class='invisible'><code>pub fn <a href='#method.contains' class='fnname'>contains</a>(&amp;self, other: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/plane_split/lib.rs.html#279-282' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Check if this polygon contains another one.</p>
+</div><h4 id='method.project_on' class="method"><span id='project_on.v' class='invisible'><code>pub fn <a href='#method.project_on' class='fnname'>project_on</a>(&amp;self, vector: &amp;<a class="struct" href="../euclid/vector/struct.TypedVector3D.html" title="struct euclid::vector::TypedVector3D">TypedVector3D</a>&lt;T, U&gt;) -&gt; <a class="struct" href="../plane_split/struct.LineProjection.html" title="struct plane_split::LineProjection">LineProjection</a>&lt;T&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/plane_split/lib.rs.html#286-295' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Project this polygon onto a 3D vector, returning a line projection.
+Note: we can think of it as a projection to a ray placed at the origin.</p>
+</div><h4 id='method.intersect' class="method"><span id='intersect.v' class='invisible'><code>pub fn <a href='#method.intersect' class='fnname'>intersect</a>(&amp;self, other: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) -&gt; <a class="enum" href="../plane_split/enum.Intersection.html" title="enum plane_split::Intersection">Intersection</a>&lt;<a class="struct" href="../plane_split/struct.Line.html" title="struct plane_split::Line">Line</a>&lt;T, U&gt;&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/plane_split/lib.rs.html#298-331' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Compute the line of intersection with another polygon.</p>
+</div><h4 id='method.split' class="method"><span id='split.v' class='invisible'><code>pub fn <a href='#method.split' class='fnname'>split</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;line: &amp;<a class="struct" href="../plane_split/struct.Line.html" title="struct plane_split::Line">Line</a>&lt;T, U&gt;<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a><a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../plane_split/struct.Polygon.html" title="struct plane_split::Polygon">Polygon</a>&lt;T, U&gt;&gt;, <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../plane_split/struct.Polygon.html" title="struct plane_split::Polygon">Polygon</a>&lt;T, U&gt;&gt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/plane_split/lib.rs.html#335-432' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Split the polygon along the specified <code>Line</code>. Will do nothing if the line
+doesn&#39;t belong to the polygon plane.</p>
+</div></div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Plane' class='impl'><span class='in-band'><code>impl&lt;T, U&gt; <a class="trait" href="../binary_space_partition/trait.Plane.html" title="trait binary_space_partition::Plane">Plane</a> for <a class="struct" href="../plane_split/struct.Polygon.html" title="struct plane_split::Polygon">Polygon</a>&lt;T, U&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html" title="trait core::marker::Copy">Copy</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> + <a class="trait" href="../euclid/approxeq/trait.ApproxEq.html" title="trait euclid::approxeq::ApproxEq">ApproxEq</a>&lt;T&gt; + <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/arith/trait.Sub.html" title="trait core::ops::arith::Sub">Sub</a>&lt;T, Output = T&gt; + <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/arith/trait.Add.html" title="trait core::ops::arith::Add">Add</a>&lt;T, Output = T&gt; + <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/arith/trait.Mul.html" title="trait core::ops::arith::Mul">Mul</a>&lt;T, Output = T&gt; + <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/arith/trait.Div.html" title="trait core::ops::arith::Div">Div</a>&lt;T, Output = T&gt; + <a class="trait" href="../num_traits/identities/trait.Zero.html" title="trait num_traits::identities::Zero">Zero</a> + <a class="trait" href="../num_traits/identities/trait.One.html" title="trait num_traits::identities::One">One</a> + <a class="trait" href="../num_traits/float/trait.Float.html" title="trait num_traits::float::Float">Float</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;U: <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a>,&nbsp;</span></code><a href='#impl-Plane' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/plane_split/bsp.rs.html#9-65' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.cut' class="method"><span id='cut.v' class='invisible'><code>fn <a href='../binary_space_partition/trait.Plane.html#tymethod.cut' class='fnname'>cut</a>(&amp;self, plane: Self) -&gt; <a class="enum" href="../binary_space_partition/enum.PlaneCut.html" title="enum binary_space_partition::PlaneCut">PlaneCut</a>&lt;Self&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/plane_split/bsp.rs.html#16-60' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Try to cut a different plane by this one.</p>
+</div><h4 id='method.is_aligned' class="method"><span id='is_aligned.v' class='invisible'><code>fn <a href='../binary_space_partition/trait.Plane.html#tymethod.is_aligned' class='fnname'>is_aligned</a>(&amp;self, plane: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/plane_split/bsp.rs.html#62-64' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Check if a different plane is aligned in the same direction as this one. <a href="../binary_space_partition/trait.Plane.html#tymethod.is_aligned">Read more</a></p>
+</div></div><h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl&lt;T:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a>, U:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a>&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../plane_split/struct.Polygon.html" title="struct plane_split::Polygon">Polygon</a>&lt;T, U&gt;</code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/plane_split/lib.rs.html#71' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/plane_split/lib.rs.html#71' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div><h3 id='impl-PartialEq' class='impl'><span class='in-band'><code>impl&lt;T:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a>, U:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a>&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a> for <a class="struct" href="../plane_split/struct.Polygon.html" title="struct plane_split::Polygon">Polygon</a>&lt;T, U&gt;</code><a href='#impl-PartialEq' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/plane_split/lib.rs.html#71' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class="method"><span id='eq.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class="struct" href="../plane_split/struct.Polygon.html" title="struct plane_split::Polygon">Polygon</a>&lt;T, U&gt;) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/plane_split/lib.rs.html#71' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class="method"><span id='ne.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class="struct" href="../plane_split/struct.Polygon.html" title="struct plane_split::Polygon">Polygon</a>&lt;T, U&gt;) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/plane_split/lib.rs.html#71' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 id='impl-Clone' class='impl'><span class='in-band'><code>impl&lt;T:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a>, U&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="struct" href="../plane_split/struct.Polygon.html" title="struct plane_split::Polygon">Polygon</a>&lt;T, U&gt;</code><a href='#impl-Clone' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/plane_split/lib.rs.html#85-97' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/plane_split/lib.rs.html#86-96' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "plane_split";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

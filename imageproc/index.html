@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `imageproc` crate.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, imageproc">
+
+    <title>imageproc - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc mod">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Crate imageproc</p><div class="block items"><ul><li><a href="#modules">Modules</a></li><li><a href="#macros">Macros</a></li></ul></div><p class='location'></p><script>window.sidebarCurrent = {name: 'imageproc', ty: 'mod', relpath: '../'};</script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Crate <a class="mod" href=''>imageproc</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/imageproc/lib.rs.html#1-44' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p>An image processing library, based on the
+<a href="https://github.com/PistonDevelopers/image">image</a> crate.</p>
+</div><h2 id='modules' class='section-header'><a href="#modules">Modules</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="affine/index.html"
+                                  title='mod imageproc::affine'>affine</a></td>
+                           <td class='docblock-short'>
+                                <p>Functions for affine transformations of images.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="contrast/index.html"
+                                  title='mod imageproc::contrast'>contrast</a></td>
+                           <td class='docblock-short'>
+                                <p>Functions for manipulating the contrast of images.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="corners/index.html"
+                                  title='mod imageproc::corners'>corners</a></td>
+                           <td class='docblock-short'>
+                                <p>Functions for detecting corners, also known as interest points.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="definitions/index.html"
+                                  title='mod imageproc::definitions'>definitions</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait definitions and type aliases.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="drawing/index.html"
+                                  title='mod imageproc::drawing'>drawing</a></td>
+                           <td class='docblock-short'>
+                                <p>Helpers for drawing basic shapes on images.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="edges/index.html"
+                                  title='mod imageproc::edges'>edges</a></td>
+                           <td class='docblock-short'>
+                                <p>Functions for detecting edges in images.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="filter/index.html"
+                                  title='mod imageproc::filter'>filter</a></td>
+                           <td class='docblock-short'>
+                                <p>Functions for filtering images.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="gradients/index.html"
+                                  title='mod imageproc::gradients'>gradients</a></td>
+                           <td class='docblock-short'>
+                                <p>Functions for computing gradients of image intensities.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="haar/index.html"
+                                  title='mod imageproc::haar'>haar</a></td>
+                           <td class='docblock-short'>
+                                <p>Functions for creating and evaluating <a href="https://en.wikipedia.org/wiki/Haar-like_features">Haar-like features</a>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="hog/index.html"
+                                  title='mod imageproc::hog'>hog</a></td>
+                           <td class='docblock-short'>
+                                <p><a href="https://en.wikipedia.org/wiki/Histogram_of_oriented_gradients">HoG features</a>
+and helpers for visualizing them.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="hough/index.html"
+                                  title='mod imageproc::hough'>hough</a></td>
+                           <td class='docblock-short'>
+                                <p>Line detection via the <a href="https://en.wikipedia.org/wiki/Hough_transform">Hough transform</a>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="integral_image/index.html"
+                                  title='mod imageproc::integral_image'>integral_image</a></td>
+                           <td class='docblock-short'>
+                                <p>Functions for computing <a href="https://en.wikipedia.org/wiki/Summed_area_table">integral images</a>
+and running sums of rows and columns.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="local_binary_patterns/index.html"
+                                  title='mod imageproc::local_binary_patterns'>local_binary_patterns</a></td>
+                           <td class='docblock-short'>
+                                <p>Functions for computing <a href="https://en.wikipedia.org/wiki/Local_binary_patterns">local binary patterns</a>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="map/index.html"
+                                  title='mod imageproc::map'>map</a></td>
+                           <td class='docblock-short'>
+                                <p>Functions for mapping over pixels, colors or subpixels of images.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="math/index.html"
+                                  title='mod imageproc::math'>math</a></td>
+                           <td class='docblock-short'>
+                                <p>Assorted mathematical helper functions.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="morphology/index.html"
+                                  title='mod imageproc::morphology'>morphology</a></td>
+                           <td class='docblock-short'>
+                                <p>Functions for computing <a href="http://homepages.inf.ed.ac.uk/rbf/HIPR2/morops.htm">morphological operators</a>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="noise/index.html"
+                                  title='mod imageproc::noise'>noise</a></td>
+                           <td class='docblock-short'>
+                                <p>Functions for adding synthetic noise to images.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="pixelops/index.html"
+                                  title='mod imageproc::pixelops'>pixelops</a></td>
+                           <td class='docblock-short'>
+                                <p>Pixel manipulations.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="property_testing/index.html"
+                                  title='mod imageproc::property_testing'>property_testing</a></td>
+                           <td class='docblock-short'>
+                                <p>Utilities to help with writing property-based tests
+(e.g. <a href="https://github.com/BurntSushi/quickcheck">quickcheck</a> tests) for image processing functions.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="rect/index.html"
+                                  title='mod imageproc::rect'>rect</a></td>
+                           <td class='docblock-short'>
+                                <p>Basic manipulation of rectangles.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="region_labelling/index.html"
+                                  title='mod imageproc::region_labelling'>region_labelling</a></td>
+                           <td class='docblock-short'>
+                                <p>Functions for finding and labelling connected components of an image.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="seam_carving/index.html"
+                                  title='mod imageproc::seam_carving'>seam_carving</a></td>
+                           <td class='docblock-short'>
+                                <p>An implementation of <a href="https://en.wikipedia.org/wiki/Seam_carving">seam carving</a>. Currently in a pretty rough state.
+See examples/seam_carving.rs for an example.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="stats/index.html"
+                                  title='mod imageproc::stats'>stats</a></td>
+                           <td class='docblock-short'>
+                                <p>Statistical properties of images.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="suppress/index.html"
+                                  title='mod imageproc::suppress'>suppress</a></td>
+                           <td class='docblock-short'>
+                                <p>Functions for suppressing non-maximal values.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="union_find/index.html"
+                                  title='mod imageproc::union_find'>union_find</a></td>
+                           <td class='docblock-short'>
+                                <p>An implementation of disjoint set forests for union find.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="utils/index.html"
+                                  title='mod imageproc::utils'>utils</a></td>
+                           <td class='docblock-short'>
+                                <p>Utils for testing and debugging.</p>
+                           </td>
+                       </tr></table><h2 id='macros' class='section-header'><a href="#macros">Macros</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="macro" href="macro.assert_dimensions_match.html"
+                                  title='macro imageproc::assert_dimensions_match'>assert_dimensions_match</a></td>
+                           <td class='docblock-short'>
+                                <p>Panics if image dimensions do not match.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="macro" href="macro.assert_pixels_eq.html"
+                                  title='macro imageproc::assert_pixels_eq'>assert_pixels_eq</a></td>
+                           <td class='docblock-short'>
+                                <p>Panics if any pixels differ between the two input images.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="macro" href="macro.assert_pixels_eq_within.html"
+                                  title='macro imageproc::assert_pixels_eq_within'>assert_pixels_eq_within</a></td>
+                           <td class='docblock-short'>
+                                <p>Panics if any pixels differ between the two images by more than the
+given tolerance in a single channel.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="macro" href="macro.gray_image.html"
+                                  title='macro imageproc::gray_image'>gray_image</a></td>
+                           <td class='docblock-short'>
+                                <p>Helper for defining greyscale images.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="macro" href="macro.rgb_image.html"
+                                  title='macro imageproc::rgb_image'>rgb_image</a></td>
+                           <td class='docblock-short'>
+                                <p>Helper for defining RGB images.</p>
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "imageproc";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

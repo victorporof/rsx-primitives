@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["StateAndAttrInvalidationProcessor","An invalidation processor for style changes due to state and attribute changes."]]});

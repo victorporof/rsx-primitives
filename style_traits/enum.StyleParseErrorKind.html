@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `StyleParseErrorKind` enum in crate `style_traits`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, StyleParseErrorKind">
+
+    <title>style_traits::StyleParseErrorKind - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc enum">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Enum StyleParseErrorKind</p><div class="block items"><a class="sidebar-title" href="#variants">Variants</a><div class="sidebar-links"><a href="#variant.BadUrlInDeclarationValueBlock">BadUrlInDeclarationValueBlock</a><a href="#variant.BadStringInDeclarationValueBlock">BadStringInDeclarationValueBlock</a><a href="#variant.UnbalancedCloseParenthesisInDeclarationValueBlock">UnbalancedCloseParenthesisInDeclarationValueBlock</a><a href="#variant.UnbalancedCloseSquareBracketInDeclarationValueBlock">UnbalancedCloseSquareBracketInDeclarationValueBlock</a><a href="#variant.UnbalancedCloseCurlyBracketInDeclarationValueBlock">UnbalancedCloseCurlyBracketInDeclarationValueBlock</a><a href="#variant.PropertyDeclarationValueNotExhausted">PropertyDeclarationValueNotExhausted</a><a href="#variant.UnexpectedDimension">UnexpectedDimension</a><a href="#variant.ExpectedIdentifier">ExpectedIdentifier</a><a href="#variant.MediaQueryExpectedFeatureName">MediaQueryExpectedFeatureName</a><a href="#variant.MediaQueryExpectedFeatureValue">MediaQueryExpectedFeatureValue</a><a href="#variant.RangedExpressionWithNoValue">RangedExpressionWithNoValue</a><a href="#variant.UnexpectedFunction">UnexpectedFunction</a><a href="#variant.UnexpectedNamespaceRule">UnexpectedNamespaceRule</a><a href="#variant.UnexpectedImportRule">UnexpectedImportRule</a><a href="#variant.UnexpectedCharsetRule">UnexpectedCharsetRule</a><a href="#variant.UnsupportedAtRule">UnsupportedAtRule</a><a href="#variant.UnspecifiedError">UnspecifiedError</a><a href="#variant.UnexpectedTokenWithinNamespace">UnexpectedTokenWithinNamespace</a><a href="#variant.ValueError">ValueError</a><a href="#variant.SelectorError">SelectorError</a><a href="#variant.UnknownProperty">UnknownProperty</a><a href="#variant.UnknownVendorProperty">UnknownVendorProperty</a><a href="#variant.ExperimentalProperty">ExperimentalProperty</a><a href="#variant.InvalidColor">InvalidColor</a><a href="#variant.InvalidFilter">InvalidFilter</a><a href="#variant.OtherInvalidValue">OtherInvalidValue</a><a href="#variant.AnimationPropertyInKeyframeBlock">AnimationPropertyInKeyframeBlock</a><a href="#variant.NotAllowedInPageRule">NotAllowedInPageRule</a></div><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.new_invalid">new_invalid</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Clone">Clone</a><a href="#impl-Debug">Debug</a><a href="#impl-PartialEq">PartialEq</a><a href="#impl-From%3CValueParseErrorKind%3C%27i%3E%3E">From&lt;ValueParseErrorKind&lt;&#39;i&gt;&gt;</a><a href="#impl-From%3CSelectorParseErrorKind%3C%27i%3E%3E">From&lt;SelectorParseErrorKind&lt;&#39;i&gt;&gt;</a></div></div><p class='location'><a href='index.html'>style_traits</a></p><script>window.sidebarCurrent = {name: 'StyleParseErrorKind', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Enum <a href='index.html'>style_traits</a>::<wbr><a class="enum" href=''>StyleParseErrorKind</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/style_traits/lib.rs.html#91-152' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum StyleParseErrorKind&lt;'i&gt; {
+    BadUrlInDeclarationValueBlock(<a class="struct" href="../cssparser/cow_rc_str/struct.CowRcStr.html" title="struct cssparser::cow_rc_str::CowRcStr">CowRcStr</a>&lt;'i&gt;),
+    BadStringInDeclarationValueBlock(<a class="struct" href="../cssparser/cow_rc_str/struct.CowRcStr.html" title="struct cssparser::cow_rc_str::CowRcStr">CowRcStr</a>&lt;'i&gt;),
+    UnbalancedCloseParenthesisInDeclarationValueBlock,
+    UnbalancedCloseSquareBracketInDeclarationValueBlock,
+    UnbalancedCloseCurlyBracketInDeclarationValueBlock,
+    PropertyDeclarationValueNotExhausted,
+    UnexpectedDimension(<a class="struct" href="../cssparser/cow_rc_str/struct.CowRcStr.html" title="struct cssparser::cow_rc_str::CowRcStr">CowRcStr</a>&lt;'i&gt;),
+    ExpectedIdentifier(<a class="enum" href="../cssparser/tokenizer/enum.Token.html" title="enum cssparser::tokenizer::Token">Token</a>&lt;'i&gt;),
+    MediaQueryExpectedFeatureName(<a class="struct" href="../cssparser/cow_rc_str/struct.CowRcStr.html" title="struct cssparser::cow_rc_str::CowRcStr">CowRcStr</a>&lt;'i&gt;),
+    MediaQueryExpectedFeatureValue,
+    RangedExpressionWithNoValue,
+    UnexpectedFunction(<a class="struct" href="../cssparser/cow_rc_str/struct.CowRcStr.html" title="struct cssparser::cow_rc_str::CowRcStr">CowRcStr</a>&lt;'i&gt;),
+    UnexpectedNamespaceRule,
+    UnexpectedImportRule,
+    UnexpectedCharsetRule,
+    UnsupportedAtRule(<a class="struct" href="../cssparser/cow_rc_str/struct.CowRcStr.html" title="struct cssparser::cow_rc_str::CowRcStr">CowRcStr</a>&lt;'i&gt;),
+    UnspecifiedError,
+    UnexpectedTokenWithinNamespace(<a class="enum" href="../cssparser/tokenizer/enum.Token.html" title="enum cssparser::tokenizer::Token">Token</a>&lt;'i&gt;),
+    ValueError(<a class="enum" href="../style_traits/enum.ValueParseErrorKind.html" title="enum style_traits::ValueParseErrorKind">ValueParseErrorKind</a>&lt;'i&gt;),
+    SelectorError(<a class="enum" href="../selectors/parser/enum.SelectorParseErrorKind.html" title="enum selectors::parser::SelectorParseErrorKind">SelectorParseErrorKind</a>&lt;'i&gt;),
+    UnknownProperty(<a class="struct" href="../cssparser/cow_rc_str/struct.CowRcStr.html" title="struct cssparser::cow_rc_str::CowRcStr">CowRcStr</a>&lt;'i&gt;),
+    UnknownVendorProperty,
+    ExperimentalProperty,
+    InvalidColor(<a class="struct" href="../cssparser/cow_rc_str/struct.CowRcStr.html" title="struct cssparser::cow_rc_str::CowRcStr">CowRcStr</a>&lt;'i&gt;,&nbsp;<a class="enum" href="../cssparser/tokenizer/enum.Token.html" title="enum cssparser::tokenizer::Token">Token</a>&lt;'i&gt;),
+    InvalidFilter(<a class="struct" href="../cssparser/cow_rc_str/struct.CowRcStr.html" title="struct cssparser::cow_rc_str::CowRcStr">CowRcStr</a>&lt;'i&gt;,&nbsp;<a class="enum" href="../cssparser/tokenizer/enum.Token.html" title="enum cssparser::tokenizer::Token">Token</a>&lt;'i&gt;),
+    OtherInvalidValue(<a class="struct" href="../cssparser/cow_rc_str/struct.CowRcStr.html" title="struct cssparser::cow_rc_str::CowRcStr">CowRcStr</a>&lt;'i&gt;),
+    AnimationPropertyInKeyframeBlock,
+    NotAllowedInPageRule,
+}</pre><div class='docblock'><p>Errors that can be encountered while parsing CSS values.</p>
+</div><h2 id='variants' class='variants small-section-header'>
+                   Variants<a href='#variants' class='anchor'></a></h2>
+<span id="variant.BadUrlInDeclarationValueBlock" class="variant small-section-header"><a href="#variant.BadUrlInDeclarationValueBlock" class="anchor field"></a><span id='BadUrlInDeclarationValueBlock.v' class='invisible'><code>BadUrlInDeclarationValueBlock(<a class="struct" href="../cssparser/cow_rc_str/struct.CowRcStr.html" title="struct cssparser::cow_rc_str::CowRcStr">CowRcStr</a>&lt;'i&gt;)</code></span></span><div class='docblock'><p>A bad URL token in a DVB.</p>
+</div><span id="variant.BadStringInDeclarationValueBlock" class="variant small-section-header"><a href="#variant.BadStringInDeclarationValueBlock" class="anchor field"></a><span id='BadStringInDeclarationValueBlock.v' class='invisible'><code>BadStringInDeclarationValueBlock(<a class="struct" href="../cssparser/cow_rc_str/struct.CowRcStr.html" title="struct cssparser::cow_rc_str::CowRcStr">CowRcStr</a>&lt;'i&gt;)</code></span></span><div class='docblock'><p>A bad string token in a DVB.</p>
+</div><span id="variant.UnbalancedCloseParenthesisInDeclarationValueBlock" class="variant small-section-header"><a href="#variant.UnbalancedCloseParenthesisInDeclarationValueBlock" class="anchor field"></a><span id='UnbalancedCloseParenthesisInDeclarationValueBlock.v' class='invisible'><code>UnbalancedCloseParenthesisInDeclarationValueBlock</code></span></span><div class='docblock'><p>Unexpected closing parenthesis in a DVB.</p>
+</div><span id="variant.UnbalancedCloseSquareBracketInDeclarationValueBlock" class="variant small-section-header"><a href="#variant.UnbalancedCloseSquareBracketInDeclarationValueBlock" class="anchor field"></a><span id='UnbalancedCloseSquareBracketInDeclarationValueBlock.v' class='invisible'><code>UnbalancedCloseSquareBracketInDeclarationValueBlock</code></span></span><div class='docblock'><p>Unexpected closing bracket in a DVB.</p>
+</div><span id="variant.UnbalancedCloseCurlyBracketInDeclarationValueBlock" class="variant small-section-header"><a href="#variant.UnbalancedCloseCurlyBracketInDeclarationValueBlock" class="anchor field"></a><span id='UnbalancedCloseCurlyBracketInDeclarationValueBlock.v' class='invisible'><code>UnbalancedCloseCurlyBracketInDeclarationValueBlock</code></span></span><div class='docblock'><p>Unexpected closing curly bracket in a DVB.</p>
+</div><span id="variant.PropertyDeclarationValueNotExhausted" class="variant small-section-header"><a href="#variant.PropertyDeclarationValueNotExhausted" class="anchor field"></a><span id='PropertyDeclarationValueNotExhausted.v' class='invisible'><code>PropertyDeclarationValueNotExhausted</code></span></span><div class='docblock'><p>A property declaration value had input remaining after successfully parsing.</p>
+</div><span id="variant.UnexpectedDimension" class="variant small-section-header"><a href="#variant.UnexpectedDimension" class="anchor field"></a><span id='UnexpectedDimension.v' class='invisible'><code>UnexpectedDimension(<a class="struct" href="../cssparser/cow_rc_str/struct.CowRcStr.html" title="struct cssparser::cow_rc_str::CowRcStr">CowRcStr</a>&lt;'i&gt;)</code></span></span><div class='docblock'><p>An unexpected dimension token was encountered.</p>
+</div><span id="variant.ExpectedIdentifier" class="variant small-section-header"><a href="#variant.ExpectedIdentifier" class="anchor field"></a><span id='ExpectedIdentifier.v' class='invisible'><code>ExpectedIdentifier(<a class="enum" href="../cssparser/tokenizer/enum.Token.html" title="enum cssparser::tokenizer::Token">Token</a>&lt;'i&gt;)</code></span></span><div class='docblock'><p>Expected identifier not found.</p>
+</div><span id="variant.MediaQueryExpectedFeatureName" class="variant small-section-header"><a href="#variant.MediaQueryExpectedFeatureName" class="anchor field"></a><span id='MediaQueryExpectedFeatureName.v' class='invisible'><code>MediaQueryExpectedFeatureName(<a class="struct" href="../cssparser/cow_rc_str/struct.CowRcStr.html" title="struct cssparser::cow_rc_str::CowRcStr">CowRcStr</a>&lt;'i&gt;)</code></span></span><div class='docblock'><p>Missing or invalid media feature name.</p>
+</div><span id="variant.MediaQueryExpectedFeatureValue" class="variant small-section-header"><a href="#variant.MediaQueryExpectedFeatureValue" class="anchor field"></a><span id='MediaQueryExpectedFeatureValue.v' class='invisible'><code>MediaQueryExpectedFeatureValue</code></span></span><div class='docblock'><p>Missing or invalid media feature value.</p>
+</div><span id="variant.RangedExpressionWithNoValue" class="variant small-section-header"><a href="#variant.RangedExpressionWithNoValue" class="anchor field"></a><span id='RangedExpressionWithNoValue.v' class='invisible'><code>RangedExpressionWithNoValue</code></span></span><div class='docblock'><p>min- or max- properties must have a value.</p>
+</div><span id="variant.UnexpectedFunction" class="variant small-section-header"><a href="#variant.UnexpectedFunction" class="anchor field"></a><span id='UnexpectedFunction.v' class='invisible'><code>UnexpectedFunction(<a class="struct" href="../cssparser/cow_rc_str/struct.CowRcStr.html" title="struct cssparser::cow_rc_str::CowRcStr">CowRcStr</a>&lt;'i&gt;)</code></span></span><div class='docblock'><p>A function was encountered that was not expected.</p>
+</div><span id="variant.UnexpectedNamespaceRule" class="variant small-section-header"><a href="#variant.UnexpectedNamespaceRule" class="anchor field"></a><span id='UnexpectedNamespaceRule.v' class='invisible'><code>UnexpectedNamespaceRule</code></span></span><div class='docblock'><p>@namespace must be before any rule but @charset and @import</p>
+</div><span id="variant.UnexpectedImportRule" class="variant small-section-header"><a href="#variant.UnexpectedImportRule" class="anchor field"></a><span id='UnexpectedImportRule.v' class='invisible'><code>UnexpectedImportRule</code></span></span><div class='docblock'><p>@import must be before any rule but @charset</p>
+</div><span id="variant.UnexpectedCharsetRule" class="variant small-section-header"><a href="#variant.UnexpectedCharsetRule" class="anchor field"></a><span id='UnexpectedCharsetRule.v' class='invisible'><code>UnexpectedCharsetRule</code></span></span><div class='docblock'><p>Unexpected @charset rule encountered.</p>
+</div><span id="variant.UnsupportedAtRule" class="variant small-section-header"><a href="#variant.UnsupportedAtRule" class="anchor field"></a><span id='UnsupportedAtRule.v' class='invisible'><code>UnsupportedAtRule(<a class="struct" href="../cssparser/cow_rc_str/struct.CowRcStr.html" title="struct cssparser::cow_rc_str::CowRcStr">CowRcStr</a>&lt;'i&gt;)</code></span></span><div class='docblock'><p>Unsupported @ rule</p>
+</div><span id="variant.UnspecifiedError" class="variant small-section-header"><a href="#variant.UnspecifiedError" class="anchor field"></a><span id='UnspecifiedError.v' class='invisible'><code>UnspecifiedError</code></span></span><div class='docblock'><p>A placeholder for many sources of errors that require more specific variants.</p>
+</div><span id="variant.UnexpectedTokenWithinNamespace" class="variant small-section-header"><a href="#variant.UnexpectedTokenWithinNamespace" class="anchor field"></a><span id='UnexpectedTokenWithinNamespace.v' class='invisible'><code>UnexpectedTokenWithinNamespace(<a class="enum" href="../cssparser/tokenizer/enum.Token.html" title="enum cssparser::tokenizer::Token">Token</a>&lt;'i&gt;)</code></span></span><div class='docblock'><p>An unexpected token was found within a namespace rule.</p>
+</div><span id="variant.ValueError" class="variant small-section-header"><a href="#variant.ValueError" class="anchor field"></a><span id='ValueError.v' class='invisible'><code>ValueError(<a class="enum" href="../style_traits/enum.ValueParseErrorKind.html" title="enum style_traits::ValueParseErrorKind">ValueParseErrorKind</a>&lt;'i&gt;)</code></span></span><div class='docblock'><p>An error was encountered while parsing a property value.</p>
+</div><span id="variant.SelectorError" class="variant small-section-header"><a href="#variant.SelectorError" class="anchor field"></a><span id='SelectorError.v' class='invisible'><code>SelectorError(<a class="enum" href="../selectors/parser/enum.SelectorParseErrorKind.html" title="enum selectors::parser::SelectorParseErrorKind">SelectorParseErrorKind</a>&lt;'i&gt;)</code></span></span><div class='docblock'><p>An error was encountered while parsing a selector</p>
+</div><span id="variant.UnknownProperty" class="variant small-section-header"><a href="#variant.UnknownProperty" class="anchor field"></a><span id='UnknownProperty.v' class='invisible'><code>UnknownProperty(<a class="struct" href="../cssparser/cow_rc_str/struct.CowRcStr.html" title="struct cssparser::cow_rc_str::CowRcStr">CowRcStr</a>&lt;'i&gt;)</code></span></span><div class='docblock'><p>The property declaration was for an unknown property.</p>
+</div><span id="variant.UnknownVendorProperty" class="variant small-section-header"><a href="#variant.UnknownVendorProperty" class="anchor field"></a><span id='UnknownVendorProperty.v' class='invisible'><code>UnknownVendorProperty</code></span></span><div class='docblock'><p>An unknown vendor-specific identifier was encountered.</p>
+</div><span id="variant.ExperimentalProperty" class="variant small-section-header"><a href="#variant.ExperimentalProperty" class="anchor field"></a><span id='ExperimentalProperty.v' class='invisible'><code>ExperimentalProperty</code></span></span><div class='docblock'><p>The property declaration was for a disabled experimental property.</p>
+</div><span id="variant.InvalidColor" class="variant small-section-header"><a href="#variant.InvalidColor" class="anchor field"></a><span id='InvalidColor.v' class='invisible'><code>InvalidColor(<a class="struct" href="../cssparser/cow_rc_str/struct.CowRcStr.html" title="struct cssparser::cow_rc_str::CowRcStr">CowRcStr</a>&lt;'i&gt;,&nbsp;<a class="enum" href="../cssparser/tokenizer/enum.Token.html" title="enum cssparser::tokenizer::Token">Token</a>&lt;'i&gt;)</code></span></span><div class='docblock'><p>The property declaration contained an invalid color value.</p>
+</div><span id="variant.InvalidFilter" class="variant small-section-header"><a href="#variant.InvalidFilter" class="anchor field"></a><span id='InvalidFilter.v' class='invisible'><code>InvalidFilter(<a class="struct" href="../cssparser/cow_rc_str/struct.CowRcStr.html" title="struct cssparser::cow_rc_str::CowRcStr">CowRcStr</a>&lt;'i&gt;,&nbsp;<a class="enum" href="../cssparser/tokenizer/enum.Token.html" title="enum cssparser::tokenizer::Token">Token</a>&lt;'i&gt;)</code></span></span><div class='docblock'><p>The property declaration contained an invalid filter value.</p>
+</div><span id="variant.OtherInvalidValue" class="variant small-section-header"><a href="#variant.OtherInvalidValue" class="anchor field"></a><span id='OtherInvalidValue.v' class='invisible'><code>OtherInvalidValue(<a class="struct" href="../cssparser/cow_rc_str/struct.CowRcStr.html" title="struct cssparser::cow_rc_str::CowRcStr">CowRcStr</a>&lt;'i&gt;)</code></span></span><div class='docblock'><p>The property declaration contained an invalid value.</p>
+</div><span id="variant.AnimationPropertyInKeyframeBlock" class="variant small-section-header"><a href="#variant.AnimationPropertyInKeyframeBlock" class="anchor field"></a><span id='AnimationPropertyInKeyframeBlock.v' class='invisible'><code>AnimationPropertyInKeyframeBlock</code></span></span><div class='docblock'><p>The declaration contained an animation property, and we were parsing
+this as a keyframe block (so that property should be ignored).</p>
+
+<p>See: <a href="https://drafts.csswg.org/css-animations/#keyframes">https://drafts.csswg.org/css-animations/#keyframes</a></p>
+</div><span id="variant.NotAllowedInPageRule" class="variant small-section-header"><a href="#variant.NotAllowedInPageRule" class="anchor field"></a><span id='NotAllowedInPageRule.v' class='invisible'><code>NotAllowedInPageRule</code></span></span><div class='docblock'><p>The property is not allowed within a page rule.</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl&lt;'i&gt; <a class="enum" href="../style_traits/enum.StyleParseErrorKind.html" title="enum style_traits::StyleParseErrorKind">StyleParseErrorKind</a>&lt;'i&gt;</code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/style_traits/lib.rs.html#175-196' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_invalid' class="method"><span id='new_invalid.v' class='invisible'><code>pub fn <a href='#method.new_invalid' class='fnname'>new_invalid</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;name: <a class="struct" href="../cssparser/cow_rc_str/struct.CowRcStr.html" title="struct cssparser::cow_rc_str::CowRcStr">CowRcStr</a>&lt;'i&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;value_error: <a class="type" href="../style_traits/type.ParseError.html" title="type style_traits::ParseError">ParseError</a>&lt;'i&gt;<br>) -&gt; <a class="type" href="../style_traits/type.ParseError.html" title="type style_traits::ParseError">ParseError</a>&lt;'i&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/style_traits/lib.rs.html#177-195' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Create an InvalidValue parse error</p>
+</div></div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Clone' class='impl'><span class='in-band'><code>impl&lt;'i&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="enum" href="../style_traits/enum.StyleParseErrorKind.html" title="enum style_traits::StyleParseErrorKind">StyleParseErrorKind</a>&lt;'i&gt;</code><a href='#impl-Clone' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/style_traits/lib.rs.html#89' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="enum" href="../style_traits/enum.StyleParseErrorKind.html" title="enum style_traits::StyleParseErrorKind">StyleParseErrorKind</a>&lt;'i&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/style_traits/lib.rs.html#89' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl&lt;'i&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="enum" href="../style_traits/enum.StyleParseErrorKind.html" title="enum style_traits::StyleParseErrorKind">StyleParseErrorKind</a>&lt;'i&gt;</code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/style_traits/lib.rs.html#89' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/style_traits/lib.rs.html#89' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div><h3 id='impl-PartialEq' class='impl'><span class='in-band'><code>impl&lt;'i&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a> for <a class="enum" href="../style_traits/enum.StyleParseErrorKind.html" title="enum style_traits::StyleParseErrorKind">StyleParseErrorKind</a>&lt;'i&gt;</code><a href='#impl-PartialEq' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/style_traits/lib.rs.html#89' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class="method"><span id='eq.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class="enum" href="../style_traits/enum.StyleParseErrorKind.html" title="enum style_traits::StyleParseErrorKind">StyleParseErrorKind</a>&lt;'i&gt;) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/style_traits/lib.rs.html#89' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class="method"><span id='ne.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class="enum" href="../style_traits/enum.StyleParseErrorKind.html" title="enum style_traits::StyleParseErrorKind">StyleParseErrorKind</a>&lt;'i&gt;) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/style_traits/lib.rs.html#89' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 id='impl-From%3CValueParseErrorKind%3C%27i%3E%3E' class='impl'><span class='in-band'><code>impl&lt;'i&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;<a class="enum" href="../style_traits/enum.ValueParseErrorKind.html" title="enum style_traits::ValueParseErrorKind">ValueParseErrorKind</a>&lt;'i&gt;&gt; for <a class="enum" href="../style_traits/enum.StyleParseErrorKind.html" title="enum style_traits::StyleParseErrorKind">StyleParseErrorKind</a>&lt;'i&gt;</code><a href='#impl-From%3CValueParseErrorKind%3C%27i%3E%3E' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/style_traits/lib.rs.html#154-158' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from' class="method"><span id='from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from' class='fnname'>from</a>(this: <a class="enum" href="../style_traits/enum.ValueParseErrorKind.html" title="enum style_traits::ValueParseErrorKind">ValueParseErrorKind</a>&lt;'i&gt;) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/style_traits/lib.rs.html#155-157' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs the conversion.</p>
+</div></div><h3 id='impl-From%3CSelectorParseErrorKind%3C%27i%3E%3E' class='impl'><span class='in-band'><code>impl&lt;'i&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;<a class="enum" href="../selectors/parser/enum.SelectorParseErrorKind.html" title="enum selectors::parser::SelectorParseErrorKind">SelectorParseErrorKind</a>&lt;'i&gt;&gt; for <a class="enum" href="../style_traits/enum.StyleParseErrorKind.html" title="enum style_traits::StyleParseErrorKind">StyleParseErrorKind</a>&lt;'i&gt;</code><a href='#impl-From%3CSelectorParseErrorKind%3C%27i%3E%3E' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/style_traits/lib.rs.html#160-164' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from-1' class="method"><span id='from.v-1' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from' class='fnname'>from</a>(this: <a class="enum" href="../selectors/parser/enum.SelectorParseErrorKind.html" title="enum selectors::parser::SelectorParseErrorKind">SelectorParseErrorKind</a>&lt;'i&gt;) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/style_traits/lib.rs.html#161-163' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs the conversion.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "style_traits";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

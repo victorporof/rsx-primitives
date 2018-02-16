@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `UserAgentStylesheets` struct in crate `style`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, UserAgentStylesheets">
+
+    <title>style::stylesheets::UserAgentStylesheets - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct UserAgentStylesheets</p><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.shared_lock">shared_lock</a><a href="#structfield.user_or_user_agent_stylesheets">user_or_user_agent_stylesheets</a><a href="#structfield.quirks_mode_stylesheet">quirks_mode_stylesheet</a></div></div><p class='location'><a href='../index.html'>style</a>::<wbr><a href='index.html'>stylesheets</a></p><script>window.sidebarCurrent = {name: 'UserAgentStylesheets', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>style</a>::<wbr><a href='index.html'>stylesheets</a>::<wbr><a class="struct" href=''>UserAgentStylesheets</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/style/stylesheets/stylesheet.rs.html#29-36' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct UserAgentStylesheets {
+    pub shared_lock: <a class="struct" href="../../style/shared_lock/struct.SharedRwLock.html" title="struct style::shared_lock::SharedRwLock">SharedRwLock</a>,
+    pub user_or_user_agent_stylesheets: <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="struct" href="../../style/stylesheets/struct.DocumentStyleSheet.html" title="struct style::stylesheets::DocumentStyleSheet">DocumentStyleSheet</a>&gt;,
+    pub quirks_mode_stylesheet: <a class="struct" href="../../style/stylesheets/struct.DocumentStyleSheet.html" title="struct style::stylesheets::DocumentStyleSheet">DocumentStyleSheet</a>,
+}</pre><div class='docblock'><p>This structure holds the user-agent and user stylesheets.</p>
+</div><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.shared_lock" class="structfield small-section-header">
+                           <a href="#structfield.shared_lock" class="anchor field"></a>
+                           <span id="shared_lock.v" class='invisible'>
+                           <code>shared_lock: <a class="struct" href="../../style/shared_lock/struct.SharedRwLock.html" title="struct style::shared_lock::SharedRwLock">SharedRwLock</a></code>
+                           </span></span><div class='docblock'><p>The lock used for user-agent stylesheets.</p>
+</div><span id="structfield.user_or_user_agent_stylesheets" class="structfield small-section-header">
+                           <a href="#structfield.user_or_user_agent_stylesheets" class="anchor field"></a>
+                           <span id="user_or_user_agent_stylesheets.v" class='invisible'>
+                           <code>user_or_user_agent_stylesheets: <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="struct" href="../../style/stylesheets/struct.DocumentStyleSheet.html" title="struct style::stylesheets::DocumentStyleSheet">DocumentStyleSheet</a>&gt;</code>
+                           </span></span><div class='docblock'><p>The user or user agent stylesheets.</p>
+</div><span id="structfield.quirks_mode_stylesheet" class="structfield small-section-header">
+                           <a href="#structfield.quirks_mode_stylesheet" class="anchor field"></a>
+                           <span id="quirks_mode_stylesheet.v" class='invisible'>
+                           <code>quirks_mode_stylesheet: <a class="struct" href="../../style/stylesheets/struct.DocumentStyleSheet.html" title="struct style::stylesheets::DocumentStyleSheet">DocumentStyleSheet</a></code>
+                           </span></span><div class='docblock'><p>The quirks mode stylesheet.</p>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "style";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

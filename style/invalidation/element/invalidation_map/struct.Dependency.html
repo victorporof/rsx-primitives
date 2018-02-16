@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Dependency` struct in crate `style`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Dependency">
+
+    <title>style::invalidation::element::invalidation_map::Dependency - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct Dependency</p><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.selector">selector</a><a href="#structfield.selector_offset">selector_offset</a></div><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.combinator">combinator</a><a href="#method.affects_self">affects_self</a><a href="#method.affects_descendants">affects_descendants</a><a href="#method.affects_later_siblings">affects_later_siblings</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Clone">Clone</a><a href="#impl-Debug">Debug</a><a href="#impl-MallocSizeOf">MallocSizeOf</a><a href="#impl-SelectorMapEntry">SelectorMapEntry</a></div></div><p class='location'><a href='../../../index.html'>style</a>::<wbr><a href='../../index.html'>invalidation</a>::<wbr><a href='../index.html'>element</a>::<wbr><a href='index.html'>invalidation_map</a></p><script>window.sidebarCurrent = {name: 'Dependency', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../../index.html'>style</a>::<wbr><a href='../../index.html'>invalidation</a>::<wbr><a href='../index.html'>element</a>::<wbr><a href='index.html'>invalidation_map</a>::<wbr><a class="struct" href=''>Dependency</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../../src/style/invalidation/element/invalidation_map.rs.html#55-64' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Dependency {
+    pub selector: <a class="struct" href="../../../../selectors/parser/struct.Selector.html" title="struct selectors::parser::Selector">Selector</a>&lt;<a class="struct" href="../../../../style/servo/selector_parser/struct.SelectorImpl.html" title="struct style::servo::selector_parser::SelectorImpl">SelectorImpl</a>&gt;,
+    pub selector_offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>,
+}</pre><div class='docblock'><p>Mapping between (partial) CompoundSelectors (and the combinator to their
+right) and the states and attributes they depend on.</p>
+
+<p>In general, for all selectors in all applicable stylesheets of the form:</p>
+
+<p>|a _ b _ c _ d _ e|</p>
+
+<p>Where:
+  * |b| and |d| are simple selectors that depend on state (like :hover) or
+    attributes (like [attr...], .foo, or #foo).
+  * |a|, |c|, and |e| are arbitrary simple selectors that do not depend on
+    state or attributes.</p>
+
+<p>We generate a Dependency for both |a _ b:X _| and |a _ b:X _ c _ d:Y _|,
+even though those selectors may not appear on their own in any stylesheet.
+This allows us to quickly scan through the dependency sites of all style
+rules and determine the maximum effect that a given state or attribute
+change may have on the style of elements in the document.</p>
+</div><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.selector" class="structfield small-section-header">
+                           <a href="#structfield.selector" class="anchor field"></a>
+                           <span id="selector.v" class='invisible'>
+                           <code>selector: <a class="struct" href="../../../../selectors/parser/struct.Selector.html" title="struct selectors::parser::Selector">Selector</a>&lt;<a class="struct" href="../../../../style/servo/selector_parser/struct.SelectorImpl.html" title="struct style::servo::selector_parser::SelectorImpl">SelectorImpl</a>&gt;</code>
+                           </span></span><div class='docblock'><p>The dependency selector.</p>
+</div><span id="structfield.selector_offset" class="structfield small-section-header">
+                           <a href="#structfield.selector_offset" class="anchor field"></a>
+                           <span id="selector_offset.v" class='invisible'>
+                           <code>selector_offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a></code>
+                           </span></span><div class='docblock'><p>The offset into the selector that we should match on.</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="struct" href="../../../../style/invalidation/element/invalidation_map/struct.Dependency.html" title="struct style::invalidation::element::invalidation_map::Dependency">Dependency</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/invalidation_map.rs.html#66-102' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.combinator' class="method"><span id='combinator.v' class='invisible'><code>pub fn <a href='#method.combinator' class='fnname'>combinator</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="enum" href="../../../../selectors/parser/enum.Combinator.html" title="enum selectors::parser::Combinator">Combinator</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/invalidation_map.rs.html#71-77' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the combinator to the right of the partial selector this
+dependency represents.</p>
+
+<p>TODO(emilio): Consider storing inline if it helps cache locality?</p>
+</div><h4 id='method.affects_self' class="method"><span id='affects_self.v' class='invisible'><code>pub fn <a href='#method.affects_self' class='fnname'>affects_self</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/invalidation_map.rs.html#86-88' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Whether this dependency affects the style of the element.</p>
+
+<p>NOTE(emilio): pseudo-elements need to be here to account for eager
+pseudos, since they just grab the style from the originating element.</p>
+
+<p>TODO(emilio): We could look at the selector itself to see if it&#39;s an
+eager pseudo, and return false here if not.</p>
+</div><h4 id='method.affects_descendants' class="method"><span id='affects_descendants.v' class='invisible'><code>pub fn <a href='#method.affects_descendants' class='fnname'>affects_descendants</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/invalidation_map.rs.html#91-95' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Whether this dependency may affect style of any of our descendants.</p>
+</div><h4 id='method.affects_later_siblings' class="method"><span id='affects_later_siblings.v' class='invisible'><code>pub fn <a href='#method.affects_later_siblings' class='fnname'>affects_later_siblings</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/invalidation_map.rs.html#98-101' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Whether this dependency may affect style of any of our later siblings.</p>
+</div></div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Clone' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="struct" href="../../../../style/invalidation/element/invalidation_map/struct.Dependency.html" title="struct style::invalidation::element::invalidation_map::Dependency">Dependency</a></code><a href='#impl-Clone' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/invalidation_map.rs.html#54' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="struct" href="../../../../style/invalidation/element/invalidation_map/struct.Dependency.html" title="struct style::invalidation::element::invalidation_map::Dependency">Dependency</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/invalidation_map.rs.html#54' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../../../../style/invalidation/element/invalidation_map/struct.Dependency.html" title="struct style::invalidation::element::invalidation_map::Dependency">Dependency</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/invalidation_map.rs.html#54' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/invalidation_map.rs.html#54' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div><h3 id='impl-MallocSizeOf' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../../../malloc_size_of/trait.MallocSizeOf.html" title="trait malloc_size_of::MallocSizeOf">MallocSizeOf</a> for <a class="struct" href="../../../../style/invalidation/element/invalidation_map/struct.Dependency.html" title="struct style::invalidation::element::invalidation_map::Dependency">Dependency</a></code><a href='#impl-MallocSizeOf' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/invalidation_map.rs.html#54-1' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.size_of' class="method"><span id='size_of.v' class='invisible'><code>fn <a href='../../../../malloc_size_of/trait.MallocSizeOf.html#tymethod.size_of' class='fnname'>size_of</a>(&amp;self, ops: &amp;mut <a class="struct" href="../../../../malloc_size_of/struct.MallocSizeOfOps.html" title="struct malloc_size_of::MallocSizeOfOps">MallocSizeOfOps</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/invalidation_map.rs.html#54' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Measure the heap usage of all descendant heap-allocated structures, but not the space taken up by the value itself. <a href="../../../../malloc_size_of/trait.MallocSizeOf.html#tymethod.size_of">Read more</a></p>
+</div></div><h3 id='impl-SelectorMapEntry' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../../../style/selector_map/trait.SelectorMapEntry.html" title="trait style::selector_map::SelectorMapEntry">SelectorMapEntry</a> for <a class="struct" href="../../../../style/invalidation/element/invalidation_map/struct.Dependency.html" title="struct style::invalidation::element::invalidation_map::Dependency">Dependency</a></code><a href='#impl-SelectorMapEntry' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/invalidation_map.rs.html#104-108' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.selector' class="method"><span id='selector.v-1' class='invisible'><code>fn <a href='../../../../style/selector_map/trait.SelectorMapEntry.html#tymethod.selector' class='fnname'>selector</a>(&amp;self) -&gt; <a class="struct" href="../../../../selectors/parser/struct.SelectorIter.html" title="struct selectors::parser::SelectorIter">SelectorIter</a>&lt;<a class="struct" href="../../../../style/servo/selector_parser/struct.SelectorImpl.html" title="struct style::servo::selector_parser::SelectorImpl">SelectorImpl</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/invalidation_map.rs.html#105-107' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Gets the selector we should use to index in the selector map.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../../";
+        window.currentCrate = "style";
+    </script>
+    <script src="../../../../main.js"></script>
+    <script defer src="../../../../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `SelectorImpl` struct in crate `style`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, SelectorImpl">
+
+    <title>style::servo::selector_parser::SelectorImpl - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct SelectorImpl</p><div class="block items"><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.each_eagerly_cascaded_pseudo_element">each_eagerly_cascaded_pseudo_element</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Clone">Clone</a><a href="#impl-Debug">Debug</a><a href="#impl-PartialEq">PartialEq</a><a href="#impl-MallocSizeOf">MallocSizeOf</a><a href="#impl-SelectorImpl">SelectorImpl</a></div></div><p class='location'><a href='../../index.html'>style</a>::<wbr><a href='../index.html'>servo</a>::<wbr><a href='index.html'>selector_parser</a></p><script>window.sidebarCurrent = {name: 'SelectorImpl', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>style</a>::<wbr><a href='../index.html'>servo</a>::<wbr><a href='index.html'>selector_parser</a>::<wbr><a class="struct" href=''>SelectorImpl</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#374' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct SelectorImpl;</pre><div class='docblock'><p>The abstract struct we implement the selector parser implementation on top
+of.</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="struct" href="../../../style/servo/selector_parser/struct.SelectorImpl.html" title="struct style::servo::selector_parser::SelectorImpl">SelectorImpl</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#549-560' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.each_eagerly_cascaded_pseudo_element' class="method"><span id='each_eagerly_cascaded_pseudo_element.v' class='invisible'><code>pub fn <a href='#method.each_eagerly_cascaded_pseudo_element' class='fnname'>each_eagerly_cascaded_pseudo_element</a>&lt;F&gt;(fun: F) <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(<a class="enum" href="../../../style/servo/selector_parser/enum.PseudoElement.html" title="enum style::servo::selector_parser::PseudoElement">PseudoElement</a>),&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#553-559' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>A helper to traverse each eagerly cascaded pseudo-element, executing
+<code>fun</code> on it.</p>
+</div></div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Clone' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="struct" href="../../../style/servo/selector_parser/struct.SelectorImpl.html" title="struct style::servo::selector_parser::SelectorImpl">SelectorImpl</a></code><a href='#impl-Clone' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#372' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="struct" href="../../../style/servo/selector_parser/struct.SelectorImpl.html" title="struct style::servo::selector_parser::SelectorImpl">SelectorImpl</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#372' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../../../style/servo/selector_parser/struct.SelectorImpl.html" title="struct style::servo::selector_parser::SelectorImpl">SelectorImpl</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#372' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#372' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div><h3 id='impl-PartialEq' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a> for <a class="struct" href="../../../style/servo/selector_parser/struct.SelectorImpl.html" title="struct style::servo::selector_parser::SelectorImpl">SelectorImpl</a></code><a href='#impl-PartialEq' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#372' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class="method"><span id='eq.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class="struct" href="../../../style/servo/selector_parser/struct.SelectorImpl.html" title="struct style::servo::selector_parser::SelectorImpl">SelectorImpl</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#372' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class="method"><span id='ne.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, other: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Rhs) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/cmp.rs.html#121' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 id='impl-MallocSizeOf' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../../malloc_size_of/trait.MallocSizeOf.html" title="trait malloc_size_of::MallocSizeOf">MallocSizeOf</a> for <a class="struct" href="../../../style/servo/selector_parser/struct.SelectorImpl.html" title="struct style::servo::selector_parser::SelectorImpl">SelectorImpl</a></code><a href='#impl-MallocSizeOf' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#373-1' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.size_of' class="method"><span id='size_of.v' class='invisible'><code>fn <a href='../../../malloc_size_of/trait.MallocSizeOf.html#tymethod.size_of' class='fnname'>size_of</a>(&amp;self, ops: &amp;mut <a class="struct" href="../../../malloc_size_of/struct.MallocSizeOfOps.html" title="struct malloc_size_of::MallocSizeOfOps">MallocSizeOfOps</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#373' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Measure the heap usage of all descendant heap-allocated structures, but not the space taken up by the value itself. <a href="../../../malloc_size_of/trait.MallocSizeOf.html#tymethod.size_of">Read more</a></p>
+</div></div><h3 id='impl-SelectorImpl' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../../selectors/parser/trait.SelectorImpl.html" title="trait selectors::parser::SelectorImpl">SelectorImpl</a> for <a class="struct" href="../../../style/servo/selector_parser/struct.SelectorImpl.html" title="struct style::servo::selector_parser::SelectorImpl">SelectorImpl</a></code><a href='#impl-SelectorImpl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#376-394' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.PseudoElement' class="type"><span id='PseudoElement.t' class='invisible'><code>type <a href='../../../selectors/parser/trait.SelectorImpl.html#associatedtype.PseudoElement' class="type">PseudoElement</a> = <a class="enum" href="../../../style/servo/selector_parser/enum.PseudoElement.html" title="enum style::servo::selector_parser::PseudoElement">PseudoElement</a></code></span></h4>
+<div class='docblock'><p>pseudo-elements</p>
+</div><h4 id='associatedtype.NonTSPseudoClass' class="type"><span id='NonTSPseudoClass.t' class='invisible'><code>type <a href='../../../selectors/parser/trait.SelectorImpl.html#associatedtype.NonTSPseudoClass' class="type">NonTSPseudoClass</a> = <a class="enum" href="../../../style/servo/selector_parser/enum.NonTSPseudoClass.html" title="enum style::servo::selector_parser::NonTSPseudoClass">NonTSPseudoClass</a></code></span></h4>
+<div class='docblock'><p>non tree-structural pseudo-classes (see: <a href="https://drafts.csswg.org/selectors/#structural-pseudos">https://drafts.csswg.org/selectors/#structural-pseudos</a>) <a href="../../../selectors/parser/trait.SelectorImpl.html#associatedtype.NonTSPseudoClass">Read more</a></p>
+</div><h4 id='associatedtype.AttrValue' class="type"><span id='AttrValue.t' class='invisible'><code>type <a href='../../../selectors/parser/trait.SelectorImpl.html#associatedtype.AttrValue' class="type">AttrValue</a> = <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a></code></span></h4>
+<h4 id='associatedtype.Identifier' class="type"><span id='Identifier.t' class='invisible'><code>type <a href='../../../selectors/parser/trait.SelectorImpl.html#associatedtype.Identifier' class="type">Identifier</a> = <a class="type" href="../../../style/type.Atom.html" title="type style::Atom">Atom</a></code></span></h4>
+<h4 id='associatedtype.ClassName' class="type"><span id='ClassName.t' class='invisible'><code>type <a href='../../../selectors/parser/trait.SelectorImpl.html#associatedtype.ClassName' class="type">ClassName</a> = <a class="type" href="../../../style/type.Atom.html" title="type style::Atom">Atom</a></code></span></h4>
+<h4 id='associatedtype.LocalName' class="type"><span id='LocalName.t' class='invisible'><code>type <a href='../../../selectors/parser/trait.SelectorImpl.html#associatedtype.LocalName' class="type">LocalName</a> = <a class="type" href="../../../style/type.LocalName.html" title="type style::LocalName">LocalName</a></code></span></h4>
+<h4 id='associatedtype.NamespacePrefix' class="type"><span id='NamespacePrefix.t' class='invisible'><code>type <a href='../../../selectors/parser/trait.SelectorImpl.html#associatedtype.NamespacePrefix' class="type">NamespacePrefix</a> = <a class="type" href="../../../style/type.Prefix.html" title="type style::Prefix">Prefix</a></code></span></h4>
+<h4 id='associatedtype.NamespaceUrl' class="type"><span id='NamespaceUrl.t' class='invisible'><code>type <a href='../../../selectors/parser/trait.SelectorImpl.html#associatedtype.NamespaceUrl' class="type">NamespaceUrl</a> = <a class="type" href="../../../style/type.Namespace.html" title="type style::Namespace">Namespace</a></code></span></h4>
+<h4 id='associatedtype.BorrowedLocalName' class="type"><span id='BorrowedLocalName.t' class='invisible'><code>type <a href='../../../selectors/parser/trait.SelectorImpl.html#associatedtype.BorrowedLocalName' class="type">BorrowedLocalName</a> = <a class="type" href="../../../style/type.LocalName.html" title="type style::LocalName">LocalName</a></code></span></h4>
+<h4 id='associatedtype.BorrowedNamespaceUrl' class="type"><span id='BorrowedNamespaceUrl.t' class='invisible'><code>type <a href='../../../selectors/parser/trait.SelectorImpl.html#associatedtype.BorrowedNamespaceUrl' class="type">BorrowedNamespaceUrl</a> = <a class="type" href="../../../style/type.Namespace.html" title="type style::Namespace">Namespace</a></code></span></h4>
+<h4 id='method.is_active_or_hover' class="method"><span id='is_active_or_hover.v' class='invisible'><code>fn <a href='../../../selectors/parser/trait.SelectorImpl.html#tymethod.is_active_or_hover' class='fnname'>is_active_or_hover</a>(pseudo_class: &amp;Self::<a class="type" href="../../../selectors/parser/trait.SelectorImpl.html#associatedtype.NonTSPseudoClass" title="type selectors::parser::SelectorImpl::NonTSPseudoClass">NonTSPseudoClass</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#390-393' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns whether the given pseudo class is :active or :hover.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "style";
+    </script>
+    <script src="../../../main.js"></script>
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

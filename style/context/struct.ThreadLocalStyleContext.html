@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `ThreadLocalStyleContext` struct in crate `style`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, ThreadLocalStyleContext">
+
+    <title>style::context::ThreadLocalStyleContext - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct ThreadLocalStyleContext</p><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.sharing_cache">sharing_cache</a><a href="#structfield.rule_cache">rule_cache</a><a href="#structfield.bloom_filter">bloom_filter</a><a href="#structfield.new_animations_sender">new_animations_sender</a><a href="#structfield.tasks">tasks</a><a href="#structfield.selector_flags">selector_flags</a><a href="#structfield.statistics">statistics</a><a href="#structfield.font_metrics_provider">font_metrics_provider</a><a href="#structfield.stack_limit_checker">stack_limit_checker</a><a href="#structfield.nth_index_cache">nth_index_cache</a></div><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.new">new</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Drop">Drop</a></div></div><p class='location'><a href='../index.html'>style</a>::<wbr><a href='index.html'>context</a></p><script>window.sidebarCurrent = {name: 'ThreadLocalStyleContext', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>style</a>::<wbr><a href='index.html'>context</a>::<wbr><a class="struct" href=''>ThreadLocalStyleContext</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/style/context.rs.html#688-722' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct ThreadLocalStyleContext&lt;E:&nbsp;<a class="trait" href="../../style/dom/trait.TElement.html" title="trait style::dom::TElement">TElement</a>&gt; {
+    pub sharing_cache: <a class="struct" href="../../style/sharing/struct.StyleSharingCache.html" title="struct style::sharing::StyleSharingCache">StyleSharingCache</a>&lt;E&gt;,
+    pub rule_cache: <a class="struct" href="../../style/rule_cache/struct.RuleCache.html" title="struct style::rule_cache::RuleCache">RuleCache</a>,
+    pub bloom_filter: <a class="struct" href="../../style/bloom/struct.StyleBloom.html" title="struct style::bloom::StyleBloom">StyleBloom</a>&lt;E&gt;,
+    pub new_animations_sender: <a class="struct" href="https://doc.rust-lang.org/nightly/std/sync/mpsc/struct.Sender.html" title="struct std::sync::mpsc::Sender">Sender</a>&lt;<a class="enum" href="../../style/animation/enum.Animation.html" title="enum style::animation::Animation">Animation</a>&gt;,
+    pub tasks: <a class="struct" href="../../style/context/struct.SequentialTaskList.html" title="struct style::context::SequentialTaskList">SequentialTaskList</a>&lt;E&gt;,
+    pub selector_flags: <a class="struct" href="../../style/context/struct.SelectorFlagsMap.html" title="struct style::context::SelectorFlagsMap">SelectorFlagsMap</a>&lt;E&gt;,
+    pub statistics: <a class="struct" href="../../style/context/struct.TraversalStatistics.html" title="struct style::context::TraversalStatistics">TraversalStatistics</a>,
+    pub font_metrics_provider: E::<a class="type" href="../../style/dom/trait.TElement.html#associatedtype.FontMetricsProvider" title="type style::dom::TElement::FontMetricsProvider">FontMetricsProvider</a>,
+    pub stack_limit_checker: <a class="struct" href="../../style/context/struct.StackLimitChecker.html" title="struct style::context::StackLimitChecker">StackLimitChecker</a>,
+    pub nth_index_cache: <a class="struct" href="../../selectors/nth_index_cache/struct.NthIndexCache.html" title="struct selectors::nth_index_cache::NthIndexCache">NthIndexCache</a>,
+}</pre><div class='docblock'><p>A thread-local style context.</p>
+
+<p>This context contains data that needs to be used during restyling, but is
+not required to be unique among worker threads, so we create one per worker
+thread in order to be able to mutate it without locking.</p>
+</div><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.sharing_cache" class="structfield small-section-header">
+                           <a href="#structfield.sharing_cache" class="anchor field"></a>
+                           <span id="sharing_cache.v" class='invisible'>
+                           <code>sharing_cache: <a class="struct" href="../../style/sharing/struct.StyleSharingCache.html" title="struct style::sharing::StyleSharingCache">StyleSharingCache</a>&lt;E&gt;</code>
+                           </span></span><div class='docblock'><p>A cache to share style among siblings.</p>
+</div><span id="structfield.rule_cache" class="structfield small-section-header">
+                           <a href="#structfield.rule_cache" class="anchor field"></a>
+                           <span id="rule_cache.v" class='invisible'>
+                           <code>rule_cache: <a class="struct" href="../../style/rule_cache/struct.RuleCache.html" title="struct style::rule_cache::RuleCache">RuleCache</a></code>
+                           </span></span><div class='docblock'><p>A cache from matched properties to elements that match those.</p>
+</div><span id="structfield.bloom_filter" class="structfield small-section-header">
+                           <a href="#structfield.bloom_filter" class="anchor field"></a>
+                           <span id="bloom_filter.v" class='invisible'>
+                           <code>bloom_filter: <a class="struct" href="../../style/bloom/struct.StyleBloom.html" title="struct style::bloom::StyleBloom">StyleBloom</a>&lt;E&gt;</code>
+                           </span></span><div class='docblock'><p>The bloom filter used to fast-reject selector-matching.</p>
+</div><span id="structfield.new_animations_sender" class="structfield small-section-header">
+                           <a href="#structfield.new_animations_sender" class="anchor field"></a>
+                           <span id="new_animations_sender.v" class='invisible'>
+                           <code>new_animations_sender: <a class="struct" href="https://doc.rust-lang.org/nightly/std/sync/mpsc/struct.Sender.html" title="struct std::sync::mpsc::Sender">Sender</a>&lt;<a class="enum" href="../../style/animation/enum.Animation.html" title="enum style::animation::Animation">Animation</a>&gt;</code>
+                           </span></span><div class='docblock'><p>A channel on which new animations that have been triggered by style
+recalculation can be sent.</p>
+</div><span id="structfield.tasks" class="structfield small-section-header">
+                           <a href="#structfield.tasks" class="anchor field"></a>
+                           <span id="tasks.v" class='invisible'>
+                           <code>tasks: <a class="struct" href="../../style/context/struct.SequentialTaskList.html" title="struct style::context::SequentialTaskList">SequentialTaskList</a>&lt;E&gt;</code>
+                           </span></span><div class='docblock'><p>A set of tasks to be run (on the parent thread) in sequential mode after
+the rest of the styling is complete. This is useful for
+infrequently-needed non-threadsafe operations.</p>
+
+<p>It&#39;s important that goes after the style sharing cache and the bloom
+filter, to ensure they&#39;re dropped before we execute the tasks, which
+could create another ThreadLocalStyleContext for style computation.</p>
+</div><span id="structfield.selector_flags" class="structfield small-section-header">
+                           <a href="#structfield.selector_flags" class="anchor field"></a>
+                           <span id="selector_flags.v" class='invisible'>
+                           <code>selector_flags: <a class="struct" href="../../style/context/struct.SelectorFlagsMap.html" title="struct style::context::SelectorFlagsMap">SelectorFlagsMap</a>&lt;E&gt;</code>
+                           </span></span><div class='docblock'><p>ElementSelectorFlags that need to be applied after the traversal is
+complete. This map is used in cases where the matching algorithm needs
+to set flags on elements it doesn&#39;t have exclusive access to (i.e. other
+than the current element).</p>
+</div><span id="structfield.statistics" class="structfield small-section-header">
+                           <a href="#structfield.statistics" class="anchor field"></a>
+                           <span id="statistics.v" class='invisible'>
+                           <code>statistics: <a class="struct" href="../../style/context/struct.TraversalStatistics.html" title="struct style::context::TraversalStatistics">TraversalStatistics</a></code>
+                           </span></span><div class='docblock'><p>Statistics about the traversal.</p>
+</div><span id="structfield.font_metrics_provider" class="structfield small-section-header">
+                           <a href="#structfield.font_metrics_provider" class="anchor field"></a>
+                           <span id="font_metrics_provider.v" class='invisible'>
+                           <code>font_metrics_provider: E::<a class="type" href="../../style/dom/trait.TElement.html#associatedtype.FontMetricsProvider" title="type style::dom::TElement::FontMetricsProvider">FontMetricsProvider</a></code>
+                           </span></span><div class='docblock'><p>The struct used to compute and cache font metrics from style
+for evaluation of the font-relative em/ch units and font-size</p>
+</div><span id="structfield.stack_limit_checker" class="structfield small-section-header">
+                           <a href="#structfield.stack_limit_checker" class="anchor field"></a>
+                           <span id="stack_limit_checker.v" class='invisible'>
+                           <code>stack_limit_checker: <a class="struct" href="../../style/context/struct.StackLimitChecker.html" title="struct style::context::StackLimitChecker">StackLimitChecker</a></code>
+                           </span></span><div class='docblock'><p>A checker used to ensure that parallel.rs does not recurse indefinitely
+even on arbitrarily deep trees.  See Gecko bug 1376883.</p>
+</div><span id="structfield.nth_index_cache" class="structfield small-section-header">
+                           <a href="#structfield.nth_index_cache" class="anchor field"></a>
+                           <span id="nth_index_cache.v" class='invisible'>
+                           <code>nth_index_cache: <a class="struct" href="../../selectors/nth_index_cache/struct.NthIndexCache.html" title="struct selectors::nth_index_cache::NthIndexCache">NthIndexCache</a></code>
+                           </span></span><div class='docblock'><p>A cache for nth-index-like selectors.</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl&lt;E:&nbsp;<a class="trait" href="../../style/dom/trait.TElement.html" title="trait style::dom::TElement">TElement</a>&gt; <a class="struct" href="../../style/context/struct.ThreadLocalStyleContext.html" title="struct style::context::ThreadLocalStyleContext">ThreadLocalStyleContext</a>&lt;E&gt;</code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/context.rs.html#724-759' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class="method"><span id='new.v' class='invisible'><code>pub fn <a href='#method.new' class='fnname'>new</a>(shared: &amp;<a class="struct" href="../../style/context/struct.SharedStyleContext.html" title="struct style::context::SharedStyleContext">SharedStyleContext</a>) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/context.rs.html#727-741' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Creates a new <code>ThreadLocalStyleContext</code> from a shared one.</p>
+</div></div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Drop' class='impl'><span class='in-band'><code>impl&lt;E:&nbsp;<a class="trait" href="../../style/dom/trait.TElement.html" title="trait style::dom::TElement">TElement</a>&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/drop/trait.Drop.html" title="trait core::ops::drop::Drop">Drop</a> for <a class="struct" href="../../style/context/struct.ThreadLocalStyleContext.html" title="struct style::context::ThreadLocalStyleContext">ThreadLocalStyleContext</a>&lt;E&gt;</code><a href='#impl-Drop' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/context.rs.html#761-768' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class="method"><span id='drop.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/drop/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/context.rs.html#762-767' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Executes the destructor for this type. <a href="https://doc.rust-lang.org/nightly/core/ops/drop/trait.Drop.html#tymethod.drop">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "style";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `TypedTransform3D` struct in crate `euclid`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, TypedTransform3D">
+
+    <title>euclid::TypedTransform3D - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct TypedTransform3D</p><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.m11">m11</a><a href="#structfield.m12">m12</a><a href="#structfield.m13">m13</a><a href="#structfield.m14">m14</a><a href="#structfield.m21">m21</a><a href="#structfield.m22">m22</a><a href="#structfield.m23">m23</a><a href="#structfield.m24">m24</a><a href="#structfield.m31">m31</a><a href="#structfield.m32">m32</a><a href="#structfield.m33">m33</a><a href="#structfield.m34">m34</a><a href="#structfield.m41">m41</a><a href="#structfield.m42">m42</a><a href="#structfield.m43">m43</a><a href="#structfield.m44">m44</a></div><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.row_major">row_major</a><a href="#method.column_major">column_major</a><a href="#method.identity">identity</a><a href="#method.row_major_2d">row_major_2d</a><a href="#method.ortho">ortho</a><a href="#method.is_2d">is_2d</a><a href="#method.to_2d">to_2d</a><a href="#method.is_backface_visible">is_backface_visible</a><a href="#method.approx_eq">approx_eq</a><a href="#method.with_destination">with_destination</a><a href="#method.with_source">with_source</a><a href="#method.to_untyped">to_untyped</a><a href="#method.from_untyped">from_untyped</a><a href="#method.post_mul">post_mul</a><a href="#method.pre_mul">pre_mul</a><a href="#method.inverse">inverse</a><a href="#method.determinant">determinant</a><a href="#method.mul_s">mul_s</a><a href="#method.from_scale">from_scale</a><a href="#method.transform_point2d">transform_point2d</a><a href="#method.transform_vector2d">transform_vector2d</a><a href="#method.transform_point3d">transform_point3d</a><a href="#method.transform_vector3d">transform_vector3d</a><a href="#method.transform_rect">transform_rect</a><a href="#method.create_translation">create_translation</a><a href="#method.pre_translate">pre_translate</a><a href="#method.post_translate">post_translate</a><a href="#method.create_scale">create_scale</a><a href="#method.pre_scale">pre_scale</a><a href="#method.post_scale">post_scale</a><a href="#method.create_rotation">create_rotation</a><a href="#method.post_rotate">post_rotate</a><a href="#method.pre_rotate">pre_rotate</a><a href="#method.create_skew">create_skew</a><a href="#method.create_perspective">create_perspective</a><a href="#method.to_row_major_array">to_row_major_array</a><a href="#method.to_column_major_array">to_column_major_array</a><a href="#method.to_row_arrays">to_row_arrays</a><a href="#method.to_column_arrays">to_column_arrays</a><a href="#method.from_array">from_array</a><a href="#method.from_row_arrays">from_row_arrays</a><a href="#method.cast">cast</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Clone">Clone</a><a href="#impl-Copy">Copy</a><a href="#impl-Deserialize%3C%27de%3E">Deserialize&lt;&#39;de&gt;</a><a href="#impl-Serialize">Serialize</a><a href="#impl-Eq">Eq</a><a href="#impl-PartialEq">PartialEq</a><a href="#impl-Hash">Hash</a><a href="#impl-Debug">Debug</a></div></div><p class='location'><a href='index.html'>euclid</a></p><script>window.sidebarCurrent = {name: 'TypedTransform3D', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>euclid</a>::<wbr><a class="struct" href=''>TypedTransform3D</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/euclid/macros.rs.html#19-22' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'><div class="docblock attributes">#[repr(C)]
+</div>pub struct TypedTransform3D&lt;T, Src, Dst&gt; {
+    pub m11: T,
+    pub m12: T,
+    pub m13: T,
+    pub m14: T,
+    pub m21: T,
+    pub m22: T,
+    pub m23: T,
+    pub m24: T,
+    pub m31: T,
+    pub m32: T,
+    pub m33: T,
+    pub m34: T,
+    pub m41: T,
+    pub m42: T,
+    pub m43: T,
+    pub m44: T,
+    // some fields omitted
+}</pre><div class='docblock'><p>A 3d transform stored as a 4 by 4 matrix in row-major order in memory.</p>
+
+<p>Transforms can be parametrized over the source and destination units, to describe a
+transformation from a space to another.
+For example, <code>TypedTransform3D&lt;f32, WorldSpace, ScreenSpace&gt;::transform_point3d</code>
+takes a <code>TypedPoint3D&lt;f32, WorldSpace&gt;</code> and returns a <code>TypedPoint3D&lt;f32, ScreenSpace&gt;</code>.</p>
+
+<p>Transforms expose a set of convenience methods for pre- and post-transformations.
+A pre-transformation corresponds to adding an operation that is applied before
+the rest of the transformation, while a post-transformation adds an operation
+that is applied after.</p>
+</div><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.m11" class="structfield small-section-header">
+                           <a href="#structfield.m11" class="anchor field"></a>
+                           <span id="m11.v" class='invisible'>
+                           <code>m11: T</code>
+                           </span></span><span id="structfield.m12" class="structfield small-section-header">
+                           <a href="#structfield.m12" class="anchor field"></a>
+                           <span id="m12.v" class='invisible'>
+                           <code>m12: T</code>
+                           </span></span><span id="structfield.m13" class="structfield small-section-header">
+                           <a href="#structfield.m13" class="anchor field"></a>
+                           <span id="m13.v" class='invisible'>
+                           <code>m13: T</code>
+                           </span></span><span id="structfield.m14" class="structfield small-section-header">
+                           <a href="#structfield.m14" class="anchor field"></a>
+                           <span id="m14.v" class='invisible'>
+                           <code>m14: T</code>
+                           </span></span><span id="structfield.m21" class="structfield small-section-header">
+                           <a href="#structfield.m21" class="anchor field"></a>
+                           <span id="m21.v" class='invisible'>
+                           <code>m21: T</code>
+                           </span></span><span id="structfield.m22" class="structfield small-section-header">
+                           <a href="#structfield.m22" class="anchor field"></a>
+                           <span id="m22.v" class='invisible'>
+                           <code>m22: T</code>
+                           </span></span><span id="structfield.m23" class="structfield small-section-header">
+                           <a href="#structfield.m23" class="anchor field"></a>
+                           <span id="m23.v" class='invisible'>
+                           <code>m23: T</code>
+                           </span></span><span id="structfield.m24" class="structfield small-section-header">
+                           <a href="#structfield.m24" class="anchor field"></a>
+                           <span id="m24.v" class='invisible'>
+                           <code>m24: T</code>
+                           </span></span><span id="structfield.m31" class="structfield small-section-header">
+                           <a href="#structfield.m31" class="anchor field"></a>
+                           <span id="m31.v" class='invisible'>
+                           <code>m31: T</code>
+                           </span></span><span id="structfield.m32" class="structfield small-section-header">
+                           <a href="#structfield.m32" class="anchor field"></a>
+                           <span id="m32.v" class='invisible'>
+                           <code>m32: T</code>
+                           </span></span><span id="structfield.m33" class="structfield small-section-header">
+                           <a href="#structfield.m33" class="anchor field"></a>
+                           <span id="m33.v" class='invisible'>
+                           <code>m33: T</code>
+                           </span></span><span id="structfield.m34" class="structfield small-section-header">
+                           <a href="#structfield.m34" class="anchor field"></a>
+                           <span id="m34.v" class='invisible'>
+                           <code>m34: T</code>
+                           </span></span><span id="structfield.m41" class="structfield small-section-header">
+                           <a href="#structfield.m41" class="anchor field"></a>
+                           <span id="m41.v" class='invisible'>
+                           <code>m41: T</code>
+                           </span></span><span id="structfield.m42" class="structfield small-section-header">
+                           <a href="#structfield.m42" class="anchor field"></a>
+                           <span id="m42.v" class='invisible'>
+                           <code>m42: T</code>
+                           </span></span><span id="structfield.m43" class="structfield small-section-header">
+                           <a href="#structfield.m43" class="anchor field"></a>
+                           <span id="m43.v" class='invisible'>
+                           <code>m43: T</code>
+                           </span></span><span id="structfield.m44" class="structfield small-section-header">
+                           <a href="#structfield.m44" class="anchor field"></a>
+                           <span id="m44.v" class='invisible'>
+                           <code>m44: T</code>
+                           </span></span>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl&lt;T, Src, Dst&gt; <a class="struct" href="../euclid/struct.TypedTransform3D.html" title="struct euclid::TypedTransform3D">TypedTransform3D</a>&lt;T, Src, Dst&gt;</code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/transform3d.rs.html#47-87' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.row_major' class="method"><span id='row_major.v' class='invisible'><code>pub fn <a href='#method.row_major' class='fnname'>row_major</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;m11: T, <br>&nbsp;&nbsp;&nbsp;&nbsp;m12: T, <br>&nbsp;&nbsp;&nbsp;&nbsp;m13: T, <br>&nbsp;&nbsp;&nbsp;&nbsp;m14: T, <br>&nbsp;&nbsp;&nbsp;&nbsp;m21: T, <br>&nbsp;&nbsp;&nbsp;&nbsp;m22: T, <br>&nbsp;&nbsp;&nbsp;&nbsp;m23: T, <br>&nbsp;&nbsp;&nbsp;&nbsp;m24: T, <br>&nbsp;&nbsp;&nbsp;&nbsp;m31: T, <br>&nbsp;&nbsp;&nbsp;&nbsp;m32: T, <br>&nbsp;&nbsp;&nbsp;&nbsp;m33: T, <br>&nbsp;&nbsp;&nbsp;&nbsp;m34: T, <br>&nbsp;&nbsp;&nbsp;&nbsp;m41: T, <br>&nbsp;&nbsp;&nbsp;&nbsp;m42: T, <br>&nbsp;&nbsp;&nbsp;&nbsp;m43: T, <br>&nbsp;&nbsp;&nbsp;&nbsp;m44: T<br>) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/transform3d.rs.html#53-66' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Create a transform specifying its components in row-major order.</p>
+
+<p>For example, the translation terms m41, m42, m43 on the last row with the
+row-major convention) are the 13rd, 14th and 15th parameters.</p>
+</div><h4 id='method.column_major' class="method"><span id='column_major.v' class='invisible'><code>pub fn <a href='#method.column_major' class='fnname'>column_major</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;m11: T, <br>&nbsp;&nbsp;&nbsp;&nbsp;m21: T, <br>&nbsp;&nbsp;&nbsp;&nbsp;m31: T, <br>&nbsp;&nbsp;&nbsp;&nbsp;m41: T, <br>&nbsp;&nbsp;&nbsp;&nbsp;m12: T, <br>&nbsp;&nbsp;&nbsp;&nbsp;m22: T, <br>&nbsp;&nbsp;&nbsp;&nbsp;m32: T, <br>&nbsp;&nbsp;&nbsp;&nbsp;m42: T, <br>&nbsp;&nbsp;&nbsp;&nbsp;m13: T, <br>&nbsp;&nbsp;&nbsp;&nbsp;m23: T, <br>&nbsp;&nbsp;&nbsp;&nbsp;m33: T, <br>&nbsp;&nbsp;&nbsp;&nbsp;m43: T, <br>&nbsp;&nbsp;&nbsp;&nbsp;m14: T, <br>&nbsp;&nbsp;&nbsp;&nbsp;m24: T, <br>&nbsp;&nbsp;&nbsp;&nbsp;m34: T, <br>&nbsp;&nbsp;&nbsp;&nbsp;m44: T<br>) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/transform3d.rs.html#73-86' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Create a transform specifying its components in column-major order.</p>
+
+<p>For example, the translation terms m41, m42, m43 on the last column with the
+column-major convention) are the 4th, 8th and 12nd parameters.</p>
+</div></div><h3 id='impl-1' class='impl'><span class='in-band'><code>impl&lt;T, Src, Dst&gt; <a class="struct" href="../euclid/struct.TypedTransform3D.html" title="struct euclid::TypedTransform3D">TypedTransform3D</a>&lt;T, Src, Dst&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html" title="trait core::marker::Copy">Copy</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a> + <a class="trait" href="../euclid/num/trait.One.html" title="trait euclid::num::One">One</a> + <a class="trait" href="../euclid/num/trait.Zero.html" title="trait euclid::num::Zero">Zero</a>,&nbsp;</span></code><a href='#impl-1' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/transform3d.rs.html#89-111' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.identity' class="method"><span id='identity.v' class='invisible'><code>pub fn <a href='#method.identity' class='fnname'>identity</a>() -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/transform3d.rs.html#94-102' title='goto source code'>[src]</a></span></h4>
+</div><h3 id='impl-2' class='impl'><span class='in-band'><code>impl&lt;T, Src, Dst&gt; <a class="struct" href="../euclid/struct.TypedTransform3D.html" title="struct euclid::TypedTransform3D">TypedTransform3D</a>&lt;T, Src, Dst&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html" title="trait core::marker::Copy">Copy</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/arith/trait.Add.html" title="trait core::ops::arith::Add">Add</a>&lt;T, Output = T&gt; + <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/arith/trait.Sub.html" title="trait core::ops::arith::Sub">Sub</a>&lt;T, Output = T&gt; + <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/arith/trait.Mul.html" title="trait core::ops::arith::Mul">Mul</a>&lt;T, Output = T&gt; + <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/arith/trait.Div.html" title="trait core::ops::arith::Div">Div</a>&lt;T, Output = T&gt; + <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/arith/trait.Neg.html" title="trait core::ops::arith::Neg">Neg</a>&lt;Output = T&gt; + <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialOrd.html" title="trait core::cmp::PartialOrd">PartialOrd</a> + <a class="trait" href="../euclid/trait.Trig.html" title="trait euclid::Trig">Trig</a> + <a class="trait" href="../euclid/num/trait.One.html" title="trait euclid::num::One">One</a> + <a class="trait" href="../euclid/num/trait.Zero.html" title="trait euclid::num::Zero">Zero</a>,&nbsp;</span></code><a href='#impl-2' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/transform3d.rs.html#113-585' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.row_major_2d' class="method"><span id='row_major_2d.v' class='invisible'><code>pub fn <a href='#method.row_major_2d' class='fnname'>row_major_2d</a>(m11: T, m12: T, m21: T, m22: T, m41: T, m42: T) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/transform3d.rs.html#127-135' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Create a 4 by 4 transform representing a 2d transformation, specifying its components
+in row-major order.</p>
+</div><h4 id='method.ortho' class="method"><span id='ortho.v' class='invisible'><code>pub fn <a href='#method.ortho' class='fnname'>ortho</a>(left: T, right: T, bottom: T, top: T, near: T, far: T) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/transform3d.rs.html#138-153' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Create an orthogonal projection transform.</p>
+</div><h4 id='method.is_2d' class="method"><span id='is_2d.v' class='invisible'><code>pub fn <a href='#method.is_2d' class='fnname'>is_2d</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/transform3d.rs.html#159-166' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns true if this transform can be represented with a TypedTransform2D.</p>
+
+<p>See <a href="https://drafts.csswg.org/css-transforms/#2d-transform">https://drafts.csswg.org/css-transforms/#2d-transform</a></p>
+</div><h4 id='method.to_2d' class="method"><span id='to_2d.v' class='invisible'><code>pub fn <a href='#method.to_2d' class='fnname'>to_2d</a>(&amp;self) -&gt; <a class="struct" href="../euclid/struct.TypedTransform2D.html" title="struct euclid::TypedTransform2D">TypedTransform2D</a>&lt;T, Src, Dst&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/transform3d.rs.html#172-178' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Create a 2D transform picking the relevant terms from this transform.</p>
+
+<p>This method assumes that self represents a 2d transformation, callers
+should check that self.is_2d() returns true beforehand.</p>
+</div><h4 id='method.is_backface_visible' class="method"><span id='is_backface_visible.v' class='invisible'><code>pub fn <a href='#method.is_backface_visible' class='fnname'>is_backface_visible</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/transform3d.rs.html#182-190' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Check whether shapes on the XY plane with Z pointing towards the
+screen transformed by this matrix would be facing back.</p>
+</div><h4 id='method.approx_eq' class="method"><span id='approx_eq.v' class='invisible'><code>pub fn <a href='#method.approx_eq' class='fnname'>approx_eq</a>(&amp;self, other: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a> <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="../euclid/approxeq/trait.ApproxEq.html" title="trait euclid::approxeq::ApproxEq">ApproxEq</a>&lt;T&gt;,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/transform3d.rs.html#192-202' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.with_destination' class="method"><span id='with_destination.v' class='invisible'><code>pub fn <a href='#method.with_destination' class='fnname'>with_destination</a>&lt;NewDst&gt;(&amp;self) -&gt; <a class="struct" href="../euclid/struct.TypedTransform3D.html" title="struct euclid::TypedTransform3D">TypedTransform3D</a>&lt;T, Src, NewDst&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/transform3d.rs.html#206-213' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the same transform with a different destination unit.</p>
+</div><h4 id='method.with_source' class="method"><span id='with_source.v' class='invisible'><code>pub fn <a href='#method.with_source' class='fnname'>with_source</a>&lt;NewSrc&gt;(&amp;self) -&gt; <a class="struct" href="../euclid/struct.TypedTransform3D.html" title="struct euclid::TypedTransform3D">TypedTransform3D</a>&lt;T, NewSrc, Dst&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/transform3d.rs.html#217-224' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the same transform with a different source unit.</p>
+</div><h4 id='method.to_untyped' class="method"><span id='to_untyped.v' class='invisible'><code>pub fn <a href='#method.to_untyped' class='fnname'>to_untyped</a>(&amp;self) -&gt; <a class="type" href="../euclid/type.Transform3D.html" title="type euclid::Transform3D">Transform3D</a>&lt;T&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/transform3d.rs.html#228-235' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Drop the units, preserving only the numeric value.</p>
+</div><h4 id='method.from_untyped' class="method"><span id='from_untyped.v' class='invisible'><code>pub fn <a href='#method.from_untyped' class='fnname'>from_untyped</a>(m: &amp;<a class="type" href="../euclid/type.Transform3D.html" title="type euclid::Transform3D">Transform3D</a>&lt;T&gt;) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/transform3d.rs.html#239-246' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Tag a unitless value with units.</p>
+</div><h4 id='method.post_mul' class="method"><span id='post_mul.v' class='invisible'><code>pub fn <a href='#method.post_mul' class='fnname'>post_mul</a>&lt;NewDst&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;mat: &amp;<a class="struct" href="../euclid/struct.TypedTransform3D.html" title="struct euclid::TypedTransform3D">TypedTransform3D</a>&lt;T, Dst, NewDst&gt;<br>) -&gt; <a class="struct" href="../euclid/struct.TypedTransform3D.html" title="struct euclid::TypedTransform3D">TypedTransform3D</a>&lt;T, Src, NewDst&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/transform3d.rs.html#250-269' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the multiplication of the two matrices such that mat&#39;s transformation
+applies after self&#39;s transformation.</p>
+</div><h4 id='method.pre_mul' class="method"><span id='pre_mul.v' class='invisible'><code>pub fn <a href='#method.pre_mul' class='fnname'>pre_mul</a>&lt;NewSrc&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;mat: &amp;<a class="struct" href="../euclid/struct.TypedTransform3D.html" title="struct euclid::TypedTransform3D">TypedTransform3D</a>&lt;T, NewSrc, Src&gt;<br>) -&gt; <a class="struct" href="../euclid/struct.TypedTransform3D.html" title="struct euclid::TypedTransform3D">TypedTransform3D</a>&lt;T, NewSrc, Dst&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/transform3d.rs.html#273-275' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the multiplication of the two matrices such that mat&#39;s transformation
+applies before self&#39;s transformation.</p>
+</div><h4 id='method.inverse' class="method"><span id='inverse.v' class='invisible'><code>pub fn <a href='#method.inverse' class='fnname'>inverse</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../euclid/struct.TypedTransform3D.html" title="struct euclid::TypedTransform3D">TypedTransform3D</a>&lt;T, Dst, Src&gt;&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/transform3d.rs.html#278-355' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the inverse transform if possible.</p>
+</div><h4 id='method.determinant' class="method"><span id='determinant.v' class='invisible'><code>pub fn <a href='#method.determinant' class='fnname'>determinant</a>(&amp;self) -&gt; T</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/transform3d.rs.html#358-383' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Compute the determinant of the transform.</p>
+</div><h4 id='method.mul_s' class="method"><span id='mul_s.v' class='invisible'><code>pub fn <a href='#method.mul_s' class='fnname'>mul_s</a>(&amp;self, x: T) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/transform3d.rs.html#387-394' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Multiplies all of the transform&#39;s component by a scalar and returns the result.</p>
+</div><h4 id='method.from_scale' class="method"><span id='from_scale.v' class='invisible'><code>pub fn <a href='#method.from_scale' class='fnname'>from_scale</a>(scale: <a class="struct" href="../euclid/struct.TypedScale.html" title="struct euclid::TypedScale">TypedScale</a>&lt;T, Src, Dst&gt;) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/transform3d.rs.html#397-399' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Convenience function to create a scale transform from a TypedScale.</p>
+</div><h4 id='method.transform_point2d' class="method"><span id='transform_point2d.v' class='invisible'><code>pub fn <a href='#method.transform_point2d' class='fnname'>transform_point2d</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;p: &amp;<a class="struct" href="../euclid/struct.TypedPoint2D.html" title="struct euclid::TypedPoint2D">TypedPoint2D</a>&lt;T, Src&gt;<br>) -&gt; <a class="struct" href="../euclid/struct.TypedPoint2D.html" title="struct euclid::TypedPoint2D">TypedPoint2D</a>&lt;T, Dst&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/transform3d.rs.html#405-412' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the given 2d point transformed by this transform.</p>
+
+<p>The input point must be use the unit Src, and the returned point has the unit Dst.</p>
+</div><h4 id='method.transform_vector2d' class="method"><span id='transform_vector2d.v' class='invisible'><code>pub fn <a href='#method.transform_vector2d' class='fnname'>transform_vector2d</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;v: &amp;<a class="struct" href="../euclid/struct.TypedVector2D.html" title="struct euclid::TypedVector2D">TypedVector2D</a>&lt;T, Src&gt;<br>) -&gt; <a class="struct" href="../euclid/struct.TypedVector2D.html" title="struct euclid::TypedVector2D">TypedVector2D</a>&lt;T, Dst&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/transform3d.rs.html#418-423' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the given 2d vector transformed by this matrix.</p>
+
+<p>The input point must be use the unit Src, and the returned point has the unit Dst.</p>
+</div><h4 id='method.transform_point3d' class="method"><span id='transform_point3d.v' class='invisible'><code>pub fn <a href='#method.transform_point3d' class='fnname'>transform_point3d</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;p: &amp;<a class="struct" href="../euclid/struct.TypedPoint3D.html" title="struct euclid::TypedPoint3D">TypedPoint3D</a>&lt;T, Src&gt;<br>) -&gt; <a class="struct" href="../euclid/struct.TypedPoint3D.html" title="struct euclid::TypedPoint3D">TypedPoint3D</a>&lt;T, Dst&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/transform3d.rs.html#429-436' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the given 3d point transformed by this transform.</p>
+
+<p>The input point must be use the unit Src, and the returned point has the unit Dst.</p>
+</div><h4 id='method.transform_vector3d' class="method"><span id='transform_vector3d.v' class='invisible'><code>pub fn <a href='#method.transform_vector3d' class='fnname'>transform_vector3d</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;v: &amp;<a class="struct" href="../euclid/struct.TypedVector3D.html" title="struct euclid::TypedVector3D">TypedVector3D</a>&lt;T, Src&gt;<br>) -&gt; <a class="struct" href="../euclid/struct.TypedVector3D.html" title="struct euclid::TypedVector3D">TypedVector3D</a>&lt;T, Dst&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/transform3d.rs.html#442-448' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the given 3d vector transformed by this matrix.</p>
+
+<p>The input point must be use the unit Src, and the returned point has the unit Dst.</p>
+</div><h4 id='method.transform_rect' class="method"><span id='transform_rect.v' class='invisible'><code>pub fn <a href='#method.transform_rect' class='fnname'>transform_rect</a>(&amp;self, rect: &amp;<a class="struct" href="../euclid/struct.TypedRect.html" title="struct euclid::TypedRect">TypedRect</a>&lt;T, Src&gt;) -&gt; <a class="struct" href="../euclid/struct.TypedRect.html" title="struct euclid::TypedRect">TypedRect</a>&lt;T, Dst&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/transform3d.rs.html#452-459' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a rectangle that encompasses the result of transforming the given rectangle by this
+transform.</p>
+</div><h4 id='method.create_translation' class="method"><span id='create_translation.v' class='invisible'><code>pub fn <a href='#method.create_translation' class='fnname'>create_translation</a>(x: T, y: T, z: T) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/transform3d.rs.html#462-470' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Create a 3d translation transform</p>
+</div><h4 id='method.pre_translate' class="method"><span id='pre_translate.v' class='invisible'><code>pub fn <a href='#method.pre_translate' class='fnname'>pre_translate</a>(&amp;self, v: <a class="struct" href="../euclid/struct.TypedVector3D.html" title="struct euclid::TypedVector3D">TypedVector3D</a>&lt;T, Src&gt;) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/transform3d.rs.html#474-476' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a transform with a translation applied before self&#39;s transformation.</p>
+</div><h4 id='method.post_translate' class="method"><span id='post_translate.v' class='invisible'><code>pub fn <a href='#method.post_translate' class='fnname'>post_translate</a>(&amp;self, v: <a class="struct" href="../euclid/struct.TypedVector3D.html" title="struct euclid::TypedVector3D">TypedVector3D</a>&lt;T, Dst&gt;) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/transform3d.rs.html#480-482' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a transform with a translation applied after self&#39;s transformation.</p>
+</div><h4 id='method.create_scale' class="method"><span id='create_scale.v' class='invisible'><code>pub fn <a href='#method.create_scale' class='fnname'>create_scale</a>(x: T, y: T, z: T) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/transform3d.rs.html#485-493' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Create a 3d scale transform</p>
+</div><h4 id='method.pre_scale' class="method"><span id='pre_scale.v' class='invisible'><code>pub fn <a href='#method.pre_scale' class='fnname'>pre_scale</a>(&amp;self, x: T, y: T, z: T) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/transform3d.rs.html#497-504' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a transform with a scale applied before self&#39;s transformation.</p>
+</div><h4 id='method.post_scale' class="method"><span id='post_scale.v' class='invisible'><code>pub fn <a href='#method.post_scale' class='fnname'>post_scale</a>(&amp;self, x: T, y: T, z: T) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/transform3d.rs.html#508-510' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a transform with a scale applied after self&#39;s transformation.</p>
+</div><h4 id='method.create_rotation' class="method"><span id='create_rotation.v' class='invisible'><code>pub fn <a href='#method.create_rotation' class='fnname'>create_rotation</a>(x: T, y: T, z: T, theta: <a class="struct" href="../euclid/struct.Angle.html" title="struct euclid::Angle">Angle</a>&lt;T&gt;) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/transform3d.rs.html#514-547' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Create a 3d rotation transform from an angle / axis.
+The supplied axis must be normalized.</p>
+</div><h4 id='method.post_rotate' class="method"><span id='post_rotate.v' class='invisible'><code>pub fn <a href='#method.post_rotate' class='fnname'>post_rotate</a>(&amp;self, x: T, y: T, z: T, theta: <a class="struct" href="../euclid/struct.Angle.html" title="struct euclid::Angle">Angle</a>&lt;T&gt;) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/transform3d.rs.html#551-553' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a transform with a rotation applied after self&#39;s transformation.</p>
+</div><h4 id='method.pre_rotate' class="method"><span id='pre_rotate.v' class='invisible'><code>pub fn <a href='#method.pre_rotate' class='fnname'>pre_rotate</a>(&amp;self, x: T, y: T, z: T, theta: <a class="struct" href="../euclid/struct.Angle.html" title="struct euclid::Angle">Angle</a>&lt;T&gt;) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/transform3d.rs.html#557-559' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a transform with a rotation applied before self&#39;s transformation.</p>
+</div><h4 id='method.create_skew' class="method"><span id='create_skew.v' class='invisible'><code>pub fn <a href='#method.create_skew' class='fnname'>create_skew</a>(alpha: <a class="struct" href="../euclid/struct.Angle.html" title="struct euclid::Angle">Angle</a>&lt;T&gt;, beta: <a class="struct" href="../euclid/struct.Angle.html" title="struct euclid::Angle">Angle</a>&lt;T&gt;) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/transform3d.rs.html#564-573' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Create a 2d skew transform.</p>
+
+<p>See <a href="https://drafts.csswg.org/css-transforms/#funcdef-skew">https://drafts.csswg.org/css-transforms/#funcdef-skew</a></p>
+</div><h4 id='method.create_perspective' class="method"><span id='create_perspective.v' class='invisible'><code>pub fn <a href='#method.create_perspective' class='fnname'>create_perspective</a>(d: T) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/transform3d.rs.html#576-584' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Create a simple perspective projection transform</p>
+</div></div><h3 id='impl-3' class='impl'><span class='in-band'><code>impl&lt;T:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html" title="trait core::marker::Copy">Copy</a>, Src, Dst&gt; <a class="struct" href="../euclid/struct.TypedTransform3D.html" title="struct euclid::TypedTransform3D">TypedTransform3D</a>&lt;T, Src, Dst&gt;</code><a href='#impl-3' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/transform3d.rs.html#587-654' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.to_row_major_array' class="method"><span id='to_row_major_array.v' class='invisible'><code>pub fn <a href='#method.to_row_major_array' class='fnname'>to_row_major_array</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a>T<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 16]</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/transform3d.rs.html#590-597' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns an array containing this transform&#39;s terms in row-major order (the order
+in which the transform is actually laid out in memory).</p>
+</div><h4 id='method.to_column_major_array' class="method"><span id='to_column_major_array.v' class='invisible'><code>pub fn <a href='#method.to_column_major_array' class='fnname'>to_column_major_array</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a>T<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 16]</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/transform3d.rs.html#600-607' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns an array containing this transform&#39;s terms in column-major order.</p>
+</div><h4 id='method.to_row_arrays' class="method"><span id='to_row_arrays.v' class='invisible'><code>pub fn <a href='#method.to_row_arrays' class='fnname'>to_row_arrays</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a>T<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 4]</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 4]</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/transform3d.rs.html#613-620' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns an array containing this transform&#39;s 4 rows in (in row-major order)
+as arrays.</p>
+
+<p>This is a convenience method to interface with other libraries like glium.</p>
+</div><h4 id='method.to_column_arrays' class="method"><span id='to_column_arrays.v' class='invisible'><code>pub fn <a href='#method.to_column_arrays' class='fnname'>to_column_arrays</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a>T<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 4]</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 4]</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/transform3d.rs.html#626-633' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns an array containing this transform&#39;s 4 columns in (in row-major order,
+or 4 rows in column-major order) as arrays.</p>
+
+<p>This is a convenience method to interface with other libraries like glium.</p>
+</div><h4 id='method.from_array' class="method"><span id='from_array.v' class='invisible'><code>pub fn <a href='#method.from_array' class='fnname'>from_array</a>(array: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a>T<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 16]</a>) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/transform3d.rs.html#636-643' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Creates a transform from an array of 16 elements in row-major order.</p>
+</div><h4 id='method.from_row_arrays' class="method"><span id='from_row_arrays.v' class='invisible'><code>pub fn <a href='#method.from_row_arrays' class='fnname'>from_row_arrays</a>(array: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a>T<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 4]</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 4]</a>) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/transform3d.rs.html#646-653' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Creates a transform from 4 rows of 4 elements (row-major order).</p>
+</div></div><h3 id='impl-4' class='impl'><span class='in-band'><code>impl&lt;T0:&nbsp;<a class="trait" href="../num_traits/cast/trait.NumCast.html" title="trait num_traits::cast::NumCast">NumCast</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html" title="trait core::marker::Copy">Copy</a>, Src, Dst&gt; <a class="struct" href="../euclid/struct.TypedTransform3D.html" title="struct euclid::TypedTransform3D">TypedTransform3D</a>&lt;T0, Src, Dst&gt;</code><a href='#impl-4' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/transform3d.rs.html#656-679' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.cast' class="method"><span id='cast.v' class='invisible'><code>pub fn <a href='#method.cast' class='fnname'>cast</a>&lt;T1:&nbsp;<a class="trait" href="../num_traits/cast/trait.NumCast.html" title="trait num_traits::cast::NumCast">NumCast</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html" title="trait core::marker::Copy">Copy</a>&gt;(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../euclid/struct.TypedTransform3D.html" title="struct euclid::TypedTransform3D">TypedTransform3D</a>&lt;T1, Src, Dst&gt;&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/transform3d.rs.html#658-678' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Cast from one numeric representation to another, preserving the units.</p>
+</div></div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Clone' class='impl'><span class='in-band'><code>impl&lt;T:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a>, Src, Dst&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="struct" href="../euclid/struct.TypedTransform3D.html" title="struct euclid::TypedTransform3D">TypedTransform3D</a>&lt;T, Src, Dst&gt;</code><a href='#impl-Clone' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/macros.rs.html#24-31' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/macros.rs.html#25-30' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 id='impl-Copy' class='impl'><span class='in-band'><code>impl&lt;T:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html" title="trait core::marker::Copy">Copy</a>, Src, Dst&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html" title="trait core::marker::Copy">Copy</a> for <a class="struct" href="../euclid/struct.TypedTransform3D.html" title="struct euclid::TypedTransform3D">TypedTransform3D</a>&lt;T, Src, Dst&gt;</code><a href='#impl-Copy' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/macros.rs.html#33' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 id='impl-Deserialize%3C%27de%3E' class='impl'><span class='in-band'><code>impl&lt;'de, T, Src, Dst&gt; <a class="trait" href="../serde/de/trait.Deserialize.html" title="trait serde::de::Deserialize">Deserialize</a>&lt;'de&gt; for <a class="struct" href="../euclid/struct.TypedTransform3D.html" title="struct euclid::TypedTransform3D">TypedTransform3D</a>&lt;T, Src, Dst&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="../serde/de/trait.Deserialize.html" title="trait serde::de::Deserialize">Deserialize</a>&lt;'de&gt;,&nbsp;</span></code><a href='#impl-Deserialize%3C%27de%3E' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/macros.rs.html#35-48' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deserialize' class="method"><span id='deserialize.v' class='invisible'><code>fn <a href='../serde/de/trait.Deserialize.html#tymethod.deserialize' class='fnname'>deserialize</a>&lt;D&gt;(deserializer: D) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;Self, D::<a class="type" href="../serde/de/trait.Deserializer.html#associatedtype.Error" title="type serde::de::Deserializer::Error">Error</a>&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;D: <a class="trait" href="../serde/de/trait.Deserializer.html" title="trait serde::de::Deserializer">Deserializer</a>&lt;'de&gt;,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/macros.rs.html#38-47' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Deserialize this value from the given Serde deserializer. <a href="../serde/de/trait.Deserialize.html#tymethod.deserialize">Read more</a></p>
+</div></div><h3 id='impl-Serialize' class='impl'><span class='in-band'><code>impl&lt;T, Src, Dst&gt; <a class="trait" href="../serde/ser/trait.Serialize.html" title="trait serde::ser::Serialize">Serialize</a> for <a class="struct" href="../euclid/struct.TypedTransform3D.html" title="struct euclid::TypedTransform3D">TypedTransform3D</a>&lt;T, Src, Dst&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="../serde/ser/trait.Serialize.html" title="trait serde::ser::Serialize">Serialize</a>,&nbsp;</span></code><a href='#impl-Serialize' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/macros.rs.html#50-58' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.serialize' class="method"><span id='serialize.v' class='invisible'><code>fn <a href='../serde/ser/trait.Serialize.html#tymethod.serialize' class='fnname'>serialize</a>&lt;S&gt;(&amp;self, serializer: S) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;S::<a class="type" href="../serde/ser/trait.Serializer.html#associatedtype.Ok" title="type serde::ser::Serializer::Ok">Ok</a>, S::<a class="type" href="../serde/ser/trait.Serializer.html#associatedtype.Error" title="type serde::ser::Serializer::Error">Error</a>&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;S: <a class="trait" href="../serde/ser/trait.Serializer.html" title="trait serde::ser::Serializer">Serializer</a>,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/macros.rs.html#53-57' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Serialize this value into the given Serde serializer. <a href="../serde/ser/trait.Serialize.html#tymethod.serialize">Read more</a></p>
+</div></div><h3 id='impl-Eq' class='impl'><span class='in-band'><code>impl&lt;T, Src, Dst&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html" title="trait core::cmp::Eq">Eq</a> for <a class="struct" href="../euclid/struct.TypedTransform3D.html" title="struct euclid::TypedTransform3D">TypedTransform3D</a>&lt;T, Src, Dst&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html" title="trait core::cmp::Eq">Eq</a>,&nbsp;</span></code><a href='#impl-Eq' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/macros.rs.html#60-61' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 id='impl-PartialEq' class='impl'><span class='in-band'><code>impl&lt;T, Src, Dst&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a> for <a class="struct" href="../euclid/struct.TypedTransform3D.html" title="struct euclid::TypedTransform3D">TypedTransform3D</a>&lt;T, Src, Dst&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a>,&nbsp;</span></code><a href='#impl-PartialEq' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/macros.rs.html#63-69' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class="method"><span id='eq.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, other: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/macros.rs.html#66-68' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class="method"><span id='ne.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, other: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Rhs) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/cmp.rs.html#121' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 id='impl-Hash' class='impl'><span class='in-band'><code>impl&lt;T, Src, Dst&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html" title="trait core::hash::Hash">Hash</a> for <a class="struct" href="../euclid/struct.TypedTransform3D.html" title="struct euclid::TypedTransform3D">TypedTransform3D</a>&lt;T, Src, Dst&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html" title="trait core::hash::Hash">Hash</a>,&nbsp;</span></code><a href='#impl-Hash' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/macros.rs.html#71-77' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.hash' class="method"><span id='hash.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#tymethod.hash' class='fnname'>hash</a>&lt;H:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/hash/trait.Hasher.html" title="trait core::hash::Hasher">Hasher</a>&gt;(&amp;self, h: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>H)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/macros.rs.html#74-76' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Feeds this value into the given [<code>Hasher</code>]. <a href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#tymethod.hash">Read more</a></p>
+</div><h4 id='method.hash_slice' class="method"><span id='hash_slice.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#method.hash_slice' class='fnname'>hash_slice</a>&lt;H&gt;(data: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[Self]</a>, state: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>H) <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;H: <a class="trait" href="https://doc.rust-lang.org/nightly/core/hash/trait.Hasher.html" title="trait core::hash::Hasher">Hasher</a>,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.3.0'>1.3.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/hash/mod.rs.html#202-208' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Feeds a slice of this type into the given [<code>Hasher</code>]. <a href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#method.hash_slice">Read more</a></p>
+</div></div><h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl&lt;T, Src, Dst&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../euclid/struct.TypedTransform3D.html" title="struct euclid::TypedTransform3D">TypedTransform3D</a>&lt;T, Src, Dst&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html" title="trait core::marker::Copy">Copy</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a> + <a class="trait" href="../euclid/num/trait.One.html" title="trait euclid::num::One">One</a> + <a class="trait" href="../euclid/num/trait.Zero.html" title="trait euclid::num::Zero">Zero</a>,&nbsp;</span></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/transform3d.rs.html#681-692' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, f: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/transform3d.rs.html#685-691' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "euclid";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

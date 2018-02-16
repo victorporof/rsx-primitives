@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `str` mod in crate `style`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, str">
+
+    <title>style::str - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc mod">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Module str</p><div class="block items"><ul><li><a href="#statics">Statics</a></li><li><a href="#functions">Functions</a></li><li><a href="#types">Type Definitions</a></li></ul></div><p class='location'><a href='../index.html'>style</a></p><script>window.sidebarCurrent = {name: 'str', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Module <a href='../index.html'>style</a>::<wbr><a class="mod" href=''>str</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/style/str.rs.html#5-165' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p>String utils for attributes and similar stuff.</p>
+</div><h2 id='statics' class='section-header'><a href="#statics">Statics</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="static" href="static.HTML_SPACE_CHARACTERS.html"
+                                  title='static style::str::HTML_SPACE_CHARACTERS'>HTML_SPACE_CHARACTERS</a></td>
+                           <td class='docblock-short'>
+                                <p>A &quot;space character&quot; according to:</p>
+                           </td>
+                       </tr></table><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.char_is_whitespace.html"
+                                  title='fn style::str::char_is_whitespace'>char_is_whitespace</a></td>
+                           <td class='docblock-short'>
+                                <p>Whether a character is a HTML whitespace character.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.is_ascii_digit.html"
+                                  title='fn style::str::is_ascii_digit'>is_ascii_digit</a></td>
+                           <td class='docblock-short'>
+                                <p>Character is ascii digit</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.is_whitespace.html"
+                                  title='fn style::str::is_whitespace'>is_whitespace</a></td>
+                           <td class='docblock-short'>
+                                <p>Whether all the string is HTML whitespace.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.read_exponent.html"
+                                  title='fn style::str::read_exponent'>read_exponent</a></td>
+                           <td class='docblock-short'>
+                                <p>Reads an exponent from an iterator over chars, for example <code>e100</code>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.read_fraction.html"
+                                  title='fn style::str::read_fraction'>read_fraction</a></td>
+                           <td class='docblock-short'>
+                                <p>Read a decimal fraction.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.read_numbers.html"
+                                  title='fn style::str::read_numbers'>read_numbers</a></td>
+                           <td class='docblock-short'>
+                                <p>Read a set of ascii digits and read them into a number.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.split_commas.html"
+                                  title='fn style::str::split_commas'>split_commas</a></td>
+                           <td class='docblock-short'>
+                                <p>Split a string on commas.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.split_html_space_chars.html"
+                                  title='fn style::str::split_html_space_chars'>split_html_space_chars</a></td>
+                           <td class='docblock-short'>
+                                <p>Split a string on HTML whitespace.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.starts_with_ignore_ascii_case.html"
+                                  title='fn style::str::starts_with_ignore_ascii_case'>starts_with_ignore_ascii_case</a></td>
+                           <td class='docblock-short'>
+                                <p>Returns true if a given string has a given prefix with case-insensitive match.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.str_join.html"
+                                  title='fn style::str::str_join'>str_join</a></td>
+                           <td class='docblock-short'>
+                                <p>Join a set of strings with a given delimiter <code>join</code>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.string_as_ascii_lowercase.html"
+                                  title='fn style::str::string_as_ascii_lowercase'>string_as_ascii_lowercase</a></td>
+                           <td class='docblock-short'>
+                                <p>Returns an ascii lowercase version of a string, only allocating if needed.</p>
+                           </td>
+                       </tr></table><h2 id='types' class='section-header'><a href="#types">Type Definitions</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.StaticCharVec.html"
+                                  title='type style::str::StaticCharVec'>StaticCharVec</a></td>
+                           <td class='docblock-short'>
+                                <p>A static slice of characters.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.StaticStringVec.html"
+                                  title='type style::str::StaticStringVec'>StaticStringVec</a></td>
+                           <td class='docblock-short'>
+                                <p>A static slice of <code>str</code>s.</p>
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "style";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

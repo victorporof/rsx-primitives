@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `ResourceUpdates` struct in crate `rsx_resource_updates`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, ResourceUpdates">
+
+    <title>rsx_resource_updates::types::ResourceUpdates - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct ResourceUpdates</p><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.updates">updates</a></div><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.with_capacity">with_capacity</a><a href="#method.add_image">add_image</a><a href="#method.add_font">add_font</a><a href="#method.add_font_instance">add_font_instance</a><a href="#method.len">len</a><a href="#method.is_empty">is_empty</a><a href="#method.merge">merge</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Debug">Debug</a><a href="#impl-PartialEq">PartialEq</a><a href="#impl-Into%3CString%3E">Into&lt;String&gt;</a><a href="#impl-Into%3C*mut%20c_char%3E">Into&lt;*mut c_char&gt;</a></div></div><p class='location'><a href='../index.html'>rsx_resource_updates</a>::<wbr><a href='index.html'>types</a></p><script>window.sidebarCurrent = {name: 'ResourceUpdates', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>rsx_resource_updates</a>::<wbr><a href='index.html'>types</a>::<wbr><a class="struct" href=''>ResourceUpdates</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/rsx_resource_updates/types.rs.html#140-142' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct ResourceUpdates&lt;ImageKey, FontKey, FontInstanceKey&gt; {
+    pub updates: <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="enum" href="../../rsx_resource_updates/types/enum.Update.html" title="enum rsx_resource_updates::types::Update">Update</a>&lt;ImageKey, FontKey, FontInstanceKey&gt;&gt;,
+}</pre><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.updates" class="structfield small-section-header">
+                           <a href="#structfield.updates" class="anchor field"></a>
+                           <span id="updates.v" class='invisible'>
+                           <code>updates: <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="enum" href="../../rsx_resource_updates/types/enum.Update.html" title="enum rsx_resource_updates::types::Update">Update</a>&lt;ImageKey, FontKey, FontInstanceKey&gt;&gt;</code>
+                           </span></span>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl&lt;ImageKey, FontKey, FontInstanceKey&gt; <a class="struct" href="../../rsx_resource_updates/types/struct.ResourceUpdates.html" title="struct rsx_resource_updates::types::ResourceUpdates">ResourceUpdates</a>&lt;ImageKey, FontKey, FontInstanceKey&gt;</code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_resource_updates/types.rs.html#144-178' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.with_capacity' class="method"><span id='with_capacity.v' class='invisible'><code>pub fn <a href='#method.with_capacity' class='fnname'>with_capacity</a>(capacity: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_resource_updates/types.rs.html#145-149' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_image' class="method"><span id='add_image.v' class='invisible'><code>pub fn <a href='#method.add_image' class='fnname'>add_image</a>(&amp;mut self, key: ImageKey, data_uri: <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/rc/struct.Rc.html" title="struct alloc::rc::Rc">Rc</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_resource_updates/types.rs.html#151-153' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_font' class="method"><span id='add_font.v' class='invisible'><code>pub fn <a href='#method.add_font' class='fnname'>add_font</a>(&amp;mut self, key: FontKey, data_uri: <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/rc/struct.Rc.html" title="struct alloc::rc::Rc">Rc</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_resource_updates/types.rs.html#155-157' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_font_instance' class="method"><span id='add_font_instance.v' class='invisible'><code>pub fn <a href='#method.add_font_instance' class='fnname'>add_font_instance</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;instance_key: FontInstanceKey, <br>&nbsp;&nbsp;&nbsp;&nbsp;key: FontKey, <br>&nbsp;&nbsp;&nbsp;&nbsp;size: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a><br>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_resource_updates/types.rs.html#159-165' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.len' class="method"><span id='len.v' class='invisible'><code>pub fn <a href='#method.len' class='fnname'>len</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_resource_updates/types.rs.html#167-169' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.is_empty' class="method"><span id='is_empty.v' class='invisible'><code>pub fn <a href='#method.is_empty' class='fnname'>is_empty</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_resource_updates/types.rs.html#171-173' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.merge' class="method"><span id='merge.v' class='invisible'><code>pub fn <a href='#method.merge' class='fnname'>merge</a>(&amp;mut self, other: Self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_resource_updates/types.rs.html#175-177' title='goto source code'>[src]</a></span></h4>
+</div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl&lt;ImageKey:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a>, FontKey:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a>, FontInstanceKey:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a>&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../../rsx_resource_updates/types/struct.ResourceUpdates.html" title="struct rsx_resource_updates::types::ResourceUpdates">ResourceUpdates</a>&lt;ImageKey, FontKey, FontInstanceKey&gt;</code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_resource_updates/types.rs.html#139' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_resource_updates/types.rs.html#139' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div><h3 id='impl-PartialEq' class='impl'><span class='in-band'><code>impl&lt;ImageKey:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a>, FontKey:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a>, FontInstanceKey:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a>&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a> for <a class="struct" href="../../rsx_resource_updates/types/struct.ResourceUpdates.html" title="struct rsx_resource_updates::types::ResourceUpdates">ResourceUpdates</a>&lt;ImageKey, FontKey, FontInstanceKey&gt;</code><a href='#impl-PartialEq' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_resource_updates/types.rs.html#139' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class="method"><span id='eq.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;__arg_0: &amp;<a class="struct" href="../../rsx_resource_updates/types/struct.ResourceUpdates.html" title="struct rsx_resource_updates::types::ResourceUpdates">ResourceUpdates</a>&lt;ImageKey, FontKey, FontInstanceKey&gt;<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_resource_updates/types.rs.html#139' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class="method"><span id='ne.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;__arg_0: &amp;<a class="struct" href="../../rsx_resource_updates/types/struct.ResourceUpdates.html" title="struct rsx_resource_updates::types::ResourceUpdates">ResourceUpdates</a>&lt;ImageKey, FontKey, FontInstanceKey&gt;<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_resource_updates/types.rs.html#139' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 id='impl-Into%3CString%3E' class='impl'><span class='in-band'><code>impl&lt;ImageKey, FontKey, FontInstanceKey&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt; for <a class="struct" href="../../rsx_resource_updates/types/struct.ResourceUpdates.html" title="struct rsx_resource_updates::types::ResourceUpdates">ResourceUpdates</a>&lt;ImageKey, FontKey, FontInstanceKey&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;ImageKey: <a class="trait" href="../../serde/ser/trait.Serialize.html" title="trait serde::ser::Serialize">Serialize</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;FontKey: <a class="trait" href="../../serde/ser/trait.Serialize.html" title="trait serde::ser::Serialize">Serialize</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;FontInstanceKey: <a class="trait" href="../../serde/ser/trait.Serialize.html" title="trait serde::ser::Serialize">Serialize</a>,&nbsp;</span></code><a href='#impl-Into%3CString%3E' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_resource_updates/types.rs.html#180-195' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.into' class="method"><span id='into.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/convert/trait.Into.html#tymethod.into' class='fnname'>into</a>(self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_resource_updates/types.rs.html#187-189' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs the conversion.</p>
+</div></div><h3 id='impl-Into%3C*mut%20c_char%3E' class='impl'><span class='in-band'><code>impl&lt;ImageKey, FontKey, FontInstanceKey&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="type" href="https://doc.rust-lang.org/nightly/std/os/raw/type.c_char.html" title="type std::os::raw::c_char">c_char</a>&gt; for <a class="struct" href="../../rsx_resource_updates/types/struct.ResourceUpdates.html" title="struct rsx_resource_updates::types::ResourceUpdates">ResourceUpdates</a>&lt;ImageKey, FontKey, FontInstanceKey&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;ImageKey: <a class="trait" href="../../serde/ser/trait.Serialize.html" title="trait serde::ser::Serialize">Serialize</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;FontKey: <a class="trait" href="../../serde/ser/trait.Serialize.html" title="trait serde::ser::Serialize">Serialize</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;FontInstanceKey: <a class="trait" href="../../serde/ser/trait.Serialize.html" title="trait serde::ser::Serialize">Serialize</a>,&nbsp;</span></code><a href='#impl-Into%3C*mut%20c_char%3E' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_resource_updates/types.rs.html#197-207' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.into-1' class="method"><span id='into.v-1' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/convert/trait.Into.html#tymethod.into' class='fnname'>into</a>(self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="type" href="https://doc.rust-lang.org/nightly/std/os/raw/type.c_char.html" title="type std::os::raw::c_char">c_char</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_resource_updates/types.rs.html#203-206' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs the conversion.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "rsx_resource_updates";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

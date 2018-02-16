@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `InnerMatrix2D` struct in crate `style`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, InnerMatrix2D">
+
+    <title>style::properties::animated_properties::InnerMatrix2D - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct InnerMatrix2D</p><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.m11">m11</a><a href="#structfield.m12">m12</a><a href="#structfield.m21">m21</a><a href="#structfield.m22">m22</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Clone">Clone</a><a href="#impl-ComputeSquaredDistance">ComputeSquaredDistance</a><a href="#impl-Copy">Copy</a><a href="#impl-Debug">Debug</a><a href="#impl-MallocSizeOf">MallocSizeOf</a><a href="#impl-Animate">Animate</a></div></div><p class='location'><a href='../../index.html'>style</a>::<wbr><a href='../index.html'>properties</a>::<wbr><a href='index.html'>animated_properties</a></p><script>window.sidebarCurrent = {name: 'InnerMatrix2D', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>style</a>::<wbr><a href='../index.html'>properties</a>::<wbr><a href='index.html'>animated_properties</a>::<wbr><a class="struct" href=''>InnerMatrix2D</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#44973-44976' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct InnerMatrix2D {
+    pub m11: <a class="type" href="../../../style/values/type.CSSFloat.html" title="type style::values::CSSFloat">CSSFloat</a>,
+    pub m12: <a class="type" href="../../../style/values/type.CSSFloat.html" title="type style::values::CSSFloat">CSSFloat</a>,
+    pub m21: <a class="type" href="../../../style/values/type.CSSFloat.html" title="type style::values::CSSFloat">CSSFloat</a>,
+    pub m22: <a class="type" href="../../../style/values/type.CSSFloat.html" title="type style::values::CSSFloat">CSSFloat</a>,
+}</pre><div class='docblock'><p>A 2d matrix for interpolation.</p>
+</div><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.m11" class="structfield small-section-header">
+                           <a href="#structfield.m11" class="anchor field"></a>
+                           <span id="m11.v" class='invisible'>
+                           <code>m11: <a class="type" href="../../../style/values/type.CSSFloat.html" title="type style::values::CSSFloat">CSSFloat</a></code>
+                           </span></span><span id="structfield.m12" class="structfield small-section-header">
+                           <a href="#structfield.m12" class="anchor field"></a>
+                           <span id="m12.v" class='invisible'>
+                           <code>m12: <a class="type" href="../../../style/values/type.CSSFloat.html" title="type style::values::CSSFloat">CSSFloat</a></code>
+                           </span></span><span id="structfield.m21" class="structfield small-section-header">
+                           <a href="#structfield.m21" class="anchor field"></a>
+                           <span id="m21.v" class='invisible'>
+                           <code>m21: <a class="type" href="../../../style/values/type.CSSFloat.html" title="type style::values::CSSFloat">CSSFloat</a></code>
+                           </span></span><span id="structfield.m22" class="structfield small-section-header">
+                           <a href="#structfield.m22" class="anchor field"></a>
+                           <span id="m22.v" class='invisible'>
+                           <code>m22: <a class="type" href="../../../style/values/type.CSSFloat.html" title="type style::values::CSSFloat">CSSFloat</a></code>
+                           </span></span>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Clone' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="struct" href="../../../style/properties/animated_properties/struct.InnerMatrix2D.html" title="struct style::properties::animated_properties::InnerMatrix2D">InnerMatrix2D</a></code><a href='#impl-Clone' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#44966' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="struct" href="../../../style/properties/animated_properties/struct.InnerMatrix2D.html" title="struct style::properties::animated_properties::InnerMatrix2D">InnerMatrix2D</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#44966' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 id='impl-ComputeSquaredDistance' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../../style/values/distance/trait.ComputeSquaredDistance.html" title="trait style::values::distance::ComputeSquaredDistance">ComputeSquaredDistance</a> for <a class="struct" href="../../../style/properties/animated_properties/struct.InnerMatrix2D.html" title="struct style::properties::animated_properties::InnerMatrix2D">InnerMatrix2D</a></code><a href='#impl-ComputeSquaredDistance' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#44966-1' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.compute_squared_distance' class="method"><span id='compute_squared_distance.v' class='invisible'><code>fn <a href='../../../style/values/distance/trait.ComputeSquaredDistance.html#tymethod.compute_squared_distance' class='fnname'>compute_squared_distance</a>(&amp;self, other: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="enum" href="../../../style/values/distance/enum.SquaredDistance.html" title="enum style::values::distance::SquaredDistance">SquaredDistance</a>, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#44966' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Computes the squared distance between two animatable values.</p>
+</div></div><h3 id='impl-Copy' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html" title="trait core::marker::Copy">Copy</a> for <a class="struct" href="../../../style/properties/animated_properties/struct.InnerMatrix2D.html" title="struct style::properties::animated_properties::InnerMatrix2D">InnerMatrix2D</a></code><a href='#impl-Copy' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#44966' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../../../style/properties/animated_properties/struct.InnerMatrix2D.html" title="struct style::properties::animated_properties::InnerMatrix2D">InnerMatrix2D</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#44966' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#44966' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div><h3 id='impl-MallocSizeOf' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../../malloc_size_of/trait.MallocSizeOf.html" title="trait malloc_size_of::MallocSizeOf">MallocSizeOf</a> for <a class="struct" href="../../../style/properties/animated_properties/struct.InnerMatrix2D.html" title="struct style::properties::animated_properties::InnerMatrix2D">InnerMatrix2D</a></code><a href='#impl-MallocSizeOf' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#44967-1' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.size_of' class="method"><span id='size_of.v' class='invisible'><code>fn <a href='../../../malloc_size_of/trait.MallocSizeOf.html#tymethod.size_of' class='fnname'>size_of</a>(&amp;self, ops: &amp;mut <a class="struct" href="../../../malloc_size_of/struct.MallocSizeOfOps.html" title="struct malloc_size_of::MallocSizeOfOps">MallocSizeOfOps</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#44967' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Measure the heap usage of all descendant heap-allocated structures, but not the space taken up by the value itself. <a href="../../../malloc_size_of/trait.MallocSizeOf.html#tymethod.size_of">Read more</a></p>
+</div></div><h3 id='impl-Animate' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../../style/values/animated/trait.Animate.html" title="trait style::values::animated::Animate">Animate</a> for <a class="struct" href="../../../style/properties/animated_properties/struct.InnerMatrix2D.html" title="struct style::properties::animated_properties::InnerMatrix2D">InnerMatrix2D</a></code><a href='#impl-Animate' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#45002-45011' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.animate' class="method"><span id='animate.v' class='invisible'><code>fn <a href='../../../style/values/animated/trait.Animate.html#tymethod.animate' class='fnname'>animate</a>(&amp;self, other: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self, procedure: <a class="enum" href="../../../style/values/animated/enum.Procedure.html" title="enum style::values::animated::Procedure">Procedure</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;Self, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#45003-45010' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Animate a value towards another one, given an animation procedure.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "style";
+    </script>
+    <script src="../../../main.js"></script>
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

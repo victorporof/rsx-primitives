@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["StyleBloom","A struct that allows us to fast-reject deep descendant selectors avoiding selector-matching."]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"type":[["BasicShape","A computed basic shape."],["Circle","A computed circle."],["ClippingShape","A computed clipping shape."],["Ellipse","A computed ellipse."],["FloatAreaShape","A computed float area shape."],["InsetRect","The computed value of `inset()`"],["ShapeRadius","The computed value of `ShapeRadius`"]]});

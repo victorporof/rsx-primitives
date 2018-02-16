@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Effects` struct in crate `style`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Effects">
+
+    <title>style::properties::style_structs::Effects - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct Effects</p><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.opacity">opacity</a><a href="#structfield.box_shadow">box_shadow</a><a href="#structfield.clip">clip</a><a href="#structfield.filter">filter</a><a href="#structfield.mix_blend_mode">mix_blend_mode</a></div><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.set_opacity">set_opacity</a><a href="#method.copy_opacity_from">copy_opacity_from</a><a href="#method.reset_opacity">reset_opacity</a><a href="#method.clone_opacity">clone_opacity</a><a href="#method.set_box_shadow">set_box_shadow</a><a href="#method.copy_box_shadow_from">copy_box_shadow_from</a><a href="#method.reset_box_shadow">reset_box_shadow</a><a href="#method.clone_box_shadow">clone_box_shadow</a><a href="#method.set_clip">set_clip</a><a href="#method.copy_clip_from">copy_clip_from</a><a href="#method.reset_clip">reset_clip</a><a href="#method.clone_clip">clone_clip</a><a href="#method.set_filter">set_filter</a><a href="#method.copy_filter_from">copy_filter_from</a><a href="#method.reset_filter">reset_filter</a><a href="#method.clone_filter">clone_filter</a><a href="#method.set_mix_blend_mode">set_mix_blend_mode</a><a href="#method.copy_mix_blend_mode_from">copy_mix_blend_mode_from</a><a href="#method.reset_mix_blend_mode">reset_mix_blend_mode</a><a href="#method.clone_mix_blend_mode">clone_mix_blend_mode</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Clone">Clone</a><a href="#impl-Debug">Debug</a><a href="#impl-MallocSizeOf">MallocSizeOf</a><a href="#impl-PartialEq">PartialEq</a></div></div><p class='location'><a href='../../index.html'>style</a>::<wbr><a href='../index.html'>properties</a>::<wbr><a href='index.html'>style_structs</a></p><script>window.sidebarCurrent = {name: 'Effects', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>style</a>::<wbr><a href='../index.html'>properties</a>::<wbr><a href='index.html'>style_structs</a>::<wbr><a class="struct" href=''>Effects</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#61449-61460' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Effects {
+    pub opacity: <a class="type" href="../../../style/values/computed/type.Opacity.html" title="type style::values::computed::Opacity">T</a>,
+    pub box_shadow: <a class="struct" href="../../../style/properties/longhands/box_shadow/computed_value/struct.T.html" title="struct style::properties::longhands::box_shadow::computed_value::T">T</a>,
+    pub clip: <a class="type" href="../../../style/values/computed/type.ClipRectOrAuto.html" title="type style::values::computed::ClipRectOrAuto">T</a>,
+    pub filter: <a class="struct" href="../../../style/properties/longhands/filter/computed_value/struct.T.html" title="struct style::properties::longhands::filter::computed_value::T">T</a>,
+    pub mix_blend_mode: <a class="enum" href="../../../style/properties/longhands/mix_blend_mode/computed_value/enum.T.html" title="enum style::properties::longhands::mix_blend_mode::computed_value::T">T</a>,
+}</pre><div class='docblock'><p>The Effects style struct.</p>
+</div><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.opacity" class="structfield small-section-header">
+                           <a href="#structfield.opacity" class="anchor field"></a>
+                           <span id="opacity.v" class='invisible'>
+                           <code>opacity: <a class="type" href="../../../style/values/computed/type.Opacity.html" title="type style::values::computed::Opacity">T</a></code>
+                           </span></span><div class='docblock'><p>The opacity computed value.</p>
+</div><span id="structfield.box_shadow" class="structfield small-section-header">
+                           <a href="#structfield.box_shadow" class="anchor field"></a>
+                           <span id="box_shadow.v" class='invisible'>
+                           <code>box_shadow: <a class="struct" href="../../../style/properties/longhands/box_shadow/computed_value/struct.T.html" title="struct style::properties::longhands::box_shadow::computed_value::T">T</a></code>
+                           </span></span><div class='docblock'><p>The box-shadow computed value.</p>
+</div><span id="structfield.clip" class="structfield small-section-header">
+                           <a href="#structfield.clip" class="anchor field"></a>
+                           <span id="clip.v" class='invisible'>
+                           <code>clip: <a class="type" href="../../../style/values/computed/type.ClipRectOrAuto.html" title="type style::values::computed::ClipRectOrAuto">T</a></code>
+                           </span></span><div class='docblock'><p>The clip computed value.</p>
+</div><span id="structfield.filter" class="structfield small-section-header">
+                           <a href="#structfield.filter" class="anchor field"></a>
+                           <span id="filter.v" class='invisible'>
+                           <code>filter: <a class="struct" href="../../../style/properties/longhands/filter/computed_value/struct.T.html" title="struct style::properties::longhands::filter::computed_value::T">T</a></code>
+                           </span></span><div class='docblock'><p>The filter computed value.</p>
+</div><span id="structfield.mix_blend_mode" class="structfield small-section-header">
+                           <a href="#structfield.mix_blend_mode" class="anchor field"></a>
+                           <span id="mix_blend_mode.v" class='invisible'>
+                           <code>mix_blend_mode: <a class="enum" href="../../../style/properties/longhands/mix_blend_mode/computed_value/enum.T.html" title="enum style::properties::longhands::mix_blend_mode::computed_value::T">T</a></code>
+                           </span></span><div class='docblock'><p>The mix-blend-mode computed value.</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="struct" href="../../../style/properties/style_structs/struct.Effects.html" title="struct style::properties::style_structs::Effects">Effects</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#61462-61603' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.set_opacity' class="method"><span id='set_opacity.v' class='invisible'><code>pub fn <a href='#method.set_opacity' class='fnname'>set_opacity</a>(&amp;mut self, v: <a class="type" href="../../../style/values/computed/type.Opacity.html" title="type style::values::computed::Opacity">T</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#61466-61468' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Set opacity.</p>
+</div><h4 id='method.copy_opacity_from' class="method"><span id='copy_opacity_from.v' class='invisible'><code>pub fn <a href='#method.copy_opacity_from' class='fnname'>copy_opacity_from</a>(&amp;mut self, other: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#61472-61474' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Set opacity from other struct.</p>
+</div><h4 id='method.reset_opacity' class="method"><span id='reset_opacity.v' class='invisible'><code>pub fn <a href='#method.reset_opacity' class='fnname'>reset_opacity</a>(&amp;mut self, other: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#61479-61481' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Reset opacity from the initial struct.</p>
+</div><h4 id='method.clone_opacity' class="method"><span id='clone_opacity.v' class='invisible'><code>pub fn <a href='#method.clone_opacity' class='fnname'>clone_opacity</a>(&amp;self) -&gt; <a class="type" href="../../../style/values/computed/type.Opacity.html" title="type style::values::computed::Opacity">T</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#61486-61488' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Get the computed value for opacity.</p>
+</div><h4 id='method.set_box_shadow' class="method"><span id='set_box_shadow.v' class='invisible'><code>pub fn <a href='#method.set_box_shadow' class='fnname'>set_box_shadow</a>&lt;I&gt;(&amp;mut self, v: I) <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;I: <a class="trait" href="https://doc.rust-lang.org/nightly/core/iter/traits/trait.IntoIterator.html" title="trait core::iter::traits::IntoIterator">IntoIterator</a>&lt;Item = <a class="type" href="../../../style/values/computed/effects/type.BoxShadow.html" title="type style::values::computed::effects::BoxShadow">T</a>&gt;,<br>&nbsp;&nbsp;&nbsp;&nbsp;I::<a class="type" href="https://doc.rust-lang.org/nightly/core/iter/traits/trait.IntoIterator.html#associatedtype.IntoIter" title="type core::iter::traits::IntoIterator::IntoIter">IntoIter</a>: <a class="trait" href="https://doc.rust-lang.org/nightly/core/iter/traits/trait.ExactSizeIterator.html" title="trait core::iter::traits::ExactSizeIterator">ExactSizeIterator</a>,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#61492-61499' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Set box-shadow.</p>
+</div><h4 id='method.copy_box_shadow_from' class="method"><span id='copy_box_shadow_from.v' class='invisible'><code>pub fn <a href='#method.copy_box_shadow_from' class='fnname'>copy_box_shadow_from</a>(&amp;mut self, other: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#61503-61505' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Set box-shadow from other struct.</p>
+</div><h4 id='method.reset_box_shadow' class="method"><span id='reset_box_shadow.v' class='invisible'><code>pub fn <a href='#method.reset_box_shadow' class='fnname'>reset_box_shadow</a>(&amp;mut self, other: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#61510-61512' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Reset box-shadow from the initial struct.</p>
+</div><h4 id='method.clone_box_shadow' class="method"><span id='clone_box_shadow.v' class='invisible'><code>pub fn <a href='#method.clone_box_shadow' class='fnname'>clone_box_shadow</a>(&amp;self) -&gt; <a class="struct" href="../../../style/properties/longhands/box_shadow/computed_value/struct.T.html" title="struct style::properties::longhands::box_shadow::computed_value::T">T</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#61517-61519' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Get the computed value for box-shadow.</p>
+</div><h4 id='method.set_clip' class="method"><span id='set_clip.v' class='invisible'><code>pub fn <a href='#method.set_clip' class='fnname'>set_clip</a>(&amp;mut self, v: <a class="type" href="../../../style/values/computed/type.ClipRectOrAuto.html" title="type style::values::computed::ClipRectOrAuto">T</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#61523-61525' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Set clip.</p>
+</div><h4 id='method.copy_clip_from' class="method"><span id='copy_clip_from.v' class='invisible'><code>pub fn <a href='#method.copy_clip_from' class='fnname'>copy_clip_from</a>(&amp;mut self, other: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#61529-61531' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Set clip from other struct.</p>
+</div><h4 id='method.reset_clip' class="method"><span id='reset_clip.v' class='invisible'><code>pub fn <a href='#method.reset_clip' class='fnname'>reset_clip</a>(&amp;mut self, other: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#61536-61538' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Reset clip from the initial struct.</p>
+</div><h4 id='method.clone_clip' class="method"><span id='clone_clip.v' class='invisible'><code>pub fn <a href='#method.clone_clip' class='fnname'>clone_clip</a>(&amp;self) -&gt; <a class="type" href="../../../style/values/computed/type.ClipRectOrAuto.html" title="type style::values::computed::ClipRectOrAuto">T</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#61543-61545' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Get the computed value for clip.</p>
+</div><h4 id='method.set_filter' class="method"><span id='set_filter.v' class='invisible'><code>pub fn <a href='#method.set_filter' class='fnname'>set_filter</a>&lt;I&gt;(&amp;mut self, v: I) <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;I: <a class="trait" href="https://doc.rust-lang.org/nightly/core/iter/traits/trait.IntoIterator.html" title="trait core::iter::traits::IntoIterator">IntoIterator</a>&lt;Item = <a class="type" href="../../../style/values/computed/effects/type.Filter.html" title="type style::values::computed::effects::Filter">T</a>&gt;,<br>&nbsp;&nbsp;&nbsp;&nbsp;I::<a class="type" href="https://doc.rust-lang.org/nightly/core/iter/traits/trait.IntoIterator.html#associatedtype.IntoIter" title="type core::iter::traits::IntoIterator::IntoIter">IntoIter</a>: <a class="trait" href="https://doc.rust-lang.org/nightly/core/iter/traits/trait.ExactSizeIterator.html" title="trait core::iter::traits::ExactSizeIterator">ExactSizeIterator</a>,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#61549-61556' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Set filter.</p>
+</div><h4 id='method.copy_filter_from' class="method"><span id='copy_filter_from.v' class='invisible'><code>pub fn <a href='#method.copy_filter_from' class='fnname'>copy_filter_from</a>(&amp;mut self, other: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#61560-61562' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Set filter from other struct.</p>
+</div><h4 id='method.reset_filter' class="method"><span id='reset_filter.v' class='invisible'><code>pub fn <a href='#method.reset_filter' class='fnname'>reset_filter</a>(&amp;mut self, other: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#61567-61569' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Reset filter from the initial struct.</p>
+</div><h4 id='method.clone_filter' class="method"><span id='clone_filter.v' class='invisible'><code>pub fn <a href='#method.clone_filter' class='fnname'>clone_filter</a>(&amp;self) -&gt; <a class="struct" href="../../../style/properties/longhands/filter/computed_value/struct.T.html" title="struct style::properties::longhands::filter::computed_value::T">T</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#61574-61576' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Get the computed value for filter.</p>
+</div><h4 id='method.set_mix_blend_mode' class="method"><span id='set_mix_blend_mode.v' class='invisible'><code>pub fn <a href='#method.set_mix_blend_mode' class='fnname'>set_mix_blend_mode</a>(&amp;mut self, v: <a class="enum" href="../../../style/properties/longhands/mix_blend_mode/computed_value/enum.T.html" title="enum style::properties::longhands::mix_blend_mode::computed_value::T">T</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#61580-61582' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Set mix-blend-mode.</p>
+</div><h4 id='method.copy_mix_blend_mode_from' class="method"><span id='copy_mix_blend_mode_from.v' class='invisible'><code>pub fn <a href='#method.copy_mix_blend_mode_from' class='fnname'>copy_mix_blend_mode_from</a>(&amp;mut self, other: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#61586-61588' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Set mix-blend-mode from other struct.</p>
+</div><h4 id='method.reset_mix_blend_mode' class="method"><span id='reset_mix_blend_mode.v' class='invisible'><code>pub fn <a href='#method.reset_mix_blend_mode' class='fnname'>reset_mix_blend_mode</a>(&amp;mut self, other: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#61593-61595' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Reset mix-blend-mode from the initial struct.</p>
+</div><h4 id='method.clone_mix_blend_mode' class="method"><span id='clone_mix_blend_mode.v' class='invisible'><code>pub fn <a href='#method.clone_mix_blend_mode' class='fnname'>clone_mix_blend_mode</a>(&amp;self) -&gt; <a class="enum" href="../../../style/properties/longhands/mix_blend_mode/computed_value/enum.T.html" title="enum style::properties::longhands::mix_blend_mode::computed_value::T">T</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#61600-61602' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Get the computed value for mix-blend-mode.</p>
+</div></div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Clone' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="struct" href="../../../style/properties/style_structs/struct.Effects.html" title="struct style::properties::style_structs::Effects">Effects</a></code><a href='#impl-Clone' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#61447' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="struct" href="../../../style/properties/style_structs/struct.Effects.html" title="struct style::properties::style_structs::Effects">Effects</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#61447' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../../../style/properties/style_structs/struct.Effects.html" title="struct style::properties::style_structs::Effects">Effects</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#61447' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#61447' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div><h3 id='impl-MallocSizeOf' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../../malloc_size_of/trait.MallocSizeOf.html" title="trait malloc_size_of::MallocSizeOf">MallocSizeOf</a> for <a class="struct" href="../../../style/properties/style_structs/struct.Effects.html" title="struct style::properties::style_structs::Effects">Effects</a></code><a href='#impl-MallocSizeOf' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#61447-1' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.size_of' class="method"><span id='size_of.v' class='invisible'><code>fn <a href='../../../malloc_size_of/trait.MallocSizeOf.html#tymethod.size_of' class='fnname'>size_of</a>(&amp;self, ops: &amp;mut <a class="struct" href="../../../malloc_size_of/struct.MallocSizeOfOps.html" title="struct malloc_size_of::MallocSizeOfOps">MallocSizeOfOps</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#61447' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Measure the heap usage of all descendant heap-allocated structures, but not the space taken up by the value itself. <a href="../../../malloc_size_of/trait.MallocSizeOf.html#tymethod.size_of">Read more</a></p>
+</div></div><h3 id='impl-PartialEq' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a> for <a class="struct" href="../../../style/properties/style_structs/struct.Effects.html" title="struct style::properties::style_structs::Effects">Effects</a></code><a href='#impl-PartialEq' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#61447' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class="method"><span id='eq.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class="struct" href="../../../style/properties/style_structs/struct.Effects.html" title="struct style::properties::style_structs::Effects">Effects</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#61447' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class="method"><span id='ne.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class="struct" href="../../../style/properties/style_structs/struct.Effects.html" title="struct style::properties::style_structs::Effects">Effects</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#61447' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "style";
+    </script>
+    <script src="../../../main.js"></script>
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

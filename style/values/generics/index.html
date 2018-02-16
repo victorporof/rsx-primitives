@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `generics` mod in crate `style`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, generics">
+
+    <title>style::values::generics - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc mod">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Module generics</p><div class="block items"><ul><li><a href="#modules">Modules</a></li><li><a href="#structs">Structs</a></li><li><a href="#enums">Enums</a></li></ul></div><p class='location'><a href='../../index.html'>style</a>::<wbr><a href='../index.html'>values</a></p><script>window.sidebarCurrent = {name: 'generics', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Module <a href='../../index.html'>style</a>::<wbr><a href='../index.html'>values</a>::<wbr><a class="mod" href=''>generics</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../src/style/values/generics/mod.rs.html#5-292' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p>Generic types that share their serialization implementations
+for both specified and computed values.</p>
+</div><h2 id='modules' class='section-header'><a href="#modules">Modules</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="background/index.html"
+                                  title='mod style::values::generics::background'>background</a></td>
+                           <td class='docblock-short'>
+                                <p>Generic types for CSS values related to backgrounds.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="basic_shape/index.html"
+                                  title='mod style::values::generics::basic_shape'>basic_shape</a></td>
+                           <td class='docblock-short'>
+                                <p>CSS handling for the <a href="https://drafts.csswg.org/css-shapes/#typedef-basic-shape"><code>basic-shape</code></a>
+types that are generic over their <code>ToCss</code> implementations.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="border/index.html"
+                                  title='mod style::values::generics::border'>border</a></td>
+                           <td class='docblock-short'>
+                                <p>Generic types for CSS values related to borders.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="box_/index.html"
+                                  title='mod style::values::generics::box_'>box_</a></td>
+                           <td class='docblock-short'>
+                                <p>Generic types for box properties.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="effects/index.html"
+                                  title='mod style::values::generics::effects'>effects</a></td>
+                           <td class='docblock-short'>
+                                <p>Generic types for CSS values related to effects.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="flex/index.html"
+                                  title='mod style::values::generics::flex'>flex</a></td>
+                           <td class='docblock-short'>
+                                <p>Generic types for CSS values related to flexbox.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="grid/index.html"
+                                  title='mod style::values::generics::grid'>grid</a></td>
+                           <td class='docblock-short'>
+                                <p>Generic types for the handling of
+<a href="https://drafts.csswg.org/css-grid/">grids</a>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="image/index.html"
+                                  title='mod style::values::generics::image'>image</a></td>
+                           <td class='docblock-short'>
+                                <p>Generic types for the handling of <a href="https://drafts.csswg.org/css-images/#image-values">images</a>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="position/index.html"
+                                  title='mod style::values::generics::position'>position</a></td>
+                           <td class='docblock-short'>
+                                <p>Generic types for CSS handling of specified and computed values of
+<a href="https://drafts.csswg.org/css-backgrounds-3/#position"><code>position</code></a></p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="rect/index.html"
+                                  title='mod style::values::generics::rect'>rect</a></td>
+                           <td class='docblock-short'>
+                                <p>Generic types for CSS values that are composed of four sides.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="size/index.html"
+                                  title='mod style::values::generics::size'>size</a></td>
+                           <td class='docblock-short'>
+                                <p>Generic type for CSS properties that are composed by two dimensions.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="svg/index.html"
+                                  title='mod style::values::generics::svg'>svg</a></td>
+                           <td class='docblock-short'>
+                                <p>Generic types for CSS values in SVG</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="text/index.html"
+                                  title='mod style::values::generics::text'>text</a></td>
+                           <td class='docblock-short'>
+                                <p>Generic types for text properties.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="transform/index.html"
+                                  title='mod style::values::generics::transform'>transform</a></td>
+                           <td class='docblock-short'>
+                                <p>Generic types for CSS values that are related to transformations.</p>
+                           </td>
+                       </tr></table><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.FontSettingTag.html"
+                                  title='struct style::values::generics::FontSettingTag'>FontSettingTag</a></td>
+                           <td class='docblock-short'>
+                                <p>A settings tag, defined by a four-character tag and a setting value</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.FontSettingTagFloat.html"
+                                  title='struct style::values::generics::FontSettingTagFloat'>FontSettingTagFloat</a></td>
+                           <td class='docblock-short'>
+                                <p>A number value to be used for font-variation-settings</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.FontSettingTagInt.html"
+                                  title='struct style::values::generics::FontSettingTagInt'>FontSettingTagInt</a></td>
+                           <td class='docblock-short'>
+                                <p>An integer that can also parse &quot;on&quot; and &quot;off&quot;,
+for font-feature-settings</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.GreaterThanOrEqualToOne.html"
+                                  title='struct style::values::generics::GreaterThanOrEqualToOne'>GreaterThanOrEqualToOne</a></td>
+                           <td class='docblock-short'>
+                                <p>A wrapper of greater-than-or-equal-to-one values.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.NonNegative.html"
+                                  title='struct style::values::generics::NonNegative'>NonNegative</a></td>
+                           <td class='docblock-short'>
+                                <p>A wrapper of Non-negative values.</p>
+                           </td>
+                       </tr></table><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.CounterStyleOrNone.html"
+                                  title='enum style::values::generics::CounterStyleOrNone'>CounterStyleOrNone</a></td>
+                           <td class='docblock-short'>
+                                <p><a href="https://drafts.csswg.org/css-counter-styles/#typedef-counter-style">https://drafts.csswg.org/css-counter-styles/#typedef-counter-style</a></p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.FontSettings.html"
+                                  title='enum style::values::generics::FontSettings'>FontSettings</a></td>
+                           <td class='docblock-short'>
+                                <p>A font settings value for font-variation-settings or font-feature-settings</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.SymbolsType.html"
+                                  title='enum style::values::generics::SymbolsType'>SymbolsType</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "style";
+    </script>
+    <script src="../../../main.js"></script>
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

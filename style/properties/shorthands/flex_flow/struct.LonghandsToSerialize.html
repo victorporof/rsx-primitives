@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `LonghandsToSerialize` struct in crate `style`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, LonghandsToSerialize">
+
+    <title>style::properties::shorthands::flex_flow::LonghandsToSerialize - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct LonghandsToSerialize</p><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.flex_direction">flex_direction</a><a href="#structfield.flex_wrap">flex_wrap</a></div><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.from_iter">from_iter</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-ToCss">ToCss</a></div></div><p class='location'><a href='../../../index.html'>style</a>::<wbr><a href='../../index.html'>properties</a>::<wbr><a href='../index.html'>shorthands</a>::<wbr><a href='index.html'>flex_flow</a></p><script>window.sidebarCurrent = {name: 'LonghandsToSerialize', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../../index.html'>style</a>::<wbr><a href='../../index.html'>properties</a>::<wbr><a href='../index.html'>shorthands</a>::<wbr><a href='index.html'>flex_flow</a>::<wbr><a class="struct" href=''>LonghandsToSerialize</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#32301-32306' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct LonghandsToSerialize&lt;'a&gt; {
+    pub flex_direction: &amp;'a <a class="enum" href="../../../../style/properties/longhands/flex_direction/computed_value/enum.T.html" title="enum style::properties::longhands::flex_direction::computed_value::T">SpecifiedValue</a>,
+    pub flex_wrap: &amp;'a <a class="enum" href="../../../../style/properties/longhands/flex_wrap/computed_value/enum.T.html" title="enum style::properties::longhands::flex_wrap::computed_value::T">SpecifiedValue</a>,
+}</pre><div class='docblock'><p>Represents a serializable set of all of the longhand properties that
+correspond to a shorthand.</p>
+</div><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.flex_direction" class="structfield small-section-header">
+                           <a href="#structfield.flex_direction" class="anchor field"></a>
+                           <span id="flex_direction.v" class='invisible'>
+                           <code>flex_direction: &amp;'a <a class="enum" href="../../../../style/properties/longhands/flex_direction/computed_value/enum.T.html" title="enum style::properties::longhands::flex_direction::computed_value::T">SpecifiedValue</a></code>
+                           </span></span><span id="structfield.flex_wrap" class="structfield small-section-header">
+                           <a href="#structfield.flex_wrap" class="anchor field"></a>
+                           <span id="flex_wrap.v" class='invisible'>
+                           <code>flex_wrap: &amp;'a <a class="enum" href="../../../../style/properties/longhands/flex_wrap/computed_value/enum.T.html" title="enum style::properties::longhands::flex_wrap::computed_value::T">SpecifiedValue</a></code>
+                           </span></span>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class="struct" href="../../../../style/properties/shorthands/flex_flow/struct.LonghandsToSerialize.html" title="struct style::properties::shorthands::flex_flow::LonghandsToSerialize">LonghandsToSerialize</a>&lt;'a&gt;</code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#32308-32348' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from_iter' class="method"><span id='from_iter.v' class='invisible'><code>pub fn <a href='#method.from_iter' class='fnname'>from_iter</a>&lt;I&gt;(iter: I) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;Self, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;I: <a class="trait" href="https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html" title="trait core::iter::iterator::Iterator">Iterator</a>&lt;Item = &amp;'a <a class="enum" href="../../../../style/properties/enum.PropertyDeclaration.html" title="enum style::properties::PropertyDeclaration">PropertyDeclaration</a>&gt;,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#32311-32347' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Tries to get a serializable set of longhands given a set of
+property declarations.</p>
+</div></div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-ToCss' class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class="trait" href="../../../../style_traits/values/trait.ToCss.html" title="trait style_traits::values::ToCss">ToCss</a> for <a class="struct" href="../../../../style/properties/shorthands/flex_flow/struct.LonghandsToSerialize.html" title="struct style::properties::shorthands::flex_flow::LonghandsToSerialize">LonghandsToSerialize</a>&lt;'a&gt;</code><a href='#impl-ToCss' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#32300-1' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.to_css' class="method"><span id='to_css.v' class='invisible'><code>fn <a href='../../../../style_traits/values/trait.ToCss.html#tymethod.to_css' class='fnname'>to_css</a>&lt;W&gt;(&amp;self, dest: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>W) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a> <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;W: <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Write.html" title="trait core::fmt::Write">Write</a>,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#32300' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Serialize <code>self</code> in CSS syntax, writing to <code>dest</code>.</p>
+</div><h4 id='method.to_css_string' class="method"><span id='to_css_string.v' class='invisible'><code>fn <a href='../../../../style_traits/values/trait.ToCss.html#method.to_css_string' class='fnname'>to_css_string</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style_traits/values.rs.html#43-47' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Serialize <code>self</code> in CSS syntax and return a string. <a href="../../../../style_traits/values/trait.ToCss.html#method.to_css_string">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../../";
+        window.currentCrate = "style";
+    </script>
+    <script src="../../../../main.js"></script>
+    <script defer src="../../../../search-index.js"></script>
+</body>
+</html>

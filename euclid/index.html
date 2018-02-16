@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `euclid` crate.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, euclid">
+
+    <title>euclid - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc mod">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Crate euclid</p><div class="block items"><ul><li><a href="#modules">Modules</a></li><li><a href="#structs">Structs</a></li><li><a href="#traits">Traits</a></li><li><a href="#functions">Functions</a></li><li><a href="#types">Type Definitions</a></li></ul></div><p class='location'></p><script>window.sidebarCurrent = {name: 'euclid', ty: 'mod', relpath: '../'};</script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Crate <a class="mod" href=''>euclid</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/euclid/lib.rs.html#10-124' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p>A collection of strongly typed math tools for computer graphics with an inclination
+towards 2d graphics and layout.</p>
+
+<p>All types are generic over the scalar type of their component (<code>f32</code>, <code>i32</code>, etc.),
+and tagged with a generic Unit parameter which is useful to prevent mixing
+values from different spaces. For example it should not be legal to translate
+a screen-space position by a world-space vector and this can be expressed using
+the generic Unit parameter.</p>
+
+<p>This unit system is not mandatory and all Typed* structures have an alias
+with the default unit: <code>UnknownUnit</code>.
+for example <code>Point2D&lt;T&gt;</code> is equivalent to <code>TypedPoint2D&lt;T, UnknownUnit&gt;</code>.
+Client code typically creates a set of aliases for each type and doesn&#39;t need
+to deal with the specifics of typed units further. For example:</p>
+
+<pre class="rust rust-example-rendered">
+<span class="kw">use</span> <span class="ident">euclid</span>::<span class="kw-2">*</span>;
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">ScreenSpace</span>;
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">ScreenPoint</span> <span class="op">=</span> <span class="ident">TypedPoint2D</span><span class="op">&lt;</span><span class="ident">f32</span>, <span class="ident">ScreenSpace</span><span class="op">&gt;</span>;
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">ScreenSize</span> <span class="op">=</span> <span class="ident">TypedSize2D</span><span class="op">&lt;</span><span class="ident">f32</span>, <span class="ident">ScreenSpace</span><span class="op">&gt;</span>;
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">WorldSpace</span>;
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">WorldPoint</span> <span class="op">=</span> <span class="ident">TypedPoint3D</span><span class="op">&lt;</span><span class="ident">f32</span>, <span class="ident">WorldSpace</span><span class="op">&gt;</span>;
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">ProjectionMatrix</span> <span class="op">=</span> <span class="ident">TypedTransform3D</span><span class="op">&lt;</span><span class="ident">f32</span>, <span class="ident">WorldSpace</span>, <span class="ident">ScreenSpace</span><span class="op">&gt;</span>;
+<span class="comment">// etc...</span></pre>
+
+<p>All euclid types are marked <code>#[repr(C)]</code> in order to facilitate exposing them to
+foreign function interfaces (provided the underlying scalar type is also <code>repr(C)</code>).</p>
+
+<p>Components are accessed in their scalar form by default for convenience, and most
+types additionally implement strongly typed accessors which return typed <code>Length</code> wrappers.
+For example:</p>
+
+<pre class="rust rust-example-rendered">
+<span class="kw">let</span> <span class="ident">p</span> <span class="op">=</span> <span class="ident">WorldPoint</span>::<span class="ident">new</span>(<span class="number">0.0</span>, <span class="number">1.0</span>, <span class="number">1.0</span>);
+<span class="comment">// p.x is an f32.</span>
+<span class="macro">println</span><span class="macro">!</span>(<span class="string">&quot;p.x = {:?} &quot;</span>, <span class="ident">p</span>.<span class="ident">x</span>);
+<span class="comment">// p.x is a Length&lt;f32, WorldSpace&gt;.</span>
+<span class="macro">println</span><span class="macro">!</span>(<span class="string">&quot;p.x_typed() = {:?} &quot;</span>, <span class="ident">p</span>.<span class="ident">x_typed</span>());
+<span class="comment">// Length::get returns the scalar value (f32).</span>
+<span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">p</span>.<span class="ident">x</span>, <span class="ident">p</span>.<span class="ident">x_typed</span>().<span class="ident">get</span>());</pre>
+</div><h2 id='modules' class='section-header'><a href="#modules">Modules</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="approxeq/index.html"
+                                  title='mod euclid::approxeq'>approxeq</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="num/index.html"
+                                  title='mod euclid::num'>num</a></td>
+                           <td class='docblock-short'>
+                                <p>A one-dimensional length, tagged with its units.</p>
+                           </td>
+                       </tr></table><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Angle.html"
+                                  title='struct euclid::Angle'>Angle</a></td>
+                           <td class='docblock-short'>
+                                <p>An angle in radians</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Length.html"
+                                  title='struct euclid::Length'>Length</a></td>
+                           <td class='docblock-short'>
+                                <p>A one-dimensional distance, with value represented by <code>T</code> and unit of measurement <code>Unit</code>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Radians.html"
+                                  title='struct euclid::Radians'>Radians</a></td>
+                           <td class='docblock-short'>
+                                <p>An angle in radians</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.TypedPoint2D.html"
+                                  title='struct euclid::TypedPoint2D'>TypedPoint2D</a></td>
+                           <td class='docblock-short'>
+                                <p>A 2d Point tagged with a unit.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.TypedPoint3D.html"
+                                  title='struct euclid::TypedPoint3D'>TypedPoint3D</a></td>
+                           <td class='docblock-short'>
+                                <p>A 3d Point tagged with a unit.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.TypedRect.html"
+                                  title='struct euclid::TypedRect'>TypedRect</a></td>
+                           <td class='docblock-short'>
+                                <p>A 2d Rectangle optionally tagged with a unit.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.TypedRotation2D.html"
+                                  title='struct euclid::TypedRotation2D'>TypedRotation2D</a></td>
+                           <td class='docblock-short'>
+                                <p>A transform that can represent rotations in 2d, represented as an angle in radians.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.TypedRotation3D.html"
+                                  title='struct euclid::TypedRotation3D'>TypedRotation3D</a></td>
+                           <td class='docblock-short'>
+                                <p>A transform that can represent rotations in 3d, represented as a quaternion.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.TypedScale.html"
+                                  title='struct euclid::TypedScale'>TypedScale</a></td>
+                           <td class='docblock-short'>
+                                <p>A scaling factor between two different units of measurement.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.TypedSideOffsets2D.html"
+                                  title='struct euclid::TypedSideOffsets2D'>TypedSideOffsets2D</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.TypedSize2D.html"
+                                  title='struct euclid::TypedSize2D'>TypedSize2D</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.TypedTransform2D.html"
+                                  title='struct euclid::TypedTransform2D'>TypedTransform2D</a></td>
+                           <td class='docblock-short'>
+                                <p>A 2d transform stored as a 2 by 3 matrix in row-major order in memory.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.TypedTransform3D.html"
+                                  title='struct euclid::TypedTransform3D'>TypedTransform3D</a></td>
+                           <td class='docblock-short'>
+                                <p>A 3d transform stored as a 4 by 4 matrix in row-major order in memory.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.TypedVector2D.html"
+                                  title='struct euclid::TypedVector2D'>TypedVector2D</a></td>
+                           <td class='docblock-short'>
+                                <p>A 2d Vector tagged with a unit.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.TypedVector3D.html"
+                                  title='struct euclid::TypedVector3D'>TypedVector3D</a></td>
+                           <td class='docblock-short'>
+                                <p>A 3d Vector tagged with a unit.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.UnknownUnit.html"
+                                  title='struct euclid::UnknownUnit'>UnknownUnit</a></td>
+                           <td class='docblock-short'>
+                                <p>The default unit.</p>
+                           </td>
+                       </tr></table><h2 id='traits' class='section-header'><a href="#traits">Traits</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.Trig.html"
+                                  title='trait euclid::Trig'>Trig</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait for basic trigonometry functions, so they can be used on generic numeric types</p>
+                           </td>
+                       </tr></table><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.point2.html"
+                                  title='fn euclid::point2'>point2</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.point3.html"
+                                  title='fn euclid::point3'>point3</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.rect.html"
+                                  title='fn euclid::rect'>rect</a></td>
+                           <td class='docblock-short'>
+                                <p>Shorthand for <code>TypedRect::new(TypedPoint2D::new(x, y), TypedSize2D::new(w, h))</code>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.size2.html"
+                                  title='fn euclid::size2'>size2</a></td>
+                           <td class='docblock-short'>
+                                <p>Shorthand for <code>TypedSize2D::new(w, h)</code>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.vec2.html"
+                                  title='fn euclid::vec2'>vec2</a></td>
+                           <td class='docblock-short'>
+                                <p>Convenience constructor.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.vec3.html"
+                                  title='fn euclid::vec3'>vec3</a></td>
+                           <td class='docblock-short'>
+                                <p>Convenience constructor.</p>
+                           </td>
+                       </tr></table><h2 id='types' class='section-header'><a href="#types">Type Definitions</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.Matrix2D.html"
+                                  title='type euclid::Matrix2D'>Matrix2D</a></td>
+                           <td class='docblock-short'>
+                               [<div class='stab deprecated'>Deprecated</div>] <p>Temporary alias to facilitate the transition to the new naming scheme</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.Matrix4D.html"
+                                  title='type euclid::Matrix4D'>Matrix4D</a></td>
+                           <td class='docblock-short'>
+                               [<div class='stab deprecated'>Deprecated</div>] <p>Temporary alias to facilitate the transition to the new naming scheme</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.Point2D.html"
+                                  title='type euclid::Point2D'>Point2D</a></td>
+                           <td class='docblock-short'>
+                                <p>Default 2d point type with no unit.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.Point3D.html"
+                                  title='type euclid::Point3D'>Point3D</a></td>
+                           <td class='docblock-short'>
+                                <p>Default 3d point type with no unit.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.Rect.html"
+                                  title='type euclid::Rect'>Rect</a></td>
+                           <td class='docblock-short'>
+                                <p>The default rectangle type with no unit.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.Rotation2D.html"
+                                  title='type euclid::Rotation2D'>Rotation2D</a></td>
+                           <td class='docblock-short'>
+                                <p>The default 2d rotation type with no units.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.Rotation3D.html"
+                                  title='type euclid::Rotation3D'>Rotation3D</a></td>
+                           <td class='docblock-short'>
+                                <p>The default 3d rotation type with no units.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.ScaleFactor.html"
+                                  title='type euclid::ScaleFactor'>ScaleFactor</a></td>
+                           <td class='docblock-short'>
+                               [<div class='stab deprecated'>Deprecated</div>] <p>Temporary alias to facilitate the transition to the new naming scheme</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.SideOffsets2D.html"
+                                  title='type euclid::SideOffsets2D'>SideOffsets2D</a></td>
+                           <td class='docblock-short'>
+                                <p>The default side offset type with no unit.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.Size2D.html"
+                                  title='type euclid::Size2D'>Size2D</a></td>
+                           <td class='docblock-short'>
+                                <p>Default 2d size type with no unit.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.Transform2D.html"
+                                  title='type euclid::Transform2D'>Transform2D</a></td>
+                           <td class='docblock-short'>
+                                <p>The default 2d transform type with no units.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.Transform3D.html"
+                                  title='type euclid::Transform3D'>Transform3D</a></td>
+                           <td class='docblock-short'>
+                                <p>The default 4d transform type with no units.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.TypedMatrix2D.html"
+                                  title='type euclid::TypedMatrix2D'>TypedMatrix2D</a></td>
+                           <td class='docblock-short'>
+                               [<div class='stab deprecated'>Deprecated</div>] <p>Temporary alias to facilitate the transition to the new naming scheme</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.TypedMatrix4D.html"
+                                  title='type euclid::TypedMatrix4D'>TypedMatrix4D</a></td>
+                           <td class='docblock-short'>
+                               [<div class='stab deprecated'>Deprecated</div>] <p>Temporary alias to facilitate the transition to the new naming scheme</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.Vector2D.html"
+                                  title='type euclid::Vector2D'>Vector2D</a></td>
+                           <td class='docblock-short'>
+                                <p>Default 2d vector type with no unit.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.Vector3D.html"
+                                  title='type euclid::Vector3D'>Vector3D</a></td>
+                           <td class='docblock-short'>
+                                <p>Default 3d vector type with no unit.</p>
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "euclid";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `SequentialTask` enum in crate `style`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, SequentialTask">
+
+    <title>style::context::SequentialTask - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc enum">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Enum SequentialTask</p><div class="block items"><a class="sidebar-title" href="#variants">Variants</a><div class="sidebar-links"><a href="#variant.Unused">Unused</a></div><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.execute">execute</a></div></div><p class='location'><a href='../index.html'>style</a>::<wbr><a href='index.html'>context</a></p><script>window.sidebarCurrent = {name: 'SequentialTask', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../index.html'>style</a>::<wbr><a href='index.html'>context</a>::<wbr><a class="enum" href=''>SequentialTask</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/style/context.rs.html#450-478' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum SequentialTask&lt;E:&nbsp;<a class="trait" href="../../style/dom/trait.TElement.html" title="trait style::dom::TElement">TElement</a>&gt; {
+    Unused(<a class="struct" href="../../style/dom/struct.SendElement.html" title="struct style::dom::SendElement">SendElement</a>&lt;E&gt;),
+}</pre><div class='docblock'><p>A task to be run in sequential mode on the parent (non-worker) thread. This
+is used by the style system to queue up work which is not safe to do during
+the parallel traversal.</p>
+</div><h2 id='variants' class='variants small-section-header'>
+                   Variants<a href='#variants' class='anchor'></a></h2>
+<span id="variant.Unused" class="variant small-section-header"><a href="#variant.Unused" class="anchor field"></a><span id='Unused.v' class='invisible'><code>Unused(<a class="struct" href="../../style/dom/struct.SendElement.html" title="struct style::dom::SendElement">SendElement</a>&lt;E&gt;)</code></span></span><div class='docblock'><p>Entry to avoid an unused type parameter error on servo.</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl&lt;E:&nbsp;<a class="trait" href="../../style/dom/trait.TElement.html" title="trait style::dom::TElement">TElement</a>&gt; <a class="enum" href="../../style/context/enum.SequentialTask.html" title="enum style::context::SequentialTask">SequentialTask</a>&lt;E&gt;</code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/context.rs.html#480-522' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.execute' class="method"><span id='execute.v' class='invisible'><code>pub fn <a href='#method.execute' class='fnname'>execute</a>(self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/context.rs.html#482-496' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Executes this task.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "style";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

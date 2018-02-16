@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `BoundsUpdate` enum in crate `rsx_primitives`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, BoundsUpdate">
+
+    <title>rsx_primitives::compare::types::BoundsUpdate - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc enum">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Enum BoundsUpdate</p><div class="block items"><a class="sidebar-title" href="#variants">Variants</a><div class="sidebar-links"><a href="#variant.ChangePosition">ChangePosition</a><a href="#variant.ChangeSizeWidth">ChangeSizeWidth</a><a href="#variant.ChangeSizeHeight">ChangeSizeHeight</a></div></div><p class='location'><a href='../../index.html'>rsx_primitives</a>::<wbr><a href='../index.html'>compare</a>::<wbr><a href='index.html'>types</a></p><script>window.sidebarCurrent = {name: 'BoundsUpdate', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../../index.html'>rsx_primitives</a>::<wbr><a href='../index.html'>compare</a>::<wbr><a href='index.html'>types</a>::<wbr><a class="enum" href=''>BoundsUpdate</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../src/rsx_primitives/compare/types.rs.html#76-80' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum BoundsUpdate {
+    ChangePosition {
+        left: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>,
+        top: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>,
+    },
+    ChangeSizeWidth(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>),
+    ChangeSizeHeight(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>),
+}</pre><h2 id='variants' class='variants small-section-header'>
+                   Variants<a href='#variants' class='anchor'></a></h2>
+<span id="variant.ChangePosition" class="variant small-section-header"><a href="#variant.ChangePosition" class="anchor field"></a><span id='ChangePosition.v' class='invisible'><code>ChangePosition</code></span></span><span class='docblock autohide sub-variant' id='variant.ChangePosition.fields'><h3 class='fields'>Fields of <code>ChangePosition</code></h3>
+
+                           <table><tr><td id='variant.ChangePosition.field.left'><span id='ChangePosition.v.left.v' class='invisible'><code>left:&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a></code></span></td><td></td></tr><tr><td id='variant.ChangePosition.field.top'><span id='ChangePosition.v.top.v' class='invisible'><code>top:&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a></code></span></td><td></td></tr></table></span><span id="variant.ChangeSizeWidth" class="variant small-section-header"><a href="#variant.ChangeSizeWidth" class="anchor field"></a><span id='ChangeSizeWidth.v' class='invisible'><code>ChangeSizeWidth(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>)</code></span></span><span id="variant.ChangeSizeHeight" class="variant small-section-header"><a href="#variant.ChangeSizeHeight" class="anchor field"></a><span id='ChangeSizeHeight.v' class='invisible'><code>ChangeSizeHeight(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>)</code></span></span></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "rsx_primitives";
+    </script>
+    <script src="../../../main.js"></script>
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

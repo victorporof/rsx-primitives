@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Rule` struct in crate `style`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Rule">
+
+    <title>style::stylist::Rule - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct Rule</p><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.selector">selector</a><a href="#structfield.hashes">hashes</a><a href="#structfield.source_order">source_order</a><a href="#structfield.style_rule">style_rule</a></div><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.specificity">specificity</a><a href="#method.to_applicable_declaration_block">to_applicable_declaration_block</a><a href="#method.new">new</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Clone">Clone</a><a href="#impl-Debug">Debug</a><a href="#impl-MallocSizeOf">MallocSizeOf</a><a href="#impl-SelectorMapEntry">SelectorMapEntry</a></div></div><p class='location'><a href='../index.html'>style</a>::<wbr><a href='index.html'>stylist</a></p><script>window.sidebarCurrent = {name: 'Rule', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>style</a>::<wbr><a href='index.html'>stylist</a>::<wbr><a class="struct" href=''>Rule</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/style/stylist.rs.html#2288-2310' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Rule {
+    pub selector: <a class="struct" href="../../selectors/parser/struct.Selector.html" title="struct selectors::parser::Selector">Selector</a>&lt;<a class="struct" href="../../style/servo/selector_parser/struct.SelectorImpl.html" title="struct style::servo::selector_parser::SelectorImpl">SelectorImpl</a>&gt;,
+    pub hashes: <a class="struct" href="../../selectors/parser/struct.AncestorHashes.html" title="struct selectors::parser::AncestorHashes">AncestorHashes</a>,
+    pub source_order: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pub style_rule: <a class="struct" href="../../style/properties/struct.BuilderArc.html" title="struct style::properties::BuilderArc">Arc</a>&lt;<a class="struct" href="../../style/shared_lock/struct.Locked.html" title="struct style::shared_lock::Locked">Locked</a>&lt;<a class="struct" href="../../style/stylesheets/struct.StyleRule.html" title="struct style::stylesheets::StyleRule">StyleRule</a>&gt;&gt;,
+}</pre><div class='docblock'><p>A rule, that wraps a style rule, but represents a single selector of the
+rule.</p>
+</div><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.selector" class="structfield small-section-header">
+                           <a href="#structfield.selector" class="anchor field"></a>
+                           <span id="selector.v" class='invisible'>
+                           <code>selector: <a class="struct" href="../../selectors/parser/struct.Selector.html" title="struct selectors::parser::Selector">Selector</a>&lt;<a class="struct" href="../../style/servo/selector_parser/struct.SelectorImpl.html" title="struct style::servo::selector_parser::SelectorImpl">SelectorImpl</a>&gt;</code>
+                           </span></span><div class='docblock'><p>The selector this struct represents. We store this and the
+any_{important,normal} booleans inline in the Rule to avoid
+pointer-chasing when gathering applicable declarations, which
+can ruin performance when there are a lot of rules.</p>
+</div><span id="structfield.hashes" class="structfield small-section-header">
+                           <a href="#structfield.hashes" class="anchor field"></a>
+                           <span id="hashes.v" class='invisible'>
+                           <code>hashes: <a class="struct" href="../../selectors/parser/struct.AncestorHashes.html" title="struct selectors::parser::AncestorHashes">AncestorHashes</a></code>
+                           </span></span><div class='docblock'><p>The ancestor hashes associated with the selector.</p>
+</div><span id="structfield.source_order" class="structfield small-section-header">
+                           <a href="#structfield.source_order" class="anchor field"></a>
+                           <span id="source_order.v" class='invisible'>
+                           <code>source_order: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code>
+                           </span></span><div class='docblock'><p>The source order this style rule appears in. Note that we only use
+three bytes to store this value in ApplicableDeclarationsBlock, so
+we could repurpose that storage here if we needed to.</p>
+</div><span id="structfield.style_rule" class="structfield small-section-header">
+                           <a href="#structfield.style_rule" class="anchor field"></a>
+                           <span id="style_rule.v" class='invisible'>
+                           <code>style_rule: <a class="struct" href="../../style/properties/struct.BuilderArc.html" title="struct style::properties::BuilderArc">Arc</a>&lt;<a class="struct" href="../../style/shared_lock/struct.Locked.html" title="struct style::shared_lock::Locked">Locked</a>&lt;<a class="struct" href="../../style/stylesheets/struct.StyleRule.html" title="struct style::stylesheets::StyleRule">StyleRule</a>&gt;&gt;</code>
+                           </span></span><div class='docblock'><p>The actual style rule.</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="struct" href="../../style/stylist/struct.Rule.html" title="struct style::stylist::Rule">Rule</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylist.rs.html#2318-2353' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.specificity' class="method"><span id='specificity.v' class='invisible'><code>pub fn <a href='#method.specificity' class='fnname'>specificity</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylist.rs.html#2320-2322' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the specificity of the rule.</p>
+</div><h4 id='method.to_applicable_declaration_block' class="method"><span id='to_applicable_declaration_block.v' class='invisible'><code>pub fn <a href='#method.to_applicable_declaration_block' class='fnname'>to_applicable_declaration_block</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;level: <a class="enum" href="../../style/rule_tree/enum.CascadeLevel.html" title="enum style::rule_tree::CascadeLevel">CascadeLevel</a><br>) -&gt; <a class="struct" href="../../style/applicable_declarations/struct.ApplicableDeclarationBlock.html" title="struct style::applicable_declarations::ApplicableDeclarationBlock">ApplicableDeclarationBlock</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylist.rs.html#2326-2337' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Turns this rule into an <code>ApplicableDeclarationBlock</code> for the given
+cascade level.</p>
+</div><h4 id='method.new' class="method"><span id='new.v' class='invisible'><code>pub fn <a href='#method.new' class='fnname'>new</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;selector: <a class="struct" href="../../selectors/parser/struct.Selector.html" title="struct selectors::parser::Selector">Selector</a>&lt;<a class="struct" href="../../style/servo/selector_parser/struct.SelectorImpl.html" title="struct style::servo::selector_parser::SelectorImpl">SelectorImpl</a>&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;hashes: <a class="struct" href="../../selectors/parser/struct.AncestorHashes.html" title="struct selectors::parser::AncestorHashes">AncestorHashes</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;style_rule: <a class="struct" href="../../style/properties/struct.BuilderArc.html" title="struct style::properties::BuilderArc">Arc</a>&lt;<a class="struct" href="../../style/shared_lock/struct.Locked.html" title="struct style::shared_lock::Locked">Locked</a>&lt;<a class="struct" href="../../style/stylesheets/struct.StyleRule.html" title="struct style::stylesheets::StyleRule">StyleRule</a>&gt;&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;source_order: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a><br>) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylist.rs.html#2340-2352' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Creates a new Rule.</p>
+</div></div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Clone' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="struct" href="../../style/stylist/struct.Rule.html" title="struct style::stylist::Rule">Rule</a></code><a href='#impl-Clone' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylist.rs.html#2287' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="struct" href="../../style/stylist/struct.Rule.html" title="struct style::stylist::Rule">Rule</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylist.rs.html#2287' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../../style/stylist/struct.Rule.html" title="struct style::stylist::Rule">Rule</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylist.rs.html#2287' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylist.rs.html#2287' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div><h3 id='impl-MallocSizeOf' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../malloc_size_of/trait.MallocSizeOf.html" title="trait malloc_size_of::MallocSizeOf">MallocSizeOf</a> for <a class="struct" href="../../style/stylist/struct.Rule.html" title="struct style::stylist::Rule">Rule</a></code><a href='#impl-MallocSizeOf' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylist.rs.html#2287-1' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.size_of' class="method"><span id='size_of.v' class='invisible'><code>fn <a href='../../malloc_size_of/trait.MallocSizeOf.html#tymethod.size_of' class='fnname'>size_of</a>(&amp;self, ops: &amp;mut <a class="struct" href="../../malloc_size_of/struct.MallocSizeOfOps.html" title="struct malloc_size_of::MallocSizeOfOps">MallocSizeOfOps</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylist.rs.html#2287' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Measure the heap usage of all descendant heap-allocated structures, but not the space taken up by the value itself. <a href="../../malloc_size_of/trait.MallocSizeOf.html#tymethod.size_of">Read more</a></p>
+</div></div><h3 id='impl-SelectorMapEntry' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../style/selector_map/trait.SelectorMapEntry.html" title="trait style::selector_map::SelectorMapEntry">SelectorMapEntry</a> for <a class="struct" href="../../style/stylist/struct.Rule.html" title="struct style::stylist::Rule">Rule</a></code><a href='#impl-SelectorMapEntry' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylist.rs.html#2312-2316' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.selector' class="method"><span id='selector.v-1' class='invisible'><code>fn <a href='../../style/selector_map/trait.SelectorMapEntry.html#tymethod.selector' class='fnname'>selector</a>(&amp;self) -&gt; <a class="struct" href="../../selectors/parser/struct.SelectorIter.html" title="struct selectors::parser::SelectorIter">SelectorIter</a>&lt;<a class="struct" href="../../style/servo/selector_parser/struct.SelectorImpl.html" title="struct style::servo::selector_parser::SelectorImpl">SelectorImpl</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylist.rs.html#2313-2315' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Gets the selector we should use to index in the selector map.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "style";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `StyleResolverForElement` struct in crate `style`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, StyleResolverForElement">
+
+    <title>style::style_resolver::StyleResolverForElement - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct StyleResolverForElement</p><div class="block items"><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.new">new</a><a href="#method.resolve_primary_style">resolve_primary_style</a><a href="#method.resolve_style">resolve_style</a><a href="#method.resolve_style_with_default_parents">resolve_style_with_default_parents</a><a href="#method.cascade_style_and_visited_with_default_parents">cascade_style_and_visited_with_default_parents</a><a href="#method.cascade_styles_with_default_parents">cascade_styles_with_default_parents</a></div></div><p class='location'><a href='../index.html'>style</a>::<wbr><a href='index.html'>style_resolver</a></p><script>window.sidebarCurrent = {name: 'StyleResolverForElement', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>style</a>::<wbr><a href='index.html'>style_resolver</a>::<wbr><a class="struct" href=''>StyleResolverForElement</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/style/style_resolver.rs.html#32-43' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct StyleResolverForElement&lt;'a, 'ctx, 'le, E&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;'ctx: 'a,<br>&nbsp;&nbsp;&nbsp;&nbsp;'le: 'ctx,<br>&nbsp;&nbsp;&nbsp;&nbsp;E: <a class="trait" href="../../style/dom/trait.TElement.html" title="trait style::dom::TElement">TElement</a> + <a class="trait" href="../../style/matching/trait.MatchMethods.html" title="trait style::matching::MatchMethods">MatchMethods</a> + 'le,&nbsp;</span> { /* fields omitted */ }</pre><div class='docblock'><p>A struct that takes care of resolving the style of a given element.</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl&lt;'a, 'ctx, 'le, E&gt; <a class="struct" href="../../style/style_resolver/struct.StyleResolverForElement.html" title="struct style::style_resolver::StyleResolverForElement">StyleResolverForElement</a>&lt;'a, 'ctx, 'le, E&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;'ctx: 'a,<br>&nbsp;&nbsp;&nbsp;&nbsp;'le: 'ctx,<br>&nbsp;&nbsp;&nbsp;&nbsp;E: <a class="trait" href="../../style/dom/trait.TElement.html" title="trait style::dom::TElement">TElement</a> + <a class="trait" href="../../style/matching/trait.MatchMethods.html" title="trait style::matching::MatchMethods">MatchMethods</a> + 'le,&nbsp;</span></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/style_resolver.rs.html#129-603' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class="method"><span id='new.v' class='invisible'><code>pub fn <a href='#method.new' class='fnname'>new</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;element: E, <br>&nbsp;&nbsp;&nbsp;&nbsp;context: &amp;'a mut <a class="struct" href="../../style/context/struct.StyleContext.html" title="struct style::context::StyleContext">StyleContext</a>&lt;'ctx, E&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;rule_inclusion: <a class="enum" href="../../style/stylist/enum.RuleInclusion.html" title="enum style::stylist::RuleInclusion">RuleInclusion</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;pseudo_resolution: <a class="enum" href="../../style/style_resolver/enum.PseudoElementResolution.html" title="enum style::style_resolver::PseudoElementResolution">PseudoElementResolution</a><br>) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/style_resolver.rs.html#136-149' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Trivially construct a new StyleResolverForElement.</p>
+</div><h4 id='method.resolve_primary_style' class="method"><span id='resolve_primary_style.v' class='invisible'><code>pub fn <a href='#method.resolve_primary_style' class='fnname'>resolve_primary_style</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;parent_style: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="struct" href="../../style/properties/struct.ComputedValues.html" title="struct style::properties::ComputedValues">ComputedValues</a>&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;layout_parent_style: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="struct" href="../../style/properties/struct.ComputedValues.html" title="struct style::properties::ComputedValues">ComputedValues</a>&gt;<br>) -&gt; <a class="struct" href="../../style/style_resolver/struct.PrimaryStyle.html" title="struct style::style_resolver::PrimaryStyle">PrimaryStyle</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/style_resolver.rs.html#152-180' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Resolve just the style of a given element.</p>
+</div><h4 id='method.resolve_style' class="method"><span id='resolve_style.v' class='invisible'><code>pub fn <a href='#method.resolve_style' class='fnname'>resolve_style</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;parent_style: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="struct" href="../../style/properties/struct.ComputedValues.html" title="struct style::properties::ComputedValues">ComputedValues</a>&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;layout_parent_style: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="struct" href="../../style/properties/struct.ComputedValues.html" title="struct style::properties::ComputedValues">ComputedValues</a>&gt;<br>) -&gt; <a class="struct" href="../../style/style_resolver/struct.ResolvedElementStyles.html" title="struct style::style_resolver::ResolvedElementStyles">ResolvedElementStyles</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/style_resolver.rs.html#224-262' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Resolve the style of a given element, and all its eager pseudo-elements.</p>
+</div><h4 id='method.resolve_style_with_default_parents' class="method"><span id='resolve_style_with_default_parents.v' class='invisible'><code>pub fn <a href='#method.resolve_style_with_default_parents' class='fnname'>resolve_style_with_default_parents</a>(&amp;mut self) -&gt; <a class="struct" href="../../style/style_resolver/struct.ResolvedElementStyles.html" title="struct style::style_resolver::ResolvedElementStyles">ResolvedElementStyles</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/style_resolver.rs.html#266-270' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Resolve an element&#39;s styles with the default inheritance parent/layout
+parents.</p>
+</div><h4 id='method.cascade_style_and_visited_with_default_parents' class="method"><span id='cascade_style_and_visited_with_default_parents.v' class='invisible'><code>pub fn <a href='#method.cascade_style_and_visited_with_default_parents' class='fnname'>cascade_style_and_visited_with_default_parents</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;inputs: <a class="struct" href="../../style/context/struct.CascadeInputs.html" title="struct style::context::CascadeInputs">CascadeInputs</a><br>) -&gt; <a class="struct" href="../../style/style_resolver/struct.ResolvedStyle.html" title="struct style::style_resolver::ResolvedStyle">ResolvedStyle</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/style_resolver.rs.html#273-285' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Cascade a set of rules, using the default parent for inheritance.</p>
+</div><h4 id='method.cascade_styles_with_default_parents' class="method"><span id='cascade_styles_with_default_parents.v' class='invisible'><code>pub fn <a href='#method.cascade_styles_with_default_parents' class='fnname'>cascade_styles_with_default_parents</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;inputs: <a class="struct" href="../../style/context/struct.ElementCascadeInputs.html" title="struct style::context::ElementCascadeInputs">ElementCascadeInputs</a><br>) -&gt; <a class="struct" href="../../style/style_resolver/struct.ResolvedElementStyles.html" title="struct style::style_resolver::ResolvedElementStyles">ResolvedElementStyles</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/style_resolver.rs.html#320-367' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Cascade the element and pseudo-element styles with the default parents.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "style";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

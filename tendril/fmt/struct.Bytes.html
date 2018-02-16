@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Bytes` struct in crate `tendril`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Bytes">
+
+    <title>tendril::fmt::Bytes - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct Bytes</p><div class="block items"><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Copy">Copy</a><a href="#impl-Clone">Clone</a><a href="#impl-Default">Default</a><a href="#impl-Debug">Debug</a><a href="#impl-Format">Format</a><a href="#impl-SliceFormat">SliceFormat</a><a href="#impl-TendrilSink%3CBytes%2C%20A%3E">TendrilSink&lt;Bytes, A&gt;</a><a href="#impl-SliceExt%3CBytes%3E">SliceExt&lt;Bytes&gt;</a></div></div><p class='location'><a href='../index.html'>tendril</a>::<wbr><a href='index.html'>fmt</a></p><script>window.sidebarCurrent = {name: 'Bytes', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>tendril</a>::<wbr><a href='index.html'>fmt</a>::<wbr><a class="struct" href=''>Bytes</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/tendril/fmt.rs.html#204' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Bytes;</pre><div class='docblock'><p>Marker type for uninterpreted bytes.</p>
+
+<p>Validation will never fail for this format.</p>
+</div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Copy' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html" title="trait core::marker::Copy">Copy</a> for <a class="struct" href="../../tendril/fmt/struct.Bytes.html" title="struct tendril::fmt::Bytes">Bytes</a></code><a href='#impl-Copy' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/tendril/fmt.rs.html#203' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 id='impl-Clone' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="struct" href="../../tendril/fmt/struct.Bytes.html" title="struct tendril::fmt::Bytes">Bytes</a></code><a href='#impl-Clone' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/tendril/fmt.rs.html#203' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="struct" href="../../tendril/fmt/struct.Bytes.html" title="struct tendril::fmt::Bytes">Bytes</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/tendril/fmt.rs.html#203' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 id='impl-Default' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/default/trait.Default.html" title="trait core::default::Default">Default</a> for <a class="struct" href="../../tendril/fmt/struct.Bytes.html" title="struct tendril::fmt::Bytes">Bytes</a></code><a href='#impl-Default' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/tendril/fmt.rs.html#203' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.default' class="method"><span id='default.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/default/trait.Default.html#tymethod.default' class='fnname'>default</a>() -&gt; <a class="struct" href="../../tendril/fmt/struct.Bytes.html" title="struct tendril::fmt::Bytes">Bytes</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/tendril/fmt.rs.html#203' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the &quot;default value&quot; for a type. <a href="https://doc.rust-lang.org/nightly/core/default/trait.Default.html#tymethod.default">Read more</a></p>
+</div></div><h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../../tendril/fmt/struct.Bytes.html" title="struct tendril::fmt::Bytes">Bytes</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/tendril/fmt.rs.html#203' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/tendril/fmt.rs.html#203' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div><h3 id='impl-Format' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../tendril/fmt/trait.Format.html" title="trait tendril::fmt::Format">Format</a> for <a class="struct" href="../../tendril/fmt/struct.Bytes.html" title="struct tendril::fmt::Bytes">Bytes</a></code><a href='#impl-Format' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/tendril/fmt.rs.html#206-211' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.validate' class="method"><span id='validate.v' class='invisible'><code>fn <a href='../../tendril/fmt/trait.Format.html#tymethod.validate' class='fnname'>validate</a>(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/tendril/fmt.rs.html#208-210' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Check whether the buffer is valid for this format.</p>
+</div><h4 id='method.validate_prefix' class="method"><span id='validate_prefix.v' class='invisible'><code>fn <a href='../../tendril/fmt/trait.Format.html#method.validate_prefix' class='fnname'>validate_prefix</a>(buf: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/tendril/fmt.rs.html#103-105' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Check whether the buffer is valid for this format. <a href="../../tendril/fmt/trait.Format.html#method.validate_prefix">Read more</a></p>
+</div><h4 id='method.validate_suffix' class="method"><span id='validate_suffix.v' class='invisible'><code>fn <a href='../../tendril/fmt/trait.Format.html#method.validate_suffix' class='fnname'>validate_suffix</a>(buf: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/tendril/fmt.rs.html#111-113' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Check whether the buffer is valid for this format. <a href="../../tendril/fmt/trait.Format.html#method.validate_suffix">Read more</a></p>
+</div><h4 id='method.validate_subseq' class="method"><span id='validate_subseq.v' class='invisible'><code>fn <a href='../../tendril/fmt/trait.Format.html#method.validate_subseq' class='fnname'>validate_subseq</a>(buf: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/tendril/fmt.rs.html#121-123' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Check whether the buffer is valid for this format. <a href="../../tendril/fmt/trait.Format.html#method.validate_subseq">Read more</a></p>
+</div><h4 id='method.fixup' class="method"><span id='fixup.v' class='invisible'><code>unsafe fn <a href='../../tendril/fmt/trait.Format.html#method.fixup' class='fnname'>fixup</a>(_lhs: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a>, _rhs: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a>) -&gt; <a class="struct" href="../../tendril/fmt/imp/struct.Fixup.html" title="struct tendril::fmt::imp::Fixup">Fixup</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/tendril/fmt.rs.html#133-135' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Compute any fixup needed when concatenating buffers. <a href="../../tendril/fmt/trait.Format.html#method.fixup">Read more</a></p>
+</div></div><h3 id='impl-SliceFormat' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../tendril/fmt/trait.SliceFormat.html" title="trait tendril::fmt::SliceFormat">SliceFormat</a> for <a class="struct" href="../../tendril/fmt/struct.Bytes.html" title="struct tendril::fmt::Bytes">Bytes</a></code><a href='#impl-SliceFormat' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/tendril/fmt.rs.html#213-215' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Slice' class="type"><span id='Slice.t' class='invisible'><code>type <a href='../../tendril/fmt/trait.SliceFormat.html#associatedtype.Slice' class="type">Slice</a> = <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a></code></span></h4>
+</div><h3 id='impl-TendrilSink%3CBytes%2C%20A%3E' class='impl'><span class='in-band'><code>impl&lt;Sink, A&gt; <a class="trait" href="../../tendril/stream/trait.TendrilSink.html" title="trait tendril::stream::TendrilSink">TendrilSink</a>&lt;<a class="struct" href="../../tendril/fmt/struct.Bytes.html" title="struct tendril::fmt::Bytes">Bytes</a>, A&gt; for <a class="struct" href="../../tendril/stream/struct.Utf8LossyDecoder.html" title="struct tendril::stream::Utf8LossyDecoder">Utf8LossyDecoder</a>&lt;Sink, A&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;Sink: <a class="trait" href="../../tendril/stream/trait.TendrilSink.html" title="trait tendril::stream::TendrilSink">TendrilSink</a>&lt;<a class="struct" href="../../tendril/fmt/struct.UTF8.html" title="struct tendril::fmt::UTF8">UTF8</a>, A&gt;,<br>&nbsp;&nbsp;&nbsp;&nbsp;A: <a class="trait" href="../../tendril/trait.Atomicity.html" title="trait tendril::Atomicity">Atomicity</a>,&nbsp;</span></code><a href='#impl-TendrilSink%3CBytes%2C%20A%3E' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/tendril/stream.rs.html#128-221' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.process' class="method"><span id='process.v' class='invisible'><code>fn <a href='../../tendril/stream/trait.TendrilSink.html#tymethod.process' class='fnname'>process</a>(&amp;mut self, t: <a class="struct" href="../../tendril/struct.Tendril.html" title="struct tendril::Tendril">Tendril</a>&lt;<a class="struct" href="../../tendril/fmt/struct.Bytes.html" title="struct tendril::fmt::Bytes">Bytes</a>, A&gt;)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/tendril/stream.rs.html#133-204' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Process this tendril.</p>
+</div><h4 id='method.error' class="method"><span id='error.v' class='invisible'><code>fn <a href='../../tendril/stream/trait.TendrilSink.html#tymethod.error' class='fnname'>error</a>(&amp;mut self, desc: <a class="enum" href="https://doc.rust-lang.org/nightly/alloc/borrow/enum.Cow.html" title="enum alloc::borrow::Cow">Cow</a>&lt;'static, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>&gt;)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/tendril/stream.rs.html#207-209' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Indicates that an error has occurred.</p>
+</div><h4 id='associatedtype.Output' class="type"><span id='Output.t' class='invisible'><code>type <a href='../../tendril/stream/trait.TendrilSink.html#associatedtype.Output' class="type">Output</a> = Sink::<a class="type" href="../../tendril/stream/trait.TendrilSink.html#associatedtype.Output" title="type tendril::stream::TendrilSink::Output">Output</a></code></span></h4>
+<div class='docblock'><p>What the overall result of processing is.</p>
+</div><h4 id='method.finish' class="method"><span id='finish.v' class='invisible'><code>fn <a href='../../tendril/stream/trait.TendrilSink.html#tymethod.finish' class='fnname'>finish</a>(self) -&gt; Sink::<a class="type" href="../../tendril/stream/trait.TendrilSink.html#associatedtype.Output" title="type tendril::stream::TendrilSink::Output">Output</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/tendril/stream.rs.html#214-220' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Indicates the end of the stream.</p>
+</div><h4 id='method.one' class="method"><span id='one.v' class='invisible'><code>fn <a href='../../tendril/stream/trait.TendrilSink.html#method.one' class='fnname'>one</a>&lt;T&gt;(self, t: T) -&gt; Self::<a class="type" href="../../tendril/stream/trait.TendrilSink.html#associatedtype.Output" title="type tendril::stream::TendrilSink::Output">Output</a> <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;Self: <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="struct" href="../../tendril/struct.Tendril.html" title="struct tendril::Tendril">Tendril</a>&lt;F, A&gt;&gt;,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/tendril/stream.rs.html#46-49' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Process one tendril and finish.</p>
+</div><h4 id='method.from_iter' class="method"><span id='from_iter.v' class='invisible'><code>fn <a href='../../tendril/stream/trait.TendrilSink.html#method.from_iter' class='fnname'>from_iter</a>&lt;I&gt;(self, i: I) -&gt; Self::<a class="type" href="../../tendril/stream/trait.TendrilSink.html#associatedtype.Output" title="type tendril::stream::TendrilSink::Output">Output</a> <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;Self: <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;I: <a class="trait" href="https://doc.rust-lang.org/nightly/core/iter/traits/trait.IntoIterator.html" title="trait core::iter::traits::IntoIterator">IntoIterator</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;I::<a class="type" href="https://doc.rust-lang.org/nightly/core/iter/traits/trait.IntoIterator.html#associatedtype.Item" title="type core::iter::traits::IntoIterator::Item">Item</a>: <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="struct" href="../../tendril/struct.Tendril.html" title="struct tendril::Tendril">Tendril</a>&lt;F, A&gt;&gt;,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/tendril/stream.rs.html#52-58' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Consume an iterator of tendrils, processing each item, then finish.</p>
+</div><h4 id='method.read_from' class="method"><span id='read_from.v' class='invisible'><code>fn <a href='../../tendril/stream/trait.TendrilSink.html#method.read_from' class='fnname'>read_from</a>&lt;R&gt;(self, r: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>R) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/std/io/error/type.Result.html" title="type std::io::error::Result">Result</a>&lt;Self::<a class="type" href="../../tendril/stream/trait.TendrilSink.html#associatedtype.Output" title="type tendril::stream::TendrilSink::Output">Output</a>&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;Self: <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;R: <a class="trait" href="https://doc.rust-lang.org/nightly/std/io/trait.Read.html" title="trait std::io::Read">Read</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;F: <a class="trait" href="../../tendril/fmt/trait.SliceFormat.html" title="trait tendril::fmt::SliceFormat">SliceFormat</a>&lt;Slice = <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a>&gt;,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/tendril/stream.rs.html#62-87' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Read from the given stream of bytes until exhaustion and process incrementally, then finish. Return <code>Err</code> at the first I/O error. <a href="../../tendril/stream/trait.TendrilSink.html#method.read_from">Read more</a></p>
+</div><h4 id='method.from_file' class="method"><span id='from_file.v' class='invisible'><code>fn <a href='../../tendril/stream/trait.TendrilSink.html#method.from_file' class='fnname'>from_file</a>&lt;P&gt;(self, path: P) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/std/io/error/type.Result.html" title="type std::io::error::Result">Result</a>&lt;Self::<a class="type" href="../../tendril/stream/trait.TendrilSink.html#associatedtype.Output" title="type tendril::stream::TendrilSink::Output">Output</a>&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;Self: <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;P: <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.AsRef.html" title="trait core::convert::AsRef">AsRef</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/std/path/struct.Path.html" title="struct std::path::Path">Path</a>&gt;,<br>&nbsp;&nbsp;&nbsp;&nbsp;F: <a class="trait" href="../../tendril/fmt/trait.SliceFormat.html" title="trait tendril::fmt::SliceFormat">SliceFormat</a>&lt;Slice = <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a>&gt;,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/tendril/stream.rs.html#92-95' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Read from the file at the given path and process incrementally, then finish. Return <code>Err</code> at the first I/O error. <a href="../../tendril/stream/trait.TendrilSink.html#method.from_file">Read more</a></p>
+</div></div><h3 id='impl-SliceExt%3CBytes%3E' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../tendril/trait.SliceExt.html" title="trait tendril::SliceExt">SliceExt</a>&lt;<a class="struct" href="../../tendril/fmt/struct.Bytes.html" title="struct tendril::fmt::Bytes">Bytes</a>&gt; for <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a></code><a href='#impl-SliceExt%3CBytes%3E' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/tendril/tendril.rs.html#1178' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.to_tendril' class="method"><span id='to_tendril.v' class='invisible'><code>fn <a href='../../tendril/trait.SliceExt.html#method.to_tendril' class='fnname'>to_tendril</a>(&amp;self) -&gt; <a class="struct" href="../../tendril/struct.Tendril.html" title="struct tendril::Tendril">Tendril</a>&lt;F&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/tendril/tendril.rs.html#1168-1174' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Make a <code>Tendril</code> from this slice.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "tendril";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

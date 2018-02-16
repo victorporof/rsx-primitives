@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `malloc_size_of` crate.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, malloc_size_of">
+
+    <title>malloc_size_of - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc mod">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Crate malloc_size_of</p><div class="block items"><ul><li><a href="#macros">Macros</a></li><li><a href="#structs">Structs</a></li><li><a href="#traits">Traits</a></li></ul></div><p class='location'></p><script>window.sidebarCurrent = {name: 'malloc_size_of', ty: 'mod', relpath: '../'};</script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Crate <a class="mod" href=''>malloc_size_of</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/malloc_size_of/lib.rs.html#11-742' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p>A crate for measuring the heap usage of data structures in a way that
+integrates with Firefox&#39;s memory reporting, particularly the use of
+mozjemalloc and DMD. In particular, it has the following features.
+- It isn&#39;t bound to a particular heap allocator.
+- It provides traits for both &quot;shallow&quot; and &quot;deep&quot; measurement, which gives
+  flexibility in the cases where the traits can&#39;t be used.
+- It allows for measuring blocks even when only an interior pointer can be
+  obtained for heap allocations, e.g. <code>HashSet</code> and <code>HashMap</code>. (This relies
+  on the heap allocator having suitable support, which mozjemalloc has.)
+- It allows handling of types like <code>Rc</code> and <code>Arc</code> by providing traits that
+  are different to the ones for non-graph structures.</p>
+
+<p>Suggested uses are as follows.
+- When possible, use the <code>MallocSizeOf</code> trait. (Deriving support is
+  provided by the <code>malloc_size_of_derive</code> crate.)
+- If you need an additional synchronization argument, provide a function
+  that is like the standard trait method, but with the extra argument.
+- If you need multiple measurements for a type, provide a function named
+  <code>add_size_of</code> that takes a mutable reference to a struct that contains
+  the multiple measurement fields.
+- When deep measurement (via <code>MallocSizeOf</code>) cannot be implemented for a
+  type, shallow measurement (via <code>MallocShallowSizeOf</code>) in combination with
+  iteration can be a useful substitute.
+- <code>Rc</code> and <code>Arc</code> are always tricky, which is why <code>MallocSizeOf</code> is not (and
+  should not be) implemented for them.
+- If an <code>Rc</code> or <code>Arc</code> is known to be a &quot;primary&quot; reference and can always
+  be measured, it should be measured via the <code>MallocUnconditionalSizeOf</code>
+  trait.
+- If an <code>Rc</code> or <code>Arc</code> should be measured only if it hasn&#39;t been seen
+  before, it should be measured via the <code>MallocConditionalSizeOf</code> trait.
+- Using universal function call syntax is a good idea when measuring boxed
+  fields in structs, because it makes it clear that the Box is being
+  measured as well as the thing it points to. E.g.
+  <code>&lt;Box&lt;_&gt; as MallocSizeOf&gt;::size_of(field, ops)</code>.</p>
+</div><h2 id='macros' class='section-header'><a href="#macros">Macros</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="macro" href="macro.malloc_size_of_is_0.html"
+                                  title='macro malloc_size_of::malloc_size_of_is_0'>malloc_size_of_is_0</a></td>
+                           <td class='docblock-short'>
+                                <p>For use on types where size_of() returns 0.</p>
+                           </td>
+                       </tr></table><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.MallocSizeOfOps.html"
+                                  title='struct malloc_size_of::MallocSizeOfOps'>MallocSizeOfOps</a></td>
+                           <td class='docblock-short'>
+                                <p>Operations used when measuring heap usage of data structures.</p>
+                           </td>
+                       </tr></table><h2 id='traits' class='section-header'><a href="#traits">Traits</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.MallocConditionalShallowSizeOf.html"
+                                  title='trait malloc_size_of::MallocConditionalShallowSizeOf'>MallocConditionalShallowSizeOf</a></td>
+                           <td class='docblock-short'>
+                                <p><code>MallocConditionalSizeOf</code> combined with <code>MallocShallowSizeOf</code>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.MallocConditionalSizeOf.html"
+                                  title='trait malloc_size_of::MallocConditionalSizeOf'>MallocConditionalSizeOf</a></td>
+                           <td class='docblock-short'>
+                                <p>Like <code>MallocSizeOf</code>, but only measures if the value hasn&#39;t already been
+measured. For use with types like <code>Rc</code> and <code>Arc</code> when appropriate (e.g.
+when there is no &quot;primary&quot; reference).</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.MallocShallowSizeOf.html"
+                                  title='trait malloc_size_of::MallocShallowSizeOf'>MallocShallowSizeOf</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait for measuring the &quot;shallow&quot; heap usage of a container.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.MallocSizeOf.html"
+                                  title='trait malloc_size_of::MallocSizeOf'>MallocSizeOf</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait for measuring the &quot;deep&quot; heap usage of a data structure. This is the
+most commonly-used of the traits.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.MallocUnconditionalShallowSizeOf.html"
+                                  title='trait malloc_size_of::MallocUnconditionalShallowSizeOf'>MallocUnconditionalShallowSizeOf</a></td>
+                           <td class='docblock-short'>
+                                <p><code>MallocUnconditionalSizeOf</code> combined with <code>MallocShallowSizeOf</code>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.MallocUnconditionalSizeOf.html"
+                                  title='trait malloc_size_of::MallocUnconditionalSizeOf'>MallocUnconditionalSizeOf</a></td>
+                           <td class='docblock-short'>
+                                <p>Like <code>MallocSizeOf</code>, but with a different name so it cannot be used
+accidentally with derive(MallocSizeOf). For use with types like <code>Rc</code> and
+<code>Arc</code> when appropriate (e.g. when measuring a &quot;primary&quot; reference).</p>
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "malloc_size_of";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

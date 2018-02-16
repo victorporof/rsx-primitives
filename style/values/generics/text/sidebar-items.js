@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["InitialLetter","A generic value for the `initial-letter` property."],["LineHeight","A generic value for the `line-height` property."],["Spacing","A generic spacing value for the `letter-spacing` and `word-spacing` properties."]]});

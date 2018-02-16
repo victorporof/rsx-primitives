@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `drawing` mod in crate `imageproc`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, drawing">
+
+    <title>imageproc::drawing - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc mod">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Module drawing</p><div class="block items"><ul><li><a href="#structs">Structs</a></li><li><a href="#functions">Functions</a></li></ul></div><p class='location'><a href='../index.html'>imageproc</a></p><script>window.sidebarCurrent = {name: 'drawing', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Module <a href='../index.html'>imageproc</a>::<wbr><a class="mod" href=''>drawing</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/imageproc/drawing/mod.rs.html#1-71' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p>Helpers for drawing basic shapes on images.</p>
+</div><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.BresenhamLineIter.html"
+                                  title='struct imageproc::drawing::BresenhamLineIter'>BresenhamLineIter</a></td>
+                           <td class='docblock-short'>
+                                <p>Iterates over the coordinates in a line segment using
+<a href="https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm">Bresenham&#39;s line drawing algorithm</a>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.BresenhamLinePixelIter.html"
+                                  title='struct imageproc::drawing::BresenhamLinePixelIter'>BresenhamLinePixelIter</a></td>
+                           <td class='docblock-short'>
+                                <p>Iterates over the image pixels in a line segment using
+<a href="https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm">Bresenham&#39;s line drawing algorithm</a>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.BresenhamLinePixelIterMut.html"
+                                  title='struct imageproc::drawing::BresenhamLinePixelIterMut'>BresenhamLinePixelIterMut</a></td>
+                           <td class='docblock-short'>
+                                <p>Iterates over the image pixels in a line segment using
+<a href="https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm">Bresenham&#39;s line drawing algorithm</a>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Point.html"
+                                  title='struct imageproc::drawing::Point'>Point</a></td>
+                           <td class='docblock-short'>
+                                <p>A 2D point.</p>
+                           </td>
+                       </tr></table><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.draw_antialiased_line_segment.html"
+                                  title='fn imageproc::drawing::draw_antialiased_line_segment'>draw_antialiased_line_segment</a></td>
+                           <td class='docblock-short'>
+                                <p>Draws as much of the line segment between start and end as lies inside the image bounds.
+The parameters of blend are (line color, original color, line weight).
+Uses <a href="https://en.wikipedia.org/wiki/Xiaolin_Wu%27s_line_algorithm">Xu&#39;s line drawing algorithm</a>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.draw_antialiased_line_segment_mut.html"
+                                  title='fn imageproc::drawing::draw_antialiased_line_segment_mut'>draw_antialiased_line_segment_mut</a></td>
+                           <td class='docblock-short'>
+                                <p>Draws as much of the line segment between start and end as lies inside the image bounds.
+The parameters of blend are (line color, original color, line weight).
+Uses <a href="https://en.wikipedia.org/wiki/Xiaolin_Wu%27s_line_algorithm">Xu&#39;s line drawing algorithm</a>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.draw_convex_polygon.html"
+                                  title='fn imageproc::drawing::draw_convex_polygon'>draw_convex_polygon</a></td>
+                           <td class='docblock-short'>
+                                <p>Draws as much of a filled convex polygon as lies within image bounds. The provided
+list of points should be an open path, i.e. the first and last points must not be equal.
+An implicit edge is added from the last to the first point in the slice.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.draw_convex_polygon_mut.html"
+                                  title='fn imageproc::drawing::draw_convex_polygon_mut'>draw_convex_polygon_mut</a></td>
+                           <td class='docblock-short'>
+                                <p>Draws as much of a filled convex polygon as lies within image bounds. The provided
+list of points should be an open path, i.e. the first and last points must not be equal.
+An implicit edge is added from the last to the first point in the slice.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.draw_cross.html"
+                                  title='fn imageproc::drawing::draw_cross'>draw_cross</a></td>
+                           <td class='docblock-short'>
+                                <p>Draws a colored cross on an image. Handles coordinates outside image bounds.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.draw_cross_mut.html"
+                                  title='fn imageproc::drawing::draw_cross_mut'>draw_cross_mut</a></td>
+                           <td class='docblock-short'>
+                                <p>Draws a colored cross on an image in place. Handles coordinates outside image bounds.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.draw_cubic_bezier_curve.html"
+                                  title='fn imageproc::drawing::draw_cubic_bezier_curve'>draw_cubic_bezier_curve</a></td>
+                           <td class='docblock-short'>
+                                <p>Draws as much of a cubic bezier curve as lies within image bounds.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.draw_cubic_bezier_curve_mut.html"
+                                  title='fn imageproc::drawing::draw_cubic_bezier_curve_mut'>draw_cubic_bezier_curve_mut</a></td>
+                           <td class='docblock-short'>
+                                <p>Draws as much of a cubic bezier curve as lies within image bounds.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.draw_filled_circle.html"
+                                  title='fn imageproc::drawing::draw_filled_circle'>draw_filled_circle</a></td>
+                           <td class='docblock-short'>
+                                <p>Draw as much of a circle and its contents as lies inside the image bounds.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.draw_filled_circle_mut.html"
+                                  title='fn imageproc::drawing::draw_filled_circle_mut'>draw_filled_circle_mut</a></td>
+                           <td class='docblock-short'>
+                                <p>Draw as much of a circle, including its contents, as lies inside the image bounds.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.draw_filled_ellipse.html"
+                                  title='fn imageproc::drawing::draw_filled_ellipse'>draw_filled_ellipse</a></td>
+                           <td class='docblock-short'>
+                                <p>Draw as much of an ellipse, including its contents, as lies inside the image bounds.
+Uses Midpoint Ellipse Drawing Algorithm. (Modified from Bresenham&#39;s algorithm) (<a href="http://tutsheap.com/c/mid-point-ellipse-drawing-algorithm/">http://tutsheap.com/c/mid-point-ellipse-drawing-algorithm/</a>)</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.draw_filled_ellipse_mut.html"
+                                  title='fn imageproc::drawing::draw_filled_ellipse_mut'>draw_filled_ellipse_mut</a></td>
+                           <td class='docblock-short'>
+                                <p>Draw as much of an ellipse, including its contents, as lies inside the image bounds.
+Uses Midpoint Ellipse Drawing Algorithm. (Modified from Bresenham&#39;s algorithm) (<a href="http://tutsheap.com/c/mid-point-ellipse-drawing-algorithm/">http://tutsheap.com/c/mid-point-ellipse-drawing-algorithm/</a>)</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.draw_filled_rect.html"
+                                  title='fn imageproc::drawing::draw_filled_rect'>draw_filled_rect</a></td>
+                           <td class='docblock-short'>
+                                <p>Draw as much of a rectangle, including its boundary, as lies inside the image bounds.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.draw_filled_rect_mut.html"
+                                  title='fn imageproc::drawing::draw_filled_rect_mut'>draw_filled_rect_mut</a></td>
+                           <td class='docblock-short'>
+                                <p>Draw as much of a rectangle, including its boundary, as lies inside the image bounds.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.draw_hollow_circle.html"
+                                  title='fn imageproc::drawing::draw_hollow_circle'>draw_hollow_circle</a></td>
+                           <td class='docblock-short'>
+                                <p>Draw as much of a circle as lies inside the image bounds.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.draw_hollow_circle_mut.html"
+                                  title='fn imageproc::drawing::draw_hollow_circle_mut'>draw_hollow_circle_mut</a></td>
+                           <td class='docblock-short'>
+                                <p>Draw as much of a circle as lies inside the image bounds.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.draw_hollow_ellipse.html"
+                                  title='fn imageproc::drawing::draw_hollow_ellipse'>draw_hollow_ellipse</a></td>
+                           <td class='docblock-short'>
+                                <p>Draw as much of an ellipse as lies inside the image bounds.
+Uses Midpoint Ellipse Drawing Algorithm. (Modified from Bresenham&#39;s algorithm) (<a href="http://tutsheap.com/c/mid-point-ellipse-drawing-algorithm/">http://tutsheap.com/c/mid-point-ellipse-drawing-algorithm/</a>)</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.draw_hollow_ellipse_mut.html"
+                                  title='fn imageproc::drawing::draw_hollow_ellipse_mut'>draw_hollow_ellipse_mut</a></td>
+                           <td class='docblock-short'>
+                                <p>Draw as much of an ellipse as lies inside the image bounds.
+Uses Midpoint Ellipse Drawing Algorithm. (Modified from Bresenham&#39;s algorithm) (<a href="http://tutsheap.com/c/mid-point-ellipse-drawing-algorithm/">http://tutsheap.com/c/mid-point-ellipse-drawing-algorithm/</a>)</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.draw_hollow_rect.html"
+                                  title='fn imageproc::drawing::draw_hollow_rect'>draw_hollow_rect</a></td>
+                           <td class='docblock-short'>
+                                <p>Draws as much of the boundary of a rectangle as lies inside the image bounds.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.draw_hollow_rect_mut.html"
+                                  title='fn imageproc::drawing::draw_hollow_rect_mut'>draw_hollow_rect_mut</a></td>
+                           <td class='docblock-short'>
+                                <p>Draws as much of the boundary of a rectangle as lies inside the image bounds.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.draw_line_segment.html"
+                                  title='fn imageproc::drawing::draw_line_segment'>draw_line_segment</a></td>
+                           <td class='docblock-short'>
+                                <p>Draws as much of the line segment between start and end as lies inside the image bounds.
+Uses <a href="https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm">Bresenham&#39;s line drawing algorithm</a>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.draw_line_segment_mut.html"
+                                  title='fn imageproc::drawing::draw_line_segment_mut'>draw_line_segment_mut</a></td>
+                           <td class='docblock-short'>
+                                <p>Draws as much of the line segment between start and end as lies inside the image bounds.
+Uses <a href="https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm">Bresenham&#39;s line drawing algorithm</a>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.draw_text.html"
+                                  title='fn imageproc::drawing::draw_text'>draw_text</a></td>
+                           <td class='docblock-short'>
+                                <p>Draws colored text on an image in place. <code>scale</code> is augmented font scaling on both the x and y axis (in pixels). Note that this function <em>does not</em> support newlines, you must do this manually</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.draw_text_mut.html"
+                                  title='fn imageproc::drawing::draw_text_mut'>draw_text_mut</a></td>
+                           <td class='docblock-short'>
+                                <p>Draws colored text on an image in place. <code>scale</code> is augmented font scaling on both the x and y axis (in pixels). Note that this function <em>does not</em> support newlines, you must do this manually</p>
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "imageproc";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

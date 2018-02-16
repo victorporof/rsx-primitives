@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Payload` struct in crate `webrender_api`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Payload">
+
+    <title>webrender_api::channel::Payload - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct Payload</p><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.epoch">epoch</a><a href="#structfield.pipeline_id">pipeline_id</a><a href="#structfield.display_list_data">display_list_data</a></div><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.to_data">to_data</a><a href="#method.from_data">from_data</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Clone">Clone</a></div></div><p class='location'><a href='../index.html'>webrender_api</a>::<wbr><a href='index.html'>channel</a></p><script>window.sidebarCurrent = {name: 'Payload', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>webrender_api</a>::<wbr><a href='index.html'>channel</a>::<wbr><a class="struct" href=''>Payload</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/webrender_api/channel.rs.html#11-21' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Payload {
+    pub epoch: <a class="struct" href="../../webrender_api/struct.Epoch.html" title="struct webrender_api::Epoch">Epoch</a>,
+    pub pipeline_id: <a class="struct" href="../../webrender_api/struct.PipelineId.html" title="struct webrender_api::PipelineId">PipelineId</a>,
+    pub display_list_data: <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>&gt;,
+}</pre><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.epoch" class="structfield small-section-header">
+                           <a href="#structfield.epoch" class="anchor field"></a>
+                           <span id="epoch.v" class='invisible'>
+                           <code>epoch: <a class="struct" href="../../webrender_api/struct.Epoch.html" title="struct webrender_api::Epoch">Epoch</a></code>
+                           </span></span><div class='docblock'><p>An epoch used to get the proper payload for a pipeline id frame request.</p>
+
+<p>TODO(emilio): Is this still relevant? We send the messages for the same
+pipeline in order, so we shouldn&#39;t need it. Seems like this was only
+wallpapering (in most cases) the underlying problem in #991.</p>
+</div><span id="structfield.pipeline_id" class="structfield small-section-header">
+                           <a href="#structfield.pipeline_id" class="anchor field"></a>
+                           <span id="pipeline_id.v" class='invisible'>
+                           <code>pipeline_id: <a class="struct" href="../../webrender_api/struct.PipelineId.html" title="struct webrender_api::PipelineId">PipelineId</a></code>
+                           </span></span><div class='docblock'><p>A pipeline id to key the payload with, along with the epoch.</p>
+</div><span id="structfield.display_list_data" class="structfield small-section-header">
+                           <a href="#structfield.display_list_data" class="anchor field"></a>
+                           <span id="display_list_data.v" class='invisible'>
+                           <code>display_list_data: <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>&gt;</code>
+                           </span></span>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="struct" href="../../webrender_api/channel/struct.Payload.html" title="struct webrender_api::channel::Payload">Payload</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/webrender_api/channel.rs.html#23-66' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.to_data' class="method"><span id='to_data.v' class='invisible'><code>pub fn <a href='#method.to_data' class='fnname'>to_data</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/webrender_api/channel.rs.html#29-41' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Convert the payload to a raw byte vector, in order for it to be
+efficiently shared via shmem, for example.</p>
+
+<p>TODO(emilio, #1049): Consider moving the IPC boundary to the
+constellation in Servo and remove this complexity from WR.</p>
+</div><h4 id='method.from_data' class="method"><span id='from_data.v' class='invisible'><code>pub fn <a href='#method.from_data' class='fnname'>from_data</a>(data: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a>) -&gt; <a class="struct" href="../../webrender_api/channel/struct.Payload.html" title="struct webrender_api::channel::Payload">Payload</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/webrender_api/channel.rs.html#44-65' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Deserializes the given payload from a raw byte vector.</p>
+</div></div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Clone' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="struct" href="../../webrender_api/channel/struct.Payload.html" title="struct webrender_api::channel::Payload">Payload</a></code><a href='#impl-Clone' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/webrender_api/channel.rs.html#10' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="struct" href="../../webrender_api/channel/struct.Payload.html" title="struct webrender_api::channel::Payload">Payload</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/webrender_api/channel.rs.html#10' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "webrender_api";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

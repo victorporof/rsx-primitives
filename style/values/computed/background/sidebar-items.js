@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["BackgroundRepeat","The computed value of the `background-repeat` property:"]],"type":[["BackgroundSize","A computed value for the `background-size` property."]]});

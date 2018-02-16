@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `font` mod in crate `style`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, font">
+
+    <title>style::values::specified::font - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc mod">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Module font</p><div class="block items"><ul><li><a href="#structs">Structs</a></li><li><a href="#enums">Enums</a></li><li><a href="#constants">Constants</a></li><li><a href="#types">Type Definitions</a></li></ul></div><p class='location'><a href='../../../index.html'>style</a>::<wbr><a href='../../index.html'>values</a>::<wbr><a href='../index.html'>specified</a></p><script>window.sidebarCurrent = {name: 'font', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Module <a href='../../../index.html'>style</a>::<wbr><a href='../../index.html'>values</a>::<wbr><a href='../index.html'>specified</a>::<wbr><a class="mod" href=''>font</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../../src/style/values/specified/font.rs.html#5-2067' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p>Specified values for font properties</p>
+</div><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.FontSynthesis.html"
+                                  title='struct style::values::specified::font::FontSynthesis'>FontSynthesis</a></td>
+                           <td class='docblock-short'>
+                                <p>Whether user agents are allowed to synthesize bold or oblique font faces
+when a font family lacks bold or italic faces</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.MozScriptMinSize.html"
+                                  title='struct style::values::specified::font::MozScriptMinSize'>MozScriptMinSize</a></td>
+                           <td class='docblock-short'>
+                                <p>Specifies the minimum font size allowed due to changes in scriptlevel.
+Ref: <a href="https://wiki.mozilla.org/MathML:mstyle">https://wiki.mozilla.org/MathML:mstyle</a></p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.MozScriptSizeMultiplier.html"
+                                  title='struct style::values::specified::font::MozScriptSizeMultiplier'>MozScriptSizeMultiplier</a></td>
+                           <td class='docblock-short'>
+                                <p>Specifies the multiplier to be used to adjust font size
+due to changes in scriptlevel.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.VariantAlternatesList.html"
+                                  title='struct style::values::specified::font::VariantAlternatesList'>VariantAlternatesList</a></td>
+                           <td class='docblock-short'>
+                                <p>List of Variant Alternates</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.VariantEastAsian.html"
+                                  title='struct style::values::specified::font::VariantEastAsian'>VariantEastAsian</a></td>
+                           <td class='docblock-short'>
+                                <p>Vairants for east asian variant</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.VariantLigatures.html"
+                                  title='struct style::values::specified::font::VariantLigatures'>VariantLigatures</a></td>
+                           <td class='docblock-short'>
+                                <p>Variants of ligatures</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.VariantNumeric.html"
+                                  title='struct style::values::specified::font::VariantNumeric'>VariantNumeric</a></td>
+                           <td class='docblock-short'>
+                                <p>Vairants of numeric values</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.XLang.html"
+                                  title='struct style::values::specified::font::XLang'>XLang</a></td>
+                           <td class='docblock-short'>
+                                <p>Internal property that reflects the lang attribute</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.XTextZoom.html"
+                                  title='struct style::values::specified::font::XTextZoom'>XTextZoom</a></td>
+                           <td class='docblock-short'>
+                                <p>text-zoom. Enable if true, disable if false</p>
+                           </td>
+                       </tr></table><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.FontFamily.html"
+                                  title='enum style::values::specified::font::FontFamily'>FontFamily</a></td>
+                           <td class='docblock-short'>
+                                <p>Specifies a prioritized list of font family names or generic family names</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.FontFeatureSettings.html"
+                                  title='enum style::values::specified::font::FontFeatureSettings'>FontFeatureSettings</a></td>
+                           <td class='docblock-short'>
+                                <p>Define initial settings that apply when the font defined
+by an @font-face rule is rendered.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.FontLanguageOverride.html"
+                                  title='enum style::values::specified::font::FontLanguageOverride'>FontLanguageOverride</a></td>
+                           <td class='docblock-short'>
+                                <p>Allows authors to explicitly specify the language system of the font,
+overriding the language system implied by the content language</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.FontSize.html"
+                                  title='enum style::values::specified::font::FontSize'>FontSize</a></td>
+                           <td class='docblock-short'>
+                                <p>A specified font-size value</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.FontSizeAdjust.html"
+                                  title='enum style::values::specified::font::FontSizeAdjust'>FontSizeAdjust</a></td>
+                           <td class='docblock-short'>
+                                <p>Preserve the readability of text when font fallback occurs</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.FontVariantAlternates.html"
+                                  title='enum style::values::specified::font::FontVariantAlternates'>FontVariantAlternates</a></td>
+                           <td class='docblock-short'>
+                                <p>Control over the selection of these alternate glyphs</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.FontVariantEastAsian.html"
+                                  title='enum style::values::specified::font::FontVariantEastAsian'>FontVariantEastAsian</a></td>
+                           <td class='docblock-short'>
+                                <p>Allows control of glyph substitution and sizing in East Asian text.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.FontVariantLigatures.html"
+                                  title='enum style::values::specified::font::FontVariantLigatures'>FontVariantLigatures</a></td>
+                           <td class='docblock-short'>
+                                <p>Ligatures and contextual forms are ways of combining glyphs
+to produce more harmonized forms</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.FontVariantNumeric.html"
+                                  title='enum style::values::specified::font::FontVariantNumeric'>FontVariantNumeric</a></td>
+                           <td class='docblock-short'>
+                                <p>Specifies control over numerical forms.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.FontWeight.html"
+                                  title='enum style::values::specified::font::FontWeight'>FontWeight</a></td>
+                           <td class='docblock-short'>
+                                <p>A specified font-weight value</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.KeywordSize.html"
+                                  title='enum style::values::specified::font::KeywordSize'>KeywordSize</a></td>
+                           <td class='docblock-short'>
+                                <p>CSS font keywords</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.MozScriptLevel.html"
+                                  title='enum style::values::specified::font::MozScriptLevel'>MozScriptLevel</a></td>
+                           <td class='docblock-short'>
+                                <p>Changes the scriptlevel in effect for the children.
+Ref: <a href="https://wiki.mozilla.org/MathML:mstyle">https://wiki.mozilla.org/MathML:mstyle</a></p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.VariantAlternates.html"
+                                  title='enum style::values::specified::font::VariantAlternates'>VariantAlternates</a></td>
+                           <td class='docblock-short'>
+                                <p>Set of variant alternates</p>
+                           </td>
+                       </tr></table><h2 id='constants' class='section-header'><a href="#constants">Constants</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.FONT_MEDIUM_PX.html"
+                                  title='constant style::values::specified::font::FONT_MEDIUM_PX'>FONT_MEDIUM_PX</a></td>
+                           <td class='docblock-short'>
+                                <p>The default font size.</p>
+                           </td>
+                       </tr></table><h2 id='types' class='section-header'><a href="#types">Type Definitions</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.FontVariantSettings.html"
+                                  title='type style::values::specified::font::FontVariantSettings'>FontVariantSettings</a></td>
+                           <td class='docblock-short'>
+                                <p>This property provides low-level control over OpenType or TrueType font variations.</p>
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../../";
+        window.currentCrate = "style";
+    </script>
+    <script src="../../../../main.js"></script>
+    <script defer src="../../../../search-index.js"></script>
+</body>
+</html>

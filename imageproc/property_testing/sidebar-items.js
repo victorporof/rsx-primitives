@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["TestBuffer","Wrapper for image buffers to allow us to write an Arbitrary instance."]],"trait":[["ArbitraryPixel","Workaround for not being able to define Arbitrary instances for pixel types defines in other modules."]],"type":[["GrayTestImage","8bpp grayscale `TestBuffer`."],["RgbTestImage","24bpp RGB `TestBuffer`."]]});

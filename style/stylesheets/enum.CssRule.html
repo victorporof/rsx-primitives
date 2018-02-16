@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `CssRule` enum in crate `style`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, CssRule">
+
+    <title>style::stylesheets::CssRule - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc enum">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Enum CssRule</p><div class="block items"><a class="sidebar-title" href="#variants">Variants</a><div class="sidebar-links"><a href="#variant.Namespace">Namespace</a><a href="#variant.Import">Import</a><a href="#variant.Style">Style</a><a href="#variant.Media">Media</a><a href="#variant.FontFace">FontFace</a><a href="#variant.FontFeatureValues">FontFeatureValues</a><a href="#variant.CounterStyle">CounterStyle</a><a href="#variant.Viewport">Viewport</a><a href="#variant.Keyframes">Keyframes</a><a href="#variant.Supports">Supports</a><a href="#variant.Page">Page</a><a href="#variant.Document">Document</a></div><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.rule_type">rule_type</a><a href="#method.parse">parse</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Clone">Clone</a><a href="#impl-Debug">Debug</a><a href="#impl-DeepCloneWithLock">DeepCloneWithLock</a><a href="#impl-ToCssWithGuard">ToCssWithGuard</a></div></div><p class='location'><a href='../index.html'>style</a>::<wbr><a href='index.html'>stylesheets</a></p><script>window.sidebarCurrent = {name: 'CssRule', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../index.html'>style</a>::<wbr><a href='index.html'>stylesheets</a>::<wbr><a class="enum" href=''>CssRule</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/style/stylesheets/mod.rs.html#91-107' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum CssRule {
+    Namespace(<a class="struct" href="../../style/properties/struct.BuilderArc.html" title="struct style::properties::BuilderArc">Arc</a>&lt;<a class="struct" href="../../style/shared_lock/struct.Locked.html" title="struct style::shared_lock::Locked">Locked</a>&lt;<a class="struct" href="../../style/stylesheets/struct.NamespaceRule.html" title="struct style::stylesheets::NamespaceRule">NamespaceRule</a>&gt;&gt;),
+    Import(<a class="struct" href="../../style/properties/struct.BuilderArc.html" title="struct style::properties::BuilderArc">Arc</a>&lt;<a class="struct" href="../../style/shared_lock/struct.Locked.html" title="struct style::shared_lock::Locked">Locked</a>&lt;<a class="struct" href="../../style/stylesheets/import_rule/struct.ImportRule.html" title="struct style::stylesheets::import_rule::ImportRule">ImportRule</a>&gt;&gt;),
+    Style(<a class="struct" href="../../style/properties/struct.BuilderArc.html" title="struct style::properties::BuilderArc">Arc</a>&lt;<a class="struct" href="../../style/shared_lock/struct.Locked.html" title="struct style::shared_lock::Locked">Locked</a>&lt;<a class="struct" href="../../style/stylesheets/struct.StyleRule.html" title="struct style::stylesheets::StyleRule">StyleRule</a>&gt;&gt;),
+    Media(<a class="struct" href="../../style/properties/struct.BuilderArc.html" title="struct style::properties::BuilderArc">Arc</a>&lt;<a class="struct" href="../../style/shared_lock/struct.Locked.html" title="struct style::shared_lock::Locked">Locked</a>&lt;<a class="struct" href="../../style/stylesheets/struct.MediaRule.html" title="struct style::stylesheets::MediaRule">MediaRule</a>&gt;&gt;),
+    FontFace(<a class="struct" href="../../style/properties/struct.BuilderArc.html" title="struct style::properties::BuilderArc">Arc</a>&lt;<a class="struct" href="../../style/shared_lock/struct.Locked.html" title="struct style::shared_lock::Locked">Locked</a>&lt;<a class="struct" href="../../style/font_face/struct.FontFaceRuleData.html" title="struct style::font_face::FontFaceRuleData">FontFaceRule</a>&gt;&gt;),
+    FontFeatureValues(<a class="struct" href="../../style/properties/struct.BuilderArc.html" title="struct style::properties::BuilderArc">Arc</a>&lt;<a class="struct" href="../../style/shared_lock/struct.Locked.html" title="struct style::shared_lock::Locked">Locked</a>&lt;<a class="struct" href="../../style/stylesheets/font_feature_values_rule/struct.FontFeatureValuesRule.html" title="struct style::stylesheets::font_feature_values_rule::FontFeatureValuesRule">FontFeatureValuesRule</a>&gt;&gt;),
+    CounterStyle(<a class="struct" href="../../style/properties/struct.BuilderArc.html" title="struct style::properties::BuilderArc">Arc</a>&lt;<a class="struct" href="../../style/shared_lock/struct.Locked.html" title="struct style::shared_lock::Locked">Locked</a>&lt;<a class="struct" href="../../style/counter_style/struct.CounterStyleRuleData.html" title="struct style::counter_style::CounterStyleRuleData">CounterStyleRule</a>&gt;&gt;),
+    Viewport(<a class="struct" href="../../style/properties/struct.BuilderArc.html" title="struct style::properties::BuilderArc">Arc</a>&lt;<a class="struct" href="../../style/shared_lock/struct.Locked.html" title="struct style::shared_lock::Locked">Locked</a>&lt;<a class="struct" href="../../style/stylesheets/viewport_rule/struct.ViewportRule.html" title="struct style::stylesheets::viewport_rule::ViewportRule">ViewportRule</a>&gt;&gt;),
+    Keyframes(<a class="struct" href="../../style/properties/struct.BuilderArc.html" title="struct style::properties::BuilderArc">Arc</a>&lt;<a class="struct" href="../../style/shared_lock/struct.Locked.html" title="struct style::shared_lock::Locked">Locked</a>&lt;<a class="struct" href="../../style/stylesheets/keyframes_rule/struct.KeyframesRule.html" title="struct style::stylesheets::keyframes_rule::KeyframesRule">KeyframesRule</a>&gt;&gt;),
+    Supports(<a class="struct" href="../../style/properties/struct.BuilderArc.html" title="struct style::properties::BuilderArc">Arc</a>&lt;<a class="struct" href="../../style/shared_lock/struct.Locked.html" title="struct style::shared_lock::Locked">Locked</a>&lt;<a class="struct" href="../../style/stylesheets/supports_rule/struct.SupportsRule.html" title="struct style::stylesheets::supports_rule::SupportsRule">SupportsRule</a>&gt;&gt;),
+    Page(<a class="struct" href="../../style/properties/struct.BuilderArc.html" title="struct style::properties::BuilderArc">Arc</a>&lt;<a class="struct" href="../../style/shared_lock/struct.Locked.html" title="struct style::shared_lock::Locked">Locked</a>&lt;<a class="struct" href="../../style/stylesheets/struct.PageRule.html" title="struct style::stylesheets::PageRule">PageRule</a>&gt;&gt;),
+    Document(<a class="struct" href="../../style/properties/struct.BuilderArc.html" title="struct style::properties::BuilderArc">Arc</a>&lt;<a class="struct" href="../../style/shared_lock/struct.Locked.html" title="struct style::shared_lock::Locked">Locked</a>&lt;<a class="struct" href="../../style/stylesheets/struct.DocumentRule.html" title="struct style::stylesheets::DocumentRule">DocumentRule</a>&gt;&gt;),
+}</pre><div class='docblock'><p>A CSS rule.</p>
+
+<p>TODO(emilio): Lots of spec links should be around.</p>
+</div><h2 id='variants' class='variants small-section-header'>
+                   Variants<a href='#variants' class='anchor'></a></h2>
+<span id="variant.Namespace" class="variant small-section-header"><a href="#variant.Namespace" class="anchor field"></a><span id='Namespace.v' class='invisible'><code>Namespace(<a class="struct" href="../../style/properties/struct.BuilderArc.html" title="struct style::properties::BuilderArc">Arc</a>&lt;<a class="struct" href="../../style/shared_lock/struct.Locked.html" title="struct style::shared_lock::Locked">Locked</a>&lt;<a class="struct" href="../../style/stylesheets/struct.NamespaceRule.html" title="struct style::stylesheets::NamespaceRule">NamespaceRule</a>&gt;&gt;)</code></span></span><span id="variant.Import" class="variant small-section-header"><a href="#variant.Import" class="anchor field"></a><span id='Import.v' class='invisible'><code>Import(<a class="struct" href="../../style/properties/struct.BuilderArc.html" title="struct style::properties::BuilderArc">Arc</a>&lt;<a class="struct" href="../../style/shared_lock/struct.Locked.html" title="struct style::shared_lock::Locked">Locked</a>&lt;<a class="struct" href="../../style/stylesheets/import_rule/struct.ImportRule.html" title="struct style::stylesheets::import_rule::ImportRule">ImportRule</a>&gt;&gt;)</code></span></span><span id="variant.Style" class="variant small-section-header"><a href="#variant.Style" class="anchor field"></a><span id='Style.v' class='invisible'><code>Style(<a class="struct" href="../../style/properties/struct.BuilderArc.html" title="struct style::properties::BuilderArc">Arc</a>&lt;<a class="struct" href="../../style/shared_lock/struct.Locked.html" title="struct style::shared_lock::Locked">Locked</a>&lt;<a class="struct" href="../../style/stylesheets/struct.StyleRule.html" title="struct style::stylesheets::StyleRule">StyleRule</a>&gt;&gt;)</code></span></span><span id="variant.Media" class="variant small-section-header"><a href="#variant.Media" class="anchor field"></a><span id='Media.v' class='invisible'><code>Media(<a class="struct" href="../../style/properties/struct.BuilderArc.html" title="struct style::properties::BuilderArc">Arc</a>&lt;<a class="struct" href="../../style/shared_lock/struct.Locked.html" title="struct style::shared_lock::Locked">Locked</a>&lt;<a class="struct" href="../../style/stylesheets/struct.MediaRule.html" title="struct style::stylesheets::MediaRule">MediaRule</a>&gt;&gt;)</code></span></span><span id="variant.FontFace" class="variant small-section-header"><a href="#variant.FontFace" class="anchor field"></a><span id='FontFace.v' class='invisible'><code>FontFace(<a class="struct" href="../../style/properties/struct.BuilderArc.html" title="struct style::properties::BuilderArc">Arc</a>&lt;<a class="struct" href="../../style/shared_lock/struct.Locked.html" title="struct style::shared_lock::Locked">Locked</a>&lt;<a class="struct" href="../../style/font_face/struct.FontFaceRuleData.html" title="struct style::font_face::FontFaceRuleData">FontFaceRule</a>&gt;&gt;)</code></span></span><span id="variant.FontFeatureValues" class="variant small-section-header"><a href="#variant.FontFeatureValues" class="anchor field"></a><span id='FontFeatureValues.v' class='invisible'><code>FontFeatureValues(<a class="struct" href="../../style/properties/struct.BuilderArc.html" title="struct style::properties::BuilderArc">Arc</a>&lt;<a class="struct" href="../../style/shared_lock/struct.Locked.html" title="struct style::shared_lock::Locked">Locked</a>&lt;<a class="struct" href="../../style/stylesheets/font_feature_values_rule/struct.FontFeatureValuesRule.html" title="struct style::stylesheets::font_feature_values_rule::FontFeatureValuesRule">FontFeatureValuesRule</a>&gt;&gt;)</code></span></span><span id="variant.CounterStyle" class="variant small-section-header"><a href="#variant.CounterStyle" class="anchor field"></a><span id='CounterStyle.v' class='invisible'><code>CounterStyle(<a class="struct" href="../../style/properties/struct.BuilderArc.html" title="struct style::properties::BuilderArc">Arc</a>&lt;<a class="struct" href="../../style/shared_lock/struct.Locked.html" title="struct style::shared_lock::Locked">Locked</a>&lt;<a class="struct" href="../../style/counter_style/struct.CounterStyleRuleData.html" title="struct style::counter_style::CounterStyleRuleData">CounterStyleRule</a>&gt;&gt;)</code></span></span><span id="variant.Viewport" class="variant small-section-header"><a href="#variant.Viewport" class="anchor field"></a><span id='Viewport.v' class='invisible'><code>Viewport(<a class="struct" href="../../style/properties/struct.BuilderArc.html" title="struct style::properties::BuilderArc">Arc</a>&lt;<a class="struct" href="../../style/shared_lock/struct.Locked.html" title="struct style::shared_lock::Locked">Locked</a>&lt;<a class="struct" href="../../style/stylesheets/viewport_rule/struct.ViewportRule.html" title="struct style::stylesheets::viewport_rule::ViewportRule">ViewportRule</a>&gt;&gt;)</code></span></span><span id="variant.Keyframes" class="variant small-section-header"><a href="#variant.Keyframes" class="anchor field"></a><span id='Keyframes.v' class='invisible'><code>Keyframes(<a class="struct" href="../../style/properties/struct.BuilderArc.html" title="struct style::properties::BuilderArc">Arc</a>&lt;<a class="struct" href="../../style/shared_lock/struct.Locked.html" title="struct style::shared_lock::Locked">Locked</a>&lt;<a class="struct" href="../../style/stylesheets/keyframes_rule/struct.KeyframesRule.html" title="struct style::stylesheets::keyframes_rule::KeyframesRule">KeyframesRule</a>&gt;&gt;)</code></span></span><span id="variant.Supports" class="variant small-section-header"><a href="#variant.Supports" class="anchor field"></a><span id='Supports.v' class='invisible'><code>Supports(<a class="struct" href="../../style/properties/struct.BuilderArc.html" title="struct style::properties::BuilderArc">Arc</a>&lt;<a class="struct" href="../../style/shared_lock/struct.Locked.html" title="struct style::shared_lock::Locked">Locked</a>&lt;<a class="struct" href="../../style/stylesheets/supports_rule/struct.SupportsRule.html" title="struct style::stylesheets::supports_rule::SupportsRule">SupportsRule</a>&gt;&gt;)</code></span></span><span id="variant.Page" class="variant small-section-header"><a href="#variant.Page" class="anchor field"></a><span id='Page.v' class='invisible'><code>Page(<a class="struct" href="../../style/properties/struct.BuilderArc.html" title="struct style::properties::BuilderArc">Arc</a>&lt;<a class="struct" href="../../style/shared_lock/struct.Locked.html" title="struct style::shared_lock::Locked">Locked</a>&lt;<a class="struct" href="../../style/stylesheets/struct.PageRule.html" title="struct style::stylesheets::PageRule">PageRule</a>&gt;&gt;)</code></span></span><span id="variant.Document" class="variant small-section-header"><a href="#variant.Document" class="anchor field"></a><span id='Document.v' class='invisible'><code>Document(<a class="struct" href="../../style/properties/struct.BuilderArc.html" title="struct style::properties::BuilderArc">Arc</a>&lt;<a class="struct" href="../../style/shared_lock/struct.Locked.html" title="struct style::shared_lock::Locked">Locked</a>&lt;<a class="struct" href="../../style/stylesheets/struct.DocumentRule.html" title="struct style::stylesheets::DocumentRule">DocumentRule</a>&gt;&gt;)</code></span></span>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="enum" href="../../style/stylesheets/enum.CssRule.html" title="enum style::stylesheets::CssRule">CssRule</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylesheets/mod.rs.html#198-276' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.rule_type' class="method"><span id='rule_type.v' class='invisible'><code>pub fn <a href='#method.rule_type' class='fnname'>rule_type</a>(&amp;self) -&gt; <a class="enum" href="../../style/stylesheets/enum.CssRuleType.html" title="enum style::stylesheets::CssRuleType">CssRuleType</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylesheets/mod.rs.html#200-215' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the CSSOM rule type of this rule.</p>
+</div><h4 id='method.parse' class="method"><span id='parse.v' class='invisible'><code>pub fn <a href='#method.parse' class='fnname'>parse</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;css: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;parent_stylesheet_contents: &amp;<a class="struct" href="../../style/stylesheets/struct.StylesheetContents.html" title="struct style::stylesheets::StylesheetContents">StylesheetContents</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;shared_lock: &amp;<a class="struct" href="../../style/shared_lock/struct.SharedRwLock.html" title="struct style::shared_lock::SharedRwLock">SharedRwLock</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;state: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="enum" href="../../style/stylesheets/enum.State.html" title="enum style::stylesheets::State">State</a>&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;loader: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="trait" href="../../style/stylesheets/trait.StylesheetLoader.html" title="trait style::stylesheets::StylesheetLoader">StylesheetLoader</a>&gt;<br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a>Self, <a class="enum" href="../../style/stylesheets/enum.State.html" title="enum style::stylesheets::State">State</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a>, <a class="enum" href="../../style/stylesheets/enum.SingleRuleParseError.html" title="enum style::stylesheets::SingleRuleParseError">SingleRuleParseError</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylesheets/mod.rs.html#231-275' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Parse a CSS rule.</p>
+
+<p>Returns a parsed CSS rule and the final state of the parser.</p>
+
+<p>Input state is None for a nested rule</p>
+</div></div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Clone' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="enum" href="../../style/stylesheets/enum.CssRule.html" title="enum style::stylesheets::CssRule">CssRule</a></code><a href='#impl-Clone' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylesheets/mod.rs.html#89' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="enum" href="../../style/stylesheets/enum.CssRule.html" title="enum style::stylesheets::CssRule">CssRule</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylesheets/mod.rs.html#89' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="enum" href="../../style/stylesheets/enum.CssRule.html" title="enum style::stylesheets::CssRule">CssRule</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylesheets/mod.rs.html#89' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylesheets/mod.rs.html#89' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div><h3 id='impl-DeepCloneWithLock' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../style/shared_lock/trait.DeepCloneWithLock.html" title="trait style::shared_lock::DeepCloneWithLock">DeepCloneWithLock</a> for <a class="enum" href="../../style/stylesheets/enum.CssRule.html" title="enum style::stylesheets::CssRule">CssRule</a></code><a href='#impl-DeepCloneWithLock' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylesheets/mod.rs.html#278-346' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deep_clone_with_lock' class="method"><span id='deep_clone_with_lock.v' class='invisible'><code>fn <a href='../../style/shared_lock/trait.DeepCloneWithLock.html#tymethod.deep_clone_with_lock' class='fnname'>deep_clone_with_lock</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;lock: &amp;<a class="struct" href="../../style/shared_lock/struct.SharedRwLock.html" title="struct style::shared_lock::SharedRwLock">SharedRwLock</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;guard: &amp;<a class="struct" href="../../style/shared_lock/struct.SharedRwLockReadGuard.html" title="struct style::shared_lock::SharedRwLockReadGuard">SharedRwLockReadGuard</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;params: &amp;<a class="struct" href="../../style/shared_lock/struct.DeepCloneParams.html" title="struct style::shared_lock::DeepCloneParams">DeepCloneParams</a><br>) -&gt; <a class="enum" href="../../style/stylesheets/enum.CssRule.html" title="enum style::stylesheets::CssRule">CssRule</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylesheets/mod.rs.html#280-345' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Deep clones this CssRule.</p>
+</div></div><h3 id='impl-ToCssWithGuard' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../style/shared_lock/trait.ToCssWithGuard.html" title="trait style::shared_lock::ToCssWithGuard">ToCssWithGuard</a> for <a class="enum" href="../../style/stylesheets/enum.CssRule.html" title="enum style::stylesheets::CssRule">CssRule</a></code><a href='#impl-ToCssWithGuard' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylesheets/mod.rs.html#348-367' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.to_css' class="method"><span id='to_css.v' class='invisible'><code>fn <a href='../../style/shared_lock/trait.ToCssWithGuard.html#tymethod.to_css' class='fnname'>to_css</a>&lt;W&gt;(&amp;self, guard: &amp;<a class="struct" href="../../style/shared_lock/struct.SharedRwLockReadGuard.html" title="struct style::shared_lock::SharedRwLockReadGuard">SharedRwLockReadGuard</a>, dest: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>W) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a> <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;W: <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Write.html" title="trait core::fmt::Write">Write</a>,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylesheets/mod.rs.html#350-366' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Serialize <code>self</code> in CSS syntax, writing to <code>dest</code>, using the given lock guard.</p>
+</div><h4 id='method.to_css_string' class="method"><span id='to_css_string.v' class='invisible'><code>fn <a href='../../style/shared_lock/trait.ToCssWithGuard.html#method.to_css_string' class='fnname'>to_css_string</a>(&amp;self, guard: &amp;<a class="struct" href="../../style/shared_lock/struct.SharedRwLockReadGuard.html" title="struct style::shared_lock::SharedRwLockReadGuard">SharedRwLockReadGuard</a>) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/shared_lock.rs.html#232-236' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Serialize <code>self</code> in CSS syntax using the given lock guard and return a string. <a href="../../style/shared_lock/trait.ToCssWithGuard.html#method.to_css_string">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "style";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

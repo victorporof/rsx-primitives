@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `DoubleEndedStreamingIterator` trait in crate `streaming_iterator`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, DoubleEndedStreamingIterator">
+
+    <title>streaming_iterator::DoubleEndedStreamingIterator - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc trait">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Trait DoubleEndedStreamingIterator</p><div class="block items"><a class="sidebar-title" href="#required-methods">Required Methods</a><div class="sidebar-links"><a href="#tymethod.advance_back">advance_back</a></div><a class="sidebar-title" href="#provided-methods">Provided Methods</a><div class="sidebar-links"><a href="#method.next_back">next_back</a></div><a class="sidebar-title" href="#implementors">Implementors</a></div><p class='location'><a href='index.html'>streaming_iterator</a></p><script>window.sidebarCurrent = {name: 'DoubleEndedStreamingIterator', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Trait <a href='index.html'>streaming_iterator</a>::<wbr><a class="trait" href=''>DoubleEndedStreamingIterator</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/streaming_iterator/lib.rs.html#380-399' title='goto source code'>[src]</a></span></h1>
+<pre class='rust trait'>pub trait DoubleEndedStreamingIterator: <a class="trait" href="../streaming_iterator/trait.StreamingIterator.html" title="trait streaming_iterator::StreamingIterator">StreamingIterator</a> {
+    fn <a href='#tymethod.advance_back' class='fnname'>advance_back</a>(&amp;mut self);
+
+    fn <a href='#method.next_back' class='fnname'>next_back</a>(&amp;mut self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;Self::<a class="type" href="../streaming_iterator/trait.StreamingIterator.html#associatedtype.Item" title="type streaming_iterator::StreamingIterator::Item">Item</a>&gt; { ... }
+}</pre><div class='docblock'><p>A streaming iterator able to yield elements from both ends.</p>
+</div>
+            <h2 id='required-methods' class='small-section-header'>
+              Required Methods<a href='#required-methods' class='anchor'></a>
+            </h2>
+            <div class='methods'>
+        <h3 id='tymethod.advance_back' class='method'><span id='advance_back.v' class='invisible'><code>fn <a href='#tymethod.advance_back' class='fnname'>advance_back</a>(&amp;mut self)</code></span></h3><div class='docblock'><p>Advances the iterator to the next element from the back of the iterator.</p>
+
+<p>Double ended iterators just after the last element, so this should be called before <code>get</code>
+when iterating in reverse.</p>
+
+<p>The behavior of calling this method after the iterator has been exhausted is unspecified.</p>
+</div></div>
+            <h2 id='provided-methods' class='small-section-header'>
+              Provided Methods<a href='#provided-methods' class='anchor'></a>
+            </h2>
+            <div class='methods'>
+        <h3 id='method.next_back' class='method'><span id='next_back.v' class='invisible'><code>fn <a href='#method.next_back' class='fnname'>next_back</a>(&amp;mut self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;Self::<a class="type" href="../streaming_iterator/trait.StreamingIterator.html#associatedtype.Item" title="type streaming_iterator::StreamingIterator::Item">Item</a>&gt;</code></span></h3><div class='docblock'><p>Advances the iterator and returns the next value from the back.</p>
+
+<p>The behavior of calling this method after the iterator has been exhausted is unspecified.</p>
+
+<p>The default implementation simply calls <code>advance_back</code> followed by <code>get</code>.</p>
+</div></div>
+        <h2 id='implementors' class='small-section-header'>
+          Implementors<a href='#implementors' class='anchor'></a>
+        </h2>
+        <ul class='item-list' id='implementors-list'>
+    <li><div class='out-of-band'><a class='srclink' href='../src/streaming_iterator/lib.rs.html#440-443' title='goto source code'>[src]</a></div><code>impl&lt;I&gt; DoubleEndedStreamingIterator for <a class="struct" href="../streaming_iterator/struct.Empty.html" title="struct streaming_iterator::Empty">Empty</a>&lt;I&gt;</code></li>
+<li><div class='out-of-band'><a class='srclink' href='../src/streaming_iterator/lib.rs.html#524-532' title='goto source code'>[src]</a></div><code>impl&lt;I&gt; DoubleEndedStreamingIterator for <a class="struct" href="../streaming_iterator/struct.Convert.html" title="struct streaming_iterator::Convert">Convert</a>&lt;I&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;I: <a class="trait" href="https://doc.rust-lang.org/nightly/core/iter/traits/trait.DoubleEndedIterator.html" title="trait core::iter::traits::DoubleEndedIterator">DoubleEndedIterator</a>,&nbsp;</span></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../src/streaming_iterator/lib.rs.html#572-580' title='goto source code'>[src]</a></div><code>impl&lt;'a, I, T:&nbsp;?<a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a>&gt; DoubleEndedStreamingIterator for <a class="struct" href="../streaming_iterator/struct.ConvertRef.html" title="struct streaming_iterator::ConvertRef">ConvertRef</a>&lt;'a, I, T&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;I: <a class="trait" href="https://doc.rust-lang.org/nightly/core/iter/traits/trait.DoubleEndedIterator.html" title="trait core::iter::traits::DoubleEndedIterator">DoubleEndedIterator</a>&lt;Item = &amp;'a T&gt;,&nbsp;</span></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../src/streaming_iterator/lib.rs.html#616-629' title='goto source code'>[src]</a></div><code>impl&lt;I, F&gt; DoubleEndedStreamingIterator for <a class="struct" href="../streaming_iterator/struct.Filter.html" title="struct streaming_iterator::Filter">Filter</a>&lt;I, F&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;I: <a class="trait" href="../streaming_iterator/trait.DoubleEndedStreamingIterator.html" title="trait streaming_iterator::DoubleEndedStreamingIterator">DoubleEndedStreamingIterator</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&amp;I::<a class="type" href="../streaming_iterator/trait.StreamingIterator.html#associatedtype.Item" title="type streaming_iterator::StreamingIterator::Item">Item</a>) -&gt; bool,&nbsp;</span></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../src/streaming_iterator/lib.rs.html#673-693' title='goto source code'>[src]</a></div><code>impl&lt;I, B, F&gt; DoubleEndedStreamingIterator for <a class="struct" href="../streaming_iterator/struct.FilterMap.html" title="struct streaming_iterator::FilterMap">FilterMap</a>&lt;I, B, F&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;I: <a class="trait" href="../streaming_iterator/trait.DoubleEndedStreamingIterator.html" title="trait streaming_iterator::DoubleEndedStreamingIterator">DoubleEndedStreamingIterator</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&amp;I::<a class="type" href="../streaming_iterator/trait.StreamingIterator.html#associatedtype.Item" title="type streaming_iterator::StreamingIterator::Item">Item</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;B&gt;,&nbsp;</span></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../src/streaming_iterator/lib.rs.html#812-821' title='goto source code'>[src]</a></div><code>impl&lt;I, B, F&gt; DoubleEndedStreamingIterator for <a class="struct" href="../streaming_iterator/struct.Map.html" title="struct streaming_iterator::Map">Map</a>&lt;I, B, F&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;I: <a class="trait" href="../streaming_iterator/trait.DoubleEndedStreamingIterator.html" title="trait streaming_iterator::DoubleEndedStreamingIterator">DoubleEndedStreamingIterator</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&amp;I::<a class="type" href="../streaming_iterator/trait.StreamingIterator.html#associatedtype.Item" title="type streaming_iterator::StreamingIterator::Item">Item</a>) -&gt; B,&nbsp;</span></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../src/streaming_iterator/lib.rs.html#1103-1116' title='goto source code'>[src]</a></div><code>impl&lt;I&gt; DoubleEndedStreamingIterator for <a class="struct" href="../streaming_iterator/struct.Rev.html" title="struct streaming_iterator::Rev">Rev</a>&lt;I&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;I: <a class="trait" href="../streaming_iterator/trait.DoubleEndedStreamingIterator.html" title="trait streaming_iterator::DoubleEndedStreamingIterator">DoubleEndedStreamingIterator</a>,&nbsp;</span></code></li>
+</ul><script type="text/javascript" async
+                         src="../implementors/streaming_iterator/trait.DoubleEndedStreamingIterator.js">
+                 </script></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "streaming_iterator";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

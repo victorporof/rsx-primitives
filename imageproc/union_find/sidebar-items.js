@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["DisjointSetForest","Data structure for efficient union find."]]});

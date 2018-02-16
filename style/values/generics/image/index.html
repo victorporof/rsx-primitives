@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `image` mod in crate `style`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, image">
+
+    <title>style::values::generics::image - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc mod">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Module image</p><div class="block items"><ul><li><a href="#structs">Structs</a></li><li><a href="#enums">Enums</a></li><li><a href="#traits">Traits</a></li></ul></div><p class='location'><a href='../../../index.html'>style</a>::<wbr><a href='../../index.html'>values</a>::<wbr><a href='../index.html'>generics</a></p><script>window.sidebarCurrent = {name: 'image', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Module <a href='../../../index.html'>style</a>::<wbr><a href='../../index.html'>values</a>::<wbr><a href='../index.html'>generics</a>::<wbr><a class="mod" href=''>image</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../../src/style/values/generics/image.rs.html#5-324' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p>Generic types for the handling of <a href="https://drafts.csswg.org/css-images/#image-values">images</a>.</p>
+</div><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ColorStop.html"
+                                  title='struct style::values::generics::image::ColorStop'>ColorStop</a></td>
+                           <td class='docblock-short'>
+                                <p>A color stop.
+<a href="https://drafts.csswg.org/css-images/#typedef-color-stop-list">https://drafts.csswg.org/css-images/#typedef-color-stop-list</a></p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Gradient.html"
+                                  title='struct style::values::generics::image::Gradient'>Gradient</a></td>
+                           <td class='docblock-short'>
+                                <p>A CSS gradient.
+<a href="https://drafts.csswg.org/css-images/#gradients">https://drafts.csswg.org/css-images/#gradients</a></p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.MozImageRect.html"
+                                  title='struct style::values::generics::image::MozImageRect'>MozImageRect</a></td>
+                           <td class='docblock-short'>
+                                <p>Values for <code>moz-image-rect</code>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.PaintWorklet.html"
+                                  title='struct style::values::generics::image::PaintWorklet'>PaintWorklet</a></td>
+                           <td class='docblock-short'>
+                                <p>Specified values for a paint worklet.
+<a href="https://drafts.css-houdini.org/css-paint-api/">https://drafts.css-houdini.org/css-paint-api/</a></p>
+                           </td>
+                       </tr></table><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.Circle.html"
+                                  title='enum style::values::generics::image::Circle'>Circle</a></td>
+                           <td class='docblock-short'>
+                                <p>A circle shape.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.CompatMode.html"
+                                  title='enum style::values::generics::image::CompatMode'>CompatMode</a></td>
+                           <td class='docblock-short'>
+                                <p>Whether we used the modern notation or the compatibility <code>-webkit</code>, <code>-moz</code> prefixes.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.Ellipse.html"
+                                  title='enum style::values::generics::image::Ellipse'>Ellipse</a></td>
+                           <td class='docblock-short'>
+                                <p>An ellipse shape.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.EndingShape.html"
+                                  title='enum style::values::generics::image::EndingShape'>EndingShape</a></td>
+                           <td class='docblock-short'>
+                                <p>A radial gradient&#39;s ending shape.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.GradientItem.html"
+                                  title='enum style::values::generics::image::GradientItem'>GradientItem</a></td>
+                           <td class='docblock-short'>
+                                <p>A gradient item.
+<a href="https://drafts.csswg.org/css-images-4/#color-stop-syntax">https://drafts.csswg.org/css-images-4/#color-stop-syntax</a></p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.GradientKind.html"
+                                  title='enum style::values::generics::image::GradientKind'>GradientKind</a></td>
+                           <td class='docblock-short'>
+                                <p>A gradient kind.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.Image.html"
+                                  title='enum style::values::generics::image::Image'>Image</a></td>
+                           <td class='docblock-short'>
+                                <p>An <a href="https://drafts.csswg.org/css-images/#image-values">image</a>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.ShapeExtent.html"
+                                  title='enum style::values::generics::image::ShapeExtent'>ShapeExtent</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table><h2 id='traits' class='section-header'><a href="#traits">Traits</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.LineDirection.html"
+                                  title='trait style::values::generics::image::LineDirection'>LineDirection</a></td>
+                           <td class='docblock-short'>
+                                <p>The direction of a linear gradient.</p>
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../../";
+        window.currentCrate = "style";
+    </script>
+    <script src="../../../../main.js"></script>
+    <script defer src="../../../../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `MatchingContext` struct in crate `selectors`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, MatchingContext">
+
+    <title>selectors::context::MatchingContext - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct MatchingContext</p><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.matching_mode">matching_mode</a><a href="#structfield.bloom_filter">bloom_filter</a><a href="#structfield.nth_index_cache">nth_index_cache</a><a href="#structfield.visited_handling">visited_handling</a><a href="#structfield.scope_element">scope_element</a><a href="#structfield.nesting_level">nesting_level</a><a href="#structfield.pseudo_element_matching_fn">pseudo_element_matching_fn</a></div><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.new">new</a><a href="#method.new_for_visited">new_for_visited</a><a href="#method.quirks_mode">quirks_mode</a><a href="#method.classes_and_ids_case_sensitivity">classes_and_ids_case_sensitivity</a></div></div><p class='location'><a href='../index.html'>selectors</a>::<wbr><a href='index.html'>context</a></p><script>window.sidebarCurrent = {name: 'MatchingContext', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>selectors</a>::<wbr><a href='index.html'>context</a>::<wbr><a class="struct" href=''>MatchingContext</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/selectors/context.rs.html#98-136' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct MatchingContext&lt;'a, Impl&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;Impl: <a class="trait" href="../../selectors/parser/trait.SelectorImpl.html" title="trait selectors::parser::SelectorImpl">SelectorImpl</a>,&nbsp;</span> {
+    pub matching_mode: <a class="enum" href="../../selectors/context/enum.MatchingMode.html" title="enum selectors::context::MatchingMode">MatchingMode</a>,
+    pub bloom_filter: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;'a <a class="type" href="../../selectors/bloom/type.BloomFilter.html" title="type selectors::bloom::BloomFilter">BloomFilter</a>&gt;,
+    pub nth_index_cache: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;'a mut <a class="struct" href="../../selectors/struct.NthIndexCache.html" title="struct selectors::NthIndexCache">NthIndexCache</a>&gt;,
+    pub visited_handling: <a class="enum" href="../../selectors/context/enum.VisitedHandlingMode.html" title="enum selectors::context::VisitedHandlingMode">VisitedHandlingMode</a>,
+    pub scope_element: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../../selectors/struct.OpaqueElement.html" title="struct selectors::OpaqueElement">OpaqueElement</a>&gt;,
+    pub nesting_level: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>,
+    pub pseudo_element_matching_fn: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;'a <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(&amp;Impl::<a class="type" href="../../selectors/parser/trait.SelectorImpl.html#associatedtype.PseudoElement" title="type selectors::parser::SelectorImpl::PseudoElement">PseudoElement</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>&gt;,
+    // some fields omitted
+}</pre><div class='docblock'><p>Data associated with the matching process for a element.  This context is
+used across many selectors for an element, so it&#39;s not appropriate for
+transient data that applies to only a single selector.</p>
+</div><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.matching_mode" class="structfield small-section-header">
+                           <a href="#structfield.matching_mode" class="anchor field"></a>
+                           <span id="matching_mode.v" class='invisible'>
+                           <code>matching_mode: <a class="enum" href="../../selectors/context/enum.MatchingMode.html" title="enum selectors::context::MatchingMode">MatchingMode</a></code>
+                           </span></span><div class='docblock'><p>Input with the matching mode we should use when matching selectors.</p>
+</div><span id="structfield.bloom_filter" class="structfield small-section-header">
+                           <a href="#structfield.bloom_filter" class="anchor field"></a>
+                           <span id="bloom_filter.v" class='invisible'>
+                           <code>bloom_filter: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;'a <a class="type" href="../../selectors/bloom/type.BloomFilter.html" title="type selectors::bloom::BloomFilter">BloomFilter</a>&gt;</code>
+                           </span></span><div class='docblock'><p>Input with the bloom filter used to fast-reject selectors.</p>
+</div><span id="structfield.nth_index_cache" class="structfield small-section-header">
+                           <a href="#structfield.nth_index_cache" class="anchor field"></a>
+                           <span id="nth_index_cache.v" class='invisible'>
+                           <code>nth_index_cache: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;'a mut <a class="struct" href="../../selectors/struct.NthIndexCache.html" title="struct selectors::NthIndexCache">NthIndexCache</a>&gt;</code>
+                           </span></span><div class='docblock'><p>An optional cache to speed up nth-index-like selectors.</p>
+</div><span id="structfield.visited_handling" class="structfield small-section-header">
+                           <a href="#structfield.visited_handling" class="anchor field"></a>
+                           <span id="visited_handling.v" class='invisible'>
+                           <code>visited_handling: <a class="enum" href="../../selectors/context/enum.VisitedHandlingMode.html" title="enum selectors::context::VisitedHandlingMode">VisitedHandlingMode</a></code>
+                           </span></span><div class='docblock'><p>Input that controls how matching for links is handled.</p>
+</div><span id="structfield.scope_element" class="structfield small-section-header">
+                           <a href="#structfield.scope_element" class="anchor field"></a>
+                           <span id="scope_element.v" class='invisible'>
+                           <code>scope_element: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../../selectors/struct.OpaqueElement.html" title="struct selectors::OpaqueElement">OpaqueElement</a>&gt;</code>
+                           </span></span><div class='docblock'><p>The element which is going to match :scope pseudo-class. It can be
+either one :scope element, or the scoping element.</p>
+
+<p>Note that, although in theory there can be multiple :scope elements,
+in current specs, at most one is specified, and when there is one,
+scoping element is not relevant anymore, so we use a single field for
+them.</p>
+
+<p>When this is None, :scope will match the root element.</p>
+
+<p>See <a href="https://drafts.csswg.org/selectors-4/#scope-pseudo">https://drafts.csswg.org/selectors-4/#scope-pseudo</a></p>
+</div><span id="structfield.nesting_level" class="structfield small-section-header">
+                           <a href="#structfield.nesting_level" class="anchor field"></a>
+                           <span id="nesting_level.v" class='invisible'>
+                           <code>nesting_level: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a></code>
+                           </span></span><div class='docblock'><p>The current nesting level of selectors that we&#39;re matching.</p>
+
+<p>FIXME(emilio): Move this somewhere else and make MatchingContext
+immutable again.</p>
+</div><span id="structfield.pseudo_element_matching_fn" class="structfield small-section-header">
+                           <a href="#structfield.pseudo_element_matching_fn" class="anchor field"></a>
+                           <span id="pseudo_element_matching_fn.v" class='invisible'>
+                           <code>pseudo_element_matching_fn: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;'a <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(&amp;Impl::<a class="type" href="../../selectors/parser/trait.SelectorImpl.html#associatedtype.PseudoElement" title="type selectors::parser::SelectorImpl::PseudoElement">PseudoElement</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>&gt;</code>
+                           </span></span><div class='docblock'><p>An optional hook function for checking whether a pseudo-element
+should match when matching_mode is ForStatelessPseudoElement.</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl&lt;'a, Impl&gt; <a class="struct" href="../../selectors/context/struct.MatchingContext.html" title="struct selectors::context::MatchingContext">MatchingContext</a>&lt;'a, Impl&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;Impl: <a class="trait" href="../../selectors/parser/trait.SelectorImpl.html" title="trait selectors::parser::SelectorImpl">SelectorImpl</a>,&nbsp;</span></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/context.rs.html#138-191' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class="method"><span id='new.v' class='invisible'><code>pub fn <a href='#method.new' class='fnname'>new</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;matching_mode: <a class="enum" href="../../selectors/context/enum.MatchingMode.html" title="enum selectors::context::MatchingMode">MatchingMode</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;bloom_filter: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;'a <a class="type" href="../../selectors/bloom/type.BloomFilter.html" title="type selectors::bloom::BloomFilter">BloomFilter</a>&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;nth_index_cache: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;'a mut <a class="struct" href="../../selectors/struct.NthIndexCache.html" title="struct selectors::NthIndexCache">NthIndexCache</a>&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;quirks_mode: <a class="enum" href="../../selectors/context/enum.QuirksMode.html" title="enum selectors::context::QuirksMode">QuirksMode</a><br>) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/context.rs.html#143-156' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Constructs a new <code>MatchingContext</code>.</p>
+</div><h4 id='method.new_for_visited' class="method"><span id='new_for_visited.v' class='invisible'><code>pub fn <a href='#method.new_for_visited' class='fnname'>new_for_visited</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;matching_mode: <a class="enum" href="../../selectors/context/enum.MatchingMode.html" title="enum selectors::context::MatchingMode">MatchingMode</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;bloom_filter: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;'a <a class="type" href="../../selectors/bloom/type.BloomFilter.html" title="type selectors::bloom::BloomFilter">BloomFilter</a>&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;nth_index_cache: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;'a mut <a class="struct" href="../../selectors/struct.NthIndexCache.html" title="struct selectors::NthIndexCache">NthIndexCache</a>&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;visited_handling: <a class="enum" href="../../selectors/context/enum.VisitedHandlingMode.html" title="enum selectors::context::VisitedHandlingMode">VisitedHandlingMode</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;quirks_mode: <a class="enum" href="../../selectors/context/enum.QuirksMode.html" title="enum selectors::context::QuirksMode">QuirksMode</a><br>) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/context.rs.html#159-178' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Constructs a new <code>MatchingContext</code> for use in visited matching.</p>
+</div><h4 id='method.quirks_mode' class="method"><span id='quirks_mode.v' class='invisible'><code>pub fn <a href='#method.quirks_mode' class='fnname'>quirks_mode</a>(&amp;self) -&gt; <a class="enum" href="../../selectors/context/enum.QuirksMode.html" title="enum selectors::context::QuirksMode">QuirksMode</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/context.rs.html#182-184' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>The quirks mode of the document.</p>
+</div><h4 id='method.classes_and_ids_case_sensitivity' class="method"><span id='classes_and_ids_case_sensitivity.v' class='invisible'><code>pub fn <a href='#method.classes_and_ids_case_sensitivity' class='fnname'>classes_and_ids_case_sensitivity</a>(&amp;self) -&gt; <a class="enum" href="../../selectors/attr/enum.CaseSensitivity.html" title="enum selectors::attr::CaseSensitivity">CaseSensitivity</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/context.rs.html#188-190' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>The case-sensitivity for class and ID selectors</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "selectors";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

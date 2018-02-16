@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Color","Specified color value"]],"struct":[["ColorPropertyValue","Specified value for the \"color\" property, which resolves the `currentcolor` keyword to the parent color instead of self's color."],["RGBAColor","Specified color value, but resolved to just RGBA for computed value with value from color property at the same context."]]});

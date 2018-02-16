@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `InvalidationMap` struct in crate `style`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, InvalidationMap">
+
+    <title>style::invalidation::element::invalidation_map::InvalidationMap - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct InvalidationMap</p><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.class_to_selector">class_to_selector</a><a href="#structfield.id_to_selector">id_to_selector</a><a href="#structfield.state_affecting_selectors">state_affecting_selectors</a><a href="#structfield.other_attribute_affecting_selectors">other_attribute_affecting_selectors</a><a href="#structfield.has_class_attribute_selectors">has_class_attribute_selectors</a><a href="#structfield.has_id_attribute_selectors">has_id_attribute_selectors</a></div><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.new">new</a><a href="#method.len">len</a><a href="#method.note_selector">note_selector</a><a href="#method.clear">clear</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Debug">Debug</a><a href="#impl-MallocSizeOf">MallocSizeOf</a></div></div><p class='location'><a href='../../../index.html'>style</a>::<wbr><a href='../../index.html'>invalidation</a>::<wbr><a href='../index.html'>element</a>::<wbr><a href='index.html'>invalidation_map</a></p><script>window.sidebarCurrent = {name: 'InvalidationMap', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../../index.html'>style</a>::<wbr><a href='../../index.html'>invalidation</a>::<wbr><a href='../index.html'>element</a>::<wbr><a href='index.html'>invalidation_map</a>::<wbr><a class="struct" href=''>InvalidationMap</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../../src/style/invalidation/element/invalidation_map.rs.html#135-156' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct InvalidationMap {
+    pub class_to_selector: <a class="struct" href="../../../../style/selector_map/struct.MaybeCaseInsensitiveHashMap.html" title="struct style::selector_map::MaybeCaseInsensitiveHashMap">MaybeCaseInsensitiveHashMap</a>&lt;<a class="type" href="../../../../style/type.Atom.html" title="type style::Atom">Atom</a>, <a class="struct" href="../../../../smallvec/struct.SmallVec.html" title="struct smallvec::SmallVec">SmallVec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="struct" href="../../../../style/invalidation/element/invalidation_map/struct.Dependency.html" title="struct style::invalidation::element::invalidation_map::Dependency">Dependency</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 1]</a>&gt;&gt;,
+    pub id_to_selector: <a class="struct" href="../../../../style/selector_map/struct.MaybeCaseInsensitiveHashMap.html" title="struct style::selector_map::MaybeCaseInsensitiveHashMap">MaybeCaseInsensitiveHashMap</a>&lt;<a class="type" href="../../../../style/type.Atom.html" title="type style::Atom">Atom</a>, <a class="struct" href="../../../../smallvec/struct.SmallVec.html" title="struct smallvec::SmallVec">SmallVec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="struct" href="../../../../style/invalidation/element/invalidation_map/struct.Dependency.html" title="struct style::invalidation::element::invalidation_map::Dependency">Dependency</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 1]</a>&gt;&gt;,
+    pub state_affecting_selectors: <a class="struct" href="../../../../style/selector_map/struct.SelectorMap.html" title="struct style::selector_map::SelectorMap">SelectorMap</a>&lt;<a class="struct" href="../../../../style/invalidation/element/invalidation_map/struct.StateDependency.html" title="struct style::invalidation::element::invalidation_map::StateDependency">StateDependency</a>&gt;,
+    pub other_attribute_affecting_selectors: <a class="struct" href="../../../../style/selector_map/struct.SelectorMap.html" title="struct style::selector_map::SelectorMap">SelectorMap</a>&lt;<a class="struct" href="../../../../style/invalidation/element/invalidation_map/struct.Dependency.html" title="struct style::invalidation::element::invalidation_map::Dependency">Dependency</a>&gt;,
+    pub has_class_attribute_selectors: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
+    pub has_id_attribute_selectors: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
+}</pre><div class='docblock'><p>A map where we store invalidations.</p>
+
+<p>This is slightly different to a SelectorMap, in the sense of that the same
+selector may appear multiple times.</p>
+
+<p>In particular, we want to lookup as few things as possible to get the fewer
+selectors the better, so this looks up by id, class, or looks at the list of
+state/other attribute affecting selectors.</p>
+</div><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.class_to_selector" class="structfield small-section-header">
+                           <a href="#structfield.class_to_selector" class="anchor field"></a>
+                           <span id="class_to_selector.v" class='invisible'>
+                           <code>class_to_selector: <a class="struct" href="../../../../style/selector_map/struct.MaybeCaseInsensitiveHashMap.html" title="struct style::selector_map::MaybeCaseInsensitiveHashMap">MaybeCaseInsensitiveHashMap</a>&lt;<a class="type" href="../../../../style/type.Atom.html" title="type style::Atom">Atom</a>, <a class="struct" href="../../../../smallvec/struct.SmallVec.html" title="struct smallvec::SmallVec">SmallVec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="struct" href="../../../../style/invalidation/element/invalidation_map/struct.Dependency.html" title="struct style::invalidation::element::invalidation_map::Dependency">Dependency</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 1]</a>&gt;&gt;</code>
+                           </span></span><div class='docblock'><p>A map from a given class name to all the selectors with that class
+selector.</p>
+</div><span id="structfield.id_to_selector" class="structfield small-section-header">
+                           <a href="#structfield.id_to_selector" class="anchor field"></a>
+                           <span id="id_to_selector.v" class='invisible'>
+                           <code>id_to_selector: <a class="struct" href="../../../../style/selector_map/struct.MaybeCaseInsensitiveHashMap.html" title="struct style::selector_map::MaybeCaseInsensitiveHashMap">MaybeCaseInsensitiveHashMap</a>&lt;<a class="type" href="../../../../style/type.Atom.html" title="type style::Atom">Atom</a>, <a class="struct" href="../../../../smallvec/struct.SmallVec.html" title="struct smallvec::SmallVec">SmallVec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="struct" href="../../../../style/invalidation/element/invalidation_map/struct.Dependency.html" title="struct style::invalidation::element::invalidation_map::Dependency">Dependency</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 1]</a>&gt;&gt;</code>
+                           </span></span><div class='docblock'><p>A map from a given id to all the selectors with that ID in the
+stylesheets currently applying to the document.</p>
+</div><span id="structfield.state_affecting_selectors" class="structfield small-section-header">
+                           <a href="#structfield.state_affecting_selectors" class="anchor field"></a>
+                           <span id="state_affecting_selectors.v" class='invisible'>
+                           <code>state_affecting_selectors: <a class="struct" href="../../../../style/selector_map/struct.SelectorMap.html" title="struct style::selector_map::SelectorMap">SelectorMap</a>&lt;<a class="struct" href="../../../../style/invalidation/element/invalidation_map/struct.StateDependency.html" title="struct style::invalidation::element::invalidation_map::StateDependency">StateDependency</a>&gt;</code>
+                           </span></span><div class='docblock'><p>A map of all the state dependencies.</p>
+</div><span id="structfield.other_attribute_affecting_selectors" class="structfield small-section-header">
+                           <a href="#structfield.other_attribute_affecting_selectors" class="anchor field"></a>
+                           <span id="other_attribute_affecting_selectors.v" class='invisible'>
+                           <code>other_attribute_affecting_selectors: <a class="struct" href="../../../../style/selector_map/struct.SelectorMap.html" title="struct style::selector_map::SelectorMap">SelectorMap</a>&lt;<a class="struct" href="../../../../style/invalidation/element/invalidation_map/struct.Dependency.html" title="struct style::invalidation::element::invalidation_map::Dependency">Dependency</a>&gt;</code>
+                           </span></span><div class='docblock'><p>A map of other attribute affecting selectors.</p>
+</div><span id="structfield.has_class_attribute_selectors" class="structfield small-section-header">
+                           <a href="#structfield.has_class_attribute_selectors" class="anchor field"></a>
+                           <span id="has_class_attribute_selectors.v" class='invisible'>
+                           <code>has_class_attribute_selectors: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code>
+                           </span></span><div class='docblock'><p>Whether there are attribute rules of the form <code>[class~=&quot;foo&quot;]</code> that may
+match. In that case, we need to look at
+<code>other_attribute_affecting_selectors</code> too even if only the <code>class</code> has
+changed.</p>
+</div><span id="structfield.has_id_attribute_selectors" class="structfield small-section-header">
+                           <a href="#structfield.has_id_attribute_selectors" class="anchor field"></a>
+                           <span id="has_id_attribute_selectors.v" class='invisible'>
+                           <code>has_id_attribute_selectors: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code>
+                           </span></span><div class='docblock'><p>Whether there are attribute rules of the form <code>[id|=&quot;foo&quot;]</code> that may
+match. In that case, we need to look at
+<code>other_attribute_affecting_selectors</code> too even if only the <code>id</code> has
+changed.</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="struct" href="../../../../style/invalidation/element/invalidation_map/struct.InvalidationMap.html" title="struct style::invalidation::element::invalidation_map::InvalidationMap">InvalidationMap</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/invalidation_map.rs.html#158-292' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class="method"><span id='new.v' class='invisible'><code>pub fn <a href='#method.new' class='fnname'>new</a>() -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/invalidation_map.rs.html#160-169' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Creates an empty <code>InvalidationMap</code>.</p>
+</div><h4 id='method.len' class="method"><span id='len.v' class='invisible'><code>pub fn <a href='#method.len' class='fnname'>len</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/invalidation_map.rs.html#172-181' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the number of dependencies stored in the invalidation map.</p>
+</div><h4 id='method.note_selector' class="method"><span id='note_selector.v' class='invisible'><code>pub fn <a href='#method.note_selector' class='fnname'>note_selector</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;selector: &amp;<a class="struct" href="../../../../selectors/parser/struct.Selector.html" title="struct selectors::parser::Selector">Selector</a>&lt;<a class="struct" href="../../../../style/servo/selector_parser/struct.SelectorImpl.html" title="struct style::servo::selector_parser::SelectorImpl">SelectorImpl</a>&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;quirks_mode: <a class="enum" href="../../../../style/context/enum.QuirksMode.html" title="enum style::context::QuirksMode">QuirksMode</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>, <a class="struct" href="../../../../hashglobe/struct.FailedAllocationError.html" title="struct hashglobe::FailedAllocationError">FailedAllocationError</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/invalidation_map.rs.html#185-191' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Adds a selector to this <code>InvalidationMap</code>.  Returns Err(..) to
+signify OOM.</p>
+</div><h4 id='method.clear' class="method"><span id='clear.v' class='invisible'><code>pub fn <a href='#method.clear' class='fnname'>clear</a>(&amp;mut self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/invalidation_map.rs.html#194-201' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Clears this map, leaving it empty.</p>
+</div></div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../../../../style/invalidation/element/invalidation_map/struct.InvalidationMap.html" title="struct style::invalidation::element::invalidation_map::InvalidationMap">InvalidationMap</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/invalidation_map.rs.html#134' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/invalidation_map.rs.html#134' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div><h3 id='impl-MallocSizeOf' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../../../malloc_size_of/trait.MallocSizeOf.html" title="trait malloc_size_of::MallocSizeOf">MallocSizeOf</a> for <a class="struct" href="../../../../style/invalidation/element/invalidation_map/struct.InvalidationMap.html" title="struct style::invalidation::element::invalidation_map::InvalidationMap">InvalidationMap</a></code><a href='#impl-MallocSizeOf' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/invalidation_map.rs.html#134-1' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.size_of' class="method"><span id='size_of.v' class='invisible'><code>fn <a href='../../../../malloc_size_of/trait.MallocSizeOf.html#tymethod.size_of' class='fnname'>size_of</a>(&amp;self, ops: &amp;mut <a class="struct" href="../../../../malloc_size_of/struct.MallocSizeOfOps.html" title="struct malloc_size_of::MallocSizeOfOps">MallocSizeOfOps</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/invalidation_map.rs.html#134' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Measure the heap usage of all descendant heap-allocated structures, but not the space taken up by the value itself. <a href="../../../../malloc_size_of/trait.MallocSizeOf.html#tymethod.size_of">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../../";
+        window.currentCrate = "style";
+    </script>
+    <script src="../../../../main.js"></script>
+    <script defer src="../../../../search-index.js"></script>
+</body>
+</html>

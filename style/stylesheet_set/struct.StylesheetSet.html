@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `StylesheetSet` struct in crate `style`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, StylesheetSet">
+
+    <title>style::stylesheet_set::StylesheetSet - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct StylesheetSet</p><div class="block items"><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.new">new</a><a href="#method.len">len</a><a href="#method.get">get</a><a href="#method.author_style_disabled">author_style_disabled</a><a href="#method.append_stylesheet">append_stylesheet</a><a href="#method.prepend_stylesheet">prepend_stylesheet</a><a href="#method.insert_stylesheet_before">insert_stylesheet_before</a><a href="#method.remove_stylesheet">remove_stylesheet</a><a href="#method.set_author_style_disabled">set_author_style_disabled</a><a href="#method.has_changed">has_changed</a><a href="#method.flush">flush</a><a href="#method.flush_without_invalidation">flush_without_invalidation</a><a href="#method.iter">iter</a><a href="#method.force_dirty">force_dirty</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-MallocSizeOf">MallocSizeOf</a></div></div><p class='location'><a href='../index.html'>style</a>::<wbr><a href='index.html'>stylesheet_set</a></p><script>window.sidebarCurrent = {name: 'StylesheetSet', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>style</a>::<wbr><a href='index.html'>stylesheet_set</a>::<wbr><a class="struct" href=''>StylesheetSet</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/style/stylesheet_set.rs.html#364-379' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct StylesheetSet&lt;S&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;S: <a class="trait" href="../../style/stylesheets/trait.StylesheetInDocument.html" title="trait style::stylesheets::StylesheetInDocument">StylesheetInDocument</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a> + 'static,&nbsp;</span> { /* fields omitted */ }</pre><div class='docblock'><p>The set of stylesheets effective for a given document.</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl&lt;S&gt; <a class="struct" href="../../style/stylesheet_set/struct.StylesheetSet.html" title="struct style::stylesheet_set::StylesheetSet">StylesheetSet</a>&lt;S&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;S: <a class="trait" href="../../style/stylesheets/trait.StylesheetInDocument.html" title="trait style::stylesheets::StylesheetInDocument">StylesheetInDocument</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a> + 'static,&nbsp;</span></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylesheet_set.rs.html#381-564' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class="method"><span id='new.v' class='invisible'><code>pub fn <a href='#method.new' class='fnname'>new</a>() -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylesheet_set.rs.html#386-393' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Create a new empty StylesheetSet.</p>
+</div><h4 id='method.len' class="method"><span id='len.v' class='invisible'><code>pub fn <a href='#method.len' class='fnname'>len</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylesheet_set.rs.html#396-398' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the number of stylesheets in the set.</p>
+</div><h4 id='method.get' class="method"><span id='get.v' class='invisible'><code>pub fn <a href='#method.get' class='fnname'>get</a>(&amp;self, origin: <a class="enum" href="../../style/stylesheets/origin/enum.Origin.html" title="enum style::stylesheets::origin::Origin">Origin</a>, index: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>S&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylesheet_set.rs.html#401-403' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the <code>index</code>th stylesheet in the set for the given origin.</p>
+</div><h4 id='method.author_style_disabled' class="method"><span id='author_style_disabled.v' class='invisible'><code>pub fn <a href='#method.author_style_disabled' class='fnname'>author_style_disabled</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylesheet_set.rs.html#407-409' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns whether author styles have been disabled for the current
+stylesheet set.</p>
+</div><h4 id='method.append_stylesheet' class="method"><span id='append_stylesheet.v' class='invisible'><code>pub fn <a href='#method.append_stylesheet' class='fnname'>append_stylesheet</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;device: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="struct" href="../../style/servo/media_queries/struct.Device.html" title="struct style::servo::media_queries::Device">Device</a>&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;sheet: S, <br>&nbsp;&nbsp;&nbsp;&nbsp;guard: &amp;<a class="struct" href="../../style/shared_lock/struct.SharedRwLockReadGuard.html" title="struct style::shared_lock::SharedRwLockReadGuard">SharedRwLockReadGuard</a><br>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylesheet_set.rs.html#426-436' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Appends a new stylesheet to the current set.</p>
+
+<p>No device implies not computing invalidations.</p>
+</div><h4 id='method.prepend_stylesheet' class="method"><span id='prepend_stylesheet.v' class='invisible'><code>pub fn <a href='#method.prepend_stylesheet' class='fnname'>prepend_stylesheet</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;device: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="struct" href="../../style/servo/media_queries/struct.Device.html" title="struct style::servo::media_queries::Device">Device</a>&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;sheet: S, <br>&nbsp;&nbsp;&nbsp;&nbsp;guard: &amp;<a class="struct" href="../../style/shared_lock/struct.SharedRwLockReadGuard.html" title="struct style::shared_lock::SharedRwLockReadGuard">SharedRwLockReadGuard</a><br>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylesheet_set.rs.html#439-450' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Prepend a new stylesheet to the current set.</p>
+</div><h4 id='method.insert_stylesheet_before' class="method"><span id='insert_stylesheet_before.v' class='invisible'><code>pub fn <a href='#method.insert_stylesheet_before' class='fnname'>insert_stylesheet_before</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;device: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="struct" href="../../style/servo/media_queries/struct.Device.html" title="struct style::servo::media_queries::Device">Device</a>&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;sheet: S, <br>&nbsp;&nbsp;&nbsp;&nbsp;before_sheet: S, <br>&nbsp;&nbsp;&nbsp;&nbsp;guard: &amp;<a class="struct" href="../../style/shared_lock/struct.SharedRwLockReadGuard.html" title="struct style::shared_lock::SharedRwLockReadGuard">SharedRwLockReadGuard</a><br>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylesheet_set.rs.html#453-467' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Insert a given stylesheet before another stylesheet in the document.</p>
+</div><h4 id='method.remove_stylesheet' class="method"><span id='remove_stylesheet.v' class='invisible'><code>pub fn <a href='#method.remove_stylesheet' class='fnname'>remove_stylesheet</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;device: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="struct" href="../../style/servo/media_queries/struct.Device.html" title="struct style::servo::media_queries::Device">Device</a>&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;sheet: S, <br>&nbsp;&nbsp;&nbsp;&nbsp;guard: &amp;<a class="struct" href="../../style/shared_lock/struct.SharedRwLockReadGuard.html" title="struct style::shared_lock::SharedRwLockReadGuard">SharedRwLockReadGuard</a><br>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylesheet_set.rs.html#470-481' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Remove a given stylesheet from the set.</p>
+</div><h4 id='method.set_author_style_disabled' class="method"><span id='set_author_style_disabled.v' class='invisible'><code>pub fn <a href='#method.set_author_style_disabled' class='fnname'>set_author_style_disabled</a>(&amp;mut self, disabled: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylesheet_set.rs.html#484-492' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Notes that the author style has been disabled for this document.</p>
+</div><h4 id='method.has_changed' class="method"><span id='has_changed.v' class='invisible'><code>pub fn <a href='#method.has_changed' class='fnname'>has_changed</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylesheet_set.rs.html#495-497' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns whether the given set has changed from the last flush.</p>
+</div><h4 id='method.flush' class="method"><span id='flush.v' class='invisible'><code>pub fn <a href='#method.flush' class='fnname'>flush</a>&lt;'a, E&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;'a mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;document_element: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;E&gt;<br>) -&gt; <a class="struct" href="../../style/stylesheet_set/struct.StylesheetFlusher.html" title="struct style::stylesheet_set::StylesheetFlusher">StylesheetFlusher</a>&lt;'a, S&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;E: <a class="trait" href="../../style/dom/trait.TElement.html" title="trait style::dom::TElement">TElement</a>,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylesheet_set.rs.html#501-530' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Flush the current set, unmarking it as dirty, and returns a
+<code>StylesheetFlusher</code> in order to rebuild the stylist.</p>
+</div><h4 id='method.flush_without_invalidation' class="method"><span id='flush_without_invalidation.v' class='invisible'><code>pub fn <a href='#method.flush_without_invalidation' class='fnname'>flush_without_invalidation</a>(&amp;mut self) -&gt; <a class="struct" href="../../style/stylesheets/origin/struct.OriginSet.html" title="struct style::stylesheets::origin::OriginSet">OriginSet</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylesheet_set.rs.html#534-541' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Flush stylesheets, but without running any of the invalidation passes.</p>
+</div><h4 id='method.iter' class="method"><span id='iter.v' class='invisible'><code>pub fn <a href='#method.iter' class='fnname'>iter</a>(&amp;self) -&gt; <a class="struct" href="../../style/stylesheet_set/struct.StylesheetIterator.html" title="struct style::stylesheet_set::StylesheetIterator">StylesheetIterator</a>&lt;S&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylesheet_set.rs.html#544-550' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Return an iterator over the flattened view of all the stylesheets.</p>
+</div><h4 id='method.force_dirty' class="method"><span id='force_dirty.v' class='invisible'><code>pub fn <a href='#method.force_dirty' class='fnname'>force_dirty</a>(&amp;mut self, origins: <a class="struct" href="../../style/stylesheets/origin/struct.OriginSet.html" title="struct style::stylesheets::origin::OriginSet">OriginSet</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylesheet_set.rs.html#554-563' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Mark the stylesheets for the specified origin as dirty, because
+something external may have invalidated it.</p>
+</div></div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-MallocSizeOf' class='impl'><span class='in-band'><code>impl&lt;S&gt; <a class="trait" href="../../malloc_size_of/trait.MallocSizeOf.html" title="trait malloc_size_of::MallocSizeOf">MallocSizeOf</a> for <a class="struct" href="../../style/stylesheet_set/struct.StylesheetSet.html" title="struct style::stylesheet_set::StylesheetSet">StylesheetSet</a>&lt;S&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;S: <a class="trait" href="../../style/stylesheets/trait.StylesheetInDocument.html" title="trait style::stylesheets::StylesheetInDocument">StylesheetInDocument</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a> + 'static,<br>&nbsp;&nbsp;&nbsp;&nbsp;S: <a class="trait" href="../../malloc_size_of/trait.MallocSizeOf.html" title="trait malloc_size_of::MallocSizeOf">MallocSizeOf</a>,&nbsp;</span></code><a href='#impl-MallocSizeOf' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylesheet_set.rs.html#363-1' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.size_of' class="method"><span id='size_of.v' class='invisible'><code>fn <a href='../../malloc_size_of/trait.MallocSizeOf.html#tymethod.size_of' class='fnname'>size_of</a>(&amp;self, ops: &amp;mut <a class="struct" href="../../malloc_size_of/struct.MallocSizeOfOps.html" title="struct malloc_size_of::MallocSizeOfOps">MallocSizeOfOps</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/stylesheet_set.rs.html#363' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Measure the heap usage of all descendant heap-allocated structures, but not the space taken up by the value itself. <a href="../../malloc_size_of/trait.MallocSizeOf.html#tymethod.size_of">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "style";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

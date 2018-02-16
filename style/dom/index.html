@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `dom` mod in crate `style`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, dom">
+
+    <title>style::dom - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc mod">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Module dom</p><div class="block items"><ul><li><a href="#structs">Structs</a></li><li><a href="#traits">Traits</a></li></ul></div><p class='location'><a href='../index.html'>style</a></p><script>window.sidebarCurrent = {name: 'dom', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Module <a href='../index.html'>style</a>::<wbr><a class="mod" href=''>dom</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/style/dom.rs.html#5-877' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p>Types and traits used to access the DOM from style calculation.</p>
+</div><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.DomChildren.html"
+                                  title='struct style::dom::DomChildren'>DomChildren</a></td>
+                           <td class='docblock-short'>
+                                <p>An iterator over the DOM children of a node.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.DomDescendants.html"
+                                  title='struct style::dom::DomDescendants'>DomDescendants</a></td>
+                           <td class='docblock-short'>
+                                <p>An iterator over the DOM descendants of a node in pre-order.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.LayoutIterator.html"
+                                  title='struct style::dom::LayoutIterator'>LayoutIterator</a></td>
+                           <td class='docblock-short'>
+                                <p>A node iterator that only returns node that don&#39;t need layout.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.OpaqueNode.html"
+                                  title='struct style::dom::OpaqueNode'>OpaqueNode</a></td>
+                           <td class='docblock-short'>
+                                <p>An opaque handle to a node, which, unlike UnsafeNode, cannot be transformed
+back into a non-opaque representation. The only safe operation that can be
+performed on this node is to compare it to another opaque handle or to another
+OpaqueNode.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.SendElement.html"
+                                  title='struct style::dom::SendElement'>SendElement</a></td>
+                           <td class='docblock-short'>
+                                <p>Same reason as for the existence of SendNode, SendElement does the proper
+things for a given <code>TElement</code>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.SendNode.html"
+                                  title='struct style::dom::SendNode'>SendNode</a></td>
+                           <td class='docblock-short'>
+                                <p>TNode and TElement aren&#39;t Send because we want to be careful and explicit
+about our parallel traversal. However, there are certain situations
+(including but not limited to the traversal) where we need to send DOM
+objects to other threads.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ShowSubtree.html"
+                                  title='struct style::dom::ShowSubtree'>ShowSubtree</a></td>
+                           <td class='docblock-short'>
+                                <p>Wrapper to output the subtree rather than the single node when formatting
+for Debug.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ShowSubtreeData.html"
+                                  title='struct style::dom::ShowSubtreeData'>ShowSubtreeData</a></td>
+                           <td class='docblock-short'>
+                                <p>Wrapper to output the subtree along with the ElementData when formatting
+for Debug.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ShowSubtreeDataAndPrimaryValues.html"
+                                  title='struct style::dom::ShowSubtreeDataAndPrimaryValues'>ShowSubtreeDataAndPrimaryValues</a></td>
+                           <td class='docblock-short'>
+                                <p>Wrapper to output the subtree along with the ElementData and primary
+ComputedValues when formatting for Debug. This is extremely verbose.</p>
+                           </td>
+                       </tr></table><h2 id='traits' class='section-header'><a href="#traits">Traits</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.NodeInfo.html"
+                                  title='trait style::dom::NodeInfo'>NodeInfo</a></td>
+                           <td class='docblock-short'>
+                                <p>Simple trait to provide basic information about the type of an element.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.TDocument.html"
+                                  title='trait style::dom::TDocument'>TDocument</a></td>
+                           <td class='docblock-short'>
+                                <p>The <code>TDocument</code> trait, to represent a document node.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.TElement.html"
+                                  title='trait style::dom::TElement'>TElement</a></td>
+                           <td class='docblock-short'>
+                                <p>The element trait, the main abstraction the style crate acts over.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.TNode.html"
+                                  title='trait style::dom::TNode'>TNode</a></td>
+                           <td class='docblock-short'>
+                                <p>The <code>TNode</code> trait. This is the main generic trait over which the style
+system can be implemented.</p>
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "style";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

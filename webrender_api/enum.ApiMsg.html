@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `ApiMsg` enum in crate `webrender_api`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, ApiMsg">
+
+    <title>webrender_api::ApiMsg - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc enum">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Enum ApiMsg</p><div class="block items"><a class="sidebar-title" href="#variants">Variants</a><div class="sidebar-links"><a href="#variant.UpdateResources">UpdateResources</a><a href="#variant.GetGlyphDimensions">GetGlyphDimensions</a><a href="#variant.GetGlyphIndices">GetGlyphIndices</a><a href="#variant.CloneApi">CloneApi</a><a href="#variant.AddDocument">AddDocument</a><a href="#variant.UpdateDocument">UpdateDocument</a><a href="#variant.DeleteDocument">DeleteDocument</a><a href="#variant.ExternalEvent">ExternalEvent</a><a href="#variant.ClearNamespace">ClearNamespace</a><a href="#variant.MemoryPressure">MemoryPressure</a><a href="#variant.DebugCommand">DebugCommand</a><a href="#variant.ShutDown">ShutDown</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Clone">Clone</a><a href="#impl-Debug">Debug</a></div></div><p class='location'><a href='index.html'>webrender_api</a></p><script>window.sidebarCurrent = {name: 'ApiMsg', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Enum <a href='index.html'>webrender_api</a>::<wbr><a class="enum" href=''>ApiMsg</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/webrender_api/api.rs.html#507-537' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum ApiMsg {
+    UpdateResources(<a class="struct" href="../webrender_api/struct.ResourceUpdates.html" title="struct webrender_api::ResourceUpdates">ResourceUpdates</a>),
+    GetGlyphDimensions(<a class="struct" href="../webrender_api/struct.FontInstanceKey.html" title="struct webrender_api::FontInstanceKey">FontInstanceKey</a>,&nbsp;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="struct" href="../webrender_api/struct.GlyphKey.html" title="struct webrender_api::GlyphKey">GlyphKey</a>&gt;,&nbsp;<a class="struct" href="../webrender_api/channel/struct.MsgSender.html" title="struct webrender_api::channel::MsgSender">MsgSender</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../webrender_api/struct.GlyphDimensions.html" title="struct webrender_api::GlyphDimensions">GlyphDimensions</a>&gt;&gt;&gt;),
+    GetGlyphIndices(<a class="struct" href="../webrender_api/struct.FontKey.html" title="struct webrender_api::FontKey">FontKey</a>,&nbsp;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>,&nbsp;<a class="struct" href="../webrender_api/channel/struct.MsgSender.html" title="struct webrender_api::channel::MsgSender">MsgSender</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>&gt;&gt;&gt;),
+    CloneApi(<a class="struct" href="../webrender_api/channel/struct.MsgSender.html" title="struct webrender_api::channel::MsgSender">MsgSender</a>&lt;<a class="struct" href="../webrender_api/struct.IdNamespace.html" title="struct webrender_api::IdNamespace">IdNamespace</a>&gt;),
+    AddDocument(<a class="struct" href="../webrender_api/struct.DocumentId.html" title="struct webrender_api::DocumentId">DocumentId</a>,&nbsp;<a class="type" href="../webrender_api/type.DeviceUintSize.html" title="type webrender_api::DeviceUintSize">DeviceUintSize</a>,&nbsp;<a class="type" href="../webrender_api/type.DocumentLayer.html" title="type webrender_api::DocumentLayer">DocumentLayer</a>),
+    UpdateDocument(<a class="struct" href="../webrender_api/struct.DocumentId.html" title="struct webrender_api::DocumentId">DocumentId</a>,&nbsp;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="enum" href="../webrender_api/enum.DocumentMsg.html" title="enum webrender_api::DocumentMsg">DocumentMsg</a>&gt;),
+    DeleteDocument(<a class="struct" href="../webrender_api/struct.DocumentId.html" title="struct webrender_api::DocumentId">DocumentId</a>),
+    ExternalEvent(<a class="struct" href="../webrender_api/struct.ExternalEvent.html" title="struct webrender_api::ExternalEvent">ExternalEvent</a>),
+    ClearNamespace(<a class="struct" href="../webrender_api/struct.IdNamespace.html" title="struct webrender_api::IdNamespace">IdNamespace</a>),
+    MemoryPressure,
+    DebugCommand(<a class="enum" href="../webrender_api/enum.DebugCommand.html" title="enum webrender_api::DebugCommand">DebugCommand</a>),
+    ShutDown,
+}</pre><h2 id='variants' class='variants small-section-header'>
+                   Variants<a href='#variants' class='anchor'></a></h2>
+<span id="variant.UpdateResources" class="variant small-section-header"><a href="#variant.UpdateResources" class="anchor field"></a><span id='UpdateResources.v' class='invisible'><code>UpdateResources(<a class="struct" href="../webrender_api/struct.ResourceUpdates.html" title="struct webrender_api::ResourceUpdates">ResourceUpdates</a>)</code></span></span><div class='docblock'><p>Add/remove/update images and fonts.</p>
+</div><span id="variant.GetGlyphDimensions" class="variant small-section-header"><a href="#variant.GetGlyphDimensions" class="anchor field"></a><span id='GetGlyphDimensions.v' class='invisible'><code>GetGlyphDimensions(<a class="struct" href="../webrender_api/struct.FontInstanceKey.html" title="struct webrender_api::FontInstanceKey">FontInstanceKey</a>,&nbsp;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="struct" href="../webrender_api/struct.GlyphKey.html" title="struct webrender_api::GlyphKey">GlyphKey</a>&gt;,&nbsp;<a class="struct" href="../webrender_api/channel/struct.MsgSender.html" title="struct webrender_api::channel::MsgSender">MsgSender</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../webrender_api/struct.GlyphDimensions.html" title="struct webrender_api::GlyphDimensions">GlyphDimensions</a>&gt;&gt;&gt;)</code></span></span><div class='docblock'><p>Gets the glyph dimensions</p>
+</div><span id="variant.GetGlyphIndices" class="variant small-section-header"><a href="#variant.GetGlyphIndices" class="anchor field"></a><span id='GetGlyphIndices.v' class='invisible'><code>GetGlyphIndices(<a class="struct" href="../webrender_api/struct.FontKey.html" title="struct webrender_api::FontKey">FontKey</a>,&nbsp;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>,&nbsp;<a class="struct" href="../webrender_api/channel/struct.MsgSender.html" title="struct webrender_api::channel::MsgSender">MsgSender</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>&gt;&gt;&gt;)</code></span></span><div class='docblock'><p>Gets the glyph indices from a string</p>
+</div><span id="variant.CloneApi" class="variant small-section-header"><a href="#variant.CloneApi" class="anchor field"></a><span id='CloneApi.v' class='invisible'><code>CloneApi(<a class="struct" href="../webrender_api/channel/struct.MsgSender.html" title="struct webrender_api::channel::MsgSender">MsgSender</a>&lt;<a class="struct" href="../webrender_api/struct.IdNamespace.html" title="struct webrender_api::IdNamespace">IdNamespace</a>&gt;)</code></span></span><div class='docblock'><p>Adds a new document namespace.</p>
+</div><span id="variant.AddDocument" class="variant small-section-header"><a href="#variant.AddDocument" class="anchor field"></a><span id='AddDocument.v' class='invisible'><code>AddDocument(<a class="struct" href="../webrender_api/struct.DocumentId.html" title="struct webrender_api::DocumentId">DocumentId</a>,&nbsp;<a class="type" href="../webrender_api/type.DeviceUintSize.html" title="type webrender_api::DeviceUintSize">DeviceUintSize</a>,&nbsp;<a class="type" href="../webrender_api/type.DocumentLayer.html" title="type webrender_api::DocumentLayer">DocumentLayer</a>)</code></span></span><div class='docblock'><p>Adds a new document with given initial size.</p>
+</div><span id="variant.UpdateDocument" class="variant small-section-header"><a href="#variant.UpdateDocument" class="anchor field"></a><span id='UpdateDocument.v' class='invisible'><code>UpdateDocument(<a class="struct" href="../webrender_api/struct.DocumentId.html" title="struct webrender_api::DocumentId">DocumentId</a>,&nbsp;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="enum" href="../webrender_api/enum.DocumentMsg.html" title="enum webrender_api::DocumentMsg">DocumentMsg</a>&gt;)</code></span></span><div class='docblock'><p>A message targeted at a particular document.</p>
+</div><span id="variant.DeleteDocument" class="variant small-section-header"><a href="#variant.DeleteDocument" class="anchor field"></a><span id='DeleteDocument.v' class='invisible'><code>DeleteDocument(<a class="struct" href="../webrender_api/struct.DocumentId.html" title="struct webrender_api::DocumentId">DocumentId</a>)</code></span></span><div class='docblock'><p>Deletes an existing document.</p>
+</div><span id="variant.ExternalEvent" class="variant small-section-header"><a href="#variant.ExternalEvent" class="anchor field"></a><span id='ExternalEvent.v' class='invisible'><code>ExternalEvent(<a class="struct" href="../webrender_api/struct.ExternalEvent.html" title="struct webrender_api::ExternalEvent">ExternalEvent</a>)</code></span></span><div class='docblock'><p>An opaque handle that must be passed to the render notifier. It is used by Gecko
+to forward gecko-specific messages to the render thread preserving the ordering
+within the other messages.</p>
+</div><span id="variant.ClearNamespace" class="variant small-section-header"><a href="#variant.ClearNamespace" class="anchor field"></a><span id='ClearNamespace.v' class='invisible'><code>ClearNamespace(<a class="struct" href="../webrender_api/struct.IdNamespace.html" title="struct webrender_api::IdNamespace">IdNamespace</a>)</code></span></span><div class='docblock'><p>Removes all resources associated with a namespace.</p>
+</div><span id="variant.MemoryPressure" class="variant small-section-header"><a href="#variant.MemoryPressure" class="anchor field"></a><span id='MemoryPressure.v' class='invisible'><code>MemoryPressure</code></span></span><div class='docblock'><p>Flush from the caches anything that isn&#39;t necessary, to free some memory.</p>
+</div><span id="variant.DebugCommand" class="variant small-section-header"><a href="#variant.DebugCommand" class="anchor field"></a><span id='DebugCommand.v' class='invisible'><code>DebugCommand(<a class="enum" href="../webrender_api/enum.DebugCommand.html" title="enum webrender_api::DebugCommand">DebugCommand</a>)</code></span></span><div class='docblock'><p>Change debugging options.</p>
+</div><span id="variant.ShutDown" class="variant small-section-header"><a href="#variant.ShutDown" class="anchor field"></a><span id='ShutDown.v' class='invisible'><code>ShutDown</code></span></span>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Clone' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="enum" href="../webrender_api/enum.ApiMsg.html" title="enum webrender_api::ApiMsg">ApiMsg</a></code><a href='#impl-Clone' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/webrender_api/api.rs.html#506' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="enum" href="../webrender_api/enum.ApiMsg.html" title="enum webrender_api::ApiMsg">ApiMsg</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/webrender_api/api.rs.html#506' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="enum" href="../webrender_api/enum.ApiMsg.html" title="enum webrender_api::ApiMsg">ApiMsg</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/webrender_api/api.rs.html#539-556' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, f: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/webrender_api/api.rs.html#540-555' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "webrender_api";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `PseudoElement` enum in crate `style`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, PseudoElement">
+
+    <title>style::servo::selector_parser::PseudoElement - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc enum">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Enum PseudoElement</p><div class="block items"><a class="sidebar-title" href="#variants">Variants</a><div class="sidebar-links"><a href="#variant.After">After</a><a href="#variant.Before">Before</a><a href="#variant.Selection">Selection</a><a href="#variant.DetailsSummary">DetailsSummary</a><a href="#variant.DetailsContent">DetailsContent</a><a href="#variant.ServoText">ServoText</a><a href="#variant.ServoInputText">ServoInputText</a><a href="#variant.ServoTableWrapper">ServoTableWrapper</a><a href="#variant.ServoAnonymousTableWrapper">ServoAnonymousTableWrapper</a><a href="#variant.ServoAnonymousTable">ServoAnonymousTable</a><a href="#variant.ServoAnonymousTableRow">ServoAnonymousTableRow</a><a href="#variant.ServoAnonymousTableCell">ServoAnonymousTableCell</a><a href="#variant.ServoAnonymousBlock">ServoAnonymousBlock</a><a href="#variant.ServoInlineBlockWrapper">ServoInlineBlockWrapper</a><a href="#variant.ServoInlineAbsolute">ServoInlineAbsolute</a></div><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.eager_index">eager_index</a><a href="#method.index">index</a><a href="#method.pseudo_none_array">pseudo_none_array</a><a href="#method.from_eager_index">from_eager_index</a><a href="#method.is_before_or_after">is_before_or_after</a><a href="#method.is_before">is_before</a><a href="#method.is_after">is_after</a><a href="#method.is_first_letter">is_first_letter</a><a href="#method.is_first_line">is_first_line</a><a href="#method.is_eager">is_eager</a><a href="#method.is_lazy">is_lazy</a><a href="#method.is_anon_box">is_anon_box</a><a href="#method.skip_item_based_display_fixup">skip_item_based_display_fixup</a><a href="#method.is_precomputed">is_precomputed</a><a href="#method.cascade_type">cascade_type</a><a href="#method.canonical">canonical</a><a href="#method.pseudo_info">pseudo_info</a><a href="#method.property_restriction">property_restriction</a><a href="#method.should_exist">should_exist</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Clone">Clone</a><a href="#impl-Debug">Debug</a><a href="#impl-Eq">Eq</a><a href="#impl-Hash">Hash</a><a href="#impl-PartialEq">PartialEq</a><a href="#impl-MallocSizeOf">MallocSizeOf</a><a href="#impl-PseudoElement">PseudoElement</a><a href="#impl-ToCss">ToCss</a></div></div><p class='location'><a href='../../index.html'>style</a>::<wbr><a href='../index.html'>servo</a>::<wbr><a href='index.html'>selector_parser</a></p><script>window.sidebarCurrent = {name: 'PseudoElement', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../../index.html'>style</a>::<wbr><a href='../index.html'>servo</a>::<wbr><a href='index.html'>selector_parser</a>::<wbr><a class="enum" href=''>PseudoElement</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#35-62' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'><div class="docblock attributes">#[repr(usize)]
+</div>pub enum PseudoElement {
+    After,
+    Before,
+    Selection,
+    DetailsSummary,
+    DetailsContent,
+    ServoText,
+    ServoInputText,
+    ServoTableWrapper,
+    ServoAnonymousTableWrapper,
+    ServoAnonymousTable,
+    ServoAnonymousTableRow,
+    ServoAnonymousTableCell,
+    ServoAnonymousBlock,
+    ServoInlineBlockWrapper,
+    ServoInlineAbsolute,
+}</pre><div class='docblock'><p>A pseudo-element, both public and private.</p>
+
+<p>NB: If you add to this list, be sure to update <code>each_simple_pseudo_element</code> too.</p>
+</div><h2 id='variants' class='variants small-section-header'>
+                   Variants<a href='#variants' class='anchor'></a></h2>
+<span id="variant.After" class="variant small-section-header"><a href="#variant.After" class="anchor field"></a><span id='After.v' class='invisible'><code>After</code></span></span><span id="variant.Before" class="variant small-section-header"><a href="#variant.Before" class="anchor field"></a><span id='Before.v' class='invisible'><code>Before</code></span></span><span id="variant.Selection" class="variant small-section-header"><a href="#variant.Selection" class="anchor field"></a><span id='Selection.v' class='invisible'><code>Selection</code></span></span><span id="variant.DetailsSummary" class="variant small-section-header"><a href="#variant.DetailsSummary" class="anchor field"></a><span id='DetailsSummary.v' class='invisible'><code>DetailsSummary</code></span></span><span id="variant.DetailsContent" class="variant small-section-header"><a href="#variant.DetailsContent" class="anchor field"></a><span id='DetailsContent.v' class='invisible'><code>DetailsContent</code></span></span><span id="variant.ServoText" class="variant small-section-header"><a href="#variant.ServoText" class="anchor field"></a><span id='ServoText.v' class='invisible'><code>ServoText</code></span></span><span id="variant.ServoInputText" class="variant small-section-header"><a href="#variant.ServoInputText" class="anchor field"></a><span id='ServoInputText.v' class='invisible'><code>ServoInputText</code></span></span><span id="variant.ServoTableWrapper" class="variant small-section-header"><a href="#variant.ServoTableWrapper" class="anchor field"></a><span id='ServoTableWrapper.v' class='invisible'><code>ServoTableWrapper</code></span></span><span id="variant.ServoAnonymousTableWrapper" class="variant small-section-header"><a href="#variant.ServoAnonymousTableWrapper" class="anchor field"></a><span id='ServoAnonymousTableWrapper.v' class='invisible'><code>ServoAnonymousTableWrapper</code></span></span><span id="variant.ServoAnonymousTable" class="variant small-section-header"><a href="#variant.ServoAnonymousTable" class="anchor field"></a><span id='ServoAnonymousTable.v' class='invisible'><code>ServoAnonymousTable</code></span></span><span id="variant.ServoAnonymousTableRow" class="variant small-section-header"><a href="#variant.ServoAnonymousTableRow" class="anchor field"></a><span id='ServoAnonymousTableRow.v' class='invisible'><code>ServoAnonymousTableRow</code></span></span><span id="variant.ServoAnonymousTableCell" class="variant small-section-header"><a href="#variant.ServoAnonymousTableCell" class="anchor field"></a><span id='ServoAnonymousTableCell.v' class='invisible'><code>ServoAnonymousTableCell</code></span></span><span id="variant.ServoAnonymousBlock" class="variant small-section-header"><a href="#variant.ServoAnonymousBlock" class="anchor field"></a><span id='ServoAnonymousBlock.v' class='invisible'><code>ServoAnonymousBlock</code></span></span><span id="variant.ServoInlineBlockWrapper" class="variant small-section-header"><a href="#variant.ServoInlineBlockWrapper" class="anchor field"></a><span id='ServoInlineBlockWrapper.v' class='invisible'><code>ServoInlineBlockWrapper</code></span></span><span id="variant.ServoInlineAbsolute" class="variant small-section-header"><a href="#variant.ServoInlineAbsolute" class="anchor field"></a><span id='ServoInlineAbsolute.v' class='invisible'><code>ServoInlineAbsolute</code></span></span>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="enum" href="../../../style/servo/selector_parser/enum.PseudoElement.html" title="enum style::servo::selector_parser::PseudoElement">PseudoElement</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#101-243' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eager_index' class="method"><span id='eager_index.v' class='invisible'><code>pub fn <a href='#method.eager_index' class='fnname'>eager_index</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#104-107' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Gets the canonical index of this eagerly-cascaded pseudo-element.</p>
+</div><h4 id='method.index' class="method"><span id='index.v' class='invisible'><code>pub fn <a href='#method.index' class='fnname'>index</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#111-113' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>An index for this pseudo-element to be indexed in an enumerated array.</p>
+</div><h4 id='method.pseudo_none_array' class="method"><span id='pseudo_none_array.v' class='invisible'><code>pub fn <a href='#method.pseudo_none_array' class='fnname'>pseudo_none_array</a>&lt;T&gt;() -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;T&gt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 15]</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#116-118' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>An array of <code>None</code>, one per pseudo-element.</p>
+</div><h4 id='method.from_eager_index' class="method"><span id='from_eager_index.v' class='invisible'><code>pub fn <a href='#method.from_eager_index' class='fnname'>from_eager_index</a>(i: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#122-127' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Creates a pseudo-element from an eager index.</p>
+</div><h4 id='method.is_before_or_after' class="method"><span id='is_before_or_after.v' class='invisible'><code>pub fn <a href='#method.is_before_or_after' class='fnname'>is_before_or_after</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#131-133' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Whether the current pseudo element is ::before or ::after.</p>
+</div><h4 id='method.is_before' class="method"><span id='is_before.v' class='invisible'><code>pub fn <a href='#method.is_before' class='fnname'>is_before</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#137-139' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Whether this pseudo-element is the ::before pseudo.</p>
+</div><h4 id='method.is_after' class="method"><span id='is_after.v' class='invisible'><code>pub fn <a href='#method.is_after' class='fnname'>is_after</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#143-145' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Whether this pseudo-element is the ::after pseudo.</p>
+</div><h4 id='method.is_first_letter' class="method"><span id='is_first_letter.v' class='invisible'><code>pub fn <a href='#method.is_first_letter' class='fnname'>is_first_letter</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#149-151' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Whether the current pseudo element is :first-letter</p>
+</div><h4 id='method.is_first_line' class="method"><span id='is_first_line.v' class='invisible'><code>pub fn <a href='#method.is_first_line' class='fnname'>is_first_line</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#155-157' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Whether the current pseudo element is :first-line</p>
+</div><h4 id='method.is_eager' class="method"><span id='is_eager.v' class='invisible'><code>pub fn <a href='#method.is_eager' class='fnname'>is_eager</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#161-163' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Whether this pseudo-element is eagerly-cascaded.</p>
+</div><h4 id='method.is_lazy' class="method"><span id='is_lazy.v' class='invisible'><code>pub fn <a href='#method.is_lazy' class='fnname'>is_lazy</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#167-169' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Whether this pseudo-element is lazily-cascaded.</p>
+</div><h4 id='method.is_anon_box' class="method"><span id='is_anon_box.v' class='invisible'><code>pub fn <a href='#method.is_anon_box' class='fnname'>is_anon_box</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#172-174' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Whether this pseudo-element is for an anonymous box.</p>
+</div><h4 id='method.skip_item_based_display_fixup' class="method"><span id='skip_item_based_display_fixup.v' class='invisible'><code>pub fn <a href='#method.skip_item_based_display_fixup' class='fnname'>skip_item_based_display_fixup</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#179-181' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Whether this pseudo-element skips flex/grid container
+display-based fixup.</p>
+</div><h4 id='method.is_precomputed' class="method"><span id='is_precomputed.v' class='invisible'><code>pub fn <a href='#method.is_precomputed' class='fnname'>is_precomputed</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#185-187' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Whether this pseudo-element is precomputed.</p>
+</div><h4 id='method.cascade_type' class="method"><span id='cascade_type.v' class='invisible'><code>pub fn <a href='#method.cascade_type' class='fnname'>cascade_type</a>(&amp;self) -&gt; <a class="enum" href="../../../style/selector_parser/enum.PseudoElementCascadeType.html" title="enum style::selector_parser::PseudoElementCascadeType">PseudoElementCascadeType</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#195-213' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns which kind of cascade type has this pseudo.</p>
+
+<p>For more info on cascade types, see docs/components/style.md</p>
+
+<p>Note: Keep this in sync with EAGER_PSEUDO_COUNT.</p>
+</div><h4 id='method.canonical' class="method"><span id='canonical.v' class='invisible'><code>pub fn <a href='#method.canonical' class='fnname'>canonical</a>(&amp;self) -&gt; <a class="enum" href="../../../style/servo/selector_parser/enum.PseudoElement.html" title="enum style::servo::selector_parser::PseudoElement">PseudoElement</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#217-219' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Covert non-canonical pseudo-element to canonical one, and keep a
+canonical one as it is.</p>
+</div><h4 id='method.pseudo_info' class="method"><span id='pseudo_info.v' class='invisible'><code>pub fn <a href='#method.pseudo_info' class='fnname'>pseudo_info</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#222' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Stub, only Gecko needs this</p>
+</div><h4 id='method.property_restriction' class="method"><span id='property_restriction.v' class='invisible'><code>pub fn <a href='#method.property_restriction' class='fnname'>property_restriction</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../../../style/properties/struct.PropertyFlags.html" title="struct style::properties::PropertyFlags">PropertyFlags</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#226-228' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Property flag that properties must have to apply to this pseudo-element.</p>
+</div><h4 id='method.should_exist' class="method"><span id='should_exist.v' class='invisible'><code>pub fn <a href='#method.should_exist' class='fnname'>should_exist</a>(&amp;self, style: &amp;<a class="struct" href="../../../style/properties/struct.ComputedValues.html" title="struct style::properties::ComputedValues">ComputedValues</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#232-242' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Whether this pseudo-element should actually exist if it has
+the given styles.</p>
+</div></div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Clone' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="enum" href="../../../style/servo/selector_parser/enum.PseudoElement.html" title="enum style::servo::selector_parser::PseudoElement">PseudoElement</a></code><a href='#impl-Clone' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#31' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="enum" href="../../../style/servo/selector_parser/enum.PseudoElement.html" title="enum style::servo::selector_parser::PseudoElement">PseudoElement</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#31' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="enum" href="../../../style/servo/selector_parser/enum.PseudoElement.html" title="enum style::servo::selector_parser::PseudoElement">PseudoElement</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#31' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#31' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div><h3 id='impl-Eq' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html" title="trait core::cmp::Eq">Eq</a> for <a class="enum" href="../../../style/servo/selector_parser/enum.PseudoElement.html" title="enum style::servo::selector_parser::PseudoElement">PseudoElement</a></code><a href='#impl-Eq' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#31' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 id='impl-Hash' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html" title="trait core::hash::Hash">Hash</a> for <a class="enum" href="../../../style/servo/selector_parser/enum.PseudoElement.html" title="enum style::servo::selector_parser::PseudoElement">PseudoElement</a></code><a href='#impl-Hash' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#31' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.hash' class="method"><span id='hash.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#tymethod.hash' class='fnname'>hash</a>&lt;__H:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/hash/trait.Hasher.html" title="trait core::hash::Hasher">Hasher</a>&gt;(&amp;self, __arg_0: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>__H)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#31' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Feeds this value into the given [<code>Hasher</code>]. <a href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#tymethod.hash">Read more</a></p>
+</div><h4 id='method.hash_slice' class="method"><span id='hash_slice.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#method.hash_slice' class='fnname'>hash_slice</a>&lt;H&gt;(data: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[Self]</a>, state: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>H) <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;H: <a class="trait" href="https://doc.rust-lang.org/nightly/core/hash/trait.Hasher.html" title="trait core::hash::Hasher">Hasher</a>,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.3.0'>1.3.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/hash/mod.rs.html#202-208' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Feeds a slice of this type into the given [<code>Hasher</code>]. <a href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#method.hash_slice">Read more</a></p>
+</div></div><h3 id='impl-PartialEq' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a> for <a class="enum" href="../../../style/servo/selector_parser/enum.PseudoElement.html" title="enum style::servo::selector_parser::PseudoElement">PseudoElement</a></code><a href='#impl-PartialEq' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#31' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class="method"><span id='eq.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class="enum" href="../../../style/servo/selector_parser/enum.PseudoElement.html" title="enum style::servo::selector_parser::PseudoElement">PseudoElement</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#31' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class="method"><span id='ne.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, other: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Rhs) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/cmp.rs.html#121' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 id='impl-MallocSizeOf' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../../malloc_size_of/trait.MallocSizeOf.html" title="trait malloc_size_of::MallocSizeOf">MallocSizeOf</a> for <a class="enum" href="../../../style/servo/selector_parser/enum.PseudoElement.html" title="enum style::servo::selector_parser::PseudoElement">PseudoElement</a></code><a href='#impl-MallocSizeOf' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#32-1' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.size_of' class="method"><span id='size_of.v' class='invisible'><code>fn <a href='../../../malloc_size_of/trait.MallocSizeOf.html#tymethod.size_of' class='fnname'>size_of</a>(&amp;self, ops: &amp;mut <a class="struct" href="../../../malloc_size_of/struct.MallocSizeOfOps.html" title="struct malloc_size_of::MallocSizeOfOps">MallocSizeOfOps</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#32' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Measure the heap usage of all descendant heap-allocated structures, but not the space taken up by the value itself. <a href="../../../malloc_size_of/trait.MallocSizeOf.html#tymethod.size_of">Read more</a></p>
+</div></div><h3 id='impl-PseudoElement' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../../selectors/parser/trait.PseudoElement.html" title="trait selectors::parser::PseudoElement">PseudoElement</a> for <a class="enum" href="../../../style/servo/selector_parser/enum.PseudoElement.html" title="enum style::servo::selector_parser::PseudoElement">PseudoElement</a></code><a href='#impl-PseudoElement' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#67-73' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Impl' class="type"><span id='Impl.t' class='invisible'><code>type <a href='../../../selectors/parser/trait.PseudoElement.html#associatedtype.Impl' class="type">Impl</a> = <a class="struct" href="../../../style/servo/selector_parser/struct.SelectorImpl.html" title="struct style::servo::selector_parser::SelectorImpl">SelectorImpl</a></code></span></h4>
+<div class='docblock'><p>The <code>SelectorImpl</code> this pseudo-element is used for.</p>
+</div><h4 id='method.supports_pseudo_class' class="method"><span id='supports_pseudo_class.v' class='invisible'><code>fn <a href='../../../selectors/parser/trait.PseudoElement.html#method.supports_pseudo_class' class='fnname'>supports_pseudo_class</a>(&amp;self, _: &amp;<a class="enum" href="../../../style/servo/selector_parser/enum.NonTSPseudoClass.html" title="enum style::servo::selector_parser::NonTSPseudoClass">NonTSPseudoClass</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#70-72' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Whether the pseudo-element supports a given state selector to the right of it. <a href="../../../selectors/parser/trait.PseudoElement.html#method.supports_pseudo_class">Read more</a></p>
+</div></div><h3 id='impl-ToCss' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../../cssparser/serializer/trait.ToCss.html" title="trait cssparser::serializer::ToCss">ToCss</a> for <a class="enum" href="../../../style/servo/selector_parser/enum.PseudoElement.html" title="enum style::servo::selector_parser::PseudoElement">PseudoElement</a></code><a href='#impl-ToCss' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#75-96' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.to_css' class="method"><span id='to_css.v' class='invisible'><code>fn <a href='../../../cssparser/serializer/trait.ToCss.html#tymethod.to_css' class='fnname'>to_css</a>&lt;W&gt;(&amp;self, dest: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>W) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a> <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;W: <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Write.html" title="trait core::fmt::Write">Write</a>,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#76-95' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Serialize <code>self</code> in CSS syntax, writing to <code>dest</code>.</p>
+</div><h4 id='method.to_css_string' class="method"><span id='to_css_string.v' class='invisible'><code>fn <a href='../../../cssparser/serializer/trait.ToCss.html#method.to_css_string' class='fnname'>to_css_string</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/cssparser/serializer.rs.html#24-28' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Serialize <code>self</code> in CSS syntax and return a string. <a href="../../../cssparser/serializer/trait.ToCss.html#method.to_css_string">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "style";
+    </script>
+    <script src="../../../main.js"></script>
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

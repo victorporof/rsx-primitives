@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `FontError` enum in crate `rsx_fonts`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, FontError">
+
+    <title>rsx_fonts::error::FontError - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc enum">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Enum FontError</p><div class="block items"><a class="sidebar-title" href="#variants">Variants</a><div class="sidebar-links"><a href="#variant.FTError">FTError</a><a href="#variant.IOError">IOError</a><a href="#variant.Utf8Error">Utf8Error</a><a href="#variant.DataUriDecodeError">DataUriDecodeError</a><a href="#variant.FaceAlreadyAdded">FaceAlreadyAdded</a><a href="#variant.FontInstanceAlreadyAdded">FontInstanceAlreadyAdded</a><a href="#variant.FaceNotFound">FaceNotFound</a><a href="#variant.FaceNotLoaded">FaceNotLoaded</a><a href="#variant.FaceFamilyNameMissing">FaceFamilyNameMissing</a><a href="#variant.FaceSizeMissing">FaceSizeMissing</a><a href="#variant.FaceGlyphMissing">FaceGlyphMissing</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Debug">Debug</a><a href="#impl-From%3CFT_Error%3E">From&lt;FT_Error&gt;</a><a href="#impl-From%3CError%3E">From&lt;Error&gt;</a><a href="#impl-From%3CUtf8Error%3E">From&lt;Utf8Error&gt;</a></div></div><p class='location'><a href='../index.html'>rsx_fonts</a>::<wbr><a href='index.html'>error</a></p><script>window.sidebarCurrent = {name: 'FontError', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../index.html'>rsx_fonts</a>::<wbr><a href='index.html'>error</a>::<wbr><a class="enum" href=''>FontError</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/rsx_fonts/error.rs.html#21-33' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum FontError {
+    FTError(<a class="struct" href="../../freetype/struct.FT_Error.html" title="struct freetype::FT_Error">FT_Error</a>),
+    IOError(<a class="struct" href="https://doc.rust-lang.org/nightly/std/io/error/struct.Error.html" title="struct std::io::error::Error">Error</a>),
+    Utf8Error(<a class="struct" href="https://doc.rust-lang.org/nightly/core/str/struct.Utf8Error.html" title="struct core::str::Utf8Error">Utf8Error</a>),
+    DataUriDecodeError,
+    FaceAlreadyAdded,
+    FontInstanceAlreadyAdded,
+    FaceNotFound,
+    FaceNotLoaded,
+    FaceFamilyNameMissing,
+    FaceSizeMissing,
+    FaceGlyphMissing,
+}</pre><h2 id='variants' class='variants small-section-header'>
+                   Variants<a href='#variants' class='anchor'></a></h2>
+<span id="variant.FTError" class="variant small-section-header"><a href="#variant.FTError" class="anchor field"></a><span id='FTError.v' class='invisible'><code>FTError(<a class="struct" href="../../freetype/struct.FT_Error.html" title="struct freetype::FT_Error">FT_Error</a>)</code></span></span><span id="variant.IOError" class="variant small-section-header"><a href="#variant.IOError" class="anchor field"></a><span id='IOError.v' class='invisible'><code>IOError(<a class="struct" href="https://doc.rust-lang.org/nightly/std/io/error/struct.Error.html" title="struct std::io::error::Error">Error</a>)</code></span></span><span id="variant.Utf8Error" class="variant small-section-header"><a href="#variant.Utf8Error" class="anchor field"></a><span id='Utf8Error.v' class='invisible'><code>Utf8Error(<a class="struct" href="https://doc.rust-lang.org/nightly/core/str/struct.Utf8Error.html" title="struct core::str::Utf8Error">Utf8Error</a>)</code></span></span><span id="variant.DataUriDecodeError" class="variant small-section-header"><a href="#variant.DataUriDecodeError" class="anchor field"></a><span id='DataUriDecodeError.v' class='invisible'><code>DataUriDecodeError</code></span></span><span id="variant.FaceAlreadyAdded" class="variant small-section-header"><a href="#variant.FaceAlreadyAdded" class="anchor field"></a><span id='FaceAlreadyAdded.v' class='invisible'><code>FaceAlreadyAdded</code></span></span><span id="variant.FontInstanceAlreadyAdded" class="variant small-section-header"><a href="#variant.FontInstanceAlreadyAdded" class="anchor field"></a><span id='FontInstanceAlreadyAdded.v' class='invisible'><code>FontInstanceAlreadyAdded</code></span></span><span id="variant.FaceNotFound" class="variant small-section-header"><a href="#variant.FaceNotFound" class="anchor field"></a><span id='FaceNotFound.v' class='invisible'><code>FaceNotFound</code></span></span><span id="variant.FaceNotLoaded" class="variant small-section-header"><a href="#variant.FaceNotLoaded" class="anchor field"></a><span id='FaceNotLoaded.v' class='invisible'><code>FaceNotLoaded</code></span></span><span id="variant.FaceFamilyNameMissing" class="variant small-section-header"><a href="#variant.FaceFamilyNameMissing" class="anchor field"></a><span id='FaceFamilyNameMissing.v' class='invisible'><code>FaceFamilyNameMissing</code></span></span><span id="variant.FaceSizeMissing" class="variant small-section-header"><a href="#variant.FaceSizeMissing" class="anchor field"></a><span id='FaceSizeMissing.v' class='invisible'><code>FaceSizeMissing</code></span></span><span id="variant.FaceGlyphMissing" class="variant small-section-header"><a href="#variant.FaceGlyphMissing" class="anchor field"></a><span id='FaceGlyphMissing.v' class='invisible'><code>FaceGlyphMissing</code></span></span>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="enum" href="../../rsx_fonts/error/enum.FontError.html" title="enum rsx_fonts::error::FontError">FontError</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_fonts/error.rs.html#20' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_fonts/error.rs.html#20' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div><h3 id='impl-From%3CFT_Error%3E' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;<a class="struct" href="../../freetype/struct.FT_Error.html" title="struct freetype::FT_Error">FT_Error</a>&gt; for <a class="enum" href="../../rsx_fonts/error/enum.FontError.html" title="enum rsx_fonts::error::FontError">FontError</a></code><a href='#impl-From%3CFT_Error%3E' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_fonts/error.rs.html#35-39' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from' class="method"><span id='from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from' class='fnname'>from</a>(err: <a class="struct" href="../../freetype/struct.FT_Error.html" title="struct freetype::FT_Error">FT_Error</a>) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_fonts/error.rs.html#36-38' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs the conversion.</p>
+</div></div><h3 id='impl-From%3CError%3E' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/std/io/error/struct.Error.html" title="struct std::io::error::Error">Error</a>&gt; for <a class="enum" href="../../rsx_fonts/error/enum.FontError.html" title="enum rsx_fonts::error::FontError">FontError</a></code><a href='#impl-From%3CError%3E' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_fonts/error.rs.html#41-45' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from-1' class="method"><span id='from.v-1' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from' class='fnname'>from</a>(err: <a class="struct" href="https://doc.rust-lang.org/nightly/std/io/error/struct.Error.html" title="struct std::io::error::Error">Error</a>) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_fonts/error.rs.html#42-44' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs the conversion.</p>
+</div></div><h3 id='impl-From%3CUtf8Error%3E' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/core/str/struct.Utf8Error.html" title="struct core::str::Utf8Error">Utf8Error</a>&gt; for <a class="enum" href="../../rsx_fonts/error/enum.FontError.html" title="enum rsx_fonts::error::FontError">FontError</a></code><a href='#impl-From%3CUtf8Error%3E' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_fonts/error.rs.html#47-51' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from-2' class="method"><span id='from.v-2' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from' class='fnname'>from</a>(err: <a class="struct" href="https://doc.rust-lang.org/nightly/core/str/struct.Utf8Error.html" title="struct core::str::Utf8Error">Utf8Error</a>) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_fonts/error.rs.html#48-50' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs the conversion.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "rsx_fonts";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

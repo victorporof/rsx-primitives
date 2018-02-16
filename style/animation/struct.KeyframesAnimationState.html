@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `KeyframesAnimationState` struct in crate `style`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, KeyframesAnimationState">
+
+    <title>style::animation::KeyframesAnimationState - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct KeyframesAnimationState</p><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.started_at">started_at</a><a href="#structfield.duration">duration</a><a href="#structfield.delay">delay</a><a href="#structfield.iteration_state">iteration_state</a><a href="#structfield.running_state">running_state</a><a href="#structfield.direction">direction</a><a href="#structfield.current_direction">current_direction</a><a href="#structfield.expired">expired</a><a href="#structfield.cascade_style">cascade_style</a></div><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.tick">tick</a><a href="#method.update_from_other">update_from_other</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Clone">Clone</a><a href="#impl-Debug">Debug</a></div></div><p class='location'><a href='../index.html'>style</a>::<wbr><a href='index.html'>animation</a></p><script>window.sidebarCurrent = {name: 'KeyframesAnimationState', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>style</a>::<wbr><a href='index.html'>animation</a>::<wbr><a class="struct" href=''>KeyframesAnimationState</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/style/animation.rs.html#56-76' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct KeyframesAnimationState {
+    pub started_at: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+    pub duration: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+    pub delay: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+    pub iteration_state: <a class="enum" href="../../style/animation/enum.KeyframesIterationState.html" title="enum style::animation::KeyframesIterationState">KeyframesIterationState</a>,
+    pub running_state: <a class="enum" href="../../style/animation/enum.KeyframesRunningState.html" title="enum style::animation::KeyframesRunningState">KeyframesRunningState</a>,
+    pub direction: <a class="enum" href="../../style/properties/longhands/animation_direction/single_value/computed_value/enum.T.html" title="enum style::properties::longhands::animation_direction::single_value::computed_value::T">AnimationDirection</a>,
+    pub current_direction: <a class="enum" href="../../style/properties/longhands/animation_direction/single_value/computed_value/enum.T.html" title="enum style::properties::longhands::animation_direction::single_value::computed_value::T">AnimationDirection</a>,
+    pub expired: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
+    pub cascade_style: <a class="struct" href="../../style/properties/struct.BuilderArc.html" title="struct style::properties::BuilderArc">Arc</a>&lt;<a class="struct" href="../../style/properties/struct.ComputedValues.html" title="struct style::properties::ComputedValues">ComputedValues</a>&gt;,
+}</pre><div class='docblock'><p>This structure represents the current keyframe animation state, i.e., the
+duration, the current and maximum iteration count, and the state (either
+playing or paused).</p>
+</div><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.started_at" class="structfield small-section-header">
+                           <a href="#structfield.started_at" class="anchor field"></a>
+                           <span id="started_at.v" class='invisible'>
+                           <code>started_at: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code>
+                           </span></span><div class='docblock'><p>The time this animation started at.</p>
+</div><span id="structfield.duration" class="structfield small-section-header">
+                           <a href="#structfield.duration" class="anchor field"></a>
+                           <span id="duration.v" class='invisible'>
+                           <code>duration: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code>
+                           </span></span><div class='docblock'><p>The duration of this animation.</p>
+</div><span id="structfield.delay" class="structfield small-section-header">
+                           <a href="#structfield.delay" class="anchor field"></a>
+                           <span id="delay.v" class='invisible'>
+                           <code>delay: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code>
+                           </span></span><div class='docblock'><p>The delay of the animation.</p>
+</div><span id="structfield.iteration_state" class="structfield small-section-header">
+                           <a href="#structfield.iteration_state" class="anchor field"></a>
+                           <span id="iteration_state.v" class='invisible'>
+                           <code>iteration_state: <a class="enum" href="../../style/animation/enum.KeyframesIterationState.html" title="enum style::animation::KeyframesIterationState">KeyframesIterationState</a></code>
+                           </span></span><div class='docblock'><p>The current iteration state for the animation.</p>
+</div><span id="structfield.running_state" class="structfield small-section-header">
+                           <a href="#structfield.running_state" class="anchor field"></a>
+                           <span id="running_state.v" class='invisible'>
+                           <code>running_state: <a class="enum" href="../../style/animation/enum.KeyframesRunningState.html" title="enum style::animation::KeyframesRunningState">KeyframesRunningState</a></code>
+                           </span></span><div class='docblock'><p>Werther this animation is paused.</p>
+</div><span id="structfield.direction" class="structfield small-section-header">
+                           <a href="#structfield.direction" class="anchor field"></a>
+                           <span id="direction.v" class='invisible'>
+                           <code>direction: <a class="enum" href="../../style/properties/longhands/animation_direction/single_value/computed_value/enum.T.html" title="enum style::properties::longhands::animation_direction::single_value::computed_value::T">AnimationDirection</a></code>
+                           </span></span><div class='docblock'><p>The declared animation direction of this animation.</p>
+</div><span id="structfield.current_direction" class="structfield small-section-header">
+                           <a href="#structfield.current_direction" class="anchor field"></a>
+                           <span id="current_direction.v" class='invisible'>
+                           <code>current_direction: <a class="enum" href="../../style/properties/longhands/animation_direction/single_value/computed_value/enum.T.html" title="enum style::properties::longhands::animation_direction::single_value::computed_value::T">AnimationDirection</a></code>
+                           </span></span><div class='docblock'><p>The current animation direction. This can only be <code>normal</code> or <code>reverse</code>.</p>
+</div><span id="structfield.expired" class="structfield small-section-header">
+                           <a href="#structfield.expired" class="anchor field"></a>
+                           <span id="expired.v" class='invisible'>
+                           <code>expired: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code>
+                           </span></span><div class='docblock'><p>Werther this keyframe animation is outdated due to a restyle.</p>
+</div><span id="structfield.cascade_style" class="structfield small-section-header">
+                           <a href="#structfield.cascade_style" class="anchor field"></a>
+                           <span id="cascade_style.v" class='invisible'>
+                           <code>cascade_style: <a class="struct" href="../../style/properties/struct.BuilderArc.html" title="struct style::properties::BuilderArc">Arc</a>&lt;<a class="struct" href="../../style/properties/struct.ComputedValues.html" title="struct style::properties::ComputedValues">ComputedValues</a>&gt;</code>
+                           </span></span><div class='docblock'><p>The original cascade style, needed to compute the generated keyframes of
+the animation.</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="struct" href="../../style/animation/struct.KeyframesAnimationState.html" title="struct style::animation::KeyframesAnimationState">KeyframesAnimationState</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/animation.rs.html#78-181' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.tick' class="method"><span id='tick.v' class='invisible'><code>pub fn <a href='#method.tick' class='fnname'>tick</a>(&amp;mut self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/animation.rs.html#84-118' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs a tick in the animation state, i.e., increments the counter of
+the current iteration count, updates times and then toggles the
+direction if appropriate.</p>
+
+<p>Returns true if the animation should keep running.</p>
+</div><h4 id='method.update_from_other' class="method"><span id='update_from_other.v' class='invisible'><code>pub fn <a href='#method.update_from_other' class='fnname'>update_from_other</a>(&amp;mut self, other: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self, timer: &amp;<a class="struct" href="../../style/timer/struct.Timer.html" title="struct style::timer::Timer">Timer</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/animation.rs.html#127-172' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Updates the appropiate state from other animation.</p>
+
+<p>This happens when an animation is re-submitted to layout, presumably
+because of an state change.</p>
+
+<p>There are some bits of state we can&#39;t just replace, over all taking in
+account times, so here&#39;s that logic.</p>
+</div></div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Clone' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="struct" href="../../style/animation/struct.KeyframesAnimationState.html" title="struct style::animation::KeyframesAnimationState">KeyframesAnimationState</a></code><a href='#impl-Clone' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/animation.rs.html#55' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="struct" href="../../style/animation/struct.KeyframesAnimationState.html" title="struct style::animation::KeyframesAnimationState">KeyframesAnimationState</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/animation.rs.html#55' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../../style/animation/struct.KeyframesAnimationState.html" title="struct style::animation::KeyframesAnimationState">KeyframesAnimationState</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/animation.rs.html#55' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/animation.rs.html#55' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "style";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

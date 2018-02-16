@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["interpolate","Equivalent to `weighted_sum(left, right, left_weight, 1 - left_weight)`."],["weighted_sum","Adds pixels with the given weights. Results are clamped to prevent arithmetical overflows."]]});

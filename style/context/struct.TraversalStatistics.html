@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `TraversalStatistics` struct in crate `style`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, TraversalStatistics">
+
+    <title>style::context::TraversalStatistics - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct TraversalStatistics</p><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.elements_traversed">elements_traversed</a><a href="#structfield.elements_styled">elements_styled</a><a href="#structfield.elements_matched">elements_matched</a><a href="#structfield.styles_shared">styles_shared</a><a href="#structfield.styles_reused">styles_reused</a><a href="#structfield.selectors">selectors</a><a href="#structfield.revalidation_selectors">revalidation_selectors</a><a href="#structfield.dependency_selectors">dependency_selectors</a><a href="#structfield.declarations">declarations</a><a href="#structfield.stylist_rebuilds">stylist_rebuilds</a><a href="#structfield.traversal_time_ms">traversal_time_ms</a><a href="#structfield.is_parallel">is_parallel</a><a href="#structfield.is_large">is_large</a></div><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.finish">finish</a><a href="#method.is_large_traversal">is_large_traversal</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Default">Default</a><a href="#impl-Add">Add</a><a href="#impl-Display">Display</a></div></div><p class='location'><a href='../index.html'>style</a>::<wbr><a href='index.html'>context</a></p><script>window.sidebarCurrent = {name: 'TraversalStatistics', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>style</a>::<wbr><a href='index.html'>context</a>::<wbr><a class="struct" href=''>TraversalStatistics</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/style/context.rs.html#307-335' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct TraversalStatistics {
+    pub elements_traversed: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pub elements_styled: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pub elements_matched: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pub styles_shared: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pub styles_reused: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pub selectors: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pub revalidation_selectors: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pub dependency_selectors: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pub declarations: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pub stylist_rebuilds: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pub traversal_time_ms: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+    pub is_parallel: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>&gt;,
+    pub is_large: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>&gt;,
+}</pre><div class='docblock'><p>Statistics gathered during the traversal. We gather statistics on each
+thread and then combine them after the threads join via the Add
+implementation below.</p>
+</div><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.elements_traversed" class="structfield small-section-header">
+                           <a href="#structfield.elements_traversed" class="anchor field"></a>
+                           <span id="elements_traversed.v" class='invisible'>
+                           <code>elements_traversed: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code>
+                           </span></span><div class='docblock'><p>The total number of elements traversed.</p>
+</div><span id="structfield.elements_styled" class="structfield small-section-header">
+                           <a href="#structfield.elements_styled" class="anchor field"></a>
+                           <span id="elements_styled.v" class='invisible'>
+                           <code>elements_styled: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code>
+                           </span></span><div class='docblock'><p>The number of elements where has_styles() went from false to true.</p>
+</div><span id="structfield.elements_matched" class="structfield small-section-header">
+                           <a href="#structfield.elements_matched" class="anchor field"></a>
+                           <span id="elements_matched.v" class='invisible'>
+                           <code>elements_matched: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code>
+                           </span></span><div class='docblock'><p>The number of elements for which we performed selector matching.</p>
+</div><span id="structfield.styles_shared" class="structfield small-section-header">
+                           <a href="#structfield.styles_shared" class="anchor field"></a>
+                           <span id="styles_shared.v" class='invisible'>
+                           <code>styles_shared: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code>
+                           </span></span><div class='docblock'><p>The number of cache hits from the StyleSharingCache.</p>
+</div><span id="structfield.styles_reused" class="structfield small-section-header">
+                           <a href="#structfield.styles_reused" class="anchor field"></a>
+                           <span id="styles_reused.v" class='invisible'>
+                           <code>styles_reused: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code>
+                           </span></span><div class='docblock'><p>The number of styles reused via rule node comparison from the
+StyleSharingCache.</p>
+</div><span id="structfield.selectors" class="structfield small-section-header">
+                           <a href="#structfield.selectors" class="anchor field"></a>
+                           <span id="selectors.v" class='invisible'>
+                           <code>selectors: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code>
+                           </span></span><div class='docblock'><p>The number of selectors in the stylist.</p>
+</div><span id="structfield.revalidation_selectors" class="structfield small-section-header">
+                           <a href="#structfield.revalidation_selectors" class="anchor field"></a>
+                           <span id="revalidation_selectors.v" class='invisible'>
+                           <code>revalidation_selectors: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code>
+                           </span></span><div class='docblock'><p>The number of revalidation selectors.</p>
+</div><span id="structfield.dependency_selectors" class="structfield small-section-header">
+                           <a href="#structfield.dependency_selectors" class="anchor field"></a>
+                           <span id="dependency_selectors.v" class='invisible'>
+                           <code>dependency_selectors: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code>
+                           </span></span><div class='docblock'><p>The number of state/attr dependencies in the dependency set.</p>
+</div><span id="structfield.declarations" class="structfield small-section-header">
+                           <a href="#structfield.declarations" class="anchor field"></a>
+                           <span id="declarations.v" class='invisible'>
+                           <code>declarations: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code>
+                           </span></span><div class='docblock'><p>The number of declarations in the stylist.</p>
+</div><span id="structfield.stylist_rebuilds" class="structfield small-section-header">
+                           <a href="#structfield.stylist_rebuilds" class="anchor field"></a>
+                           <span id="stylist_rebuilds.v" class='invisible'>
+                           <code>stylist_rebuilds: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code>
+                           </span></span><div class='docblock'><p>The number of times the stylist was rebuilt.</p>
+</div><span id="structfield.traversal_time_ms" class="structfield small-section-header">
+                           <a href="#structfield.traversal_time_ms" class="anchor field"></a>
+                           <span id="traversal_time_ms.v" class='invisible'>
+                           <code>traversal_time_ms: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code>
+                           </span></span><div class='docblock'><p>Time spent in the traversal, in milliseconds.</p>
+</div><span id="structfield.is_parallel" class="structfield small-section-header">
+                           <a href="#structfield.is_parallel" class="anchor field"></a>
+                           <span id="is_parallel.v" class='invisible'>
+                           <code>is_parallel: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>&gt;</code>
+                           </span></span><div class='docblock'><p>Whether this was a parallel traversal.</p>
+</div><span id="structfield.is_large" class="structfield small-section-header">
+                           <a href="#structfield.is_large" class="anchor field"></a>
+                           <span id="is_large.v" class='invisible'>
+                           <code>is_large: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>&gt;</code>
+                           </span></span><div class='docblock'><p>Whether this is a &quot;large&quot; traversal.</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="struct" href="../../style/context/struct.TraversalStatistics.html" title="struct style::context::TraversalStatistics">TraversalStatistics</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/context.rs.html#392-416' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.finish' class="method"><span id='finish.v' class='invisible'><code>pub fn <a href='#method.finish' class='fnname'>finish</a>&lt;E, D&gt;(&amp;mut self, traversal: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>D, parallel: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>, start: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>) <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;E: <a class="trait" href="../../style/dom/trait.TElement.html" title="trait style::dom::TElement">TElement</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;D: <a class="trait" href="../../style/traversal/trait.DomTraversal.html" title="trait style::traversal::DomTraversal">DomTraversal</a>&lt;E&gt;,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/context.rs.html#394-409' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Computes the traversal time given the start time in seconds.</p>
+</div><h4 id='method.is_large_traversal' class="method"><span id='is_large_traversal.v' class='invisible'><code>pub fn <a href='#method.is_large_traversal' class='fnname'>is_large_traversal</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/context.rs.html#413-415' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns whether this traversal is &#39;large&#39; in order to avoid console spam
+from lots of tiny traversals.</p>
+</div></div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Default' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/default/trait.Default.html" title="trait core::default::Default">Default</a> for <a class="struct" href="../../style/context/struct.TraversalStatistics.html" title="struct style::context::TraversalStatistics">TraversalStatistics</a></code><a href='#impl-Default' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/context.rs.html#306' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.default' class="method"><span id='default.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/default/trait.Default.html#tymethod.default' class='fnname'>default</a>() -&gt; <a class="struct" href="../../style/context/struct.TraversalStatistics.html" title="struct style::context::TraversalStatistics">TraversalStatistics</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/context.rs.html#306' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the &quot;default value&quot; for a type. <a href="https://doc.rust-lang.org/nightly/core/default/trait.Default.html#tymethod.default">Read more</a></p>
+</div></div><h3 id='impl-Add' class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/arith/trait.Add.html" title="trait core::ops::arith::Add">Add</a> for &amp;'a <a class="struct" href="../../style/context/struct.TraversalStatistics.html" title="struct style::context::TraversalStatistics">TraversalStatistics</a></code><a href='#impl-Add' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/context.rs.html#338-364' title='goto source code'>[src]</a></span></h3>
+<div class='docblock'><p>Implementation of Add to aggregate statistics across different threads.</p>
+</div><div class='impl-items'><h4 id='associatedtype.Output' class="type"><span id='Output.t' class='invisible'><code>type <a href='https://doc.rust-lang.org/nightly/core/ops/arith/trait.Add.html#associatedtype.Output' class="type">Output</a> = <a class="struct" href="../../style/context/struct.TraversalStatistics.html" title="struct style::context::TraversalStatistics">TraversalStatistics</a></code></span></h4>
+<div class='docblock'><p>The resulting type after applying the <code>+</code> operator.</p>
+</div><h4 id='method.add' class="method"><span id='add.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/arith/trait.Add.html#tymethod.add' class='fnname'>add</a>(self, other: Self) -&gt; <a class="struct" href="../../style/context/struct.TraversalStatistics.html" title="struct style::context::TraversalStatistics">TraversalStatistics</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/context.rs.html#340-363' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs the <code>+</code> operation.</p>
+</div></div><h3 id='impl-Display' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html" title="trait core::fmt::Display">Display</a> for <a class="struct" href="../../style/context/struct.TraversalStatistics.html" title="struct style::context::TraversalStatistics">TraversalStatistics</a></code><a href='#impl-Display' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/context.rs.html#368-390' title='goto source code'>[src]</a></span></h3>
+<div class='docblock'><p>Format the statistics in a way that the performance test harness understands.
+See <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1331856#c2">https://bugzilla.mozilla.org/show_bug.cgi?id=1331856#c2</a></p>
+</div><div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, f: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/context.rs.html#369-389' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html#tymethod.fmt">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "style";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

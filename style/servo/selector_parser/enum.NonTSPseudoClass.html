@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `NonTSPseudoClass` enum in crate `style`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, NonTSPseudoClass">
+
+    <title>style::servo::selector_parser::NonTSPseudoClass - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc enum">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Enum NonTSPseudoClass</p><div class="block items"><a class="sidebar-title" href="#variants">Variants</a><div class="sidebar-links"><a href="#variant.Active">Active</a><a href="#variant.AnyLink">AnyLink</a><a href="#variant.Checked">Checked</a><a href="#variant.Disabled">Disabled</a><a href="#variant.Enabled">Enabled</a><a href="#variant.Focus">Focus</a><a href="#variant.Fullscreen">Fullscreen</a><a href="#variant.Hover">Hover</a><a href="#variant.Indeterminate">Indeterminate</a><a href="#variant.Lang">Lang</a><a href="#variant.Link">Link</a><a href="#variant.PlaceholderShown">PlaceholderShown</a><a href="#variant.ReadWrite">ReadWrite</a><a href="#variant.ReadOnly">ReadOnly</a><a href="#variant.ServoNonZeroBorder">ServoNonZeroBorder</a><a href="#variant.ServoCaseSensitiveTypeAttr">ServoCaseSensitiveTypeAttr</a><a href="#variant.Target">Target</a><a href="#variant.Visited">Visited</a></div><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.state_flag">state_flag</a><a href="#method.document_state_flag">document_state_flag</a><a href="#method.needs_cache_revalidation">needs_cache_revalidation</a><a href="#method.is_attr_based">is_attr_based</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Clone">Clone</a><a href="#impl-Debug">Debug</a><a href="#impl-Eq">Eq</a><a href="#impl-Hash">Hash</a><a href="#impl-PartialEq">PartialEq</a><a href="#impl-MallocSizeOf">MallocSizeOf</a><a href="#impl-ToCss">ToCss</a><a href="#impl-SelectorMethods">SelectorMethods</a></div></div><p class='location'><a href='../../index.html'>style</a>::<wbr><a href='../index.html'>servo</a>::<wbr><a href='index.html'>selector_parser</a></p><script>window.sidebarCurrent = {name: 'NonTSPseudoClass', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../../index.html'>style</a>::<wbr><a href='../index.html'>servo</a>::<wbr><a href='index.html'>selector_parser</a>::<wbr><a class="enum" href=''>NonTSPseudoClass</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#253-272' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum NonTSPseudoClass {
+    Active,
+    AnyLink,
+    Checked,
+    Disabled,
+    Enabled,
+    Focus,
+    Fullscreen,
+    Hover,
+    Indeterminate,
+    Lang(<a class="type" href="../../../style/servo/selector_parser/type.PseudoClassStringArg.html" title="type style::servo::selector_parser::PseudoClassStringArg">PseudoClassStringArg</a>),
+    Link,
+    PlaceholderShown,
+    ReadWrite,
+    ReadOnly,
+    ServoNonZeroBorder,
+    ServoCaseSensitiveTypeAttr(<a class="type" href="../../../style/type.Atom.html" title="type style::Atom">Atom</a>),
+    Target,
+    Visited,
+}</pre><div class='docblock'><p>A non tree-structural pseudo-class.
+See <a href="https://drafts.csswg.org/selectors-4/#structural-pseudos">https://drafts.csswg.org/selectors-4/#structural-pseudos</a></p>
+</div><h2 id='variants' class='variants small-section-header'>
+                   Variants<a href='#variants' class='anchor'></a></h2>
+<span id="variant.Active" class="variant small-section-header"><a href="#variant.Active" class="anchor field"></a><span id='Active.v' class='invisible'><code>Active</code></span></span><span id="variant.AnyLink" class="variant small-section-header"><a href="#variant.AnyLink" class="anchor field"></a><span id='AnyLink.v' class='invisible'><code>AnyLink</code></span></span><span id="variant.Checked" class="variant small-section-header"><a href="#variant.Checked" class="anchor field"></a><span id='Checked.v' class='invisible'><code>Checked</code></span></span><span id="variant.Disabled" class="variant small-section-header"><a href="#variant.Disabled" class="anchor field"></a><span id='Disabled.v' class='invisible'><code>Disabled</code></span></span><span id="variant.Enabled" class="variant small-section-header"><a href="#variant.Enabled" class="anchor field"></a><span id='Enabled.v' class='invisible'><code>Enabled</code></span></span><span id="variant.Focus" class="variant small-section-header"><a href="#variant.Focus" class="anchor field"></a><span id='Focus.v' class='invisible'><code>Focus</code></span></span><span id="variant.Fullscreen" class="variant small-section-header"><a href="#variant.Fullscreen" class="anchor field"></a><span id='Fullscreen.v' class='invisible'><code>Fullscreen</code></span></span><span id="variant.Hover" class="variant small-section-header"><a href="#variant.Hover" class="anchor field"></a><span id='Hover.v' class='invisible'><code>Hover</code></span></span><span id="variant.Indeterminate" class="variant small-section-header"><a href="#variant.Indeterminate" class="anchor field"></a><span id='Indeterminate.v' class='invisible'><code>Indeterminate</code></span></span><span id="variant.Lang" class="variant small-section-header"><a href="#variant.Lang" class="anchor field"></a><span id='Lang.v' class='invisible'><code>Lang(<a class="type" href="../../../style/servo/selector_parser/type.PseudoClassStringArg.html" title="type style::servo::selector_parser::PseudoClassStringArg">PseudoClassStringArg</a>)</code></span></span><span id="variant.Link" class="variant small-section-header"><a href="#variant.Link" class="anchor field"></a><span id='Link.v' class='invisible'><code>Link</code></span></span><span id="variant.PlaceholderShown" class="variant small-section-header"><a href="#variant.PlaceholderShown" class="anchor field"></a><span id='PlaceholderShown.v' class='invisible'><code>PlaceholderShown</code></span></span><span id="variant.ReadWrite" class="variant small-section-header"><a href="#variant.ReadWrite" class="anchor field"></a><span id='ReadWrite.v' class='invisible'><code>ReadWrite</code></span></span><span id="variant.ReadOnly" class="variant small-section-header"><a href="#variant.ReadOnly" class="anchor field"></a><span id='ReadOnly.v' class='invisible'><code>ReadOnly</code></span></span><span id="variant.ServoNonZeroBorder" class="variant small-section-header"><a href="#variant.ServoNonZeroBorder" class="anchor field"></a><span id='ServoNonZeroBorder.v' class='invisible'><code>ServoNonZeroBorder</code></span></span><span id="variant.ServoCaseSensitiveTypeAttr" class="variant small-section-header"><a href="#variant.ServoCaseSensitiveTypeAttr" class="anchor field"></a><span id='ServoCaseSensitiveTypeAttr.v' class='invisible'><code>ServoCaseSensitiveTypeAttr(<a class="type" href="../../../style/type.Atom.html" title="type style::Atom">Atom</a>)</code></span></span><span id="variant.Target" class="variant small-section-header"><a href="#variant.Target" class="anchor field"></a><span id='Target.v' class='invisible'><code>Target</code></span></span><span id="variant.Visited" class="variant small-section-header"><a href="#variant.Visited" class="anchor field"></a><span id='Visited.v' class='invisible'><code>Visited</code></span></span>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="enum" href="../../../style/servo/selector_parser/enum.NonTSPseudoClass.html" title="enum style::servo::selector_parser::NonTSPseudoClass">NonTSPseudoClass</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#325-368' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.state_flag' class="method"><span id='state_flag.v' class='invisible'><code>pub fn <a href='#method.state_flag' class='fnname'>state_flag</a>(&amp;self) -&gt; <a class="struct" href="../../../style/element_state/struct.ElementState.html" title="struct style::element_state::ElementState">ElementState</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#328-351' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Gets a given state flag for this pseudo-class. This is used to do
+selector matching, and it&#39;s set from the DOM.</p>
+</div><h4 id='method.document_state_flag' class="method"><span id='document_state_flag.v' class='invisible'><code>pub fn <a href='#method.document_state_flag' class='fnname'>document_state_flag</a>(&amp;self) -&gt; <a class="struct" href="../../../style/element_state/struct.DocumentState.html" title="struct style::element_state::DocumentState">DocumentState</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#354-356' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Get the document state flag associated with a pseudo-class, if any.</p>
+</div><h4 id='method.needs_cache_revalidation' class="method"><span id='needs_cache_revalidation.v' class='invisible'><code>pub fn <a href='#method.needs_cache_revalidation' class='fnname'>needs_cache_revalidation</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#359-361' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns true if the given pseudoclass should trigger style sharing cache revalidation.</p>
+</div><h4 id='method.is_attr_based' class="method"><span id='is_attr_based.v' class='invisible'><code>pub fn <a href='#method.is_attr_based' class='fnname'>is_attr_based</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#365-367' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns true if the evaluation of the pseudo-class depends on the
+element&#39;s attributes.</p>
+</div></div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Clone' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="enum" href="../../../style/servo/selector_parser/enum.NonTSPseudoClass.html" title="enum style::servo::selector_parser::NonTSPseudoClass">NonTSPseudoClass</a></code><a href='#impl-Clone' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#250' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="enum" href="../../../style/servo/selector_parser/enum.NonTSPseudoClass.html" title="enum style::servo::selector_parser::NonTSPseudoClass">NonTSPseudoClass</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#250' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="enum" href="../../../style/servo/selector_parser/enum.NonTSPseudoClass.html" title="enum style::servo::selector_parser::NonTSPseudoClass">NonTSPseudoClass</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#250' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#250' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div><h3 id='impl-Eq' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html" title="trait core::cmp::Eq">Eq</a> for <a class="enum" href="../../../style/servo/selector_parser/enum.NonTSPseudoClass.html" title="enum style::servo::selector_parser::NonTSPseudoClass">NonTSPseudoClass</a></code><a href='#impl-Eq' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#250' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 id='impl-Hash' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html" title="trait core::hash::Hash">Hash</a> for <a class="enum" href="../../../style/servo/selector_parser/enum.NonTSPseudoClass.html" title="enum style::servo::selector_parser::NonTSPseudoClass">NonTSPseudoClass</a></code><a href='#impl-Hash' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#250' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.hash' class="method"><span id='hash.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#tymethod.hash' class='fnname'>hash</a>&lt;__H:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/hash/trait.Hasher.html" title="trait core::hash::Hasher">Hasher</a>&gt;(&amp;self, __arg_0: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>__H)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#250' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Feeds this value into the given [<code>Hasher</code>]. <a href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#tymethod.hash">Read more</a></p>
+</div><h4 id='method.hash_slice' class="method"><span id='hash_slice.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#method.hash_slice' class='fnname'>hash_slice</a>&lt;H&gt;(data: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[Self]</a>, state: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>H) <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;H: <a class="trait" href="https://doc.rust-lang.org/nightly/core/hash/trait.Hasher.html" title="trait core::hash::Hasher">Hasher</a>,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.3.0'>1.3.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/hash/mod.rs.html#202-208' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Feeds a slice of this type into the given [<code>Hasher</code>]. <a href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#method.hash_slice">Read more</a></p>
+</div></div><h3 id='impl-PartialEq' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a> for <a class="enum" href="../../../style/servo/selector_parser/enum.NonTSPseudoClass.html" title="enum style::servo::selector_parser::NonTSPseudoClass">NonTSPseudoClass</a></code><a href='#impl-PartialEq' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#250' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class="method"><span id='eq.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class="enum" href="../../../style/servo/selector_parser/enum.NonTSPseudoClass.html" title="enum style::servo::selector_parser::NonTSPseudoClass">NonTSPseudoClass</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#250' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class="method"><span id='ne.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class="enum" href="../../../style/servo/selector_parser/enum.NonTSPseudoClass.html" title="enum style::servo::selector_parser::NonTSPseudoClass">NonTSPseudoClass</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#250' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 id='impl-MallocSizeOf' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../../malloc_size_of/trait.MallocSizeOf.html" title="trait malloc_size_of::MallocSizeOf">MallocSizeOf</a> for <a class="enum" href="../../../style/servo/selector_parser/enum.NonTSPseudoClass.html" title="enum style::servo::selector_parser::NonTSPseudoClass">NonTSPseudoClass</a></code><a href='#impl-MallocSizeOf' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#251-1' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.size_of' class="method"><span id='size_of.v' class='invisible'><code>fn <a href='../../../malloc_size_of/trait.MallocSizeOf.html#tymethod.size_of' class='fnname'>size_of</a>(&amp;self, ops: &amp;mut <a class="struct" href="../../../malloc_size_of/struct.MallocSizeOfOps.html" title="struct malloc_size_of::MallocSizeOfOps">MallocSizeOfOps</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#251' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Measure the heap usage of all descendant heap-allocated structures, but not the space taken up by the value itself. <a href="../../../malloc_size_of/trait.MallocSizeOf.html#tymethod.size_of">Read more</a></p>
+</div></div><h3 id='impl-ToCss' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../../cssparser/serializer/trait.ToCss.html" title="trait cssparser::serializer::ToCss">ToCss</a> for <a class="enum" href="../../../style/servo/selector_parser/enum.NonTSPseudoClass.html" title="enum style::servo::selector_parser::NonTSPseudoClass">NonTSPseudoClass</a></code><a href='#impl-ToCss' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#274-312' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.to_css' class="method"><span id='to_css.v' class='invisible'><code>fn <a href='../../../cssparser/serializer/trait.ToCss.html#tymethod.to_css' class='fnname'>to_css</a>&lt;W&gt;(&amp;self, dest: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>W) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a> <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;W: <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Write.html" title="trait core::fmt::Write">Write</a>,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#275-311' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Serialize <code>self</code> in CSS syntax, writing to <code>dest</code>.</p>
+</div><h4 id='method.to_css_string' class="method"><span id='to_css_string.v' class='invisible'><code>fn <a href='../../../cssparser/serializer/trait.ToCss.html#method.to_css_string' class='fnname'>to_css_string</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/cssparser/serializer.rs.html#24-28' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Serialize <code>self</code> in CSS syntax and return a string. <a href="../../../cssparser/serializer/trait.ToCss.html#method.to_css_string">Read more</a></p>
+</div></div><h3 id='impl-SelectorMethods' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../../selectors/parser/trait.SelectorMethods.html" title="trait selectors::parser::SelectorMethods">SelectorMethods</a> for <a class="enum" href="../../../style/servo/selector_parser/enum.NonTSPseudoClass.html" title="enum style::servo::selector_parser::NonTSPseudoClass">NonTSPseudoClass</a></code><a href='#impl-SelectorMethods' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#314-323' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Impl' class="type"><span id='Impl.t' class='invisible'><code>type <a href='../../../selectors/parser/trait.SelectorMethods.html#associatedtype.Impl' class="type">Impl</a> = <a class="struct" href="../../../style/servo/selector_parser/struct.SelectorImpl.html" title="struct style::servo::selector_parser::SelectorImpl">SelectorImpl</a></code></span></h4>
+<h4 id='method.visit' class="method"><span id='visit.v' class='invisible'><code>fn <a href='../../../selectors/parser/trait.SelectorMethods.html#tymethod.visit' class='fnname'>visit</a>&lt;V&gt;(&amp;self, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>V) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a> <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;V: <a class="trait" href="../../../selectors/visitor/trait.SelectorVisitor.html" title="trait selectors::visitor::SelectorVisitor">SelectorVisitor</a>&lt;Impl = Self::<a class="type" href="../../../selectors/parser/trait.SelectorMethods.html#associatedtype.Impl" title="type selectors::parser::SelectorMethods::Impl">Impl</a>&gt;,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/selector_parser.rs.html#318-322' title='goto source code'>[src]</a></span></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "style";
+    </script>
+    <script src="../../../main.js"></script>
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

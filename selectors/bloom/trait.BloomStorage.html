@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `BloomStorage` trait in crate `selectors`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, BloomStorage">
+
+    <title>selectors::bloom::BloomStorage - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc trait">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Trait BloomStorage</p><div class="block items"><a class="sidebar-title" href="#required-methods">Required Methods</a><div class="sidebar-links"><a href="#tymethod.slot_is_empty">slot_is_empty</a><a href="#tymethod.adjust_slot">adjust_slot</a><a href="#tymethod.is_zeroed">is_zeroed</a></div><a class="sidebar-title" href="#provided-methods">Provided Methods</a><div class="sidebar-links"><a href="#method.first_slot_is_empty">first_slot_is_empty</a><a href="#method.second_slot_is_empty">second_slot_is_empty</a><a href="#method.adjust_first_slot">adjust_first_slot</a><a href="#method.adjust_second_slot">adjust_second_slot</a><a href="#method.first_slot_index">first_slot_index</a><a href="#method.second_slot_index">second_slot_index</a></div><a class="sidebar-title" href="#implementors">Implementors</a></div><p class='location'><a href='../index.html'>selectors</a>::<wbr><a href='index.html'>bloom</a></p><script>window.sidebarCurrent = {name: 'BloomStorage', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Trait <a href='../index.html'>selectors</a>::<wbr><a href='index.html'>bloom</a>::<wbr><a class="trait" href=''>BloomStorage</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/selectors/bloom.rs.html#157-191' title='goto source code'>[src]</a></span></h1>
+<pre class='rust trait'>pub trait BloomStorage: <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/default/trait.Default.html" title="trait core::default::Default">Default</a> {
+    fn <a href='#tymethod.slot_is_empty' class='fnname'>slot_is_empty</a>(&amp;self, index: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.adjust_slot' class='fnname'>adjust_slot</a>(&amp;mut self, index: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>, increment: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>);
+<div class='item-spacer'></div>    fn <a href='#tymethod.is_zeroed' class='fnname'>is_zeroed</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>;
+
+    fn <a href='#method.first_slot_is_empty' class='fnname'>first_slot_is_empty</a>(&amp;self, hash: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a> { ... }
+<div class='item-spacer'></div>    fn <a href='#method.second_slot_is_empty' class='fnname'>second_slot_is_empty</a>(&amp;self, hash: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a> { ... }
+<div class='item-spacer'></div>    fn <a href='#method.adjust_first_slot' class='fnname'>adjust_first_slot</a>(&amp;mut self, hash: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, increment: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>) { ... }
+<div class='item-spacer'></div>    fn <a href='#method.adjust_second_slot' class='fnname'>adjust_second_slot</a>(&amp;mut self, hash: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, increment: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>) { ... }
+<div class='item-spacer'></div>    fn <a href='#method.first_slot_index' class='fnname'>first_slot_index</a>(hash: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a> { ... }
+<div class='item-spacer'></div>    fn <a href='#method.second_slot_index' class='fnname'>second_slot_index</a>(hash: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a> { ... }
+}</pre>
+            <h2 id='required-methods' class='small-section-header'>
+              Required Methods<a href='#required-methods' class='anchor'></a>
+            </h2>
+            <div class='methods'>
+        <h3 id='tymethod.slot_is_empty' class='method'><span id='slot_is_empty.v' class='invisible'><code>fn <a href='#tymethod.slot_is_empty' class='fnname'>slot_is_empty</a>(&amp;self, index: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><h3 id='tymethod.adjust_slot' class='method'><span id='adjust_slot.v' class='invisible'><code>fn <a href='#tymethod.adjust_slot' class='fnname'>adjust_slot</a>(&amp;mut self, index: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>, increment: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>)</code></span></h3><h3 id='tymethod.is_zeroed' class='method'><span id='is_zeroed.v' class='invisible'><code>fn <a href='#tymethod.is_zeroed' class='fnname'>is_zeroed</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3></div>
+            <h2 id='provided-methods' class='small-section-header'>
+              Provided Methods<a href='#provided-methods' class='anchor'></a>
+            </h2>
+            <div class='methods'>
+        <h3 id='method.first_slot_is_empty' class='method'><span id='first_slot_is_empty.v' class='invisible'><code>fn <a href='#method.first_slot_is_empty' class='fnname'>first_slot_is_empty</a>(&amp;self, hash: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><h3 id='method.second_slot_is_empty' class='method'><span id='second_slot_is_empty.v' class='invisible'><code>fn <a href='#method.second_slot_is_empty' class='fnname'>second_slot_is_empty</a>(&amp;self, hash: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><h3 id='method.adjust_first_slot' class='method'><span id='adjust_first_slot.v' class='invisible'><code>fn <a href='#method.adjust_first_slot' class='fnname'>adjust_first_slot</a>(&amp;mut self, hash: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, increment: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>)</code></span></h3><h3 id='method.adjust_second_slot' class='method'><span id='adjust_second_slot.v' class='invisible'><code>fn <a href='#method.adjust_second_slot' class='fnname'>adjust_second_slot</a>(&amp;mut self, hash: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, increment: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>)</code></span></h3><h3 id='method.first_slot_index' class='method'><span id='first_slot_index.v' class='invisible'><code>fn <a href='#method.first_slot_index' class='fnname'>first_slot_index</a>(hash: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a></code></span></h3><h3 id='method.second_slot_index' class='method'><span id='second_slot_index.v' class='invisible'><code>fn <a href='#method.second_slot_index' class='fnname'>second_slot_index</a>(hash: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a></code></span></h3></div>
+        <h2 id='implementors' class='small-section-header'>
+          Implementors<a href='#implementors' class='anchor'></a>
+        </h2>
+        <ul class='item-list' id='implementors-list'>
+    <li><div class='out-of-band'><a class='srclink' href='../../src/selectors/bloom.rs.html#198-220' title='goto source code'>[src]</a></div><code>impl BloomStorage for <a class="struct" href="../../selectors/bloom/struct.BloomStorageU8.html" title="struct selectors::bloom::BloomStorageU8">BloomStorageU8</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/selectors/bloom.rs.html#243-270' title='goto source code'>[src]</a></div><code>impl BloomStorage for <a class="struct" href="../../selectors/bloom/struct.BloomStorageBool.html" title="struct selectors::bloom::BloomStorageBool">BloomStorageBool</a></code></li>
+</ul><script type="text/javascript" async
+                         src="../../implementors/selectors/bloom/trait.BloomStorage.js">
+                 </script></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "selectors";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

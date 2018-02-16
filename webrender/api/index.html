@@ -1,0 +1,1500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `api` mod in crate `webrender`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, api">
+
+    <title>webrender::api - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc mod">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Module api</p><div class="block items"><ul><li><a href="#modules">Modules</a></li><li><a href="#structs">Structs</a></li><li><a href="#enums">Enums</a></li><li><a href="#constants">Constants</a></li><li><a href="#traits">Traits</a></li><li><a href="#functions">Functions</a></li><li><a href="#types">Type Definitions</a></li></ul></div><p class='location'><a href='../index.html'>webrender</a></p><script>window.sidebarCurrent = {name: 'api', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Module <a href='../index.html'>webrender</a>::<wbr><a class="mod" href=''>api</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/webrender_api/lib.rs.html#5-47' title='goto source code'>[src]</a></span></h1>
+<h2 id='modules' class='section-header'><a href="#modules">Modules</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="channel/index.html"
+                                  title='mod webrender::api::channel'>channel</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.AddFontInstance.html"
+                                  title='struct webrender::api::AddFontInstance'>AddFontInstance</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.AddImage.html"
+                                  title='struct webrender::api::AddImage'>AddImage</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.AuxIter.html"
+                                  title='struct webrender::api::AuxIter'>AuxIter</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.BlobImageDescriptor.html"
+                                  title='struct webrender::api::BlobImageDescriptor'>BlobImageDescriptor</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.BlobImageRequest.html"
+                                  title='struct webrender::api::BlobImageRequest'>BlobImageRequest</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.BorderDisplayItem.html"
+                                  title='struct webrender::api::BorderDisplayItem'>BorderDisplayItem</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.BorderRadius.html"
+                                  title='struct webrender::api::BorderRadius'>BorderRadius</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.BorderSide.html"
+                                  title='struct webrender::api::BorderSide'>BorderSide</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.BorderWidths.html"
+                                  title='struct webrender::api::BorderWidths'>BorderWidths</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.BoxShadowDisplayItem.html"
+                                  title='struct webrender::api::BoxShadowDisplayItem'>BoxShadowDisplayItem</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.BuiltDisplayList.html"
+                                  title='struct webrender::api::BuiltDisplayList'>BuiltDisplayList</a></td>
+                           <td class='docblock-short'>
+                                <p>A display list.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.BuiltDisplayListDescriptor.html"
+                                  title='struct webrender::api::BuiltDisplayListDescriptor'>BuiltDisplayListDescriptor</a></td>
+                           <td class='docblock-short'>
+                                <p>Describes the memory layout of a display list.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.BuiltDisplayListIter.html"
+                                  title='struct webrender::api::BuiltDisplayListIter'>BuiltDisplayListIter</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ClipAndScrollInfo.html"
+                                  title='struct webrender::api::ClipAndScrollInfo'>ClipAndScrollInfo</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ClipDisplayItem.html"
+                                  title='struct webrender::api::ClipDisplayItem'>ClipDisplayItem</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ColorF.html"
+                                  title='struct webrender::api::ColorF'>ColorF</a></td>
+                           <td class='docblock-short'>
+                                <p>Represents RGBA screen colors with floating point numbers.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ColorU.html"
+                                  title='struct webrender::api::ColorU'>ColorU</a></td>
+                           <td class='docblock-short'>
+                                <p>Represents RGBA screen colors with one byte per channel.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ComplexClipRegion.html"
+                                  title='struct webrender::api::ComplexClipRegion'>ComplexClipRegion</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.DevicePixel.html"
+                                  title='struct webrender::api::DevicePixel'>DevicePixel</a></td>
+                           <td class='docblock-short'>
+                                <p>Geometry in the coordinate system of the render target (screen or intermediate
+surface) in physical pixels.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.DisplayItemRef.html"
+                                  title='struct webrender::api::DisplayItemRef'>DisplayItemRef</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.DisplayListBuilder.html"
+                                  title='struct webrender::api::DisplayListBuilder'>DisplayListBuilder</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.DocumentId.html"
+                                  title='struct webrender::api::DocumentId'>DocumentId</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.DynamicProperties.html"
+                                  title='struct webrender::api::DynamicProperties'>DynamicProperties</a></td>
+                           <td class='docblock-short'>
+                                <p>When using <code>generate_frame()</code>, a list of <code>PropertyValue</code> structures
+can optionally be supplied to provide the current value of any
+animated properties.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Epoch.html"
+                                  title='struct webrender::api::Epoch'>Epoch</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ExternalEvent.html"
+                                  title='struct webrender::api::ExternalEvent'>ExternalEvent</a></td>
+                           <td class='docblock-short'>
+                                <p>An opaque pointer-sized value.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ExternalImageData.html"
+                                  title='struct webrender::api::ExternalImageData'>ExternalImageData</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ExternalImageId.html"
+                                  title='struct webrender::api::ExternalImageId'>ExternalImageId</a></td>
+                           <td class='docblock-short'>
+                                <p>An arbitrary identifier for an external image provided by the
+application. It must be a unique identifier for each external
+image.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.FontInstanceFlags.html"
+                                  title='struct webrender::api::FontInstanceFlags'>FontInstanceFlags</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.FontInstanceKey.html"
+                                  title='struct webrender::api::FontInstanceKey'>FontInstanceKey</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.FontInstanceOptions.html"
+                                  title='struct webrender::api::FontInstanceOptions'>FontInstanceOptions</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.FontInstancePlatformOptions.html"
+                                  title='struct webrender::api::FontInstancePlatformOptions'>FontInstancePlatformOptions</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.FontKey.html"
+                                  title='struct webrender::api::FontKey'>FontKey</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.FontVariation.html"
+                                  title='struct webrender::api::FontVariation'>FontVariation</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.GenericDisplayItem.html"
+                                  title='struct webrender::api::GenericDisplayItem'>GenericDisplayItem</a></td>
+                           <td class='docblock-short'>
+                                <p>The DI is generic over the specifics, while allows to use
+the &quot;complete&quot; version of it for convenient serialization.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.GlyphDimensions.html"
+                                  title='struct webrender::api::GlyphDimensions'>GlyphDimensions</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.GlyphInstance.html"
+                                  title='struct webrender::api::GlyphInstance'>GlyphInstance</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.GlyphKey.html"
+                                  title='struct webrender::api::GlyphKey'>GlyphKey</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.GlyphOptions.html"
+                                  title='struct webrender::api::GlyphOptions'>GlyphOptions</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Gradient.html"
+                                  title='struct webrender::api::Gradient'>Gradient</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.GradientBorder.html"
+                                  title='struct webrender::api::GradientBorder'>GradientBorder</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.GradientDisplayItem.html"
+                                  title='struct webrender::api::GradientDisplayItem'>GradientDisplayItem</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.GradientStop.html"
+                                  title='struct webrender::api::GradientStop'>GradientStop</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.HitTestFlags.html"
+                                  title='struct webrender::api::HitTestFlags'>HitTestFlags</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.HitTestItem.html"
+                                  title='struct webrender::api::HitTestItem'>HitTestItem</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.HitTestResult.html"
+                                  title='struct webrender::api::HitTestResult'>HitTestResult</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.IdNamespace.html"
+                                  title='struct webrender::api::IdNamespace'>IdNamespace</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.IframeDisplayItem.html"
+                                  title='struct webrender::api::IframeDisplayItem'>IframeDisplayItem</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ImageBorder.html"
+                                  title='struct webrender::api::ImageBorder'>ImageBorder</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ImageDescriptor.html"
+                                  title='struct webrender::api::ImageDescriptor'>ImageDescriptor</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ImageDisplayItem.html"
+                                  title='struct webrender::api::ImageDisplayItem'>ImageDisplayItem</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ImageKey.html"
+                                  title='struct webrender::api::ImageKey'>ImageKey</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ImageMask.html"
+                                  title='struct webrender::api::ImageMask'>ImageMask</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ItemRange.html"
+                                  title='struct webrender::api::ItemRange'>ItemRange</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.LayerPixel.html"
+                                  title='struct webrender::api::LayerPixel'>LayerPixel</a></td>
+                           <td class='docblock-short'>
+                                <p>Geometry in a layer&#39;s local coordinate space (logical pixels).</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.LineDisplayItem.html"
+                                  title='struct webrender::api::LineDisplayItem'>LineDisplayItem</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.NativeFontHandle.html"
+                                  title='struct webrender::api::NativeFontHandle'>NativeFontHandle</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.NinePatchDescriptor.html"
+                                  title='struct webrender::api::NinePatchDescriptor'>NinePatchDescriptor</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.NormalBorder.html"
+                                  title='struct webrender::api::NormalBorder'>NormalBorder</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.PipelineId.html"
+                                  title='struct webrender::api::PipelineId'>PipelineId</a></td>
+                           <td class='docblock-short'>
+                                <p>From the point of view of WR, <code>PipelineId</code> is completely opaque and generic as long as
+it&#39;s clonable, serializable, comparable, and hashable.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.PremultipliedColorF.html"
+                                  title='struct webrender::api::PremultipliedColorF'>PremultipliedColorF</a></td>
+                           <td class='docblock-short'>
+                                <p>Represents pre-multiplied RGBA colors with floating point numbers.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.PrimitiveInfo.html"
+                                  title='struct webrender::api::PrimitiveInfo'>PrimitiveInfo</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.PropertyBindingId.html"
+                                  title='struct webrender::api::PropertyBindingId'>PropertyBindingId</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.PropertyBindingKey.html"
+                                  title='struct webrender::api::PropertyBindingKey'>PropertyBindingKey</a></td>
+                           <td class='docblock-short'>
+                                <p>A unique key that is used for connecting animated property
+values to bindings in the display list.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.PropertyValue.html"
+                                  title='struct webrender::api::PropertyValue'>PropertyValue</a></td>
+                           <td class='docblock-short'>
+                                <p>The current value of an animated property. This is
+supplied by the calling code.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.PushStackingContextDisplayItem.html"
+                                  title='struct webrender::api::PushStackingContextDisplayItem'>PushStackingContextDisplayItem</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.RadialGradient.html"
+                                  title='struct webrender::api::RadialGradient'>RadialGradient</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.RadialGradientBorder.html"
+                                  title='struct webrender::api::RadialGradientBorder'>RadialGradientBorder</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.RadialGradientDisplayItem.html"
+                                  title='struct webrender::api::RadialGradientDisplayItem'>RadialGradientDisplayItem</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.RasterizedBlobImage.html"
+                                  title='struct webrender::api::RasterizedBlobImage'>RasterizedBlobImage</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.RectangleDisplayItem.html"
+                                  title='struct webrender::api::RectangleDisplayItem'>RectangleDisplayItem</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.RenderApi.html"
+                                  title='struct webrender::api::RenderApi'>RenderApi</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.RenderApiSender.html"
+                                  title='struct webrender::api::RenderApiSender'>RenderApiSender</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ResourceId.html"
+                                  title='struct webrender::api::ResourceId'>ResourceId</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ResourceUpdates.html"
+                                  title='struct webrender::api::ResourceUpdates'>ResourceUpdates</a></td>
+                           <td class='docblock-short'>
+                                <p>The resource updates for a given transaction (they must be applied in the same frame).</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.SaveState.html"
+                                  title='struct webrender::api::SaveState'>SaveState</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ScrollFrameDisplayItem.html"
+                                  title='struct webrender::api::ScrollFrameDisplayItem'>ScrollFrameDisplayItem</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ScrollLayerPixel.html"
+                                  title='struct webrender::api::ScrollLayerPixel'>ScrollLayerPixel</a></td>
+                           <td class='docblock-short'>
+                                <p>Geometry in a layer&#39;s scrollable parent coordinate space (logical pixels).</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ScrollLayerState.html"
+                                  title='struct webrender::api::ScrollLayerState'>ScrollLayerState</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Shadow.html"
+                                  title='struct webrender::api::Shadow'>Shadow</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.StackingContext.html"
+                                  title='struct webrender::api::StackingContext'>StackingContext</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.StickyFrameDisplayItem.html"
+                                  title='struct webrender::api::StickyFrameDisplayItem'>StickyFrameDisplayItem</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.StickyOffsetBounds.html"
+                                  title='struct webrender::api::StickyOffsetBounds'>StickyOffsetBounds</a></td>
+                           <td class='docblock-short'>
+                                <p>The minimum and maximum allowable offset for a sticky frame in a single dimension.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.TextDisplayItem.html"
+                                  title='struct webrender::api::TextDisplayItem'>TextDisplayItem</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Tiles.html"
+                                  title='struct webrender::api::Tiles'>Tiles</a></td>
+                           <td class='docblock-short'>
+                                <p>Offset in number of tiles.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Transaction.html"
+                                  title='struct webrender::api::Transaction'>Transaction</a></td>
+                           <td class='docblock-short'>
+                                <p>A Transaction is a group of commands to apply atomically to a document.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.UpdateImage.html"
+                                  title='struct webrender::api::UpdateImage'>UpdateImage</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.WorldPixel.html"
+                                  title='struct webrender::api::WorldPixel'>WorldPixel</a></td>
+                           <td class='docblock-short'>
+                                <p>Geometry in the document&#39;s coordinate space (logical pixels).</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.YuvImageDisplayItem.html"
+                                  title='struct webrender::api::YuvImageDisplayItem'>YuvImageDisplayItem</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ZoomFactor.html"
+                                  title='struct webrender::api::ZoomFactor'>ZoomFactor</a></td>
+                           <td class='docblock-short'>
+                                <p>Represents a zoom factor.</p>
+                           </td>
+                       </tr></table><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.AddFont.html"
+                                  title='enum webrender::api::AddFont'>AddFont</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.ApiMsg.html"
+                                  title='enum webrender::api::ApiMsg'>ApiMsg</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.BlobImageError.html"
+                                  title='enum webrender::api::BlobImageError'>BlobImageError</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.BorderDetails.html"
+                                  title='enum webrender::api::BorderDetails'>BorderDetails</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.BorderRadiusKind.html"
+                                  title='enum webrender::api::BorderRadiusKind'>BorderRadiusKind</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.BorderStyle.html"
+                                  title='enum webrender::api::BorderStyle'>BorderStyle</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.BoxShadowClipMode.html"
+                                  title='enum webrender::api::BoxShadowClipMode'>BoxShadowClipMode</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.ClipId.html"
+                                  title='enum webrender::api::ClipId'>ClipId</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.ClipMode.html"
+                                  title='enum webrender::api::ClipMode'>ClipMode</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.DebugCommand.html"
+                                  title='enum webrender::api::DebugCommand'>DebugCommand</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.DocumentMsg.html"
+                                  title='enum webrender::api::DocumentMsg'>DocumentMsg</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.ExtendMode.html"
+                                  title='enum webrender::api::ExtendMode'>ExtendMode</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.ExternalImageType.html"
+                                  title='enum webrender::api::ExternalImageType'>ExternalImageType</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.FilterOp.html"
+                                  title='enum webrender::api::FilterOp'>FilterOp</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.FontHinting.html"
+                                  title='enum webrender::api::FontHinting'>FontHinting</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.FontLCDFilter.html"
+                                  title='enum webrender::api::FontLCDFilter'>FontLCDFilter</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.FontRenderMode.html"
+                                  title='enum webrender::api::FontRenderMode'>FontRenderMode</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.FontTemplate.html"
+                                  title='enum webrender::api::FontTemplate'>FontTemplate</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.ImageData.html"
+                                  title='enum webrender::api::ImageData'>ImageData</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.ImageFormat.html"
+                                  title='enum webrender::api::ImageFormat'>ImageFormat</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.ImageRendering.html"
+                                  title='enum webrender::api::ImageRendering'>ImageRendering</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.LineOrientation.html"
+                                  title='enum webrender::api::LineOrientation'>LineOrientation</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.LineStyle.html"
+                                  title='enum webrender::api::LineStyle'>LineStyle</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.LocalClip.html"
+                                  title='enum webrender::api::LocalClip'>LocalClip</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.MixBlendMode.html"
+                                  title='enum webrender::api::MixBlendMode'>MixBlendMode</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.PropertyBinding.html"
+                                  title='enum webrender::api::PropertyBinding'>PropertyBinding</a></td>
+                           <td class='docblock-short'>
+                                <p>A binding property can either be a specific value
+(the normal, non-animated case) or point to a binding location
+to fetch the current value from.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.RepeatMode.html"
+                                  title='enum webrender::api::RepeatMode'>RepeatMode</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.ResourceUpdate.html"
+                                  title='enum webrender::api::ResourceUpdate'>ResourceUpdate</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.ScrollClamping.html"
+                                  title='enum webrender::api::ScrollClamping'>ScrollClamping</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.ScrollEventPhase.html"
+                                  title='enum webrender::api::ScrollEventPhase'>ScrollEventPhase</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.ScrollLocation.html"
+                                  title='enum webrender::api::ScrollLocation'>ScrollLocation</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.ScrollPolicy.html"
+                                  title='enum webrender::api::ScrollPolicy'>ScrollPolicy</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.ScrollSensitivity.html"
+                                  title='enum webrender::api::ScrollSensitivity'>ScrollSensitivity</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.SpecificDisplayItem.html"
+                                  title='enum webrender::api::SpecificDisplayItem'>SpecificDisplayItem</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.SubpixelDirection.html"
+                                  title='enum webrender::api::SubpixelDirection'>SubpixelDirection</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.SubpixelOffset.html"
+                                  title='enum webrender::api::SubpixelOffset'>SubpixelOffset</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.TransformStyle.html"
+                                  title='enum webrender::api::TransformStyle'>TransformStyle</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.YuvColorSpace.html"
+                                  title='enum webrender::api::YuvColorSpace'>YuvColorSpace</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.YuvData.html"
+                                  title='enum webrender::api::YuvData'>YuvData</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.YuvFormat.html"
+                                  title='enum webrender::api::YuvFormat'>YuvFormat</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table><h2 id='constants' class='section-header'><a href="#constants">Constants</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.MAX_TEXT_RUN_LENGTH.html"
+                                  title='constant webrender::api::MAX_TEXT_RUN_LENGTH'>MAX_TEXT_RUN_LENGTH</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.YUV_COLOR_SPACES.html"
+                                  title='constant webrender::api::YUV_COLOR_SPACES'>YUV_COLOR_SPACES</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.YUV_FORMATS.html"
+                                  title='constant webrender::api::YUV_FORMATS'>YUV_FORMATS</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table><h2 id='traits' class='section-header'><a href="#traits">Traits</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.BlobImageRenderer.html"
+                                  title='trait webrender::api::BlobImageRenderer'>BlobImageRenderer</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.BlobImageResources.html"
+                                  title='trait webrender::api::BlobImageResources'>BlobImageResources</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.RenderNotifier.html"
+                                  title='trait webrender::api::RenderNotifier'>RenderNotifier</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.as_scroll_parent_rect.html"
+                                  title='fn webrender::api::as_scroll_parent_rect'>as_scroll_parent_rect</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.as_scroll_parent_vector.html"
+                                  title='fn webrender::api::as_scroll_parent_vector'>as_scroll_parent_vector</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table><h2 id='types' class='section-header'><a href="#types">Type Definitions</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.BlobImageData.html"
+                                  title='type webrender::api::BlobImageData'>BlobImageData</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.BlobImageResult.html"
+                                  title='type webrender::api::BlobImageResult'>BlobImageResult</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.DeviceIntLength.html"
+                                  title='type webrender::api::DeviceIntLength'>DeviceIntLength</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.DeviceIntPoint.html"
+                                  title='type webrender::api::DeviceIntPoint'>DeviceIntPoint</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.DeviceIntRect.html"
+                                  title='type webrender::api::DeviceIntRect'>DeviceIntRect</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.DeviceIntSize.html"
+                                  title='type webrender::api::DeviceIntSize'>DeviceIntSize</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.DevicePixelScale.html"
+                                  title='type webrender::api::DevicePixelScale'>DevicePixelScale</a></td>
+                           <td class='docblock-short'>
+                                <p>Scaling ratio from world pixels to device pixels.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.DevicePoint.html"
+                                  title='type webrender::api::DevicePoint'>DevicePoint</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.DeviceRect.html"
+                                  title='type webrender::api::DeviceRect'>DeviceRect</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.DeviceSize.html"
+                                  title='type webrender::api::DeviceSize'>DeviceSize</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.DeviceUintPoint.html"
+                                  title='type webrender::api::DeviceUintPoint'>DeviceUintPoint</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.DeviceUintRect.html"
+                                  title='type webrender::api::DeviceUintRect'>DeviceUintRect</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.DeviceUintSize.html"
+                                  title='type webrender::api::DeviceUintSize'>DeviceUintSize</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.DeviceVector2D.html"
+                                  title='type webrender::api::DeviceVector2D'>DeviceVector2D</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.DisplayItem.html"
+                                  title='type webrender::api::DisplayItem'>DisplayItem</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.DocumentLayer.html"
+                                  title='type webrender::api::DocumentLayer'>DocumentLayer</a></td>
+                           <td class='docblock-short'>
+                                <p>Documents are rendered in the ascending order of their associated layer values.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.GlyphIndex.html"
+                                  title='type webrender::api::GlyphIndex'>GlyphIndex</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.ItemTag.html"
+                                  title='type webrender::api::ItemTag'>ItemTag</a></td>
+                           <td class='docblock-short'>
+                                <p>A tag that can be used to identify items during hit testing. If the tag
+is missing then the item doesn&#39;t take part in hit testing at all. This
+is composed of two numbers. In Servo, the first is an identifier while the
+second is used to select the cursor that should be used during mouse
+movement. In Gecko, the first is a scrollframe identifier, while the second
+is used to store various flags that APZ needs to properly process input
+events.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.LayerPoint.html"
+                                  title='type webrender::api::LayerPoint'>LayerPoint</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.LayerPoint3D.html"
+                                  title='type webrender::api::LayerPoint3D'>LayerPoint3D</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.LayerPointAu.html"
+                                  title='type webrender::api::LayerPointAu'>LayerPointAu</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.LayerPrimitiveInfo.html"
+                                  title='type webrender::api::LayerPrimitiveInfo'>LayerPrimitiveInfo</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.LayerRect.html"
+                                  title='type webrender::api::LayerRect'>LayerRect</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.LayerRectAu.html"
+                                  title='type webrender::api::LayerRectAu'>LayerRectAu</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.LayerSize.html"
+                                  title='type webrender::api::LayerSize'>LayerSize</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.LayerSizeAu.html"
+                                  title='type webrender::api::LayerSizeAu'>LayerSizeAu</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.LayerToScrollTransform.html"
+                                  title='type webrender::api::LayerToScrollTransform'>LayerToScrollTransform</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.LayerToWorldScale.html"
+                                  title='type webrender::api::LayerToWorldScale'>LayerToWorldScale</a></td>
+                           <td class='docblock-short'>
+                                <p>Scaling ratio from layer to world. Used for cases where we know the layer
+is in world space, or specifically want to treat it this way.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.LayerToWorldTransform.html"
+                                  title='type webrender::api::LayerToWorldTransform'>LayerToWorldTransform</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.LayerTransform.html"
+                                  title='type webrender::api::LayerTransform'>LayerTransform</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.LayerVector2D.html"
+                                  title='type webrender::api::LayerVector2D'>LayerVector2D</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.LayerVector3D.html"
+                                  title='type webrender::api::LayerVector3D'>LayerVector3D</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.LayoutPixel.html"
+                                  title='type webrender::api::LayoutPixel'>LayoutPixel</a></td>
+                           <td class='docblock-short'>
+                                <p>Geometry in a stacking context&#39;s local coordinate space (logical pixels).</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.LayoutPoint.html"
+                                  title='type webrender::api::LayoutPoint'>LayoutPoint</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.LayoutPrimitiveInfo.html"
+                                  title='type webrender::api::LayoutPrimitiveInfo'>LayoutPrimitiveInfo</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.LayoutRect.html"
+                                  title='type webrender::api::LayoutRect'>LayoutRect</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.LayoutSize.html"
+                                  title='type webrender::api::LayoutSize'>LayoutSize</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.LayoutTransform.html"
+                                  title='type webrender::api::LayoutTransform'>LayoutTransform</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.LayoutVector2D.html"
+                                  title='type webrender::api::LayoutVector2D'>LayoutVector2D</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.LayoutVector3D.html"
+                                  title='type webrender::api::LayoutVector3D'>LayoutVector3D</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.PipelineSourceId.html"
+                                  title='type webrender::api::PipelineSourceId'>PipelineSourceId</a></td>
+                           <td class='docblock-short'>
+                                <p>This type carries no valuable semantics for WR. However, it reflects the fact that
+clients (Servo) may generate pipelines by different semi-independent sources.
+These pipelines still belong to the same <code>IdNamespace</code> and the same <code>DocumentId</code>.
+Having this extra Id field enables them to generate <code>PipelineId</code> without collision.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.ScrollLayerPoint.html"
+                                  title='type webrender::api::ScrollLayerPoint'>ScrollLayerPoint</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.ScrollLayerRect.html"
+                                  title='type webrender::api::ScrollLayerRect'>ScrollLayerRect</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.ScrollLayerSize.html"
+                                  title='type webrender::api::ScrollLayerSize'>ScrollLayerSize</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.ScrollLayerVector2D.html"
+                                  title='type webrender::api::ScrollLayerVector2D'>ScrollLayerVector2D</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.ScrollToLayerTransform.html"
+                                  title='type webrender::api::ScrollToLayerTransform'>ScrollToLayerTransform</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.ScrollToWorldTransform.html"
+                                  title='type webrender::api::ScrollToWorldTransform'>ScrollToWorldTransform</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.TileOffset.html"
+                                  title='type webrender::api::TileOffset'>TileOffset</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.TileSize.html"
+                                  title='type webrender::api::TileSize'>TileSize</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.WorldPoint.html"
+                                  title='type webrender::api::WorldPoint'>WorldPoint</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.WorldPoint3D.html"
+                                  title='type webrender::api::WorldPoint3D'>WorldPoint3D</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.WorldRect.html"
+                                  title='type webrender::api::WorldRect'>WorldRect</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.WorldSize.html"
+                                  title='type webrender::api::WorldSize'>WorldSize</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.WorldToLayerTransform.html"
+                                  title='type webrender::api::WorldToLayerTransform'>WorldToLayerTransform</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.WorldVector2D.html"
+                                  title='type webrender::api::WorldVector2D'>WorldVector2D</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.WorldVector3D.html"
+                                  title='type webrender::api::WorldVector3D'>WorldVector3D</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "webrender";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

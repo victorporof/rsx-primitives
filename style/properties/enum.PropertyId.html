@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `PropertyId` enum in crate `style`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, PropertyId">
+
+    <title>style::properties::PropertyId - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc enum">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Enum PropertyId</p><div class="block items"><a class="sidebar-title" href="#variants">Variants</a><div class="sidebar-links"><a href="#variant.Longhand">Longhand</a><a href="#variant.Shorthand">Shorthand</a><a href="#variant.LonghandAlias">LonghandAlias</a><a href="#variant.ShorthandAlias">ShorthandAlias</a><a href="#variant.Custom">Custom</a></div><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.longhand_id">longhand_id</a><a href="#method.parse">parse</a><a href="#method.as_shorthand">as_shorthand</a><a href="#method.name">name</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Clone">Clone</a><a href="#impl-Eq">Eq</a><a href="#impl-PartialEq">PartialEq</a><a href="#impl-Debug">Debug</a><a href="#impl-ToCss">ToCss</a></div></div><p class='location'><a href='../index.html'>style</a>::<wbr><a href='index.html'>properties</a></p><script>window.sidebarCurrent = {name: 'PropertyId', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../index.html'>style</a>::<wbr><a href='index.html'>properties</a>::<wbr><a class="enum" href=''>PropertyId</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#53917-53928' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum PropertyId {
+    Longhand(<a class="enum" href="../../style/properties/enum.LonghandId.html" title="enum style::properties::LonghandId">LonghandId</a>),
+    Shorthand(<a class="enum" href="../../style/properties/enum.ShorthandId.html" title="enum style::properties::ShorthandId">ShorthandId</a>),
+    LonghandAlias(<a class="enum" href="../../style/properties/enum.LonghandId.html" title="enum style::properties::LonghandId">LonghandId</a>,&nbsp;<a class="enum" href="../../style/properties/enum.AliasId.html" title="enum style::properties::AliasId">AliasId</a>),
+    ShorthandAlias(<a class="enum" href="../../style/properties/enum.ShorthandId.html" title="enum style::properties::ShorthandId">ShorthandId</a>,&nbsp;<a class="enum" href="../../style/properties/enum.AliasId.html" title="enum style::properties::AliasId">AliasId</a>),
+    Custom(<a class="type" href="../../style/custom_properties/type.Name.html" title="type style::custom_properties::Name">Name</a>),
+}</pre><div class='docblock'><p>Servo&#39;s representation of a CSS property, that is, either a longhand, a
+shorthand, or a custom property.</p>
+</div><h2 id='variants' class='variants small-section-header'>
+                   Variants<a href='#variants' class='anchor'></a></h2>
+<span id="variant.Longhand" class="variant small-section-header"><a href="#variant.Longhand" class="anchor field"></a><span id='Longhand.v' class='invisible'><code>Longhand(<a class="enum" href="../../style/properties/enum.LonghandId.html" title="enum style::properties::LonghandId">LonghandId</a>)</code></span></span><div class='docblock'><p>A longhand property.</p>
+</div><span id="variant.Shorthand" class="variant small-section-header"><a href="#variant.Shorthand" class="anchor field"></a><span id='Shorthand.v' class='invisible'><code>Shorthand(<a class="enum" href="../../style/properties/enum.ShorthandId.html" title="enum style::properties::ShorthandId">ShorthandId</a>)</code></span></span><div class='docblock'><p>A shorthand property.</p>
+</div><span id="variant.LonghandAlias" class="variant small-section-header"><a href="#variant.LonghandAlias" class="anchor field"></a><span id='LonghandAlias.v' class='invisible'><code>LonghandAlias(<a class="enum" href="../../style/properties/enum.LonghandId.html" title="enum style::properties::LonghandId">LonghandId</a>,&nbsp;<a class="enum" href="../../style/properties/enum.AliasId.html" title="enum style::properties::AliasId">AliasId</a>)</code></span></span><div class='docblock'><p>An alias for a longhand property.</p>
+</div><span id="variant.ShorthandAlias" class="variant small-section-header"><a href="#variant.ShorthandAlias" class="anchor field"></a><span id='ShorthandAlias.v' class='invisible'><code>ShorthandAlias(<a class="enum" href="../../style/properties/enum.ShorthandId.html" title="enum style::properties::ShorthandId">ShorthandId</a>,&nbsp;<a class="enum" href="../../style/properties/enum.AliasId.html" title="enum style::properties::AliasId">AliasId</a>)</code></span></span><div class='docblock'><p>An alias for a shorthand property.</p>
+</div><span id="variant.Custom" class="variant small-section-header"><a href="#variant.Custom" class="anchor field"></a><span id='Custom.v' class='invisible'><code>Custom(<a class="type" href="../../style/custom_properties/type.Name.html" title="type style::custom_properties::Name">Name</a>)</code></span></span><div class='docblock'><p>A custom property.</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="enum" href="../../style/properties/enum.PropertyId.html" title="enum style::properties::PropertyId">PropertyId</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#53952-55378' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.longhand_id' class="method"><span id='longhand_id.v' class='invisible'><code>pub fn <a href='#method.longhand_id' class='fnname'>longhand_id</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="enum" href="../../style/properties/enum.LonghandId.html" title="enum style::properties::LonghandId">LonghandId</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#53955-53961' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Return the longhand id that this property id represents.</p>
+</div><h4 id='method.parse' class="method"><span id='parse.v' class='invisible'><code>pub fn <a href='#method.parse' class='fnname'>parse</a>(property_name: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;Self, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#53966-54208' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a given property from the string <code>s</code>.</p>
+
+<p>Returns Err(()) for unknown non-custom properties.</p>
+</div><h4 id='method.as_shorthand' class="method"><span id='as_shorthand.v' class='invisible'><code>pub fn <a href='#method.as_shorthand' class='fnname'>as_shorthand</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="enum" href="../../style/properties/enum.ShorthandId.html" title="enum style::properties::ShorthandId">ShorthandId</a>, <a class="enum" href="../../style/properties/enum.PropertyDeclarationId.html" title="enum style::properties::PropertyDeclarationId">PropertyDeclarationId</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#55042-55050' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Given this property id, get it either as a shorthand or as a
+<code>PropertyDeclarationId</code>.</p>
+</div><h4 id='method.name' class="method"><span id='name.v' class='invisible'><code>pub fn <a href='#method.name' class='fnname'>name</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/alloc/borrow/enum.Cow.html" title="enum alloc::borrow::Cow">Cow</a>&lt;'static, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#55053-55066' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the name of the property without CSS escaping.</p>
+</div></div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Clone' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="enum" href="../../style/properties/enum.PropertyId.html" title="enum style::properties::PropertyId">PropertyId</a></code><a href='#impl-Clone' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#53916' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="enum" href="../../style/properties/enum.PropertyId.html" title="enum style::properties::PropertyId">PropertyId</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#53916' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 id='impl-Eq' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html" title="trait core::cmp::Eq">Eq</a> for <a class="enum" href="../../style/properties/enum.PropertyId.html" title="enum style::properties::PropertyId">PropertyId</a></code><a href='#impl-Eq' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#53916' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 id='impl-PartialEq' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a> for <a class="enum" href="../../style/properties/enum.PropertyId.html" title="enum style::properties::PropertyId">PropertyId</a></code><a href='#impl-PartialEq' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#53916' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class="method"><span id='eq.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class="enum" href="../../style/properties/enum.PropertyId.html" title="enum style::properties::PropertyId">PropertyId</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#53916' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class="method"><span id='ne.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class="enum" href="../../style/properties/enum.PropertyId.html" title="enum style::properties::PropertyId">PropertyId</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#53916' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="enum" href="../../style/properties/enum.PropertyId.html" title="enum style::properties::PropertyId">PropertyId</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#53930-53934' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, formatter: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#53931-53933' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div><h3 id='impl-ToCss' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../style_traits/values/trait.ToCss.html" title="trait style_traits::values::ToCss">ToCss</a> for <a class="enum" href="../../style/properties/enum.PropertyId.html" title="enum style::properties::PropertyId">PropertyId</a></code><a href='#impl-ToCss' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#53936-53950' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.to_css' class="method"><span id='to_css.v' class='invisible'><code>fn <a href='../../style_traits/values/trait.ToCss.html#tymethod.to_css' class='fnname'>to_css</a>&lt;W&gt;(&amp;self, dest: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>W) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a> <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;W: <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Write.html" title="trait core::fmt::Write">Write</a>,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#53937-53949' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Serialize <code>self</code> in CSS syntax, writing to <code>dest</code>.</p>
+</div><h4 id='method.to_css_string' class="method"><span id='to_css_string.v' class='invisible'><code>fn <a href='../../style_traits/values/trait.ToCss.html#method.to_css_string' class='fnname'>to_css_string</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style_traits/values.rs.html#43-47' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Serialize <code>self</code> in CSS syntax and return a string. <a href="../../style_traits/values/trait.ToCss.html#method.to_css_string">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "style";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

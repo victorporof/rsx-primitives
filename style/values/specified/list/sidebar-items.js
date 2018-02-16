@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["ListStyleImage","Specified and computed `list-style-image` property."],["Quotes","Specified and computed `quote` property."]]});

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Renderer` struct in crate `webrender`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Renderer">
+
+    <title>webrender::Renderer - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct Renderer</p><div class="block items"><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.new">new</a><a href="#method.get_max_texture_size">get_max_texture_size</a><a href="#method.get_graphics_api_info">get_graphics_api_info</a><a href="#method.current_epoch">current_epoch</a><a href="#method.flush_rendered_epochs">flush_rendered_epochs</a><a href="#method.update_program_cache">update_program_cache</a><a href="#method.update">update</a><a href="#method.set_external_image_handler">set_external_image_handler</a><a href="#method.set_output_image_handler">set_output_image_handler</a><a href="#method.get_frame_profiles">get_frame_profiles</a><a href="#method.render">render</a><a href="#method.layers_are_bouncing_back">layers_are_bouncing_back</a><a href="#method.debug_renderer">debug_renderer</a><a href="#method.get_debug_flags">get_debug_flags</a><a href="#method.set_debug_flags">set_debug_flags</a><a href="#method.set_debug_flag">set_debug_flag</a><a href="#method.toggle_debug_flags">toggle_debug_flags</a><a href="#method.save_cpu_profile">save_cpu_profile</a><a href="#method.read_pixels_rgba8">read_pixels_rgba8</a><a href="#method.read_gpu_cache">read_gpu_cache</a><a href="#method.read_pixels_into">read_pixels_into</a><a href="#method.deinit">deinit</a></div></div><p class='location'><a href='index.html'>webrender</a></p><script>window.sidebarCurrent = {name: 'Renderer', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>webrender</a>::<wbr><a class="struct" href=''>Renderer</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/webrender/renderer.rs.html#1567-1671' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Renderer { /* fields omitted */ }</pre><div class='docblock'><p>The renderer is responsible for submitting to the GPU the work prepared by the
+RenderBackend.</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="struct" href="../webrender/struct.Renderer.html" title="struct webrender::Renderer">Renderer</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/webrender/renderer.rs.html#1692-4575' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class="method"><span id='new.v' class='invisible'><code>pub fn <a href='#method.new' class='fnname'>new</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;gl: <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/rc/struct.Rc.html" title="struct alloc::rc::Rc">Rc</a>&lt;<a class="trait" href="../gleam/gl/trait.Gl.html" title="trait gleam::gl::Gl">Gl</a>&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;notifier: <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html" title="struct alloc::boxed::Box">Box</a>&lt;<a class="trait" href="../webrender/api/trait.RenderNotifier.html" title="trait webrender::api::RenderNotifier">RenderNotifier</a>&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;options: <a class="struct" href="../webrender/struct.RendererOptions.html" title="struct webrender::RendererOptions">RendererOptions</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a><a class="struct" href="../webrender/struct.Renderer.html" title="struct webrender::Renderer">Renderer</a>, <a class="struct" href="../webrender/api/struct.RenderApiSender.html" title="struct webrender::api::RenderApiSender">RenderApiSender</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a>, RendererError&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/webrender/renderer.rs.html#1710-2298' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Initializes webrender and creates a <code>Renderer</code> and <code>RenderApiSender</code>.</p>
+
+<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1>
+<p>Initializes a <code>Renderer</code> with some reasonable values. For more information see
+<a href="struct.RendererOptions.html"><code>RendererOptions</code></a>.</p>
+
+<div class='information'><div class='tooltip ignore'>⚠<span class='tooltiptext'>Be careful when using this code, it's not being tested!</span></div></div><pre class="rust rust-example-rendered ignore">
+<span class="kw">let</span> <span class="ident">opts</span> <span class="op">=</span> <span class="ident">webrender</span>::<span class="ident">RendererOptions</span> {
+   <span class="ident">device_pixel_ratio</span>: <span class="number">1.0</span>,
+   <span class="ident">resource_override_path</span>: <span class="prelude-val">None</span>,
+   <span class="ident">enable_aa</span>: <span class="bool-val">false</span>,
+};
+<span class="kw">let</span> (<span class="ident">renderer</span>, <span class="ident">sender</span>) <span class="op">=</span> <span class="ident">Renderer</span>::<span class="ident">new</span>(<span class="ident">opts</span>);</pre>
+</div><h4 id='method.get_max_texture_size' class="method"><span id='get_max_texture_size.v' class='invisible'><code>pub fn <a href='#method.get_max_texture_size' class='fnname'>get_max_texture_size</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/webrender/renderer.rs.html#2300-2302' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.get_graphics_api_info' class="method"><span id='get_graphics_api_info.v' class='invisible'><code>pub fn <a href='#method.get_graphics_api_info' class='fnname'>get_graphics_api_info</a>(&amp;self) -&gt; <a class="struct" href="../webrender/struct.GraphicsApiInfo.html" title="struct webrender::GraphicsApiInfo">GraphicsApiInfo</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/webrender/renderer.rs.html#2304-2310' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.current_epoch' class="method"><span id='current_epoch.v' class='invisible'><code>pub fn <a href='#method.current_epoch' class='fnname'>current_epoch</a>(&amp;self, pipeline_id: <a class="struct" href="../webrender/api/struct.PipelineId.html" title="struct webrender::api::PipelineId">PipelineId</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../webrender/api/struct.Epoch.html" title="struct webrender::api::Epoch">Epoch</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/webrender/renderer.rs.html#2322-2324' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the Epoch of the current frame in a pipeline.</p>
+</div><h4 id='method.flush_rendered_epochs' class="method"><span id='flush_rendered_epochs.v' class='invisible'><code>pub fn <a href='#method.flush_rendered_epochs' class='fnname'>flush_rendered_epochs</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self<br>) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/std/collections/hash/map/struct.HashMap.html" title="struct std::collections::hash::map::HashMap">HashMap</a>&lt;<a class="struct" href="../webrender/api/struct.PipelineId.html" title="struct webrender::api::PipelineId">PipelineId</a>, <a class="struct" href="../webrender/api/struct.Epoch.html" title="struct webrender::api::Epoch">Epoch</a>, <a class="struct" href="https://doc.rust-lang.org/nightly/core/hash/struct.BuildHasherDefault.html" title="struct core::hash::BuildHasherDefault">BuildHasherDefault</a>&lt;<a class="struct" href="../fxhash/struct.FxHasher.html" title="struct fxhash::FxHasher">FxHasher</a>&gt;&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/webrender/renderer.rs.html#2328-2330' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a HashMap containing the pipeline ids that have been received by the renderer and
+their respective epochs since the last time the method was called.</p>
+</div><h4 id='method.update_program_cache' class="method"><span id='update_program_cache.v' class='invisible'><code>pub fn <a href='#method.update_program_cache' class='fnname'>update_program_cache</a>(&amp;mut self, cached_programs: <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/rc/struct.Rc.html" title="struct alloc::rc::Rc">Rc</a>&lt;ProgramCache&gt;)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/webrender/renderer.rs.html#2334-2336' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.update' class="method"><span id='update.v' class='invisible'><code>pub fn <a href='#method.update' class='fnname'>update</a>(&amp;mut self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/webrender/renderer.rs.html#2341-2441' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Processes the result queue.</p>
+
+<p>Should be called before <code>render()</code>, as texture cache updates are done here.</p>
+</div><h4 id='method.set_external_image_handler' class="method"><span id='set_external_image_handler.v' class='invisible'><code>pub fn <a href='#method.set_external_image_handler' class='fnname'>set_external_image_handler</a>(&amp;mut self, handler: <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html" title="struct alloc::boxed::Box">Box</a>&lt;<a class="trait" href="../webrender/trait.ExternalImageHandler.html" title="trait webrender::ExternalImageHandler">ExternalImageHandler</a>&gt;)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/webrender/renderer.rs.html#2682-2684' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Set a callback for handling external images.</p>
+</div><h4 id='method.set_output_image_handler' class="method"><span id='set_output_image_handler.v' class='invisible'><code>pub fn <a href='#method.set_output_image_handler' class='fnname'>set_output_image_handler</a>(&amp;mut self, handler: <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html" title="struct alloc::boxed::Box">Box</a>&lt;<a class="trait" href="../webrender/trait.OutputImageHandler.html" title="trait webrender::OutputImageHandler">OutputImageHandler</a>&gt;)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/webrender/renderer.rs.html#2687-2689' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Set a callback for handling external outputs.</p>
+</div><h4 id='method.get_frame_profiles' class="method"><span id='get_frame_profiles.v' class='invisible'><code>pub fn <a href='#method.get_frame_profiles' class='fnname'>get_frame_profiles</a>(&amp;mut self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a><a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="struct" href="../webrender/struct.CpuProfile.html" title="struct webrender::CpuProfile">CpuProfile</a>&gt;, <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="struct" href="../webrender/struct.GpuProfile.html" title="struct webrender::GpuProfile">GpuProfile</a>&gt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/webrender/renderer.rs.html#2692-2696' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Retrieve (and clear) the current list of recorded frame profiles.</p>
+</div><h4 id='method.render' class="method"><span id='render.v' class='invisible'><code>pub fn <a href='#method.render' class='fnname'>render</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;framebuffer_size: <a class="type" href="../webrender/api/type.DeviceUintSize.html" title="type webrender::api::DeviceUintSize">DeviceUintSize</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="../webrender/struct.RendererStats.html" title="struct webrender::RendererStats">RendererStats</a>, <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;RendererError&gt;&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/webrender/renderer.rs.html#2728-2883' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Renders the current frame.</p>
+
+<p>A Frame is supplied by calling <a href="../../webrender_api/struct.DocumentApi.html#method.generate_frame"><code>generate_frame()</code></a>.</p>
+</div><h4 id='method.layers_are_bouncing_back' class="method"><span id='layers_are_bouncing_back.v' class='invisible'><code>pub fn <a href='#method.layers_are_bouncing_back' class='fnname'>layers_are_bouncing_back</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/webrender/renderer.rs.html#2885-2889' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.debug_renderer' class="method"><span id='debug_renderer.v' class='invisible'><code>pub fn <a href='#method.debug_renderer' class='fnname'>debug_renderer</a>&lt;'b&gt;(&amp;'b mut self) -&gt; &amp;'b mut DebugRenderer</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/webrender/renderer.rs.html#4309-4311' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.get_debug_flags' class="method"><span id='get_debug_flags.v' class='invisible'><code>pub fn <a href='#method.get_debug_flags' class='fnname'>get_debug_flags</a>(&amp;self) -&gt; <a class="struct" href="../webrender/struct.DebugFlags.html" title="struct webrender::DebugFlags">DebugFlags</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/webrender/renderer.rs.html#4313-4315' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.set_debug_flags' class="method"><span id='set_debug_flags.v' class='invisible'><code>pub fn <a href='#method.set_debug_flags' class='fnname'>set_debug_flags</a>(&amp;mut self, flags: <a class="struct" href="../webrender/struct.DebugFlags.html" title="struct webrender::DebugFlags">DebugFlags</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/webrender/renderer.rs.html#4317-4334' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.set_debug_flag' class="method"><span id='set_debug_flag.v' class='invisible'><code>pub fn <a href='#method.set_debug_flag' class='fnname'>set_debug_flag</a>(&amp;mut self, flag: <a class="struct" href="../webrender/struct.DebugFlags.html" title="struct webrender::DebugFlags">DebugFlags</a>, enabled: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/webrender/renderer.rs.html#4336-4340' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.toggle_debug_flags' class="method"><span id='toggle_debug_flags.v' class='invisible'><code>pub fn <a href='#method.toggle_debug_flags' class='fnname'>toggle_debug_flags</a>(&amp;mut self, toggle: <a class="struct" href="../webrender/struct.DebugFlags.html" title="struct webrender::DebugFlags">DebugFlags</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/webrender/renderer.rs.html#4342-4346' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.save_cpu_profile' class="method"><span id='save_cpu_profile.v' class='invisible'><code>pub fn <a href='#method.save_cpu_profile' class='fnname'>save_cpu_profile</a>(&amp;self, filename: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/webrender/renderer.rs.html#4348-4350' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.read_pixels_rgba8' class="method"><span id='read_pixels_rgba8.v' class='invisible'><code>pub fn <a href='#method.read_pixels_rgba8' class='fnname'>read_pixels_rgba8</a>(&amp;self, rect: <a class="type" href="../webrender/api/type.DeviceUintRect.html" title="type webrender::api::DeviceUintRect">DeviceUintRect</a>) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/webrender/renderer.rs.html#4472-4476' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.read_gpu_cache' class="method"><span id='read_gpu_cache.v' class='invisible'><code>pub fn <a href='#method.read_gpu_cache' class='fnname'>read_gpu_cache</a>(&amp;mut self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a><a class="type" href="../webrender/api/type.DeviceUintSize.html" title="type webrender::api::DeviceUintSize">DeviceUintSize</a>, <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>&gt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/webrender/renderer.rs.html#4478-4491' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.read_pixels_into' class="method"><span id='read_pixels_into.v' class='invisible'><code>pub fn <a href='#method.read_pixels_into' class='fnname'>read_pixels_into</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;rect: <a class="type" href="../webrender/api/type.DeviceUintRect.html" title="type webrender::api::DeviceUintRect">DeviceUintRect</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;format: <a class="enum" href="../webrender/enum.ReadPixelsFormat.html" title="enum webrender::ReadPixelsFormat">ReadPixelsFormat</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;output: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;mut [</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a><br>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/webrender/renderer.rs.html#4493-4517' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.deinit' class="method"><span id='deinit.v' class='invisible'><code>pub fn <a href='#method.deinit' class='fnname'>deinit</a>(self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/webrender/renderer.rs.html#4520-4574' title='goto source code'>[src]</a></span></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "webrender";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

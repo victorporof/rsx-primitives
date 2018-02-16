@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `webrender` crate.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, webrender">
+
+    <title>webrender - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc mod">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Crate webrender</p><div class="block items"><ul><li><a href="#reexports">Reexports</a></li><li><a href="#modules">Modules</a></li><li><a href="#structs">Structs</a></li><li><a href="#enums">Enums</a></li><li><a href="#constants">Constants</a></li><li><a href="#statics">Statics</a></li><li><a href="#traits">Traits</a></li></ul></div><p class='location'></p><script>window.sidebarCurrent = {name: 'webrender', ty: 'mod', relpath: '../'};</script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Crate <a class="mod" href=''>webrender</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/webrender/lib.rs.html#5-169' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p>A GPU based renderer for the web.</p>
+
+<p>It serves as an experimental render backend for <a href="https://servo.org/">Servo</a>,
+but it can also be used as such in a standalone application.</p>
+
+<h1 id='external-dependencies' class='section-header'><a href='#external-dependencies'>External dependencies</a></h1>
+<p>WebRender currently depends on <a href="https://www.freetype.org/">FreeType</a></p>
+
+<h1 id='api-structure' class='section-header'><a href='#api-structure'>Api Structure</a></h1>
+<p>The main entry point to WebRender is the <code>webrender::Renderer</code>.</p>
+
+<p>By calling <code>Renderer::new(...)</code> you get a <code>Renderer</code>, as well as a <code>RenderApiSender</code>.
+Your <code>Renderer</code> is responsible to render the previously processed frames onto the screen.</p>
+
+<p>By calling <code>yourRenderApiSender.create_api()</code>, you&#39;ll get a <code>RenderApi</code> instance,
+which is responsible for managing resources and documents. A worker thread is used internally
+to untie the workload from the application thread and therefore be able to make better use of
+multicore systems.</p>
+
+<h2 id='frame' class='section-header'><a href='#frame'>Frame</a></h2>
+<p>What is referred to as a <code>frame</code>, is the current geometry on the screen.
+A new Frame is created by calling <a href="../webrender_api/struct.RenderApi.html#method.set_display_list"><code>set_display_list()</code></a> on the <code>RenderApi</code>.
+When the geometry is processed, the application will be informed via a <code>RenderNotifier</code>,
+a callback which you employ with <a href="renderer/struct.Renderer.html#method.set_render_notifier">set_render_notifier</a> on the <code>Renderer</code>
+More information about <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context">stacking contexts</a>.</p>
+
+<p><code>set_display_list()</code> also needs to be supplied with <code>BuiltDisplayList</code>s.
+These are obtained by finalizing a <code>DisplayListBuilder</code>. These are used to draw your geometry.
+But it doesn&#39;t only contain trivial geometry, it can also store another StackingContext, as
+they&#39;re nestable.</p>
+</div><h2 id='reexports' class='section-header'><a href="#reexports">Reexports</a></h2>
+<table><tr><td><code>pub extern crate <a class="mod" href="../webrender/api/index.html" title="mod webrender::api">webrender_api</a>;</code></td></tr></table><h2 id='modules' class='section-header'><a href="#modules">Modules</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="api/index.html"
+                                  title='mod webrender::api'>api</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.BinaryRecorder.html"
+                                  title='struct webrender::BinaryRecorder'>BinaryRecorder</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.CpuProfile.html"
+                                  title='struct webrender::CpuProfile'>CpuProfile</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.DebugFlags.html"
+                                  title='struct webrender::DebugFlags'>DebugFlags</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ExternalImage.html"
+                                  title='struct webrender::ExternalImage'>ExternalImage</a></td>
+                           <td class='docblock-short'>
+                                <p>The data that an external client should provide about
+an external image. The timestamp is used to test if
+the renderer should upload new texture data this
+frame. For instance, if providing video frames, the
+application could call wr.render() whenever a new
+video frame is ready. If the callback increments
+the returned timestamp for a given image, the renderer
+will know to re-upload the image data to the GPU.
+Note that the UV coords are supplied in texel-space!</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.GpuProfile.html"
+                                  title='struct webrender::GpuProfile'>GpuProfile</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.GraphicsApiInfo.html"
+                                  title='struct webrender::GraphicsApiInfo'>GraphicsApiInfo</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Renderer.html"
+                                  title='struct webrender::Renderer'>Renderer</a></td>
+                           <td class='docblock-short'>
+                                <p>The renderer is responsible for submitting to the GPU the work prepared by the
+RenderBackend.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.RendererOptions.html"
+                                  title='struct webrender::RendererOptions'>RendererOptions</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.RendererStats.html"
+                                  title='struct webrender::RendererStats'>RendererStats</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.ExternalImageSource.html"
+                                  title='enum webrender::ExternalImageSource'>ExternalImageSource</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.GraphicsApi.html"
+                                  title='enum webrender::GraphicsApi'>GraphicsApi</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.ReadPixelsFormat.html"
+                                  title='enum webrender::ReadPixelsFormat'>ReadPixelsFormat</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.RendererKind.html"
+                                  title='enum webrender::RendererKind'>RendererKind</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table><h2 id='constants' class='section-header'><a href="#constants">Constants</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.MAX_VERTEX_TEXTURE_WIDTH.html"
+                                  title='constant webrender::MAX_VERTEX_TEXTURE_WIDTH'>MAX_VERTEX_TEXTURE_WIDTH</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table><h2 id='statics' class='section-header'><a href="#statics">Statics</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="static" href="static.WEBRENDER_RECORDING_HEADER.html"
+                                  title='static webrender::WEBRENDER_RECORDING_HEADER'>WEBRENDER_RECORDING_HEADER</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table><h2 id='traits' class='section-header'><a href="#traits">Traits</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.ApiRecordingReceiver.html"
+                                  title='trait webrender::ApiRecordingReceiver'>ApiRecordingReceiver</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.ExternalImageHandler.html"
+                                  title='trait webrender::ExternalImageHandler'>ExternalImageHandler</a></td>
+                           <td class='docblock-short'>
+                                <p>The interfaces that an application can implement to support providing
+external image buffers.
+When the the application passes an external image to WR, it should kepp that
+external image life time. People could check the epoch id in RenderNotifier
+at the client side to make sure that the external image is not used by WR.
+Then, do the clean up for that external image.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.OutputImageHandler.html"
+                                  title='trait webrender::OutputImageHandler'>OutputImageHandler</a></td>
+                           <td class='docblock-short'>
+                                <p>Allows callers to receive a texture with the contents of a specific
+pipeline copied to it. Lock should return the native texture handle
+and the size of the texture. Unlock will only be called if the lock()
+call succeeds, when WR has issued the GL commands to copy the output
+to the texture handle.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.ThreadListener.html"
+                                  title='trait webrender::ThreadListener'>ThreadListener</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "webrender";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

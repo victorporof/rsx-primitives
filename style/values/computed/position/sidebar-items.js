@@ -1,0 +1,1 @@
+initSidebarItems({"type":[["HorizontalPosition","The computed value of a CSS horizontal position."],["Position","The computed value of a CSS `<position>`"],["VerticalPosition","The computed value of a CSS vertical position."]]});

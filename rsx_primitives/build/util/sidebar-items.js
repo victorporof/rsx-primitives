@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["make_border_details",""],["make_border_style",""],["make_border_widths",""],["make_color_f",""],["make_glyph_options",""],["make_image_rendering_style",""],["make_image_stretch_size",""],["make_image_tile_spacing",""],["make_layer_rect",""],["make_primitive_info",""]]});

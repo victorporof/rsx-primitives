@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `FT_GlyphSlotRec_` struct in crate `freetype`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, FT_GlyphSlotRec_">
+
+    <title>freetype::freetype::FT_GlyphSlotRec_ - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct FT_GlyphSlotRec_</p><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.library">library</a><a href="#structfield.face">face</a><a href="#structfield.next">next</a><a href="#structfield.reserved">reserved</a><a href="#structfield.generic">generic</a><a href="#structfield.metrics">metrics</a><a href="#structfield.linearHoriAdvance">linearHoriAdvance</a><a href="#structfield.linearVertAdvance">linearVertAdvance</a><a href="#structfield.advance">advance</a><a href="#structfield.format">format</a><a href="#structfield.bitmap">bitmap</a><a href="#structfield.bitmap_left">bitmap_left</a><a href="#structfield.bitmap_top">bitmap_top</a><a href="#structfield.outline">outline</a><a href="#structfield.num_subglyphs">num_subglyphs</a><a href="#structfield.subglyphs">subglyphs</a><a href="#structfield.control_data">control_data</a><a href="#structfield.control_len">control_len</a><a href="#structfield.lsb_delta">lsb_delta</a><a href="#structfield.rsb_delta">rsb_delta</a><a href="#structfield.other">other</a><a href="#structfield.internal">internal</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Debug">Debug</a><a href="#impl-Copy">Copy</a><a href="#impl-Clone">Clone</a></div></div><p class='location'><a href='../index.html'>freetype</a>::<wbr><a href='index.html'>freetype</a></p><script>window.sidebarCurrent = {name: 'FT_GlyphSlotRec_', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>freetype</a>::<wbr><a href='index.html'>freetype</a>::<wbr><a class="struct" href=''>FT_GlyphSlotRec_</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/freetype/freetype.rs.html#1659-1682' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'><div class="docblock attributes">#[repr(C)]
+</div>pub struct FT_GlyphSlotRec_ {
+    pub library: <a class="type" href="../../freetype/freetype/type.FT_Library.html" title="type freetype::freetype::FT_Library">FT_Library</a>,
+    pub face: <a class="type" href="../../freetype/freetype/type.FT_Face.html" title="type freetype::freetype::FT_Face">FT_Face</a>,
+    pub next: <a class="type" href="../../freetype/freetype/type.FT_GlyphSlot.html" title="type freetype::freetype::FT_GlyphSlot">FT_GlyphSlot</a>,
+    pub reserved: <a class="type" href="../../freetype/freetype/type.FT_UInt.html" title="type freetype::freetype::FT_UInt">FT_UInt</a>,
+    pub generic: <a class="type" href="../../freetype/freetype/type.FT_Generic.html" title="type freetype::freetype::FT_Generic">FT_Generic</a>,
+    pub metrics: <a class="type" href="../../freetype/freetype/type.FT_Glyph_Metrics.html" title="type freetype::freetype::FT_Glyph_Metrics">FT_Glyph_Metrics</a>,
+    pub linearHoriAdvance: <a class="type" href="../../freetype/freetype/type.FT_Fixed.html" title="type freetype::freetype::FT_Fixed">FT_Fixed</a>,
+    pub linearVertAdvance: <a class="type" href="../../freetype/freetype/type.FT_Fixed.html" title="type freetype::freetype::FT_Fixed">FT_Fixed</a>,
+    pub advance: <a class="type" href="../../freetype/freetype/type.FT_Vector.html" title="type freetype::freetype::FT_Vector">FT_Vector</a>,
+    pub format: <a class="enum" href="../../freetype/freetype/enum.FT_Glyph_Format_.html" title="enum freetype::freetype::FT_Glyph_Format_">FT_Glyph_Format</a>,
+    pub bitmap: <a class="type" href="../../freetype/freetype/type.FT_Bitmap.html" title="type freetype::freetype::FT_Bitmap">FT_Bitmap</a>,
+    pub bitmap_left: <a class="type" href="../../freetype/freetype/type.FT_Int.html" title="type freetype::freetype::FT_Int">FT_Int</a>,
+    pub bitmap_top: <a class="type" href="../../freetype/freetype/type.FT_Int.html" title="type freetype::freetype::FT_Int">FT_Int</a>,
+    pub outline: <a class="type" href="../../freetype/freetype/type.FT_Outline.html" title="type freetype::freetype::FT_Outline">FT_Outline</a>,
+    pub num_subglyphs: <a class="type" href="../../freetype/freetype/type.FT_UInt.html" title="type freetype::freetype::FT_UInt">FT_UInt</a>,
+    pub subglyphs: <a class="type" href="../../freetype/freetype/type.FT_SubGlyph.html" title="type freetype::freetype::FT_SubGlyph">FT_SubGlyph</a>,
+    pub control_data: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/nightly/std/os/raw/enum.c_void.html" title="enum std::os::raw::c_void">c_void</a>,
+    pub control_len: <a class="type" href="https://doc.rust-lang.org/nightly/std/os/raw/type.c_long.html" title="type std::os::raw::c_long">c_long</a>,
+    pub lsb_delta: <a class="type" href="../../freetype/freetype/type.FT_Pos.html" title="type freetype::freetype::FT_Pos">FT_Pos</a>,
+    pub rsb_delta: <a class="type" href="../../freetype/freetype/type.FT_Pos.html" title="type freetype::freetype::FT_Pos">FT_Pos</a>,
+    pub other: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/nightly/std/os/raw/enum.c_void.html" title="enum std::os::raw::c_void">c_void</a>,
+    pub internal: <a class="type" href="../../freetype/freetype/type.FT_Slot_Internal.html" title="type freetype::freetype::FT_Slot_Internal">FT_Slot_Internal</a>,
+}</pre><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.library" class="structfield small-section-header">
+                           <a href="#structfield.library" class="anchor field"></a>
+                           <span id="library.v" class='invisible'>
+                           <code>library: <a class="type" href="../../freetype/freetype/type.FT_Library.html" title="type freetype::freetype::FT_Library">FT_Library</a></code>
+                           </span></span><span id="structfield.face" class="structfield small-section-header">
+                           <a href="#structfield.face" class="anchor field"></a>
+                           <span id="face.v" class='invisible'>
+                           <code>face: <a class="type" href="../../freetype/freetype/type.FT_Face.html" title="type freetype::freetype::FT_Face">FT_Face</a></code>
+                           </span></span><span id="structfield.next" class="structfield small-section-header">
+                           <a href="#structfield.next" class="anchor field"></a>
+                           <span id="next.v" class='invisible'>
+                           <code>next: <a class="type" href="../../freetype/freetype/type.FT_GlyphSlot.html" title="type freetype::freetype::FT_GlyphSlot">FT_GlyphSlot</a></code>
+                           </span></span><span id="structfield.reserved" class="structfield small-section-header">
+                           <a href="#structfield.reserved" class="anchor field"></a>
+                           <span id="reserved.v" class='invisible'>
+                           <code>reserved: <a class="type" href="../../freetype/freetype/type.FT_UInt.html" title="type freetype::freetype::FT_UInt">FT_UInt</a></code>
+                           </span></span><span id="structfield.generic" class="structfield small-section-header">
+                           <a href="#structfield.generic" class="anchor field"></a>
+                           <span id="generic.v" class='invisible'>
+                           <code>generic: <a class="type" href="../../freetype/freetype/type.FT_Generic.html" title="type freetype::freetype::FT_Generic">FT_Generic</a></code>
+                           </span></span><span id="structfield.metrics" class="structfield small-section-header">
+                           <a href="#structfield.metrics" class="anchor field"></a>
+                           <span id="metrics.v" class='invisible'>
+                           <code>metrics: <a class="type" href="../../freetype/freetype/type.FT_Glyph_Metrics.html" title="type freetype::freetype::FT_Glyph_Metrics">FT_Glyph_Metrics</a></code>
+                           </span></span><span id="structfield.linearHoriAdvance" class="structfield small-section-header">
+                           <a href="#structfield.linearHoriAdvance" class="anchor field"></a>
+                           <span id="linearHoriAdvance.v" class='invisible'>
+                           <code>linearHoriAdvance: <a class="type" href="../../freetype/freetype/type.FT_Fixed.html" title="type freetype::freetype::FT_Fixed">FT_Fixed</a></code>
+                           </span></span><span id="structfield.linearVertAdvance" class="structfield small-section-header">
+                           <a href="#structfield.linearVertAdvance" class="anchor field"></a>
+                           <span id="linearVertAdvance.v" class='invisible'>
+                           <code>linearVertAdvance: <a class="type" href="../../freetype/freetype/type.FT_Fixed.html" title="type freetype::freetype::FT_Fixed">FT_Fixed</a></code>
+                           </span></span><span id="structfield.advance" class="structfield small-section-header">
+                           <a href="#structfield.advance" class="anchor field"></a>
+                           <span id="advance.v" class='invisible'>
+                           <code>advance: <a class="type" href="../../freetype/freetype/type.FT_Vector.html" title="type freetype::freetype::FT_Vector">FT_Vector</a></code>
+                           </span></span><span id="structfield.format" class="structfield small-section-header">
+                           <a href="#structfield.format" class="anchor field"></a>
+                           <span id="format.v" class='invisible'>
+                           <code>format: <a class="enum" href="../../freetype/freetype/enum.FT_Glyph_Format_.html" title="enum freetype::freetype::FT_Glyph_Format_">FT_Glyph_Format</a></code>
+                           </span></span><span id="structfield.bitmap" class="structfield small-section-header">
+                           <a href="#structfield.bitmap" class="anchor field"></a>
+                           <span id="bitmap.v" class='invisible'>
+                           <code>bitmap: <a class="type" href="../../freetype/freetype/type.FT_Bitmap.html" title="type freetype::freetype::FT_Bitmap">FT_Bitmap</a></code>
+                           </span></span><span id="structfield.bitmap_left" class="structfield small-section-header">
+                           <a href="#structfield.bitmap_left" class="anchor field"></a>
+                           <span id="bitmap_left.v" class='invisible'>
+                           <code>bitmap_left: <a class="type" href="../../freetype/freetype/type.FT_Int.html" title="type freetype::freetype::FT_Int">FT_Int</a></code>
+                           </span></span><span id="structfield.bitmap_top" class="structfield small-section-header">
+                           <a href="#structfield.bitmap_top" class="anchor field"></a>
+                           <span id="bitmap_top.v" class='invisible'>
+                           <code>bitmap_top: <a class="type" href="../../freetype/freetype/type.FT_Int.html" title="type freetype::freetype::FT_Int">FT_Int</a></code>
+                           </span></span><span id="structfield.outline" class="structfield small-section-header">
+                           <a href="#structfield.outline" class="anchor field"></a>
+                           <span id="outline.v" class='invisible'>
+                           <code>outline: <a class="type" href="../../freetype/freetype/type.FT_Outline.html" title="type freetype::freetype::FT_Outline">FT_Outline</a></code>
+                           </span></span><span id="structfield.num_subglyphs" class="structfield small-section-header">
+                           <a href="#structfield.num_subglyphs" class="anchor field"></a>
+                           <span id="num_subglyphs.v" class='invisible'>
+                           <code>num_subglyphs: <a class="type" href="../../freetype/freetype/type.FT_UInt.html" title="type freetype::freetype::FT_UInt">FT_UInt</a></code>
+                           </span></span><span id="structfield.subglyphs" class="structfield small-section-header">
+                           <a href="#structfield.subglyphs" class="anchor field"></a>
+                           <span id="subglyphs.v" class='invisible'>
+                           <code>subglyphs: <a class="type" href="../../freetype/freetype/type.FT_SubGlyph.html" title="type freetype::freetype::FT_SubGlyph">FT_SubGlyph</a></code>
+                           </span></span><span id="structfield.control_data" class="structfield small-section-header">
+                           <a href="#structfield.control_data" class="anchor field"></a>
+                           <span id="control_data.v" class='invisible'>
+                           <code>control_data: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/nightly/std/os/raw/enum.c_void.html" title="enum std::os::raw::c_void">c_void</a></code>
+                           </span></span><span id="structfield.control_len" class="structfield small-section-header">
+                           <a href="#structfield.control_len" class="anchor field"></a>
+                           <span id="control_len.v" class='invisible'>
+                           <code>control_len: <a class="type" href="https://doc.rust-lang.org/nightly/std/os/raw/type.c_long.html" title="type std::os::raw::c_long">c_long</a></code>
+                           </span></span><span id="structfield.lsb_delta" class="structfield small-section-header">
+                           <a href="#structfield.lsb_delta" class="anchor field"></a>
+                           <span id="lsb_delta.v" class='invisible'>
+                           <code>lsb_delta: <a class="type" href="../../freetype/freetype/type.FT_Pos.html" title="type freetype::freetype::FT_Pos">FT_Pos</a></code>
+                           </span></span><span id="structfield.rsb_delta" class="structfield small-section-header">
+                           <a href="#structfield.rsb_delta" class="anchor field"></a>
+                           <span id="rsb_delta.v" class='invisible'>
+                           <code>rsb_delta: <a class="type" href="../../freetype/freetype/type.FT_Pos.html" title="type freetype::freetype::FT_Pos">FT_Pos</a></code>
+                           </span></span><span id="structfield.other" class="structfield small-section-header">
+                           <a href="#structfield.other" class="anchor field"></a>
+                           <span id="other.v" class='invisible'>
+                           <code>other: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/nightly/std/os/raw/enum.c_void.html" title="enum std::os::raw::c_void">c_void</a></code>
+                           </span></span><span id="structfield.internal" class="structfield small-section-header">
+                           <a href="#structfield.internal" class="anchor field"></a>
+                           <span id="internal.v" class='invisible'>
+                           <code>internal: <a class="type" href="../../freetype/freetype/type.FT_Slot_Internal.html" title="type freetype::freetype::FT_Slot_Internal">FT_Slot_Internal</a></code>
+                           </span></span>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../../freetype/freetype/struct.FT_GlyphSlotRec_.html" title="struct freetype::freetype::FT_GlyphSlotRec_">FT_GlyphSlotRec_</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/freetype/freetype.rs.html#1658' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/freetype/freetype.rs.html#1658' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div><h3 id='impl-Copy' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html" title="trait core::marker::Copy">Copy</a> for <a class="struct" href="../../freetype/freetype/struct.FT_GlyphSlotRec_.html" title="struct freetype::freetype::FT_GlyphSlotRec_">FT_GlyphSlotRec_</a></code><a href='#impl-Copy' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/freetype/freetype.rs.html#1658' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 id='impl-Clone' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="struct" href="../../freetype/freetype/struct.FT_GlyphSlotRec_.html" title="struct freetype::freetype::FT_GlyphSlotRec_">FT_GlyphSlotRec_</a></code><a href='#impl-Clone' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/freetype/freetype.rs.html#1800-1802' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/freetype/freetype.rs.html#1801' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "freetype";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

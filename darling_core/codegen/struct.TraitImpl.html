@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `TraitImpl` struct in crate `darling_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, TraitImpl">
+
+    <title>darling_core::codegen::TraitImpl - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct TraitImpl</p><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.ident">ident</a><a href="#structfield.generics">generics</a><a href="#structfield.body">body</a><a href="#structfield.default">default</a><a href="#structfield.map">map</a><a href="#structfield.bound">bound</a></div><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.declare_errors">declare_errors</a><a href="#method.check_errors">check_errors</a><a href="#method.require_fields">require_fields</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Debug">Debug</a><a href="#impl-From%3C%26%27a%20Core%3E">From&lt;&amp;&#39;a Core&gt;</a></div></div><p class='location'><a href='../index.html'>darling_core</a>::<wbr><a href='index.html'>codegen</a></p><script>window.sidebarCurrent = {name: 'TraitImpl', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>darling_core</a>::<wbr><a href='index.html'>codegen</a>::<wbr><a class="struct" href=''>TraitImpl</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/darling_core/codegen/trait_impl.rs.html#10-17' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct TraitImpl&lt;'a&gt; {
+    pub ident: &amp;'a <a class="struct" href="../../syn/ident/struct.Ident.html" title="struct syn::ident::Ident">Ident</a>,
+    pub generics: &amp;'a <a class="struct" href="../../syn/generics/struct.Generics.html" title="struct syn::generics::Generics">Generics</a>,
+    pub body: <a class="enum" href="../../darling_core/ast/enum.Body.html" title="enum darling_core::ast::Body">Body</a>&lt;<a class="struct" href="../../darling_core/codegen/struct.Variant.html" title="struct darling_core::codegen::Variant">Variant</a>&lt;'a&gt;, <a class="struct" href="../../darling_core/codegen/struct.Field.html" title="struct darling_core::codegen::Field">Field</a>&lt;'a&gt;&gt;,
+    pub default: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="enum" href="../../darling_core/codegen/enum.DefaultExpression.html" title="enum darling_core::codegen::DefaultExpression">DefaultExpression</a>&lt;'a&gt;&gt;,
+    pub map: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;'a <a class="struct" href="../../syn/ty/struct.Path.html" title="struct syn::ty::Path">Path</a>&gt;,
+    pub bound: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;'a [</a><a class="enum" href="../../syn/generics/enum.WherePredicate.html" title="enum syn::generics::WherePredicate">WherePredicate</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a>&gt;,
+}</pre><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.ident" class="structfield small-section-header">
+                           <a href="#structfield.ident" class="anchor field"></a>
+                           <span id="ident.v" class='invisible'>
+                           <code>ident: &amp;'a <a class="struct" href="../../syn/ident/struct.Ident.html" title="struct syn::ident::Ident">Ident</a></code>
+                           </span></span><span id="structfield.generics" class="structfield small-section-header">
+                           <a href="#structfield.generics" class="anchor field"></a>
+                           <span id="generics.v" class='invisible'>
+                           <code>generics: &amp;'a <a class="struct" href="../../syn/generics/struct.Generics.html" title="struct syn::generics::Generics">Generics</a></code>
+                           </span></span><span id="structfield.body" class="structfield small-section-header">
+                           <a href="#structfield.body" class="anchor field"></a>
+                           <span id="body.v" class='invisible'>
+                           <code>body: <a class="enum" href="../../darling_core/ast/enum.Body.html" title="enum darling_core::ast::Body">Body</a>&lt;<a class="struct" href="../../darling_core/codegen/struct.Variant.html" title="struct darling_core::codegen::Variant">Variant</a>&lt;'a&gt;, <a class="struct" href="../../darling_core/codegen/struct.Field.html" title="struct darling_core::codegen::Field">Field</a>&lt;'a&gt;&gt;</code>
+                           </span></span><span id="structfield.default" class="structfield small-section-header">
+                           <a href="#structfield.default" class="anchor field"></a>
+                           <span id="default.v" class='invisible'>
+                           <code>default: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="enum" href="../../darling_core/codegen/enum.DefaultExpression.html" title="enum darling_core::codegen::DefaultExpression">DefaultExpression</a>&lt;'a&gt;&gt;</code>
+                           </span></span><span id="structfield.map" class="structfield small-section-header">
+                           <a href="#structfield.map" class="anchor field"></a>
+                           <span id="map.v" class='invisible'>
+                           <code>map: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;'a <a class="struct" href="../../syn/ty/struct.Path.html" title="struct syn::ty::Path">Path</a>&gt;</code>
+                           </span></span><span id="structfield.bound" class="structfield small-section-header">
+                           <a href="#structfield.bound" class="anchor field"></a>
+                           <span id="bound.v" class='invisible'>
+                           <code>bound: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;'a [</a><a class="enum" href="../../syn/generics/enum.WherePredicate.html" title="enum syn::generics::WherePredicate">WherePredicate</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a>&gt;</code>
+                           </span></span>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class="struct" href="../../darling_core/codegen/struct.TraitImpl.html" title="struct darling_core::codegen::TraitImpl">TraitImpl</a>&lt;'a&gt;</code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/darling_core/codegen/trait_impl.rs.html#19-94' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.declare_errors' class="method"><span id='declare_errors.v' class='invisible'><code>pub fn <a href='#method.declare_errors' class='fnname'>declare_errors</a>(&amp;self) -&gt; ErrorDeclaration</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/darling_core/codegen/trait_impl.rs.html#21-23' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Gets the <code>let</code> declaration for errors accumulated during parsing.</p>
+</div><h4 id='method.check_errors' class="method"><span id='check_errors.v' class='invisible'><code>pub fn <a href='#method.check_errors' class='fnname'>check_errors</a>(&amp;self) -&gt; ErrorCheck</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/darling_core/codegen/trait_impl.rs.html#26-28' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Gets the check which performs an early return if errors occurred during parsing.</p>
+</div><h4 id='method.require_fields' class="method"><span id='require_fields.v' class='invisible'><code>pub fn <a href='#method.require_fields' class='fnname'>require_fields</a>(&amp;self) -&gt; <a class="struct" href="../../quote/tokens/struct.Tokens.html" title="struct quote::tokens::Tokens">Tokens</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/darling_core/codegen/trait_impl.rs.html#62-70' title='goto source code'>[src]</a></span></h4>
+</div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../../darling_core/codegen/struct.TraitImpl.html" title="struct darling_core::codegen::TraitImpl">TraitImpl</a>&lt;'a&gt;</code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/darling_core/codegen/trait_impl.rs.html#9' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/darling_core/codegen/trait_impl.rs.html#9' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div><h3 id='impl-From%3C%26%27a%20Core%3E' class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;&amp;'a <a class="struct" href="../../darling_core/options/struct.Core.html" title="struct darling_core::options::Core">Core</a>&gt; for <a class="struct" href="../../darling_core/codegen/struct.TraitImpl.html" title="struct darling_core::codegen::TraitImpl">TraitImpl</a>&lt;'a&gt;</code><a href='#impl-From%3C%26%27a%20Core%3E' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/darling_core/options/core.rs.html#132-146' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from' class="method"><span id='from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from' class='fnname'>from</a>(v: &amp;'a <a class="struct" href="../../darling_core/options/struct.Core.html" title="struct darling_core::options::Core">Core</a>) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/darling_core/options/core.rs.html#133-145' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs the conversion.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "darling_core";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

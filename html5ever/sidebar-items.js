@@ -1,0 +1,1 @@
+initSidebarItems({"macro":[["expanded_name",""],["local_name",""],["namespace_prefix",""],["namespace_url",""],["ns",""],["small_char_set","Create a [`SmallCharSet`], with each space-separated number stored in the set."]],"mod":[["driver","High-level interface to the parser."],["serialize",""],["tokenizer","The HTML5 tokenizer."],["tree_builder","The HTML5 tree builder."]]});

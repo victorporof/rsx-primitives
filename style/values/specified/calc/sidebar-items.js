@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["CalcNode","A node inside a `Calc` expression's AST."],["CalcUnit","An expected unit we intend to parse within a `calc()` expression."]],"struct":[["CalcLengthOrPercentage","A struct to hold a simplified `<length>` or `<percentage>` expression."]]});

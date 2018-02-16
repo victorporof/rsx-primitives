@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Color",""],["RGBA","An animated RGBA color."]]});

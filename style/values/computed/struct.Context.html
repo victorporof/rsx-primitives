@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Context` struct in crate `style`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Context">
+
+    <title>style::values::computed::Context - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct Context</p><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.is_root_element">is_root_element</a><a href="#structfield.builder">builder</a><a href="#structfield.cached_system_font">cached_system_font</a><a href="#structfield.font_metrics_provider">font_metrics_provider</a><a href="#structfield.in_media_query">in_media_query</a><a href="#structfield.quirks_mode">quirks_mode</a><a href="#structfield.for_smil_animation">for_smil_animation</a><a href="#structfield.for_non_inherited_property">for_non_inherited_property</a><a href="#structfield.rule_cache_conditions">rule_cache_conditions</a></div><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.for_media_query_evaluation">for_media_query_evaluation</a><a href="#method.is_root_element">is_root_element</a><a href="#method.device">device</a><a href="#method.viewport_size_for_viewport_unit_resolution">viewport_size_for_viewport_unit_resolution</a><a href="#method.default_style">default_style</a><a href="#method.style">style</a><a href="#method.maybe_zoom_text">maybe_zoom_text</a></div></div><p class='location'><a href='../../index.html'>style</a>::<wbr><a href='../index.html'>values</a>::<wbr><a href='index.html'>computed</a></p><script>window.sidebarCurrent = {name: 'Context', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>style</a>::<wbr><a href='../index.html'>values</a>::<wbr><a href='index.html'>computed</a>::<wbr><a class="struct" href=''>Context</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../src/style/values/computed/mod.rs.html#98-146' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Context&lt;'a&gt; {
+    pub is_root_element: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
+    pub builder: <a class="struct" href="../../../style/properties/struct.StyleBuilder.html" title="struct style::properties::StyleBuilder">StyleBuilder</a>&lt;'a&gt;,
+    pub cached_system_font: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;,
+    pub font_metrics_provider: &amp;'a <a class="trait" href="../../../style/font_metrics/trait.FontMetricsProvider.html" title="trait style::font_metrics::FontMetricsProvider">FontMetricsProvider</a>,
+    pub in_media_query: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
+    pub quirks_mode: <a class="enum" href="../../../style/context/enum.QuirksMode.html" title="enum style::context::QuirksMode">QuirksMode</a>,
+    pub for_smil_animation: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
+    pub for_non_inherited_property: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="enum" href="../../../style/properties/enum.LonghandId.html" title="enum style::properties::LonghandId">LonghandId</a>&gt;,
+    pub rule_cache_conditions: <a class="struct" href="https://doc.rust-lang.org/nightly/core/cell/struct.RefCell.html" title="struct core::cell::RefCell">RefCell</a>&lt;&amp;'a mut <a class="struct" href="../../../style/rule_cache/struct.RuleCacheConditions.html" title="struct style::rule_cache::RuleCacheConditions">RuleCacheConditions</a>&gt;,
+}</pre><div class='docblock'><p>A <code>Context</code> is all the data a specified value could ever need to compute
+itself and be transformed to a computed value.</p>
+</div><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.is_root_element" class="structfield small-section-header">
+                           <a href="#structfield.is_root_element" class="anchor field"></a>
+                           <span id="is_root_element.v" class='invisible'>
+                           <code>is_root_element: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code>
+                           </span></span><div class='docblock'><p>Whether the current element is the root element.</p>
+</div><span id="structfield.builder" class="structfield small-section-header">
+                           <a href="#structfield.builder" class="anchor field"></a>
+                           <span id="builder.v" class='invisible'>
+                           <code>builder: <a class="struct" href="../../../style/properties/struct.StyleBuilder.html" title="struct style::properties::StyleBuilder">StyleBuilder</a>&lt;'a&gt;</code>
+                           </span></span><div class='docblock'><p>Values accessed through this need to be in the properties &quot;computed
+early&quot;: color, text-decoration, font-size, display, position, float,
+border-*-style, outline-style, font-family, writing-mode...</p>
+</div><span id="structfield.cached_system_font" class="structfield small-section-header">
+                           <a href="#structfield.cached_system_font" class="anchor field"></a>
+                           <span id="cached_system_font.v" class='invisible'>
+                           <code>cached_system_font: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</code>
+                           </span></span><div class='docblock'><p>A dummy option for servo so initializing a computed::Context isn&#39;t
+painful.</p>
+
+<p>TODO(emilio): Make constructors for Context, and drop this.</p>
+</div><span id="structfield.font_metrics_provider" class="structfield small-section-header">
+                           <a href="#structfield.font_metrics_provider" class="anchor field"></a>
+                           <span id="font_metrics_provider.v" class='invisible'>
+                           <code>font_metrics_provider: &amp;'a <a class="trait" href="../../../style/font_metrics/trait.FontMetricsProvider.html" title="trait style::font_metrics::FontMetricsProvider">FontMetricsProvider</a></code>
+                           </span></span><div class='docblock'><p>A font metrics provider, used to access font metrics to implement
+font-relative units.</p>
+</div><span id="structfield.in_media_query" class="structfield small-section-header">
+                           <a href="#structfield.in_media_query" class="anchor field"></a>
+                           <span id="in_media_query.v" class='invisible'>
+                           <code>in_media_query: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code>
+                           </span></span><div class='docblock'><p>Whether or not we are computing the media list in a media query</p>
+</div><span id="structfield.quirks_mode" class="structfield small-section-header">
+                           <a href="#structfield.quirks_mode" class="anchor field"></a>
+                           <span id="quirks_mode.v" class='invisible'>
+                           <code>quirks_mode: <a class="enum" href="../../../style/context/enum.QuirksMode.html" title="enum style::context::QuirksMode">QuirksMode</a></code>
+                           </span></span><div class='docblock'><p>The quirks mode of this context.</p>
+</div><span id="structfield.for_smil_animation" class="structfield small-section-header">
+                           <a href="#structfield.for_smil_animation" class="anchor field"></a>
+                           <span id="for_smil_animation.v" class='invisible'>
+                           <code>for_smil_animation: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code>
+                           </span></span><div class='docblock'><p>Whether this computation is being done for a SMIL animation.</p>
+
+<p>This is used to allow certain properties to generate out-of-range
+values, which SMIL allows.</p>
+</div><span id="structfield.for_non_inherited_property" class="structfield small-section-header">
+                           <a href="#structfield.for_non_inherited_property" class="anchor field"></a>
+                           <span id="for_non_inherited_property.v" class='invisible'>
+                           <code>for_non_inherited_property: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="enum" href="../../../style/properties/enum.LonghandId.html" title="enum style::properties::LonghandId">LonghandId</a>&gt;</code>
+                           </span></span><div class='docblock'><p>The property we are computing a value for, if it is a non-inherited
+property.  None if we are computed a value for an inherited property
+or not computing for a property at all (e.g. in a media query
+evaluation).</p>
+</div><span id="structfield.rule_cache_conditions" class="structfield small-section-header">
+                           <a href="#structfield.rule_cache_conditions" class="anchor field"></a>
+                           <span id="rule_cache_conditions.v" class='invisible'>
+                           <code>rule_cache_conditions: <a class="struct" href="https://doc.rust-lang.org/nightly/core/cell/struct.RefCell.html" title="struct core::cell::RefCell">RefCell</a>&lt;&amp;'a mut <a class="struct" href="../../../style/rule_cache/struct.RuleCacheConditions.html" title="struct style::rule_cache::RuleCacheConditions">RuleCacheConditions</a>&gt;</code>
+                           </span></span><div class='docblock'><p>The conditions to cache a rule node on the rule cache.</p>
+
+<p>FIXME(emilio): Drop the refcell.</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class="struct" href="../../../style/values/computed/struct.Context.html" title="struct style::values::computed::Context">Context</a>&lt;'a&gt;</code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/values/computed/mod.rs.html#148-222' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.for_media_query_evaluation' class="method"><span id='for_media_query_evaluation.v' class='invisible'><code>pub fn <a href='#method.for_media_query_evaluation' class='fnname'>for_media_query_evaluation</a>&lt;F, R&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;device: &amp;<a class="struct" href="../../../style/servo/media_queries/struct.Device.html" title="struct style::servo::media_queries::Device">Device</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;quirks_mode: <a class="enum" href="../../../style/context/enum.QuirksMode.html" title="enum style::context::QuirksMode">QuirksMode</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; R <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnOnce.html" title="trait core::ops::function::FnOnce">FnOnce</a>(&amp;<a class="struct" href="../../../style/values/computed/struct.Context.html" title="struct style::values::computed::Context">Context</a>) -&gt; R,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/values/computed/mod.rs.html#152-177' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Creates a suitable context for media query evaluation, in which
+font-relative units compute against the system_font, and executes <code>f</code>
+with it.</p>
+</div><h4 id='method.is_root_element' class="method"><span id='is_root_element.v-1' class='invisible'><code>pub fn <a href='#method.is_root_element' class='fnname'>is_root_element</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/values/computed/mod.rs.html#180-182' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Whether the current element is the root element.</p>
+</div><h4 id='method.device' class="method"><span id='device.v' class='invisible'><code>pub fn <a href='#method.device' class='fnname'>device</a>(&amp;self) -&gt; &amp;<a class="struct" href="../../../style/servo/media_queries/struct.Device.html" title="struct style::servo::media_queries::Device">Device</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/values/computed/mod.rs.html#185-187' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>The current device.</p>
+</div><h4 id='method.viewport_size_for_viewport_unit_resolution' class="method"><span id='viewport_size_for_viewport_unit_resolution.v' class='invisible'><code>pub fn <a href='#method.viewport_size_for_viewport_unit_resolution' class='fnname'>viewport_size_for_viewport_unit_resolution</a>(&amp;self) -&gt; <a class="type" href="../../../euclid/size/type.Size2D.html" title="type euclid::size::Size2D">Size2D</a>&lt;<a class="struct" href="../../../style/values/computed/struct.Au.html" title="struct style::values::computed::Au">Au</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/values/computed/mod.rs.html#190-192' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>The current viewport size, used to resolve viewport units.</p>
+</div><h4 id='method.default_style' class="method"><span id='default_style.v' class='invisible'><code>pub fn <a href='#method.default_style' class='fnname'>default_style</a>(&amp;self) -&gt; &amp;<a class="struct" href="../../../style/properties/struct.ComputedValues.html" title="struct style::properties::ComputedValues">ComputedValues</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/values/computed/mod.rs.html#195-197' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>The default computed style we&#39;re getting our reset style from.</p>
+</div><h4 id='method.style' class="method"><span id='style.v' class='invisible'><code>pub fn <a href='#method.style' class='fnname'>style</a>(&amp;self) -&gt; &amp;<a class="struct" href="../../../style/properties/struct.StyleBuilder.html" title="struct style::properties::StyleBuilder">StyleBuilder</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/values/computed/mod.rs.html#200-202' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>The current style.</p>
+</div><h4 id='method.maybe_zoom_text' class="method"><span id='maybe_zoom_text.v' class='invisible'><code>pub fn <a href='#method.maybe_zoom_text' class='fnname'>maybe_zoom_text</a>(&amp;self, size: <a class="type" href="../../../style/values/computed/length/type.NonNegativeLength.html" title="type style::values::computed::length::NonNegativeLength">NonNegativeLength</a>) -&gt; <a class="type" href="../../../style/values/computed/length/type.NonNegativeLength.html" title="type style::values::computed::length::NonNegativeLength">NonNegativeLength</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/values/computed/mod.rs.html#219-221' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>(Servo doesn&#39;t do text-zoom)</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "style";
+    </script>
+    <script src="../../../main.js"></script>
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

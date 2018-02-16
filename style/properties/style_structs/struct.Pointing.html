@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Pointing` struct in crate `style`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Pointing">
+
+    <title>style::properties::style_structs::Pointing - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct Pointing</p><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.cursor">cursor</a><a href="#structfield.pointer_events">pointer_events</a></div><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.set_cursor">set_cursor</a><a href="#method.copy_cursor_from">copy_cursor_from</a><a href="#method.reset_cursor">reset_cursor</a><a href="#method.clone_cursor">clone_cursor</a><a href="#method.set_pointer_events">set_pointer_events</a><a href="#method.copy_pointer_events_from">copy_pointer_events_from</a><a href="#method.reset_pointer_events">reset_pointer_events</a><a href="#method.clone_pointer_events">clone_pointer_events</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Clone">Clone</a><a href="#impl-Debug">Debug</a><a href="#impl-MallocSizeOf">MallocSizeOf</a><a href="#impl-PartialEq">PartialEq</a></div></div><p class='location'><a href='../../index.html'>style</a>::<wbr><a href='../index.html'>properties</a>::<wbr><a href='index.html'>style_structs</a></p><script>window.sidebarCurrent = {name: 'Pointing', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>style</a>::<wbr><a href='../index.html'>properties</a>::<wbr><a href='index.html'>style_structs</a>::<wbr><a class="struct" href=''>Pointing</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#63793-63798' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Pointing {
+    pub cursor: <a class="type" href="../../../style/properties/longhands/cursor/computed_value/type.T.html" title="type style::properties::longhands::cursor::computed_value::T">T</a>,
+    pub pointer_events: <a class="enum" href="../../../style/properties/longhands/pointer_events/computed_value/enum.T.html" title="enum style::properties::longhands::pointer_events::computed_value::T">T</a>,
+}</pre><div class='docblock'><p>The Pointing style struct.</p>
+</div><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.cursor" class="structfield small-section-header">
+                           <a href="#structfield.cursor" class="anchor field"></a>
+                           <span id="cursor.v" class='invisible'>
+                           <code>cursor: <a class="type" href="../../../style/properties/longhands/cursor/computed_value/type.T.html" title="type style::properties::longhands::cursor::computed_value::T">T</a></code>
+                           </span></span><div class='docblock'><p>The cursor computed value.</p>
+</div><span id="structfield.pointer_events" class="structfield small-section-header">
+                           <a href="#structfield.pointer_events" class="anchor field"></a>
+                           <span id="pointer_events.v" class='invisible'>
+                           <code>pointer_events: <a class="enum" href="../../../style/properties/longhands/pointer_events/computed_value/enum.T.html" title="enum style::properties::longhands::pointer_events::computed_value::T">T</a></code>
+                           </span></span><div class='docblock'><p>The pointer-events computed value.</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="struct" href="../../../style/properties/style_structs/struct.Pointing.html" title="struct style::properties::style_structs::Pointing">Pointing</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#63800-63853' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.set_cursor' class="method"><span id='set_cursor.v' class='invisible'><code>pub fn <a href='#method.set_cursor' class='fnname'>set_cursor</a>(&amp;mut self, v: <a class="type" href="../../../style/properties/longhands/cursor/computed_value/type.T.html" title="type style::properties::longhands::cursor::computed_value::T">T</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#63804-63806' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Set cursor.</p>
+</div><h4 id='method.copy_cursor_from' class="method"><span id='copy_cursor_from.v' class='invisible'><code>pub fn <a href='#method.copy_cursor_from' class='fnname'>copy_cursor_from</a>(&amp;mut self, other: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#63810-63812' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Set cursor from other struct.</p>
+</div><h4 id='method.reset_cursor' class="method"><span id='reset_cursor.v' class='invisible'><code>pub fn <a href='#method.reset_cursor' class='fnname'>reset_cursor</a>(&amp;mut self, other: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#63817-63819' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Reset cursor from the initial struct.</p>
+</div><h4 id='method.clone_cursor' class="method"><span id='clone_cursor.v' class='invisible'><code>pub fn <a href='#method.clone_cursor' class='fnname'>clone_cursor</a>(&amp;self) -&gt; <a class="type" href="../../../style/properties/longhands/cursor/computed_value/type.T.html" title="type style::properties::longhands::cursor::computed_value::T">T</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#63824-63826' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Get the computed value for cursor.</p>
+</div><h4 id='method.set_pointer_events' class="method"><span id='set_pointer_events.v' class='invisible'><code>pub fn <a href='#method.set_pointer_events' class='fnname'>set_pointer_events</a>(&amp;mut self, v: <a class="enum" href="../../../style/properties/longhands/pointer_events/computed_value/enum.T.html" title="enum style::properties::longhands::pointer_events::computed_value::T">T</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#63830-63832' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Set pointer-events.</p>
+</div><h4 id='method.copy_pointer_events_from' class="method"><span id='copy_pointer_events_from.v' class='invisible'><code>pub fn <a href='#method.copy_pointer_events_from' class='fnname'>copy_pointer_events_from</a>(&amp;mut self, other: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#63836-63838' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Set pointer-events from other struct.</p>
+</div><h4 id='method.reset_pointer_events' class="method"><span id='reset_pointer_events.v' class='invisible'><code>pub fn <a href='#method.reset_pointer_events' class='fnname'>reset_pointer_events</a>(&amp;mut self, other: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#63843-63845' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Reset pointer-events from the initial struct.</p>
+</div><h4 id='method.clone_pointer_events' class="method"><span id='clone_pointer_events.v' class='invisible'><code>pub fn <a href='#method.clone_pointer_events' class='fnname'>clone_pointer_events</a>(&amp;self) -&gt; <a class="enum" href="../../../style/properties/longhands/pointer_events/computed_value/enum.T.html" title="enum style::properties::longhands::pointer_events::computed_value::T">T</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#63850-63852' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Get the computed value for pointer-events.</p>
+</div></div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Clone' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="struct" href="../../../style/properties/style_structs/struct.Pointing.html" title="struct style::properties::style_structs::Pointing">Pointing</a></code><a href='#impl-Clone' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#63791' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="struct" href="../../../style/properties/style_structs/struct.Pointing.html" title="struct style::properties::style_structs::Pointing">Pointing</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#63791' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../../../style/properties/style_structs/struct.Pointing.html" title="struct style::properties::style_structs::Pointing">Pointing</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#63791' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#63791' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div><h3 id='impl-MallocSizeOf' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../../malloc_size_of/trait.MallocSizeOf.html" title="trait malloc_size_of::MallocSizeOf">MallocSizeOf</a> for <a class="struct" href="../../../style/properties/style_structs/struct.Pointing.html" title="struct style::properties::style_structs::Pointing">Pointing</a></code><a href='#impl-MallocSizeOf' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#63791-1' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.size_of' class="method"><span id='size_of.v' class='invisible'><code>fn <a href='../../../malloc_size_of/trait.MallocSizeOf.html#tymethod.size_of' class='fnname'>size_of</a>(&amp;self, ops: &amp;mut <a class="struct" href="../../../malloc_size_of/struct.MallocSizeOfOps.html" title="struct malloc_size_of::MallocSizeOfOps">MallocSizeOfOps</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#63791' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Measure the heap usage of all descendant heap-allocated structures, but not the space taken up by the value itself. <a href="../../../malloc_size_of/trait.MallocSizeOf.html#tymethod.size_of">Read more</a></p>
+</div></div><h3 id='impl-PartialEq' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a> for <a class="struct" href="../../../style/properties/style_structs/struct.Pointing.html" title="struct style::properties::style_structs::Pointing">Pointing</a></code><a href='#impl-PartialEq' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#63791' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class="method"><span id='eq.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class="struct" href="../../../style/properties/style_structs/struct.Pointing.html" title="struct style::properties::style_structs::Pointing">Pointing</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#63791' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class="method"><span id='ne.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class="struct" href="../../../style/properties/style_structs/struct.Pointing.html" title="struct style::properties::style_structs::Pointing">Pointing</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#63791' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "style";
+    </script>
+    <script src="../../../main.js"></script>
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

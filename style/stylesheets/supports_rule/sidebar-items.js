@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["SupportsCondition","An @supports condition"]],"fn":[["parse_condition_or_declaration","supports_condition | declaration https://drafts.csswg.org/css-conditional/#dom-css-supports-conditiontext-conditiontext"]],"struct":[["Declaration","A possibly-invalid property declaration"],["SupportsRule","An [`@supports`][supports] rule."]]});

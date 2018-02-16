@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Dependency","Mapping between (partial) CompoundSelectors (and the combinator to their right) and the states and attributes they depend on."],["InvalidationMap","A map where we store invalidations."],["StateDependency","The same, but for state selectors, which can track more exactly what state do they track."]]});

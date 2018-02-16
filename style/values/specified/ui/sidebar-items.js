@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["MozForceBrokenImageIcon","Specified value of `-moz-force-broken-image-icon`"]]});

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `CountingBloomFilter` struct in crate `selectors`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, CountingBloomFilter">
+
+    <title>selectors::bloom::CountingBloomFilter - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct CountingBloomFilter</p><div class="block items"><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.new">new</a><a href="#method.clear">clear</a><a href="#method.is_zeroed">is_zeroed</a><a href="#method.insert_hash">insert_hash</a><a href="#method.insert">insert</a><a href="#method.remove_hash">remove_hash</a><a href="#method.remove">remove</a><a href="#method.might_contain_hash">might_contain_hash</a><a href="#method.might_contain">might_contain</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Clone">Clone</a><a href="#impl-Debug">Debug</a></div></div><p class='location'><a href='../index.html'>selectors</a>::<wbr><a href='index.html'>bloom</a></p><script>window.sidebarCurrent = {name: 'CountingBloomFilter', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>selectors</a>::<wbr><a href='index.html'>bloom</a>::<wbr><a class="struct" href=''>CountingBloomFilter</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/selectors/bloom.rs.html#75-77' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct CountingBloomFilter&lt;S&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;S: <a class="trait" href="../../selectors/bloom/trait.BloomStorage.html" title="trait selectors::bloom::BloomStorage">BloomStorage</a>,&nbsp;</span> { /* fields omitted */ }</pre><div class='docblock'><p>A counting Bloom filter with parameterized storage to handle
+counters of different sizes.  For now we assume that having two hash
+functions is enough, but we may revisit that decision later.</p>
+
+<p>The filter uses an array with 2**KeySize entries.</p>
+
+<p>Assuming a well-distributed hash function, a Bloom filter with
+array size M containing N elements and
+using k hash function has expected false positive rate exactly</p>
+
+<p>$  (1 - (1 - 1/M)<sup>{kN})<sup>k</sup></sup>  $</p>
+
+<p>because each array slot has a</p>
+
+<p>$  (1 - 1/M)<sup>{kN}</sup>  $</p>
+
+<p>chance of being 0, and the expected false positive rate is the
+probability that all of the k hash functions will hit a nonzero
+slot.</p>
+
+<p>For reasonable assumptions (M large, kN large, which should both
+hold if we&#39;re worried about false positives) about M and kN this
+becomes approximately</p>
+
+<p>$$  (1 - \exp(-kN/M))<sup>k</sup>   $$</p>
+
+<p>For our special case of k == 2, that&#39;s $(1 - \exp(-2N/M))<sup>2$,</sup>
+or in other words</p>
+
+<p>$$    N/M = -0.5 * \ln(1 - \sqrt(r))   $$</p>
+
+<p>where r is the false positive rate.  This can be used to compute
+the desired KeySize for a given load N and false positive rate r.</p>
+
+<p>If N/M is assumed small, then the false positive rate can
+further be approximated as 4*N<sup>2/M<sup>2.</sup></sup>  So increasing KeySize by
+1, which doubles M, reduces the false positive rate by about a
+factor of 4, and a false positive rate of 1% corresponds to
+about M/N == 20.</p>
+
+<p>What this means in practice is that for a few hundred keys using a
+KeySize of 12 gives false positive rates on the order of 0.25-4%.</p>
+
+<p>Similarly, using a KeySize of 10 would lead to a 4% false
+positive rate for N == 100 and to quite bad false positive
+rates for larger N.</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl&lt;S&gt; <a class="struct" href="../../selectors/bloom/struct.CountingBloomFilter.html" title="struct selectors::bloom::CountingBloomFilter">CountingBloomFilter</a>&lt;S&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;S: <a class="trait" href="../../selectors/bloom/trait.BloomStorage.html" title="trait selectors::bloom::BloomStorage">BloomStorage</a>,&nbsp;</span></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/bloom.rs.html#79-143' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class="method"><span id='new.v' class='invisible'><code>pub fn <a href='#method.new' class='fnname'>new</a>() -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/bloom.rs.html#82-86' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Creates a new bloom filter.</p>
+</div><h4 id='method.clear' class="method"><span id='clear.v' class='invisible'><code>pub fn <a href='#method.clear' class='fnname'>clear</a>(&amp;mut self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/bloom.rs.html#89-91' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.is_zeroed' class="method"><span id='is_zeroed.v' class='invisible'><code>pub fn <a href='#method.is_zeroed' class='fnname'>is_zeroed</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/bloom.rs.html#96-98' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.insert_hash' class="method"><span id='insert_hash.v' class='invisible'><code>pub fn <a href='#method.insert_hash' class='fnname'>insert_hash</a>(&amp;mut self, hash: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/bloom.rs.html#106-109' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.insert' class="method"><span id='insert.v' class='invisible'><code>pub fn <a href='#method.insert' class='fnname'>insert</a>&lt;T:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html" title="trait core::hash::Hash">Hash</a>&gt;(&amp;mut self, elem: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>T)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/bloom.rs.html#113-115' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Inserts an item into the bloom filter.</p>
+</div><h4 id='method.remove_hash' class="method"><span id='remove_hash.v' class='invisible'><code>pub fn <a href='#method.remove_hash' class='fnname'>remove_hash</a>(&amp;mut self, hash: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/bloom.rs.html#118-121' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.remove' class="method"><span id='remove.v' class='invisible'><code>pub fn <a href='#method.remove' class='fnname'>remove</a>&lt;T:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html" title="trait core::hash::Hash">Hash</a>&gt;(&amp;mut self, elem: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>T)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/bloom.rs.html#125-127' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Removes an item from the bloom filter.</p>
+</div><h4 id='method.might_contain_hash' class="method"><span id='might_contain_hash.v' class='invisible'><code>pub fn <a href='#method.might_contain_hash' class='fnname'>might_contain_hash</a>(&amp;self, hash: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/bloom.rs.html#130-133' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.might_contain' class="method"><span id='might_contain.v' class='invisible'><code>pub fn <a href='#method.might_contain' class='fnname'>might_contain</a>&lt;T:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html" title="trait core::hash::Hash">Hash</a>&gt;(&amp;self, elem: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>T) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/bloom.rs.html#140-142' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Check whether the filter might contain an item.  This can
+sometimes return true even if the item is not in the filter,
+but will never return false for items that are actually in the
+filter.</p>
+</div></div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Clone' class='impl'><span class='in-band'><code>impl&lt;S:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a>&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="struct" href="../../selectors/bloom/struct.CountingBloomFilter.html" title="struct selectors::bloom::CountingBloomFilter">CountingBloomFilter</a>&lt;S&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;S: <a class="trait" href="../../selectors/bloom/trait.BloomStorage.html" title="trait selectors::bloom::BloomStorage">BloomStorage</a>,&nbsp;</span></code><a href='#impl-Clone' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/bloom.rs.html#74' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="struct" href="../../selectors/bloom/struct.CountingBloomFilter.html" title="struct selectors::bloom::CountingBloomFilter">CountingBloomFilter</a>&lt;S&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/bloom.rs.html#74' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl&lt;S&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../../selectors/bloom/struct.CountingBloomFilter.html" title="struct selectors::bloom::CountingBloomFilter">CountingBloomFilter</a>&lt;S&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;S: <a class="trait" href="../../selectors/bloom/trait.BloomStorage.html" title="trait selectors::bloom::BloomStorage">BloomStorage</a>,&nbsp;</span></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/bloom.rs.html#145-155' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, f: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/bloom.rs.html#146-154' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "selectors";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

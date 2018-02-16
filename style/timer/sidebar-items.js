@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Timer","A `Timer` struct that takes care of giving the current time for animations."]]});

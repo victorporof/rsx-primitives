@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `start_transitions_if_applicable` fn in crate `style`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, start_transitions_if_applicable">
+
+    <title>style::animation::start_transitions_if_applicable - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc fn">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>style</a>::<wbr><a href='index.html'>animation</a></p><script>window.sidebarCurrent = {name: 'start_transitions_if_applicable', ty: 'fn', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Function <a href='../index.html'>style</a>::<wbr><a href='index.html'>animation</a>::<wbr><a class="fn" href=''>start_transitions_if_applicable</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/style/animation.rs.html#411-459' title='goto source code'>[src]</a></span></h1>
+<pre class='rust fn'>pub fn start_transitions_if_applicable(<br>&nbsp;&nbsp;&nbsp;&nbsp;new_animations_sender: &amp;<a class="struct" href="https://doc.rust-lang.org/nightly/std/sync/mpsc/struct.Sender.html" title="struct std::sync::mpsc::Sender">Sender</a>&lt;<a class="enum" href="../../style/animation/enum.Animation.html" title="enum style::animation::Animation">Animation</a>&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;opaque_node: <a class="struct" href="../../style/dom/struct.OpaqueNode.html" title="struct style::dom::OpaqueNode">OpaqueNode</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;old_style: &amp;<a class="struct" href="../../style/properties/struct.ComputedValues.html" title="struct style::properties::ComputedValues">ComputedValues</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;new_style: &amp;mut <a class="struct" href="../../style/properties/struct.BuilderArc.html" title="struct style::properties::BuilderArc">Arc</a>&lt;<a class="struct" href="../../style/properties/struct.ComputedValues.html" title="struct style::properties::ComputedValues">ComputedValues</a>&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;timer: &amp;<a class="struct" href="../../style/timer/struct.Timer.html" title="struct style::timer::Timer">Timer</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;possibly_expired_animations: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[</a><a class="struct" href="../../style/animation/struct.PropertyAnimation.html" title="struct style::animation::PropertyAnimation">PropertyAnimation</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a><br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></pre><div class='docblock'><p>Inserts transitions into the queue of running animations as applicable for
+the given style difference. This is called from the layout worker threads.
+Returns true if any animations were kicked off and false otherwise.</p>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "style";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

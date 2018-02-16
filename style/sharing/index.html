@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `sharing` mod in crate `style`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, sharing">
+
+    <title>style::sharing - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc mod">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Module sharing</p><div class="block items"><ul><li><a href="#structs">Structs</a></li><li><a href="#enums">Enums</a></li><li><a href="#constants">Constants</a></li></ul></div><p class='location'><a href='../index.html'>style</a></p><script>window.sidebarCurrent = {name: 'sharing', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Module <a href='../index.html'>style</a>::<wbr><a class="mod" href=''>sharing</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/style/sharing/mod.rs.html#5-788' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p>Code related to the style sharing cache, an optimization that allows similar
+nodes to share style without having to run selector matching twice.</p>
+
+<p>The basic setup is as follows.  We have an LRU cache of style sharing
+candidates.  When we try to style a target element, we first check whether
+we can quickly determine that styles match something in this cache, and if
+so we just use the cached style information.  This check is done with a
+StyleBloom filter set up for the target element, which may not be a correct
+state for the cached candidate element if they&#39;re cousins instead of
+siblings.</p>
+
+<p>The complicated part is determining that styles match.  This is subject to
+the following constraints:</p>
+
+<p>1) The target and candidate must be inheriting the same styles.
+2) The target and candidate must have exactly the same rules matching them.
+3) The target and candidate must have exactly the same non-selector-based
+   style information (inline styles, presentation hints).
+4) The target and candidate must have exactly the same rules matching their
+   pseudo-elements, because an element&#39;s style data points to the style
+   data for its pseudo-elements.</p>
+
+<p>These constraints are satisfied in the following ways:</p>
+
+<ul>
+<li><p>We check that the parents of the target and the candidate have the same
+computed style.  This addresses constraint 1.</p></li>
+<li><p>We check that the target and candidate have the same inline style and
+presentation hint declarations.  This addresses constraint 3.</p></li>
+<li><p>We ensure that a target matches a candidate only if they have the same
+matching result for all selectors that target either elements or the
+originating elements of pseudo-elements.  This addresses constraint 4
+(because it prevents a target that has pseudo-element styles from matching
+a candidate that has different pseudo-element styles) as well as
+constraint 2.</p></li>
+</ul>
+
+<p>The actual checks that ensure that elements match the same rules are
+conceptually split up into two pieces.  First, we do various checks on
+elements that make sure that the set of possible rules in all selector maps
+in the stylist (for normal styling and for pseudo-elements) that might match
+the two elements is the same.  For example, we enforce that the target and
+candidate must have the same localname and namespace.  Second, we have a
+selector map of &quot;revalidation selectors&quot; that the stylist maintains that we
+actually match against the target and candidate and then check whether the
+two sets of results were the same.  Due to the up-front selector map checks,
+we know that the target and candidate will be matched against the same exact
+set of revalidation selectors, so the match result arrays can be compared
+directly.</p>
+
+<p>It&#39;s very important that a selector be added to the set of revalidation
+selectors any time there are two elements that could pass all the up-front
+checks but match differently against some ComplexSelector in the selector.
+If that happens, then they can have descendants that might themselves pass
+the up-front checks but would have different matching results for the
+selector in question.  In this case, &quot;descendants&quot; includes pseudo-elements,
+so there is a single selector map of revalidation selectors that includes
+both selectors targeting elements and selectors targeting pseudo-element
+originating elements.  We ensure that the pseudo-element parts of all these
+selectors are effectively stripped off, so that matching them all against
+elements makes sense.</p>
+</div><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.OpaqueComputedValues.html"
+                                  title='struct style::sharing::OpaqueComputedValues'>OpaqueComputedValues</a></td>
+                           <td class='docblock-short'>
+                                <p>Opaque pointer type to compare ComputedValues identities.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.StyleSharingCache.html"
+                                  title='struct style::sharing::StyleSharingCache'>StyleSharingCache</a></td>
+                           <td class='docblock-short'>
+                                <p>An LRU cache of the last few nodes seen, so that we can aggressively try to
+reuse their styles.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.StyleSharingCandidate.html"
+                                  title='struct style::sharing::StyleSharingCandidate'>StyleSharingCandidate</a></td>
+                           <td class='docblock-short'>
+                                <p>Information regarding a style sharing candidate, that is, an entry in the
+style sharing cache.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.StyleSharingTarget.html"
+                                  title='struct style::sharing::StyleSharingTarget'>StyleSharingTarget</a></td>
+                           <td class='docblock-short'>
+                                <p>An element we want to test against the style sharing cache.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ValidationData.html"
+                                  title='struct style::sharing::ValidationData'>ValidationData</a></td>
+                           <td class='docblock-short'>
+                                <p>Some data we want to avoid recomputing all the time while trying to share
+style.</p>
+                           </td>
+                       </tr></table><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.StyleSharingBehavior.html"
+                                  title='enum style::sharing::StyleSharingBehavior'>StyleSharingBehavior</a></td>
+                           <td class='docblock-short'>
+                                <p>Controls whether the style sharing cache is used.</p>
+                           </td>
+                       </tr></table><h2 id='constants' class='section-header'><a href="#constants">Constants</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.SHARING_CACHE_SIZE.html"
+                                  title='constant style::sharing::SHARING_CACHE_SIZE'>SHARING_CACHE_SIZE</a></td>
+                           <td class='docblock-short'>
+                                <p>The amount of nodes that the style sharing candidate cache should hold at
+most.  We&#39;d somewhat like 32, but ArrayDeque only implements certain backing
+store sizes.  A cache size of 32 would mean a backing store of 33, but
+that&#39;s not an implemented size: we can do 32 or 40.</p>
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "style";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

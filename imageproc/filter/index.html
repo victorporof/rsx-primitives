@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `filter` mod in crate `imageproc`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, filter">
+
+    <title>imageproc::filter - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc mod">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Module filter</p><div class="block items"><ul><li><a href="#structs">Structs</a></li><li><a href="#functions">Functions</a></li></ul></div><p class='location'><a href='../index.html'>imageproc</a></p><script>window.sidebarCurrent = {name: 'filter', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Module <a href='../index.html'>imageproc</a>::<wbr><a class="mod" href=''>filter</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/imageproc/filter/mod.rs.html#1-790' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p>Functions for filtering images.</p>
+</div><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Kernel.html"
+                                  title='struct imageproc::filter::Kernel'>Kernel</a></td>
+                           <td class='docblock-short'>
+                                <p>A 2D kernel, used to filter images via convolution.</p>
+                           </td>
+                       </tr></table><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.box_filter.html"
+                                  title='fn imageproc::filter::box_filter'>box_filter</a></td>
+                           <td class='docblock-short'>
+                                <p>Convolves an 8bpp grayscale image with a kernel of width (2 * <code>x_radius</code> + 1)
+and height (2 * <code>y_radius</code> + 1) whose entries are equal and
+sum to one. i.e. each output pixel is the unweighted mean of
+a rectangular region surrounding its corresponding input pixel.
+We handle locations where the kernel would extend past the image&#39;s
+boundary by treating the image as if its boundary pixels were
+repeated indefinitely.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.filter3x3.html"
+                                  title='fn imageproc::filter::filter3x3'>filter3x3</a></td>
+                           <td class='docblock-short'>
+                                <p>Returns 2d correlation of an image with a 3x3 row-major kernel. Intermediate calculations are
+performed at type K, and the results clamped to subpixel type S. Pads by continuity.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.gaussian_blur_f32.html"
+                                  title='fn imageproc::filter::gaussian_blur_f32'>gaussian_blur_f32</a></td>
+                           <td class='docblock-short'>
+                                <p>Blurs an image using a Gausian of standard deviation sigma.
+The kernel used has type f32 and all intermediate calculations are performed
+at this type.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.horizontal_filter.html"
+                                  title='fn imageproc::filter::horizontal_filter'>horizontal_filter</a></td>
+                           <td class='docblock-short'>
+                                <p>Returns horizontal correlations between an image and a 1d kernel.
+Pads by continuity. Intermediate calculations are performed at
+type K.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.median_filter.html"
+                                  title='fn imageproc::filter::median_filter'>median_filter</a></td>
+                           <td class='docblock-short'>
+                                <p>Applies a median filter of given <code>radius</code> to an image. Each output pixel is the median
+of the pixels in a <code>2 * radius + 1</code> square of pixels in the input image.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.separable_filter.html"
+                                  title='fn imageproc::filter::separable_filter'>separable_filter</a></td>
+                           <td class='docblock-short'>
+                                <p>Returns 2d correlation of view with the outer product of the 1d
+kernels <code>h_kernel</code> and <code>v_kernel</code>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.separable_filter_equal.html"
+                                  title='fn imageproc::filter::separable_filter_equal'>separable_filter_equal</a></td>
+                           <td class='docblock-short'>
+                                <p>Returns 2d correlation of an image with the outer product of the 1d
+kernel filter with itself.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.vertical_filter.html"
+                                  title='fn imageproc::filter::vertical_filter'>vertical_filter</a></td>
+                           <td class='docblock-short'>
+                                <p>Returns horizontal correlations between an image and a 1d kernel.
+Pads by continuity.</p>
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "imageproc";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `DisplayItemDiff` enum in crate `rsx_primitives`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, DisplayItemDiff">
+
+    <title>rsx_primitives::compare::types::DisplayItemDiff - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc enum">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Enum DisplayItemDiff</p><div class="block items"><a class="sidebar-title" href="#variants">Variants</a><div class="sidebar-links"><a href="#variant.AddText">AddText</a><a href="#variant.AddRect">AddRect</a><a href="#variant.AddBorder">AddBorder</a><a href="#variant.AddImage">AddImage</a><a href="#variant.RemoveSelf">RemoveSelf</a><a href="#variant.ReplaceSelfWithText">ReplaceSelfWithText</a><a href="#variant.ReplaceSelfWithRect">ReplaceSelfWithRect</a><a href="#variant.ReplaceSelfWithBorder">ReplaceSelfWithBorder</a><a href="#variant.ReplaceSelfWithImage">ReplaceSelfWithImage</a><a href="#variant.UpdateSelf">UpdateSelf</a><a href="#variant.NoChanges">NoChanges</a></div></div><p class='location'><a href='../../index.html'>rsx_primitives</a>::<wbr><a href='../index.html'>compare</a>::<wbr><a href='index.html'>types</a></p><script>window.sidebarCurrent = {name: 'DisplayItemDiff', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../../index.html'>rsx_primitives</a>::<wbr><a href='../index.html'>compare</a>::<wbr><a href='index.html'>types</a>::<wbr><a class="enum" href=''>DisplayItemDiff</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../src/rsx_primitives/compare/types.rs.html#52-64' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum DisplayItemDiff&lt;T:&nbsp;<a class="trait" href="../../../rsx_primitives/compare/traits/trait.TDisplayListDiffer.html" title="trait rsx_primitives::compare::traits::TDisplayListDiffer">TDisplayListDiffer</a>&gt; {
+    AddText(T::<a class="type" href="../../../rsx_primitives/compare/traits/trait.TDisplayListDiffer.html#associatedtype.TextDisplayItem" title="type rsx_primitives::compare::traits::TDisplayListDiffer::TextDisplayItem">TextDisplayItem</a>),
+    AddRect(T::<a class="type" href="../../../rsx_primitives/compare/traits/trait.TDisplayListDiffer.html#associatedtype.RectDisplayItem" title="type rsx_primitives::compare::traits::TDisplayListDiffer::RectDisplayItem">RectDisplayItem</a>),
+    AddBorder(T::<a class="type" href="../../../rsx_primitives/compare/traits/trait.TDisplayListDiffer.html#associatedtype.BorderDisplayItem" title="type rsx_primitives::compare::traits::TDisplayListDiffer::BorderDisplayItem">BorderDisplayItem</a>),
+    AddImage(T::<a class="type" href="../../../rsx_primitives/compare/traits/trait.TDisplayListDiffer.html#associatedtype.ImageDisplayItem" title="type rsx_primitives::compare::traits::TDisplayListDiffer::ImageDisplayItem">ImageDisplayItem</a>),
+    RemoveSelf,
+    ReplaceSelfWithText(T::<a class="type" href="../../../rsx_primitives/compare/traits/trait.TDisplayListDiffer.html#associatedtype.TextDisplayItem" title="type rsx_primitives::compare::traits::TDisplayListDiffer::TextDisplayItem">TextDisplayItem</a>),
+    ReplaceSelfWithRect(T::<a class="type" href="../../../rsx_primitives/compare/traits/trait.TDisplayListDiffer.html#associatedtype.RectDisplayItem" title="type rsx_primitives::compare::traits::TDisplayListDiffer::RectDisplayItem">RectDisplayItem</a>),
+    ReplaceSelfWithBorder(T::<a class="type" href="../../../rsx_primitives/compare/traits/trait.TDisplayListDiffer.html#associatedtype.BorderDisplayItem" title="type rsx_primitives::compare::traits::TDisplayListDiffer::BorderDisplayItem">BorderDisplayItem</a>),
+    ReplaceSelfWithImage(T::<a class="type" href="../../../rsx_primitives/compare/traits/trait.TDisplayListDiffer.html#associatedtype.ImageDisplayItem" title="type rsx_primitives::compare::traits::TDisplayListDiffer::ImageDisplayItem">ImageDisplayItem</a>),
+    UpdateSelf(<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="enum" href="../../../rsx_primitives/compare/types/enum.DisplayItemUpdate.html" title="enum rsx_primitives::compare::types::DisplayItemUpdate">DisplayItemUpdate</a>&lt;T&gt;&gt;),
+    NoChanges,
+}</pre><h2 id='variants' class='variants small-section-header'>
+                   Variants<a href='#variants' class='anchor'></a></h2>
+<span id="variant.AddText" class="variant small-section-header"><a href="#variant.AddText" class="anchor field"></a><span id='AddText.v' class='invisible'><code>AddText(T::<a class="type" href="../../../rsx_primitives/compare/traits/trait.TDisplayListDiffer.html#associatedtype.TextDisplayItem" title="type rsx_primitives::compare::traits::TDisplayListDiffer::TextDisplayItem">TextDisplayItem</a>)</code></span></span><span id="variant.AddRect" class="variant small-section-header"><a href="#variant.AddRect" class="anchor field"></a><span id='AddRect.v' class='invisible'><code>AddRect(T::<a class="type" href="../../../rsx_primitives/compare/traits/trait.TDisplayListDiffer.html#associatedtype.RectDisplayItem" title="type rsx_primitives::compare::traits::TDisplayListDiffer::RectDisplayItem">RectDisplayItem</a>)</code></span></span><span id="variant.AddBorder" class="variant small-section-header"><a href="#variant.AddBorder" class="anchor field"></a><span id='AddBorder.v' class='invisible'><code>AddBorder(T::<a class="type" href="../../../rsx_primitives/compare/traits/trait.TDisplayListDiffer.html#associatedtype.BorderDisplayItem" title="type rsx_primitives::compare::traits::TDisplayListDiffer::BorderDisplayItem">BorderDisplayItem</a>)</code></span></span><span id="variant.AddImage" class="variant small-section-header"><a href="#variant.AddImage" class="anchor field"></a><span id='AddImage.v' class='invisible'><code>AddImage(T::<a class="type" href="../../../rsx_primitives/compare/traits/trait.TDisplayListDiffer.html#associatedtype.ImageDisplayItem" title="type rsx_primitives::compare::traits::TDisplayListDiffer::ImageDisplayItem">ImageDisplayItem</a>)</code></span></span><span id="variant.RemoveSelf" class="variant small-section-header"><a href="#variant.RemoveSelf" class="anchor field"></a><span id='RemoveSelf.v' class='invisible'><code>RemoveSelf</code></span></span><span id="variant.ReplaceSelfWithText" class="variant small-section-header"><a href="#variant.ReplaceSelfWithText" class="anchor field"></a><span id='ReplaceSelfWithText.v' class='invisible'><code>ReplaceSelfWithText(T::<a class="type" href="../../../rsx_primitives/compare/traits/trait.TDisplayListDiffer.html#associatedtype.TextDisplayItem" title="type rsx_primitives::compare::traits::TDisplayListDiffer::TextDisplayItem">TextDisplayItem</a>)</code></span></span><span id="variant.ReplaceSelfWithRect" class="variant small-section-header"><a href="#variant.ReplaceSelfWithRect" class="anchor field"></a><span id='ReplaceSelfWithRect.v' class='invisible'><code>ReplaceSelfWithRect(T::<a class="type" href="../../../rsx_primitives/compare/traits/trait.TDisplayListDiffer.html#associatedtype.RectDisplayItem" title="type rsx_primitives::compare::traits::TDisplayListDiffer::RectDisplayItem">RectDisplayItem</a>)</code></span></span><span id="variant.ReplaceSelfWithBorder" class="variant small-section-header"><a href="#variant.ReplaceSelfWithBorder" class="anchor field"></a><span id='ReplaceSelfWithBorder.v' class='invisible'><code>ReplaceSelfWithBorder(T::<a class="type" href="../../../rsx_primitives/compare/traits/trait.TDisplayListDiffer.html#associatedtype.BorderDisplayItem" title="type rsx_primitives::compare::traits::TDisplayListDiffer::BorderDisplayItem">BorderDisplayItem</a>)</code></span></span><span id="variant.ReplaceSelfWithImage" class="variant small-section-header"><a href="#variant.ReplaceSelfWithImage" class="anchor field"></a><span id='ReplaceSelfWithImage.v' class='invisible'><code>ReplaceSelfWithImage(T::<a class="type" href="../../../rsx_primitives/compare/traits/trait.TDisplayListDiffer.html#associatedtype.ImageDisplayItem" title="type rsx_primitives::compare::traits::TDisplayListDiffer::ImageDisplayItem">ImageDisplayItem</a>)</code></span></span><span id="variant.UpdateSelf" class="variant small-section-header"><a href="#variant.UpdateSelf" class="anchor field"></a><span id='UpdateSelf.v' class='invisible'><code>UpdateSelf(<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="enum" href="../../../rsx_primitives/compare/types/enum.DisplayItemUpdate.html" title="enum rsx_primitives::compare::types::DisplayItemUpdate">DisplayItemUpdate</a>&lt;T&gt;&gt;)</code></span></span><span id="variant.NoChanges" class="variant small-section-header"><a href="#variant.NoChanges" class="anchor field"></a><span id='NoChanges.v' class='invisible'><code>NoChanges</code></span></span></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "rsx_primitives";
+    </script>
+    <script src="../../../main.js"></script>
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

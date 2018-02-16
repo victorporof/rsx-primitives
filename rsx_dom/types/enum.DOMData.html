@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `DOMData` enum in crate `rsx_dom`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, DOMData">
+
+    <title>rsx_dom::types::DOMData - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc enum">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Enum DOMData</p><div class="block items"><a class="sidebar-title" href="#variants">Variants</a><div class="sidebar-links"><a href="#variant.Void">Void</a><a href="#variant.Text">Text</a><a href="#variant.Normal">Normal</a></div><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.text">text</a><a href="#method.text_mut">text_mut</a><a href="#method.tag">tag</a><a href="#method.tag_mut">tag_mut</a><a href="#method.img_src">img_src</a><a href="#method.img_src_mut">img_src_mut</a><a href="#method.attribute">attribute</a><a href="#method.attribute_mut">attribute_mut</a><a href="#method.get_styles">get_styles</a><a href="#method.get_non_styles">get_non_styles</a><a href="#method.attributes_iter">attributes_iter</a><a href="#method.attributes_iter_mut">attributes_iter_mut</a><a href="#method.children_iter">children_iter</a><a href="#method.children_iter_mut">children_iter_mut</a><a href="#method.attributes_mut">attributes_mut</a><a href="#method.children_mut">children_mut</a><a href="#method.attributes_slice">attributes_slice</a><a href="#method.children_slice">children_slice</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-From%3CDOMData%3CS%2C%20C%2C%20L%3E%3E">From&lt;DOMData&lt;S, C, L&gt;&gt;</a><a href="#impl-Debug">Debug</a><a href="#impl-PartialEq">PartialEq</a></div></div><p class='location'><a href='../index.html'>rsx_dom</a>::<wbr><a href='index.html'>types</a></p><script>window.sidebarCurrent = {name: 'DOMData', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../index.html'>rsx_dom</a>::<wbr><a href='index.html'>types</a>::<wbr><a class="enum" href=''>DOMData</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/rsx_dom/types.rs.html#235-245' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum DOMData&lt;S, C, L&gt; {
+    Void,
+    Text {
+        contents: <a class="struct" href="../../rsx_dom/types/struct.DOMText.html" title="struct rsx_dom::types::DOMText">DOMText</a>,
+    },
+    Normal {
+        tag: <a class="enum" href="../../rsx_dom/types/enum.DOMTagName.html" title="enum rsx_dom::types::DOMTagName">DOMTagName</a>,
+        attributes: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="type" href="../../rsx_dom/types/type.DOMAttributes.html" title="type rsx_dom::types::DOMAttributes">DOMAttributes</a>&lt;S, C, L&gt;&gt;,
+        children: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="type" href="../../rsx_dom/types/type.DOMChildren.html" title="type rsx_dom::types::DOMChildren">DOMChildren</a>&lt;S, C, L&gt;&gt;,
+    },
+}</pre><h2 id='variants' class='variants small-section-header'>
+                   Variants<a href='#variants' class='anchor'></a></h2>
+<span id="variant.Void" class="variant small-section-header"><a href="#variant.Void" class="anchor field"></a><span id='Void.v' class='invisible'><code>Void</code></span></span><span id="variant.Text" class="variant small-section-header"><a href="#variant.Text" class="anchor field"></a><span id='Text.v' class='invisible'><code>Text</code></span></span><span class='docblock autohide sub-variant' id='variant.Text.fields'><h3 class='fields'>Fields of <code>Text</code></h3>
+
+                           <table><tr><td id='variant.Text.field.contents'><span id='Text.v.contents.v' class='invisible'><code>contents:&nbsp;<a class="struct" href="../../rsx_dom/types/struct.DOMText.html" title="struct rsx_dom::types::DOMText">DOMText</a></code></span></td><td></td></tr></table></span><span id="variant.Normal" class="variant small-section-header"><a href="#variant.Normal" class="anchor field"></a><span id='Normal.v' class='invisible'><code>Normal</code></span></span><span class='docblock autohide sub-variant' id='variant.Normal.fields'><h3 class='fields'>Fields of <code>Normal</code></h3>
+
+                           <table><tr><td id='variant.Normal.field.tag'><span id='Normal.v.tag.v' class='invisible'><code>tag:&nbsp;<a class="enum" href="../../rsx_dom/types/enum.DOMTagName.html" title="enum rsx_dom::types::DOMTagName">DOMTagName</a></code></span></td><td></td></tr><tr><td id='variant.Normal.field.attributes'><span id='Normal.v.attributes.v' class='invisible'><code>attributes:&nbsp;<a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="type" href="../../rsx_dom/types/type.DOMAttributes.html" title="type rsx_dom::types::DOMAttributes">DOMAttributes</a>&lt;S, C, L&gt;&gt;</code></span></td><td></td></tr><tr><td id='variant.Normal.field.children'><span id='Normal.v.children.v' class='invisible'><code>children:&nbsp;<a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="type" href="../../rsx_dom/types/type.DOMChildren.html" title="type rsx_dom::types::DOMChildren">DOMChildren</a>&lt;S, C, L&gt;&gt;</code></span></td><td></td></tr></table></span>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl&lt;S, C, L&gt; <a class="enum" href="../../rsx_dom/types/enum.DOMData.html" title="enum rsx_dom::types::DOMData">DOMData</a>&lt;S, C, L&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;S: <a class="trait" href="../../rsx_shared/traits/trait.TStyleDeclarations.html" title="trait rsx_shared::traits::TStyleDeclarations">TStyleDeclarations</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;C: <a class="trait" href="../../rsx_shared/traits/trait.TComputedStyles.html" title="trait rsx_shared::traits::TComputedStyles">TComputedStyles</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;L: <a class="trait" href="../../rsx_shared/traits/trait.TLayoutNode.html" title="trait rsx_shared::traits::TLayoutNode">TLayoutNode</a>,&nbsp;</span></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_dom/types.rs.html#247-406' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.text' class="method"><span id='text.v' class='invisible'><code>pub fn <a href='#method.text' class='fnname'>text</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="struct" href="../../rsx_dom/types/struct.DOMText.html" title="struct rsx_dom::types::DOMText">DOMText</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_dom/types.rs.html#253-258' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.text_mut' class="method"><span id='text_mut.v' class='invisible'><code>pub fn <a href='#method.text_mut' class='fnname'>text_mut</a>(&amp;mut self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;mut <a class="struct" href="../../rsx_dom/types/struct.DOMText.html" title="struct rsx_dom::types::DOMText">DOMText</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_dom/types.rs.html#260-265' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.tag' class="method"><span id='tag.v' class='invisible'><code>pub fn <a href='#method.tag' class='fnname'>tag</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="enum" href="../../rsx_dom/types/enum.DOMTagName.html" title="enum rsx_dom::types::DOMTagName">DOMTagName</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_dom/types.rs.html#267-272' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.tag_mut' class="method"><span id='tag_mut.v' class='invisible'><code>pub fn <a href='#method.tag_mut' class='fnname'>tag_mut</a>(&amp;mut self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;mut <a class="enum" href="../../rsx_dom/types/enum.DOMTagName.html" title="enum rsx_dom::types::DOMTagName">DOMTagName</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_dom/types.rs.html#274-279' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.img_src' class="method"><span id='img_src.v' class='invisible'><code>pub fn <a href='#method.img_src' class='fnname'>img_src</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="struct" href="../../rsx_dom/types/struct.DOMText.html" title="struct rsx_dom::types::DOMText">DOMText</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_dom/types.rs.html#281-288' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.img_src_mut' class="method"><span id='img_src_mut.v' class='invisible'><code>pub fn <a href='#method.img_src_mut' class='fnname'>img_src_mut</a>(&amp;mut self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;mut <a class="struct" href="../../rsx_dom/types/struct.DOMText.html" title="struct rsx_dom::types::DOMText">DOMText</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_dom/types.rs.html#290-297' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.attribute' class="method"><span id='attribute.v' class='invisible'><code>pub fn <a href='#method.attribute' class='fnname'>attribute</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;name: <a class="enum" href="../../rsx_dom/types/enum.DOMAttributeName.html" title="enum rsx_dom::types::DOMAttributeName">DOMAttributeName</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="enum" href="../../rsx_dom/types/enum.DOMAttributeValue.html" title="enum rsx_dom::types::DOMAttributeValue">DOMAttributeValue</a>&lt;S, C, L&gt;&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_dom/types.rs.html#300-304' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.attribute_mut' class="method"><span id='attribute_mut.v' class='invisible'><code>pub fn <a href='#method.attribute_mut' class='fnname'>attribute_mut</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;name: <a class="enum" href="../../rsx_dom/types/enum.DOMAttributeName.html" title="enum rsx_dom::types::DOMAttributeName">DOMAttributeName</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;mut <a class="enum" href="../../rsx_dom/types/enum.DOMAttributeValue.html" title="enum rsx_dom::types::DOMAttributeValue">DOMAttributeValue</a>&lt;S, C, L&gt;&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_dom/types.rs.html#307-311' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.get_styles' class="method"><span id='get_styles.v' class='invisible'><code>pub fn <a href='#method.get_styles' class='fnname'>get_styles</a>&lt;'a&gt;(&amp;'a self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html" title="trait core::iter::iterator::Iterator">Iterator</a>&lt;Item = <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'a </a>S&gt; + <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_dom/types.rs.html#314-317' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.get_non_styles' class="method"><span id='get_non_styles.v' class='invisible'><code>pub fn <a href='#method.get_non_styles' class='fnname'>get_non_styles</a>&lt;'a&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;'a self<br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html" title="trait core::iter::iterator::Iterator">Iterator</a>&lt;Item = &amp;'a <a class="struct" href="../../rsx_dom/types/struct.DOMAttribute.html" title="struct rsx_dom::types::DOMAttribute">DOMAttribute</a>&lt;S, C, L&gt;&gt; + <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_dom/types.rs.html#320-323' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.attributes_iter' class="method"><span id='attributes_iter.v' class='invisible'><code>pub fn <a href='#method.attributes_iter' class='fnname'>attributes_iter</a>&lt;'a&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;'a self<br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html" title="trait core::iter::iterator::Iterator">Iterator</a>&lt;Item = &amp;'a <a class="struct" href="../../rsx_dom/types/struct.DOMAttribute.html" title="struct rsx_dom::types::DOMAttribute">DOMAttribute</a>&lt;S, C, L&gt;&gt; + <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_dom/types.rs.html#326-334' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.attributes_iter_mut' class="method"><span id='attributes_iter_mut.v' class='invisible'><code>pub fn <a href='#method.attributes_iter_mut' class='fnname'>attributes_iter_mut</a>&lt;'a&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;'a mut self<br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html" title="trait core::iter::iterator::Iterator">Iterator</a>&lt;Item = &amp;'a mut <a class="struct" href="../../rsx_dom/types/struct.DOMAttribute.html" title="struct rsx_dom::types::DOMAttribute">DOMAttribute</a>&lt;S, C, L&gt;&gt;&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_dom/types.rs.html#337-345' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.children_iter' class="method"><span id='children_iter.v' class='invisible'><code>pub fn <a href='#method.children_iter' class='fnname'>children_iter</a>&lt;'a&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;'a self<br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html" title="trait core::iter::iterator::Iterator">Iterator</a>&lt;Item = &amp;'a <a class="struct" href="../../rsx_dom/types/struct.DOMNode.html" title="struct rsx_dom::types::DOMNode">DOMNode</a>&lt;S, C, L&gt;&gt; + <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_dom/types.rs.html#348-356' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.children_iter_mut' class="method"><span id='children_iter_mut.v' class='invisible'><code>pub fn <a href='#method.children_iter_mut' class='fnname'>children_iter_mut</a>&lt;'a&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;'a mut self<br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html" title="trait core::iter::iterator::Iterator">Iterator</a>&lt;Item = &amp;'a mut <a class="struct" href="../../rsx_dom/types/struct.DOMNode.html" title="struct rsx_dom::types::DOMNode">DOMNode</a>&lt;S, C, L&gt;&gt;&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_dom/types.rs.html#359-367' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.attributes_mut' class="method"><span id='attributes_mut.v' class='invisible'><code>pub fn <a href='#method.attributes_mut' class='fnname'>attributes_mut</a>(&amp;mut self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="struct" href="../../rsx_dom/types/struct.DOMAttribute.html" title="struct rsx_dom::types::DOMAttribute">DOMAttribute</a>&lt;S, C, L&gt;&gt;&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_dom/types.rs.html#369-376' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.children_mut' class="method"><span id='children_mut.v' class='invisible'><code>pub fn <a href='#method.children_mut' class='fnname'>children_mut</a>(&amp;mut self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="struct" href="../../rsx_dom/types/struct.DOMNode.html" title="struct rsx_dom::types::DOMNode">DOMNode</a>&lt;S, C, L&gt;&gt;&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_dom/types.rs.html#378-385' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.attributes_slice' class="method"><span id='attributes_slice.v' class='invisible'><code>pub fn <a href='#method.attributes_slice' class='fnname'>attributes_slice</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[</a><a class="struct" href="../../rsx_dom/types/struct.DOMAttribute.html" title="struct rsx_dom::types::DOMAttribute">DOMAttribute</a>&lt;S, C, L&gt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_dom/types.rs.html#387-395' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.children_slice' class="method"><span id='children_slice.v' class='invisible'><code>pub fn <a href='#method.children_slice' class='fnname'>children_slice</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[</a><a class="struct" href="../../rsx_dom/types/struct.DOMNode.html" title="struct rsx_dom::types::DOMNode">DOMNode</a>&lt;S, C, L&gt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_dom/types.rs.html#397-405' title='goto source code'>[src]</a></span></h4>
+</div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-From%3CDOMData%3CS%2C%20C%2C%20L%3E%3E' class='impl'><span class='in-band'><code>impl&lt;S, C, L&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;<a class="enum" href="../../rsx_dom/types/enum.DOMData.html" title="enum rsx_dom::types::DOMData">DOMData</a>&lt;S, C, L&gt;&gt; for <a class="struct" href="../../rsx_dom/types/struct.DOMNode.html" title="struct rsx_dom::types::DOMNode">DOMNode</a>&lt;S, C, L&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;S: <a class="trait" href="../../rsx_shared/traits/trait.TStyleDeclarations.html" title="trait rsx_shared::traits::TStyleDeclarations">TStyleDeclarations</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;C: <a class="trait" href="../../rsx_shared/traits/trait.TComputedStyles.html" title="trait rsx_shared::traits::TComputedStyles">TComputedStyles</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;L: <a class="trait" href="../../rsx_shared/traits/trait.TLayoutNode.html" title="trait rsx_shared::traits::TLayoutNode">TLayoutNode</a>,&nbsp;</span></code><a href='#impl-From%3CDOMData%3CS%2C%20C%2C%20L%3E%3E' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_dom/convert.rs.html#28-41' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from' class="method"><span id='from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from' class='fnname'>from</a>(data: <a class="enum" href="../../rsx_dom/types/enum.DOMData.html" title="enum rsx_dom::types::DOMData">DOMData</a>&lt;S, C, L&gt;) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_dom/convert.rs.html#34-40' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs the conversion.</p>
+</div></div><h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl&lt;S:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a>, C:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a>, L:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a>&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="enum" href="../../rsx_dom/types/enum.DOMData.html" title="enum rsx_dom::types::DOMData">DOMData</a>&lt;S, C, L&gt;</code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_dom/types.rs.html#234' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_dom/types.rs.html#234' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div><h3 id='impl-PartialEq' class='impl'><span class='in-band'><code>impl&lt;S:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a>, C:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a>, L:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a>&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a> for <a class="enum" href="../../rsx_dom/types/enum.DOMData.html" title="enum rsx_dom::types::DOMData">DOMData</a>&lt;S, C, L&gt;</code><a href='#impl-PartialEq' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_dom/types.rs.html#234' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class="method"><span id='eq.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class="enum" href="../../rsx_dom/types/enum.DOMData.html" title="enum rsx_dom::types::DOMData">DOMData</a>&lt;S, C, L&gt;) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_dom/types.rs.html#234' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class="method"><span id='ne.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class="enum" href="../../rsx_dom/types/enum.DOMData.html" title="enum rsx_dom::types::DOMData">DOMData</a>&lt;S, C, L&gt;) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_dom/types.rs.html#234' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "rsx_dom";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

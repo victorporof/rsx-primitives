@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `InvalidationProcessor` trait in crate `style`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, InvalidationProcessor">
+
+    <title>style::invalidation::element::invalidator::InvalidationProcessor - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc trait">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Trait InvalidationProcessor</p><div class="block items"><a class="sidebar-title" href="#required-methods">Required Methods</a><div class="sidebar-links"><a href="#tymethod.matching_context">matching_context</a><a href="#tymethod.collect_invalidations">collect_invalidations</a><a href="#tymethod.should_process_descendants">should_process_descendants</a><a href="#tymethod.recursion_limit_exceeded">recursion_limit_exceeded</a><a href="#tymethod.invalidated_self">invalidated_self</a><a href="#tymethod.invalidated_descendants">invalidated_descendants</a></div><a class="sidebar-title" href="#provided-methods">Provided Methods</a><div class="sidebar-links"><a href="#method.invalidates_on_eager_pseudo_element">invalidates_on_eager_pseudo_element</a><a href="#method.light_tree_only">light_tree_only</a></div><a class="sidebar-title" href="#implementors">Implementors</a></div><p class='location'><a href='../../../index.html'>style</a>::<wbr><a href='../../index.html'>invalidation</a>::<wbr><a href='../index.html'>element</a>::<wbr><a href='index.html'>invalidator</a></p><script>window.sidebarCurrent = {name: 'InvalidationProcessor', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Trait <a href='../../../index.html'>style</a>::<wbr><a href='../../index.html'>invalidation</a>::<wbr><a href='../index.html'>element</a>::<wbr><a href='index.html'>invalidator</a>::<wbr><a class="trait" href=''>InvalidationProcessor</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../../src/style/invalidation/element/invalidator.rs.html#18-59' title='goto source code'>[src]</a></span></h1>
+<pre class='rust trait'>pub trait InvalidationProcessor&lt;'a, E&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;E: <a class="trait" href="../../../../style/dom/trait.TElement.html" title="trait style::dom::TElement">TElement</a>,&nbsp;</span>{
+    fn <a href='#tymethod.matching_context' class='fnname'>matching_context</a>(&amp;mut self) -&gt; &amp;mut <a class="struct" href="../../../../selectors/context/struct.MatchingContext.html" title="struct selectors::context::MatchingContext">MatchingContext</a>&lt;'a, E::<a class="type" href="../../../../selectors/tree/trait.Element.html#associatedtype.Impl" title="type selectors::tree::Element::Impl">Impl</a>&gt;;
+<div class='item-spacer'></div>    fn <a href='#tymethod.collect_invalidations' class='fnname'>collect_invalidations</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;element: E, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self_invalidations: &amp;mut <a class="type" href="../../../../style/invalidation/element/invalidator/type.InvalidationVector.html" title="type style::invalidation::element::invalidator::InvalidationVector">InvalidationVector</a>&lt;'a&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;descendant_invalidations: &amp;mut <a class="type" href="../../../../style/invalidation/element/invalidator/type.InvalidationVector.html" title="type style::invalidation::element::invalidator::InvalidationVector">InvalidationVector</a>&lt;'a&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sibling_invalidations: &amp;mut <a class="type" href="../../../../style/invalidation/element/invalidator/type.InvalidationVector.html" title="type style::invalidation::element::invalidator::InvalidationVector">InvalidationVector</a>&lt;'a&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.should_process_descendants' class='fnname'>should_process_descendants</a>(&amp;mut self, element: E) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.recursion_limit_exceeded' class='fnname'>recursion_limit_exceeded</a>(&amp;mut self, element: E);
+<div class='item-spacer'></div>    fn <a href='#tymethod.invalidated_self' class='fnname'>invalidated_self</a>(&amp;mut self, element: E);
+<div class='item-spacer'></div>    fn <a href='#tymethod.invalidated_descendants' class='fnname'>invalidated_descendants</a>(&amp;mut self, element: E, child: E);
+
+    fn <a href='#method.invalidates_on_eager_pseudo_element' class='fnname'>invalidates_on_eager_pseudo_element</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a> { ... }
+<div class='item-spacer'></div>    fn <a href='#method.light_tree_only' class='fnname'>light_tree_only</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a> { ... }
+}</pre><div class='docblock'><p>A trait to abstract the collection of invalidations for a given pass.</p>
+</div>
+            <h2 id='required-methods' class='small-section-header'>
+              Required Methods<a href='#required-methods' class='anchor'></a>
+            </h2>
+            <div class='methods'>
+        <h3 id='tymethod.matching_context' class='method'><span id='matching_context.v' class='invisible'><code>fn <a href='#tymethod.matching_context' class='fnname'>matching_context</a>(&amp;mut self) -&gt; &amp;mut <a class="struct" href="../../../../selectors/context/struct.MatchingContext.html" title="struct selectors::context::MatchingContext">MatchingContext</a>&lt;'a, E::<a class="type" href="../../../../selectors/tree/trait.Element.html#associatedtype.Impl" title="type selectors::tree::Element::Impl">Impl</a>&gt;</code></span></h3><div class='docblock'><p>The matching context that should be used to process invalidations.</p>
+</div><h3 id='tymethod.collect_invalidations' class='method'><span id='collect_invalidations.v' class='invisible'><code>fn <a href='#tymethod.collect_invalidations' class='fnname'>collect_invalidations</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;element: E, <br>&nbsp;&nbsp;&nbsp;&nbsp;self_invalidations: &amp;mut <a class="type" href="../../../../style/invalidation/element/invalidator/type.InvalidationVector.html" title="type style::invalidation::element::invalidator::InvalidationVector">InvalidationVector</a>&lt;'a&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;descendant_invalidations: &amp;mut <a class="type" href="../../../../style/invalidation/element/invalidator/type.InvalidationVector.html" title="type style::invalidation::element::invalidator::InvalidationVector">InvalidationVector</a>&lt;'a&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;sibling_invalidations: &amp;mut <a class="type" href="../../../../style/invalidation/element/invalidator/type.InvalidationVector.html" title="type style::invalidation::element::invalidator::InvalidationVector">InvalidationVector</a>&lt;'a&gt;<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><div class='docblock'><p>Collect invalidations for a given element&#39;s descendants and siblings.</p>
+
+<p>Returns whether the element itself was invalidated.</p>
+</div><h3 id='tymethod.should_process_descendants' class='method'><span id='should_process_descendants.v' class='invisible'><code>fn <a href='#tymethod.should_process_descendants' class='fnname'>should_process_descendants</a>(&amp;mut self, element: E) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><div class='docblock'><p>Returns whether the invalidation process should process the descendants
+of the given element.</p>
+</div><h3 id='tymethod.recursion_limit_exceeded' class='method'><span id='recursion_limit_exceeded.v' class='invisible'><code>fn <a href='#tymethod.recursion_limit_exceeded' class='fnname'>recursion_limit_exceeded</a>(&amp;mut self, element: E)</code></span></h3><div class='docblock'><p>Executes an arbitrary action when the recursion limit is exceded (if
+any).</p>
+</div><h3 id='tymethod.invalidated_self' class='method'><span id='invalidated_self.v' class='invisible'><code>fn <a href='#tymethod.invalidated_self' class='fnname'>invalidated_self</a>(&amp;mut self, element: E)</code></span></h3><div class='docblock'><p>Executes an action when <code>Self</code> is invalidated.</p>
+</div><h3 id='tymethod.invalidated_descendants' class='method'><span id='invalidated_descendants.v' class='invisible'><code>fn <a href='#tymethod.invalidated_descendants' class='fnname'>invalidated_descendants</a>(&amp;mut self, element: E, child: E)</code></span></h3><div class='docblock'><p>Executes an action when any descendant of <code>Self</code> is invalidated.</p>
+</div></div>
+            <h2 id='provided-methods' class='small-section-header'>
+              Provided Methods<a href='#provided-methods' class='anchor'></a>
+            </h2>
+            <div class='methods'>
+        <h3 id='method.invalidates_on_eager_pseudo_element' class='method'><span id='invalidates_on_eager_pseudo_element.v' class='invisible'><code>fn <a href='#method.invalidates_on_eager_pseudo_element' class='fnname'>invalidates_on_eager_pseudo_element</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><div class='docblock'><p>Whether an invalidation that contains only an eager pseudo-element
+selector like ::before or ::after triggers invalidation of the element
+that would originate it.</p>
+</div><h3 id='method.light_tree_only' class='method'><span id='light_tree_only.v' class='invisible'><code>fn <a href='#method.light_tree_only' class='fnname'>light_tree_only</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><div class='docblock'><p>Whether the invalidation processor only cares about light-tree
+descendants of a given element, that is, doesn&#39;t invalidate
+pseudo-elements, NAC, or XBL anon content.</p>
+</div></div>
+        <h2 id='implementors' class='small-section-header'>
+          Implementors<a href='#implementors' class='anchor'></a>
+        </h2>
+        <ul class='item-list' id='implementors-list'>
+    <li><div class='out-of-band'><a class='srclink' href='../../../../src/style/invalidation/element/collector.rs.html#95-303' title='goto source code'>[src]</a></div><code>impl&lt;'a, 'b: 'a, E:&nbsp;'a&gt; InvalidationProcessor&lt;'a, E&gt; for <a class="struct" href="../../../../style/invalidation/element/collector/struct.StateAndAttrInvalidationProcessor.html" title="struct style::invalidation::element::collector::StateAndAttrInvalidationProcessor">StateAndAttrInvalidationProcessor</a>&lt;'a, 'b, E&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;E: <a class="trait" href="../../../../style/dom/trait.TElement.html" title="trait style::dom::TElement">TElement</a>,&nbsp;</span></code></li>
+</ul><script type="text/javascript" async
+                         src="../../../../implementors/style/invalidation/element/invalidator/trait.InvalidationProcessor.js">
+                 </script></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../../";
+        window.currentCrate = "style";
+    </script>
+    <script src="../../../../main.js"></script>
+    <script defer src="../../../../search-index.js"></script>
+</body>
+</html>

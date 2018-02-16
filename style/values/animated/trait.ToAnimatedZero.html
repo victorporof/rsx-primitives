@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `ToAnimatedZero` trait in crate `style`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, ToAnimatedZero">
+
+    <title>style::values::animated::ToAnimatedZero - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc trait">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Trait ToAnimatedZero</p><div class="block items"><a class="sidebar-title" href="#required-methods">Required Methods</a><div class="sidebar-links"><a href="#tymethod.to_animated_zero">to_animated_zero</a></div><a class="sidebar-title" href="#foreign-impls">Implementations on Foreign Types</a><div class="sidebar-links"><a href="#impl-ToAnimatedZero">f32</a><a href="#impl-ToAnimatedZero">f64</a><a href="#impl-ToAnimatedZero">i32</a><a href="#impl-ToAnimatedZero">Option&lt;T&gt;</a></div><a class="sidebar-title" href="#implementors">Implementors</a></div><p class='location'><a href='../../index.html'>style</a>::<wbr><a href='../index.html'>values</a>::<wbr><a href='index.html'>animated</a></p><script>window.sidebarCurrent = {name: 'ToAnimatedZero', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Trait <a href='../../index.html'>style</a>::<wbr><a href='../index.html'>values</a>::<wbr><a href='index.html'>animated</a>::<wbr><a class="trait" href=''>ToAnimatedZero</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../src/style/values/animated/mod.rs.html#90-99' title='goto source code'>[src]</a></span></h1>
+<pre class='rust trait'>pub trait ToAnimatedZero: <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a> {
+    fn <a href='#tymethod.to_animated_zero' class='fnname'>to_animated_zero</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;Self, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;;
+}</pre><div class='docblock'><p>Returns a value similar to <code>self</code> that represents zero.</p>
+
+<p>This trait is derivable with <code>#[derive(ToAnimatedValue)]</code>. If a field is
+annotated with <code>#[animation(constant)]</code>, a clone of its value will be used
+instead of calling <code>ToAnimatedZero::to_animated_zero</code> on it.</p>
+
+<p>If a variant is annotated with <code>#[animation(error)]</code>, the corresponding
+<code>match</code> arm is not generated.</p>
+</div>
+            <h2 id='required-methods' class='small-section-header'>
+              Required Methods<a href='#required-methods' class='anchor'></a>
+            </h2>
+            <div class='methods'>
+        <h3 id='tymethod.to_animated_zero' class='method'><span id='to_animated_zero.v' class='invisible'><code>fn <a href='#tymethod.to_animated_zero' class='fnname'>to_animated_zero</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;Self, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</code></span></h3><div class='docblock'><p>Returns a value that, when added with an underlying value, will produce the underlying
+value. This is used for SMIL animation&#39;s &quot;by-animation&quot; where SMIL first interpolates from
+the zero value to the &#39;by&#39; value, and then adds the result to the underlying value.</p>
+
+<p>This is not the necessarily the same as the initial value of a property. For example, the
+initial value of &#39;stroke-width&#39; is 1, but the zero value is 0, since adding 1 to the
+underlying value will not produce the underlying value.</p>
+</div></div>
+                <h2 id='foreign-impls' class='small-section-header'>
+                  Implementations on Foreign Types<a href='#foreign-impls' class='anchor'></a>
+                </h2>
+            <h3 id='impl-ToAnimatedZero' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../../style/values/animated/trait.ToAnimatedZero.html" title="trait style::values::animated::ToAnimatedZero">ToAnimatedZero</a> for <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a></code><a href='#impl-ToAnimatedZero' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/values/animated/mod.rs.html#419-422' title='goto source code'>[src]</a></span></h3>
+<span class='docblock autohide'><div class='impl-items'><h4 id='method.to_animated_zero' class="method"><span id='to_animated_zero.v-1' class='invisible'><code>fn <a href='#method.to_animated_zero' class='fnname'>to_animated_zero</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;Self, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/values/animated/mod.rs.html#421' title='goto source code'>[src]</a></span></h4>
+</div></span><h3 id='impl-ToAnimatedZero-1' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../../style/values/animated/trait.ToAnimatedZero.html" title="trait style::values::animated::ToAnimatedZero">ToAnimatedZero</a> for <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code><a href='#impl-ToAnimatedZero-1' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/values/animated/mod.rs.html#424-427' title='goto source code'>[src]</a></span></h3>
+<span class='docblock autohide'><div class='impl-items'><h4 id='method.to_animated_zero-1' class="method"><span id='to_animated_zero.v-2' class='invisible'><code>fn <a href='#method.to_animated_zero' class='fnname'>to_animated_zero</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;Self, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/values/animated/mod.rs.html#426' title='goto source code'>[src]</a></span></h4>
+</div></span><h3 id='impl-ToAnimatedZero-2' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../../style/values/animated/trait.ToAnimatedZero.html" title="trait style::values::animated::ToAnimatedZero">ToAnimatedZero</a> for <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a></code><a href='#impl-ToAnimatedZero-2' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/values/animated/mod.rs.html#429-432' title='goto source code'>[src]</a></span></h3>
+<span class='docblock autohide'><div class='impl-items'><h4 id='method.to_animated_zero-2' class="method"><span id='to_animated_zero.v-3' class='invisible'><code>fn <a href='#method.to_animated_zero' class='fnname'>to_animated_zero</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;Self, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/values/animated/mod.rs.html#431' title='goto source code'>[src]</a></span></h4>
+</div></span><h3 id='impl-ToAnimatedZero-3' class='impl'><span class='in-band'><code>impl&lt;T&gt; <a class="trait" href="../../../style/values/animated/trait.ToAnimatedZero.html" title="trait style::values::animated::ToAnimatedZero">ToAnimatedZero</a> for <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;T&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="../../../style/values/animated/trait.ToAnimatedZero.html" title="trait style::values::animated::ToAnimatedZero">ToAnimatedZero</a>,&nbsp;</span></code><a href='#impl-ToAnimatedZero-3' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/values/animated/mod.rs.html#434-445' title='goto source code'>[src]</a></span></h3>
+<span class='docblock autohide'><div class='impl-items'><h4 id='method.to_animated_zero-3' class="method"><span id='to_animated_zero.v-4' class='invisible'><code>fn <a href='#method.to_animated_zero' class='fnname'>to_animated_zero</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;Self, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/values/animated/mod.rs.html#439-444' title='goto source code'>[src]</a></span></h4>
+</div></span>
+        <h2 id='implementors' class='small-section-header'>
+          Implementors<a href='#implementors' class='anchor'></a>
+        </h2>
+        <ul class='item-list' id='implementors-list'>
+    <li><div class='out-of-band'><a class='srclink' href='../../../src/style/values/animated/color.rs.html#15-1' title='goto source code'>[src]</a></div><code>impl ToAnimatedZero for <a class="struct" href="../../../style/values/animated/color/struct.RGBA.html" title="struct style::values::animated::color::RGBA">RGBA</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/values/animated/color.rs.html#194-200' title='goto source code'>[src]</a></div><code>impl ToAnimatedZero for <a class="struct" href="../../../style/values/animated/color/struct.Color.html" title="struct style::values::animated::color::Color">Color</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/values/animated/effects.rs.html#121-126' title='goto source code'>[src]</a></div><code>impl&lt;S&gt; ToAnimatedZero for <a class="struct" href="../../../style/values/animated/effects/struct.ShadowList.html" title="struct style::values::animated::effects::ShadowList">ShadowList</a>&lt;S&gt;</code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/values/animated/effects.rs.html#183-188' title='goto source code'>[src]</a></div><code>impl ToAnimatedZero for <a class="struct" href="../../../style/values/animated/effects/struct.FilterList.html" title="struct style::values::animated::effects::FilterList">FilterList</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/values/animated/mod.rs.html#414-417' title='goto source code'>[src]</a></div><code>impl ToAnimatedZero for <a class="struct" href="../../../style/values/computed/struct.Au.html" title="struct style::values::computed::Au">Au</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/values/computed/angle.rs.html#19-1' title='goto source code'>[src]</a></div><code>impl ToAnimatedZero for <a class="enum" href="../../../style/values/computed/angle/enum.Angle.html" title="enum style::values::computed::angle::Angle">Angle</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/values/computed/background.rs.html#32-35' title='goto source code'>[src]</a></div><code>impl ToAnimatedZero for <a class="type" href="../../../style/values/computed/background/type.BackgroundSize.html" title="type style::values::computed::background::BackgroundSize">BackgroundSize</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/values/computed/border.rs.html#69-75' title='goto source code'>[src]</a></div><code>impl ToAnimatedZero for <a class="type" href="../../../style/values/computed/border/type.BorderSpacing.html" title="type style::values::computed::border::BorderSpacing">BorderSpacing</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/values/computed/border.rs.html#77-83' title='goto source code'>[src]</a></div><code>impl ToAnimatedZero for <a class="type" href="../../../style/values/computed/border/type.BorderCornerRadius.html" title="type style::values::computed::border::BorderCornerRadius">BorderCornerRadius</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/values/computed/font.rs.html#42-1' title='goto source code'>[src]</a></div><code>impl ToAnimatedZero for <a class="struct" href="../../../style/values/computed/font/struct.FontSize.html" title="struct style::values::computed::font::FontSize">FontSize</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/values/computed/font.rs.html#52-1' title='goto source code'>[src]</a></div><code>impl ToAnimatedZero for <a class="struct" href="../../../style/values/computed/font/struct.KeywordInfo.html" title="struct style::values::computed::font::KeywordInfo">KeywordInfo</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/values/computed/font.rs.html#670-676' title='goto source code'>[src]</a></div><code>impl ToAnimatedZero for <a class="enum" href="../../../style/values/computed/font/enum.FontSizeAdjust.html" title="enum style::values::computed::font::FontSizeAdjust">FontSizeAdjust</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/values/computed/length.rs.html#66-1' title='goto source code'>[src]</a></div><code>impl ToAnimatedZero for <a class="struct" href="../../../style/values/computed/length/struct.CalcLengthOrPercentage.html" title="struct style::values::computed::length::CalcLengthOrPercentage">CalcLengthOrPercentage</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/values/computed/length.rs.html#312-1' title='goto source code'>[src]</a></div><code>impl ToAnimatedZero for <a class="enum" href="../../../style/values/computed/length/enum.LengthOrPercentage.html" title="enum style::values::computed::length::LengthOrPercentage">LengthOrPercentage</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/values/computed/length.rs.html#698-1' title='goto source code'>[src]</a></div><code>impl ToAnimatedZero for <a class="struct" href="../../../style/values/computed/length/struct.CSSPixelLength.html" title="struct style::values::computed::length::CSSPixelLength">CSSPixelLength</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/values/computed/length.rs.html#868-1' title='goto source code'>[src]</a></div><code>impl ToAnimatedZero for <a class="enum" href="../../../style/values/computed/length/enum.MozLength.html" title="enum style::values::computed::length::MozLength">MozLength</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/values/computed/percentage.rs.html#14-1' title='goto source code'>[src]</a></div><code>impl ToAnimatedZero for <a class="struct" href="../../../style/values/computed/percentage/struct.Percentage.html" title="struct style::values::computed::percentage::Percentage">Percentage</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/values/computed/text.rs.html#32-35' title='goto source code'>[src]</a></div><code>impl ToAnimatedZero for <a class="type" href="../../../style/values/computed/text/type.LineHeight.html" title="type style::values::computed::text::LineHeight">LineHeight</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/values/computed/transform.rs.html#207-284' title='goto source code'>[src]</a></div><code>impl ToAnimatedZero for <a class="type" href="../../../style/values/computed/transform/type.TransformOperation.html" title="type style::values::computed::transform::TransformOperation">TransformOperation</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/values/computed/transform.rs.html#287-295' title='goto source code'>[src]</a></div><code>impl ToAnimatedZero for <a class="type" href="../../../style/values/computed/transform/type.Transform.html" title="type style::values::computed::transform::Transform">Transform</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/values/generics/basic_shape.rs.html#146-150' title='goto source code'>[src]</a></div><code>impl&lt;B, T, U&gt; ToAnimatedZero for <a class="enum" href="../../../style/values/generics/basic_shape/enum.ShapeSource.html" title="enum style::values::generics::basic_shape::ShapeSource">ShapeSource</a>&lt;B, T, U&gt;</code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/values/generics/box.rs.html#44-48' title='goto source code'>[src]</a></div><code>impl&lt;L&gt; ToAnimatedZero for <a class="enum" href="../../../style/values/generics/box_/enum.VerticalAlign.html" title="enum style::values::generics::box_::VerticalAlign">VerticalAlign</a>&lt;L&gt;</code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/values/generics/effects.rs.html#14-1' title='goto source code'>[src]</a></div><code>impl&lt;Color, SizeLength, BlurShapeLength, ShapeLength&gt; ToAnimatedZero for <a class="struct" href="../../../style/values/generics/effects/struct.BoxShadow.html" title="struct style::values::generics::effects::BoxShadow">BoxShadow</a>&lt;Color, SizeLength, BlurShapeLength, ShapeLength&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;<a class="struct" href="../../../style/values/generics/effects/struct.SimpleShadow.html" title="struct style::values::generics::effects::SimpleShadow">SimpleShadow</a>&lt;Color, SizeLength, BlurShapeLength&gt;: <a class="trait" href="../../../style/values/animated/trait.ToAnimatedZero.html" title="trait style::values::animated::ToAnimatedZero">ToAnimatedZero</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;ShapeLength: <a class="trait" href="../../../style/values/animated/trait.ToAnimatedZero.html" title="trait style::values::animated::ToAnimatedZero">ToAnimatedZero</a>,&nbsp;</span></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/values/generics/effects.rs.html#69-1' title='goto source code'>[src]</a></div><code>impl&lt;Color, SizeLength, ShapeLength&gt; ToAnimatedZero for <a class="struct" href="../../../style/values/generics/effects/struct.SimpleShadow.html" title="struct style::values::generics::effects::SimpleShadow">SimpleShadow</a>&lt;Color, SizeLength, ShapeLength&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;Color: <a class="trait" href="../../../style/values/animated/trait.ToAnimatedZero.html" title="trait style::values::animated::ToAnimatedZero">ToAnimatedZero</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;SizeLength: <a class="trait" href="../../../style/values/animated/trait.ToAnimatedZero.html" title="trait style::values::animated::ToAnimatedZero">ToAnimatedZero</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;ShapeLength: <a class="trait" href="../../../style/values/animated/trait.ToAnimatedZero.html" title="trait style::values::animated::ToAnimatedZero">ToAnimatedZero</a>,&nbsp;</span></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/values/generics/position.rs.html#10-1' title='goto source code'>[src]</a></div><code>impl&lt;H, V&gt; ToAnimatedZero for <a class="struct" href="../../../style/values/generics/position/struct.Position.html" title="struct style::values::generics::position::Position">Position</a>&lt;H, V&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;H: <a class="trait" href="../../../style/values/animated/trait.ToAnimatedZero.html" title="trait style::values::animated::ToAnimatedZero">ToAnimatedZero</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;V: <a class="trait" href="../../../style/values/animated/trait.ToAnimatedZero.html" title="trait style::values::animated::ToAnimatedZero">ToAnimatedZero</a>,&nbsp;</span></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/values/generics/svg.rs.html#34-1' title='goto source code'>[src]</a></div><code>impl&lt;ColorType, UrlPaintServer&gt; ToAnimatedZero for <a class="enum" href="../../../style/values/generics/svg/enum.SVGPaintKind.html" title="enum style::values::generics::svg::SVGPaintKind">SVGPaintKind</a>&lt;ColorType, UrlPaintServer&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;ColorType: <a class="trait" href="../../../style/values/animated/trait.ToAnimatedZero.html" title="trait style::values::animated::ToAnimatedZero">ToAnimatedZero</a>,&nbsp;</span></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/values/generics/svg.rs.html#111-1' title='goto source code'>[src]</a></div><code>impl&lt;LengthOrPercentage, Number&gt; ToAnimatedZero for <a class="enum" href="../../../style/values/generics/svg/enum.SvgLengthOrPercentageOrNumber.html" title="enum style::values::generics::svg::SvgLengthOrPercentageOrNumber">SvgLengthOrPercentageOrNumber</a>&lt;LengthOrPercentage, Number&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;LengthOrPercentage: <a class="trait" href="../../../style/values/animated/trait.ToAnimatedZero.html" title="trait style::values::animated::ToAnimatedZero">ToAnimatedZero</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;Number: <a class="trait" href="../../../style/values/animated/trait.ToAnimatedZero.html" title="trait style::values::animated::ToAnimatedZero">ToAnimatedZero</a>,&nbsp;</span></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/values/generics/svg.rs.html#192-1' title='goto source code'>[src]</a></div><code>impl&lt;LengthType&gt; ToAnimatedZero for <a class="enum" href="../../../style/values/generics/svg/enum.SVGLength.html" title="enum style::values::generics::svg::SVGLength">SVGLength</a>&lt;LengthType&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;LengthType: <a class="trait" href="../../../style/values/animated/trait.ToAnimatedZero.html" title="trait style::values::animated::ToAnimatedZero">ToAnimatedZero</a>,&nbsp;</span></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/values/generics/svg.rs.html#237-1' title='goto source code'>[src]</a></div><code>impl&lt;OpacityType&gt; ToAnimatedZero for <a class="enum" href="../../../style/values/generics/svg/enum.SVGOpacity.html" title="enum style::values::generics::svg::SVGOpacity">SVGOpacity</a>&lt;OpacityType&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;OpacityType: <a class="trait" href="../../../style/values/animated/trait.ToAnimatedZero.html" title="trait style::values::animated::ToAnimatedZero">ToAnimatedZero</a>,&nbsp;</span></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/values/generics/text.rs.html#101-107' title='goto source code'>[src]</a></div><code>impl&lt;V&gt; ToAnimatedZero for <a class="enum" href="../../../style/values/generics/text/enum.Spacing.html" title="enum style::values::generics::text::Spacing">Spacing</a>&lt;V&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;V: <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;<a class="struct" href="../../../style/values/computed/struct.Au.html" title="struct style::values::computed::Au">Au</a>&gt;,&nbsp;</span></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/values/generics/transform.rs.html#69-1' title='goto source code'>[src]</a></div><code>impl&lt;H, V, Depth&gt; ToAnimatedZero for <a class="struct" href="../../../style/values/generics/transform/struct.TransformOrigin.html" title="struct style::values::generics::transform::TransformOrigin">TransformOrigin</a>&lt;H, V, Depth&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;H: <a class="trait" href="../../../style/values/animated/trait.ToAnimatedZero.html" title="trait style::values::animated::ToAnimatedZero">ToAnimatedZero</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;V: <a class="trait" href="../../../style/values/animated/trait.ToAnimatedZero.html" title="trait style::values::animated::ToAnimatedZero">ToAnimatedZero</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;Depth: <a class="trait" href="../../../style/values/animated/trait.ToAnimatedZero.html" title="trait style::values::animated::ToAnimatedZero">ToAnimatedZero</a>,&nbsp;</span></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/values/generics/mod.rs.html#285-1' title='goto source code'>[src]</a></div><code>impl&lt;T&gt; ToAnimatedZero for <a class="struct" href="../../../style/values/generics/struct.NonNegative.html" title="struct style::values::generics::NonNegative">NonNegative</a>&lt;T&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="../../../style/values/animated/trait.ToAnimatedZero.html" title="trait style::values::animated::ToAnimatedZero">ToAnimatedZero</a>,&nbsp;</span></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/values/generics/mod.rs.html#291-1' title='goto source code'>[src]</a></div><code>impl&lt;T&gt; ToAnimatedZero for <a class="struct" href="../../../style/values/generics/struct.GreaterThanOrEqualToOne.html" title="struct style::values::generics::GreaterThanOrEqualToOne">GreaterThanOrEqualToOne</a>&lt;T&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="../../../style/values/animated/trait.ToAnimatedZero.html" title="trait style::values::animated::ToAnimatedZero">ToAnimatedZero</a>,&nbsp;</span></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/values/specified/font.rs.html#357-1' title='goto source code'>[src]</a></div><code>impl ToAnimatedZero for <a class="enum" href="../../../style/values/specified/font/enum.KeywordSize.html" title="enum style::values::specified::font::KeywordSize">KeywordSize</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/macros.rs.html#133-1' title='goto source code'>[src]</a></div><code>impl ToAnimatedZero for <a class="struct" href="../../../style/values/struct.None_.html" title="struct style::values::None_">None_</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/macros.rs.html#133-1' title='goto source code'>[src]</a></div><code>impl ToAnimatedZero for <a class="struct" href="../../../style/values/struct.Auto.html" title="struct style::values::Auto">Auto</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/macros.rs.html#133-1' title='goto source code'>[src]</a></div><code>impl ToAnimatedZero for <a class="struct" href="../../../style/values/struct.Normal.html" title="struct style::values::Normal">Normal</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/values/mod.rs.html#60-1' title='goto source code'>[src]</a></div><code>impl&lt;A, B&gt; ToAnimatedZero for <a class="enum" href="../../../style/values/enum.Either.html" title="enum style::values::Either">Either</a>&lt;A, B&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;A: <a class="trait" href="../../../style/values/animated/trait.ToAnimatedZero.html" title="trait style::values::animated::ToAnimatedZero">ToAnimatedZero</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;B: <a class="trait" href="../../../style/values/animated/trait.ToAnimatedZero.html" title="trait style::values::animated::ToAnimatedZero">ToAnimatedZero</a>,&nbsp;</span></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#583-586' title='goto source code'>[src]</a></div><code>impl ToAnimatedZero for style::properties::longhands::background_position_x::computed_value::<a class="struct" href="../../../style/properties/longhands/background_position_x/computed_value/struct.T.html" title="struct style::properties::longhands::background_position_x::computed_value::T">T</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#850-853' title='goto source code'>[src]</a></div><code>impl ToAnimatedZero for style::properties::longhands::background_position_y::computed_value::<a class="struct" href="../../../style/properties/longhands/background_position_y/computed_value/struct.T.html" title="struct style::properties::longhands::background_position_y::computed_value::T">T</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#2267-2270' title='goto source code'>[src]</a></div><code>impl ToAnimatedZero for style::properties::longhands::background_size::computed_value::<a class="struct" href="../../../style/properties/longhands/background_size/computed_value/struct.T.html" title="struct style::properties::longhands::background_size::computed_value::T">T</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#44039-44238' title='goto source code'>[src]</a></div><code>impl ToAnimatedZero for <a class="enum" href="../../../style/properties/animated_properties/enum.AnimationValue.html" title="enum style::properties::animated_properties::AnimationValue">AnimationValue</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#44309-44314' title='goto source code'>[src]</a></div><code>impl ToAnimatedZero for <a class="enum" href="../../../style/properties/longhands/visibility/computed_value/enum.T.html" title="enum style::properties::longhands::visibility::computed_value::T">Visibility</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#44335-44347' title='goto source code'>[src]</a></div><code>impl ToAnimatedZero for <a class="enum" href="../../../style/values/computed/length/enum.LengthOrPercentageOrAuto.html" title="enum style::values::computed::length::LengthOrPercentageOrAuto">LengthOrPercentageOrAuto</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#44349-44361' title='goto source code'>[src]</a></div><code>impl ToAnimatedZero for <a class="enum" href="../../../style/values/computed/length/enum.LengthOrPercentageOrNone.html" title="enum style::values::computed::length::LengthOrPercentageOrNone">LengthOrPercentageOrNone</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#44363-44366' title='goto source code'>[src]</a></div><code>impl ToAnimatedZero for <a class="enum" href="../../../style/values/computed/length/enum.MaxLength.html" title="enum style::values::computed::length::MaxLength">MaxLength</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#44382-44387' title='goto source code'>[src]</a></div><code>impl ToAnimatedZero for <a class="struct" href="../../../style/values/computed/font/struct.FontWeight.html" title="struct style::values::computed::font::FontWeight">FontWeight</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#44410-44413' title='goto source code'>[src]</a></div><code>impl ToAnimatedZero for <a class="enum" href="../../../style/properties/longhands/font_stretch/computed_value/enum.T.html" title="enum style::properties::longhands::font_stretch::computed_value::T">FontStretch</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#44641-44644' title='goto source code'>[src]</a></div><code>impl ToAnimatedZero for <a class="struct" href="../../../style/values/computed/struct.ClipRect.html" title="struct style::values::computed::ClipRect">ClipRect</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#46304-46312' title='goto source code'>[src]</a></div><code>impl ToAnimatedZero for <a class="type" href="../../../style/properties/animated_properties/type.IntermediateSVGPaint.html" title="type style::properties::animated_properties::IntermediateSVGPaint">IntermediateSVGPaint</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#46450-46465' title='goto source code'>[src]</a></div><code>impl&lt;L&gt; ToAnimatedZero for <a class="enum" href="../../../style/values/generics/svg/enum.SVGStrokeDashArray.html" title="enum style::values::generics::svg::SVGStrokeDashArray">SVGStrokeDashArray</a>&lt;L&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;L: <a class="trait" href="../../../style/values/animated/trait.ToAnimatedZero.html" title="trait style::values::animated::ToAnimatedZero">ToAnimatedZero</a>,&nbsp;</span></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#46541-46556' title='goto source code'>[src]</a></div><code>impl ToAnimatedZero for <a class="type" href="../../../style/values/animated/effects/type.Filter.html" title="type style::values::animated::effects::Filter">AnimatedFilter</a></code></li>
+</ul><script type="text/javascript" async
+                         src="../../../implementors/style/values/animated/trait.ToAnimatedZero.js">
+                 </script></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "style";
+    </script>
+    <script src="../../../main.js"></script>
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

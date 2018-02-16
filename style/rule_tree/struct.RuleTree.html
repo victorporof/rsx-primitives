@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `RuleTree` struct in crate `style`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, RuleTree">
+
+    <title>style::rule_tree::RuleTree - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct RuleTree</p><div class="block items"><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.new">new</a><a href="#method.root">root</a><a href="#method.dump_stdout">dump_stdout</a><a href="#method.insert_ordered_rules_with_important">insert_ordered_rules_with_important</a><a href="#method.compute_rule_node">compute_rule_node</a><a href="#method.insert_ordered_rules">insert_ordered_rules</a><a href="#method.gc">gc</a><a href="#method.maybe_gc">maybe_gc</a><a href="#method.update_rule_at_level">update_rule_at_level</a><a href="#method.remove_transition_rule_if_applicable">remove_transition_rule_if_applicable</a><a href="#method.remove_animation_rules">remove_animation_rules</a><a href="#method.add_animation_rules_at_transition_level">add_animation_rules_at_transition_level</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Debug">Debug</a><a href="#impl-MallocSizeOf">MallocSizeOf</a><a href="#impl-Drop">Drop</a><a href="#impl-Sync">Sync</a><a href="#impl-Send">Send</a></div></div><p class='location'><a href='../index.html'>style</a>::<wbr><a href='index.html'>rule_tree</a></p><script>window.sidebarCurrent = {name: 'RuleTree', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>style</a>::<wbr><a href='index.html'>rule_tree</a>::<wbr><a class="struct" href=''>RuleTree</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/style/rule_tree/mod.rs.html#48-50' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct RuleTree { /* fields omitted */ }</pre><div class='docblock'><p>The rule tree, the structure servo uses to preserve the results of selector
+matching.</p>
+
+<p>This is organized as a tree of rules. When a node matches a set of rules,
+they&#39;re inserted in order in the tree, starting with the less specific one.</p>
+
+<p>When a rule is inserted in the tree, other elements may share the path up to
+a given rule. If that&#39;s the case, we don&#39;t duplicate child nodes, but share
+them.</p>
+
+<p>When the rule node refcount drops to zero, it doesn&#39;t get freed. It gets
+instead put into a free list, and it is potentially GC&#39;d after a while in a
+single-threaded fashion.</p>
+
+<p>That way, a rule node that represents a likely-to-match-again rule (like a
+:hover rule) can be reused if we haven&#39;t GC&#39;d it yet.</p>
+
+<p>See the discussion at <a href="https://github.com/servo/servo/pull/15562">https://github.com/servo/servo/pull/15562</a> and the IRC
+logs at <a href="http://logs.glob.uno/?c=mozilla%23servo&amp;s=3+Apr+2017&amp;e=3+Apr+2017">http://logs.glob.uno/?c=mozilla%23servo&amp;s=3+Apr+2017&amp;e=3+Apr+2017</a>
+logs from <a href="http://logs.glob.uno/?c=mozilla%23servo&amp;s=3+Apr+2017&amp;e=3+Apr+2017#c644094">http://logs.glob.uno/?c=mozilla%23servo&amp;s=3+Apr+2017&amp;e=3+Apr+2017#c644094</a>
+to se a discussion about the different memory orderings used here.</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="struct" href="../../style/rule_tree/struct.RuleTree.html" title="struct style::rule_tree::RuleTree">RuleTree</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/rule_tree/mod.rs.html#155-468' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class="method"><span id='new.v' class='invisible'><code>pub fn <a href='#method.new' class='fnname'>new</a>() -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/rule_tree/mod.rs.html#157-161' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Construct a new rule tree.</p>
+</div><h4 id='method.root' class="method"><span id='root.v' class='invisible'><code>pub fn <a href='#method.root' class='fnname'>root</a>(&amp;self) -&gt; &amp;<a class="struct" href="../../style/rule_tree/struct.StrongRuleNode.html" title="struct style::rule_tree::StrongRuleNode">StrongRuleNode</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/rule_tree/mod.rs.html#164-166' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Get the root rule node.</p>
+</div><h4 id='method.dump_stdout' class="method"><span id='dump_stdout.v' class='invisible'><code>pub fn <a href='#method.dump_stdout' class='fnname'>dump_stdout</a>(&amp;self, guards: &amp;<a class="struct" href="../../style/shared_lock/struct.StylesheetGuards.html" title="struct style::shared_lock::StylesheetGuards">StylesheetGuards</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/rule_tree/mod.rs.html#174-177' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Dump the rule tree to stdout.</p>
+</div><h4 id='method.insert_ordered_rules_with_important' class="method"><span id='insert_ordered_rules_with_important.v' class='invisible'><code>pub fn <a href='#method.insert_ordered_rules_with_important' class='fnname'>insert_ordered_rules_with_important</a>&lt;'a, I&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;iter: I, <br>&nbsp;&nbsp;&nbsp;&nbsp;guards: &amp;<a class="struct" href="../../style/shared_lock/struct.StylesheetGuards.html" title="struct style::shared_lock::StylesheetGuards">StylesheetGuards</a><br>) -&gt; <a class="struct" href="../../style/rule_tree/struct.StrongRuleNode.html" title="struct style::rule_tree::StrongRuleNode">StrongRuleNode</a> <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;I: <a class="trait" href="https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html" title="trait core::iter::iterator::Iterator">Iterator</a>&lt;Item = <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a><a class="enum" href="../../style/rule_tree/enum.StyleSource.html" title="enum style::rule_tree::StyleSource">StyleSource</a>, <a class="enum" href="../../style/rule_tree/enum.CascadeLevel.html" title="enum style::rule_tree::CascadeLevel">CascadeLevel</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a>&gt;,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/rule_tree/mod.rs.html#185-279' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Inserts the given rules, that must be in proper order by specifity, and
+returns the corresponding rule node representing the last inserted one.</p>
+
+<p>!important rules are detected and inserted into the appropriate position
+in the rule tree. This allows selector matching to ignore importance,
+while still maintaining the appropriate cascade order in the rule tree.</p>
+</div><h4 id='method.compute_rule_node' class="method"><span id='compute_rule_node.v' class='invisible'><code>pub fn <a href='#method.compute_rule_node' class='fnname'>compute_rule_node</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;applicable_declarations: &amp;mut <a class="type" href="../../style/applicable_declarations/type.ApplicableDeclarationList.html" title="type style::applicable_declarations::ApplicableDeclarationList">ApplicableDeclarationList</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;guards: &amp;<a class="struct" href="../../style/shared_lock/struct.StylesheetGuards.html" title="struct style::shared_lock::StylesheetGuards">StylesheetGuards</a><br>) -&gt; <a class="struct" href="../../style/rule_tree/struct.StrongRuleNode.html" title="struct style::rule_tree::StrongRuleNode">StrongRuleNode</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/rule_tree/mod.rs.html#283-291' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Given a list of applicable declarations, insert the rules and return the
+corresponding rule node.</p>
+</div><h4 id='method.insert_ordered_rules' class="method"><span id='insert_ordered_rules.v' class='invisible'><code>pub fn <a href='#method.insert_ordered_rules' class='fnname'>insert_ordered_rules</a>&lt;'a, I&gt;(&amp;self, iter: I) -&gt; <a class="struct" href="../../style/rule_tree/struct.StrongRuleNode.html" title="struct style::rule_tree::StrongRuleNode">StrongRuleNode</a> <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;I: <a class="trait" href="https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html" title="trait core::iter::iterator::Iterator">Iterator</a>&lt;Item = <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a><a class="enum" href="../../style/rule_tree/enum.StyleSource.html" title="enum style::rule_tree::StyleSource">StyleSource</a>, <a class="enum" href="../../style/rule_tree/enum.CascadeLevel.html" title="enum style::rule_tree::CascadeLevel">CascadeLevel</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a>&gt;,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/rule_tree/mod.rs.html#295-299' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Insert the given rules, that must be in proper order by specifity, and
+return the corresponding rule node representing the last inserted one.</p>
+</div><h4 id='method.gc' class="method"><span id='gc.v' class='invisible'><code>pub unsafe fn <a href='#method.gc' class='fnname'>gc</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/rule_tree/mod.rs.html#317-319' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This can only be called when no other threads is accessing this tree.</p>
+</div><h4 id='method.maybe_gc' class="method"><span id='maybe_gc.v' class='invisible'><code>pub unsafe fn <a href='#method.maybe_gc' class='fnname'>maybe_gc</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/rule_tree/mod.rs.html#322-324' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This can only be called when no other threads is accessing this tree.</p>
+</div><h4 id='method.update_rule_at_level' class="method"><span id='update_rule_at_level.v' class='invisible'><code>pub fn <a href='#method.update_rule_at_level' class='fnname'>update_rule_at_level</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;level: <a class="enum" href="../../style/rule_tree/enum.CascadeLevel.html" title="enum style::rule_tree::CascadeLevel">CascadeLevel</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;pdb: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../../servo_arc/struct.ArcBorrow.html" title="struct servo_arc::ArcBorrow">ArcBorrow</a>&lt;<a class="struct" href="../../style/shared_lock/struct.Locked.html" title="struct style::shared_lock::Locked">Locked</a>&lt;<a class="struct" href="../../style/properties/declaration_block/struct.PropertyDeclarationBlock.html" title="struct style::properties::declaration_block::PropertyDeclarationBlock">PropertyDeclarationBlock</a>&gt;&gt;&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;path: &amp;<a class="struct" href="../../style/rule_tree/struct.StrongRuleNode.html" title="struct style::rule_tree::StrongRuleNode">StrongRuleNode</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;guards: &amp;<a class="struct" href="../../style/shared_lock/struct.StylesheetGuards.html" title="struct style::shared_lock::StylesheetGuards">StylesheetGuards</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;important_rules_changed: &amp;mut <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../../style/rule_tree/struct.StrongRuleNode.html" title="struct style::rule_tree::StrongRuleNode">StrongRuleNode</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/rule_tree/mod.rs.html#330-416' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Replaces a rule in a given level (if present) for another rule.</p>
+
+<p>Returns the resulting node that represents the new path, or None if
+the old path is still valid.</p>
+</div><h4 id='method.remove_transition_rule_if_applicable' class="method"><span id='remove_transition_rule_if_applicable.v' class='invisible'><code>pub fn <a href='#method.remove_transition_rule_if_applicable' class='fnname'>remove_transition_rule_if_applicable</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;path: &amp;<a class="struct" href="../../style/rule_tree/struct.StrongRuleNode.html" title="struct style::rule_tree::StrongRuleNode">StrongRuleNode</a><br>) -&gt; <a class="struct" href="../../style/rule_tree/struct.StrongRuleNode.html" title="struct style::rule_tree::StrongRuleNode">StrongRuleNode</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/rule_tree/mod.rs.html#419-426' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns new rule nodes without Transitions level rule.</p>
+</div><h4 id='method.remove_animation_rules' class="method"><span id='remove_animation_rules.v' class='invisible'><code>pub fn <a href='#method.remove_animation_rules' class='fnname'>remove_animation_rules</a>(&amp;self, path: &amp;<a class="struct" href="../../style/rule_tree/struct.StrongRuleNode.html" title="struct style::rule_tree::StrongRuleNode">StrongRuleNode</a>) -&gt; <a class="struct" href="../../style/rule_tree/struct.StrongRuleNode.html" title="struct style::rule_tree::StrongRuleNode">StrongRuleNode</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/rule_tree/mod.rs.html#429-448' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns new rule node without rules from declarative animations.</p>
+</div><h4 id='method.add_animation_rules_at_transition_level' class="method"><span id='add_animation_rules_at_transition_level.v' class='invisible'><code>pub fn <a href='#method.add_animation_rules_at_transition_level' class='fnname'>add_animation_rules_at_transition_level</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;path: &amp;<a class="struct" href="../../style/rule_tree/struct.StrongRuleNode.html" title="struct style::rule_tree::StrongRuleNode">StrongRuleNode</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;pdb: <a class="struct" href="../../style/properties/struct.BuilderArc.html" title="struct style::properties::BuilderArc">Arc</a>&lt;<a class="struct" href="../../style/shared_lock/struct.Locked.html" title="struct style::shared_lock::Locked">Locked</a>&lt;<a class="struct" href="../../style/properties/declaration_block/struct.PropertyDeclarationBlock.html" title="struct style::properties::declaration_block::PropertyDeclarationBlock">PropertyDeclarationBlock</a>&gt;&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;guards: &amp;<a class="struct" href="../../style/shared_lock/struct.StylesheetGuards.html" title="struct style::shared_lock::StylesheetGuards">StylesheetGuards</a><br>) -&gt; <a class="struct" href="../../style/rule_tree/struct.StrongRuleNode.html" title="struct style::rule_tree::StrongRuleNode">StrongRuleNode</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/rule_tree/mod.rs.html#455-467' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns new rule node by adding animation rules at transition level.
+The additional rules must be appropriate for the transition
+level of the cascade, which is the highest level of the cascade.
+(This is the case for one current caller, the cover rule used
+for CSS transitions.)</p>
+</div></div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../../style/rule_tree/struct.RuleTree.html" title="struct style::rule_tree::RuleTree">RuleTree</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/rule_tree/mod.rs.html#46' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/rule_tree/mod.rs.html#46' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div><h3 id='impl-MallocSizeOf' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../malloc_size_of/trait.MallocSizeOf.html" title="trait malloc_size_of::MallocSizeOf">MallocSizeOf</a> for <a class="struct" href="../../style/rule_tree/struct.RuleTree.html" title="struct style::rule_tree::RuleTree">RuleTree</a></code><a href='#impl-MallocSizeOf' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/rule_tree/mod.rs.html#47-1' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.size_of' class="method"><span id='size_of.v' class='invisible'><code>fn <a href='../../malloc_size_of/trait.MallocSizeOf.html#tymethod.size_of' class='fnname'>size_of</a>(&amp;self, ops: &amp;mut <a class="struct" href="../../malloc_size_of/struct.MallocSizeOfOps.html" title="struct malloc_size_of::MallocSizeOfOps">MallocSizeOfOps</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/rule_tree/mod.rs.html#47' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Measure the heap usage of all descendant heap-allocated structures, but not the space taken up by the value itself. <a href="../../malloc_size_of/trait.MallocSizeOf.html#tymethod.size_of">Read more</a></p>
+</div></div><h3 id='impl-Drop' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/drop/trait.Drop.html" title="trait core::ops::drop::Drop">Drop</a> for <a class="struct" href="../../style/rule_tree/struct.RuleTree.html" title="struct style::rule_tree::RuleTree">RuleTree</a></code><a href='#impl-Drop' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/rule_tree/mod.rs.html#52-65' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class="method"><span id='drop.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/drop/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/rule_tree/mod.rs.html#53-64' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Executes the destructor for this type. <a href="https://doc.rust-lang.org/nightly/core/ops/drop/trait.Drop.html#tymethod.drop">Read more</a></p>
+</div></div><h3 id='impl-Sync' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> for <a class="struct" href="../../style/rule_tree/struct.RuleTree.html" title="struct style::rule_tree::RuleTree">RuleTree</a></code><a href='#impl-Sync' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/rule_tree/mod.rs.html#632' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 id='impl-Send' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> for <a class="struct" href="../../style/rule_tree/struct.RuleTree.html" title="struct style::rule_tree::RuleTree">RuleTree</a></code><a href='#impl-Send' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/rule_tree/mod.rs.html#633' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "style";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

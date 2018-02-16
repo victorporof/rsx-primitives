@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Factor","A value for the `<factor>` parts in `Filter`."]],"type":[["BoxShadow","A specified value for a single shadow of the `box-shadow` property."],["Filter","A specified value for a single `filter`."],["SimpleShadow","A specified value for the `drop-shadow()` filter."]]});

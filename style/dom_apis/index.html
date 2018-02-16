@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `dom_apis` mod in crate `style`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, dom_apis">
+
+    <title>style::dom_apis - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc mod">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Module dom_apis</p><div class="block items"><ul><li><a href="#structs">Structs</a></li><li><a href="#enums">Enums</a></li><li><a href="#traits">Traits</a></li><li><a href="#functions">Functions</a></li><li><a href="#types">Type Definitions</a></li></ul></div><p class='location'><a href='../index.html'>style</a></p><script>window.sidebarCurrent = {name: 'dom_apis', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Module <a href='../index.html'>style</a>::<wbr><a class="mod" href=''>dom_apis</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/style/dom_apis.rs.html#5-601' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p>Generic implementations of some DOM APIs so they can be shared between Servo
+and Gecko.</p>
+</div><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.QueryAll.html"
+                                  title='struct style::dom_apis::QueryAll'>QueryAll</a></td>
+                           <td class='docblock-short'>
+                                <p>A query for all the elements in a subtree.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.QueryFirst.html"
+                                  title='struct style::dom_apis::QueryFirst'>QueryFirst</a></td>
+                           <td class='docblock-short'>
+                                <p>A query for the first in-tree match of all the elements in a subtree.</p>
+                           </td>
+                       </tr></table><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.MayUseInvalidation.html"
+                                  title='enum style::dom_apis::MayUseInvalidation'>MayUseInvalidation</a></td>
+                           <td class='docblock-short'>
+                                <p>Whether the invalidation machinery should be used for this query.</p>
+                           </td>
+                       </tr></table><h2 id='traits' class='section-header'><a href="#traits">Traits</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.SelectorQuery.html"
+                                  title='trait style::dom_apis::SelectorQuery'>SelectorQuery</a></td>
+                           <td class='docblock-short'>
+                                <p>A selector query abstraction, in order to be generic over QuerySelector and
+QuerySelectorAll.</p>
+                           </td>
+                       </tr></table><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.element_closest.html"
+                                  title='fn style::dom_apis::element_closest'>element_closest</a></td>
+                           <td class='docblock-short'>
+                                <p><a href="https://dom.spec.whatwg.org/#dom-element-closest">https://dom.spec.whatwg.org/#dom-element-closest</a></p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.element_matches.html"
+                                  title='fn style::dom_apis::element_matches'>element_matches</a></td>
+                           <td class='docblock-short'>
+                                <p><a href="https://dom.spec.whatwg.org/#dom-element-matches">https://dom.spec.whatwg.org/#dom-element-matches</a></p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.query_selector.html"
+                                  title='fn style::dom_apis::query_selector'>query_selector</a></td>
+                           <td class='docblock-short'>
+                                <p><a href="https://dom.spec.whatwg.org/#dom-parentnode-queryselector">https://dom.spec.whatwg.org/#dom-parentnode-queryselector</a></p>
+                           </td>
+                       </tr></table><h2 id='types' class='section-header'><a href="#types">Type Definitions</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.QuerySelectorAllResult.html"
+                                  title='type style::dom_apis::QuerySelectorAllResult'>QuerySelectorAllResult</a></td>
+                           <td class='docblock-short'>
+                                <p>The result of a querySelectorAll call.</p>
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "style";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

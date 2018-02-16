@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `TypedRotation3D` struct in crate `euclid`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, TypedRotation3D">
+
+    <title>euclid::TypedRotation3D - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct TypedRotation3D</p><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.i">i</a><a href="#structfield.j">j</a><a href="#structfield.k">k</a><a href="#structfield.r">r</a></div><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.quaternion">quaternion</a><a href="#method.vector_part">vector_part</a><a href="#method.identity">identity</a><a href="#method.unit_quaternion">unit_quaternion</a><a href="#method.around_axis">around_axis</a><a href="#method.around_x">around_x</a><a href="#method.around_y">around_y</a><a href="#method.around_z">around_z</a><a href="#method.euler">euler</a><a href="#method.inverse">inverse</a><a href="#method.norm">norm</a><a href="#method.square_norm">square_norm</a><a href="#method.normalize">normalize</a><a href="#method.is_normalized">is_normalized</a><a href="#method.slerp">slerp</a><a href="#method.lerp">lerp</a><a href="#method.rotate_point3d">rotate_point3d</a><a href="#method.rotate_point2d">rotate_point2d</a><a href="#method.rotate_vector3d">rotate_vector3d</a><a href="#method.rotate_vector2d">rotate_vector2d</a><a href="#method.to_transform">to_transform</a><a href="#method.pre_rotate">pre_rotate</a><a href="#method.post_rotate">post_rotate</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Clone">Clone</a><a href="#impl-Copy">Copy</a><a href="#impl-Deserialize%3C%27de%3E">Deserialize&lt;&#39;de&gt;</a><a href="#impl-Serialize">Serialize</a><a href="#impl-Eq">Eq</a><a href="#impl-PartialEq">PartialEq</a><a href="#impl-Hash">Hash</a><a href="#impl-Debug">Debug</a><a href="#impl-Display">Display</a><a href="#impl-ApproxEq%3CT%3E">ApproxEq&lt;T&gt;</a></div></div><p class='location'><a href='index.html'>euclid</a></p><script>window.sidebarCurrent = {name: 'TypedRotation3D', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>euclid</a>::<wbr><a class="struct" href=''>TypedRotation3D</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/euclid/macros.rs.html#19-22' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'><div class="docblock attributes">#[repr(C)]
+</div>pub struct TypedRotation3D&lt;T, Src, Dst&gt; {
+    pub i: T,
+    pub j: T,
+    pub k: T,
+    pub r: T,
+    // some fields omitted
+}</pre><div class='docblock'><p>A transform that can represent rotations in 3d, represented as a quaternion.</p>
+
+<p>Most methods expect the quaternion to be normalized.
+When in doubt, use <code>unit_quaternion</code> instead of <code>quaternion</code> to create
+a rotation as the former will ensure that its result is normalized.</p>
+
+<p>Some people use the <code>x, y, z, w</code> (or <code>w, x, y, z</code>) notations. The equivalence is
+as follows: <code>x -&gt; i</code>, <code>y -&gt; j</code>, <code>z -&gt; k</code>, <code>w -&gt; r</code>.
+The memory layout of this type corresponds to the <code>x, y, z, w</code> notation</p>
+</div><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.i" class="structfield small-section-header">
+                           <a href="#structfield.i" class="anchor field"></a>
+                           <span id="i.v" class='invisible'>
+                           <code>i: T</code>
+                           </span></span><span id="structfield.j" class="structfield small-section-header">
+                           <a href="#structfield.j" class="anchor field"></a>
+                           <span id="j.v" class='invisible'>
+                           <code>j: T</code>
+                           </span></span><span id="structfield.k" class="structfield small-section-header">
+                           <a href="#structfield.k" class="anchor field"></a>
+                           <span id="k.v" class='invisible'>
+                           <code>k: T</code>
+                           </span></span><span id="structfield.r" class="structfield small-section-header">
+                           <a href="#structfield.r" class="anchor field"></a>
+                           <span id="r.v" class='invisible'>
+                           <code>r: T</code>
+                           </span></span>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl&lt;T, Src, Dst&gt; <a class="struct" href="../euclid/struct.TypedRotation3D.html" title="struct euclid::TypedRotation3D">TypedRotation3D</a>&lt;T, Src, Dst&gt;</code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/rotation.rs.html#338-356' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.quaternion' class="method"><span id='quaternion.v' class='invisible'><code>pub fn <a href='#method.quaternion' class='fnname'>quaternion</a>(a: T, b: T, c: T, r: T) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/rotation.rs.html#347-355' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Creates a rotation around from a quaternion representation.</p>
+
+<p>The parameters are a, b, c and r compose the quaternion <code>a*i + b*j + c*k + r</code>
+where <code>a</code>, <code>b</code> and <code>c</code> describe the vector part and the last parameter <code>r</code> is
+the real part.</p>
+
+<p>The resulting quaternion is not necessarily normalized. See <code>unit_quaternion</code>.</p>
+</div></div><h3 id='impl-1' class='impl'><span class='in-band'><code>impl&lt;T, Src, Dst&gt; <a class="struct" href="../euclid/struct.TypedRotation3D.html" title="struct euclid::TypedRotation3D">TypedRotation3D</a>&lt;T, Src, Dst&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html" title="trait core::marker::Copy">Copy</a>,&nbsp;</span></code><a href='#impl-1' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/rotation.rs.html#358-367' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.vector_part' class="method"><span id='vector_part.v' class='invisible'><code>pub fn <a href='#method.vector_part' class='fnname'>vector_part</a>(&amp;self) -&gt; <a class="type" href="../euclid/type.Vector3D.html" title="type euclid::Vector3D">Vector3D</a>&lt;T&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/rotation.rs.html#364-366' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the vector part (i, j, k) of this quaternion.</p>
+</div></div><h3 id='impl-2' class='impl'><span class='in-band'><code>impl&lt;T, Src, Dst&gt; <a class="struct" href="../euclid/struct.TypedRotation3D.html" title="struct euclid::TypedRotation3D">TypedRotation3D</a>&lt;T, Src, Dst&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="../num_traits/float/trait.Float.html" title="trait num_traits::float::Float">Float</a>,&nbsp;</span></code><a href='#impl-2' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/rotation.rs.html#369-697' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.identity' class="method"><span id='identity.v' class='invisible'><code>pub fn <a href='#method.identity' class='fnname'>identity</a>() -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/rotation.rs.html#375-379' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Creates the identity rotation.</p>
+</div><h4 id='method.unit_quaternion' class="method"><span id='unit_quaternion.v' class='invisible'><code>pub fn <a href='#method.unit_quaternion' class='fnname'>unit_quaternion</a>(i: T, j: T, k: T, r: T) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/rotation.rs.html#387-389' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Creates a rotation around from a quaternion representation and normalizes it.</p>
+
+<p>The parameters are a, b, c and r compose the quaternion <code>a*i + b*j + c*k + r</code>
+before normalization, where <code>a</code>, <code>b</code> and <code>c</code> describe the vector part and the
+last parameter <code>r</code> is the real part.</p>
+</div><h4 id='method.around_axis' class="method"><span id='around_axis.v' class='invisible'><code>pub fn <a href='#method.around_axis' class='fnname'>around_axis</a>(axis: <a class="struct" href="../euclid/struct.TypedVector3D.html" title="struct euclid::TypedVector3D">TypedVector3D</a>&lt;T, Src&gt;, angle: <a class="struct" href="../euclid/struct.Angle.html" title="struct euclid::Angle">Angle</a>&lt;T&gt;) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/rotation.rs.html#392-397' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Creates a rotation around a given axis.</p>
+</div><h4 id='method.around_x' class="method"><span id='around_x.v' class='invisible'><code>pub fn <a href='#method.around_x' class='fnname'>around_x</a>(angle: <a class="struct" href="../euclid/struct.Angle.html" title="struct euclid::Angle">Angle</a>&lt;T&gt;) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/rotation.rs.html#400-405' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Creates a rotation around the x axis.</p>
+</div><h4 id='method.around_y' class="method"><span id='around_y.v' class='invisible'><code>pub fn <a href='#method.around_y' class='fnname'>around_y</a>(angle: <a class="struct" href="../euclid/struct.Angle.html" title="struct euclid::Angle">Angle</a>&lt;T&gt;) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/rotation.rs.html#408-413' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Creates a rotation around the y axis.</p>
+</div><h4 id='method.around_z' class="method"><span id='around_z.v' class='invisible'><code>pub fn <a href='#method.around_z' class='fnname'>around_z</a>(angle: <a class="struct" href="../euclid/struct.Angle.html" title="struct euclid::Angle">Angle</a>&lt;T&gt;) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/rotation.rs.html#416-421' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Creates a rotation around the z axis.</p>
+</div><h4 id='method.euler' class="method"><span id='euler.v' class='invisible'><code>pub fn <a href='#method.euler' class='fnname'>euler</a>(roll: <a class="struct" href="../euclid/struct.Angle.html" title="struct euclid::Angle">Angle</a>&lt;T&gt;, pitch: <a class="struct" href="../euclid/struct.Angle.html" title="struct euclid::Angle">Angle</a>&lt;T&gt;, yaw: <a class="struct" href="../euclid/struct.Angle.html" title="struct euclid::Angle">Angle</a>&lt;T&gt;) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/rotation.rs.html#430-443' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Creates a rotation from Euler angles.</p>
+
+<p>The rotations are applied in roll then pitch then yaw order.</p>
+
+<ul>
+<li>Roll (also called bank) is a rotation around the x axis.</li>
+<li>Pitch (also called bearing) is a rotation around the y axis.</li>
+<li>Yaw (also called heading) is a rotation around the z axis.</li>
+</ul>
+</div><h4 id='method.inverse' class="method"><span id='inverse.v' class='invisible'><code>pub fn <a href='#method.inverse' class='fnname'>inverse</a>(&amp;self) -&gt; <a class="struct" href="../euclid/struct.TypedRotation3D.html" title="struct euclid::TypedRotation3D">TypedRotation3D</a>&lt;T, Dst, Src&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/rotation.rs.html#447-449' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the inverse of this rotation.</p>
+</div><h4 id='method.norm' class="method"><span id='norm.v' class='invisible'><code>pub fn <a href='#method.norm' class='fnname'>norm</a>(&amp;self) -&gt; T</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/rotation.rs.html#453-455' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Computes the norm of this quaternion</p>
+</div><h4 id='method.square_norm' class="method"><span id='square_norm.v' class='invisible'><code>pub fn <a href='#method.square_norm' class='fnname'>square_norm</a>(&amp;self) -&gt; T</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/rotation.rs.html#458-460' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.normalize' class="method"><span id='normalize.v' class='invisible'><code>pub fn <a href='#method.normalize' class='fnname'>normalize</a>(&amp;self) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/rotation.rs.html#464-466' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a unit quaternion from this one.</p>
+</div><h4 id='method.is_normalized' class="method"><span id='is_normalized.v' class='invisible'><code>pub fn <a href='#method.is_normalized' class='fnname'>is_normalized</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a> <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="../euclid/approxeq/trait.ApproxEq.html" title="trait euclid::approxeq::ApproxEq">ApproxEq</a>&lt;T&gt;,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/rotation.rs.html#469-475' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.slerp' class="method"><span id='slerp.v' class='invisible'><code>pub fn <a href='#method.slerp' class='fnname'>slerp</a>(&amp;self, other: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self, t: T) -&gt; Self <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="../euclid/approxeq/trait.ApproxEq.html" title="trait euclid::approxeq::ApproxEq">ApproxEq</a>&lt;T&gt;,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/rotation.rs.html#480-517' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Spherical linear interpolation between this rotation and another rotation.</p>
+
+<p><code>t</code> is expected to be between zero and one.</p>
+</div><h4 id='method.lerp' class="method"><span id='lerp.v' class='invisible'><code>pub fn <a href='#method.lerp' class='fnname'>lerp</a>(&amp;self, other: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self, t: T) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/rotation.rs.html#523-526' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Basic Linear interpolation between this rotation and another rotation.</p>
+
+<p><code>t</code> is expected to be between zero and one.</p>
+</div><h4 id='method.rotate_point3d' class="method"><span id='rotate_point3d.v' class='invisible'><code>pub fn <a href='#method.rotate_point3d' class='fnname'>rotate_point3d</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;point: &amp;<a class="struct" href="../euclid/struct.TypedPoint3D.html" title="struct euclid::TypedPoint3D">TypedPoint3D</a>&lt;T, Src&gt;<br>) -&gt; <a class="struct" href="../euclid/struct.TypedPoint3D.html" title="struct euclid::TypedPoint3D">TypedPoint3D</a>&lt;T, Dst&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="../euclid/approxeq/trait.ApproxEq.html" title="trait euclid::approxeq::ApproxEq">ApproxEq</a>&lt;T&gt;,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/rotation.rs.html#531-545' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the given 3d point transformed by this rotation.</p>
+
+<p>The input point must be use the unit Src, and the returned point has the unit Dst.</p>
+</div><h4 id='method.rotate_point2d' class="method"><span id='rotate_point2d.v' class='invisible'><code>pub fn <a href='#method.rotate_point2d' class='fnname'>rotate_point2d</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;point: &amp;<a class="struct" href="../euclid/struct.TypedPoint2D.html" title="struct euclid::TypedPoint2D">TypedPoint2D</a>&lt;T, Src&gt;<br>) -&gt; <a class="struct" href="../euclid/struct.TypedPoint2D.html" title="struct euclid::TypedPoint2D">TypedPoint2D</a>&lt;T, Dst&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="../euclid/approxeq/trait.ApproxEq.html" title="trait euclid::approxeq::ApproxEq">ApproxEq</a>&lt;T&gt;,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/rotation.rs.html#551-556' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the given 2d point transformed by this rotation then projected on the xy plane.</p>
+
+<p>The input point must be use the unit Src, and the returned point has the unit Dst.</p>
+</div><h4 id='method.rotate_vector3d' class="method"><span id='rotate_vector3d.v' class='invisible'><code>pub fn <a href='#method.rotate_vector3d' class='fnname'>rotate_vector3d</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;vector: &amp;<a class="struct" href="../euclid/struct.TypedVector3D.html" title="struct euclid::TypedVector3D">TypedVector3D</a>&lt;T, Src&gt;<br>) -&gt; <a class="struct" href="../euclid/struct.TypedVector3D.html" title="struct euclid::TypedVector3D">TypedVector3D</a>&lt;T, Dst&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="../euclid/approxeq/trait.ApproxEq.html" title="trait euclid::approxeq::ApproxEq">ApproxEq</a>&lt;T&gt;,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/rotation.rs.html#562-567' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the given 3d vector transformed by this rotation then projected on the xy plane.</p>
+
+<p>The input vector must be use the unit Src, and the returned point has the unit Dst.</p>
+</div><h4 id='method.rotate_vector2d' class="method"><span id='rotate_vector2d.v' class='invisible'><code>pub fn <a href='#method.rotate_vector2d' class='fnname'>rotate_vector2d</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;vector: &amp;<a class="struct" href="../euclid/struct.TypedVector2D.html" title="struct euclid::TypedVector2D">TypedVector2D</a>&lt;T, Src&gt;<br>) -&gt; <a class="struct" href="../euclid/struct.TypedVector2D.html" title="struct euclid::TypedVector2D">TypedVector2D</a>&lt;T, Dst&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="../euclid/approxeq/trait.ApproxEq.html" title="trait euclid::approxeq::ApproxEq">ApproxEq</a>&lt;T&gt;,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/rotation.rs.html#573-578' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the given 2d vector transformed by this rotation then projected on the xy plane.</p>
+
+<p>The input vector must be use the unit Src, and the returned point has the unit Dst.</p>
+</div><h4 id='method.to_transform' class="method"><span id='to_transform.v' class='invisible'><code>pub fn <a href='#method.to_transform' class='fnname'>to_transform</a>(&amp;self) -&gt; <a class="struct" href="../euclid/struct.TypedTransform3D.html" title="struct euclid::TypedTransform3D">TypedTransform3D</a>&lt;T, Src, Dst&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="../euclid/approxeq/trait.ApproxEq.html" title="trait euclid::approxeq::ApproxEq">ApproxEq</a>&lt;T&gt;,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/rotation.rs.html#582-634' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the matrix representation of this rotation.</p>
+</div><h4 id='method.pre_rotate' class="method"><span id='pre_rotate.v' class='invisible'><code>pub fn <a href='#method.pre_rotate' class='fnname'>pre_rotate</a>&lt;NewSrc&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;other: &amp;<a class="struct" href="../euclid/struct.TypedRotation3D.html" title="struct euclid::TypedRotation3D">TypedRotation3D</a>&lt;T, NewSrc, Src&gt;<br>) -&gt; <a class="struct" href="../euclid/struct.TypedRotation3D.html" title="struct euclid::TypedRotation3D">TypedRotation3D</a>&lt;T, NewSrc, Dst&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="../euclid/approxeq/trait.ApproxEq.html" title="trait euclid::approxeq::ApproxEq">ApproxEq</a>&lt;T&gt;,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/rotation.rs.html#637-651' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a rotation representing the other rotation followed by this rotation.</p>
+</div><h4 id='method.post_rotate' class="method"><span id='post_rotate.v' class='invisible'><code>pub fn <a href='#method.post_rotate' class='fnname'>post_rotate</a>&lt;NewDst&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;other: &amp;<a class="struct" href="../euclid/struct.TypedRotation3D.html" title="struct euclid::TypedRotation3D">TypedRotation3D</a>&lt;T, Dst, NewDst&gt;<br>) -&gt; <a class="struct" href="../euclid/struct.TypedRotation3D.html" title="struct euclid::TypedRotation3D">TypedRotation3D</a>&lt;T, Src, NewDst&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="../euclid/approxeq/trait.ApproxEq.html" title="trait euclid::approxeq::ApproxEq">ApproxEq</a>&lt;T&gt;,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/rotation.rs.html#655-663' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a rotation representing this rotation followed by the other rotation.</p>
+</div></div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Clone' class='impl'><span class='in-band'><code>impl&lt;T:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a>, Src, Dst&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="struct" href="../euclid/struct.TypedRotation3D.html" title="struct euclid::TypedRotation3D">TypedRotation3D</a>&lt;T, Src, Dst&gt;</code><a href='#impl-Clone' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/macros.rs.html#24-31' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/macros.rs.html#25-30' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 id='impl-Copy' class='impl'><span class='in-band'><code>impl&lt;T:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html" title="trait core::marker::Copy">Copy</a>, Src, Dst&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html" title="trait core::marker::Copy">Copy</a> for <a class="struct" href="../euclid/struct.TypedRotation3D.html" title="struct euclid::TypedRotation3D">TypedRotation3D</a>&lt;T, Src, Dst&gt;</code><a href='#impl-Copy' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/macros.rs.html#33' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 id='impl-Deserialize%3C%27de%3E' class='impl'><span class='in-band'><code>impl&lt;'de, T, Src, Dst&gt; <a class="trait" href="../serde/de/trait.Deserialize.html" title="trait serde::de::Deserialize">Deserialize</a>&lt;'de&gt; for <a class="struct" href="../euclid/struct.TypedRotation3D.html" title="struct euclid::TypedRotation3D">TypedRotation3D</a>&lt;T, Src, Dst&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="../serde/de/trait.Deserialize.html" title="trait serde::de::Deserialize">Deserialize</a>&lt;'de&gt;,&nbsp;</span></code><a href='#impl-Deserialize%3C%27de%3E' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/macros.rs.html#35-48' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deserialize' class="method"><span id='deserialize.v' class='invisible'><code>fn <a href='../serde/de/trait.Deserialize.html#tymethod.deserialize' class='fnname'>deserialize</a>&lt;D&gt;(deserializer: D) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;Self, D::<a class="type" href="../serde/de/trait.Deserializer.html#associatedtype.Error" title="type serde::de::Deserializer::Error">Error</a>&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;D: <a class="trait" href="../serde/de/trait.Deserializer.html" title="trait serde::de::Deserializer">Deserializer</a>&lt;'de&gt;,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/macros.rs.html#38-47' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Deserialize this value from the given Serde deserializer. <a href="../serde/de/trait.Deserialize.html#tymethod.deserialize">Read more</a></p>
+</div></div><h3 id='impl-Serialize' class='impl'><span class='in-band'><code>impl&lt;T, Src, Dst&gt; <a class="trait" href="../serde/ser/trait.Serialize.html" title="trait serde::ser::Serialize">Serialize</a> for <a class="struct" href="../euclid/struct.TypedRotation3D.html" title="struct euclid::TypedRotation3D">TypedRotation3D</a>&lt;T, Src, Dst&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="../serde/ser/trait.Serialize.html" title="trait serde::ser::Serialize">Serialize</a>,&nbsp;</span></code><a href='#impl-Serialize' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/macros.rs.html#50-58' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.serialize' class="method"><span id='serialize.v' class='invisible'><code>fn <a href='../serde/ser/trait.Serialize.html#tymethod.serialize' class='fnname'>serialize</a>&lt;S&gt;(&amp;self, serializer: S) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;S::<a class="type" href="../serde/ser/trait.Serializer.html#associatedtype.Ok" title="type serde::ser::Serializer::Ok">Ok</a>, S::<a class="type" href="../serde/ser/trait.Serializer.html#associatedtype.Error" title="type serde::ser::Serializer::Error">Error</a>&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;S: <a class="trait" href="../serde/ser/trait.Serializer.html" title="trait serde::ser::Serializer">Serializer</a>,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/macros.rs.html#53-57' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Serialize this value into the given Serde serializer. <a href="../serde/ser/trait.Serialize.html#tymethod.serialize">Read more</a></p>
+</div></div><h3 id='impl-Eq' class='impl'><span class='in-band'><code>impl&lt;T, Src, Dst&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html" title="trait core::cmp::Eq">Eq</a> for <a class="struct" href="../euclid/struct.TypedRotation3D.html" title="struct euclid::TypedRotation3D">TypedRotation3D</a>&lt;T, Src, Dst&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html" title="trait core::cmp::Eq">Eq</a>,&nbsp;</span></code><a href='#impl-Eq' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/macros.rs.html#60-61' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 id='impl-PartialEq' class='impl'><span class='in-band'><code>impl&lt;T, Src, Dst&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a> for <a class="struct" href="../euclid/struct.TypedRotation3D.html" title="struct euclid::TypedRotation3D">TypedRotation3D</a>&lt;T, Src, Dst&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a>,&nbsp;</span></code><a href='#impl-PartialEq' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/macros.rs.html#63-69' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class="method"><span id='eq.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, other: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/macros.rs.html#66-68' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class="method"><span id='ne.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, other: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Rhs) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/cmp.rs.html#121' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 id='impl-Hash' class='impl'><span class='in-band'><code>impl&lt;T, Src, Dst&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html" title="trait core::hash::Hash">Hash</a> for <a class="struct" href="../euclid/struct.TypedRotation3D.html" title="struct euclid::TypedRotation3D">TypedRotation3D</a>&lt;T, Src, Dst&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html" title="trait core::hash::Hash">Hash</a>,&nbsp;</span></code><a href='#impl-Hash' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/macros.rs.html#71-77' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.hash' class="method"><span id='hash.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#tymethod.hash' class='fnname'>hash</a>&lt;H:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/hash/trait.Hasher.html" title="trait core::hash::Hasher">Hasher</a>&gt;(&amp;self, h: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>H)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/macros.rs.html#74-76' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Feeds this value into the given [<code>Hasher</code>]. <a href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#tymethod.hash">Read more</a></p>
+</div><h4 id='method.hash_slice' class="method"><span id='hash_slice.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#method.hash_slice' class='fnname'>hash_slice</a>&lt;H&gt;(data: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[Self]</a>, state: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>H) <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;H: <a class="trait" href="https://doc.rust-lang.org/nightly/core/hash/trait.Hasher.html" title="trait core::hash::Hasher">Hasher</a>,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.3.0'>1.3.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/hash/mod.rs.html#202-208' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Feeds a slice of this type into the given [<code>Hasher</code>]. <a href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#method.hash_slice">Read more</a></p>
+</div></div><h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl&lt;T:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a>, Src, Dst&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../euclid/struct.TypedRotation3D.html" title="struct euclid::TypedRotation3D">TypedRotation3D</a>&lt;T, Src, Dst&gt;</code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/rotation.rs.html#699-707' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, f: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/rotation.rs.html#700-706' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div><h3 id='impl-Display' class='impl'><span class='in-band'><code>impl&lt;T:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html" title="trait core::fmt::Display">Display</a>, Src, Dst&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html" title="trait core::fmt::Display">Display</a> for <a class="struct" href="../euclid/struct.TypedRotation3D.html" title="struct euclid::TypedRotation3D">TypedRotation3D</a>&lt;T, Src, Dst&gt;</code><a href='#impl-Display' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/rotation.rs.html#709-717' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt-1' class="method"><span id='fmt.v-1' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, f: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/rotation.rs.html#710-716' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html#tymethod.fmt">Read more</a></p>
+</div></div><h3 id='impl-ApproxEq%3CT%3E' class='impl'><span class='in-band'><code>impl&lt;T, Src, Dst&gt; <a class="trait" href="../euclid/approxeq/trait.ApproxEq.html" title="trait euclid::approxeq::ApproxEq">ApproxEq</a>&lt;T&gt; for <a class="struct" href="../euclid/struct.TypedRotation3D.html" title="struct euclid::TypedRotation3D">TypedRotation3D</a>&lt;T, Src, Dst&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html" title="trait core::marker::Copy">Copy</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/arith/trait.Neg.html" title="trait core::ops::arith::Neg">Neg</a>&lt;Output = T&gt; + <a class="trait" href="../euclid/approxeq/trait.ApproxEq.html" title="trait euclid::approxeq::ApproxEq">ApproxEq</a>&lt;T&gt;,&nbsp;</span></code><a href='#impl-ApproxEq%3CT%3E' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/rotation.rs.html#719-738' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.approx_epsilon' class="method"><span id='approx_epsilon.v' class='invisible'><code>fn <a href='../euclid/approxeq/trait.ApproxEq.html#tymethod.approx_epsilon' class='fnname'>approx_epsilon</a>() -&gt; T</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/rotation.rs.html#723-725' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.approx_eq' class="method"><span id='approx_eq.v' class='invisible'><code>fn <a href='../euclid/approxeq/trait.ApproxEq.html#tymethod.approx_eq' class='fnname'>approx_eq</a>(&amp;self, other: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/rotation.rs.html#727-729' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.approx_eq_eps' class="method"><span id='approx_eq_eps.v' class='invisible'><code>fn <a href='../euclid/approxeq/trait.ApproxEq.html#tymethod.approx_eq_eps' class='fnname'>approx_eq_eps</a>(&amp;self, other: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self, eps: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>T) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/euclid/rotation.rs.html#731-737' title='goto source code'>[src]</a></span></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "euclid";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

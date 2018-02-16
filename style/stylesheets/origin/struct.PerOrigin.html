@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `PerOrigin` struct in crate `style`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, PerOrigin">
+
+    <title>style::stylesheets::origin::PerOrigin - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct PerOrigin</p><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.user_agent">user_agent</a><a href="#structfield.user">user</a><a href="#structfield.author">author</a></div><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.borrow_for_origin">borrow_for_origin</a><a href="#method.borrow_mut_for_origin">borrow_mut_for_origin</a><a href="#method.iter_origins">iter_origins</a><a href="#method.iter_origins_rev">iter_origins_rev</a><a href="#method.iter_mut_origins">iter_mut_origins</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Debug">Debug</a><a href="#impl-Default">Default</a><a href="#impl-MallocSizeOf">MallocSizeOf</a></div></div><p class='location'><a href='../../index.html'>style</a>::<wbr><a href='../index.html'>stylesheets</a>::<wbr><a href='index.html'>origin</a></p><script>window.sidebarCurrent = {name: 'PerOrigin', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>style</a>::<wbr><a href='../index.html'>stylesheets</a>::<wbr><a href='index.html'>origin</a>::<wbr><a class="struct" href=''>PerOrigin</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../src/style/stylesheets/origin.rs.html#105-114' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct PerOrigin&lt;T&gt; {
+    pub user_agent: T,
+    pub user: T,
+    pub author: T,
+}</pre><div class='docblock'><p>An object that stores a <code>T</code> for each origin of the CSS cascade.</p>
+</div><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.user_agent" class="structfield small-section-header">
+                           <a href="#structfield.user_agent" class="anchor field"></a>
+                           <span id="user_agent.v" class='invisible'>
+                           <code>user_agent: T</code>
+                           </span></span><div class='docblock'><p>Data for <code>Origin::UserAgent</code>.</p>
+</div><span id="structfield.user" class="structfield small-section-header">
+                           <a href="#structfield.user" class="anchor field"></a>
+                           <span id="user.v" class='invisible'>
+                           <code>user: T</code>
+                           </span></span><div class='docblock'><p>Data for <code>Origin::User</code>.</p>
+</div><span id="structfield.author" class="structfield small-section-header">
+                           <a href="#structfield.author" class="anchor field"></a>
+                           <span id="author.v" class='invisible'>
+                           <code>author: T</code>
+                           </span></span><div class='docblock'><p>Data for <code>Origin::Author</code>.</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl&lt;T&gt; <a class="struct" href="../../../style/stylesheets/origin/struct.PerOrigin.html" title="struct style::stylesheets::origin::PerOrigin">PerOrigin</a>&lt;T&gt;</code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/stylesheets/origin.rs.html#116-167' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.borrow_for_origin' class="method"><span id='borrow_for_origin.v' class='invisible'><code>pub fn <a href='#method.borrow_for_origin' class='fnname'>borrow_for_origin</a>(&amp;self, origin: &amp;<a class="enum" href="../../../style/stylesheets/origin/enum.Origin.html" title="enum style::stylesheets::origin::Origin">Origin</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>T</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/stylesheets/origin.rs.html#119-125' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a reference to the per-origin data for the specified origin.</p>
+</div><h4 id='method.borrow_mut_for_origin' class="method"><span id='borrow_mut_for_origin.v' class='invisible'><code>pub fn <a href='#method.borrow_mut_for_origin' class='fnname'>borrow_mut_for_origin</a>(&amp;mut self, origin: &amp;<a class="enum" href="../../../style/stylesheets/origin/enum.Origin.html" title="enum style::stylesheets::origin::Origin">Origin</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>T</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/stylesheets/origin.rs.html#130-136' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a mutable reference to the per-origin data for the specified
+origin.</p>
+</div><h4 id='method.iter_origins' class="method"><span id='iter_origins.v' class='invisible'><code>pub fn <a href='#method.iter_origins' class='fnname'>iter_origins</a>(&amp;self) -&gt; <a class="struct" href="../../../style/stylesheets/origin/struct.PerOriginIter.html" title="struct style::stylesheets::origin::PerOriginIter">PerOriginIter</a>&lt;T&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/stylesheets/origin.rs.html#140-146' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Iterates over references to per-origin extra style data, from highest
+level (author) to lowest (user agent).</p>
+</div><h4 id='method.iter_origins_rev' class="method"><span id='iter_origins_rev.v' class='invisible'><code>pub fn <a href='#method.iter_origins_rev' class='fnname'>iter_origins_rev</a>(&amp;self) -&gt; <a class="struct" href="../../../style/stylesheets/origin/struct.PerOriginIter.html" title="struct style::stylesheets::origin::PerOriginIter">PerOriginIter</a>&lt;T&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/stylesheets/origin.rs.html#150-156' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Iterates over references to per-origin extra style data, from lowest
+level (user agent) to highest (author).</p>
+</div><h4 id='method.iter_mut_origins' class="method"><span id='iter_mut_origins.v' class='invisible'><code>pub fn <a href='#method.iter_mut_origins' class='fnname'>iter_mut_origins</a>(&amp;mut self) -&gt; <a class="struct" href="../../../style/stylesheets/origin/struct.PerOriginIterMut.html" title="struct style::stylesheets::origin::PerOriginIterMut">PerOriginIterMut</a>&lt;T&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/stylesheets/origin.rs.html#160-166' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Iterates over mutable references to per-origin extra style data, from
+highest level (author) to lowest (user agent).</p>
+</div></div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl&lt;T:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a>&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../../../style/stylesheets/origin/struct.PerOrigin.html" title="struct style::stylesheets::origin::PerOrigin">PerOrigin</a>&lt;T&gt;</code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/stylesheets/origin.rs.html#104' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/stylesheets/origin.rs.html#104' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div><h3 id='impl-Default' class='impl'><span class='in-band'><code>impl&lt;T:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/default/trait.Default.html" title="trait core::default::Default">Default</a>&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/default/trait.Default.html" title="trait core::default::Default">Default</a> for <a class="struct" href="../../../style/stylesheets/origin/struct.PerOrigin.html" title="struct style::stylesheets::origin::PerOrigin">PerOrigin</a>&lt;T&gt;</code><a href='#impl-Default' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/stylesheets/origin.rs.html#104' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.default' class="method"><span id='default.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/default/trait.Default.html#tymethod.default' class='fnname'>default</a>() -&gt; <a class="struct" href="../../../style/stylesheets/origin/struct.PerOrigin.html" title="struct style::stylesheets::origin::PerOrigin">PerOrigin</a>&lt;T&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/stylesheets/origin.rs.html#104' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the &quot;default value&quot; for a type. <a href="https://doc.rust-lang.org/nightly/core/default/trait.Default.html#tymethod.default">Read more</a></p>
+</div></div><h3 id='impl-MallocSizeOf' class='impl'><span class='in-band'><code>impl&lt;T&gt; <a class="trait" href="../../../malloc_size_of/trait.MallocSizeOf.html" title="trait malloc_size_of::MallocSizeOf">MallocSizeOf</a> for <a class="struct" href="../../../style/stylesheets/origin/struct.PerOrigin.html" title="struct style::stylesheets::origin::PerOrigin">PerOrigin</a>&lt;T&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="../../../malloc_size_of/trait.MallocSizeOf.html" title="trait malloc_size_of::MallocSizeOf">MallocSizeOf</a>,&nbsp;</span></code><a href='#impl-MallocSizeOf' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/stylesheets/origin.rs.html#104-1' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.size_of' class="method"><span id='size_of.v' class='invisible'><code>fn <a href='../../../malloc_size_of/trait.MallocSizeOf.html#tymethod.size_of' class='fnname'>size_of</a>(&amp;self, ops: &amp;mut <a class="struct" href="../../../malloc_size_of/struct.MallocSizeOfOps.html" title="struct malloc_size_of::MallocSizeOfOps">MallocSizeOfOps</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/stylesheets/origin.rs.html#104' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Measure the heap usage of all descendant heap-allocated structures, but not the space taken up by the value itself. <a href="../../../malloc_size_of/trait.MallocSizeOf.html#tymethod.size_of">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "style";
+    </script>
+    <script src="../../../main.js"></script>
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `LineDirection` enum in crate `style`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, LineDirection">
+
+    <title>style::values::specified::image::LineDirection - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc enum">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Enum LineDirection</p><div class="block items"><a class="sidebar-title" href="#variants">Variants</a><div class="sidebar-links"><a href="#variant.Angle">Angle</a><a href="#variant.Horizontal">Horizontal</a><a href="#variant.Vertical">Vertical</a><a href="#variant.Corner">Corner</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-ToComputedValue">ToComputedValue</a><a href="#impl-Clone">Clone</a><a href="#impl-Debug">Debug</a><a href="#impl-MallocSizeOf">MallocSizeOf</a><a href="#impl-PartialEq">PartialEq</a><a href="#impl-GenericsLineDirection">GenericsLineDirection</a></div></div><p class='location'><a href='../../../index.html'>style</a>::<wbr><a href='../../index.html'>values</a>::<wbr><a href='../index.html'>specified</a>::<wbr><a href='index.html'>image</a></p><script>window.sidebarCurrent = {name: 'LineDirection', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../../../index.html'>style</a>::<wbr><a href='../../index.html'>values</a>::<wbr><a href='../index.html'>specified</a>::<wbr><a href='index.html'>image</a>::<wbr><a class="enum" href=''>LineDirection</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../../src/style/values/specified/image.rs.html#89-104' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum LineDirection {
+    Angle(<a class="struct" href="../../../../style/values/specified/angle/struct.Angle.html" title="struct style::values::specified::angle::Angle">Angle</a>),
+    Horizontal(<a class="enum" href="../../../../style/values/specified/position/enum.X.html" title="enum style::values::specified::position::X">X</a>),
+    Vertical(<a class="enum" href="../../../../style/values/specified/position/enum.Y.html" title="enum style::values::specified::position::Y">Y</a>),
+    Corner(<a class="enum" href="../../../../style/values/specified/position/enum.X.html" title="enum style::values::specified::position::X">X</a>,&nbsp;<a class="enum" href="../../../../style/values/specified/position/enum.Y.html" title="enum style::values::specified::position::Y">Y</a>),
+}</pre><div class='docblock'><p>A specified gradient line direction.</p>
+</div><h2 id='variants' class='variants small-section-header'>
+                   Variants<a href='#variants' class='anchor'></a></h2>
+<span id="variant.Angle" class="variant small-section-header"><a href="#variant.Angle" class="anchor field"></a><span id='Angle.v' class='invisible'><code>Angle(<a class="struct" href="../../../../style/values/specified/angle/struct.Angle.html" title="struct style::values::specified::angle::Angle">Angle</a>)</code></span></span><div class='docblock'><p>An angular direction.</p>
+</div><span id="variant.Horizontal" class="variant small-section-header"><a href="#variant.Horizontal" class="anchor field"></a><span id='Horizontal.v' class='invisible'><code>Horizontal(<a class="enum" href="../../../../style/values/specified/position/enum.X.html" title="enum style::values::specified::position::X">X</a>)</code></span></span><div class='docblock'><p>A horizontal direction.</p>
+</div><span id="variant.Vertical" class="variant small-section-header"><a href="#variant.Vertical" class="anchor field"></a><span id='Vertical.v' class='invisible'><code>Vertical(<a class="enum" href="../../../../style/values/specified/position/enum.Y.html" title="enum style::values::specified::position::Y">Y</a>)</code></span></span><div class='docblock'><p>A vertical direction.</p>
+</div><span id="variant.Corner" class="variant small-section-header"><a href="#variant.Corner" class="anchor field"></a><span id='Corner.v' class='invisible'><code>Corner(<a class="enum" href="../../../../style/values/specified/position/enum.X.html" title="enum style::values::specified::position::X">X</a>,&nbsp;<a class="enum" href="../../../../style/values/specified/position/enum.Y.html" title="enum style::values::specified::position::Y">Y</a>)</code></span></span><div class='docblock'><p>A direction towards a corner of a box.</p>
+</div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-ToComputedValue' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../../../style/values/computed/trait.ToComputedValue.html" title="trait style::values::computed::ToComputedValue">ToComputedValue</a> for <a class="enum" href="../../../../style/values/specified/image/enum.LineDirection.html" title="enum style::values::specified::image::LineDirection">SpecifiedLineDirection</a></code><a href='#impl-ToComputedValue' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/values/computed/image.rs.html#146-192' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.ComputedValue' class="type"><span id='ComputedValue.t' class='invisible'><code>type <a href='../../../../style/values/computed/trait.ToComputedValue.html#associatedtype.ComputedValue' class="type">ComputedValue</a> = <a class="enum" href="../../../../style/values/computed/image/enum.LineDirection.html" title="enum style::values::computed::image::LineDirection">LineDirection</a></code></span></h4>
+<div class='docblock'><p>The computed value type we&#39;re going to be converted to.</p>
+</div><h4 id='method.to_computed_value' class="method"><span id='to_computed_value.v' class='invisible'><code>fn <a href='../../../../style/values/computed/trait.ToComputedValue.html#tymethod.to_computed_value' class='fnname'>to_computed_value</a>(&amp;self, context: &amp;<a class="struct" href="../../../../style/values/computed/struct.Context.html" title="struct style::values::computed::Context">Context</a>) -&gt; Self::<a class="type" href="../../../../style/values/computed/trait.ToComputedValue.html#associatedtype.ComputedValue" title="type style::values::computed::ToComputedValue::ComputedValue">ComputedValue</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/values/computed/image.rs.html#149-169' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Convert a specified value to a computed value, using itself and the data inside the <code>Context</code>. <a href="../../../../style/values/computed/trait.ToComputedValue.html#tymethod.to_computed_value">Read more</a></p>
+</div><h4 id='method.from_computed_value' class="method"><span id='from_computed_value.v' class='invisible'><code>fn <a href='../../../../style/values/computed/trait.ToComputedValue.html#tymethod.from_computed_value' class='fnname'>from_computed_value</a>(computed: &amp;Self::<a class="type" href="../../../../style/values/computed/trait.ToComputedValue.html#associatedtype.ComputedValue" title="type style::values::computed::ToComputedValue::ComputedValue">ComputedValue</a>) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/values/computed/image.rs.html#171-191' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Convert a computed value to specified value form. <a href="../../../../style/values/computed/trait.ToComputedValue.html#tymethod.from_computed_value">Read more</a></p>
+</div></div><h3 id='impl-Clone' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="enum" href="../../../../style/values/specified/image/enum.LineDirection.html" title="enum style::values::specified::image::LineDirection">LineDirection</a></code><a href='#impl-Clone' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/values/specified/image.rs.html#88' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="enum" href="../../../../style/values/specified/image/enum.LineDirection.html" title="enum style::values::specified::image::LineDirection">LineDirection</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/values/specified/image.rs.html#88' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="enum" href="../../../../style/values/specified/image/enum.LineDirection.html" title="enum style::values::specified::image::LineDirection">LineDirection</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/values/specified/image.rs.html#88' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/values/specified/image.rs.html#88' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div><h3 id='impl-MallocSizeOf' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../../../malloc_size_of/trait.MallocSizeOf.html" title="trait malloc_size_of::MallocSizeOf">MallocSizeOf</a> for <a class="enum" href="../../../../style/values/specified/image/enum.LineDirection.html" title="enum style::values::specified::image::LineDirection">LineDirection</a></code><a href='#impl-MallocSizeOf' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/values/specified/image.rs.html#88-1' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.size_of' class="method"><span id='size_of.v' class='invisible'><code>fn <a href='../../../../malloc_size_of/trait.MallocSizeOf.html#tymethod.size_of' class='fnname'>size_of</a>(&amp;self, ops: &amp;mut <a class="struct" href="../../../../malloc_size_of/struct.MallocSizeOfOps.html" title="struct malloc_size_of::MallocSizeOfOps">MallocSizeOfOps</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/values/specified/image.rs.html#88' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Measure the heap usage of all descendant heap-allocated structures, but not the space taken up by the value itself. <a href="../../../../malloc_size_of/trait.MallocSizeOf.html#tymethod.size_of">Read more</a></p>
+</div></div><h3 id='impl-PartialEq' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a> for <a class="enum" href="../../../../style/values/specified/image/enum.LineDirection.html" title="enum style::values::specified::image::LineDirection">LineDirection</a></code><a href='#impl-PartialEq' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/values/specified/image.rs.html#88' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class="method"><span id='eq.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class="enum" href="../../../../style/values/specified/image/enum.LineDirection.html" title="enum style::values::specified::image::LineDirection">LineDirection</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/values/specified/image.rs.html#88' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class="method"><span id='ne.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class="enum" href="../../../../style/values/specified/image/enum.LineDirection.html" title="enum style::values::specified::image::LineDirection">LineDirection</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/values/specified/image.rs.html#88' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 id='impl-GenericsLineDirection' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../../../style/values/generics/image/trait.LineDirection.html" title="trait style::values::generics::image::LineDirection">GenericsLineDirection</a> for <a class="enum" href="../../../../style/values/specified/image/enum.LineDirection.html" title="enum style::values::specified::image::LineDirection">LineDirection</a></code><a href='#impl-GenericsLineDirection' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/values/specified/image.rs.html#624-706' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.points_downwards' class="method"><span id='points_downwards.v' class='invisible'><code>fn <a href='../../../../style/values/generics/image/trait.LineDirection.html#tymethod.points_downwards' class='fnname'>points_downwards</a>(&amp;self, compat_mode: <a class="enum" href="../../../../style/values/generics/image/enum.CompatMode.html" title="enum style::values::generics::image::CompatMode">CompatMode</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/values/specified/image.rs.html#625-660' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Whether this direction points towards, and thus can be omitted.</p>
+</div><h4 id='method.to_css' class="method"><span id='to_css.v' class='invisible'><code>fn <a href='../../../../style/values/generics/image/trait.LineDirection.html#tymethod.to_css' class='fnname'>to_css</a>&lt;W&gt;(&amp;self, dest: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>W, compat_mode: <a class="enum" href="../../../../style/values/generics/image/enum.CompatMode.html" title="enum style::values::generics::image::CompatMode">CompatMode</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a> <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;W: <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Write.html" title="trait core::fmt::Write">Write</a>,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/values/specified/image.rs.html#662-705' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Serialises this direction according to the compatibility mode.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../../";
+        window.currentCrate = "style";
+    </script>
+    <script src="../../../../main.js"></script>
+    <script defer src="../../../../search-index.js"></script>
+</body>
+</html>

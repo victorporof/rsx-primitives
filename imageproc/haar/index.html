@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `haar` mod in crate `imageproc`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, haar">
+
+    <title>imageproc::haar - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc mod">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Module haar</p><div class="block items"><ul><li><a href="#structs">Structs</a></li><li><a href="#enums">Enums</a></li><li><a href="#functions">Functions</a></li></ul></div><p class='location'><a href='../index.html'>imageproc</a></p><script>window.sidebarCurrent = {name: 'haar', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Module <a href='../index.html'>imageproc</a>::<wbr><a class="mod" href=''>haar</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/imageproc/haar.rs.html#1-631' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p>Functions for creating and evaluating <a href="https://en.wikipedia.org/wiki/Haar-like_features">Haar-like features</a>.</p>
+</div><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.HaarFeature.html"
+                                  title='struct imageproc::haar::HaarFeature'>HaarFeature</a></td>
+                           <td class='docblock-short'>
+                                <p>A <a href="https://en.wikipedia.org/wiki/Haar-like_features">Haar-like feature</a>.</p>
+                           </td>
+                       </tr></table><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.HaarFeatureType.html"
+                                  title='enum imageproc::haar::HaarFeatureType'>HaarFeatureType</a></td>
+                           <td class='docblock-short'>
+                                <p>The type of a Haar-like feature determines the number of regions it contains and their orientation.
+The diagrams in the comments for each variant use the symbols (*, &amp;) to represent either
+(+, -) or (-, +), depending on which <code>Sign</code> the feature type is used with.</p>
+                           </td>
+                       </tr></table><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.draw_haar_feature.html"
+                                  title='fn imageproc::haar::draw_haar_feature'>draw_haar_feature</a></td>
+                           <td class='docblock-short'>
+                                <p>Draws the given Haar-like feature on an image, drawing pixels
+with a positive sign white and those with a negative sign black.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.draw_haar_feature_mut.html"
+                                  title='fn imageproc::haar::draw_haar_feature_mut'>draw_haar_feature_mut</a></td>
+                           <td class='docblock-short'>
+                                <p>Draws the given Haar-like feature on an image in place, drawing pixels
+with a positive sign white and those with a negative sign black.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.enumerate_haar_features.html"
+                                  title='fn imageproc::haar::enumerate_haar_features'>enumerate_haar_features</a></td>
+                           <td class='docblock-short'>
+                                <p>Returns a vector of all valid Haar-like features for an image with given width and height.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.number_of_haar_features.html"
+                                  title='fn imageproc::haar::number_of_haar_features'>number_of_haar_features</a></td>
+                           <td class='docblock-short'>
+                                <p>Returns the number of distinct Haar-like features for an image of the given dimensions.</p>
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "imageproc";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

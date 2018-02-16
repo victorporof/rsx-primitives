@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Selector` struct in crate `selectors`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Selector">
+
+    <title>selectors::parser::Selector - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct Selector</p><div class="block items"><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.specificity">specificity</a><a href="#method.has_pseudo_element">has_pseudo_element</a><a href="#method.pseudo_element">pseudo_element</a><a href="#method.is_universal">is_universal</a><a href="#method.iter">iter</a><a href="#method.iter_from">iter_from</a><a href="#method.combinator_at_match_order">combinator_at_match_order</a><a href="#method.iter_raw_match_order">iter_raw_match_order</a><a href="#method.combinator_at_parse_order">combinator_at_parse_order</a><a href="#method.iter_raw_parse_order_from">iter_raw_parse_order_from</a><a href="#method.from_vec">from_vec</a><a href="#method.len">len</a><a href="#method.thin_arc_heap_ptr">thin_arc_heap_ptr</a><a href="#method.parse">parse</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-SelectorMethods">SelectorMethods</a><a href="#impl-Clone">Clone</a><a href="#impl-Eq">Eq</a><a href="#impl-PartialEq">PartialEq</a><a href="#impl-Debug">Debug</a><a href="#impl-ToCss">ToCss</a></div></div><p class='location'><a href='../index.html'>selectors</a>::<wbr><a href='index.html'>parser</a></p><script>window.sidebarCurrent = {name: 'Selector', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>selectors</a>::<wbr><a href='index.html'>parser</a>::<wbr><a class="struct" href=''>Selector</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/selectors/parser.rs.html#445' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Selector&lt;Impl:&nbsp;<a class="trait" href="../../selectors/parser/trait.SelectorImpl.html" title="trait selectors::parser::SelectorImpl">SelectorImpl</a>&gt;(_);</pre><div class='docblock'><p>A Selector stores a sequence of simple selectors and combinators. The
+iterator classes allow callers to iterate at either the raw sequence level or
+at the level of sequences of simple selectors separated by combinators. Most
+callers want the higher-level iterator.</p>
+
+<p>We store compound selectors internally right-to-left (in matching order).
+Additionally, we invert the order of top-level compound selectors so that
+each one matches left-to-right. This is because matching namespace, local name,
+id, and class are all relatively cheap, whereas matching pseudo-classes might
+be expensive (depending on the pseudo-class). Since authors tend to put the
+pseudo-classes on the right, it&#39;s faster to start matching on the left.</p>
+
+<p>This reordering doesn&#39;t change the semantics of selector matching, and we
+handle it in to_css to make it invisible to serialization.</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl&lt;Impl:&nbsp;<a class="trait" href="../../selectors/parser/trait.SelectorImpl.html" title="trait selectors::parser::SelectorImpl">SelectorImpl</a>&gt; <a class="struct" href="../../selectors/parser/struct.Selector.html" title="struct selectors::parser::Selector">Selector</a>&lt;Impl&gt;</code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/parser.rs.html#447-571' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.specificity' class="method"><span id='specificity.v' class='invisible'><code>pub fn <a href='#method.specificity' class='fnname'>specificity</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/parser.rs.html#448-450' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.has_pseudo_element' class="method"><span id='has_pseudo_element.v' class='invisible'><code>pub fn <a href='#method.has_pseudo_element' class='fnname'>has_pseudo_element</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/parser.rs.html#452-454' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.pseudo_element' class="method"><span id='pseudo_element.v' class='invisible'><code>pub fn <a href='#method.pseudo_element' class='fnname'>pseudo_element</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;Impl::<a class="type" href="../../selectors/parser/trait.SelectorImpl.html#associatedtype.PseudoElement" title="type selectors::parser::SelectorImpl::PseudoElement">PseudoElement</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/parser.rs.html#456-469' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.is_universal' class="method"><span id='is_universal.v' class='invisible'><code>pub fn <a href='#method.is_universal' class='fnname'>is_universal</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/parser.rs.html#475-482' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Whether this selector (pseudo-element part excluded) matches every element.</p>
+
+<p>Used for &quot;pre-computed&quot; pseudo-elements in components/style/stylist.rs</p>
+</div><h4 id='method.iter' class="method"><span id='iter.v' class='invisible'><code>pub fn <a href='#method.iter' class='fnname'>iter</a>(&amp;self) -&gt; <a class="struct" href="../../selectors/parser/struct.SelectorIter.html" title="struct selectors::parser::SelectorIter">SelectorIter</a>&lt;Impl&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/parser.rs.html#488-493' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns an iterator over this selector in matching order (right-to-left).
+When a combinator is reached, the iterator will return None, and
+next_sequence() may be called to continue to the next sequence.</p>
+</div><h4 id='method.iter_from' class="method"><span id='iter_from.v' class='invisible'><code>pub fn <a href='#method.iter_from' class='fnname'>iter_from</a>(&amp;self, offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>) -&gt; <a class="struct" href="../../selectors/parser/struct.SelectorIter.html" title="struct selectors::parser::SelectorIter">SelectorIter</a>&lt;Impl&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/parser.rs.html#498-504' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns an iterator over this selector in matching order (right-to-left),
+skipping the rightmost |offset| Components.</p>
+</div><h4 id='method.combinator_at_match_order' class="method"><span id='combinator_at_match_order.v' class='invisible'><code>pub fn <a href='#method.combinator_at_match_order' class='fnname'>combinator_at_match_order</a>(&amp;self, index: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>) -&gt; <a class="enum" href="../../selectors/parser/enum.Combinator.html" title="enum selectors::parser::Combinator">Combinator</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/parser.rs.html#509-517' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the combinator at index <code>index</code> (zero-indexed from the right),
+or panics if the component is not a combinator.</p>
+</div><h4 id='method.iter_raw_match_order' class="method"><span id='iter_raw_match_order.v' class='invisible'><code>pub fn <a href='#method.iter_raw_match_order' class='fnname'>iter_raw_match_order</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/core/slice/struct.Iter.html" title="struct core::slice::Iter">Iter</a>&lt;<a class="enum" href="../../selectors/parser/enum.Component.html" title="enum selectors::parser::Component">Component</a>&lt;Impl&gt;&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/parser.rs.html#522-524' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns an iterator over the entire sequence of simple selectors and
+combinators, in matching order (from right to left).</p>
+</div><h4 id='method.combinator_at_parse_order' class="method"><span id='combinator_at_parse_order.v' class='invisible'><code>pub fn <a href='#method.combinator_at_parse_order' class='fnname'>combinator_at_parse_order</a>(&amp;self, index: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>) -&gt; <a class="enum" href="../../selectors/parser/enum.Combinator.html" title="enum selectors::parser::Combinator">Combinator</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/parser.rs.html#529-537' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the combinator at index <code>index</code> (zero-indexed from the left),
+or panics if the component is not a combinator.</p>
+</div><h4 id='method.iter_raw_parse_order_from' class="method"><span id='iter_raw_parse_order_from.v' class='invisible'><code>pub fn <a href='#method.iter_raw_parse_order_from' class='fnname'>iter_raw_parse_order_from</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a><br>) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/core/iter/struct.Rev.html" title="struct core::iter::Rev">Rev</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/core/slice/struct.Iter.html" title="struct core::slice::Iter">Iter</a>&lt;<a class="enum" href="../../selectors/parser/enum.Component.html" title="enum selectors::parser::Component">Component</a>&lt;Impl&gt;&gt;&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/parser.rs.html#543-545' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns an iterator over the sequence of simple selectors and
+combinators, in parse order (from left to right), starting from
+<code>offset</code>.</p>
+</div><h4 id='method.from_vec' class="method"><span id='from_vec.v' class='invisible'><code>pub fn <a href='#method.from_vec' class='fnname'>from_vec</a>(vec: <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="enum" href="../../selectors/parser/enum.Component.html" title="enum selectors::parser::Component">Component</a>&lt;Impl&gt;&gt;, specificity_and_flags: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/parser.rs.html#548-559' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Creates a Selector from a vec of Components, specified in parse order. Used in tests.</p>
+</div><h4 id='method.len' class="method"><span id='len.v' class='invisible'><code>pub fn <a href='#method.len' class='fnname'>len</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/parser.rs.html#563-565' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns count of simple selectors and combinators in the Selector.</p>
+</div><h4 id='method.thin_arc_heap_ptr' class="method"><span id='thin_arc_heap_ptr.v' class='invisible'><code>pub fn <a href='#method.thin_arc_heap_ptr' class='fnname'>thin_arc_heap_ptr</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/std/os/raw/enum.c_void.html" title="enum std::os::raw::c_void">c_void</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/parser.rs.html#568-570' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the address on the heap of the ThinArc for memory reporting.</p>
+</div></div><h3 id='impl-1' class='impl'><span class='in-band'><code>impl&lt;Impl:&nbsp;<a class="trait" href="../../selectors/parser/trait.SelectorImpl.html" title="trait selectors::parser::SelectorImpl">SelectorImpl</a>&gt; <a class="struct" href="../../selectors/parser/struct.Selector.html" title="struct selectors::parser::Selector">Selector</a>&lt;Impl&gt;</code><a href='#impl-1' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/parser.rs.html#1225-1240' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.parse' class="method"><span id='parse.v' class='invisible'><code>pub fn <a href='#method.parse' class='fnname'>parse</a>&lt;'i, 't, P&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;parser: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>P, <br>&nbsp;&nbsp;&nbsp;&nbsp;input: &amp;mut <a class="struct" href="../../cssparser/parser/struct.Parser.html" title="struct cssparser::parser::Parser">CssParser</a>&lt;'i, 't&gt;<br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;Self, <a class="struct" href="../../cssparser/parser/struct.ParseError.html" title="struct cssparser::parser::ParseError">ParseError</a>&lt;'i, P::<a class="type" href="../../selectors/parser/trait.Parser.html#associatedtype.Error" title="type selectors::parser::Parser::Error">Error</a>&gt;&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;P: <a class="trait" href="../../selectors/parser/trait.Parser.html" title="trait selectors::parser::Parser">Parser</a>&lt;'i, Impl = Impl&gt;,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/parser.rs.html#1227-1239' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Parse a selector, without any pseudo-element.</p>
+</div></div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-SelectorMethods' class='impl'><span class='in-band'><code>impl&lt;Impl:&nbsp;<a class="trait" href="../../selectors/parser/trait.SelectorImpl.html" title="trait selectors::parser::SelectorImpl">SelectorImpl</a>&gt; <a class="trait" href="../../selectors/parser/trait.SelectorMethods.html" title="trait selectors::parser::SelectorMethods">SelectorMethods</a> for <a class="struct" href="../../selectors/parser/struct.Selector.html" title="struct selectors::parser::Selector">Selector</a>&lt;Impl&gt;</code><a href='#impl-SelectorMethods' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/parser.rs.html#326-354' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Impl' class="type"><span id='Impl.t' class='invisible'><code>type <a href='../../selectors/parser/trait.SelectorMethods.html#associatedtype.Impl' class="type">Impl</a> = Impl</code></span></h4>
+<h4 id='method.visit' class="method"><span id='visit.v' class='invisible'><code>fn <a href='../../selectors/parser/trait.SelectorMethods.html#tymethod.visit' class='fnname'>visit</a>&lt;V&gt;(&amp;self, visitor: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>V) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a> <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;V: <a class="trait" href="../../selectors/visitor/trait.SelectorVisitor.html" title="trait selectors::visitor::SelectorVisitor">SelectorVisitor</a>&lt;Impl = Impl&gt;,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/parser.rs.html#329-353' title='goto source code'>[src]</a></span></h4>
+</div><h3 id='impl-Clone' class='impl'><span class='in-band'><code>impl&lt;Impl:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> + <a class="trait" href="../../selectors/parser/trait.SelectorImpl.html" title="trait selectors::parser::SelectorImpl">SelectorImpl</a>&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="struct" href="../../selectors/parser/struct.Selector.html" title="struct selectors::parser::Selector">Selector</a>&lt;Impl&gt;</code><a href='#impl-Clone' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/parser.rs.html#444' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="struct" href="../../selectors/parser/struct.Selector.html" title="struct selectors::parser::Selector">Selector</a>&lt;Impl&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/parser.rs.html#444' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 id='impl-Eq' class='impl'><span class='in-band'><code>impl&lt;Impl:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html" title="trait core::cmp::Eq">Eq</a> + <a class="trait" href="../../selectors/parser/trait.SelectorImpl.html" title="trait selectors::parser::SelectorImpl">SelectorImpl</a>&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html" title="trait core::cmp::Eq">Eq</a> for <a class="struct" href="../../selectors/parser/struct.Selector.html" title="struct selectors::parser::Selector">Selector</a>&lt;Impl&gt;</code><a href='#impl-Eq' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/parser.rs.html#444' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 id='impl-PartialEq' class='impl'><span class='in-band'><code>impl&lt;Impl:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a> + <a class="trait" href="../../selectors/parser/trait.SelectorImpl.html" title="trait selectors::parser::SelectorImpl">SelectorImpl</a>&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a> for <a class="struct" href="../../selectors/parser/struct.Selector.html" title="struct selectors::parser::Selector">Selector</a>&lt;Impl&gt;</code><a href='#impl-PartialEq' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/parser.rs.html#444' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class="method"><span id='eq.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class="struct" href="../../selectors/parser/struct.Selector.html" title="struct selectors::parser::Selector">Selector</a>&lt;Impl&gt;) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/parser.rs.html#444' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class="method"><span id='ne.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class="struct" href="../../selectors/parser/struct.Selector.html" title="struct selectors::parser::Selector">Selector</a>&lt;Impl&gt;) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/parser.rs.html#444' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl&lt;Impl:&nbsp;<a class="trait" href="../../selectors/parser/trait.SelectorImpl.html" title="trait selectors::parser::SelectorImpl">SelectorImpl</a>&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../../selectors/parser/struct.Selector.html" title="struct selectors::parser::Selector">Selector</a>&lt;Impl&gt;</code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/parser.rs.html#831-837' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, f: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/parser.rs.html#832-836' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div><h3 id='impl-ToCss' class='impl'><span class='in-band'><code>impl&lt;Impl:&nbsp;<a class="trait" href="../../selectors/parser/trait.SelectorImpl.html" title="trait selectors::parser::SelectorImpl">SelectorImpl</a>&gt; <a class="trait" href="../../cssparser/serializer/trait.ToCss.html" title="trait cssparser::serializer::ToCss">ToCss</a> for <a class="struct" href="../../selectors/parser/struct.Selector.html" title="struct selectors::parser::Selector">Selector</a>&lt;Impl&gt;</code><a href='#impl-ToCss' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/parser.rs.html#863-973' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.to_css' class="method"><span id='to_css.v' class='invisible'><code>fn <a href='../../cssparser/serializer/trait.ToCss.html#tymethod.to_css' class='fnname'>to_css</a>&lt;W&gt;(&amp;self, dest: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>W) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a> <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;W: <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Write.html" title="trait core::fmt::Write">Write</a>,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/parser.rs.html#864-972' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Serialize <code>self</code> in CSS syntax, writing to <code>dest</code>.</p>
+</div><h4 id='method.to_css_string' class="method"><span id='to_css_string.v' class='invisible'><code>fn <a href='../../cssparser/serializer/trait.ToCss.html#method.to_css_string' class='fnname'>to_css_string</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/cssparser/serializer.rs.html#24-28' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Serialize <code>self</code> in CSS syntax and return a string. <a href="../../cssparser/serializer/trait.ToCss.html#method.to_css_string">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "selectors";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

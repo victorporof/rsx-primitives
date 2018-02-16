@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `ShapedText` struct in crate `rsx_layout`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, ShapedText">
+
+    <title>rsx_layout::types::ShapedText - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct ShapedText</p><div class="block items"><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.font_key">font_key</a><a href="#method.font_instance_key">font_instance_key</a><a href="#method.width">width</a><a href="#method.height">height</a><a href="#method.into_glyphs">into_glyphs</a></div><a class="sidebar-title" href="#deref-methods">Methods from Deref&lt;Target=RefCell<Option<G>>&gt;</a><div class="sidebar-links"><a href="#method.into_inner">into_inner</a><a href="#method.replace">replace</a><a href="#method.swap">swap</a><a href="#method.borrow">borrow</a><a href="#method.try_borrow">try_borrow</a><a href="#method.borrow_mut">borrow_mut</a><a href="#method.try_borrow_mut">try_borrow_mut</a><a href="#method.as_ptr">as_ptr</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Serialize">Serialize</a><a href="#impl-Deserialize%3C%27de%3E">Deserialize&lt;&#39;de&gt;</a><a href="#impl-Debug">Debug</a><a href="#impl-PartialEq">PartialEq</a><a href="#impl-Default">Default</a><a href="#impl-Clone">Clone</a><a href="#impl-Deref">Deref</a></div></div><p class='location'><a href='../index.html'>rsx_layout</a>::<wbr><a href='index.html'>types</a></p><script>window.sidebarCurrent = {name: 'ShapedText', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>rsx_layout</a>::<wbr><a href='index.html'>types</a>::<wbr><a class="struct" href=''>ShapedText</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/rsx_layout/types.rs.html#221' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct ShapedText&lt;G&gt;(_);</pre>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl&lt;G&gt; <a class="struct" href="../../rsx_layout/types/struct.ShapedText.html" title="struct rsx_layout::types::ShapedText">ShapedText</a>&lt;G&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;G: <a class="trait" href="../../rsx_shared/traits/trait.TGlyphStore.html" title="trait rsx_shared::traits::TGlyphStore">TGlyphStore</a>,&nbsp;</span></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_layout/types.rs.html#243-267' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.font_key' class="method"><span id='font_key.v' class='invisible'><code>pub fn <a href='#method.font_key' class='fnname'>font_key</a>(this: &amp;<a class="struct" href="https://doc.rust-lang.org/nightly/core/cell/struct.Ref.html" title="struct core::cell::Ref">Ref</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;G&gt;&gt;) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;G::<a class="type" href="../../rsx_shared/traits/trait.TGlyphStore.html#associatedtype.FontKey" title="type rsx_shared::traits::TGlyphStore::FontKey">FontKey</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_layout/types.rs.html#247-249' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.font_instance_key' class="method"><span id='font_instance_key.v' class='invisible'><code>pub fn <a href='#method.font_instance_key' class='fnname'>font_instance_key</a>(this: &amp;<a class="struct" href="https://doc.rust-lang.org/nightly/core/cell/struct.Ref.html" title="struct core::cell::Ref">Ref</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;G&gt;&gt;) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;G::<a class="type" href="../../rsx_shared/traits/trait.TGlyphStore.html#associatedtype.FontInstanceKey" title="type rsx_shared::traits::TGlyphStore::FontInstanceKey">FontInstanceKey</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_layout/types.rs.html#251-253' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.width' class="method"><span id='width.v' class='invisible'><code>pub fn <a href='#method.width' class='fnname'>width</a>(this: &amp;<a class="struct" href="https://doc.rust-lang.org/nightly/core/cell/struct.Ref.html" title="struct core::cell::Ref">Ref</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;G&gt;&gt;) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_layout/types.rs.html#255-257' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.height' class="method"><span id='height.v' class='invisible'><code>pub fn <a href='#method.height' class='fnname'>height</a>(this: &amp;<a class="struct" href="https://doc.rust-lang.org/nightly/core/cell/struct.Ref.html" title="struct core::cell::Ref">Ref</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;G&gt;&gt;) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_layout/types.rs.html#259-261' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.into_glyphs' class="method"><span id='into_glyphs.v' class='invisible'><code>pub fn <a href='#method.into_glyphs' class='fnname'>into_glyphs</a>(this: <a class="struct" href="https://doc.rust-lang.org/nightly/core/cell/struct.Ref.html" title="struct core::cell::Ref">Ref</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;G&gt;&gt;) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/core/cell/struct.Ref.html" title="struct core::cell::Ref">Ref</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">[</a>G::<a class="type" href="../../rsx_shared/traits/trait.TGlyphStore.html#associatedtype.Glyph" title="type rsx_shared::traits::TGlyphStore::Glyph">Glyph</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_layout/types.rs.html#264-266' title='goto source code'>[src]</a></span></h4>
+</div>
+                    <h2 id='deref-methods' class='small-section-header'>
+                      Methods from <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/deref/trait.Deref.html" title="trait core::ops::deref::Deref">Deref</a>&lt;Target = <a class="struct" href="https://doc.rust-lang.org/nightly/core/cell/struct.RefCell.html" title="struct core::cell::RefCell">RefCell</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;G&gt;&gt;&gt;<a href='#deref-methods' class='anchor'></a>
+                    </h2>
+                <div class='impl-items'><h4 id='method.into_inner' class="method"><span id='into_inner.v' class='invisible'><code>fn <a href='#method.into_inner' class='fnname'>into_inner</a>(self) -&gt; T</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/cell.rs.html#569-575' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Consumes the <code>RefCell</code>, returning the wrapped value.</p>
+
+<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1>
+<pre class="rust rust-example-rendered">
+<span class="kw">use</span> <span class="ident">std</span>::<span class="ident">cell</span>::<span class="ident">RefCell</span>;
+
+<span class="kw">let</span> <span class="ident">c</span> <span class="op">=</span> <span class="ident">RefCell</span>::<span class="ident">new</span>(<span class="number">5</span>);
+
+<span class="kw">let</span> <span class="ident">five</span> <span class="op">=</span> <span class="ident">c</span>.<span class="ident">into_inner</span>();</pre>
+</div><h4 id='method.replace' class="method"><span id='replace.v' class='invisible'><code>fn <a href='#method.replace' class='fnname'>replace</a>(&amp;self, t: T) -&gt; T</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/cell.rs.html#599-601' title='goto source code'>[src]</a></span></h4>
+<div class='stability'><div class='stab unstable'><span class=microscope>🔬</span> This is a nightly-only experimental API.  (<code>refcell_replace_swap</code>)</div></div><div class='docblock'><p>Replaces the wrapped value with a new one, returning the old value,
+without deinitializing either one.</p>
+
+<p>This function corresponds to <a href="../mem/fn.replace.html"><code>std::mem::replace</code></a>.</p>
+
+<h1 id='examples-1' class='section-header'><a href='#examples-1'>Examples</a></h1>
+<pre class="rust rust-example-rendered">
+<span class="attribute">#![<span class="ident">feature</span>(<span class="ident">refcell_replace_swap</span>)]</span>
+<span class="kw">use</span> <span class="ident">std</span>::<span class="ident">cell</span>::<span class="ident">RefCell</span>;
+<span class="kw">let</span> <span class="ident">c</span> <span class="op">=</span> <span class="ident">RefCell</span>::<span class="ident">new</span>(<span class="number">5</span>);
+<span class="kw">let</span> <span class="ident">u</span> <span class="op">=</span> <span class="ident">c</span>.<span class="ident">replace</span>(<span class="number">6</span>);
+<span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">u</span>, <span class="number">5</span>);
+<span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">c</span>, <span class="ident">RefCell</span>::<span class="ident">new</span>(<span class="number">6</span>));</pre>
+
+<h1 id='panics' class='section-header'><a href='#panics'>Panics</a></h1>
+<p>This function will panic if the <code>RefCell</code> has any outstanding borrows,
+whether or not they are full mutable borrows.</p>
+</div><h4 id='method.swap' class="method"><span id='swap.v' class='invisible'><code>fn <a href='#method.swap' class='fnname'>swap</a>(&amp;self, other: &amp;<a class="struct" href="https://doc.rust-lang.org/nightly/core/cell/struct.RefCell.html" title="struct core::cell::RefCell">RefCell</a>&lt;T&gt;)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/cell.rs.html#626-628' title='goto source code'>[src]</a></span></h4>
+<div class='stability'><div class='stab unstable'><span class=microscope>🔬</span> This is a nightly-only experimental API.  (<code>refcell_replace_swap</code>)</div></div><div class='docblock'><p>Swaps the wrapped value of <code>self</code> with the wrapped value of <code>other</code>,
+without deinitializing either one.</p>
+
+<p>This function corresponds to <a href="../mem/fn.swap.html"><code>std::mem::swap</code></a>.</p>
+
+<h1 id='examples-2' class='section-header'><a href='#examples-2'>Examples</a></h1>
+<pre class="rust rust-example-rendered">
+<span class="attribute">#![<span class="ident">feature</span>(<span class="ident">refcell_replace_swap</span>)]</span>
+<span class="kw">use</span> <span class="ident">std</span>::<span class="ident">cell</span>::<span class="ident">RefCell</span>;
+<span class="kw">let</span> <span class="ident">c</span> <span class="op">=</span> <span class="ident">RefCell</span>::<span class="ident">new</span>(<span class="number">5</span>);
+<span class="kw">let</span> <span class="ident">d</span> <span class="op">=</span> <span class="ident">RefCell</span>::<span class="ident">new</span>(<span class="number">6</span>);
+<span class="ident">c</span>.<span class="ident">swap</span>(<span class="kw-2">&amp;</span><span class="ident">d</span>);
+<span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">c</span>, <span class="ident">RefCell</span>::<span class="ident">new</span>(<span class="number">6</span>));
+<span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">d</span>, <span class="ident">RefCell</span>::<span class="ident">new</span>(<span class="number">5</span>));</pre>
+
+<h1 id='panics-1' class='section-header'><a href='#panics-1'>Panics</a></h1>
+<p>This function will panic if either <code>RefCell</code> has any outstanding borrows,
+whether or not they are full mutable borrows.</p>
+</div></div><div class='impl-items'><h4 id='method.borrow' class="method"><span id='borrow.v' class='invisible'><code>fn <a href='#method.borrow' class='fnname'>borrow</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/core/cell/struct.Ref.html" title="struct core::cell::Ref">Ref</a>&lt;T&gt;</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/cell.rs.html#670-672' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Immutably borrows the wrapped value.</p>
+
+<p>The borrow lasts until the returned <code>Ref</code> exits scope. Multiple
+immutable borrows can be taken out at the same time.</p>
+
+<h1 id='panics-2' class='section-header'><a href='#panics-2'>Panics</a></h1>
+<p>Panics if the value is currently mutably borrowed. For a non-panicking variant, use
+<a href="#method.try_borrow"><code>try_borrow</code></a>.</p>
+
+<h1 id='examples-3' class='section-header'><a href='#examples-3'>Examples</a></h1>
+<pre class="rust rust-example-rendered">
+<span class="kw">use</span> <span class="ident">std</span>::<span class="ident">cell</span>::<span class="ident">RefCell</span>;
+
+<span class="kw">let</span> <span class="ident">c</span> <span class="op">=</span> <span class="ident">RefCell</span>::<span class="ident">new</span>(<span class="number">5</span>);
+
+<span class="kw">let</span> <span class="ident">borrowed_five</span> <span class="op">=</span> <span class="ident">c</span>.<span class="ident">borrow</span>();
+<span class="kw">let</span> <span class="ident">borrowed_five2</span> <span class="op">=</span> <span class="ident">c</span>.<span class="ident">borrow</span>();</pre>
+
+<p>An example of panic:</p>
+
+<pre class="rust rust-example-rendered">
+<span class="kw">use</span> <span class="ident">std</span>::<span class="ident">cell</span>::<span class="ident">RefCell</span>;
+<span class="kw">use</span> <span class="ident">std</span>::<span class="ident">thread</span>;
+
+<span class="kw">let</span> <span class="ident">result</span> <span class="op">=</span> <span class="ident">thread</span>::<span class="ident">spawn</span>(<span class="kw">move</span> <span class="op">||</span> {
+   <span class="kw">let</span> <span class="ident">c</span> <span class="op">=</span> <span class="ident">RefCell</span>::<span class="ident">new</span>(<span class="number">5</span>);
+   <span class="kw">let</span> <span class="ident">m</span> <span class="op">=</span> <span class="ident">c</span>.<span class="ident">borrow_mut</span>();
+
+   <span class="kw">let</span> <span class="ident">b</span> <span class="op">=</span> <span class="ident">c</span>.<span class="ident">borrow</span>(); <span class="comment">// this causes a panic</span>
+}).<span class="ident">join</span>();
+
+<span class="macro">assert</span><span class="macro">!</span>(<span class="ident">result</span>.<span class="ident">is_err</span>());</pre>
+</div><h4 id='method.try_borrow' class="method"><span id='try_borrow.v' class='invisible'><code>fn <a href='#method.try_borrow' class='fnname'>try_borrow</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/core/cell/struct.Ref.html" title="struct core::cell::Ref">Ref</a>&lt;T&gt;, <a class="struct" href="https://doc.rust-lang.org/nightly/core/cell/struct.BorrowError.html" title="struct core::cell::BorrowError">BorrowError</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.13.0'>1.13.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/cell.rs.html#701-709' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Immutably borrows the wrapped value, returning an error if the value is currently mutably
+borrowed.</p>
+
+<p>The borrow lasts until the returned <code>Ref</code> exits scope. Multiple immutable borrows can be
+taken out at the same time.</p>
+
+<p>This is the non-panicking variant of <a href="#method.borrow"><code>borrow</code></a>.</p>
+
+<h1 id='examples-4' class='section-header'><a href='#examples-4'>Examples</a></h1>
+<pre class="rust rust-example-rendered">
+<span class="kw">use</span> <span class="ident">std</span>::<span class="ident">cell</span>::<span class="ident">RefCell</span>;
+
+<span class="kw">let</span> <span class="ident">c</span> <span class="op">=</span> <span class="ident">RefCell</span>::<span class="ident">new</span>(<span class="number">5</span>);
+
+{
+    <span class="kw">let</span> <span class="ident">m</span> <span class="op">=</span> <span class="ident">c</span>.<span class="ident">borrow_mut</span>();
+    <span class="macro">assert</span><span class="macro">!</span>(<span class="ident">c</span>.<span class="ident">try_borrow</span>().<span class="ident">is_err</span>());
+}
+
+{
+    <span class="kw">let</span> <span class="ident">m</span> <span class="op">=</span> <span class="ident">c</span>.<span class="ident">borrow</span>();
+    <span class="macro">assert</span><span class="macro">!</span>(<span class="ident">c</span>.<span class="ident">try_borrow</span>().<span class="ident">is_ok</span>());
+}</pre>
+</div><h4 id='method.borrow_mut' class="method"><span id='borrow_mut.v' class='invisible'><code>fn <a href='#method.borrow_mut' class='fnname'>borrow_mut</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/core/cell/struct.RefMut.html" title="struct core::cell::RefMut">RefMut</a>&lt;T&gt;</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/cell.rs.html#750-752' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Mutably borrows the wrapped value.</p>
+
+<p>The borrow lasts until the returned <code>RefMut</code> exits scope. The value
+cannot be borrowed while this borrow is active.</p>
+
+<h1 id='panics-3' class='section-header'><a href='#panics-3'>Panics</a></h1>
+<p>Panics if the value is currently borrowed. For a non-panicking variant, use
+<a href="#method.try_borrow_mut"><code>try_borrow_mut</code></a>.</p>
+
+<h1 id='examples-5' class='section-header'><a href='#examples-5'>Examples</a></h1>
+<pre class="rust rust-example-rendered">
+<span class="kw">use</span> <span class="ident">std</span>::<span class="ident">cell</span>::<span class="ident">RefCell</span>;
+
+<span class="kw">let</span> <span class="ident">c</span> <span class="op">=</span> <span class="ident">RefCell</span>::<span class="ident">new</span>(<span class="number">5</span>);
+
+<span class="kw-2">*</span><span class="ident">c</span>.<span class="ident">borrow_mut</span>() <span class="op">=</span> <span class="number">7</span>;
+
+<span class="macro">assert_eq</span><span class="macro">!</span>(<span class="kw-2">*</span><span class="ident">c</span>.<span class="ident">borrow</span>(), <span class="number">7</span>);</pre>
+
+<p>An example of panic:</p>
+
+<pre class="rust rust-example-rendered">
+<span class="kw">use</span> <span class="ident">std</span>::<span class="ident">cell</span>::<span class="ident">RefCell</span>;
+<span class="kw">use</span> <span class="ident">std</span>::<span class="ident">thread</span>;
+
+<span class="kw">let</span> <span class="ident">result</span> <span class="op">=</span> <span class="ident">thread</span>::<span class="ident">spawn</span>(<span class="kw">move</span> <span class="op">||</span> {
+   <span class="kw">let</span> <span class="ident">c</span> <span class="op">=</span> <span class="ident">RefCell</span>::<span class="ident">new</span>(<span class="number">5</span>);
+   <span class="kw">let</span> <span class="ident">m</span> <span class="op">=</span> <span class="ident">c</span>.<span class="ident">borrow</span>();
+
+   <span class="kw">let</span> <span class="ident">b</span> <span class="op">=</span> <span class="ident">c</span>.<span class="ident">borrow_mut</span>(); <span class="comment">// this causes a panic</span>
+}).<span class="ident">join</span>();
+
+<span class="macro">assert</span><span class="macro">!</span>(<span class="ident">result</span>.<span class="ident">is_err</span>());</pre>
+</div><h4 id='method.try_borrow_mut' class="method"><span id='try_borrow_mut.v' class='invisible'><code>fn <a href='#method.try_borrow_mut' class='fnname'>try_borrow_mut</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/core/cell/struct.RefMut.html" title="struct core::cell::RefMut">RefMut</a>&lt;T&gt;, <a class="struct" href="https://doc.rust-lang.org/nightly/core/cell/struct.BorrowMutError.html" title="struct core::cell::BorrowMutError">BorrowMutError</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.13.0'>1.13.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/cell.rs.html#777-785' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Mutably borrows the wrapped value, returning an error if the value is currently borrowed.</p>
+
+<p>The borrow lasts until the returned <code>RefMut</code> exits scope. The value cannot be borrowed
+while this borrow is active.</p>
+
+<p>This is the non-panicking variant of <a href="#method.borrow_mut"><code>borrow_mut</code></a>.</p>
+
+<h1 id='examples-6' class='section-header'><a href='#examples-6'>Examples</a></h1>
+<pre class="rust rust-example-rendered">
+<span class="kw">use</span> <span class="ident">std</span>::<span class="ident">cell</span>::<span class="ident">RefCell</span>;
+
+<span class="kw">let</span> <span class="ident">c</span> <span class="op">=</span> <span class="ident">RefCell</span>::<span class="ident">new</span>(<span class="number">5</span>);
+
+{
+    <span class="kw">let</span> <span class="ident">m</span> <span class="op">=</span> <span class="ident">c</span>.<span class="ident">borrow</span>();
+    <span class="macro">assert</span><span class="macro">!</span>(<span class="ident">c</span>.<span class="ident">try_borrow_mut</span>().<span class="ident">is_err</span>());
+}
+
+<span class="macro">assert</span><span class="macro">!</span>(<span class="ident">c</span>.<span class="ident">try_borrow_mut</span>().<span class="ident">is_ok</span>());</pre>
+</div><h4 id='method.as_ptr' class="method"><span id='as_ptr.v' class='invisible'><code>fn <a href='#method.as_ptr' class='fnname'>as_ptr</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut T</a></code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.12.0'>1.12.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/cell.rs.html#800-802' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a raw pointer to the underlying data in this cell.</p>
+
+<h1 id='examples-7' class='section-header'><a href='#examples-7'>Examples</a></h1>
+<pre class="rust rust-example-rendered">
+<span class="kw">use</span> <span class="ident">std</span>::<span class="ident">cell</span>::<span class="ident">RefCell</span>;
+
+<span class="kw">let</span> <span class="ident">c</span> <span class="op">=</span> <span class="ident">RefCell</span>::<span class="ident">new</span>(<span class="number">5</span>);
+
+<span class="kw">let</span> <span class="ident">ptr</span> <span class="op">=</span> <span class="ident">c</span>.<span class="ident">as_ptr</span>();</pre>
+</div></div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Serialize' class='impl'><span class='in-band'><code>impl&lt;G&gt; <a class="trait" href="../../serde/ser/trait.Serialize.html" title="trait serde::ser::Serialize">Serialize</a> for <a class="struct" href="../../rsx_layout/types/struct.ShapedText.html" title="struct rsx_layout::types::ShapedText">ShapedText</a>&lt;G&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;G: <a class="trait" href="../../rsx_shared/traits/trait.TGlyphStore.html" title="trait rsx_shared::traits::TGlyphStore">TGlyphStore</a>,&nbsp;</span></code><a href='#impl-Serialize' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_layout/serialize.rs.html#48-58' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.serialize' class="method"><span id='serialize.v' class='invisible'><code>fn <a href='../../serde/ser/trait.Serialize.html#tymethod.serialize' class='fnname'>serialize</a>&lt;S&gt;(&amp;self, s: S) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;S::<a class="type" href="../../serde/ser/trait.Serializer.html#associatedtype.Ok" title="type serde::ser::Serializer::Ok">Ok</a>, S::<a class="type" href="../../serde/ser/trait.Serializer.html#associatedtype.Error" title="type serde::ser::Serializer::Error">Error</a>&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;S: <a class="trait" href="../../serde/ser/trait.Serializer.html" title="trait serde::ser::Serializer">Serializer</a>,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_layout/serialize.rs.html#52-57' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Serialize this value into the given Serde serializer. <a href="../../serde/ser/trait.Serialize.html#tymethod.serialize">Read more</a></p>
+</div></div><h3 id='impl-Deserialize%3C%27de%3E' class='impl'><span class='in-band'><code>impl&lt;'de, G&gt; <a class="trait" href="../../serde/de/trait.Deserialize.html" title="trait serde::de::Deserialize">Deserialize</a>&lt;'de&gt; for <a class="struct" href="../../rsx_layout/types/struct.ShapedText.html" title="struct rsx_layout::types::ShapedText">ShapedText</a>&lt;G&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;G: <a class="trait" href="../../rsx_shared/traits/trait.TGlyphStore.html" title="trait rsx_shared::traits::TGlyphStore">TGlyphStore</a>,&nbsp;</span></code><a href='#impl-Deserialize%3C%27de%3E' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_layout/serialize.rs.html#60-71' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deserialize' class="method"><span id='deserialize.v' class='invisible'><code>fn <a href='../../serde/de/trait.Deserialize.html#tymethod.deserialize' class='fnname'>deserialize</a>&lt;S&gt;(d: S) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;Self, S::<a class="type" href="../../serde/de/trait.Deserializer.html#associatedtype.Error" title="type serde::de::Deserializer::Error">Error</a>&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;S: <a class="trait" href="../../serde/de/trait.Deserializer.html" title="trait serde::de::Deserializer">Deserializer</a>&lt;'de&gt;,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_layout/serialize.rs.html#64-70' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Deserialize this value from the given Serde deserializer. <a href="../../serde/de/trait.Deserialize.html#tymethod.deserialize">Read more</a></p>
+</div></div><h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl&lt;G:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a>&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../../rsx_layout/types/struct.ShapedText.html" title="struct rsx_layout::types::ShapedText">ShapedText</a>&lt;G&gt;</code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_layout/types.rs.html#220' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_layout/types.rs.html#220' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div><h3 id='impl-PartialEq' class='impl'><span class='in-band'><code>impl&lt;G:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a>&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a> for <a class="struct" href="../../rsx_layout/types/struct.ShapedText.html" title="struct rsx_layout::types::ShapedText">ShapedText</a>&lt;G&gt;</code><a href='#impl-PartialEq' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_layout/types.rs.html#220' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class="method"><span id='eq.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class="struct" href="../../rsx_layout/types/struct.ShapedText.html" title="struct rsx_layout::types::ShapedText">ShapedText</a>&lt;G&gt;) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_layout/types.rs.html#220' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class="method"><span id='ne.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class="struct" href="../../rsx_layout/types/struct.ShapedText.html" title="struct rsx_layout::types::ShapedText">ShapedText</a>&lt;G&gt;) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_layout/types.rs.html#220' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 id='impl-Default' class='impl'><span class='in-band'><code>impl&lt;G&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/default/trait.Default.html" title="trait core::default::Default">Default</a> for <a class="struct" href="../../rsx_layout/types/struct.ShapedText.html" title="struct rsx_layout::types::ShapedText">ShapedText</a>&lt;G&gt;</code><a href='#impl-Default' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_layout/types.rs.html#223-227' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.default' class="method"><span id='default.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/default/trait.Default.html#tymethod.default' class='fnname'>default</a>() -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_layout/types.rs.html#224-226' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the &quot;default value&quot; for a type. <a href="https://doc.rust-lang.org/nightly/core/default/trait.Default.html#tymethod.default">Read more</a></p>
+</div></div><h3 id='impl-Clone' class='impl'><span class='in-band'><code>impl&lt;G&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="struct" href="../../rsx_layout/types/struct.ShapedText.html" title="struct rsx_layout::types::ShapedText">ShapedText</a>&lt;G&gt;</code><a href='#impl-Clone' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_layout/types.rs.html#229-233' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="struct" href="../../rsx_layout/types/struct.ShapedText.html" title="struct rsx_layout::types::ShapedText">ShapedText</a>&lt;G&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_layout/types.rs.html#230-232' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 id='impl-Deref' class='impl'><span class='in-band'><code>impl&lt;G&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/deref/trait.Deref.html" title="trait core::ops::deref::Deref">Deref</a> for <a class="struct" href="../../rsx_layout/types/struct.ShapedText.html" title="struct rsx_layout::types::ShapedText">ShapedText</a>&lt;G&gt;</code><a href='#impl-Deref' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_layout/types.rs.html#235-241' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Target' class="type"><span id='Target.t' class='invisible'><code>type <a href='https://doc.rust-lang.org/nightly/core/ops/deref/trait.Deref.html#associatedtype.Target' class="type">Target</a> = <a class="struct" href="https://doc.rust-lang.org/nightly/core/cell/struct.RefCell.html" title="struct core::cell::RefCell">RefCell</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;G&gt;&gt;</code></span></h4>
+<div class='docblock'><p>The resulting type after dereferencing.</p>
+</div><h4 id='method.deref' class="method"><span id='deref.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/deref/trait.Deref.html#tymethod.deref' class='fnname'>deref</a>(&amp;self) -&gt; &amp;Self::<a class="type" href="https://doc.rust-lang.org/nightly/core/ops/deref/trait.Deref.html#associatedtype.Target" title="type core::ops::deref::Deref::Target">Target</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_layout/types.rs.html#238-240' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Dereferences the value.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "rsx_layout";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

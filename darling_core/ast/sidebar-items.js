@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Body","A struct or enum body. "],["Style",""]],"struct":[["VariantData",""]]});

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Device` struct in crate `style`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Device">
+
+    <title>style::servo::media_queries::Device - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct Device</p><div class="block items"><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.new">new</a><a href="#method.default_computed_values">default_computed_values</a><a href="#method.root_font_size">root_font_size</a><a href="#method.set_root_font_size">set_root_font_size</a><a href="#method.set_body_text_color">set_body_text_color</a><a href="#method.used_root_font_size">used_root_font_size</a><a href="#method.au_viewport_size">au_viewport_size</a><a href="#method.au_viewport_size_for_viewport_unit_resolution">au_viewport_size_for_viewport_unit_resolution</a><a href="#method.used_viewport_units">used_viewport_units</a><a href="#method.device_pixel_ratio">device_pixel_ratio</a><a href="#method.account_for_viewport_rule">account_for_viewport_rule</a><a href="#method.media_type">media_type</a><a href="#method.use_document_colors">use_document_colors</a><a href="#method.default_background_color">default_background_color</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-MallocSizeOf">MallocSizeOf</a></div></div><p class='location'><a href='../../index.html'>style</a>::<wbr><a href='../index.html'>servo</a>::<wbr><a href='index.html'>media_queries</a></p><script>window.sidebarCurrent = {name: 'Device', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>style</a>::<wbr><a href='../index.html'>servo</a>::<wbr><a href='index.html'>media_queries</a>::<wbr><a class="struct" href=''>Device</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../src/style/servo/media_queries.rs.html#28-53' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Device { /* fields omitted */ }</pre><div class='docblock'><p>A device is a structure that represents the current media a given document
+is displayed in.</p>
+
+<p>This is the struct against which media queries are evaluated.</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="struct" href="../../../style/servo/media_queries/struct.Device.html" title="struct style::servo::media_queries::Device">Device</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/media_queries.rs.html#55-147' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class="method"><span id='new.v' class='invisible'><code>pub fn <a href='#method.new' class='fnname'>new</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;media_type: <a class="struct" href="../../../style/media_queries/struct.MediaType.html" title="struct style::media_queries::MediaType">MediaType</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;viewport_size: <a class="struct" href="../../../euclid/size/struct.TypedSize2D.html" title="struct euclid::size::TypedSize2D">TypedSize2D</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>, <a class="enum" href="../../../style_traits/enum.CSSPixel.html" title="enum style_traits::CSSPixel">CSSPixel</a>&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;device_pixel_ratio: <a class="struct" href="../../../euclid/scale/struct.TypedScale.html" title="struct euclid::scale::TypedScale">TypedScale</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>, <a class="enum" href="../../../style_traits/enum.CSSPixel.html" title="enum style_traits::CSSPixel">CSSPixel</a>, <a class="struct" href="../../../webrender_api/units/struct.DevicePixel.html" title="struct webrender_api::units::DevicePixel">DevicePixel</a>&gt;<br>) -&gt; <a class="struct" href="../../../style/servo/media_queries/struct.Device.html" title="struct style::servo::media_queries::Device">Device</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/media_queries.rs.html#57-71' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Trivially construct a new <code>Device</code>.</p>
+</div><h4 id='method.default_computed_values' class="method"><span id='default_computed_values.v' class='invisible'><code>pub fn <a href='#method.default_computed_values' class='fnname'>default_computed_values</a>(&amp;self) -&gt; &amp;<a class="struct" href="../../../style/properties/struct.ComputedValues.html" title="struct style::properties::ComputedValues">ComputedValues</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/media_queries.rs.html#74-79' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Return the default computed values for this device.</p>
+</div><h4 id='method.root_font_size' class="method"><span id='root_font_size.v' class='invisible'><code>pub fn <a href='#method.root_font_size' class='fnname'>root_font_size</a>(&amp;self) -&gt; <a class="struct" href="../../../style/values/computed/struct.Au.html" title="struct style::values::computed::Au">Au</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/media_queries.rs.html#82-85' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Get the font size of the root element (for rem)</p>
+</div><h4 id='method.set_root_font_size' class="method"><span id='set_root_font_size.v' class='invisible'><code>pub fn <a href='#method.set_root_font_size' class='fnname'>set_root_font_size</a>(&amp;self, size: <a class="struct" href="../../../style/values/computed/struct.Au.html" title="struct style::values::computed::Au">Au</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/media_queries.rs.html#88-90' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Set the font size of the root element (for rem)</p>
+</div><h4 id='method.set_body_text_color' class="method"><span id='set_body_text_color.v' class='invisible'><code>pub fn <a href='#method.set_body_text_color' class='fnname'>set_body_text_color</a>(&amp;self, _color: <a class="struct" href="../../../style/values/struct.RGBA.html" title="struct style::values::RGBA">RGBA</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/media_queries.rs.html#95-97' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Sets the body text color for the &quot;inherit color from body&quot; quirk.</p>
+
+<p><a href="https://quirks.spec.whatwg.org/#the-tables-inherit-color-from-body-quirk">https://quirks.spec.whatwg.org/#the-tables-inherit-color-from-body-quirk</a></p>
+</div><h4 id='method.used_root_font_size' class="method"><span id='used_root_font_size.v' class='invisible'><code>pub fn <a href='#method.used_root_font_size' class='fnname'>used_root_font_size</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/media_queries.rs.html#100-102' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns whether we ever looked up the root font size of the Device.</p>
+</div><h4 id='method.au_viewport_size' class="method"><span id='au_viewport_size.v' class='invisible'><code>pub fn <a href='#method.au_viewport_size' class='fnname'>au_viewport_size</a>(&amp;self) -&gt; <a class="type" href="../../../euclid/size/type.Size2D.html" title="type euclid::size::Size2D">Size2D</a>&lt;<a class="struct" href="../../../style/values/computed/struct.Au.html" title="struct style::values::computed::Au">Au</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/media_queries.rs.html#107-110' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the viewport size of the current device in app units, needed,
+among other things, to resolve viewport units.</p>
+</div><h4 id='method.au_viewport_size_for_viewport_unit_resolution' class="method"><span id='au_viewport_size_for_viewport_unit_resolution.v' class='invisible'><code>pub fn <a href='#method.au_viewport_size_for_viewport_unit_resolution' class='fnname'>au_viewport_size_for_viewport_unit_resolution</a>(&amp;self) -&gt; <a class="type" href="../../../euclid/size/type.Size2D.html" title="type euclid::size::Size2D">Size2D</a>&lt;<a class="struct" href="../../../style/values/computed/struct.Au.html" title="struct style::values::computed::Au">Au</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/media_queries.rs.html#113-116' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Like the above, but records that we&#39;ve used viewport units.</p>
+</div><h4 id='method.used_viewport_units' class="method"><span id='used_viewport_units.v' class='invisible'><code>pub fn <a href='#method.used_viewport_units' class='fnname'>used_viewport_units</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/media_queries.rs.html#119-121' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Whether viewport units were used since the last device change.</p>
+</div><h4 id='method.device_pixel_ratio' class="method"><span id='device_pixel_ratio.v' class='invisible'><code>pub fn <a href='#method.device_pixel_ratio' class='fnname'>device_pixel_ratio</a>(&amp;self) -&gt; <a class="struct" href="../../../euclid/scale/struct.TypedScale.html" title="struct euclid::scale::TypedScale">TypedScale</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>, <a class="enum" href="../../../style_traits/enum.CSSPixel.html" title="enum style_traits::CSSPixel">CSSPixel</a>, <a class="struct" href="../../../webrender_api/units/struct.DevicePixel.html" title="struct webrender_api::units::DevicePixel">DevicePixel</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/media_queries.rs.html#124-126' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the device pixel ratio.</p>
+</div><h4 id='method.account_for_viewport_rule' class="method"><span id='account_for_viewport_rule.v' class='invisible'><code>pub fn <a href='#method.account_for_viewport_rule' class='fnname'>account_for_viewport_rule</a>(&amp;mut self, constraints: &amp;<a class="struct" href="../../../style_traits/viewport/struct.ViewportConstraints.html" title="struct style_traits::viewport::ViewportConstraints">ViewportConstraints</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/media_queries.rs.html#129-131' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Take into account a viewport rule taken from the stylesheets.</p>
+</div><h4 id='method.media_type' class="method"><span id='media_type.v' class='invisible'><code>pub fn <a href='#method.media_type' class='fnname'>media_type</a>(&amp;self) -&gt; <a class="struct" href="../../../style/media_queries/struct.MediaType.html" title="struct style::media_queries::MediaType">MediaType</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/media_queries.rs.html#134-136' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Return the media type of the current device.</p>
+</div><h4 id='method.use_document_colors' class="method"><span id='use_document_colors.v' class='invisible'><code>pub fn <a href='#method.use_document_colors' class='fnname'>use_document_colors</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/media_queries.rs.html#139-141' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns whether document colors are enabled.</p>
+</div><h4 id='method.default_background_color' class="method"><span id='default_background_color.v' class='invisible'><code>pub fn <a href='#method.default_background_color' class='fnname'>default_background_color</a>(&amp;self) -&gt; <a class="struct" href="../../../style/values/struct.RGBA.html" title="struct style::values::RGBA">RGBA</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/media_queries.rs.html#144-146' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the default background color.</p>
+</div></div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-MallocSizeOf' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../../malloc_size_of/trait.MallocSizeOf.html" title="trait malloc_size_of::MallocSizeOf">MallocSizeOf</a> for <a class="struct" href="../../../style/servo/media_queries/struct.Device.html" title="struct style::servo::media_queries::Device">Device</a></code><a href='#impl-MallocSizeOf' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/media_queries.rs.html#27-1' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.size_of' class="method"><span id='size_of.v' class='invisible'><code>fn <a href='../../../malloc_size_of/trait.MallocSizeOf.html#tymethod.size_of' class='fnname'>size_of</a>(&amp;self, ops: &amp;mut <a class="struct" href="../../../malloc_size_of/struct.MallocSizeOfOps.html" title="struct malloc_size_of::MallocSizeOfOps">MallocSizeOfOps</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/servo/media_queries.rs.html#27' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Measure the heap usage of all descendant heap-allocated structures, but not the space taken up by the value itself. <a href="../../../malloc_size_of/trait.MallocSizeOf.html#tymethod.size_of">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "style";
+    </script>
+    <script src="../../../main.js"></script>
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

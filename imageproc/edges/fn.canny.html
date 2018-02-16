@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `canny` fn in crate `imageproc`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, canny">
+
+    <title>imageproc::edges::canny - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc fn">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>imageproc</a>::<wbr><a href='index.html'>edges</a></p><script>window.sidebarCurrent = {name: 'canny', ty: 'fn', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Function <a href='../index.html'>imageproc</a>::<wbr><a href='index.html'>edges</a>::<wbr><a class="fn" href=''>canny</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/imageproc/edges.rs.html#30-52' title='goto source code'>[src]</a></span></h1>
+<pre class='rust fn'>pub fn canny(<br>&nbsp;&nbsp;&nbsp;&nbsp;image: &amp;<a class="type" href="../../image/buffer/type.GrayImage.html" title="type image::buffer::GrayImage">GrayImage</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;low_threshold: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;high_threshold: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a><br>) -&gt; <a class="type" href="../../image/buffer/type.GrayImage.html" title="type image::buffer::GrayImage">GrayImage</a></pre><div class='docblock'><p>Runs the canny edge detection algorithm.</p>
+
+<p>Returns a binary image where edge pixels have a value of 255
+ and non-edge pixels a value of 0.</p>
+
+<h1 id='params' class='section-header'><a href='#params'>Params</a></h1>
+<ul>
+<li><code>low_threshold</code>: Low threshold for the hysteresis procedure.
+Edges with a strength higher than the low threshold will appear
+in the output image, if there are strong edges nearby.</li>
+<li><code>high_threshold</code>: High threshold for the hysteresis procedure.
+Edges with a strength higher than the high threshold will always
+appear as edges in the output image.</li>
+</ul>
+
+<p>The greatest possible edge strength (and so largest sensible threshold)
+is<code>sqrt(5) * 2 * 255</code>, or approximately 1140.39.</p>
+
+<p>This odd looking value is the result of using a standard
+definition of edge strength: the strength of an edge at a point <code>p</code> is
+defined to be <code>sqrt(dx^2 + dy^2)</code>, where <code>dx</code> and <code>dy</code> are the values
+of the horizontal and vertical Sobel gradients at <code>p</code>.</p>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "imageproc";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

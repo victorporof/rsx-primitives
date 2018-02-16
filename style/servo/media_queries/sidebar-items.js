@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["ExpressionKind","A expression kind servo understands and parses."],["Range","An enumeration that represents a ranged value."]],"struct":[["Device","A device is a structure that represents the current media a given document is displayed in."],["Expression","A single expression a per:"]]});

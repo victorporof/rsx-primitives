@@ -1,0 +1,1 @@
+initSidebarItems({"type":[["AnimationIterationCount","A computed value for the `animation-iteration-count` property."],["VerticalAlign","A computed value for the `vertical-align` property."]]});

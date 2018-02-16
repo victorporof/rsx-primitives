@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `ElementWrapper` struct in crate `style`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, ElementWrapper">
+
+    <title>style::invalidation::element::element_wrapper::ElementWrapper - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct ElementWrapper</p><div class="block items"><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.new">new</a><a href="#method.snapshot">snapshot</a><a href="#method.state_changes">state_changes</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Clone">Clone</a><a href="#impl-Debug">Debug</a><a href="#impl-Element">Element</a></div></div><p class='location'><a href='../../../index.html'>style</a>::<wbr><a href='../../index.html'>invalidation</a>::<wbr><a href='../index.html'>element</a>::<wbr><a href='index.html'>element_wrapper</a></p><script>window.sidebarCurrent = {name: 'ElementWrapper', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../../index.html'>style</a>::<wbr><a href='../../index.html'>invalidation</a>::<wbr><a href='../index.html'>element</a>::<wbr><a href='index.html'>element_wrapper</a>::<wbr><a class="struct" href=''>ElementWrapper</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../../src/style/invalidation/element/element_wrapper.rs.html#66-72' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct ElementWrapper&lt;'a, E&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;E: <a class="trait" href="../../../../style/dom/trait.TElement.html" title="trait style::dom::TElement">TElement</a>,&nbsp;</span> { /* fields omitted */ }</pre><div class='docblock'><p>A simple wrapper over an element and a snapshot, that allows us to
+selector-match against a past state of the element.</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl&lt;'a, E&gt; <a class="struct" href="../../../../style/invalidation/element/element_wrapper/struct.ElementWrapper.html" title="struct style::invalidation::element::element_wrapper::ElementWrapper">ElementWrapper</a>&lt;'a, E&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;E: <a class="trait" href="../../../../style/dom/trait.TElement.html" title="trait style::dom::TElement">TElement</a>,&nbsp;</span></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/element_wrapper.rs.html#74-133' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class="method"><span id='new.v' class='invisible'><code>pub fn <a href='#method.new' class='fnname'>new</a>(el: E, snapshot_map: &amp;'a <a class="struct" href="../../../../style/servo/selector_parser/struct.SnapshotMap.html" title="struct style::servo::selector_parser::SnapshotMap">SnapshotMap</a>) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/element_wrapper.rs.html#78-84' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Trivially constructs an <code>ElementWrapper</code>.</p>
+</div><h4 id='method.snapshot' class="method"><span id='snapshot.v' class='invisible'><code>pub fn <a href='#method.snapshot' class='fnname'>snapshot</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;'a <a class="struct" href="../../../../style/servo/selector_parser/struct.ServoElementSnapshot.html" title="struct style::servo::selector_parser::ServoElementSnapshot">Snapshot</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/element_wrapper.rs.html#87-102' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Gets the snapshot associated with this element, if any.</p>
+</div><h4 id='method.state_changes' class="method"><span id='state_changes.v' class='invisible'><code>pub fn <a href='#method.state_changes' class='fnname'>state_changes</a>(&amp;self) -&gt; <a class="struct" href="../../../../style/element_state/struct.ElementState.html" title="struct style::element_state::ElementState">ElementState</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/element_wrapper.rs.html#105-115' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the states that have changed since the element was snapshotted.</p>
+</div></div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Clone' class='impl'><span class='in-band'><code>impl&lt;'a, E:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a>&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="struct" href="../../../../style/invalidation/element/element_wrapper/struct.ElementWrapper.html" title="struct style::invalidation::element::element_wrapper::ElementWrapper">ElementWrapper</a>&lt;'a, E&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;E: <a class="trait" href="../../../../style/dom/trait.TElement.html" title="trait style::dom::TElement">TElement</a>,&nbsp;</span></code><a href='#impl-Clone' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/element_wrapper.rs.html#65' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="struct" href="../../../../style/invalidation/element/element_wrapper/struct.ElementWrapper.html" title="struct style::invalidation::element::element_wrapper::ElementWrapper">ElementWrapper</a>&lt;'a, E&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/element_wrapper.rs.html#65' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl&lt;'a, E&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../../../../style/invalidation/element/element_wrapper/struct.ElementWrapper.html" title="struct style::invalidation::element::element_wrapper::ElementWrapper">ElementWrapper</a>&lt;'a, E&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;E: <a class="trait" href="../../../../style/dom/trait.TElement.html" title="trait style::dom::TElement">TElement</a>,&nbsp;</span></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/element_wrapper.rs.html#135-142' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, f: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/element_wrapper.rs.html#138-141' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div><h3 id='impl-Element' class='impl'><span class='in-band'><code>impl&lt;'a, E&gt; <a class="trait" href="../../../../selectors/tree/trait.Element.html" title="trait selectors::tree::Element">Element</a> for <a class="struct" href="../../../../style/invalidation/element/element_wrapper/struct.ElementWrapper.html" title="struct style::invalidation::element::element_wrapper::ElementWrapper">ElementWrapper</a>&lt;'a, E&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;E: <a class="trait" href="../../../../style/dom/trait.TElement.html" title="trait style::dom::TElement">TElement</a>,&nbsp;</span></code><a href='#impl-Element' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/element_wrapper.rs.html#144-357' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Impl' class="type"><span id='Impl.t' class='invisible'><code>type <a href='../../../../selectors/tree/trait.Element.html#associatedtype.Impl' class="type">Impl</a> = <a class="struct" href="../../../../style/servo/selector_parser/struct.SelectorImpl.html" title="struct style::servo::selector_parser::SelectorImpl">SelectorImpl</a></code></span></h4>
+<h4 id='method.match_non_ts_pseudo_class' class="method"><span id='match_non_ts_pseudo_class.v' class='invisible'><code>fn <a href='../../../../selectors/tree/trait.Element.html#tymethod.match_non_ts_pseudo_class' class='fnname'>match_non_ts_pseudo_class</a>&lt;F&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;pseudo_class: &amp;<a class="enum" href="../../../../style/servo/selector_parser/enum.NonTSPseudoClass.html" title="enum style::servo::selector_parser::NonTSPseudoClass">NonTSPseudoClass</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;context: &amp;mut <a class="struct" href="../../../../selectors/context/struct.MatchingContext.html" title="struct selectors::context::MatchingContext">MatchingContext</a>&lt;Self::<a class="type" href="../../../../selectors/tree/trait.Element.html#associatedtype.Impl" title="type selectors::tree::Element::Impl">Impl</a>&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;visited_handling: <a class="enum" href="../../../../selectors/context/enum.VisitedHandlingMode.html" title="enum selectors::context::VisitedHandlingMode">VisitedHandlingMode</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;_setter: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>F<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a> <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self, <a class="struct" href="../../../../selectors/matching/struct.ElementSelectorFlags.html" title="struct selectors::matching::ElementSelectorFlags">ElementSelectorFlags</a>),&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/element_wrapper.rs.html#149-255' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.match_pseudo_element' class="method"><span id='match_pseudo_element.v' class='invisible'><code>fn <a href='../../../../selectors/tree/trait.Element.html#tymethod.match_pseudo_element' class='fnname'>match_pseudo_element</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;pseudo_element: &amp;<a class="enum" href="../../../../style/servo/selector_parser/enum.PseudoElement.html" title="enum style::servo::selector_parser::PseudoElement">PseudoElement</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;context: &amp;mut <a class="struct" href="../../../../selectors/context/struct.MatchingContext.html" title="struct selectors::context::MatchingContext">MatchingContext</a>&lt;Self::<a class="type" href="../../../../selectors/tree/trait.Element.html#associatedtype.Impl" title="type selectors::tree::Element::Impl">Impl</a>&gt;<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/element_wrapper.rs.html#257-263' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.is_link' class="method"><span id='is_link.v' class='invisible'><code>fn <a href='../../../../selectors/tree/trait.Element.html#tymethod.is_link' class='fnname'>is_link</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/element_wrapper.rs.html#265-267' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Whether this element is a <code>link</code>.</p>
+</div><h4 id='method.opaque' class="method"><span id='opaque.v' class='invisible'><code>fn <a href='../../../../selectors/tree/trait.Element.html#tymethod.opaque' class='fnname'>opaque</a>(&amp;self) -&gt; <a class="struct" href="../../../../selectors/tree/struct.OpaqueElement.html" title="struct selectors::tree::OpaqueElement">OpaqueElement</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/element_wrapper.rs.html#269-271' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Converts self into an opaque representation.</p>
+</div><h4 id='method.parent_element' class="method"><span id='parent_element.v' class='invisible'><code>fn <a href='../../../../selectors/tree/trait.Element.html#tymethod.parent_element' class='fnname'>parent_element</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;Self&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/element_wrapper.rs.html#273-276' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.first_child_element' class="method"><span id='first_child_element.v' class='invisible'><code>fn <a href='../../../../selectors/tree/trait.Element.html#tymethod.first_child_element' class='fnname'>first_child_element</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;Self&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/element_wrapper.rs.html#278-281' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Skips non-element nodes</p>
+</div><h4 id='method.last_child_element' class="method"><span id='last_child_element.v' class='invisible'><code>fn <a href='../../../../selectors/tree/trait.Element.html#tymethod.last_child_element' class='fnname'>last_child_element</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;Self&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/element_wrapper.rs.html#283-286' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Skips non-element nodes</p>
+</div><h4 id='method.prev_sibling_element' class="method"><span id='prev_sibling_element.v' class='invisible'><code>fn <a href='../../../../selectors/tree/trait.Element.html#tymethod.prev_sibling_element' class='fnname'>prev_sibling_element</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;Self&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/element_wrapper.rs.html#288-291' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Skips non-element nodes</p>
+</div><h4 id='method.next_sibling_element' class="method"><span id='next_sibling_element.v' class='invisible'><code>fn <a href='../../../../selectors/tree/trait.Element.html#tymethod.next_sibling_element' class='fnname'>next_sibling_element</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;Self&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/element_wrapper.rs.html#293-296' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Skips non-element nodes</p>
+</div><h4 id='method.is_html_element_in_html_document' class="method"><span id='is_html_element_in_html_document.v' class='invisible'><code>fn <a href='../../../../selectors/tree/trait.Element.html#tymethod.is_html_element_in_html_document' class='fnname'>is_html_element_in_html_document</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/element_wrapper.rs.html#298-300' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.get_local_name' class="method"><span id='get_local_name.v' class='invisible'><code>fn <a href='../../../../selectors/tree/trait.Element.html#tymethod.get_local_name' class='fnname'>get_local_name</a>(&amp;self) -&gt; &amp;&lt;Self::<a class="type" href="../../../../selectors/tree/trait.Element.html#associatedtype.Impl" title="type selectors::tree::Element::Impl">Impl</a> as <a class="trait" href="../../../../selectors/parser/trait.SelectorImpl.html" title="trait selectors::parser::SelectorImpl">SelectorImpl</a>&gt;::<a class="type" href="../../../../selectors/parser/trait.SelectorImpl.html#associatedtype.BorrowedLocalName" title="type selectors::parser::SelectorImpl::BorrowedLocalName">BorrowedLocalName</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/element_wrapper.rs.html#302-304' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.get_namespace' class="method"><span id='get_namespace.v' class='invisible'><code>fn <a href='../../../../selectors/tree/trait.Element.html#tymethod.get_namespace' class='fnname'>get_namespace</a>(&amp;self) -&gt; &amp;&lt;Self::<a class="type" href="../../../../selectors/tree/trait.Element.html#associatedtype.Impl" title="type selectors::tree::Element::Impl">Impl</a> as <a class="trait" href="../../../../selectors/parser/trait.SelectorImpl.html" title="trait selectors::parser::SelectorImpl">SelectorImpl</a>&gt;::<a class="type" href="../../../../selectors/parser/trait.SelectorImpl.html#associatedtype.BorrowedNamespaceUrl" title="type selectors::parser::SelectorImpl::BorrowedNamespaceUrl">BorrowedNamespaceUrl</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/element_wrapper.rs.html#306-308' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Empty string for no namespace</p>
+</div><h4 id='method.attr_matches' class="method"><span id='attr_matches.v' class='invisible'><code>fn <a href='../../../../selectors/tree/trait.Element.html#tymethod.attr_matches' class='fnname'>attr_matches</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;ns: &amp;<a class="enum" href="../../../../selectors/attr/enum.NamespaceConstraint.html" title="enum selectors::attr::NamespaceConstraint">NamespaceConstraint</a>&lt;&amp;<a class="type" href="../../../../style/type.Namespace.html" title="type style::Namespace">Namespace</a>&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;local_name: &amp;<a class="type" href="../../../../style/type.LocalName.html" title="type style::LocalName">LocalName</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;operation: &amp;<a class="enum" href="../../../../selectors/attr/enum.AttrSelectorOperation.html" title="enum selectors::attr::AttrSelectorOperation">AttrSelectorOperation</a>&lt;&amp;<a class="type" href="../../../../style/selector_parser/type.AttrValue.html" title="type style::selector_parser::AttrValue">AttrValue</a>&gt;<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/element_wrapper.rs.html#310-321' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.has_id' class="method"><span id='has_id.v' class='invisible'><code>fn <a href='../../../../selectors/tree/trait.Element.html#tymethod.has_id' class='fnname'>has_id</a>(&amp;self, id: &amp;<a class="type" href="../../../../style/type.Atom.html" title="type style::Atom">Atom</a>, case_sensitivity: <a class="enum" href="../../../../selectors/attr/enum.CaseSensitivity.html" title="enum selectors::attr::CaseSensitivity">CaseSensitivity</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/element_wrapper.rs.html#323-330' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.has_class' class="method"><span id='has_class.v' class='invisible'><code>fn <a href='../../../../selectors/tree/trait.Element.html#tymethod.has_class' class='fnname'>has_class</a>(&amp;self, name: &amp;<a class="type" href="../../../../style/type.Atom.html" title="type style::Atom">Atom</a>, case_sensitivity: <a class="enum" href="../../../../selectors/attr/enum.CaseSensitivity.html" title="enum selectors::attr::CaseSensitivity">CaseSensitivity</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/element_wrapper.rs.html#332-339' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.is_empty' class="method"><span id='is_empty.v' class='invisible'><code>fn <a href='../../../../selectors/tree/trait.Element.html#tymethod.is_empty' class='fnname'>is_empty</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/element_wrapper.rs.html#341-343' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns whether this element matches <code>:empty</code>. <a href="../../../../selectors/tree/trait.Element.html#tymethod.is_empty">Read more</a></p>
+</div><h4 id='method.is_root' class="method"><span id='is_root.v' class='invisible'><code>fn <a href='../../../../selectors/tree/trait.Element.html#tymethod.is_root' class='fnname'>is_root</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/element_wrapper.rs.html#345-347' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns whether this element matches <code>:root</code>, i.e. whether it is the root element of a document. <a href="../../../../selectors/tree/trait.Element.html#tymethod.is_root">Read more</a></p>
+</div><h4 id='method.pseudo_element_originating_element' class="method"><span id='pseudo_element_originating_element.v' class='invisible'><code>fn <a href='../../../../selectors/tree/trait.Element.html#method.pseudo_element_originating_element' class='fnname'>pseudo_element_originating_element</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;Self&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/element_wrapper.rs.html#349-352' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>The parent of a given pseudo-element, after matching a pseudo-element selector. <a href="../../../../selectors/tree/trait.Element.html#method.pseudo_element_originating_element">Read more</a></p>
+</div><h4 id='method.blocks_ancestor_combinators' class="method"><span id='blocks_ancestor_combinators.v' class='invisible'><code>fn <a href='../../../../selectors/tree/trait.Element.html#method.blocks_ancestor_combinators' class='fnname'>blocks_ancestor_combinators</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/invalidation/element/element_wrapper.rs.html#354-356' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Return true if we want to stop lookup ancestor of the current element while matching complex selectors with descendant/child combinator. <a href="../../../../selectors/tree/trait.Element.html#method.blocks_ancestor_combinators">Read more</a></p>
+</div><h4 id='method.assigned_slot' class="method"><span id='assigned_slot.v' class='invisible'><code>fn <a href='../../../../selectors/tree/trait.Element.html#method.assigned_slot' class='fnname'>assigned_slot</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;Self&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/selectors/tree.rs.html#90-92' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the assigned  element this element is assigned to. <a href="../../../../selectors/tree/trait.Element.html#method.assigned_slot">Read more</a></p>
+</div><h4 id='method.ignores_nth_child_selectors' class="method"><span id='ignores_nth_child_selectors.v' class='invisible'><code>fn <a href='../../../../selectors/tree/trait.Element.html#method.ignores_nth_child_selectors' class='fnname'>ignores_nth_child_selectors</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/selectors/tree.rs.html#119-121' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns whether this element should ignore matching nth child selector. <a href="../../../../selectors/tree/trait.Element.html#method.ignores_nth_child_selectors">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../../";
+        window.currentCrate = "style";
+    </script>
+    <script src="../../../../main.js"></script>
+    <script defer src="../../../../search-index.js"></script>
+</body>
+</html>

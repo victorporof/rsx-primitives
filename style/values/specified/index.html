@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `specified` mod in crate `style`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, specified">
+
+    <title>style::values::specified - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc mod">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Module specified</p><div class="block items"><ul><li><a href="#reexports">Reexports</a></li><li><a href="#modules">Modules</a></li><li><a href="#structs">Structs</a></li><li><a href="#enums">Enums</a></li><li><a href="#types">Type Definitions</a></li></ul></div><p class='location'><a href='../../index.html'>style</a>::<wbr><a href='../index.html'>values</a></p><script>window.sidebarCurrent = {name: 'specified', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Module <a href='../../index.html'>style</a>::<wbr><a href='../index.html'>values</a>::<wbr><a class="mod" href=''>specified</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../src/style/values/specified/mod.rs.html#5-807' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p>Specified values.</p>
+
+<p>TODO(emilio): Enhance docs.</p>
+</div><h2 id='reexports' class='section-header'><a href="#reexports">Reexports</a></h2>
+<table><tr><td><code>pub use properties::animated_properties::<a class="enum" href="../../../style/properties/animated_properties/enum.TransitionProperty.html" title="enum style::properties::animated_properties::TransitionProperty">TransitionProperty</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./angle/index.html">angle</a>::<a class="struct" href="../../../style/values/specified/angle/struct.Angle.html" title="struct style::values::specified::angle::Angle">Angle</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./background/index.html">background</a>::<a class="enum" href="../../../style/values/specified/background/enum.BackgroundRepeat.html" title="enum style::values::specified::background::BackgroundRepeat">BackgroundRepeat</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./background/index.html">background</a>::<a class="type" href="../../../style/values/specified/background/type.BackgroundSize.html" title="type style::values::specified::background::BackgroundSize">BackgroundSize</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./border/index.html">border</a>::<a class="type" href="../../../style/values/specified/border/type.BorderCornerRadius.html" title="type style::values::specified::border::BorderCornerRadius">BorderCornerRadius</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./border/index.html">border</a>::<a class="type" href="../../../style/values/specified/border/type.BorderImageSlice.html" title="type style::values::specified::border::BorderImageSlice">BorderImageSlice</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./border/index.html">border</a>::<a class="type" href="../../../style/values/specified/border/type.BorderImageWidth.html" title="type style::values::specified::border::BorderImageWidth">BorderImageWidth</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./border/index.html">border</a>::<a class="type" href="../../../style/values/specified/border/type.BorderImageSideWidth.html" title="type style::values::specified::border::BorderImageSideWidth">BorderImageSideWidth</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./border/index.html">border</a>::<a class="type" href="../../../style/values/specified/border/type.BorderRadius.html" title="type style::values::specified::border::BorderRadius">BorderRadius</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./border/index.html">border</a>::<a class="enum" href="../../../style/values/specified/border/enum.BorderSideWidth.html" title="enum style::values::specified::border::BorderSideWidth">BorderSideWidth</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./border/index.html">border</a>::<a class="type" href="../../../style/values/specified/border/type.BorderSpacing.html" title="type style::values::specified::border::BorderSpacing">BorderSpacing</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./font/index.html">font</a>::<a class="enum" href="../../../style/values/specified/font/enum.FontSize.html" title="enum style::values::specified::font::FontSize">FontSize</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./font/index.html">font</a>::<a class="enum" href="../../../style/values/specified/font/enum.FontSizeAdjust.html" title="enum style::values::specified::font::FontSizeAdjust">FontSizeAdjust</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./font/index.html">font</a>::<a class="struct" href="../../../style/values/specified/font/struct.FontSynthesis.html" title="struct style::values::specified::font::FontSynthesis">FontSynthesis</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./font/index.html">font</a>::<a class="enum" href="../../../style/values/specified/font/enum.FontWeight.html" title="enum style::values::specified::font::FontWeight">FontWeight</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./font/index.html">font</a>::<a class="enum" href="../../../style/values/specified/font/enum.FontVariantAlternates.html" title="enum style::values::specified::font::FontVariantAlternates">FontVariantAlternates</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./font/index.html">font</a>::<a class="enum" href="../../../style/values/specified/font/enum.FontFamily.html" title="enum style::values::specified::font::FontFamily">FontFamily</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./font/index.html">font</a>::<a class="enum" href="../../../style/values/specified/font/enum.FontLanguageOverride.html" title="enum style::values::specified::font::FontLanguageOverride">FontLanguageOverride</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./font/index.html">font</a>::<a class="type" href="../../../style/values/specified/font/type.FontVariantSettings.html" title="type style::values::specified::font::FontVariantSettings">FontVariantSettings</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./font/index.html">font</a>::<a class="enum" href="../../../style/values/specified/font/enum.FontVariantEastAsian.html" title="enum style::values::specified::font::FontVariantEastAsian">FontVariantEastAsian</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./font/index.html">font</a>::<a class="enum" href="../../../style/values/specified/font/enum.FontVariantLigatures.html" title="enum style::values::specified::font::FontVariantLigatures">FontVariantLigatures</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./font/index.html">font</a>::<a class="enum" href="../../../style/values/specified/font/enum.FontVariantNumeric.html" title="enum style::values::specified::font::FontVariantNumeric">FontVariantNumeric</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./font/index.html">font</a>::<a class="enum" href="../../../style/values/specified/font/enum.FontFeatureSettings.html" title="enum style::values::specified::font::FontFeatureSettings">FontFeatureSettings</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./font/index.html">font</a>::<a class="enum" href="../../../style/values/specified/font/enum.MozScriptLevel.html" title="enum style::values::specified::font::MozScriptLevel">MozScriptLevel</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./font/index.html">font</a>::<a class="struct" href="../../../style/values/specified/font/struct.MozScriptMinSize.html" title="struct style::values::specified::font::MozScriptMinSize">MozScriptMinSize</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./font/index.html">font</a>::<a class="struct" href="../../../style/values/specified/font/struct.MozScriptSizeMultiplier.html" title="struct style::values::specified::font::MozScriptSizeMultiplier">MozScriptSizeMultiplier</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./font/index.html">font</a>::<a class="struct" href="../../../style/values/specified/font/struct.XTextZoom.html" title="struct style::values::specified::font::XTextZoom">XTextZoom</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./font/index.html">font</a>::<a class="struct" href="../../../style/values/specified/font/struct.XLang.html" title="struct style::values::specified::font::XLang">XLang</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./box_/index.html">box_</a>::<a class="type" href="../../../style/values/specified/box_/type.AnimationIterationCount.html" title="type style::values::specified::box_::AnimationIterationCount">AnimationIterationCount</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./box_/index.html">box_</a>::<a class="struct" href="../../../style/values/specified/box_/struct.AnimationName.html" title="struct style::values::specified::box_::AnimationName">AnimationName</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./box_/index.html">box_</a>::<a class="enum" href="../../../style/values/specified/box_/enum.OverscrollBehavior.html" title="enum style::values::specified::box_::OverscrollBehavior">OverscrollBehavior</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./box_/index.html">box_</a>::<a class="enum" href="../../../style/values/specified/box_/enum.OverflowClipBox.html" title="enum style::values::specified::box_::OverflowClipBox">OverflowClipBox</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./box_/index.html">box_</a>::<a class="enum" href="../../../style/values/specified/box_/enum.ScrollSnapType.html" title="enum style::values::specified::box_::ScrollSnapType">ScrollSnapType</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./box_/index.html">box_</a>::<a class="type" href="../../../style/values/specified/box_/type.VerticalAlign.html" title="type style::values::specified::box_::VerticalAlign">VerticalAlign</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./box_/index.html">box_</a>::<a class="enum" href="../../../style/values/specified/box_/enum.WillChange.html" title="enum style::values::specified::box_::WillChange">WillChange</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./color/index.html">color</a>::<a class="enum" href="../../../style/values/specified/color/enum.Color.html" title="enum style::values::specified::color::Color">Color</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./color/index.html">color</a>::<a class="struct" href="../../../style/values/specified/color/struct.ColorPropertyValue.html" title="struct style::values::specified::color::ColorPropertyValue">ColorPropertyValue</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./color/index.html">color</a>::<a class="struct" href="../../../style/values/specified/color/struct.RGBAColor.html" title="struct style::values::specified::color::RGBAColor">RGBAColor</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./effects/index.html">effects</a>::<a class="type" href="../../../style/values/specified/effects/type.BoxShadow.html" title="type style::values::specified::effects::BoxShadow">BoxShadow</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./effects/index.html">effects</a>::<a class="type" href="../../../style/values/specified/effects/type.Filter.html" title="type style::values::specified::effects::Filter">Filter</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./effects/index.html">effects</a>::<a class="type" href="../../../style/values/specified/effects/type.SimpleShadow.html" title="type style::values::specified::effects::SimpleShadow">SimpleShadow</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./flex/index.html">flex</a>::<a class="type" href="../../../style/values/specified/flex/type.FlexBasis.html" title="type style::values::specified::flex::FlexBasis">FlexBasis</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./image/index.html">image</a>::<a class="type" href="../../../style/values/specified/image/type.ColorStop.html" title="type style::values::specified::image::ColorStop">ColorStop</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./image/index.html">image</a>::<a class="type" href="../../../style/values/specified/image/type.EndingShape.html" title="type style::values::specified::image::EndingShape">EndingShape</a> as GradientEndingShape;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./image/index.html">image</a>::<a class="type" href="../../../style/values/specified/image/type.Gradient.html" title="type style::values::specified::image::Gradient">Gradient</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./image/index.html">image</a>::<a class="type" href="../../../style/values/specified/image/type.GradientItem.html" title="type style::values::specified::image::GradientItem">GradientItem</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./image/index.html">image</a>::<a class="type" href="../../../style/values/specified/image/type.GradientKind.html" title="type style::values::specified::image::GradientKind">GradientKind</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./image/index.html">image</a>::<a class="type" href="../../../style/values/specified/image/type.Image.html" title="type style::values::specified::image::Image">Image</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./image/index.html">image</a>::<a class="type" href="../../../style/values/specified/image/type.ImageLayer.html" title="type style::values::specified::image::ImageLayer">ImageLayer</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./image/index.html">image</a>::<a class="type" href="../../../style/values/specified/image/type.MozImageRect.html" title="type style::values::specified::image::MozImageRect">MozImageRect</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./length/index.html">length</a>::<a class="enum" href="../../../style/values/specified/length/enum.AbsoluteLength.html" title="enum style::values::specified::length::AbsoluteLength">AbsoluteLength</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./length/index.html">length</a>::<a class="struct" href="../../../style/values/specified/calc/struct.CalcLengthOrPercentage.html" title="struct style::values::specified::calc::CalcLengthOrPercentage">CalcLengthOrPercentage</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./length/index.html">length</a>::<a class="struct" href="../../../style/values/specified/length/struct.CharacterWidth.html" title="struct style::values::specified::length::CharacterWidth">CharacterWidth</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./length/index.html">length</a>::<a class="enum" href="../../../style/values/specified/length/enum.FontRelativeLength.html" title="enum style::values::specified::length::FontRelativeLength">FontRelativeLength</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./length/index.html">length</a>::<a class="enum" href="../../../style/values/specified/length/enum.Length.html" title="enum style::values::specified::length::Length">Length</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./length/index.html">length</a>::<a class="type" href="../../../style/values/specified/length/type.LengthOrNone.html" title="type style::values::specified::length::LengthOrNone">LengthOrNone</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./length/index.html">length</a>::<a class="type" href="../../../style/values/specified/length/type.LengthOrNumber.html" title="type style::values::specified::length::LengthOrNumber">LengthOrNumber</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./length/index.html">length</a>::<a class="enum" href="../../../style/values/specified/length/enum.LengthOrPercentage.html" title="enum style::values::specified::length::LengthOrPercentage">LengthOrPercentage</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./length/index.html">length</a>::<a class="enum" href="../../../style/values/specified/length/enum.LengthOrPercentageOrAuto.html" title="enum style::values::specified::length::LengthOrPercentageOrAuto">LengthOrPercentageOrAuto</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./length/index.html">length</a>::<a class="enum" href="../../../style/values/specified/length/enum.LengthOrPercentageOrNone.html" title="enum style::values::specified::length::LengthOrPercentageOrNone">LengthOrPercentageOrNone</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./length/index.html">length</a>::<a class="enum" href="../../../style/values/specified/length/enum.MaxLength.html" title="enum style::values::specified::length::MaxLength">MaxLength</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./length/index.html">length</a>::<a class="enum" href="../../../style/values/specified/length/enum.MozLength.html" title="enum style::values::specified::length::MozLength">MozLength</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./length/index.html">length</a>::<a class="enum" href="../../../style/values/specified/length/enum.NoCalcLength.html" title="enum style::values::specified::length::NoCalcLength">NoCalcLength</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./length/index.html">length</a>::<a class="enum" href="../../../style/values/specified/length/enum.ViewportPercentageLength.html" title="enum style::values::specified::length::ViewportPercentageLength">ViewportPercentageLength</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./length/index.html">length</a>::<a class="type" href="../../../style/values/specified/length/type.NonNegativeLengthOrPercentage.html" title="type style::values::specified::length::NonNegativeLengthOrPercentage">NonNegativeLengthOrPercentage</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./list/index.html">list</a>::<a class="struct" href="../../../style/values/specified/list/struct.ListStyleImage.html" title="struct style::values::specified::list::ListStyleImage">ListStyleImage</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./list/index.html">list</a>::<a class="struct" href="../../../style/values/specified/list/struct.Quotes.html" title="struct style::values::specified::list::Quotes">Quotes</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./outline/index.html">outline</a>::<a class="enum" href="../../../style/values/specified/outline/enum.OutlineStyle.html" title="enum style::values::specified::outline::OutlineStyle">OutlineStyle</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./rect/index.html">rect</a>::<a class="type" href="../../../style/values/specified/rect/type.LengthOrNumberRect.html" title="type style::values::specified::rect::LengthOrNumberRect">LengthOrNumberRect</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./percentage/index.html">percentage</a>::<a class="struct" href="../../../style/values/specified/percentage/struct.Percentage.html" title="struct style::values::specified::percentage::Percentage">Percentage</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./position/index.html">position</a>::<a class="type" href="../../../style/values/specified/position/type.Position.html" title="type style::values::specified::position::Position">Position</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./position/index.html">position</a>::<a class="enum" href="../../../style/values/specified/position/enum.PositionComponent.html" title="enum style::values::specified::position::PositionComponent">PositionComponent</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./position/index.html">position</a>::<a class="struct" href="../../../style/values/specified/position/struct.GridAutoFlow.html" title="struct style::values::specified::position::GridAutoFlow">GridAutoFlow</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./position/index.html">position</a>::<a class="type" href="../../../style/values/specified/position/type.GridTemplateAreas.html" title="type style::values::specified::position::GridTemplateAreas">GridTemplateAreas</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./svg/index.html">svg</a>::<a class="type" href="../../../style/values/specified/svg/type.SVGLength.html" title="type style::values::specified::svg::SVGLength">SVGLength</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./svg/index.html">svg</a>::<a class="type" href="../../../style/values/specified/svg/type.SVGOpacity.html" title="type style::values::specified::svg::SVGOpacity">SVGOpacity</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./svg/index.html">svg</a>::<a class="type" href="../../../style/values/specified/svg/type.SVGPaint.html" title="type style::values::specified::svg::SVGPaint">SVGPaint</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./svg/index.html">svg</a>::<a class="type" href="../../../style/values/specified/svg/type.SVGPaintKind.html" title="type style::values::specified::svg::SVGPaintKind">SVGPaintKind</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./svg/index.html">svg</a>::<a class="type" href="../../../style/values/specified/svg/type.SVGStrokeDashArray.html" title="type style::values::specified::svg::SVGStrokeDashArray">SVGStrokeDashArray</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./svg/index.html">svg</a>::<a class="type" href="../../../style/values/specified/svg/type.SVGWidth.html" title="type style::values::specified::svg::SVGWidth">SVGWidth</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./table/index.html">table</a>::<a class="struct" href="../../../style/values/specified/table/struct.XSpan.html" title="struct style::values::specified::table::XSpan">XSpan</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./text/index.html">text</a>::<a class="type" href="../../../style/values/specified/text/type.InitialLetter.html" title="type style::values::specified::text::InitialLetter">InitialLetter</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./text/index.html">text</a>::<a class="type" href="../../../style/values/specified/text/type.LetterSpacing.html" title="type style::values::specified::text::LetterSpacing">LetterSpacing</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./text/index.html">text</a>::<a class="type" href="../../../style/values/specified/text/type.LineHeight.html" title="type style::values::specified::text::LineHeight">LineHeight</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./text/index.html">text</a>::<a class="struct" href="../../../style/values/specified/text/struct.TextDecorationLine.html" title="struct style::values::specified::text::TextDecorationLine">TextDecorationLine</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./text/index.html">text</a>::<a class="enum" href="../../../style/values/specified/text/enum.TextAlign.html" title="enum style::values::specified::text::TextAlign">TextAlign</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./text/index.html">text</a>::<a class="enum" href="../../../style/values/specified/text/enum.TextAlignKeyword.html" title="enum style::values::specified::text::TextAlignKeyword">TextAlignKeyword</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./text/index.html">text</a>::<a class="struct" href="../../../style/values/specified/text/struct.TextOverflow.html" title="struct style::values::specified::text::TextOverflow">TextOverflow</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./text/index.html">text</a>::<a class="type" href="../../../style/values/specified/text/type.WordSpacing.html" title="type style::values::specified::text::WordSpacing">WordSpacing</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./time/index.html">time</a>::<a class="struct" href="../../../style/values/specified/time/struct.Time.html" title="struct style::values::specified::time::Time">Time</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./transform/index.html">transform</a>::<a class="type" href="../../../style/values/specified/transform/type.TimingFunction.html" title="type style::values::specified::transform::TimingFunction">TimingFunction</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./transform/index.html">transform</a>::<a class="type" href="../../../style/values/specified/transform/type.Transform.html" title="type style::values::specified::transform::Transform">Transform</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./transform/index.html">transform</a>::<a class="type" href="../../../style/values/specified/transform/type.TransformOrigin.html" title="type style::values::specified::transform::TransformOrigin">TransformOrigin</a>;</code></td></tr><tr><td><code>pub use self::<a class="mod" href="./ui/index.html">ui</a>::<a class="struct" href="../../../style/values/specified/ui/struct.MozForceBrokenImageIcon.html" title="struct style::values::specified::ui::MozForceBrokenImageIcon">MozForceBrokenImageIcon</a>;</code></td></tr><tr><td><code>pub use super::generics::grid::<a class="enum" href="../../../style/values/generics/grid/enum.GridTemplateComponent.html" title="enum style::values::generics::grid::GridTemplateComponent">GridTemplateComponent</a> as GenericGridTemplateComponent;</code></td></tr></table><h2 id='modules' class='section-header'><a href="#modules">Modules</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="angle/index.html"
+                                  title='mod style::values::specified::angle'>angle</a></td>
+                           <td class='docblock-short'>
+                                <p>Specified angles.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="background/index.html"
+                                  title='mod style::values::specified::background'>background</a></td>
+                           <td class='docblock-short'>
+                                <p>Specified types for CSS values related to backgrounds.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="basic_shape/index.html"
+                                  title='mod style::values::specified::basic_shape'>basic_shape</a></td>
+                           <td class='docblock-short'>
+                                <p>CSS handling for the specified value of
+<a href="https://drafts.csswg.org/css-shapes/#typedef-basic-shape"><code>basic-shape</code></a>s</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="border/index.html"
+                                  title='mod style::values::specified::border'>border</a></td>
+                           <td class='docblock-short'>
+                                <p>Specified types for CSS values related to borders.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="box_/index.html"
+                                  title='mod style::values::specified::box_'>box_</a></td>
+                           <td class='docblock-short'>
+                                <p>Specified types for box properties.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="calc/index.html"
+                                  title='mod style::values::specified::calc'>calc</a></td>
+                           <td class='docblock-short'>
+                                <p><a href="https://drafts.csswg.org/css-values/#calc-notation">Calc expressions</a>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="color/index.html"
+                                  title='mod style::values::specified::color'>color</a></td>
+                           <td class='docblock-short'>
+                                <p>Specified color values.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="effects/index.html"
+                                  title='mod style::values::specified::effects'>effects</a></td>
+                           <td class='docblock-short'>
+                                <p>Specified types for CSS values related to effects.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="flex/index.html"
+                                  title='mod style::values::specified::flex'>flex</a></td>
+                           <td class='docblock-short'>
+                                <p>Specified types for CSS values related to flexbox.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="font/index.html"
+                                  title='mod style::values::specified::font'>font</a></td>
+                           <td class='docblock-short'>
+                                <p>Specified values for font properties</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="grid/index.html"
+                                  title='mod style::values::specified::grid'>grid</a></td>
+                           <td class='docblock-short'>
+                                <p>CSS handling for the computed value of
+<a href="https://drafts.csswg.org/css-grid/">grids</a></p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="image/index.html"
+                                  title='mod style::values::specified::image'>image</a></td>
+                           <td class='docblock-short'>
+                                <p>CSS handling for the specified value of
+<a href="https://drafts.csswg.org/css-images/#image-values"><code>image</code></a>s</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="length/index.html"
+                                  title='mod style::values::specified::length'>length</a></td>
+                           <td class='docblock-short'>
+                                <p><a href="https://drafts.csswg.org/css-values/#lengths">Length values</a>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="list/index.html"
+                                  title='mod style::values::specified::list'>list</a></td>
+                           <td class='docblock-short'>
+                                <p><code>list</code> specified values.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="outline/index.html"
+                                  title='mod style::values::specified::outline'>outline</a></td>
+                           <td class='docblock-short'>
+                                <p>Specified values for outline properties</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="percentage/index.html"
+                                  title='mod style::values::specified::percentage'>percentage</a></td>
+                           <td class='docblock-short'>
+                                <p>Specified percentages.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="position/index.html"
+                                  title='mod style::values::specified::position'>position</a></td>
+                           <td class='docblock-short'>
+                                <p>CSS handling for the specified value of
+<a href="https://drafts.csswg.org/css-backgrounds-3/#position"><code>position</code></a>s</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="rect/index.html"
+                                  title='mod style::values::specified::rect'>rect</a></td>
+                           <td class='docblock-short'>
+                                <p>Specified types for CSS borders.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="source_size_list/index.html"
+                                  title='mod style::values::specified::source_size_list'>source_size_list</a></td>
+                           <td class='docblock-short'>
+                                <p><a href="https://html.spec.whatwg.org/multipage/#source-size-list">https://html.spec.whatwg.org/multipage/#source-size-list</a></p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="svg/index.html"
+                                  title='mod style::values::specified::svg'>svg</a></td>
+                           <td class='docblock-short'>
+                                <p>Specified types for SVG properties.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="table/index.html"
+                                  title='mod style::values::specified::table'>table</a></td>
+                           <td class='docblock-short'>
+                                <p>Specified types for table properties.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="text/index.html"
+                                  title='mod style::values::specified::text'>text</a></td>
+                           <td class='docblock-short'>
+                                <p>Specified types for text properties.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="time/index.html"
+                                  title='mod style::values::specified::time'>time</a></td>
+                           <td class='docblock-short'>
+                                <p>Specified time values.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="transform/index.html"
+                                  title='mod style::values::specified::transform'>transform</a></td>
+                           <td class='docblock-short'>
+                                <p>Specified types for CSS values that are related to transformations.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="ui/index.html"
+                                  title='mod style::values::specified::ui'>ui</a></td>
+                           <td class='docblock-short'>
+                                <p>Specified types for UI properties.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="url/index.html"
+                                  title='mod style::values::specified::url'>url</a></td>
+                           <td class='docblock-short'>
+                                <p>Common handling for the specified value CSS url() values.</p>
+                           </td>
+                       </tr></table><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Attr.html"
+                                  title='struct style::values::specified::Attr'>Attr</a></td>
+                           <td class='docblock-short'>
+                                <p>An attr(...) rule</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ClipRect.html"
+                                  title='struct style::values::specified::ClipRect'>ClipRect</a></td>
+                           <td class='docblock-short'>
+                                <p>rect(<top>, <left>, <bottom>, <right>) used by clip and image-region</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Integer.html"
+                                  title='struct style::values::specified::Integer'>Integer</a></td>
+                           <td class='docblock-short'>
+                                <p>An specified <code>&lt;integer&gt;</code>, optionally coming from a <code>calc()</code> expression.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Number.html"
+                                  title='struct style::values::specified::Number'>Number</a></td>
+                           <td class='docblock-short'>
+                                <p>A CSS <code>&lt;number&gt;</code> specified value.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Opacity.html"
+                                  title='struct style::values::specified::Opacity'>Opacity</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.AllowQuirks.html"
+                                  title='enum style::values::specified::AllowQuirks'>AllowQuirks</a></td>
+                           <td class='docblock-short'>
+                                <p>Whether quirks are allowed in this context.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.BorderStyle.html"
+                                  title='enum style::values::specified::BorderStyle'>BorderStyle</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.NumberOrPercentage.html"
+                                  title='enum style::values::specified::NumberOrPercentage'>NumberOrPercentage</a></td>
+                           <td class='docblock-short'>
+                                <p><number> | <percentage></p>
+                           </td>
+                       </tr></table><h2 id='types' class='section-header'><a href="#types">Type Definitions</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.ClipRectOrAuto.html"
+                                  title='type style::values::specified::ClipRectOrAuto'>ClipRectOrAuto</a></td>
+                           <td class='docblock-short'>
+                                <p>rect(...) | auto</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.ColorOrAuto.html"
+                                  title='type style::values::specified::ColorOrAuto'>ColorOrAuto</a></td>
+                           <td class='docblock-short'>
+                                <p><color> | auto</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.GreaterThanOrEqualToOneNumber.html"
+                                  title='type style::values::specified::GreaterThanOrEqualToOneNumber'>GreaterThanOrEqualToOneNumber</a></td>
+                           <td class='docblock-short'>
+                                <p>A Number which is &gt;= 1.0.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.GridLine.html"
+                                  title='type style::values::specified::GridLine'>GridLine</a></td>
+                           <td class='docblock-short'>
+                                <p>The specified value of a <code>&lt;grid-line&gt;</code>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.GridTemplateComponent.html"
+                                  title='type style::values::specified::GridTemplateComponent'>GridTemplateComponent</a></td>
+                           <td class='docblock-short'>
+                                <p><code>&lt;grid-template-rows&gt; | &lt;grid-template-columns&gt;</code></p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.IntegerOrAuto.html"
+                                  title='type style::values::specified::IntegerOrAuto'>IntegerOrAuto</a></td>
+                           <td class='docblock-short'>
+                                <p><integer> | auto</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.LengthOrPercentageOrNumber.html"
+                                  title='type style::values::specified::LengthOrPercentageOrNumber'>LengthOrPercentageOrNumber</a></td>
+                           <td class='docblock-short'>
+                                <p><length> | <percentage> | <number></p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.NamespaceId.html"
+                                  title='type style::values::specified::NamespaceId'>NamespaceId</a></td>
+                           <td class='docblock-short'>
+                                <p>A namespace ID (used by gecko only)</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.NonNegativeLengthOrPercentageOrNumber.html"
+                                  title='type style::values::specified::NonNegativeLengthOrPercentageOrNumber'>NonNegativeLengthOrPercentageOrNumber</a></td>
+                           <td class='docblock-short'>
+                                <p>NonNegativeLengthOrPercentage | NonNegativeNumber</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.NonNegativeNumber.html"
+                                  title='type style::values::specified::NonNegativeNumber'>NonNegativeNumber</a></td>
+                           <td class='docblock-short'>
+                                <p>A Number which is &gt;= 0.0.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.PositiveInteger.html"
+                                  title='type style::values::specified::PositiveInteger'>PositiveInteger</a></td>
+                           <td class='docblock-short'>
+                                <p>A wrapper of Integer, with value &gt;= 1.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.PositiveIntegerOrAuto.html"
+                                  title='type style::values::specified::PositiveIntegerOrAuto'>PositiveIntegerOrAuto</a></td>
+                           <td class='docblock-short'>
+                                <p>PositiveInteger | auto</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.TrackBreadth.html"
+                                  title='type style::values::specified::TrackBreadth'>TrackBreadth</a></td>
+                           <td class='docblock-short'>
+                                <p>The specified value of a grid <code>&lt;track-breadth&gt;</code></p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.TrackList.html"
+                                  title='type style::values::specified::TrackList'>TrackList</a></td>
+                           <td class='docblock-short'>
+                                <p>The specified value of a grid <code>&lt;track-list&gt;</code>
+(could also be <code>&lt;auto-track-list&gt;</code> or <code>&lt;explicit-track-list&gt;</code>)</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.TrackSize.html"
+                                  title='type style::values::specified::TrackSize'>TrackSize</a></td>
+                           <td class='docblock-short'>
+                                <p>The specified value of a grid <code>&lt;track-size&gt;</code></p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.UrlOrNone.html"
+                                  title='type style::values::specified::UrlOrNone'>UrlOrNone</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "style";
+    </script>
+    <script src="../../../main.js"></script>
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

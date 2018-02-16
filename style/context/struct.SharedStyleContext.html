@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `SharedStyleContext` struct in crate `style`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, SharedStyleContext">
+
+    <title>style::context::SharedStyleContext - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct SharedStyleContext</p><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.stylist">stylist</a><a href="#structfield.visited_styles_enabled">visited_styles_enabled</a><a href="#structfield.options">options</a><a href="#structfield.guards">guards</a><a href="#structfield.timer">timer</a><a href="#structfield.traversal_flags">traversal_flags</a><a href="#structfield.snapshot_map">snapshot_map</a><a href="#structfield.running_animations">running_animations</a><a href="#structfield.expired_animations">expired_animations</a><a href="#structfield.registered_speculative_painters">registered_speculative_painters</a><a href="#structfield.local_context_creation_data">local_context_creation_data</a></div><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.viewport_size">viewport_size</a><a href="#method.device_pixel_ratio">device_pixel_ratio</a><a href="#method.quirks_mode">quirks_mode</a></div></div><p class='location'><a href='../index.html'>style</a>::<wbr><a href='index.html'>context</a></p><script>window.sidebarCurrent = {name: 'SharedStyleContext', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>style</a>::<wbr><a href='index.html'>context</a>::<wbr><a class="struct" href=''>SharedStyleContext</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/style/context.rs.html#138-180' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct SharedStyleContext&lt;'a&gt; {
+    pub stylist: &amp;'a <a class="struct" href="../../style/stylist/struct.Stylist.html" title="struct style::stylist::Stylist">Stylist</a>,
+    pub visited_styles_enabled: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
+    pub options: <a class="struct" href="../../style/context/struct.StyleSystemOptions.html" title="struct style::context::StyleSystemOptions">StyleSystemOptions</a>,
+    pub guards: <a class="struct" href="../../style/shared_lock/struct.StylesheetGuards.html" title="struct style::shared_lock::StylesheetGuards">StylesheetGuards</a>&lt;'a&gt;,
+    pub timer: <a class="struct" href="../../style/timer/struct.Timer.html" title="struct style::timer::Timer">Timer</a>,
+    pub traversal_flags: <a class="struct" href="../../style/traversal_flags/struct.TraversalFlags.html" title="struct style::traversal_flags::TraversalFlags">TraversalFlags</a>,
+    pub snapshot_map: &amp;'a <a class="struct" href="../../style/servo/selector_parser/struct.SnapshotMap.html" title="struct style::servo::selector_parser::SnapshotMap">SnapshotMap</a>,
+    pub running_animations: <a class="struct" href="../../style/properties/struct.BuilderArc.html" title="struct style::properties::BuilderArc">Arc</a>&lt;<a class="struct" href="../../parking_lot/rwlock/struct.RwLock.html" title="struct parking_lot::rwlock::RwLock">RwLock</a>&lt;<a class="type" href="../../fnv/type.FnvHashMap.html" title="type fnv::FnvHashMap">FnvHashMap</a>&lt;<a class="struct" href="../../style/dom/struct.OpaqueNode.html" title="struct style::dom::OpaqueNode">OpaqueNode</a>, <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="enum" href="../../style/animation/enum.Animation.html" title="enum style::animation::Animation">Animation</a>&gt;&gt;&gt;&gt;,
+    pub expired_animations: <a class="struct" href="../../style/properties/struct.BuilderArc.html" title="struct style::properties::BuilderArc">Arc</a>&lt;<a class="struct" href="../../parking_lot/rwlock/struct.RwLock.html" title="struct parking_lot::rwlock::RwLock">RwLock</a>&lt;<a class="type" href="../../fnv/type.FnvHashMap.html" title="type fnv::FnvHashMap">FnvHashMap</a>&lt;<a class="struct" href="../../style/dom/struct.OpaqueNode.html" title="struct style::dom::OpaqueNode">OpaqueNode</a>, <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="enum" href="../../style/animation/enum.Animation.html" title="enum style::animation::Animation">Animation</a>&gt;&gt;&gt;&gt;,
+    pub registered_speculative_painters: &amp;'a <a class="trait" href="../../style/context/trait.RegisteredSpeculativePainters.html" title="trait style::context::RegisteredSpeculativePainters">RegisteredSpeculativePainters</a>,
+    pub local_context_creation_data: <a class="struct" href="https://doc.rust-lang.org/nightly/std/sync/mutex/struct.Mutex.html" title="struct std::sync::mutex::Mutex">Mutex</a>&lt;<a class="struct" href="../../style/context/struct.ThreadLocalStyleContextCreationInfo.html" title="struct style::context::ThreadLocalStyleContextCreationInfo">ThreadLocalStyleContextCreationInfo</a>&gt;,
+}</pre><div class='docblock'><p>A shared style context.</p>
+
+<p>There&#39;s exactly one of these during a given restyle traversal, and it&#39;s
+shared among the worker threads.</p>
+</div><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.stylist" class="structfield small-section-header">
+                           <a href="#structfield.stylist" class="anchor field"></a>
+                           <span id="stylist.v" class='invisible'>
+                           <code>stylist: &amp;'a <a class="struct" href="../../style/stylist/struct.Stylist.html" title="struct style::stylist::Stylist">Stylist</a></code>
+                           </span></span><div class='docblock'><p>The CSS selector stylist.</p>
+</div><span id="structfield.visited_styles_enabled" class="structfield small-section-header">
+                           <a href="#structfield.visited_styles_enabled" class="anchor field"></a>
+                           <span id="visited_styles_enabled.v" class='invisible'>
+                           <code>visited_styles_enabled: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code>
+                           </span></span><div class='docblock'><p>Whether visited styles are enabled.</p>
+
+<p>They may be disabled when Gecko&#39;s pref layout.css.visited_links_enabled
+is false, or when in private browsing mode.</p>
+</div><span id="structfield.options" class="structfield small-section-header">
+                           <a href="#structfield.options" class="anchor field"></a>
+                           <span id="options.v" class='invisible'>
+                           <code>options: <a class="struct" href="../../style/context/struct.StyleSystemOptions.html" title="struct style::context::StyleSystemOptions">StyleSystemOptions</a></code>
+                           </span></span><div class='docblock'><p>Configuration options.</p>
+</div><span id="structfield.guards" class="structfield small-section-header">
+                           <a href="#structfield.guards" class="anchor field"></a>
+                           <span id="guards.v" class='invisible'>
+                           <code>guards: <a class="struct" href="../../style/shared_lock/struct.StylesheetGuards.html" title="struct style::shared_lock::StylesheetGuards">StylesheetGuards</a>&lt;'a&gt;</code>
+                           </span></span><div class='docblock'><p>Guards for pre-acquired locks</p>
+</div><span id="structfield.timer" class="structfield small-section-header">
+                           <a href="#structfield.timer" class="anchor field"></a>
+                           <span id="timer.v" class='invisible'>
+                           <code>timer: <a class="struct" href="../../style/timer/struct.Timer.html" title="struct style::timer::Timer">Timer</a></code>
+                           </span></span><div class='docblock'><p>The current timer for transitions and animations. This is needed to test
+them.</p>
+</div><span id="structfield.traversal_flags" class="structfield small-section-header">
+                           <a href="#structfield.traversal_flags" class="anchor field"></a>
+                           <span id="traversal_flags.v" class='invisible'>
+                           <code>traversal_flags: <a class="struct" href="../../style/traversal_flags/struct.TraversalFlags.html" title="struct style::traversal_flags::TraversalFlags">TraversalFlags</a></code>
+                           </span></span><div class='docblock'><p>Flags controlling how we traverse the tree.</p>
+</div><span id="structfield.snapshot_map" class="structfield small-section-header">
+                           <a href="#structfield.snapshot_map" class="anchor field"></a>
+                           <span id="snapshot_map.v" class='invisible'>
+                           <code>snapshot_map: &amp;'a <a class="struct" href="../../style/servo/selector_parser/struct.SnapshotMap.html" title="struct style::servo::selector_parser::SnapshotMap">SnapshotMap</a></code>
+                           </span></span><div class='docblock'><p>A map with our snapshots in order to handle restyle hints.</p>
+</div><span id="structfield.running_animations" class="structfield small-section-header">
+                           <a href="#structfield.running_animations" class="anchor field"></a>
+                           <span id="running_animations.v" class='invisible'>
+                           <code>running_animations: <a class="struct" href="../../style/properties/struct.BuilderArc.html" title="struct style::properties::BuilderArc">Arc</a>&lt;<a class="struct" href="../../parking_lot/rwlock/struct.RwLock.html" title="struct parking_lot::rwlock::RwLock">RwLock</a>&lt;<a class="type" href="../../fnv/type.FnvHashMap.html" title="type fnv::FnvHashMap">FnvHashMap</a>&lt;<a class="struct" href="../../style/dom/struct.OpaqueNode.html" title="struct style::dom::OpaqueNode">OpaqueNode</a>, <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="enum" href="../../style/animation/enum.Animation.html" title="enum style::animation::Animation">Animation</a>&gt;&gt;&gt;&gt;</code>
+                           </span></span><div class='docblock'><p>The animations that are currently running.</p>
+</div><span id="structfield.expired_animations" class="structfield small-section-header">
+                           <a href="#structfield.expired_animations" class="anchor field"></a>
+                           <span id="expired_animations.v" class='invisible'>
+                           <code>expired_animations: <a class="struct" href="../../style/properties/struct.BuilderArc.html" title="struct style::properties::BuilderArc">Arc</a>&lt;<a class="struct" href="../../parking_lot/rwlock/struct.RwLock.html" title="struct parking_lot::rwlock::RwLock">RwLock</a>&lt;<a class="type" href="../../fnv/type.FnvHashMap.html" title="type fnv::FnvHashMap">FnvHashMap</a>&lt;<a class="struct" href="../../style/dom/struct.OpaqueNode.html" title="struct style::dom::OpaqueNode">OpaqueNode</a>, <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="enum" href="../../style/animation/enum.Animation.html" title="enum style::animation::Animation">Animation</a>&gt;&gt;&gt;&gt;</code>
+                           </span></span><div class='docblock'><p>The list of animations that have expired since the last style recalculation.</p>
+</div><span id="structfield.registered_speculative_painters" class="structfield small-section-header">
+                           <a href="#structfield.registered_speculative_painters" class="anchor field"></a>
+                           <span id="registered_speculative_painters.v" class='invisible'>
+                           <code>registered_speculative_painters: &amp;'a <a class="trait" href="../../style/context/trait.RegisteredSpeculativePainters.html" title="trait style::context::RegisteredSpeculativePainters">RegisteredSpeculativePainters</a></code>
+                           </span></span><div class='docblock'><p>Paint worklets</p>
+</div><span id="structfield.local_context_creation_data" class="structfield small-section-header">
+                           <a href="#structfield.local_context_creation_data" class="anchor field"></a>
+                           <span id="local_context_creation_data.v" class='invisible'>
+                           <code>local_context_creation_data: <a class="struct" href="https://doc.rust-lang.org/nightly/std/sync/mutex/struct.Mutex.html" title="struct std::sync::mutex::Mutex">Mutex</a>&lt;<a class="struct" href="../../style/context/struct.ThreadLocalStyleContextCreationInfo.html" title="struct style::context::ThreadLocalStyleContextCreationInfo">ThreadLocalStyleContextCreationInfo</a>&gt;</code>
+                           </span></span><div class='docblock'><p>Data needed to create the thread-local style context from the shared one.</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class="struct" href="../../style/context/struct.SharedStyleContext.html" title="struct style::context::SharedStyleContext">SharedStyleContext</a>&lt;'a&gt;</code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/context.rs.html#182-197' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.viewport_size' class="method"><span id='viewport_size.v' class='invisible'><code>pub fn <a href='#method.viewport_size' class='fnname'>viewport_size</a>(&amp;self) -&gt; <a class="type" href="../../euclid/size/type.Size2D.html" title="type euclid::size::Size2D">Size2D</a>&lt;<a class="struct" href="../../style/values/computed/struct.Au.html" title="struct style::values::computed::Au">Au</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/context.rs.html#184-186' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Return a suitable viewport size in order to be used for viewport units.</p>
+</div><h4 id='method.device_pixel_ratio' class="method"><span id='device_pixel_ratio.v' class='invisible'><code>pub fn <a href='#method.device_pixel_ratio' class='fnname'>device_pixel_ratio</a>(&amp;self) -&gt; <a class="struct" href="../../euclid/scale/struct.TypedScale.html" title="struct euclid::scale::TypedScale">TypedScale</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>, <a class="enum" href="../../style_traits/enum.CSSPixel.html" title="enum style_traits::CSSPixel">CSSPixel</a>, <a class="struct" href="../../webrender_api/units/struct.DevicePixel.html" title="struct webrender_api::units::DevicePixel">DevicePixel</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/context.rs.html#189-191' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>The device pixel ratio</p>
+</div><h4 id='method.quirks_mode' class="method"><span id='quirks_mode.v' class='invisible'><code>pub fn <a href='#method.quirks_mode' class='fnname'>quirks_mode</a>(&amp;self) -&gt; <a class="enum" href="../../style/context/enum.QuirksMode.html" title="enum style::context::QuirksMode">QuirksMode</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/context.rs.html#194-196' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>The quirks mode of the document.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "style";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

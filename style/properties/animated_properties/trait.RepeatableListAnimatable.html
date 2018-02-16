@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `RepeatableListAnimatable` trait in crate `style`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, RepeatableListAnimatable">
+
+    <title>style::properties::animated_properties::RepeatableListAnimatable - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc trait">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Trait RepeatableListAnimatable</p><div class="block items"><a class="sidebar-title" href="#implementors">Implementors</a></div><p class='location'><a href='../../index.html'>style</a>::<wbr><a href='../index.html'>properties</a>::<wbr><a href='index.html'>animated_properties</a></p><script>window.sidebarCurrent = {name: 'RepeatableListAnimatable', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Trait <a href='../../index.html'>style</a>::<wbr><a href='../index.html'>properties</a>::<wbr><a href='index.html'>animated_properties</a>::<wbr><a class="trait" href=''>RepeatableListAnimatable</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#32824' title='goto source code'>[src]</a></span></h1>
+<pre class='rust trait'>pub trait RepeatableListAnimatable: <a class="trait" href="../../../style/values/animated/trait.Animate.html" title="trait style::values::animated::Animate">Animate</a> { }</pre><div class='docblock'><p><a href="https://drafts.csswg.org/css-transitions/#animtype-repeatable-list">https://drafts.csswg.org/css-transitions/#animtype-repeatable-list</a></p>
+</div>
+        <h2 id='implementors' class='small-section-header'>
+          Implementors<a href='#implementors' class='anchor'></a>
+        </h2>
+        <ul class='item-list' id='implementors-list'>
+    <li><div class='out-of-band'><a class='srclink' href='../../../src/style/values/computed/background.rs.html#30' title='goto source code'>[src]</a></div><code>impl RepeatableListAnimatable for <a class="type" href="../../../style/values/computed/background/type.BackgroundSize.html" title="type style::values::computed::background::BackgroundSize">BackgroundSize</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#44240' title='goto source code'>[src]</a></div><code>impl RepeatableListAnimatable for <a class="enum" href="../../../style/values/computed/length/enum.LengthOrPercentage.html" title="enum style::values::computed::length::LengthOrPercentage">LengthOrPercentage</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#44241' title='goto source code'>[src]</a></div><code>impl RepeatableListAnimatable for <a class="enum" href="../../../style/values/enum.Either.html" title="enum style::values::Either">Either</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>, <a class="enum" href="../../../style/values/computed/length/enum.LengthOrPercentage.html" title="enum style::values::computed::length::LengthOrPercentage">LengthOrPercentage</a>&gt;</code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#44242' title='goto source code'>[src]</a></div><code>impl RepeatableListAnimatable for <a class="enum" href="../../../style/values/enum.Either.html" title="enum style::values::Either">Either</a>&lt;<a class="type" href="../../../style/values/computed/type.NonNegativeNumber.html" title="type style::values::computed::NonNegativeNumber">NonNegativeNumber</a>, <a class="type" href="../../../style/values/computed/length/type.NonNegativeLengthOrPercentage.html" title="type style::values::computed::length::NonNegativeLengthOrPercentage">NonNegativeLengthOrPercentage</a>&gt;</code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#44243' title='goto source code'>[src]</a></div><code>impl RepeatableListAnimatable for <a class="enum" href="../../../style/values/generics/svg/enum.SvgLengthOrPercentageOrNumber.html" title="enum style::values::generics::svg::SvgLengthOrPercentageOrNumber">SvgLengthOrPercentageOrNumber</a>&lt;<a class="type" href="../../../style/values/computed/length/type.NonNegativeLengthOrPercentage.html" title="type style::values::computed::length::NonNegativeLengthOrPercentage">NonNegativeLengthOrPercentage</a>, <a class="type" href="../../../style/values/computed/type.NonNegativeNumber.html" title="type style::values::computed::NonNegativeNumber">NonNegativeNumber</a>&gt;</code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#44616-44617' title='goto source code'>[src]</a></div><code>impl&lt;H, V&gt; RepeatableListAnimatable for <a class="struct" href="../../../style/values/generics/position/struct.Position.html" title="struct style::values::generics::position::Position">Position</a>&lt;H, V&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;H: <a class="trait" href="../../../style/properties/animated_properties/trait.RepeatableListAnimatable.html" title="trait style::properties::animated_properties::RepeatableListAnimatable">RepeatableListAnimatable</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;V: <a class="trait" href="../../../style/properties/animated_properties/trait.RepeatableListAnimatable.html" title="trait style::properties::animated_properties::RepeatableListAnimatable">RepeatableListAnimatable</a>,&nbsp;</span></code></li>
+</ul><script type="text/javascript" async
+                         src="../../../implementors/style/properties/animated_properties/trait.RepeatableListAnimatable.js">
+                 </script></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "style";
+    </script>
+    <script src="../../../main.js"></script>
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Text` struct in crate `style`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Text">
+
+    <title>style::properties::style_structs::Text - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct Text</p><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.text_overflow">text_overflow</a><a href="#structfield.unicode_bidi">unicode_bidi</a><a href="#structfield.text_decoration_line">text_decoration_line</a></div><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.set_text_overflow">set_text_overflow</a><a href="#method.copy_text_overflow_from">copy_text_overflow_from</a><a href="#method.reset_text_overflow">reset_text_overflow</a><a href="#method.clone_text_overflow">clone_text_overflow</a><a href="#method.set_unicode_bidi">set_unicode_bidi</a><a href="#method.copy_unicode_bidi_from">copy_unicode_bidi_from</a><a href="#method.reset_unicode_bidi">reset_unicode_bidi</a><a href="#method.clone_unicode_bidi">clone_unicode_bidi</a><a href="#method.set_text_decoration_line">set_text_decoration_line</a><a href="#method.copy_text_decoration_line_from">copy_text_decoration_line_from</a><a href="#method.reset_text_decoration_line">reset_text_decoration_line</a><a href="#method.clone_text_decoration_line">clone_text_decoration_line</a><a href="#method.has_underline">has_underline</a><a href="#method.has_overline">has_overline</a><a href="#method.has_line_through">has_line_through</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Clone">Clone</a><a href="#impl-Debug">Debug</a><a href="#impl-MallocSizeOf">MallocSizeOf</a><a href="#impl-PartialEq">PartialEq</a></div></div><p class='location'><a href='../../index.html'>style</a>::<wbr><a href='../index.html'>properties</a>::<wbr><a href='index.html'>style_structs</a></p><script>window.sidebarCurrent = {name: 'Text', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>style</a>::<wbr><a href='../index.html'>properties</a>::<wbr><a href='index.html'>style_structs</a>::<wbr><a class="struct" href=''>Text</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#65363-65370' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Text {
+    pub text_overflow: <a class="struct" href="../../../style/values/computed/text/struct.TextOverflow.html" title="struct style::values::computed::text::TextOverflow">T</a>,
+    pub unicode_bidi: <a class="enum" href="../../../style/properties/longhands/unicode_bidi/computed_value/enum.T.html" title="enum style::properties::longhands::unicode_bidi::computed_value::T">T</a>,
+    pub text_decoration_line: <a class="struct" href="../../../style/values/specified/text/struct.TextDecorationLine.html" title="struct style::values::specified::text::TextDecorationLine">T</a>,
+}</pre><div class='docblock'><p>The Text style struct.</p>
+</div><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.text_overflow" class="structfield small-section-header">
+                           <a href="#structfield.text_overflow" class="anchor field"></a>
+                           <span id="text_overflow.v" class='invisible'>
+                           <code>text_overflow: <a class="struct" href="../../../style/values/computed/text/struct.TextOverflow.html" title="struct style::values::computed::text::TextOverflow">T</a></code>
+                           </span></span><div class='docblock'><p>The text-overflow computed value.</p>
+</div><span id="structfield.unicode_bidi" class="structfield small-section-header">
+                           <a href="#structfield.unicode_bidi" class="anchor field"></a>
+                           <span id="unicode_bidi.v" class='invisible'>
+                           <code>unicode_bidi: <a class="enum" href="../../../style/properties/longhands/unicode_bidi/computed_value/enum.T.html" title="enum style::properties::longhands::unicode_bidi::computed_value::T">T</a></code>
+                           </span></span><div class='docblock'><p>The unicode-bidi computed value.</p>
+</div><span id="structfield.text_decoration_line" class="structfield small-section-header">
+                           <a href="#structfield.text_decoration_line" class="anchor field"></a>
+                           <span id="text_decoration_line.v" class='invisible'>
+                           <code>text_decoration_line: <a class="struct" href="../../../style/values/specified/text/struct.TextDecorationLine.html" title="struct style::values::specified::text::TextDecorationLine">T</a></code>
+                           </span></span><div class='docblock'><p>The text-decoration-line computed value.</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="struct" href="../../../style/properties/style_structs/struct.Text.html" title="struct style::properties::style_structs::Text">Text</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#65372-65468' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.set_text_overflow' class="method"><span id='set_text_overflow.v' class='invisible'><code>pub fn <a href='#method.set_text_overflow' class='fnname'>set_text_overflow</a>(&amp;mut self, v: <a class="struct" href="../../../style/values/computed/text/struct.TextOverflow.html" title="struct style::values::computed::text::TextOverflow">T</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#65376-65378' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Set text-overflow.</p>
+</div><h4 id='method.copy_text_overflow_from' class="method"><span id='copy_text_overflow_from.v' class='invisible'><code>pub fn <a href='#method.copy_text_overflow_from' class='fnname'>copy_text_overflow_from</a>(&amp;mut self, other: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#65382-65384' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Set text-overflow from other struct.</p>
+</div><h4 id='method.reset_text_overflow' class="method"><span id='reset_text_overflow.v' class='invisible'><code>pub fn <a href='#method.reset_text_overflow' class='fnname'>reset_text_overflow</a>(&amp;mut self, other: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#65389-65391' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Reset text-overflow from the initial struct.</p>
+</div><h4 id='method.clone_text_overflow' class="method"><span id='clone_text_overflow.v' class='invisible'><code>pub fn <a href='#method.clone_text_overflow' class='fnname'>clone_text_overflow</a>(&amp;self) -&gt; <a class="struct" href="../../../style/values/computed/text/struct.TextOverflow.html" title="struct style::values::computed::text::TextOverflow">T</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#65396-65398' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Get the computed value for text-overflow.</p>
+</div><h4 id='method.set_unicode_bidi' class="method"><span id='set_unicode_bidi.v' class='invisible'><code>pub fn <a href='#method.set_unicode_bidi' class='fnname'>set_unicode_bidi</a>(&amp;mut self, v: <a class="enum" href="../../../style/properties/longhands/unicode_bidi/computed_value/enum.T.html" title="enum style::properties::longhands::unicode_bidi::computed_value::T">T</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#65402-65404' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Set unicode-bidi.</p>
+</div><h4 id='method.copy_unicode_bidi_from' class="method"><span id='copy_unicode_bidi_from.v' class='invisible'><code>pub fn <a href='#method.copy_unicode_bidi_from' class='fnname'>copy_unicode_bidi_from</a>(&amp;mut self, other: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#65408-65410' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Set unicode-bidi from other struct.</p>
+</div><h4 id='method.reset_unicode_bidi' class="method"><span id='reset_unicode_bidi.v' class='invisible'><code>pub fn <a href='#method.reset_unicode_bidi' class='fnname'>reset_unicode_bidi</a>(&amp;mut self, other: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#65415-65417' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Reset unicode-bidi from the initial struct.</p>
+</div><h4 id='method.clone_unicode_bidi' class="method"><span id='clone_unicode_bidi.v' class='invisible'><code>pub fn <a href='#method.clone_unicode_bidi' class='fnname'>clone_unicode_bidi</a>(&amp;self) -&gt; <a class="enum" href="../../../style/properties/longhands/unicode_bidi/computed_value/enum.T.html" title="enum style::properties::longhands::unicode_bidi::computed_value::T">T</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#65422-65424' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Get the computed value for unicode-bidi.</p>
+</div><h4 id='method.set_text_decoration_line' class="method"><span id='set_text_decoration_line.v' class='invisible'><code>pub fn <a href='#method.set_text_decoration_line' class='fnname'>set_text_decoration_line</a>(&amp;mut self, v: <a class="struct" href="../../../style/values/specified/text/struct.TextDecorationLine.html" title="struct style::values::specified::text::TextDecorationLine">T</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#65428-65430' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Set text-decoration-line.</p>
+</div><h4 id='method.copy_text_decoration_line_from' class="method"><span id='copy_text_decoration_line_from.v' class='invisible'><code>pub fn <a href='#method.copy_text_decoration_line_from' class='fnname'>copy_text_decoration_line_from</a>(&amp;mut self, other: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#65434-65436' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Set text-decoration-line from other struct.</p>
+</div><h4 id='method.reset_text_decoration_line' class="method"><span id='reset_text_decoration_line.v' class='invisible'><code>pub fn <a href='#method.reset_text_decoration_line' class='fnname'>reset_text_decoration_line</a>(&amp;mut self, other: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#65441-65443' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Reset text-decoration-line from the initial struct.</p>
+</div><h4 id='method.clone_text_decoration_line' class="method"><span id='clone_text_decoration_line.v' class='invisible'><code>pub fn <a href='#method.clone_text_decoration_line' class='fnname'>clone_text_decoration_line</a>(&amp;self) -&gt; <a class="struct" href="../../../style/values/specified/text/struct.TextDecorationLine.html" title="struct style::values::specified::text::TextDecorationLine">T</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#65448-65450' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Get the computed value for text-decoration-line.</p>
+</div><h4 id='method.has_underline' class="method"><span id='has_underline.v' class='invisible'><code>pub fn <a href='#method.has_underline' class='fnname'>has_underline</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#65453-65455' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Whether the text decoration has an underline.</p>
+</div><h4 id='method.has_overline' class="method"><span id='has_overline.v' class='invisible'><code>pub fn <a href='#method.has_overline' class='fnname'>has_overline</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#65459-65461' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Whether the text decoration has an overline.</p>
+</div><h4 id='method.has_line_through' class="method"><span id='has_line_through.v' class='invisible'><code>pub fn <a href='#method.has_line_through' class='fnname'>has_line_through</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#65465-65467' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Whether the text decoration has a line through.</p>
+</div></div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Clone' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="struct" href="../../../style/properties/style_structs/struct.Text.html" title="struct style::properties::style_structs::Text">Text</a></code><a href='#impl-Clone' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#65361' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="struct" href="../../../style/properties/style_structs/struct.Text.html" title="struct style::properties::style_structs::Text">Text</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#65361' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../../../style/properties/style_structs/struct.Text.html" title="struct style::properties::style_structs::Text">Text</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#65361' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#65361' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div><h3 id='impl-MallocSizeOf' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../../malloc_size_of/trait.MallocSizeOf.html" title="trait malloc_size_of::MallocSizeOf">MallocSizeOf</a> for <a class="struct" href="../../../style/properties/style_structs/struct.Text.html" title="struct style::properties::style_structs::Text">Text</a></code><a href='#impl-MallocSizeOf' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#65361-1' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.size_of' class="method"><span id='size_of.v' class='invisible'><code>fn <a href='../../../malloc_size_of/trait.MallocSizeOf.html#tymethod.size_of' class='fnname'>size_of</a>(&amp;self, ops: &amp;mut <a class="struct" href="../../../malloc_size_of/struct.MallocSizeOfOps.html" title="struct malloc_size_of::MallocSizeOfOps">MallocSizeOfOps</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#65361' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Measure the heap usage of all descendant heap-allocated structures, but not the space taken up by the value itself. <a href="../../../malloc_size_of/trait.MallocSizeOf.html#tymethod.size_of">Read more</a></p>
+</div></div><h3 id='impl-PartialEq' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a> for <a class="struct" href="../../../style/properties/style_structs/struct.Text.html" title="struct style::properties::style_structs::Text">Text</a></code><a href='#impl-PartialEq' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#65361' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class="method"><span id='eq.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class="struct" href="../../../style/properties/style_structs/struct.Text.html" title="struct style::properties::style_structs::Text">Text</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#65361' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class="method"><span id='ne.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class="struct" href="../../../style/properties/style_structs/struct.Text.html" title="struct style::properties::style_structs::Text">Text</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/style/home/travis/build/victorporof/rsx-primitives/target/debug/build/style-3f57ebd4cb095d70/out/properties.rs.html#65361' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "style";
+    </script>
+    <script src="../../../main.js"></script>
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `SelectorParser` struct in crate `style`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, SelectorParser">
+
+    <title>style::selector_parser::SelectorParser - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct SelectorParser</p><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.stylesheet_origin">stylesheet_origin</a><a href="#structfield.namespaces">namespaces</a><a href="#structfield.url_data">url_data</a></div><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.parse_author_origin_no_namespace">parse_author_origin_no_namespace</a><a href="#method.in_user_agent_stylesheet">in_user_agent_stylesheet</a><a href="#method.chrome_rules_enabled">chrome_rules_enabled</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-MallocSizeOf">MallocSizeOf</a><a href="#impl-Parser%3C%27i%3E">Parser&lt;&#39;i&gt;</a></div></div><p class='location'><a href='../index.html'>style</a>::<wbr><a href='index.html'>selector_parser</a></p><script>window.sidebarCurrent = {name: 'SelectorParser', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>style</a>::<wbr><a href='index.html'>selector_parser</a>::<wbr><a class="struct" href=''>SelectorParser</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/style/selector_parser.rs.html#39-47' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct SelectorParser&lt;'a&gt; {
+    pub stylesheet_origin: <a class="enum" href="../../style/stylesheets/origin/enum.Origin.html" title="enum style::stylesheets::origin::Origin">Origin</a>,
+    pub namespaces: &amp;'a <a class="struct" href="../../style/stylesheets/struct.Namespaces.html" title="struct style::stylesheets::Namespaces">Namespaces</a>,
+    pub url_data: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;'a <a class="type" href="../../style/stylesheets/type.UrlExtraData.html" title="type style::stylesheets::UrlExtraData">UrlExtraData</a>&gt;,
+}</pre><div class='docblock'><p>Servo&#39;s selector parser.</p>
+</div><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.stylesheet_origin" class="structfield small-section-header">
+                           <a href="#structfield.stylesheet_origin" class="anchor field"></a>
+                           <span id="stylesheet_origin.v" class='invisible'>
+                           <code>stylesheet_origin: <a class="enum" href="../../style/stylesheets/origin/enum.Origin.html" title="enum style::stylesheets::origin::Origin">Origin</a></code>
+                           </span></span><div class='docblock'><p>The origin of the stylesheet we&#39;re parsing.</p>
+</div><span id="structfield.namespaces" class="structfield small-section-header">
+                           <a href="#structfield.namespaces" class="anchor field"></a>
+                           <span id="namespaces.v" class='invisible'>
+                           <code>namespaces: &amp;'a <a class="struct" href="../../style/stylesheets/struct.Namespaces.html" title="struct style::stylesheets::Namespaces">Namespaces</a></code>
+                           </span></span><div class='docblock'><p>The namespace set of the stylesheet.</p>
+</div><span id="structfield.url_data" class="structfield small-section-header">
+                           <a href="#structfield.url_data" class="anchor field"></a>
+                           <span id="url_data.v" class='invisible'>
+                           <code>url_data: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;'a <a class="type" href="../../style/stylesheets/type.UrlExtraData.html" title="type style::stylesheets::UrlExtraData">UrlExtraData</a>&gt;</code>
+                           </span></span><div class='docblock'><p>The extra URL data of the stylesheet, which is used to look up
+whether we are parsing a chrome:// URL style sheet.</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class="struct" href="../../style/selector_parser/struct.SelectorParser.html" title="struct style::selector_parser::SelectorParser">SelectorParser</a>&lt;'a&gt;</code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/selector_parser.rs.html#49-77' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.parse_author_origin_no_namespace' class="method"><span id='parse_author_origin_no_namespace.v' class='invisible'><code>pub fn <a href='#method.parse_author_origin_no_namespace' class='fnname'>parse_author_origin_no_namespace</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;input: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="../../selectors/parser/struct.SelectorList.html" title="struct selectors::parser::SelectorList">SelectorList</a>&lt;<a class="struct" href="../../style/servo/selector_parser/struct.SelectorImpl.html" title="struct style::servo::selector_parser::SelectorImpl">SelectorImpl</a>&gt;, <a class="type" href="../../style_traits/type.ParseError.html" title="type style_traits::ParseError">ParseError</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/selector_parser.rs.html#54-64' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Parse a selector list with an author origin and without taking into
+account namespaces.</p>
+
+<p>This is used for some DOM APIs like <code>querySelector</code>.</p>
+</div><h4 id='method.in_user_agent_stylesheet' class="method"><span id='in_user_agent_stylesheet.v' class='invisible'><code>pub fn <a href='#method.in_user_agent_stylesheet' class='fnname'>in_user_agent_stylesheet</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/selector_parser.rs.html#67-69' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Whether we&#39;re parsing selectors in a user-agent stylesheet.</p>
+</div><h4 id='method.chrome_rules_enabled' class="method"><span id='chrome_rules_enabled.v' class='invisible'><code>pub fn <a href='#method.chrome_rules_enabled' class='fnname'>chrome_rules_enabled</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/selector_parser.rs.html#73-76' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Whether we&#39;re parsing selectors in a stylesheet that has chrome
+privilege.</p>
+</div></div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-MallocSizeOf' class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class="trait" href="../../malloc_size_of/trait.MallocSizeOf.html" title="trait malloc_size_of::MallocSizeOf">MallocSizeOf</a> for <a class="struct" href="../../style/selector_parser/struct.SelectorParser.html" title="struct style::selector_parser::SelectorParser">SelectorParser</a>&lt;'a&gt;</code><a href='#impl-MallocSizeOf' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/selector_parser.rs.html#38-1' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.size_of' class="method"><span id='size_of.v' class='invisible'><code>fn <a href='../../malloc_size_of/trait.MallocSizeOf.html#tymethod.size_of' class='fnname'>size_of</a>(&amp;self, ops: &amp;mut <a class="struct" href="../../malloc_size_of/struct.MallocSizeOfOps.html" title="struct malloc_size_of::MallocSizeOfOps">MallocSizeOfOps</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/selector_parser.rs.html#38' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Measure the heap usage of all descendant heap-allocated structures, but not the space taken up by the value itself. <a href="../../malloc_size_of/trait.MallocSizeOf.html#tymethod.size_of">Read more</a></p>
+</div></div><h3 id='impl-Parser%3C%27i%3E' class='impl'><span class='in-band'><code>impl&lt;'a, 'i&gt; <a class="trait" href="../../selectors/parser/trait.Parser.html" title="trait selectors::parser::Parser">Parser</a>&lt;'i&gt; for <a class="struct" href="../../style/selector_parser/struct.SelectorParser.html" title="struct style::selector_parser::SelectorParser">SelectorParser</a>&lt;'a&gt;</code><a href='#impl-Parser%3C%27i%3E' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/servo/selector_parser.rs.html#396-547' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Impl' class="type"><span id='Impl.t' class='invisible'><code>type <a href='../../selectors/parser/trait.Parser.html#associatedtype.Impl' class="type">Impl</a> = <a class="struct" href="../../style/servo/selector_parser/struct.SelectorImpl.html" title="struct style::servo::selector_parser::SelectorImpl">SelectorImpl</a></code></span></h4>
+<h4 id='associatedtype.Error' class="type"><span id='Error.t' class='invisible'><code>type <a href='../../selectors/parser/trait.Parser.html#associatedtype.Error' class="type">Error</a> = <a class="enum" href="../../style_traits/enum.StyleParseErrorKind.html" title="enum style_traits::StyleParseErrorKind">StyleParseErrorKind</a>&lt;'i&gt;</code></span></h4>
+<h4 id='method.parse_non_ts_pseudo_class' class="method"><span id='parse_non_ts_pseudo_class.v' class='invisible'><code>fn <a href='../../selectors/parser/trait.Parser.html#method.parse_non_ts_pseudo_class' class='fnname'>parse_non_ts_pseudo_class</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;location: <a class="struct" href="../../style/values/struct.SourceLocation.html" title="struct style::values::SourceLocation">SourceLocation</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;name: <a class="struct" href="../../style/values/struct.CowRcStr.html" title="struct style::values::CowRcStr">CowRcStr</a>&lt;'i&gt;<br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="enum" href="../../style/servo/selector_parser/enum.NonTSPseudoClass.html" title="enum style::servo::selector_parser::NonTSPseudoClass">NonTSPseudoClass</a>, <a class="type" href="../../style_traits/type.ParseError.html" title="type style_traits::ParseError">ParseError</a>&lt;'i&gt;&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/servo/selector_parser.rs.html#400-431' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This function can return an &quot;Err&quot; pseudo-element in order to support CSS2.1 pseudo-elements. <a href="../../selectors/parser/trait.Parser.html#method.parse_non_ts_pseudo_class">Read more</a></p>
+</div><h4 id='method.parse_non_ts_functional_pseudo_class' class="method"><span id='parse_non_ts_functional_pseudo_class.v' class='invisible'><code>fn <a href='../../selectors/parser/trait.Parser.html#method.parse_non_ts_functional_pseudo_class' class='fnname'>parse_non_ts_functional_pseudo_class</a>&lt;'t&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;name: <a class="struct" href="../../style/values/struct.CowRcStr.html" title="struct style::values::CowRcStr">CowRcStr</a>&lt;'i&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;parser: &amp;mut <a class="struct" href="../../style/values/struct.Parser.html" title="struct style::values::Parser">CssParser</a>&lt;'i, 't&gt;<br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="enum" href="../../style/servo/selector_parser/enum.NonTSPseudoClass.html" title="enum style::servo::selector_parser::NonTSPseudoClass">NonTSPseudoClass</a>, <a class="type" href="../../style_traits/type.ParseError.html" title="type style_traits::ParseError">ParseError</a>&lt;'i&gt;&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/servo/selector_parser.rs.html#433-452' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.parse_pseudo_element' class="method"><span id='parse_pseudo_element.v' class='invisible'><code>fn <a href='../../selectors/parser/trait.Parser.html#method.parse_pseudo_element' class='fnname'>parse_pseudo_element</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;location: <a class="struct" href="../../style/values/struct.SourceLocation.html" title="struct style::values::SourceLocation">SourceLocation</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;name: <a class="struct" href="../../style/values/struct.CowRcStr.html" title="struct style::values::CowRcStr">CowRcStr</a>&lt;'i&gt;<br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="enum" href="../../style/servo/selector_parser/enum.PseudoElement.html" title="enum style::servo::selector_parser::PseudoElement">PseudoElement</a>, <a class="type" href="../../style_traits/type.ParseError.html" title="type style_traits::ParseError">ParseError</a>&lt;'i&gt;&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/servo/selector_parser.rs.html#454-538' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.default_namespace' class="method"><span id='default_namespace.v' class='invisible'><code>fn <a href='../../selectors/parser/trait.Parser.html#method.default_namespace' class='fnname'>default_namespace</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="type" href="../../style/type.Namespace.html" title="type style::Namespace">Namespace</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/servo/selector_parser.rs.html#540-542' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.namespace_for_prefix' class="method"><span id='namespace_for_prefix.v' class='invisible'><code>fn <a href='../../selectors/parser/trait.Parser.html#method.namespace_for_prefix' class='fnname'>namespace_for_prefix</a>(&amp;self, prefix: &amp;<a class="type" href="../../style/type.Prefix.html" title="type style::Prefix">Prefix</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="type" href="../../style/type.Namespace.html" title="type style::Namespace">Namespace</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/style/servo/selector_parser.rs.html#544-546' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.pseudo_element_allows_single_colon' class="method"><span id='pseudo_element_allows_single_colon.v' class='invisible'><code>fn <a href='../../selectors/parser/trait.Parser.html#method.pseudo_element_allows_single_colon' class='fnname'>pseudo_element_allows_single_colon</a>(name: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/parser.rs.html#131-133' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Whether the name is a pseudo-element that can be specified with the single colon syntax in addition to the double-colon syntax. <a href="../../selectors/parser/trait.Parser.html#method.pseudo_element_allows_single_colon">Read more</a></p>
+</div><h4 id='method.parse_slotted' class="method"><span id='parse_slotted.v' class='invisible'><code>fn <a href='../../selectors/parser/trait.Parser.html#method.parse_slotted' class='fnname'>parse_slotted</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/parser.rs.html#136-138' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Whether to parse the <code>::slotted()</code> pseudo-element.</p>
+</div><h4 id='method.parse_functional_pseudo_element' class="method"><span id='parse_functional_pseudo_element.v' class='invisible'><code>fn <a href='../../selectors/parser/trait.Parser.html#method.parse_functional_pseudo_element' class='fnname'>parse_functional_pseudo_element</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;name: <a class="struct" href="../../style/values/struct.CowRcStr.html" title="struct style::values::CowRcStr">CowRcStr</a>&lt;'i&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;arguments: &amp;mut <a class="struct" href="../../style/values/struct.Parser.html" title="struct style::values::Parser">Parser</a>&lt;'i, 't&gt;<br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;&lt;Self::<a class="type" href="../../selectors/parser/trait.Parser.html#associatedtype.Impl" title="type selectors::parser::Parser::Impl">Impl</a> as <a class="trait" href="../../selectors/parser/trait.SelectorImpl.html" title="trait selectors::parser::SelectorImpl">SelectorImpl</a>&gt;::<a class="type" href="../../selectors/parser/trait.SelectorImpl.html#associatedtype.PseudoElement" title="type selectors::parser::SelectorImpl::PseudoElement">PseudoElement</a>, <a class="struct" href="../../cssparser/parser/struct.ParseError.html" title="struct cssparser::parser::ParseError">ParseError</a>&lt;'i, Self::<a class="type" href="../../selectors/parser/trait.Parser.html#associatedtype.Error" title="type selectors::parser::Parser::Error">Error</a>&gt;&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/parser.rs.html#166-172' title='goto source code'>[src]</a></span></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "style";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

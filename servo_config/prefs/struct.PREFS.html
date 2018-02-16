@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `PREFS` struct in crate `servo_config`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, PREFS">
+
+    <title>servo_config::prefs::PREFS - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct PREFS</p><div class="block items"><a class="sidebar-title" href="#deref-methods">Methods from __Deref&lt;Target=Preferences&gt;</a><div class="sidebar-links"><a href="#method.get">get</a><a href="#method.cloned">cloned</a><a href="#method.is_mozbrowser_enabled">is_mozbrowser_enabled</a><a href="#method.set">set</a><a href="#method.reset">reset</a><a href="#method.reset_all">reset_all</a><a href="#method.extend">extend</a><a href="#method.is_webvr_enabled">is_webvr_enabled</a><a href="#method.is_dom_to_texture_enabled">is_dom_to_texture_enabled</a><a href="#method.is_webgl2_enabled">is_webgl2_enabled</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-__Deref">__Deref</a><a href="#impl-LazyStatic">LazyStatic</a></div></div><p class='location'><a href='../index.html'>servo_config</a>::<wbr><a href='index.html'>prefs</a></p><script>window.sidebarCurrent = {name: 'PREFS', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>servo_config</a>::<wbr><a href='index.html'>prefs</a>::<wbr><a class="struct" href=''>PREFS</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span></span></h1>
+<pre class='rust struct'>pub struct PREFS { /* fields omitted */ }</pre>
+                    <h2 id='deref-methods' class='small-section-header'>
+                      Methods from <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/deref/trait.Deref.html" title="trait core::ops::deref::Deref">__Deref</a>&lt;Target = <a class="struct" href="../../servo_config/prefs/struct.Preferences.html" title="struct servo_config::prefs::Preferences">Preferences</a>&gt;<a href='#deref-methods' class='anchor'></a>
+                    </h2>
+                <div class='impl-items'><h4 id='method.get' class="method"><span id='get.v' class='invisible'><code>pub fn <a href='#method.get' class='fnname'>get</a>(&amp;self, name: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html" title="struct alloc::arc::Arc">Arc</a>&lt;<a class="enum" href="../../servo_config/prefs/enum.PrefValue.html" title="enum servo_config::prefs::PrefValue">PrefValue</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/servo_config/prefs.rs.html#223-225' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.cloned' class="method"><span id='cloned.v' class='invisible'><code>pub fn <a href='#method.cloned' class='fnname'>cloned</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/std/collections/hash/map/struct.HashMap.html" title="struct std::collections::hash::map::HashMap">HashMap</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>, <a class="enum" href="../../servo_config/prefs/enum.Pref.html" title="enum servo_config::prefs::Pref">Pref</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/servo_config/prefs.rs.html#227-229' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.is_mozbrowser_enabled' class="method"><span id='is_mozbrowser_enabled.v' class='invisible'><code>pub fn <a href='#method.is_mozbrowser_enabled' class='fnname'>is_mozbrowser_enabled</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/servo_config/prefs.rs.html#231-233' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.set' class="method"><span id='set.v' class='invisible'><code>pub fn <a href='#method.set' class='fnname'>set</a>(&amp;self, name: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>, value: <a class="enum" href="../../servo_config/prefs/enum.PrefValue.html" title="enum servo_config::prefs::PrefValue">PrefValue</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/servo_config/prefs.rs.html#235-242' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.reset' class="method"><span id='reset.v' class='invisible'><code>pub fn <a href='#method.reset' class='fnname'>reset</a>(&amp;self, name: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html" title="struct alloc::arc::Arc">Arc</a>&lt;<a class="enum" href="../../servo_config/prefs/enum.PrefValue.html" title="enum servo_config::prefs::PrefValue">PrefValue</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/servo_config/prefs.rs.html#244-258' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.reset_all' class="method"><span id='reset_all.v' class='invisible'><code>pub fn <a href='#method.reset_all' class='fnname'>reset_all</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/servo_config/prefs.rs.html#260-267' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.extend' class="method"><span id='extend.v' class='invisible'><code>pub fn <a href='#method.extend' class='fnname'>extend</a>(&amp;self, extension: <a class="struct" href="https://doc.rust-lang.org/nightly/std/collections/hash/map/struct.HashMap.html" title="struct std::collections::hash::map::HashMap">HashMap</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>, <a class="enum" href="../../servo_config/prefs/enum.Pref.html" title="enum servo_config::prefs::Pref">Pref</a>&gt;)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/servo_config/prefs.rs.html#269-271' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.is_webvr_enabled' class="method"><span id='is_webvr_enabled.v' class='invisible'><code>pub fn <a href='#method.is_webvr_enabled' class='fnname'>is_webvr_enabled</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/servo_config/prefs.rs.html#273-275' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.is_dom_to_texture_enabled' class="method"><span id='is_dom_to_texture_enabled.v' class='invisible'><code>pub fn <a href='#method.is_dom_to_texture_enabled' class='fnname'>is_dom_to_texture_enabled</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/servo_config/prefs.rs.html#277-279' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.is_webgl2_enabled' class="method"><span id='is_webgl2_enabled.v' class='invisible'><code>pub fn <a href='#method.is_webgl2_enabled' class='fnname'>is_webgl2_enabled</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/servo_config/prefs.rs.html#281-283' title='goto source code'>[src]</a></span></h4>
+</div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-__Deref' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/deref/trait.Deref.html" title="trait core::ops::deref::Deref">__Deref</a> for <a class="struct" href="../../servo_config/prefs/struct.PREFS.html" title="struct servo_config::prefs::PREFS">PREFS</a></code><a href='#impl-__Deref' class='anchor'></a></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Target' class="type"><span id='Target.t' class='invisible'><code>type <a href='https://doc.rust-lang.org/nightly/core/ops/deref/trait.Deref.html#associatedtype.Target' class="type">Target</a> = <a class="struct" href="../../servo_config/prefs/struct.Preferences.html" title="struct servo_config::prefs::Preferences">Preferences</a></code></span></h4>
+<div class='docblock'><p>The resulting type after dereferencing.</p>
+</div><h4 id='method.deref' class="method"><span id='deref.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/deref/trait.Deref.html#tymethod.deref' class='fnname'>deref</a>(&amp;self) -&gt; &amp;<a class="struct" href="../../servo_config/prefs/struct.Preferences.html" title="struct servo_config::prefs::Preferences">Preferences</a></code></span></h4>
+<div class='docblock'><p>Dereferences the value.</p>
+</div></div><h3 id='impl-LazyStatic' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../lazy_static/trait.LazyStatic.html" title="trait lazy_static::LazyStatic">LazyStatic</a> for <a class="struct" href="../../servo_config/prefs/struct.PREFS.html" title="struct servo_config::prefs::PREFS">PREFS</a></code><a href='#impl-LazyStatic' class='anchor'></a></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='method.initialize' class="method"><span id='initialize.v' class='invisible'><code>fn <a href='../../lazy_static/trait.LazyStatic.html#tymethod.initialize' class='fnname'>initialize</a>(lazy: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "servo_config";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

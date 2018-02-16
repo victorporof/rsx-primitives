@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["PlaneCut","The result of one plane being cut by another one. The \"cut\" here is an attempt to classify a plane as being in front or in the back of another one."]],"struct":[["BspNode","A node in the `BspTree`, which can be considered a tree itself."]],"trait":[["Plane","A plane abstracted to the matter of partitioning."]]});

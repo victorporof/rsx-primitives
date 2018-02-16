@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Transaction` struct in crate `webrender_api`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Transaction">
+
+    <title>webrender_api::Transaction - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct Transaction</p><div class="block items"><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.new">new</a><a href="#method.is_empty">is_empty</a><a href="#method.update_epoch">update_epoch</a><a href="#method.set_root_pipeline">set_root_pipeline</a><a href="#method.remove_pipeline">remove_pipeline</a><a href="#method.set_display_list">set_display_list</a><a href="#method.update_resources">update_resources</a><a href="#method.set_window_parameters">set_window_parameters</a><a href="#method.scroll">scroll</a><a href="#method.scroll_node_with_id">scroll_node_with_id</a><a href="#method.set_page_zoom">set_page_zoom</a><a href="#method.set_pinch_zoom">set_pinch_zoom</a><a href="#method.set_pan">set_pan</a><a href="#method.tick_scrolling_bounce_animations">tick_scrolling_bounce_animations</a><a href="#method.generate_frame">generate_frame</a><a href="#method.update_dynamic_properties">update_dynamic_properties</a><a href="#method.enable_frame_output">enable_frame_output</a></div></div><p class='location'><a href='index.html'>webrender_api</a></p><script>window.sidebarCurrent = {name: 'Transaction', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>webrender_api</a>::<wbr><a class="struct" href=''>Transaction</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/webrender_api/api.rs.html#133-136' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Transaction { /* fields omitted */ }</pre><div class='docblock'><p>A Transaction is a group of commands to apply atomically to a document.</p>
+
+<p>This mechanism ensures that:
+ - no other message can be interleaved between two commands that need to be applied together.
+ - no redundant work is performed if two commands in the same transaction cause the scene or
+   the frame to be rebuilt.</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="struct" href="../webrender_api/struct.Transaction.html" title="struct webrender_api::Transaction">Transaction</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/webrender_api/api.rs.html#138-295' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class="method"><span id='new.v' class='invisible'><code>pub fn <a href='#method.new' class='fnname'>new</a>() -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/webrender_api/api.rs.html#139-144' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.is_empty' class="method"><span id='is_empty.v' class='invisible'><code>pub fn <a href='#method.is_empty' class='fnname'>is_empty</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/webrender_api/api.rs.html#146-148' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.update_epoch' class="method"><span id='update_epoch.v' class='invisible'><code>pub fn <a href='#method.update_epoch' class='fnname'>update_epoch</a>(&amp;mut self, pipeline_id: <a class="struct" href="../webrender_api/struct.PipelineId.html" title="struct webrender_api::PipelineId">PipelineId</a>, epoch: <a class="struct" href="../webrender_api/struct.Epoch.html" title="struct webrender_api::Epoch">Epoch</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/webrender_api/api.rs.html#150-152' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.set_root_pipeline' class="method"><span id='set_root_pipeline.v' class='invisible'><code>pub fn <a href='#method.set_root_pipeline' class='fnname'>set_root_pipeline</a>(&amp;mut self, pipeline_id: <a class="struct" href="../webrender_api/struct.PipelineId.html" title="struct webrender_api::PipelineId">PipelineId</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/webrender_api/api.rs.html#166-168' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Sets the root pipeline.</p>
+
+<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1>
+<pre class="rust rust-example-rendered">
+<span class="kw">let</span> <span class="ident">pipeline_id</span> <span class="op">=</span> <span class="ident">PipelineId</span>(<span class="number">0</span>, <span class="number">0</span>);
+<span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">txn</span> <span class="op">=</span> <span class="ident">Transaction</span>::<span class="ident">new</span>();
+<span class="ident">txn</span>.<span class="ident">set_root_pipeline</span>(<span class="ident">pipeline_id</span>);</pre>
+</div><h4 id='method.remove_pipeline' class="method"><span id='remove_pipeline.v' class='invisible'><code>pub fn <a href='#method.remove_pipeline' class='fnname'>remove_pipeline</a>(&amp;mut self, pipeline_id: <a class="struct" href="../webrender_api/struct.PipelineId.html" title="struct webrender_api::PipelineId">PipelineId</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/webrender_api/api.rs.html#173-175' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Removes data associated with a pipeline from the internal data structures.
+If the specified <code>pipeline_id</code> is for the root pipeline, the root pipeline
+is reset back to <code>None</code>.</p>
+</div><h4 id='method.set_display_list' class="method"><span id='set_display_list.v' class='invisible'><code>pub fn <a href='#method.set_display_list' class='fnname'>set_display_list</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;epoch: <a class="struct" href="../webrender_api/struct.Epoch.html" title="struct webrender_api::Epoch">Epoch</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;background: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../webrender_api/struct.ColorF.html" title="struct webrender_api::ColorF">ColorF</a>&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;viewport_size: <a class="type" href="../webrender_api/type.LayoutSize.html" title="type webrender_api::LayoutSize">LayoutSize</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;(pipeline_id, content_size, display_list): <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a><a class="struct" href="../webrender_api/struct.PipelineId.html" title="struct webrender_api::PipelineId">PipelineId</a>, <a class="type" href="../webrender_api/type.LayoutSize.html" title="type webrender_api::LayoutSize">LayoutSize</a>, <a class="struct" href="../webrender_api/struct.BuiltDisplayList.html" title="struct webrender_api::BuiltDisplayList">BuiltDisplayList</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;preserve_frame_state: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a><br>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/webrender_api/api.rs.html#199-220' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Supplies a new frame to WebRender.</p>
+
+<p>Non-blocking, it notifies a worker process which processes the display list.
+When it&#39;s done and a RenderNotifier has been set in <code>webrender::Renderer</code>,
+<a href="trait.RenderNotifier.html#tymethod.new_frame_ready">new_frame_ready()</a> gets called.</p>
+
+<p>Note: Scrolling doesn&#39;t require an own Frame.</p>
+
+<p>Arguments:</p>
+
+<ul>
+<li><code>document_id</code>: Target Document ID.</li>
+<li><code>epoch</code>: The unique Frame ID, monotonically increasing.</li>
+<li><code>background</code>: The background color of this pipeline.</li>
+<li><code>viewport_size</code>: The size of the viewport for this frame.</li>
+<li><code>pipeline_id</code>: The ID of the pipeline that is supplying this display list.</li>
+<li><code>content_size</code>: The total screen space size of this display list&#39;s display items.</li>
+<li><code>display_list</code>: The root Display list used in this frame.</li>
+<li><code>preserve_frame_state</code>: If a previous frame exists which matches this pipeline
+                      id, this setting determines if frame state (such as scrolling
+                      position) should be preserved for this new display list.</li>
+</ul>
+</div><h4 id='method.update_resources' class="method"><span id='update_resources.v' class='invisible'><code>pub fn <a href='#method.update_resources' class='fnname'>update_resources</a>(&amp;mut self, resources: <a class="struct" href="../webrender_api/struct.ResourceUpdates.html" title="struct webrender_api::ResourceUpdates">ResourceUpdates</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/webrender_api/api.rs.html#222-224' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.set_window_parameters' class="method"><span id='set_window_parameters.v' class='invisible'><code>pub fn <a href='#method.set_window_parameters' class='fnname'>set_window_parameters</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;window_size: <a class="type" href="../webrender_api/type.DeviceUintSize.html" title="type webrender_api::DeviceUintSize">DeviceUintSize</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;inner_rect: <a class="type" href="../webrender_api/type.DeviceUintRect.html" title="type webrender_api::DeviceUintRect">DeviceUintRect</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;device_pixel_ratio: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a><br>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/webrender_api/api.rs.html#226-239' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.scroll' class="method"><span id='scroll.v' class='invisible'><code>pub fn <a href='#method.scroll' class='fnname'>scroll</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;scroll_location: <a class="enum" href="../webrender_api/enum.ScrollLocation.html" title="enum webrender_api::ScrollLocation">ScrollLocation</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;cursor: <a class="type" href="../webrender_api/type.WorldPoint.html" title="type webrender_api::WorldPoint">WorldPoint</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;phase: <a class="enum" href="../webrender_api/enum.ScrollEventPhase.html" title="enum webrender_api::ScrollEventPhase">ScrollEventPhase</a><br>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/webrender_api/api.rs.html#245-252' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Scrolls the scrolling layer under the <code>cursor</code></p>
+
+<p>WebRender looks for the layer closest to the user
+which has <code>ScrollPolicy::Scrollable</code> set.</p>
+</div><h4 id='method.scroll_node_with_id' class="method"><span id='scroll_node_with_id.v' class='invisible'><code>pub fn <a href='#method.scroll_node_with_id' class='fnname'>scroll_node_with_id</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;origin: <a class="type" href="../webrender_api/type.LayoutPoint.html" title="type webrender_api::LayoutPoint">LayoutPoint</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;id: <a class="enum" href="../webrender_api/enum.ScrollNodeIdType.html" title="enum webrender_api::ScrollNodeIdType">ScrollNodeIdType</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;clamp: <a class="enum" href="../webrender_api/enum.ScrollClamping.html" title="enum webrender_api::ScrollClamping">ScrollClamping</a><br>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/webrender_api/api.rs.html#254-261' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.set_page_zoom' class="method"><span id='set_page_zoom.v' class='invisible'><code>pub fn <a href='#method.set_page_zoom' class='fnname'>set_page_zoom</a>(&amp;mut self, page_zoom: <a class="struct" href="../webrender_api/struct.ZoomFactor.html" title="struct webrender_api::ZoomFactor">ZoomFactor</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/webrender_api/api.rs.html#263-265' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.set_pinch_zoom' class="method"><span id='set_pinch_zoom.v' class='invisible'><code>pub fn <a href='#method.set_pinch_zoom' class='fnname'>set_pinch_zoom</a>(&amp;mut self, pinch_zoom: <a class="struct" href="../webrender_api/struct.ZoomFactor.html" title="struct webrender_api::ZoomFactor">ZoomFactor</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/webrender_api/api.rs.html#267-269' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.set_pan' class="method"><span id='set_pan.v' class='invisible'><code>pub fn <a href='#method.set_pan' class='fnname'>set_pan</a>(&amp;mut self, pan: <a class="type" href="../webrender_api/type.DeviceIntPoint.html" title="type webrender_api::DeviceIntPoint">DeviceIntPoint</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/webrender_api/api.rs.html#271-273' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.tick_scrolling_bounce_animations' class="method"><span id='tick_scrolling_bounce_animations.v' class='invisible'><code>pub fn <a href='#method.tick_scrolling_bounce_animations' class='fnname'>tick_scrolling_bounce_animations</a>(&amp;mut self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/webrender_api/api.rs.html#275-277' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.generate_frame' class="method"><span id='generate_frame.v' class='invisible'><code>pub fn <a href='#method.generate_frame' class='fnname'>generate_frame</a>(&amp;mut self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/webrender_api/api.rs.html#280-282' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Generate a new frame.</p>
+</div><h4 id='method.update_dynamic_properties' class="method"><span id='update_dynamic_properties.v' class='invisible'><code>pub fn <a href='#method.update_dynamic_properties' class='fnname'>update_dynamic_properties</a>(&amp;mut self, properties: <a class="struct" href="../webrender_api/struct.DynamicProperties.html" title="struct webrender_api::DynamicProperties">DynamicProperties</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/webrender_api/api.rs.html#286-288' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Supply a list of animated property bindings that should be used to resolve
+bindings in the current display list.</p>
+</div><h4 id='method.enable_frame_output' class="method"><span id='enable_frame_output.v' class='invisible'><code>pub fn <a href='#method.enable_frame_output' class='fnname'>enable_frame_output</a>(&amp;mut self, pipeline_id: <a class="struct" href="../webrender_api/struct.PipelineId.html" title="struct webrender_api::PipelineId">PipelineId</a>, enable: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/webrender_api/api.rs.html#292-294' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Enable copying of the output of this pipeline id to
+an external texture for callers to consume.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "webrender_api";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

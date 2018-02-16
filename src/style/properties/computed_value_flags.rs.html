@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="Source to the Rust file `/home/travis/.cargo/git/checkouts/servo-css-parser-6b649679bab5995b/e5d13ee/servo/components/style/properties/computed_value_flags.rs`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang">
+
+    <title>computed_value_flags.rs.html -- source</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc source">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content"><pre class="line-numbers"><span id="1"> 1</span>
+<span id="2"> 2</span>
+<span id="3"> 3</span>
+<span id="4"> 4</span>
+<span id="5"> 5</span>
+<span id="6"> 6</span>
+<span id="7"> 7</span>
+<span id="8"> 8</span>
+<span id="9"> 9</span>
+<span id="10">10</span>
+<span id="11">11</span>
+<span id="12">12</span>
+<span id="13">13</span>
+<span id="14">14</span>
+<span id="15">15</span>
+<span id="16">16</span>
+<span id="17">17</span>
+<span id="18">18</span>
+<span id="19">19</span>
+<span id="20">20</span>
+<span id="21">21</span>
+<span id="22">22</span>
+<span id="23">23</span>
+<span id="24">24</span>
+<span id="25">25</span>
+<span id="26">26</span>
+<span id="27">27</span>
+<span id="28">28</span>
+<span id="29">29</span>
+<span id="30">30</span>
+<span id="31">31</span>
+<span id="32">32</span>
+<span id="33">33</span>
+<span id="34">34</span>
+<span id="35">35</span>
+<span id="36">36</span>
+<span id="37">37</span>
+<span id="38">38</span>
+<span id="39">39</span>
+<span id="40">40</span>
+<span id="41">41</span>
+<span id="42">42</span>
+<span id="43">43</span>
+<span id="44">44</span>
+<span id="45">45</span>
+<span id="46">46</span>
+<span id="47">47</span>
+<span id="48">48</span>
+<span id="49">49</span>
+<span id="50">50</span>
+<span id="51">51</span>
+<span id="52">52</span>
+<span id="53">53</span>
+<span id="54">54</span>
+<span id="55">55</span>
+<span id="56">56</span>
+<span id="57">57</span>
+<span id="58">58</span>
+<span id="59">59</span>
+<span id="60">60</span>
+<span id="61">61</span>
+<span id="62">62</span>
+<span id="63">63</span>
+<span id="64">64</span>
+<span id="65">65</span>
+<span id="66">66</span>
+<span id="67">67</span>
+<span id="68">68</span>
+<span id="69">69</span>
+<span id="70">70</span>
+<span id="71">71</span>
+<span id="72">72</span>
+<span id="73">73</span>
+<span id="74">74</span>
+<span id="75">75</span>
+<span id="76">76</span>
+</pre><pre class="rust ">
+<span class="comment">/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */</span>
+
+<span class="doccomment">//! Misc information about a given computed style.</span>
+
+<span class="macro">bitflags</span><span class="macro">!</span> {
+    <span class="doccomment">/// Misc information about a given computed style.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// All flags are currently inherited for text, pseudo elements, and</span>
+    <span class="doccomment">/// anonymous boxes, see StyleBuilder::for_inheritance and its callsites.</span>
+    <span class="doccomment">/// If we ever want to add some flags that shouldn&#39;t inherit for them,</span>
+    <span class="doccomment">/// we might want to add a function to handle this.</span>
+    <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">ComputedValueFlags</span>: <span class="ident">u16</span> {
+        <span class="doccomment">/// Whether the style or any of the ancestors has a text-decoration-line</span>
+        <span class="doccomment">/// property that should get propagated to descendants.</span>
+        <span class="doccomment">///</span>
+        <span class="doccomment">/// text-decoration-line is a reset property, but gets propagated in the</span>
+        <span class="doccomment">/// frame/box tree.</span>
+        <span class="kw">const</span> <span class="ident">HAS_TEXT_DECORATION_LINES</span> <span class="op">=</span> <span class="number">1</span> <span class="op">&lt;&lt;</span> <span class="number">0</span>;
+
+        <span class="doccomment">/// Whether line break inside should be suppressed.</span>
+        <span class="doccomment">///</span>
+        <span class="doccomment">/// If this flag is set, the line should not be broken inside,</span>
+        <span class="doccomment">/// which means inlines act as if nowrap is set, &lt;br&gt; element is</span>
+        <span class="doccomment">/// suppressed, and blocks are inlinized.</span>
+        <span class="doccomment">///</span>
+        <span class="doccomment">/// This bit is propagated to all children of line participants.</span>
+        <span class="doccomment">/// It is currently used by ruby to make its content unbreakable.</span>
+        <span class="kw">const</span> <span class="ident">SHOULD_SUPPRESS_LINEBREAK</span> <span class="op">=</span> <span class="number">1</span> <span class="op">&lt;&lt;</span> <span class="number">1</span>;
+
+        <span class="doccomment">/// A flag used to mark text that that has text-combine-upright.</span>
+        <span class="doccomment">///</span>
+        <span class="doccomment">/// This is used from Gecko&#39;s layout engine.</span>
+        <span class="kw">const</span> <span class="ident">IS_TEXT_COMBINED</span> <span class="op">=</span> <span class="number">1</span> <span class="op">&lt;&lt;</span> <span class="number">2</span>;
+
+        <span class="doccomment">/// A flag used to mark styles under a relevant link that is also</span>
+        <span class="doccomment">/// visited.</span>
+        <span class="kw">const</span> <span class="ident">IS_RELEVANT_LINK_VISITED</span> <span class="op">=</span> <span class="number">1</span> <span class="op">&lt;&lt;</span> <span class="number">3</span>;
+
+        <span class="doccomment">/// A flag used to mark styles which are a pseudo-element or under one.</span>
+        <span class="kw">const</span> <span class="ident">IS_IN_PSEUDO_ELEMENT_SUBTREE</span> <span class="op">=</span> <span class="number">1</span> <span class="op">&lt;&lt;</span> <span class="number">4</span>;
+
+        <span class="doccomment">/// A flag used to mark styles which are in a display: none subtree, or</span>
+        <span class="doccomment">/// under one.</span>
+        <span class="kw">const</span> <span class="ident">IS_IN_DISPLAY_NONE_SUBTREE</span> <span class="op">=</span> <span class="number">1</span> <span class="op">&lt;&lt;</span> <span class="number">5</span>;
+
+        <span class="doccomment">/// Whether this style inherits the `display` property.</span>
+        <span class="doccomment">///</span>
+        <span class="doccomment">/// This is important because it may affect our optimizations to avoid</span>
+        <span class="doccomment">/// computing the style of pseudo-elements, given whether the</span>
+        <span class="doccomment">/// pseudo-element is generated depends on the `display` value.</span>
+        <span class="kw">const</span> <span class="ident">INHERITS_DISPLAY</span> <span class="op">=</span> <span class="number">1</span> <span class="op">&lt;&lt;</span> <span class="number">6</span>;
+
+        <span class="doccomment">/// Whether this style inherits the `content` property.</span>
+        <span class="doccomment">///</span>
+        <span class="doccomment">/// Important because of the same reason.</span>
+        <span class="kw">const</span> <span class="ident">INHERITS_CONTENT</span> <span class="op">=</span> <span class="number">1</span> <span class="op">&lt;&lt;</span> <span class="number">7</span>;
+
+        <span class="doccomment">/// Whether the child explicitly inherits any reset property.</span>
+        <span class="kw">const</span> <span class="ident">INHERITS_RESET_STYLE</span> <span class="op">=</span> <span class="number">1</span> <span class="op">&lt;&lt;</span> <span class="number">8</span>;
+
+        <span class="doccomment">/// A flag to mark a style which is a visited style.</span>
+        <span class="kw">const</span> <span class="ident">IS_STYLE_IF_VISITED</span> <span class="op">=</span> <span class="number">1</span> <span class="op">&lt;&lt;</span> <span class="number">9</span>;
+    }
+}
+
+<span class="kw">impl</span> <span class="ident">ComputedValueFlags</span> {
+    <span class="doccomment">/// Returns the flags that are inherited.</span>
+    <span class="attribute">#[<span class="ident">inline</span>]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">inherited</span>(<span class="self">self</span>) <span class="op">-&gt;</span> <span class="self">Self</span> {
+        <span class="self">self</span> <span class="op">&amp;</span> <span class="op">!</span>(<span class="ident">ComputedValueFlags</span>::<span class="ident">INHERITS_DISPLAY</span> <span class="op">|</span>
+                 <span class="ident">ComputedValueFlags</span>::<span class="ident">INHERITS_CONTENT</span> <span class="op">|</span>
+                 <span class="ident">ComputedValueFlags</span>::<span class="ident">INHERITS_RESET_STYLE</span>)
+    }
+}
+</pre>
+</section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "style";
+    </script>
+    <script src="../../../main.js"></script>
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

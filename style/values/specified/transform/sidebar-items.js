@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["OriginComponent","The specified value of a component of a CSS `<transform-origin>`."]],"type":[["TimingFunction","A specified timing function."],["Transform","A specified CSS `transform`"],["TransformOperation","A single operation in a specified CSS `transform`"],["TransformOrigin","The specified value of a CSS `<transform-origin>`"]]});

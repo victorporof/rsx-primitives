@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `TextShadow` struct in crate `rsx_stylesheet`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, TextShadow">
+
+    <title>rsx_stylesheet::types::TextShadow - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct TextShadow</p><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.color">color</a><a href="#structfield.horizontal">horizontal</a><a href="#structfield.vertical">vertical</a><a href="#structfield.blur">blur</a></div><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.iter">iter</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Debug">Debug</a><a href="#impl-PartialEq">PartialEq</a><a href="#impl-Clone">Clone</a><a href="#impl-ToTokens">ToTokens</a><a href="#impl-ToCustomTokens">ToCustomTokens</a><a href="#impl-Default">Default</a><a href="#impl-Into%3C(%5Bu8%3B%204%5D%2C%20SharedUnit%2C%20SharedUnit%2C%20Option%3CSharedUnit%3E)%3E">Into&lt;([u8; 4], SharedUnit, SharedUnit, Option&lt;SharedUnit&gt;)&gt;</a></div></div><p class='location'><a href='../index.html'>rsx_stylesheet</a>::<wbr><a href='index.html'>types</a></p><script>window.sidebarCurrent = {name: 'TextShadow', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>rsx_stylesheet</a>::<wbr><a href='index.html'>types</a>::<wbr><a class="struct" href=''>TextShadow</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/rsx_stylesheet/styles/types.rs.html#497-502' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct TextShadow {
+    pub color: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../../rsx_stylesheet/types/struct.Color.html" title="struct rsx_stylesheet::types::Color">Color</a>&gt;,
+    pub horizontal: <a class="enum" href="../../rsx_stylesheet/types/enum.StyleUnit.html" title="enum rsx_stylesheet::types::StyleUnit">StyleUnit</a>,
+    pub vertical: <a class="enum" href="../../rsx_stylesheet/types/enum.StyleUnit.html" title="enum rsx_stylesheet::types::StyleUnit">StyleUnit</a>,
+    pub blur: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="enum" href="../../rsx_stylesheet/types/enum.StyleUnit.html" title="enum rsx_stylesheet::types::StyleUnit">StyleUnit</a>&gt;,
+}</pre><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.color" class="structfield small-section-header">
+                           <a href="#structfield.color" class="anchor field"></a>
+                           <span id="color.v" class='invisible'>
+                           <code>color: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../../rsx_stylesheet/types/struct.Color.html" title="struct rsx_stylesheet::types::Color">Color</a>&gt;</code>
+                           </span></span><span id="structfield.horizontal" class="structfield small-section-header">
+                           <a href="#structfield.horizontal" class="anchor field"></a>
+                           <span id="horizontal.v" class='invisible'>
+                           <code>horizontal: <a class="enum" href="../../rsx_stylesheet/types/enum.StyleUnit.html" title="enum rsx_stylesheet::types::StyleUnit">StyleUnit</a></code>
+                           </span></span><span id="structfield.vertical" class="structfield small-section-header">
+                           <a href="#structfield.vertical" class="anchor field"></a>
+                           <span id="vertical.v" class='invisible'>
+                           <code>vertical: <a class="enum" href="../../rsx_stylesheet/types/enum.StyleUnit.html" title="enum rsx_stylesheet::types::StyleUnit">StyleUnit</a></code>
+                           </span></span><span id="structfield.blur" class="structfield small-section-header">
+                           <a href="#structfield.blur" class="anchor field"></a>
+                           <span id="blur.v" class='invisible'>
+                           <code>blur: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="enum" href="../../rsx_stylesheet/types/enum.StyleUnit.html" title="enum rsx_stylesheet::types::StyleUnit">StyleUnit</a>&gt;</code>
+                           </span></span>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="struct" href="../../rsx_stylesheet/types/struct.TextShadow.html" title="struct rsx_stylesheet::types::TextShadow">TextShadow</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_stylesheet/styles/iter.rs.html#46-53' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.iter' class="method"><span id='iter.v' class='invisible'><code>pub fn <a href='#method.iter' class='fnname'>iter</a>(&amp;self) -&gt; TextShadowIter</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_stylesheet/styles/iter.rs.html#47-52' title='goto source code'>[src]</a></span></h4>
+</div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../../rsx_stylesheet/types/struct.TextShadow.html" title="struct rsx_stylesheet::types::TextShadow">TextShadow</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_stylesheet/styles/types.rs.html#496' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_stylesheet/styles/types.rs.html#496' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div><h3 id='impl-PartialEq' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a> for <a class="struct" href="../../rsx_stylesheet/types/struct.TextShadow.html" title="struct rsx_stylesheet::types::TextShadow">TextShadow</a></code><a href='#impl-PartialEq' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_stylesheet/styles/types.rs.html#496' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class="method"><span id='eq.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class="struct" href="../../rsx_stylesheet/types/struct.TextShadow.html" title="struct rsx_stylesheet::types::TextShadow">TextShadow</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_stylesheet/styles/types.rs.html#496' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class="method"><span id='ne.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class="struct" href="../../rsx_stylesheet/types/struct.TextShadow.html" title="struct rsx_stylesheet::types::TextShadow">TextShadow</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_stylesheet/styles/types.rs.html#496' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 id='impl-Clone' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="struct" href="../../rsx_stylesheet/types/struct.TextShadow.html" title="struct rsx_stylesheet::types::TextShadow">TextShadow</a></code><a href='#impl-Clone' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_stylesheet/styles/types.rs.html#496' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="struct" href="../../rsx_stylesheet/types/struct.TextShadow.html" title="struct rsx_stylesheet::types::TextShadow">TextShadow</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_stylesheet/styles/types.rs.html#496' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 id='impl-ToTokens' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../quote/to_tokens/trait.ToTokens.html" title="trait quote::to_tokens::ToTokens">ToTokens</a> for <a class="struct" href="../../rsx_stylesheet/types/struct.TextShadow.html" title="struct rsx_stylesheet::types::TextShadow">TextShadow</a></code><a href='#impl-ToTokens' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_stylesheet/styles/types.rs.html#496-1' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.to_tokens' class="method"><span id='to_tokens.v' class='invisible'><code>fn <a href='../../quote/to_tokens/trait.ToTokens.html#tymethod.to_tokens' class='fnname'>to_tokens</a>(&amp;self, tokens: &amp;mut <a class="struct" href="../../quote/tokens/struct.Tokens.html" title="struct quote::tokens::Tokens">Tokens</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_stylesheet/styles/types.rs.html#496' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Write <code>self</code> to the given <code>Tokens</code>. <a href="../../quote/to_tokens/trait.ToTokens.html#tymethod.to_tokens">Read more</a></p>
+</div></div><h3 id='impl-ToCustomTokens' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../self_tokenize_trait/trait.ToCustomTokens.html" title="trait self_tokenize_trait::ToCustomTokens">ToCustomTokens</a> for <a class="struct" href="../../rsx_stylesheet/types/struct.TextShadow.html" title="struct rsx_stylesheet::types::TextShadow">TextShadow</a></code><a href='#impl-ToCustomTokens' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_stylesheet/styles/types.rs.html#496' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.to_custom_tokens' class="method"><span id='to_custom_tokens.v' class='invisible'><code>fn <a href='../../self_tokenize_trait/trait.ToCustomTokens.html#tymethod.to_custom_tokens' class='fnname'>to_custom_tokens</a>(&amp;self, tokens: &amp;mut <a class="struct" href="../../quote/tokens/struct.Tokens.html" title="struct quote::tokens::Tokens">Tokens</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_stylesheet/styles/types.rs.html#496' title='goto source code'>[src]</a></span></h4>
+</div><h3 id='impl-Default' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/default/trait.Default.html" title="trait core::default::Default">Default</a> for <a class="struct" href="../../rsx_stylesheet/types/struct.TextShadow.html" title="struct rsx_stylesheet::types::TextShadow">TextShadow</a></code><a href='#impl-Default' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_stylesheet/styles/types.rs.html#504-513' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.default' class="method"><span id='default.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/default/trait.Default.html#tymethod.default' class='fnname'>default</a>() -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_stylesheet/styles/types.rs.html#505-512' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the &quot;default value&quot; for a type. <a href="https://doc.rust-lang.org/nightly/core/default/trait.Default.html#tymethod.default">Read more</a></p>
+</div></div><h3 id='impl-Into%3C(%5Bu8%3B%204%5D%2C%20SharedUnit%2C%20SharedUnit%2C%20Option%3CSharedUnit%3E)%3E' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 4]</a>, <a class="enum" href="../../rsx_shared/types/enum.StyleUnit.html" title="enum rsx_shared::types::StyleUnit">SharedUnit</a>, <a class="enum" href="../../rsx_shared/types/enum.StyleUnit.html" title="enum rsx_shared::types::StyleUnit">SharedUnit</a>, <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="enum" href="../../rsx_shared/types/enum.StyleUnit.html" title="enum rsx_shared::types::StyleUnit">SharedUnit</a>&gt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a>&gt; for <a class="struct" href="../../rsx_stylesheet/types/struct.TextShadow.html" title="struct rsx_stylesheet::types::TextShadow">TextShadow</a></code><a href='#impl-Into%3C(%5Bu8%3B%204%5D%2C%20SharedUnit%2C%20SharedUnit%2C%20Option%3CSharedUnit%3E)%3E' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_stylesheet/styles/types.rs.html#515-524' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.into' class="method"><span id='into.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/convert/trait.Into.html#tymethod.into' class='fnname'>into</a>(self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 4]</a>, <a class="enum" href="../../rsx_shared/types/enum.StyleUnit.html" title="enum rsx_shared::types::StyleUnit">SharedUnit</a>, <a class="enum" href="../../rsx_shared/types/enum.StyleUnit.html" title="enum rsx_shared::types::StyleUnit">SharedUnit</a>, <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="enum" href="../../rsx_shared/types/enum.StyleUnit.html" title="enum rsx_shared::types::StyleUnit">SharedUnit</a>&gt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/rsx_stylesheet/styles/types.rs.html#516-523' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs the conversion.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "rsx_stylesheet";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

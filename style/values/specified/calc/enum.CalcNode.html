@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `CalcNode` enum in crate `style`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, CalcNode">
+
+    <title>style::values::specified::calc::CalcNode - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc enum">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Enum CalcNode</p><div class="block items"><a class="sidebar-title" href="#variants">Variants</a><div class="sidebar-links"><a href="#variant.Length">Length</a><a href="#variant.Angle">Angle</a><a href="#variant.Time">Time</a><a href="#variant.Percentage">Percentage</a><a href="#variant.Number">Number</a><a href="#variant.Sum">Sum</a><a href="#variant.Sub">Sub</a><a href="#variant.Mul">Mul</a><a href="#variant.Div">Div</a></div><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.parse_integer">parse_integer</a><a href="#method.parse_length_or_percentage">parse_length_or_percentage</a><a href="#method.parse_percentage">parse_percentage</a><a href="#method.parse_length">parse_length</a><a href="#method.parse_number">parse_number</a><a href="#method.parse_angle">parse_angle</a><a href="#method.parse_time">parse_time</a><a href="#method.parse_number_or_percentage">parse_number_or_percentage</a><a href="#method.parse_angle_or_number">parse_angle_or_number</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Clone">Clone</a><a href="#impl-Debug">Debug</a></div></div><p class='location'><a href='../../../index.html'>style</a>::<wbr><a href='../../index.html'>values</a>::<wbr><a href='../index.html'>specified</a>::<wbr><a href='index.html'>calc</a></p><script>window.sidebarCurrent = {name: 'CalcNode', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../../../index.html'>style</a>::<wbr><a href='../../index.html'>values</a>::<wbr><a href='../index.html'>specified</a>::<wbr><a href='index.html'>calc</a>::<wbr><a class="enum" href=''>CalcNode</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../../src/style/values/specified/calc.rs.html#23-42' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum CalcNode {
+    Length(<a class="enum" href="../../../../style/values/specified/length/enum.NoCalcLength.html" title="enum style::values::specified::length::NoCalcLength">NoCalcLength</a>),
+    Angle(<a class="struct" href="../../../../style/values/specified/angle/struct.Angle.html" title="struct style::values::specified::angle::Angle">Angle</a>),
+    Time(<a class="struct" href="../../../../style/values/specified/time/struct.Time.html" title="struct style::values::specified::time::Time">Time</a>),
+    Percentage(<a class="type" href="../../../../style/values/type.CSSFloat.html" title="type style::values::CSSFloat">CSSFloat</a>),
+    Number(<a class="type" href="../../../../style/values/type.CSSFloat.html" title="type style::values::CSSFloat">CSSFloat</a>),
+    Sum(<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html" title="struct alloc::boxed::Box">Box</a>&lt;<a class="enum" href="../../../../style/values/specified/calc/enum.CalcNode.html" title="enum style::values::specified::calc::CalcNode">CalcNode</a>&gt;,&nbsp;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html" title="struct alloc::boxed::Box">Box</a>&lt;<a class="enum" href="../../../../style/values/specified/calc/enum.CalcNode.html" title="enum style::values::specified::calc::CalcNode">CalcNode</a>&gt;),
+    Sub(<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html" title="struct alloc::boxed::Box">Box</a>&lt;<a class="enum" href="../../../../style/values/specified/calc/enum.CalcNode.html" title="enum style::values::specified::calc::CalcNode">CalcNode</a>&gt;,&nbsp;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html" title="struct alloc::boxed::Box">Box</a>&lt;<a class="enum" href="../../../../style/values/specified/calc/enum.CalcNode.html" title="enum style::values::specified::calc::CalcNode">CalcNode</a>&gt;),
+    Mul(<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html" title="struct alloc::boxed::Box">Box</a>&lt;<a class="enum" href="../../../../style/values/specified/calc/enum.CalcNode.html" title="enum style::values::specified::calc::CalcNode">CalcNode</a>&gt;,&nbsp;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html" title="struct alloc::boxed::Box">Box</a>&lt;<a class="enum" href="../../../../style/values/specified/calc/enum.CalcNode.html" title="enum style::values::specified::calc::CalcNode">CalcNode</a>&gt;),
+    Div(<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html" title="struct alloc::boxed::Box">Box</a>&lt;<a class="enum" href="../../../../style/values/specified/calc/enum.CalcNode.html" title="enum style::values::specified::calc::CalcNode">CalcNode</a>&gt;,&nbsp;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html" title="struct alloc::boxed::Box">Box</a>&lt;<a class="enum" href="../../../../style/values/specified/calc/enum.CalcNode.html" title="enum style::values::specified::calc::CalcNode">CalcNode</a>&gt;),
+}</pre><div class='docblock'><p>A node inside a <code>Calc</code> expression&#39;s AST.</p>
+</div><h2 id='variants' class='variants small-section-header'>
+                   Variants<a href='#variants' class='anchor'></a></h2>
+<span id="variant.Length" class="variant small-section-header"><a href="#variant.Length" class="anchor field"></a><span id='Length.v' class='invisible'><code>Length(<a class="enum" href="../../../../style/values/specified/length/enum.NoCalcLength.html" title="enum style::values::specified::length::NoCalcLength">NoCalcLength</a>)</code></span></span><div class='docblock'><p><code>&lt;length&gt;</code></p>
+</div><span id="variant.Angle" class="variant small-section-header"><a href="#variant.Angle" class="anchor field"></a><span id='Angle.v' class='invisible'><code>Angle(<a class="struct" href="../../../../style/values/specified/angle/struct.Angle.html" title="struct style::values::specified::angle::Angle">Angle</a>)</code></span></span><div class='docblock'><p><code>&lt;angle&gt;</code></p>
+</div><span id="variant.Time" class="variant small-section-header"><a href="#variant.Time" class="anchor field"></a><span id='Time.v' class='invisible'><code>Time(<a class="struct" href="../../../../style/values/specified/time/struct.Time.html" title="struct style::values::specified::time::Time">Time</a>)</code></span></span><div class='docblock'><p><code>&lt;time&gt;</code></p>
+</div><span id="variant.Percentage" class="variant small-section-header"><a href="#variant.Percentage" class="anchor field"></a><span id='Percentage.v' class='invisible'><code>Percentage(<a class="type" href="../../../../style/values/type.CSSFloat.html" title="type style::values::CSSFloat">CSSFloat</a>)</code></span></span><div class='docblock'><p><code>&lt;percentage&gt;</code></p>
+</div><span id="variant.Number" class="variant small-section-header"><a href="#variant.Number" class="anchor field"></a><span id='Number.v' class='invisible'><code>Number(<a class="type" href="../../../../style/values/type.CSSFloat.html" title="type style::values::CSSFloat">CSSFloat</a>)</code></span></span><div class='docblock'><p><code>&lt;number&gt;</code></p>
+</div><span id="variant.Sum" class="variant small-section-header"><a href="#variant.Sum" class="anchor field"></a><span id='Sum.v' class='invisible'><code>Sum(<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html" title="struct alloc::boxed::Box">Box</a>&lt;<a class="enum" href="../../../../style/values/specified/calc/enum.CalcNode.html" title="enum style::values::specified::calc::CalcNode">CalcNode</a>&gt;,&nbsp;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html" title="struct alloc::boxed::Box">Box</a>&lt;<a class="enum" href="../../../../style/values/specified/calc/enum.CalcNode.html" title="enum style::values::specified::calc::CalcNode">CalcNode</a>&gt;)</code></span></span><div class='docblock'><p>An expression of the form <code>x + y</code></p>
+</div><span id="variant.Sub" class="variant small-section-header"><a href="#variant.Sub" class="anchor field"></a><span id='Sub.v' class='invisible'><code>Sub(<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html" title="struct alloc::boxed::Box">Box</a>&lt;<a class="enum" href="../../../../style/values/specified/calc/enum.CalcNode.html" title="enum style::values::specified::calc::CalcNode">CalcNode</a>&gt;,&nbsp;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html" title="struct alloc::boxed::Box">Box</a>&lt;<a class="enum" href="../../../../style/values/specified/calc/enum.CalcNode.html" title="enum style::values::specified::calc::CalcNode">CalcNode</a>&gt;)</code></span></span><div class='docblock'><p>An expression of the form <code>x - y</code></p>
+</div><span id="variant.Mul" class="variant small-section-header"><a href="#variant.Mul" class="anchor field"></a><span id='Mul.v' class='invisible'><code>Mul(<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html" title="struct alloc::boxed::Box">Box</a>&lt;<a class="enum" href="../../../../style/values/specified/calc/enum.CalcNode.html" title="enum style::values::specified::calc::CalcNode">CalcNode</a>&gt;,&nbsp;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html" title="struct alloc::boxed::Box">Box</a>&lt;<a class="enum" href="../../../../style/values/specified/calc/enum.CalcNode.html" title="enum style::values::specified::calc::CalcNode">CalcNode</a>&gt;)</code></span></span><div class='docblock'><p>An expression of the form <code>x * y</code></p>
+</div><span id="variant.Div" class="variant small-section-header"><a href="#variant.Div" class="anchor field"></a><span id='Div.v' class='invisible'><code>Div(<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html" title="struct alloc::boxed::Box">Box</a>&lt;<a class="enum" href="../../../../style/values/specified/calc/enum.CalcNode.html" title="enum style::values::specified::calc::CalcNode">CalcNode</a>&gt;,&nbsp;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html" title="struct alloc::boxed::Box">Box</a>&lt;<a class="enum" href="../../../../style/values/specified/calc/enum.CalcNode.html" title="enum style::values::specified::calc::CalcNode">CalcNode</a>&gt;)</code></span></span><div class='docblock'><p>An expression of the form <code>x / y</code></p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="enum" href="../../../../style/values/specified/calc/enum.CalcNode.html" title="enum style::values::specified::calc::CalcNode">CalcNode</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/values/specified/calc.rs.html#154-650' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.parse_integer' class="method"><span id='parse_integer.v' class='invisible'><code>pub fn <a href='#method.parse_integer' class='fnname'>parse_integer</a>&lt;'i, 't&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;context: &amp;<a class="struct" href="../../../../style/parser/struct.ParserContext.html" title="struct style::parser::ParserContext">ParserContext</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;input: &amp;mut <a class="struct" href="../../../../style/values/struct.Parser.html" title="struct style::values::Parser">Parser</a>&lt;'i, 't&gt;<br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="type" href="../../../../style/values/type.CSSInteger.html" title="type style::values::CSSInteger">CSSInteger</a>, <a class="type" href="../../../../style_traits/type.ParseError.html" title="type style_traits::ParseError">ParseError</a>&lt;'i&gt;&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/values/specified/calc.rs.html#544-552' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Convenience parsing function for integers.</p>
+</div><h4 id='method.parse_length_or_percentage' class="method"><span id='parse_length_or_percentage.v' class='invisible'><code>pub fn <a href='#method.parse_length_or_percentage' class='fnname'>parse_length_or_percentage</a>&lt;'i, 't&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;context: &amp;<a class="struct" href="../../../../style/parser/struct.ParserContext.html" title="struct style::parser::ParserContext">ParserContext</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;input: &amp;mut <a class="struct" href="../../../../style/values/struct.Parser.html" title="struct style::values::Parser">Parser</a>&lt;'i, 't&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;clamping_mode: <a class="enum" href="../../../../style_traits/values/specified/enum.AllowedNumericType.html" title="enum style_traits::values::specified::AllowedNumericType">AllowedNumericType</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="../../../../style/values/specified/calc/struct.CalcLengthOrPercentage.html" title="struct style::values::specified::calc::CalcLengthOrPercentage">CalcLengthOrPercentage</a>, <a class="type" href="../../../../style_traits/type.ParseError.html" title="type style_traits::ParseError">ParseError</a>&lt;'i&gt;&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/values/specified/calc.rs.html#555-563' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Convenience parsing function for <code>&lt;length&gt; | &lt;percentage&gt;</code>.</p>
+</div><h4 id='method.parse_percentage' class="method"><span id='parse_percentage.v' class='invisible'><code>pub fn <a href='#method.parse_percentage' class='fnname'>parse_percentage</a>&lt;'i, 't&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;context: &amp;<a class="struct" href="../../../../style/parser/struct.ParserContext.html" title="struct style::parser::ParserContext">ParserContext</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;input: &amp;mut <a class="struct" href="../../../../style/values/struct.Parser.html" title="struct style::values::Parser">Parser</a>&lt;'i, 't&gt;<br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="type" href="../../../../style/values/type.CSSFloat.html" title="type style::values::CSSFloat">CSSFloat</a>, <a class="type" href="../../../../style_traits/type.ParseError.html" title="type style_traits::ParseError">ParseError</a>&lt;'i&gt;&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/values/specified/calc.rs.html#566-573' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Convenience parsing function for percentages.</p>
+</div><h4 id='method.parse_length' class="method"><span id='parse_length.v' class='invisible'><code>pub fn <a href='#method.parse_length' class='fnname'>parse_length</a>&lt;'i, 't&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;context: &amp;<a class="struct" href="../../../../style/parser/struct.ParserContext.html" title="struct style::parser::ParserContext">ParserContext</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;input: &amp;mut <a class="struct" href="../../../../style/values/struct.Parser.html" title="struct style::values::Parser">Parser</a>&lt;'i, 't&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;clamping_mode: <a class="enum" href="../../../../style_traits/values/specified/enum.AllowedNumericType.html" title="enum style_traits::values::specified::AllowedNumericType">AllowedNumericType</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="../../../../style/values/specified/calc/struct.CalcLengthOrPercentage.html" title="struct style::values::specified::calc::CalcLengthOrPercentage">CalcLengthOrPercentage</a>, <a class="type" href="../../../../style_traits/type.ParseError.html" title="type style_traits::ParseError">ParseError</a>&lt;'i&gt;&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/values/specified/calc.rs.html#576-584' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Convenience parsing function for <code>&lt;length&gt;</code>.</p>
+</div><h4 id='method.parse_number' class="method"><span id='parse_number.v' class='invisible'><code>pub fn <a href='#method.parse_number' class='fnname'>parse_number</a>&lt;'i, 't&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;context: &amp;<a class="struct" href="../../../../style/parser/struct.ParserContext.html" title="struct style::parser::ParserContext">ParserContext</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;input: &amp;mut <a class="struct" href="../../../../style/values/struct.Parser.html" title="struct style::values::Parser">Parser</a>&lt;'i, 't&gt;<br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="type" href="../../../../style/values/type.CSSFloat.html" title="type style::values::CSSFloat">CSSFloat</a>, <a class="type" href="../../../../style_traits/type.ParseError.html" title="type style_traits::ParseError">ParseError</a>&lt;'i&gt;&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/values/specified/calc.rs.html#587-594' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Convenience parsing function for <code>&lt;number&gt;</code>.</p>
+</div><h4 id='method.parse_angle' class="method"><span id='parse_angle.v' class='invisible'><code>pub fn <a href='#method.parse_angle' class='fnname'>parse_angle</a>&lt;'i, 't&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;context: &amp;<a class="struct" href="../../../../style/parser/struct.ParserContext.html" title="struct style::parser::ParserContext">ParserContext</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;input: &amp;mut <a class="struct" href="../../../../style/values/struct.Parser.html" title="struct style::values::Parser">Parser</a>&lt;'i, 't&gt;<br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="../../../../style/values/specified/angle/struct.Angle.html" title="struct style::values::specified::angle::Angle">Angle</a>, <a class="type" href="../../../../style_traits/type.ParseError.html" title="type style_traits::ParseError">ParseError</a>&lt;'i&gt;&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/values/specified/calc.rs.html#597-604' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Convenience parsing function for <code>&lt;angle&gt;</code>.</p>
+</div><h4 id='method.parse_time' class="method"><span id='parse_time.v' class='invisible'><code>pub fn <a href='#method.parse_time' class='fnname'>parse_time</a>&lt;'i, 't&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;context: &amp;<a class="struct" href="../../../../style/parser/struct.ParserContext.html" title="struct style::parser::ParserContext">ParserContext</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;input: &amp;mut <a class="struct" href="../../../../style/values/struct.Parser.html" title="struct style::values::Parser">Parser</a>&lt;'i, 't&gt;<br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="../../../../style/values/specified/time/struct.Time.html" title="struct style::values::specified::time::Time">Time</a>, <a class="type" href="../../../../style_traits/type.ParseError.html" title="type style_traits::ParseError">ParseError</a>&lt;'i&gt;&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/values/specified/calc.rs.html#607-614' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Convenience parsing function for <code>&lt;time&gt;</code>.</p>
+</div><h4 id='method.parse_number_or_percentage' class="method"><span id='parse_number_or_percentage.v' class='invisible'><code>pub fn <a href='#method.parse_number_or_percentage' class='fnname'>parse_number_or_percentage</a>&lt;'i, 't&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;context: &amp;<a class="struct" href="../../../../style/parser/struct.ParserContext.html" title="struct style::parser::ParserContext">ParserContext</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;input: &amp;mut <a class="struct" href="../../../../style/values/struct.Parser.html" title="struct style::values::Parser">Parser</a>&lt;'i, 't&gt;<br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="enum" href="../../../../cssparser/color/enum.NumberOrPercentage.html" title="enum cssparser::color::NumberOrPercentage">NumberOrPercentage</a>, <a class="type" href="../../../../style_traits/type.ParseError.html" title="type style_traits::ParseError">ParseError</a>&lt;'i&gt;&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/values/specified/calc.rs.html#617-631' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Convenience parsing function for <code>&lt;number&gt;</code> or <code>&lt;percentage&gt;</code>.</p>
+</div><h4 id='method.parse_angle_or_number' class="method"><span id='parse_angle_or_number.v' class='invisible'><code>pub fn <a href='#method.parse_angle_or_number' class='fnname'>parse_angle_or_number</a>&lt;'i, 't&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;context: &amp;<a class="struct" href="../../../../style/parser/struct.ParserContext.html" title="struct style::parser::ParserContext">ParserContext</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;input: &amp;mut <a class="struct" href="../../../../style/values/struct.Parser.html" title="struct style::values::Parser">Parser</a>&lt;'i, 't&gt;<br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="enum" href="../../../../cssparser/color/enum.AngleOrNumber.html" title="enum cssparser::color::AngleOrNumber">AngleOrNumber</a>, <a class="type" href="../../../../style_traits/type.ParseError.html" title="type style_traits::ParseError">ParseError</a>&lt;'i&gt;&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/values/specified/calc.rs.html#634-649' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Convenience parsing function for <code>&lt;number&gt;</code> or <code>&lt;angle&gt;</code>.</p>
+</div></div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Clone' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="enum" href="../../../../style/values/specified/calc/enum.CalcNode.html" title="enum style::values::specified::calc::CalcNode">CalcNode</a></code><a href='#impl-Clone' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/values/specified/calc.rs.html#22' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="enum" href="../../../../style/values/specified/calc/enum.CalcNode.html" title="enum style::values::specified::calc::CalcNode">CalcNode</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/values/specified/calc.rs.html#22' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="enum" href="../../../../style/values/specified/calc/enum.CalcNode.html" title="enum style::values::specified::calc::CalcNode">CalcNode</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/values/specified/calc.rs.html#22' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/style/values/specified/calc.rs.html#22' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../../";
+        window.currentCrate = "style";
+    </script>
+    <script src="../../../../main.js"></script>
+    <script defer src="../../../../search-index.js"></script>
+</body>
+</html>

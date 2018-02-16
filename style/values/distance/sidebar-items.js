@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["SquaredDistance","A distance between two animatable values."]],"trait":[["ComputeSquaredDistance","A trait to compute squared distances between two animatable values."]]});
