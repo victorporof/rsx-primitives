@@ -16,33 +16,61 @@ use webrender::api;
 
 // Images
 
-pub use self::ResourceKeysAPI as ImageKeysAPI;
-pub use self::api::ImageKey;
+pub use self::ResourceKeysAPI as WebRenderImageKeysAPI;
+pub use self::api::ImageKey as WebRenderImageKey;
+
+// Images aliases
+
+pub use self::WebRenderImageKey as ImageKey;
+pub use self::WebRenderImageKeysAPI as ImageKeysAPI;
 
 // Fonts
 
-pub use self::ResourceKeysAPI as FontKeysAPI;
-pub use self::api::FontInstanceKey;
-pub use self::api::FontKey;
+pub use self::ResourceKeysAPI as WebRenderFontKeysAPI;
+pub use self::api::FontInstanceKey as WebRenderFontInstanceKey;
+pub use self::api::FontKey as WebRenderFontKey;
+
+// Fonts aliases
+
+pub use self::WebRenderFontInstanceKey as FontInstanceKey;
+pub use self::WebRenderFontKey as FontKey;
+pub use self::WebRenderFontKeysAPI as FontKeysAPI;
 
 // Glyphs
 
-pub use self::api::GlyphInstance;
+pub use self::api::GlyphInstance as WebRenderGlyphInstance;
+
+// Glyphs aliases
+
+pub use self::WebRenderGlyphInstance as GlyphInstance;
 
 // Updates
 
-pub use self::api::ResourceUpdates;
+pub use self::api::ResourceUpdates as WebRenderResourceUpdates;
+
+// Updates aliases
+
+pub use self::WebRenderResourceUpdates as ResourceUpdates;
 
 // List
 
-pub use self::api::BuiltDisplayList;
-pub use self::api::DisplayListBuilder;
+pub use self::api::BuiltDisplayList as WebRenderBuiltDisplayList;
+pub use self::api::DisplayListBuilder as WebRenderDisplayListBuilder;
+
+// List aliases
+
+pub use self::WebRenderBuiltDisplayList as BuiltDisplayList;
+pub use self::WebRenderDisplayListBuilder as DisplayListBuilder;
 
 // Keys
 
-pub struct ResourceKeysAPI {
+pub struct WebRenderResourceKeysAPI {
     #[cfg(not(feature = "dummy-api-mode"))]
     pub(crate) api: Rc<api::RenderApi>,
     #[cfg(not(feature = "dummy-api-mode"))]
     pub(crate) updates: api::ResourceUpdates
 }
+
+// Keys aliases
+
+pub use self::WebRenderResourceKeysAPI as ResourceKeysAPI;

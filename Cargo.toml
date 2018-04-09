@@ -7,10 +7,19 @@ authors = ["Victor Porof <victor.porof@gmail.com>"]
 name = "rsx_primitives"
 
 [features]
-default = ["json-display-list", "hashmap-arena"]
+default = ["bincode-display-list", "json-display-list-types", "webrender-display-list-types", "hashmap-arena"]
 
-webrender-display-list = ["app_units", "euclid", "webrender", "link-freetype", "image-rgb-to-bgr", "rsx-shared/impl-external-webrender"]
-json-display-list = []
+bincode-display-list = ["bincode-display-list-types", "bincode-display-list-aliases"]
+bincode-display-list-types = []
+bincode-display-list-aliases = []
+
+json-display-list = ["json-display-list-types", "json-display-list-aliases"]
+json-display-list-types = []
+json-display-list-aliases = []
+
+webrender-display-list = ["app_units", "euclid", "webrender", "link-freetype", "image-rgb-to-bgr", "webrender-display-list-types", "webrender-display-list-aliases"]
+webrender-display-list-types = ["rsx-shared/impl-external-webrender"]
+webrender-display-list-aliases = []
 
 display-list-optimize-mode = []
 display-list-debug-mode = []
@@ -36,6 +45,7 @@ rsx-stylesheet = { git = "https://github.com/victorporof/rsx-stylesheet.git", de
 serde = "1.0.27"
 serde_derive = "1.0.27"
 serde_json = "1.0.9"
+bincode = "1.0.0"
 smallvec = "0.6.0"
 
 # Optional

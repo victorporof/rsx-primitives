@@ -26,6 +26,13 @@ pub struct DisplayList {
     builder: DisplayListBuilder
 }
 
+#[cfg(feature = "bincode-display-list")]
+impl Default for DisplayList {
+    fn default() -> Self {
+        DisplayList::new()
+    }
+}
+
 #[cfg(feature = "json-display-list")]
 impl Default for DisplayList {
     fn default() -> Self {
@@ -34,6 +41,13 @@ impl Default for DisplayList {
 }
 
 impl DisplayList {
+    #[cfg(feature = "bincode-display-list")]
+    pub fn new() -> Self {
+        DisplayList {
+            builder: DisplayListBuilder(Vec::with_capacity(65535))
+        }
+    }
+
     #[cfg(feature = "json-display-list")]
     pub fn new() -> Self {
         DisplayList {
@@ -46,6 +60,14 @@ impl DisplayList {
         DisplayList {
             builder: DisplayListBuilder::new(pipeline_id, layout_size)
         }
+    }
+
+    #[cfg(feature = "bincode-display-list")]
+    pub fn from(tree: &mut DOMTree) -> Self {
+        let mut display_list = DisplayList::new();
+        let root = tree.root().id();
+        display_list.push(LayoutClientPosition::default(), tree, root);
+        display_list
     }
 
     #[cfg(feature = "json-display-list")]

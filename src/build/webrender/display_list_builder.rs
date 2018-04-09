@@ -205,7 +205,7 @@ impl TDisplayListBuilder for DisplayListBuilder {
     fn push_stacking_context(&mut self, transform: Option<Self::TransformMatrix>, perspective: Option<Self::PerspectiveMatrix>) {
         self.push_stacking_context(
             &make_primitive_info(Default::default()),
-            api::ScrollPolicy::Fixed,
+            api::ScrollPolicy::Scrollable,
             transform.map(|v| v.into()),
             api::TransformStyle::Flat,
             perspective,

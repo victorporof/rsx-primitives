@@ -11,6 +11,30 @@ specific language governing permissions and limitations under the License.
 
 pub mod traits;
 
+// Bincode
+
+#[cfg(feature = "bincode-display-list")]
+#[path = "bincode/display_list_builder.rs"]
+mod bincode_display_list_builder;
+
+#[cfg(feature = "bincode-display-list")]
+#[path = "bincode/display_list_differs.rs"]
+mod bincode_display_list_differs;
+
+#[cfg(feature = "bincode-display-list")]
+#[path = "bincode/types.rs"]
+mod bincode_types;
+
+#[cfg(feature = "bincode-display-list")]
+#[path = "bincode/export.rs"]
+mod bincode_export;
+
+#[cfg(feature = "bincode-display-list")]
+#[path = "bincode/util.rs"]
+mod bincode_util;
+
+// Json
+
 #[cfg(feature = "json-display-list")]
 #[path = "json/display_list_builder.rs"]
 mod json_display_list_builder;
@@ -31,6 +55,8 @@ mod json_export;
 #[path = "json/util.rs"]
 mod json_util;
 
+// WebRender
+
 #[cfg(feature = "webrender-display-list")]
 #[path = "webrender/display_list_builder.rs"]
 mod webrender_display_list_builder;
@@ -47,6 +73,8 @@ mod webrender_types;
 #[path = "webrender/util.rs"]
 mod webrender_util;
 
+// Pub
+
 pub mod util {
     #[cfg(feature = "json-display-list")]
     pub use super::json_util::*;
@@ -55,6 +83,10 @@ pub mod util {
 }
 
 pub mod types {
+    #[cfg(feature = "bincode-display-list")]
+    pub use super::bincode_display_list_builder::*;
+    #[cfg(feature = "bincode-display-list")]
+    pub use super::bincode_types::*;
     #[cfg(feature = "json-display-list")]
     pub use super::json_display_list_builder::*;
     #[cfg(feature = "json-display-list")]

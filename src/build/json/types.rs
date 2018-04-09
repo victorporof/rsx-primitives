@@ -18,37 +18,73 @@ use smallvec::SmallVec;
 
 // Images
 
-pub use rsx_resources::updates::types::DefaultImageKey as ImageKey;
-pub use rsx_resources::updates::types::DefaultImageKeysAPI as ImageKeysAPI;
+pub use rsx_resources::updates::types::DefaultImageKey as JsonImageKey;
+pub use rsx_resources::updates::types::DefaultImageKeysAPI as JsonImageKeysAPI;
+
+// Images aliases
+
+#[cfg(feature = "json-display-list-aliases")]
+pub use self::JsonImageKey as ImageKey;
+#[cfg(feature = "json-display-list-aliases")]
+pub use self::JsonImageKeysAPI as ImageKeysAPI;
 
 // Fonts
 
-pub use rsx_resources::updates::types::DefaultFontInstanceKey as FontInstanceKey;
-pub use rsx_resources::updates::types::DefaultFontKey as FontKey;
-pub use rsx_resources::updates::types::DefaultFontKeysAPI as FontKeysAPI;
+pub use rsx_resources::updates::types::DefaultFontInstanceKey as JsonFontInstanceKey;
+pub use rsx_resources::updates::types::DefaultFontKey as JsonFontKey;
+pub use rsx_resources::updates::types::DefaultFontKeysAPI as JsonFontKeysAPI;
+
+// Fonts aliases
+
+#[cfg(feature = "json-display-list-aliases")]
+pub use self::JsonFontInstanceKey as FontInstanceKey;
+#[cfg(feature = "json-display-list-aliases")]
+pub use self::JsonFontKey as FontKey;
+#[cfg(feature = "json-display-list-aliases")]
+pub use self::JsonFontKeysAPI as FontKeysAPI;
 
 // Glyphs
 
-pub use rsx_resources::updates::types::DefaultGlyphInstance as GlyphInstance;
+pub use rsx_resources::updates::types::DefaultGlyphInstance as JsonGlyphInstance;
+
+// Glyphs aliases
+
+#[cfg(feature = "json-display-list-aliases")]
+pub use self::JsonGlyphInstance as GlyphInstance;
 
 // Updates
 
-pub type ResourceUpdates = TResourceUpdates<ImageKey, FontKey, FontInstanceKey>;
+pub type JsonResourceUpdates = TResourceUpdates<JsonImageKey, JsonFontKey, JsonFontInstanceKey>;
+
+// Updates aliases
+
+#[cfg(feature = "json-display-list-aliases")]
+pub use self::JsonResourceUpdates as ResourceUpdates;
 
 // List
 
 #[derive(Debug, PartialEq, Serialize, Deserialize)]
-pub struct BuiltDisplayList(pub(crate) String);
+pub struct JsonBuiltDisplayList(pub(crate) String);
+
+// List aliases
+
+#[cfg(feature = "json-display-list-aliases")]
+pub use self::JsonBuiltDisplayList as BuiltDisplayList;
 
 // Builder
 
 #[derive(Debug, PartialEq, Serialize, Deserialize)]
-pub struct DisplayListBuilder(pub(crate) Vec<SpecificDisplayItem>);
+pub struct JsonDisplayListBuilder(pub(crate) Vec<JsonSpecificDisplayItem>);
+
+// Builder aliases
+
+#[cfg(feature = "json-display-list-aliases")]
+pub use self::JsonDisplayListBuilder as DisplayListBuilder;
 
 // Items
 
 #[derive(Debug, PartialEq, Clone, Serialize, Deserialize)]
-pub enum SpecificDisplayItem {
+pub enum JsonSpecificDisplayItem {
     Rect(RectDisplayItem),
     Border(BorderDisplayItem),
     Image(ImageDisplayItem),
@@ -56,50 +92,71 @@ pub enum SpecificDisplayItem {
 }
 
 #[derive(Debug, PartialEq, Copy, Clone, Serialize, Deserialize)]
-pub struct RectDisplayItem {
+pub struct JsonRectDisplayItem {
     pub bounds: LayoutBoundingClientRect,
     pub display: RectDisplayProps
 }
 
 #[derive(Debug, PartialEq, Copy, Clone, Serialize, Deserialize)]
-pub struct RectDisplayProps {
+pub struct JsonRectDisplayProps {
     pub color: Color
 }
 
 #[derive(Debug, PartialEq, Copy, Clone, Serialize, Deserialize)]
-pub struct BorderDisplayItem {
+pub struct JsonBorderDisplayItem {
     pub bounds: LayoutBoundingClientRect,
     pub display: BorderDisplayProps
 }
 
 #[derive(Debug, PartialEq, Copy, Clone, Serialize, Deserialize)]
-pub struct BorderDisplayProps {
+pub struct JsonBorderDisplayProps {
     pub widths: [u32; 4],
     pub colors: [Color; 4],
     pub styles: [BorderStyle; 4]
 }
 
 #[derive(Debug, PartialEq, Clone, Serialize, Deserialize)]
-pub struct ImageDisplayItem {
+pub struct JsonImageDisplayItem {
     pub bounds: LayoutBoundingClientRect,
     pub display: ImageDisplayProps
 }
 
 #[derive(Debug, PartialEq, Clone, Serialize, Deserialize)]
-pub struct ImageDisplayProps {
+pub struct JsonImageDisplayProps {
     pub image_src: DOMText,
     pub measured_image: MeasuredImage
 }
 
 #[derive(Debug, PartialEq, Clone, Serialize, Deserialize)]
-pub struct TextDisplayItem {
+pub struct JsonTextDisplayItem {
     pub bounds: LayoutBoundingClientRect,
     pub display: TextDisplayProps
 }
 
 #[derive(Debug, PartialEq, Clone, Serialize, Deserialize)]
-pub struct TextDisplayProps {
+pub struct JsonTextDisplayProps {
     pub color: Color,
     pub source_text: SmallVec<[DOMText; 1]>,
     pub shaped_text: SmallVec<[ShapedText; 1]>
 }
+
+// Items aliases
+
+#[cfg(feature = "json-display-list-aliases")]
+pub use self::JsonBorderDisplayItem as BorderDisplayItem;
+#[cfg(feature = "json-display-list-aliases")]
+pub use self::JsonBorderDisplayProps as BorderDisplayProps;
+#[cfg(feature = "json-display-list-aliases")]
+pub use self::JsonImageDisplayItem as ImageDisplayItem;
+#[cfg(feature = "json-display-list-aliases")]
+pub use self::JsonImageDisplayProps as ImageDisplayProps;
+#[cfg(feature = "json-display-list-aliases")]
+pub use self::JsonRectDisplayItem as RectDisplayItem;
+#[cfg(feature = "json-display-list-aliases")]
+pub use self::JsonRectDisplayProps as RectDisplayProps;
+#[cfg(feature = "json-display-list-aliases")]
+pub use self::JsonSpecificDisplayItem as SpecificDisplayItem;
+#[cfg(feature = "json-display-list-aliases")]
+pub use self::JsonTextDisplayItem as TextDisplayItem;
+#[cfg(feature = "json-display-list-aliases")]
+pub use self::JsonTextDisplayProps as TextDisplayProps;

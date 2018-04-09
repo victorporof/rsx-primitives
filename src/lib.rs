@@ -29,6 +29,7 @@ pub extern crate euclid;
 #[cfg(feature = "webrender-display-list")]
 pub extern crate webrender;
 
+extern crate bincode;
 extern crate serde;
 #[macro_use]
 extern crate serde_derive;
